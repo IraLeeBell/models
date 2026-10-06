@@ -142,5 +142,5 @@ The PDF page marker for the appendix starts on page 33, not page 32. This digest
 - **Card type:** Appendix. This model is covered in an appendix or section of a sibling model's document.
 - **Pages specific to this model:** pp. 33-36
 - **Names the document uses for this model:** GPT-5.4 mini, gpt-5.4-mini
-- **Catalog scope:** Section 6, "Appendix: GPT-5.4 mini" (PDF pages 32-36) of the GPT-5.4 Thinking System Card.
+- **Catalog scope:** Section 6, "Appendix: GPT-5.4 mini" (PDF pages 33-36) of the GPT-5.4 Thinking System Card.
 - **Catalog note:** No standalone GPT-5.4 mini card exists; the GPT-5.4 Thinking card devotes an appendix to it.

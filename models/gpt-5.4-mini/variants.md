@@ -17,7 +17,7 @@ Reasoning-effort and context options run the same model with different settings.
 
 ## Publisher document coverage
 
-This folder uses [GPT-5.4 Thinking System Card](https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf) (OpenAI, 2026-03-05). Section 6, "Appendix: GPT-5.4 mini" (PDF pages 32-36) of the GPT-5.4 Thinking System Card.
+This folder uses [GPT-5.4 Thinking System Card](https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf) (OpenAI, 2026-03-05). Section 6, "Appendix: GPT-5.4 mini" (PDF pages 33-36) of the GPT-5.4 Thinking System Card.
 
 Other folders that use the same document:
 

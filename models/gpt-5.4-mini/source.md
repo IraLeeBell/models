@@ -28,7 +28,7 @@
 | SHA-256 | `e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50` |
 | Catalog document ID | `openai-gpt-5-4-thinking` |
 
-**Scope for this model:** Section 6, "Appendix: GPT-5.4 mini" (PDF pages 32-36) of the GPT-5.4 Thinking System Card.
+**Scope for this model:** Section 6, "Appendix: GPT-5.4 mini" (PDF pages 33-36) of the GPT-5.4 Thinking System Card.
 
 **Scope check:** the downloaded document's first pages contain "GPT-5.4 Thinking System Card" and its text contains 'GPT-5.4 mini'.
 
