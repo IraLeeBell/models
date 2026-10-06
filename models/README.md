@@ -30,7 +30,7 @@ Plan, policies, region, and rollout can alter actual availability.
 | [GPT-6 Astra](./gpt-6-astra/digest.md) | OpenAI | per-client | yes | yes | [PDF](./gpt-6-astra/source.md) |
 | [GPT-6 Luna](./gpt-6-luna/digest.md) | OpenAI | per-client | yes | yes | [PDF](./gpt-6-luna/source.md) |
 | [GPT-6 Sol](./gpt-6-sol/digest.md) | OpenAI | per-client | yes | yes | [PDF](./gpt-6-sol/source.md) |
-| [GPT-6.1 Sol](./gpt-6.1-sol/digest.md) | OpenAI | Auto only | yes | yes | [none confirmed](./gpt-6.1-sol/source.md) |
+| [GPT-6.1 Sol](./gpt-6.1-sol/digest.md) | OpenAI | Auto only | yes | yes | [HTML](./gpt-6.1-sol/source.md) |
 | [Claude Fable 5](./claude-fable-5/digest.md) | Anthropic | per-client | not observed | not listed | [PDF](./claude-fable-5/source.md) |
 | [Claude Fable 5.1](./claude-fable-5.1/digest.md) | Anthropic | per-client | not observed | not listed | [PDF](./claude-fable-5.1/source.md) |
 | [Claude Haiku 4.5](./claude-haiku-4.5/digest.md) | Anthropic | per-client | yes | yes | [PDF](./claude-haiku-4.5/source.md) |
@@ -40,7 +40,7 @@ Plan, policies, region, and rollout can alter actual availability.
 | [Claude Opus 5.5](./claude-opus-5.5/digest.md) | Anthropic | per-client | yes | yes | [PDF](./claude-opus-5.5/source.md) |
 | [Claude Sonnet 4.6](./claude-sonnet-4.6/digest.md) (limited) | Anthropic | per-client | not observed | not listed | [PDF](./claude-sonnet-4.6/source.md) |
 | [Claude Sonnet 5](./claude-sonnet-5/digest.md) | Anthropic | per-client | yes | yes | [PDF](./claude-sonnet-5/source.md) |
-| [Claude Sonnet 5.5](./claude-sonnet-5.5/digest.md) | Anthropic | per-client | yes | yes | [none confirmed](./claude-sonnet-5.5/source.md) |
+| [Claude Sonnet 5.5](./claude-sonnet-5.5/digest.md) | Anthropic | per-client | yes | yes | [PDF](./claude-sonnet-5.5/source.md) |
 | [Gemini 3.7 Flash](./gemini-3.7-flash/digest.md) | Google | per-client | yes | not listed | [PDF](./gemini-3.7-flash/source.md) |
 | [Gemini 3.8 Flash](./gemini-3.8-flash/digest.md) | Google | per-client | yes | yes | [PDF](./gemini-3.8-flash/source.md) |
 | [MAI-Code-1.1-Flash](./mai-code-1.1-flash/digest.md) | Microsoft | per-client | yes | yes | [PDF](./mai-code-1.1-flash/source.md) |
@@ -56,12 +56,15 @@ The release-status and retirement tables disagree for Claude Sonnet 4.6;
 the retirement footnote preserves access for annual individual subscribers.
 The catalog labels this restricted exception rather than calling it
 universally available.
+For GPT-6.1 Sol and Claude Sonnet 5.5, GitHub's comparison still says
+"Coming soon"; the publisher documents linked here were verified
+independently on the checked date.
 
 **Licensing:** Publisher PDFs and full-text extractions are *not* committed.
 An official public download URL is not a redistribution license. The
 repository's MIT license covers only its own code and original summaries.
-26 entries link to a matching owner document; the other
-3 explicitly explain the missing dedicated card.
+28 entries link to a matching owner document;
+the remaining one explains the missing dedicated card.
 A PDF hash in `source.md` identifies the publisher file downloaded for
 verification on the checked date; it does not imply a local PDF is shipped.
 

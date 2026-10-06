@@ -15,7 +15,7 @@
 
 ## Publisher document
 
-No matching publisher card confirmed. OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) describes the model, but is not a system card. GitHub's comparison links the 2025 GPT-5 system card, whose PDF does not name GPT-5 mini; it is not a verified mini-specific card.
+No matching publisher card confirmed. OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) identifies the model. Its [GPT-5 System Card](https://deploymentsafety.openai.com/gpt-5) discusses gpt-5-main-mini and gpt-5-thinking-mini, but does not establish which, if either, corresponds to the Copilot picker option. No dedicated GPT-5 mini card was confirmed.
 
 No publisher card or full-text extraction is supplied here.
 This repository's MIT license does not grant redistribution rights to

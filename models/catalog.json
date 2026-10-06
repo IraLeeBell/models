@@ -12,7 +12,7 @@
       "app_auto": false,
       "summary": "A quick option for routine coding questions, edits, and explanations.",
       "card": null,
-      "card_note": "OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) describes the model, but is not a system card. GitHub's comparison links the 2025 GPT-5 system card, whose PDF does not name GPT-5 mini; it is not a verified mini-specific card."
+      "card_note": "OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) identifies the model. Its [GPT-5 System Card](https://deploymentsafety.openai.com/gpt-5) discusses gpt-5-main-mini and gpt-5-thinking-mini, but does not establish which, if either, corresponds to the Copilot picker option. No dedicated GPT-5 mini card was confirmed."
     },
     {
       "slug": "gpt-5.3-codex",
@@ -171,8 +171,12 @@
       "app_picker_observed": true,
       "app_auto": true,
       "summary": "A publicly listed option for complex coding and efficient multi-step reasoning.",
-      "card": null,
-      "card_note": "GitHub's model comparison says 'Coming soon' for its publisher card. It appears in GitHub's CLI and app Auto table and release-status table, but not yet in the per-client table."
+      "note": "GitHub's model comparison still says 'Coming soon', but OpenAI now publishes an HTML addendum. CLI support is documented in the Auto table, not yet the per-client table.",
+      "card": {
+        "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+        "scope": "Dedicated GPT-6.1 Sol addendum to the Astra system card, not a standalone PDF or an Astra-only evaluation."
+      }
     },
     {
       "slug": "claude-fable-5",
@@ -322,8 +326,13 @@
       "app_picker_observed": true,
       "app_auto": true,
       "summary": "A general coding and agent option focused on completing tasks efficiently.",
-      "card": null,
-      "card_note": "GitHub's comparison marks the publisher card 'Coming soon'. The Sonnet 5 system card is not a Sonnet 5.5 card."
+      "note": "GitHub's comparison still marks this card 'Coming soon', but Anthropic now publishes a dedicated Sonnet 5.5 PDF. The earlier Sonnet 5 card is not substituted.",
+      "card": {
+        "title": "Claude Sonnet 5.5 System Card",
+        "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+        "scope": "Dedicated Claude Sonnet 5.5 system card dated September 28, 2026.",
+        "sha256": "89cfd6a6d3aa6148eaf23f4a53006950ee7746009f381237c62920c720725785"
+      }
     },
     {
       "slug": "gemini-3.7-flash",
