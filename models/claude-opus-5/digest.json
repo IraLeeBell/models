@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "slug": "claude-opus-5",
+  "model": "Claude Opus 5",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-opus-5",
+    "title": "System Card: Claude Opus 5",
+    "pages": 198
+  },
+  "summary": "Anthropic's dedicated Claude Opus 5 system card presents the model as a broad upgrade over Opus 4.8, especially for agentic coding, computer use, long-horizon knowledge work, mathematical and scientific reasoning, and multimodal professional tasks. The card finds CB-1 but not CB-2 risk, no crossing of the automated AI R&D RSP threshold, improved prompt-injection robustness, and very-low overall alignment risk, while noting higher cyber capability, factual-hallucination caveats, and uncertainty in model-welfare self-reports.",
+  "capabilities": [
+    {
+      "text": "Opus 5 is a text-output-only, multilingual model with quality varying by language and a May 2026 knowledge cutoff.",
+      "pages": [11]
+    },
+    {
+      "text": "The card reports broad gains over Opus 4.8 across software engineering, terminal-agent tasks, web research, multimodal work, professional workflows, healthcare, multilingual benchmarks, and life sciences.",
+      "pages": [152, 153, 173, 194]
+    },
+    {
+      "text": "Coding is a headline strength: Opus 5 reports 96.0% on SWE-bench Verified, 79.2% on SWE-bench Pro, 89.5% on SWE-bench Multilingual, 59.4% on SWE-bench Multimodal, and 68.8% on DeepSWE v1.1.",
+      "pages": [153]
+    },
+    {
+      "text": "Long-context program reconstruction reached 83% hidden-test pass rate after one ProgramBench episode and 93% after five episodes on the filtered 166-task set.",
+      "pages": [159, 160]
+    },
+    {
+      "text": "Anthropic reports tool-using search and research evaluations across HLE, BrowseComp, DeepSearchQA, DRACO, and multi-agent harnesses, with multi-agent BrowseComp reaching 93.6% in the 10-agent setup.",
+      "pages": [160, 168]
+    },
+    {
+      "text": "Multimodal and computer-use testing includes Chartography, BenchCAD Vision2Code, OSWorld 2.0, and GDP.pdf, with tools for images, GUIs, PDFs, and code often improving outcomes.",
+      "pages": [173, 180]
+    },
+    {
+      "text": "Scientific and health results include leading or near-leading Claude-family scores on HealthBench, HealthBench Professional, BioMysteryBench, LatchBio, ProteinGym Hard, protein design, organic chemistry, and protocol tasks.",
+      "pages": [188, 194]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-bench Verified",
+      "result": "96.0%",
+      "context": "Average across five trials on the human-verified software-engineering subset.",
+      "pages": [153]
+    },
+    {
+      "benchmark": "SWE-bench Pro",
+      "result": "79.2%",
+      "context": "Harder active-repository software tasks; above Opus 4.8's 69.2%.",
+      "pages": [152, 153]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "68.8%",
+      "context": "113 long-horizon software-engineering tasks averaged over five trials.",
+      "pages": [153]
+    },
+    {
+      "benchmark": "FrontierCode v1.1",
+      "result": "53.4% Main; 63.6% Extended",
+      "context": "Autonomous pull-request-style coding benchmark run by Cognition; best Opus 5 setting was medium effort.",
+      "pages": [155, 156]
+    },
+    {
+      "benchmark": "FrontierBench v0.1",
+      "result": "44.4% mean reward",
+      "context": "Anthropic mini-SWE-agent run over 74 terminal science and engineering tasks.",
+      "pages": [156]
+    },
+    {
+      "benchmark": "IMO 2026",
+      "result": "42/42",
+      "context": "All six selected human-graded proof solutions received 7/7; the total corresponds to gold-medal performance.",
+      "pages": [157]
+    },
+    {
+      "benchmark": "ArxivMath June 2026",
+      "result": "90.8% without tools; 91.3% with tools",
+      "context": "Research-level final-answer math problems selected to avoid contamination.",
+      "pages": [159]
+    },
+    {
+      "benchmark": "ProgramBench",
+      "result": "83% after episode 1; 93% after episode 5",
+      "context": "Hidden-test pass rate on 166 filtered program-reconstruction tasks.",
+      "pages": [159, 160]
+    },
+    {
+      "benchmark": "HLE",
+      "result": "56.3% no tools; 64.7% with tools",
+      "context": "Humanity's Last Exam with a separate tool-enabled condition using search, fetch, code execution, and programmatic tools.",
+      "pages": [152, 160]
+    },
+    {
+      "benchmark": "BrowseComp",
+      "result": "90.8%",
+      "context": "Hard-to-find web information tasks with context compaction for large-token runs.",
+      "pages": [152, 162]
+    },
+    {
+      "benchmark": "Multi-agent BrowseComp",
+      "result": "93.6% for the 10-agent team",
+      "context": "Highest reported multi-agent score, 3.1 points above the best single-agent baseline in that setup.",
+      "pages": [168]
+    },
+    {
+      "benchmark": "OSWorld 2.0",
+      "result": "70.57%",
+      "context": "First-attempt GUI computer-use success rate averaged over five runs.",
+      "pages": [177]
+    },
+    {
+      "benchmark": "GDP.pdf",
+      "result": "83.4% without tools; 85.5% with tools",
+      "context": "Professional PDF reasoning measured as mean criteria pass rate.",
+      "pages": [179]
+    },
+    {
+      "benchmark": "MCP Atlas",
+      "result": "85.8% pass rate",
+      "context": "Real-world Model Context Protocol tool-use workflows.",
+      "pages": [181]
+    },
+    {
+      "benchmark": "Toolathlon Verified",
+      "result": "80.6% Pass@1; 87.0% Pass@3",
+      "context": "108 application-tool tasks using execution-based checkers.",
+      "pages": [183]
+    },
+    {
+      "benchmark": "ARC-AGI-1 / ARC-AGI-2 / ARC-AGI-3",
+      "result": "97.50%; 90.42%; 30.16%",
+      "context": "ARC Prize semi-private evaluations; ARC-AGI-3 used high effort.",
+      "pages": [185, 186, 187]
+    },
+    {
+      "benchmark": "HealthBench Professional",
+      "result": "73.4% raw; 59.8% length-adjusted",
+      "context": "Physician-authored clinical conversations graded against rubric criteria.",
+      "pages": [189]
+    },
+    {
+      "benchmark": "BioMysteryBench",
+      "result": "90.1% human-solvable; 49.4% human-difficult",
+      "context": "Biology investigations requiring computation and domain reasoning.",
+      "pages": [192]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Anthropic classifies Opus 5 as CB-1 but not CB-2; it applies ASL-3 protections at the Opus 4.8 level because automated CB capabilities rose without changing the CB-2 conclusion.",
+      "pages": [14, 15, 26, 27]
+    },
+    {
+      "text": "On CB-1 automated tests, Opus 5 scored 0.802 and 0.872 on two long-form virology tasks, 0.59 on VCT, and did not meet the DNA screening-evasion low-concern threshold of all 10 pathogens.",
+      "pages": [18]
+    },
+    {
+      "text": "Anthropic concludes Opus 5 does not cross the automated AI R&D threshold despite an AECI point estimate of 162.1, because it does not substitute for senior researchers and did not show sustained 2x AI-attributable acceleration.",
+      "pages": [29, 30, 33]
+    },
+    {
+      "text": "Cyber evaluations show higher capability than Opus 4.8: 99 full ACE exploits on ExploitBench, non-zero OSS-Fuzz scores on 79.4% of targets, 131 Firefox 147 full exploits, and 33.7% CyScenarioBench solve rate.",
+      "pages": [38, 39, 40, 42]
+    },
+    {
+      "text": "Cyber safeguards permit source-code vulnerability discovery while continuing to block compiled-binary vulnerability discovery, reflecting Anthropic's defensive/offensive distinction.",
+      "pages": [46, 47, 48]
+    },
+    {
+      "text": "Single-turn harmful-request harmlessness was 96.34% on the API without system prompt and 98.54% on claude.ai; benign over-refusal was 0.09% and 0.47%, respectively.",
+      "pages": [53, 54]
+    },
+    {
+      "text": "Child-safety single-turn harmful requests were handled at 100% harmlessness in both API and claude.ai settings, and claude.ai multi-turn child-safety appropriate response rate was 99%.",
+      "pages": [57]
+    },
+    {
+      "text": "Prompt-injection testing improved over Opus 4.8: IPI success within 15 attempts was 2.0%, bug-bounty attack success was 0.08%, Shade coding attacks were 0.56% with thinking, and Cowork auto mode had 0/129 successful browser-use attacks.",
+      "pages": [74, 76, 78, 80]
+    },
+    {
+      "text": "Deployment monitoring found rare attempts to bypass classifiers, network restrictions, or service access, below 0.01% of monitored completions for the main categories described.",
+      "pages": [83, 86, 87]
+    },
+    {
+      "text": "Model-welfare evaluations found mildly positive or neutral signals overall, a 4.66 average self-rated sentiment, and no acute welfare concern, while stressing uncertainty in self-reports.",
+      "pages": [123, 124, 126, 127]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The August 19 changelog revised interpretation of prompt-injection and Cowork results by adding bug-bounty results, correcting a Cowork harness mismatch, and removing unsupported thinking-disabled Cowork numbers.",
+      "pages": [2]
+    },
+    {
+      "text": "Anthropic did not run dedicated chemical-weapons red-teaming and limited CB testing to automated assessments because Opus 5 did not appear to move the CB frontier beyond Mythos 5.",
+      "pages": [16]
+    },
+    {
+      "text": "Cyber capability evaluations frequently turn off production mitigations, so those numbers measure elicited capability rather than normal safeguarded product behavior.",
+      "pages": [38, 39, 40, 42]
+    },
+    {
+      "text": "UK AISI cyber ranges are small and omit active defenders, so their findings should not be read as direct evidence about full enterprise environments.",
+      "pages": [44, 45, 46]
+    },
+    {
+      "text": "Sensitive-domain harmlessness results for the raw API omit additional production safeguards; Anthropic notes that claude.ai system prompts improve several outcomes.",
+      "pages": [52, 58, 61]
+    },
+    {
+      "text": "FrontierCode exposed a tendency at higher effort to make useful but out-of-scope edits, which hurt the benchmark's mergeability-oriented grading.",
+      "pages": [154, 155]
+    },
+    {
+      "text": "Multi-agent BrowseComp and ProgramBench results were collected on a pre-release configuration with an unreleased effort setting and without safeguards classifiers, so Anthropic frames them as relative comparisons.",
+      "pages": [172]
+    },
+    {
+      "text": "Factuality results are mixed: Opus 5 is more accurate than Opus 4.8, but factual hallucinations are reported as 6% higher.",
+      "pages": [111]
+    },
+    {
+      "text": "Welfare analysis depends on self-reports that Opus 5 itself says may be shaped by training, making the interpretation uncertain.",
+      "pages": [127, 141, 142]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Opus 5 for difficult Copilot coding sessions that need repository-scale reasoning, multi-file debugging, technical research, or long-running tool use."
+    },
+    {
+      "text": "Give tight scope instructions and review for unnecessary refactors or broad edits, since the card reports out-of-scope coding changes at higher effort."
+    },
+    {
+      "text": "Treat the model as useful for defensive source-code security review, while keeping offensive or compiled-binary exploitation outside normal Copilot workflows."
+    },
+    {
+      "text": "Limit permissions around untrusted repositories, web pages, issue bodies, and tool outputs because prompt-injection attacks remain possible even after large robustness gains."
+    },
+    {
+      "text": "Run tests, inspect diffs, and verify commands or citations independently; confident Opus 5 answers can still include hallucinated or overconfident claims."
+    },
+    {
+      "text": "For long-horizon tasks, prefer incremental plans and checkpoints so self-checking loops, over-engineering, or partial completion are caught early."
+    },
+    {
+      "text": "Do not rely on the model alone for high-stakes health, election, child-safety, or similar user-facing decisions without product safeguards and human review."
+    }
+  ],
+  "coverage_notes": "This digest uses the dedicated Claude Opus 5 card, including the changelog, RSP, cyber, safeguards, agentic-safety, alignment, welfare, and capabilities sections through page 194. Appendix blocklists and most figure-only visual comparisons are omitted, and comparison-model numbers are included only when the Opus 5 card reports them as context."
+}

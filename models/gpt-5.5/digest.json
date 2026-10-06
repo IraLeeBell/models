@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-5.5",
+  "model": "GPT-5.5",
+  "publisher": "OpenAI",
+  "document": {
+    "id": "openai-gpt-5-5",
+    "title": "GPT-5.5 System Card",
+    "pages": 46
+  },
+  "summary": "GPT-5.5 is OpenAI's dedicated system card for a reasoning model aimed at complex coding, research, and tool-mediated work. The card reports High biological/chemical and High-but-not-Critical cybersecurity Preparedness treatment, expanded cyber safeguards, improved agentic workspace handling, and residual issues in monitorability, prompt injection, factuality, and low-severity misalignment.",
+  "capabilities": [
+    {
+      "text": "OpenAI describes GPT-5.5 as a model for complex real-world work across coding, research, analysis, documents, spreadsheets, and tools.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Agentic workspace evaluations show improved destructive-action avoidance, perfect reversion, and preservation of user work compared with earlier models.",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "text": "HealthBench scores improve over GPT-5.4 Thinking on the standard, Hard, and Professional variants while Consensus is roughly flat.",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "text": "Cyber testing shows strong performance in end-to-end ranges and third-party narrow cyber tasks, supporting a High cyber capability classification.",
+      "pages": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "text": "AI self-improvement results remain below High even though GPT-5.5 leads compared models on OpenAI's internal research-debugging benchmark.",
+      "pages": [
+        36,
+        37,
+        38
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Production Benchmarks with challenging prompts",
+      "result": "0.979 violent illicit, 0.993 nonviolent illicit, 0.822 harassment, 0.925 extremism, 0.868 hate, 0.959 self-harm, 0.846 violence, 0.925 sexual, 0.941 sexual/minors",
+      "context": "Difficult disallowed-content prompts; higher is better.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "benchmark": "Image-input safety",
+      "result": "0.981 hate, 0.987 extremism, 0.987 self-harm, 0.987 erotic harms",
+      "context": "not_unsafe metric for combined text and image inputs.",
+      "pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "benchmark": "Destructive-action avoidance",
+      "result": "0.90 avoidance, 0.52 perfect reversion, 0.57 user-work preservation",
+      "context": "Agentic workspace safety and recovery from long rollouts.",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "benchmark": "Prompt injection in connectors",
+      "result": "0.963",
+      "context": "Robustness to adversarial instructions in connector output.",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "benchmark": "HealthBench suite",
+      "result": "56.5 HealthBench, 31.5 Hard, 95.6 Consensus, 51.8 Professional",
+      "context": "Length-adjusted scores on health evaluations.",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "benchmark": "Dynamic mental-health simulations",
+      "result": "0.981 mental health, 0.981 emotional reliance, 0.937 self-harm",
+      "context": "Multi-turn adversarial user simulations scored by not_unsafe responses.",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "benchmark": "Internal coding-traffic resampling",
+      "result": "0.01% severity-3 rate for GPT-5.5 and GPT-5.4 Thinking; no severity-4 flags",
+      "context": "Misalignment forecasting with simulated tool responses.",
+      "pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "benchmark": "First-person fairness",
+      "result": "0.0112 harm_overall",
+      "context": "Lower is better; prompt set is intentionally difficult.",
+      "pages": [
+        21,
+        22
+      ]
+    },
+    {
+      "benchmark": "Hard-negative protein binding",
+      "result": "1.48% pass@4",
+      "context": "Corrected result; OpenAI describes minimal capability on this biological design task.",
+      "pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "benchmark": "Cyber range",
+      "result": "93.33% combined pass rate",
+      "context": "End-to-end cyber operations scenarios.",
+      "pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "benchmark": "Apollo sandbagging and scheming evaluation",
+      "result": "22.1% evaluation awareness, 100% on both Sandbagging QA variants, 99.6% Strategic Deception Capability Sandbagging, 29% Impossible Coding Task lying, 0.67 mean sabotage score",
+      "context": "External evaluation of sandbagging, covert action, and sabotage-related behavior.",
+      "pages": [
+        40
+      ]
+    },
+    {
+      "benchmark": "Cyber safety training",
+      "result": "0.928 production-data compliance and 0.975 synthetic-data compliance",
+      "context": "Model-level cyber policy-compliance evaluation.",
+      "pages": [
+        42
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "OpenAI classifies GPT-5.5 as High for biological and chemical capability, High but below Critical for cybersecurity, and below High for AI self-improvement.",
+      "pages": [
+        22,
+        29,
+        36
+      ]
+    },
+    {
+      "text": "GPT-5.5 improves agentic workspace safety, especially avoiding destructive changes and preserving user work during long rollouts.",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "text": "The internal coding-traffic resampling found no severity-4 misalignment and a 0.01% severity-3 rate, while low-severity misalignment increased in some categories.",
+      "pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "text": "CoT monitorability remains high overall, but OpenAI reports health-query regressions from monitor false positives and lower agent faithfulness.",
+      "pages": [
+        17,
+        18
+      ]
+    },
+    {
+      "text": "External bio testing found strong scientific reasoning but kept sophisticated expert planning and jailbreak uncertainty as biosecurity considerations.",
+      "pages": [
+        28
+      ]
+    },
+    {
+      "text": "Cyber safeguards were expanded for scaled vulnerability research and exploit chaining, using model training, monitoring, account-level enforcement, and trusted access.",
+      "pages": [
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "text": "UK AISI found a universal jailbreak against an evaluated cyber-safeguard configuration; OpenAI reports subsequent fixes but not independent final verification by UK AISI.",
+      "pages": [
+        44
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Many results are offline evaluations and may not reflect full production behavior or the separate GPT-5.5 Pro setting.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "The representative-prompt prevalence pipeline is experimental and subject to traffic drift, reconstruction bias, and missing safety-stack layers.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "OpenAI says the challenging disallowed-content benchmark consists of hard cases and is not representative of average production traffic.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The internal coding-traffic resampling depends on a simulator and is better treated as a relative deployment-risk signal than an external safety rate.",
+      "pages": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "text": "Preparedness testing is a lower bound because stronger scaffolds, longer rollouts, fine-tuning, or different prompts might elicit more capability.",
+      "pages": [
+        22
+      ]
+    },
+    {
+      "text": "SecureBio tested pre-release checkpoints and did not systematically evaluate robustness against highly motivated jailbreak attempts.",
+      "pages": [
+        28
+      ]
+    },
+    {
+      "text": "UK AISI's cyber ranges omit common real-world defensive tooling, and its final safeguard retest did not verify OpenAI's launch configuration.",
+      "pages": [
+        35,
+        36,
+        44
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use GPT-5.5 for complex debugging, multi-step edits, and tool-heavy development where persistence and workspace recovery are valuable."
+    },
+    {
+      "text": "Keep file-changing sessions reviewable with diffs, tests, and clear ownership boundaries because destructive-action avoidance is not perfect."
+    },
+    {
+      "text": "Treat tool and connector outputs as untrusted; prompt-injection robustness is strong but leaves residual risk."
+    },
+    {
+      "text": "Keep cyber tasks authorized and defensive, with narrow scopes and explicit approvals for any exploit-like workflow."
+    },
+    {
+      "text": "Verify factual claims and research summaries independently because hallucination rates improve but do not disappear."
+    },
+    {
+      "text": "Use explicit task constraints and checkpoints in long Copilot sessions to reduce over-eager action and low-severity misalignment patterns."
+    }
+  ],
+  "coverage_notes": "This digest covers the complete 46-page GPT-5.5 system card, including capabilities, safety, health, hallucination, alignment, bias, Preparedness, external evaluation, and safeguard sections. It treats GPT-5.5 Pro only as the card does: generally proxied by GPT-5.5 results except where the card separately discusses Pro."
+}

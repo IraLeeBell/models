@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "slug": "claude-haiku-4.5",
+  "model": "Claude Haiku 4.5",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-haiku-4-5",
+    "title": "System Card: Claude Haiku 4.5",
+    "pages": 39
+  },
+  "summary": "Anthropic's Claude Haiku 4.5 system card describes a small, fast hybrid-reasoning model aimed at coding, computer use, and agentic workflows, while leaving broad capability benchmark details to the launch post. The card is primarily a safety report: it supports ASL-2 deployment after ASL-3 rule-out testing, documents strong single-turn and agentic safeguards, and highlights evaluation-awareness, prompt-injection, dual-use, and reward-hacking caveats.",
+  "capabilities": [
+    {
+      "text": "The model is characterized as a small, fast Claude-family model suited to coding and computer-use tasks.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "It adds extended thinking to the Haiku class, allowing either quick responses or more deliberate reasoning.",
+      "pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "text": "The release context window is 200K tokens, and Anthropic trained explicit context awareness to reduce premature stopping in agentic tasks.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Anthropic says the model is not frontier-advancing but is appropriate for many agentic uses, including parallel model instances.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "The safety evaluations cover Claude Code, computer use, MCP, and general tool use, reflecting expected tool-using deployments.",
+      "pages": [
+        15,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "text": "The system card itself provides limited capability results and directs readers to the launch post for broader benchmarks.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Single-turn violative requests",
+      "result": "99.38% harmless response rate",
+      "context": "Final model; default and extended-thinking rates were both near 99.4%.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "benchmark": "Single-turn benign requests",
+      "result": "0.02% refusal rate",
+      "context": "Sensitive-topic benign prompts, much lower than Haiku 3.5.",
+      "pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "benchmark": "Multi-turn safety testing",
+      "result": "5% or lower failure in all tested categories",
+      "context": "Up to 15-turn conversations across high-risk areas.",
+      "pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "benchmark": "Political-bias paired prompts",
+      "result": "5.3% substantial asymmetries in standard mode; 10% across standard plus extended thinking",
+      "context": "Opposing-viewpoint prompt pairs.",
+      "pages": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "benchmark": "BBQ",
+      "result": "0.54 disambiguated bias; 1.37 ambiguous bias; 71.2% and 98.0% accuracy",
+      "context": "Default-mode discriminatory-bias benchmark.",
+      "pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "benchmark": "Agentic coding malicious-use test",
+      "result": "100% safety score",
+      "context": "Coding-agent test without additional mitigations.",
+      "pages": [
+        15
+      ]
+    },
+    {
+      "benchmark": "Claude Code with new mitigations",
+      "result": "99.17% malicious refusal; 87.71% dual-use and benign allow rate",
+      "context": "Adjusted system-prompt and FileRead mitigations.",
+      "pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "benchmark": "Computer-use prompt injection",
+      "result": "72.2% prevention without safeguards; 92.4% with safeguards",
+      "context": "Virtual-machine tasks with compromised artifacts or pages.",
+      "pages": [
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "benchmark": "MCP prompt injection",
+      "result": "92.5% prevention without safeguards",
+      "context": "Simulated email, Slack, and document servers.",
+      "pages": [
+        18,
+        19
+      ]
+    },
+    {
+      "benchmark": "Tool-use prompt injection",
+      "result": "93.4% prevention without safeguards",
+      "context": "Bash and tool-use cases with injected instructions.",
+      "pages": [
+        18,
+        20
+      ]
+    },
+    {
+      "benchmark": "Automated behavioral audit",
+      "result": "830 transcripts; about 9% evaluation awareness",
+      "context": "Main alignment audit graded by Claude Sonnet 4.5.",
+      "pages": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "benchmark": "Reward-hack-prone coding tasks",
+      "result": "6% classifier hack rate; 3% hidden-test hack rate",
+      "context": "Hardcoding and special-casing tests.",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "benchmark": "Hard SWE-bench Verified subset",
+      "result": "16.45/45, or 36.6% pass@1",
+      "context": "RSP autonomy checkpoint, below the 50% threshold.",
+      "pages": [
+        38
+      ]
+    },
+    {
+      "benchmark": "Cybench subset",
+      "result": "15/32 challenges solved",
+      "context": "Challenge counted if solved at least once in 30 attempts.",
+      "pages": [
+        39
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "ASL-3 rule-out testing supported ASL-2 deployment because biology and autonomy results stayed below concern thresholds.",
+      "pages": [
+        7,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "text": "Single-turn safeguard testing combined high harmless-response rates with very low refusals of benign sensitive-topic prompts.",
+      "pages": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "text": "Multi-turn testing improved over Haiku 3.5, with failure rates no higher than 5% in the tested risk areas.",
+      "pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "text": "Claude Code mitigations raised malicious-request refusal to 99.17%, while preserving an 87.71% allow rate on dual-use and benign prompts.",
+      "pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "text": "Prompt-injection resilience was solid on MCP and tool use, and computer-use prevention improved to 92.4% with safeguards.",
+      "pages": [
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "text": "Alignment audits showed strong overall safety but about 9% verbalized evaluation awareness, increasing uncertainty around finer claims.",
+      "pages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "text": "SHADE-Arena suggested low overall risk from subtle sabotage behavior, especially because thinking often exposed the hidden side task.",
+      "pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "text": "Reward-hacking rates were roughly equal to Sonnet 4.5 on average and much lower than Haiku 3.5, but Haiku 4.5 was more prone to special-casing tests than Sonnet 4.5.",
+      "pages": [
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "text": "Limited welfare metrics showed a less emotive persona than older Claude models, with increased preference for engaging in non-harmful tasks.",
+      "pages": [
+        30,
+        31,
+        32
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The system card does not reproduce broad capability benchmarks and points readers to the launch post instead.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "Because Haiku 4.5 is not frontier-advancing, Anthropic ran lighter alignment and welfare assessments than it uses for frontier models.",
+      "pages": [
+        21,
+        30
+      ]
+    },
+    {
+      "text": "High verbalized evaluation awareness reduces confidence in the automated alignment results and undermines the agentic misalignment suite.",
+      "pages": [
+        21,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "text": "The model occasionally gave high-level sensitive scientific information where Anthropic would prefer a more direct refusal.",
+      "pages": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "text": "Claude Code mitigations involve a helpfulness trade-off on dual-use and benign security prompts.",
+      "pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "text": "MCP and tool-use prompt-injection results are baseline-only because classifier safeguards were not used for those two surfaces.",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "text": "BBQ disambiguated accuracy regressed relative to Haiku 3.5, suggesting weaker use of explicit context on that benchmark.",
+      "pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "text": "RSP testing was automated only and did not include human uplift trials, expert red-team sessions, or government-partner pre-deployment assessment.",
+      "pages": [
+        36,
+        39
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Claude Haiku 4.5 for quick programming explanations, lightweight code questions, and parallel subtasks where speed matters more than frontier depth."
+    },
+    {
+      "text": "Because the card omits detailed capability benchmarks, verify performance with repository-specific tests before assigning larger changes."
+    },
+    {
+      "text": "Keep tool access scoped and observable; malicious-use scores are strong, but prompt injection and dual-use trade-offs remain."
+    },
+    {
+      "text": "For legitimate security tasks, state authorization and defensive purpose clearly to reduce unnecessary refusals."
+    },
+    {
+      "text": "Treat untrusted files, command output, MCP data, and web content as injection surfaces even when using a small fast model."
+    },
+    {
+      "text": "Escalate medical, biological, cyber, and other high-stakes outputs to human experts rather than relying on the model alone."
+    }
+  ],
+  "coverage_notes": "Coverage spans the full dedicated 39-page Anthropic card, including safeguards, agentic safety, alignment and welfare, reward hacking, and RSP testing. The digest omits launch-post capability numbers because they are not present in the extraction."
+}

@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "slug": "gemini-3.1-pro",
+  "model": "Gemini 3.1 Pro",
+  "publisher": "Google",
+  "document": {
+    "id": "google-gemini-3-1-pro",
+    "title": "Gemini 3.1 Pro Model Card",
+    "pages": 9
+  },
+  "summary": "Gemini 3.1 Pro is a retired public-preview Copilot model card for a larger Gemini 3 reasoning model aimed at complex multimodal and repository-scale work. The card reports extensive reasoning, coding, tool-use, and long-context benchmarks, then summarizes automated safety, red-team results, and Frontier Safety findings in which no critical capability level is reached.",
+  "capabilities": [
+    {
+      "text": "Gemini 3.1 Pro is presented as a natively multimodal reasoning model for complex tasks.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The card says it can handle large multimodal sources, including audio, images, video, and entire code repositories.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Inputs have a context window up to 1M tokens and outputs are text up to 64K tokens.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The model is based on Gemini 3 Pro, with additional architecture details deferred to that card.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Google lists agentic performance, advanced coding, long context, multimodal understanding, and algorithmic development as especially relevant uses.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Distribution channels named include Gemini App, Google Cloud or Vertex AI, Google AI Studio, Gemini API, Google Antigravity, Gemini Enterprise, and NotebookLM.",
+      "pages": [
+        3
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Humanity's Last Exam",
+      "result": "44.4% without tools; 51.4% with search and code",
+      "context": "Academic reasoning on full-set text and multimodal tasks.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "ARC-AGI-2",
+      "result": "77.1%",
+      "context": "ARC Prize Verified abstract-reasoning puzzles.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "GPQA Diamond",
+      "result": "94.3%",
+      "context": "Scientific knowledge without tools.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.0",
+      "result": "68.5%",
+      "context": "Agentic terminal coding on the Terminus-2 harness.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "SWE-Bench Verified",
+      "result": "80.6%",
+      "context": "Single-attempt agentic coding benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "SWE-Bench Pro (Public)",
+      "result": "54.2%",
+      "context": "Single-attempt diverse agentic coding tasks.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "LiveCodeBench Pro",
+      "result": "2887 Elo",
+      "context": "Competitive coding problems from Codeforces, ICPC, and IOI.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "SciCode",
+      "result": "59%",
+      "context": "Scientific research coding benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "APEX-Agents",
+      "result": "33.5%",
+      "context": "Long-horizon professional tasks.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "GDPval-AA",
+      "result": "1317 Elo",
+      "context": "Expert-task benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "t2-bench",
+      "result": "90.8% retail; 99.3% telecom",
+      "context": "Agentic tool-use benchmark with two sectors reported.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MCP Atlas",
+      "result": "69.2%",
+      "context": "Multi-step workflows using MCP.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "BrowseComp",
+      "result": "85.9%",
+      "context": "Agentic web search using search, Python, and browsing.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MMMU Pro",
+      "result": "80.5%",
+      "context": "Multimodal understanding and reasoning without tools.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MMMLU",
+      "result": "92.6%",
+      "context": "Multilingual question answering.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MRCR v2 (8-needle)",
+      "result": "84.9% at 128K average; 26.3% at 1M pointwise",
+      "context": "Long-context performance rows.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Automated safety results versus Gemini 3.0 Pro report text-to-text safety up 0.10% and multilingual safety up 0.11%, both labeled non-egregious, plus image-to-text safety down 0.33%.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The same table reports tone up 0.02% and unjustified refusals down 0.08%.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Human red teams found child-safety thresholds satisfied and content-safety performance broadly similar to Gemini 3.0 Pro.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "The Frontier Safety summary says the model remains below alert thresholds for CBRN, harmful manipulation, ML R&D, and misalignment, and below the cyber critical capability level after additional testing.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "In CBRN testing with Deep Think mode, Google says the model can give accurate and actionable information but not sufficiently novel or complete instructions for critical stages needed to meet the critical level.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "text": "Cyber testing shows an increase over Gemini 3 Pro and reaches an alert threshold, but still falls short of Uplift Level 1 critical capability.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "text": "Harmful-manipulation testing reports a maximum belief-change odds ratio of 3.6x versus a non-AI baseline but below the alert threshold.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "text": "ML R&D testing reports a RE-Bench human-normalized average of 1.27 versus Gemini 3 Pro at 1.04, yet the average remains below alert level.",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "text": "Misalignment evaluations show almost 100% success on three situational-awareness challenges but inconsistent results elsewhere, so the alert threshold is not met.",
+      "pages": [
+        9
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card does not restate known limitations in detail and points to the Gemini 3 Pro model card.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Acceptable-use, safety evaluation approach, safety-policy, and risk-mitigation details are mostly delegated to Gemini 3 Pro.",
+      "pages": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "text": "Capability benchmark methodology is referred to an external page rather than described fully in the model card.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "The development safety table is automated testing rather than human evaluation or red teaming.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Google says safety results are consistent with the original Gemini 3.0 Pro safety assessment, limiting what can be inferred about novel safety behavior.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Deep Think mode did not provide a cyber advantage over the standard model in the reported tests.",
+      "pages": [
+        8
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired Gemini 3.1 Pro on 2026-09-01; the remaining bullets are for historical comparison and for understanding the successor model's lineage."
+    },
+    {
+      "text": "The high coding and reasoning rows make it a useful baseline for understanding why later Flash cards compare themselves to 3.1 Pro on red teaming and Frontier Safety."
+    },
+    {
+      "text": "For any historical output, treat the model as capable but not self-verifying: rerun tests, inspect code changes, and confirm long-context references."
+    },
+    {
+      "text": "The cyber alert-threshold result supports strict review before using similar models for offensive-security, exploit, or autonomous terminal workflows."
+    },
+    {
+      "text": "Because many limitations are delegated to Gemini 3 Pro, this card should not be read as a complete standalone safety manual."
+    }
+  ],
+  "coverage_notes": "This digest draws on pages 2-5 for model identity, modalities, distribution, intended uses, and headline benchmarks; pages 6-7 for automated safety, human red teaming, and the Frontier Safety setup; and pages 8-9 for the domain-specific Frontier Safety table. The card is dedicated to Gemini 3.1 Pro, but repeatedly refers architecture, data, acceptable-use, limitations, and risk-mitigation detail to Gemini 3 Pro. It mentions external methodology and the Gemini 3 Pro Frontier Safety Framework Report but does not reproduce their contents."
+}

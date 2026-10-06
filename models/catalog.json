@@ -1,446 +1,1575 @@
 {
+  "schema_version": 2,
   "checked_at": "2026-10-06",
-  "docs_revision": "45a0f053ac67e8d1f56fc8f7ee38f0b2a58925c3",
-  "expected_model_count": 29,
+  "docs_repository": "github/docs",
+  "docs_revision": "8f330f19fad8c83c79e7c303466fa0bc1a229e6e",
+  "docs_tables_commit": "dd7e864b020676895e9e45774b0d24a231f105bc",
+  "roster_sources": [
+    "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+    "https://github.com/github/docs/blob/main/data/tables/copilot/model-supported-clients.yml",
+    "https://github.com/github/docs/blob/main/data/tables/copilot/model-release-status.yml",
+    "https://github.com/github/docs/blob/main/data/tables/copilot/auto-model-selection.yml",
+    "https://github.com/github/docs/blob/main/data/tables/copilot/model-deprecation-history.yml",
+    "https://github.com/github/docs/blob/main/data/tables/copilot/model-comparison.yml"
+  ],
+  "app_picker_checked_at": "2026-10-06",
+  "documents": {
+    "openai-gpt-5": {
+      "publisher": "OpenAI",
+      "title": "GPT-5 System Card",
+      "date": "2025-08-13",
+      "format": "pdf",
+      "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-5",
+      "bytes": 4666374,
+      "pages": 60,
+      "sha256": "f9f9c72d08cba81dcbb189129119357c8c32eca4e0b16c813aca386aed6b0459",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-5 System Card",
+      "rights": "not-granted"
+    },
+    "openai-gpt-5-3-codex": {
+      "publisher": "OpenAI",
+      "title": "GPT-5.3-Codex System Card",
+      "date": "2026-02-05",
+      "format": "pdf",
+      "url": "https://deploymentsafety.openai.com/gpt-5-3-codex/gpt-5-3-codex.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+      "bytes": 952381,
+      "pages": 31,
+      "sha256": "320635949a1e8b127af026167c4e991bb73a7e1f2ab824ee07fd764a92708107",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-5.3-Codex System Card",
+      "rights": "not-granted"
+    },
+    "openai-gpt-5-4-thinking": {
+      "publisher": "OpenAI",
+      "title": "GPT-5.4 Thinking System Card",
+      "date": "2026-03-05",
+      "format": "pdf",
+      "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+      "bytes": 2056209,
+      "pages": 38,
+      "sha256": "e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-5.4 Thinking System Card",
+      "rights": "not-granted"
+    },
+    "openai-gpt-5-5": {
+      "publisher": "OpenAI",
+      "title": "GPT-5.5 System Card",
+      "date": "2026-04-23",
+      "format": "pdf",
+      "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "bytes": 2370043,
+      "pages": 46,
+      "sha256": "31133a3f53b520713b87ff9b92ddf90d3e699ac8b47f87c3e739b4365e8bfecf",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-5.5 System Card",
+      "rights": "not-granted"
+    },
+    "openai-gpt-5-6": {
+      "publisher": "OpenAI",
+      "title": "GPT-5.6 System Card",
+      "date": "2026-07-09",
+      "format": "pdf",
+      "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "bytes": 4430565,
+      "pages": 82,
+      "sha256": "aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-5.6 System Card",
+      "rights": "not-granted",
+      "date_note": "The landing page lists updates on 2026-08-03 and 2026-08-19; the PDF metadata title still reads \"Preview\", but the PDF text is the GA card.",
+      "other_revisions": [
+        {
+          "url": "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf",
+          "bytes": 4411218,
+          "pages": 77,
+          "sha256": "679a6d76d1c3732b8facc8942367e93fd027cb4079a9677a20ff51524a1f36f2",
+          "note": "Superseded GPT-5.6 preview card dated 2026-06-25; recorded for provenance only."
+        }
+      ]
+    },
+    "openai-gpt-5-6-august-update": {
+      "publisher": "OpenAI",
+      "title": "GPT-5.6 – August Updates",
+      "date": "2026-08-06",
+      "format": "pdf",
+      "url": "https://deploymentsafety.openai.com/gpt-5-6-august-update/gpt-5-6-august-update.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-5-6-august-update",
+      "bytes": 1549095,
+      "pages": 30,
+      "sha256": "44b2d419b9a84bde1dab856fd70d1cfc81c21c34de7996cd06c89e241c97a59f",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-5.6 – August Updates",
+      "rights": "not-granted"
+    },
+    "openai-gpt-6-astra": {
+      "publisher": "OpenAI",
+      "title": "GPT-6 Astra System Card",
+      "date": "2026-09-03",
+      "format": "pdf",
+      "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-6-astra",
+      "bytes": 15779035,
+      "pages": 175,
+      "sha256": "77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-6 Astra System Card",
+      "rights": "not-granted"
+    },
+    "openai-gpt-6-1-sol": {
+      "publisher": "OpenAI",
+      "title": "Addendum: GPT-6.1 Sol System Card",
+      "date": "2026-09-29",
+      "format": "pdf",
+      "url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+      "landing_url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "bytes": 8020508,
+      "pages": 48,
+      "sha256": "1ae4ad6f0e2425a0f85623d3ccfc2a747c13611432a504ef0a7b5f4228789884",
+      "retrieved": "2026-10-06",
+      "title_check": "GPT-6.1 Sol System Card",
+      "rights": "not-granted"
+    },
+    "anthropic-claude-fable-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Fable 5 & Claude Mythos 5",
+      "date": "2026-06-09",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+      "bytes": 26960957,
+      "pages": 317,
+      "sha256": "f95d413845ad8624f384ba026963f2bad2158f10f2626575bb45e823e3c2e0ca",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Fable 5",
+      "rights": "not-granted",
+      "other_revisions": [
+        {
+          "url": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+          "bytes": 27001265,
+          "pages": 319,
+          "sha256": "d23b49f41fa5f3c523089c75e6718f12b59674d74fa981fd81205daf80c9029a",
+          "note": "Earlier revision (319 pages) before the changelog updates; superseded by the canonical URL."
+        }
+      ]
+    },
+    "anthropic-claude-fable-5-1": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Fable 5.1 & Claude Mythos 5.1",
+      "date": "2026-09-01",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf",
+      "bytes": 16397488,
+      "pages": 212,
+      "sha256": "b0d59edc7a60eef32a879c13d713cce60c3fefd7e6b5183afdc8b835af3c8c39",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Fable 5.1",
+      "rights": "not-granted"
+    },
+    "anthropic-claude-haiku-4-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Haiku 4.5",
+      "date": "2025-10",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-haiku-4-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970/Claude%20Haiku%204.5%20System%20Card.pdf",
+      "bytes": 1765218,
+      "pages": 39,
+      "sha256": "1b9ae5f4f66a65c1b37a031179af3dba35959471a3a5d195e4fe700b87558141",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Haiku 4.5",
+      "rights": "not-granted",
+      "other_revisions": [
+        {
+          "url": "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf",
+          "bytes": 1765218,
+          "pages": 39,
+          "sha256": "1b9ae5f4f66a65c1b37a031179af3dba35959471a3a5d195e4fe700b87558141",
+          "note": "Older asset URL; resolves to the identical file."
+        }
+      ]
+    },
+    "anthropic-claude-opus-4-8": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Opus 4.8",
+      "date": "2026-05-28",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-opus-4-8-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/0f0c97ad20d8005706296bd92aa1c27c6b2f4f61/Claude%20Opus%204.8%20System%20Card.pdf",
+      "bytes": 20587425,
+      "pages": 246,
+      "sha256": "0df5d061b6688c2d5839476620d66960011cb69043185dbed87ed1f68ab76d8f",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Opus 4.8",
+      "rights": "not-granted",
+      "date_note": "Changelog entries dated 2026-06-03 and 2026-06-17 (virology evaluation correction).",
+      "other_revisions": [
+        {
+          "url": "https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf",
+          "bytes": 20600475,
+          "pages": 246,
+          "sha256": "97f11ae3fb305c7105c958599bcf90f216669543393220f674610ddb83ee611a",
+          "note": "Earlier revision linked from GitHub's model comparison; superseded by the canonical URL."
+        }
+      ]
+    },
+    "anthropic-claude-opus-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Opus 5",
+      "date": "2026-07-24",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-opus-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/ceaf5c7ff2783855203fde8208ec311252dced5b/Claude%20Opus%205%20System%20Card.pdf",
+      "bytes": 16281258,
+      "pages": 198,
+      "sha256": "0950dae1ba6b341e4f1a009e535e0f025625efeca21bd043a9a5ae148a3f2e6b",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Opus 5",
+      "rights": "not-granted",
+      "date_note": "Changelog entry dated 2026-08-19.",
+      "other_revisions": [
+        {
+          "url": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+          "bytes": 15981937,
+          "pages": 193,
+          "sha256": "fed3c0e6d150a6ba855f0f117a632d2b27dbb5886fd42815caa92e3e20db1d25",
+          "note": "Earlier 193-page revision linked from GitHub's model comparison; superseded."
+        }
+      ]
+    },
+    "anthropic-claude-opus-5-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Opus 5.5",
+      "date": "2026-09-22",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-opus-5-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+      "bytes": 17795106,
+      "pages": 230,
+      "sha256": "7311c9c6bbb16d012f1c12c7418b05949fcf7ae3e30d2c40f22050074b2a7378",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Opus 5.5",
+      "rights": "not-granted"
+    },
+    "anthropic-claude-sonnet-4-6": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Sonnet 4.6",
+      "date": "2026-02-17",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-sonnet-4-6-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf",
+      "bytes": 8503340,
+      "pages": 135,
+      "sha256": "672339ab327e8798578b3559e8489561db5ad25e81b427de4e306393108e90b6",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Sonnet 4.6",
+      "rights": "not-granted",
+      "date_note": "Changelog entry dated 2026-03-06.",
+      "other_revisions": [
+        {
+          "url": "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
+          "bytes": 9357601,
+          "pages": 134,
+          "sha256": "8eb002f168d59851fa7dabbb6538df13bbf6a0dc652ce91411fa13572c46a4ba",
+          "note": "Earlier revision linked from GitHub's model comparison; superseded."
+        }
+      ]
+    },
+    "anthropic-claude-sonnet-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Sonnet 5",
+      "date": "2026-06-30",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-sonnet-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/283ef97c476cf442c91d9a37d5b214242a55bb92/Claude%20Sonnet%205%20System%20Card.pdf",
+      "bytes": 10786341,
+      "pages": 146,
+      "sha256": "33573adb9f1871b903f79b77d7755a44cc20bb913ef48ac9000ddb090e41f7ed",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Sonnet 5",
+      "rights": "not-granted",
+      "date_note": "Changelog entry dated 2026-07-10.",
+      "other_revisions": [
+        {
+          "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "bytes": 11676068,
+          "pages": 145,
+          "sha256": "0ce49aa473c3037455b45579980fd0b55708c1066df3f5f99f92bb3169d9b9b7",
+          "note": "Earlier 145-page revision; superseded."
+        },
+        {
+          "url": "https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf",
+          "bytes": 11676057,
+          "pages": 145,
+          "sha256": "05e46bff69885e22af07efda202ea323c4bffc4453250d2041003fba9505e2c4",
+          "note": "Earlier 145-page revision; superseded."
+        }
+      ]
+    },
+    "anthropic-claude-sonnet-5-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Sonnet 5.5",
+      "date": "2026-09-28",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+      "bytes": 13101289,
+      "pages": 148,
+      "sha256": "89cfd6a6d3aa6148eaf23f4a53006950ee7746009f381237c62920c720725785",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Sonnet 5.5",
+      "rights": "not-granted"
+    },
+    "anthropic-claude-opus-4-7": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Opus 4.7",
+      "date": "2026-04-16",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-opus-4-7-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf",
+      "bytes": 14231870,
+      "pages": 232,
+      "sha256": "a7729a0e5eb61dc6818f553ae3c27ab774411cd5ab4ed7f414456d74a05c26d2",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Opus 4.7",
+      "rights": "not-granted"
+    },
+    "anthropic-claude-opus-4-6": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Opus 4.6",
+      "date": "2026-02",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-opus-4-6-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/6a5fa276ac68b9aeb0c8b6af5fa36326e0e166dd/Claude%20Opus%204.6%20System%20Card.pdf",
+      "bytes": 13208951,
+      "pages": 213,
+      "sha256": "4db67c6b6aea0a87e7f8a784b83fc05a0f1a61a3e87615fe7956e3486b951b3c",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Opus 4.6",
+      "rights": "not-granted"
+    },
+    "anthropic-claude-opus-4-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Opus 4.5",
+      "date": "2025-11",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-opus-4-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47/Claude%20Opus%204.5%20System%20Card.pdf",
+      "bytes": 11499930,
+      "pages": 153,
+      "sha256": "33be92efcb58f901d9d2c17e61bf277afbd514a1ac70a642f21e918c21ca25a8",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Opus 4.5",
+      "rights": "not-granted"
+    },
+    "anthropic-claude-sonnet-4-5": {
+      "publisher": "Anthropic",
+      "title": "System Card: Claude Sonnet 4.5",
+      "date": "2025-09",
+      "format": "pdf",
+      "url": "https://www.anthropic.com/claude-sonnet-4-5-system-card",
+      "resolved_url": "https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd/Claude%20Sonnet%204.5%20System%20Card.pdf",
+      "bytes": 12756307,
+      "pages": 149,
+      "sha256": "d5d1ce28fea101ae3b201a5d4da100090a5d6b73246f7da820cafd7dbb11100e",
+      "retrieved": "2026-10-06",
+      "title_check": "Claude Sonnet 4.5",
+      "rights": "not-granted"
+    },
+    "google-gemini-3-8-flash": {
+      "publisher": "Google DeepMind",
+      "title": "Gemini 3.8 Flash — Model Card",
+      "date": "2026-09",
+      "format": "pdf",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-8-Flash-Model-Card.pdf",
+      "bytes": 734978,
+      "pages": 8,
+      "sha256": "fd9b9494c8cb0da6dc16777c3df70d9f9226708e08ba7c9337222207c5d482af",
+      "retrieved": "2026-10-06",
+      "title_check": "Gemini 3.8 Flash",
+      "rights": "not-granted"
+    },
+    "google-gemini-3-7-flash": {
+      "publisher": "Google DeepMind",
+      "title": "Gemini 3.7 Flash — Model Card",
+      "date": "2026-08",
+      "format": "pdf",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-7-Flash-Model-Card.pdf",
+      "bytes": 386307,
+      "pages": 9,
+      "sha256": "6d7f1347e7f55d44a634bef40bd96fd3e70d331826382c75733b633af3be9aef",
+      "retrieved": "2026-10-06",
+      "title_check": "Gemini 3.7 Flash",
+      "rights": "not-granted"
+    },
+    "google-gemini-3-6-flash": {
+      "publisher": "Google DeepMind",
+      "title": "Gemini 3.6 Flash — Model Card",
+      "date": "2026-07",
+      "format": "pdf",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-6-Flash-Model-Card.pdf",
+      "bytes": 325810,
+      "pages": 7,
+      "sha256": "2c54f031b6fdee883e562eaa1a9f5e3d43bee4e81f5dd55edc6b965fba03b4a2",
+      "retrieved": "2026-10-06",
+      "title_check": "Gemini 3.6 Flash",
+      "rights": "not-granted"
+    },
+    "google-gemini-3-5-flash": {
+      "publisher": "Google DeepMind",
+      "title": "Gemini 3.5 Flash Model Card",
+      "date": "2026-05",
+      "format": "pdf",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Model-Card.pdf",
+      "bytes": 556751,
+      "pages": 7,
+      "sha256": "eed86d38a5f69732eea4ef3dd5662e526496a77d1cdf61679319d45461a2c195",
+      "retrieved": "2026-10-06",
+      "title_check": "Gemini 3.5 Flash",
+      "rights": "not-granted"
+    },
+    "google-gemini-3-1-pro": {
+      "publisher": "Google DeepMind",
+      "title": "Gemini 3.1 Pro Model Card",
+      "date": "2026-02",
+      "format": "pdf",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf",
+      "bytes": 875842,
+      "pages": 9,
+      "sha256": "70bcda79a248255d2c858600cb1fecae9ea30278c942684754df0bca71ca8315",
+      "retrieved": "2026-10-06",
+      "title_check": "Gemini 3.1 Pro",
+      "rights": "not-granted"
+    },
+    "google-gemini-3-flash": {
+      "publisher": "Google DeepMind",
+      "title": "Gemini 3 Flash Model Card",
+      "date": "2025-12",
+      "format": "pdf",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
+      "bytes": 380481,
+      "pages": 6,
+      "sha256": "b2800104a47322d76d80a72bfb128ba7f0bacffc419ae9bb630eae289c761ba0",
+      "retrieved": "2026-10-06",
+      "title_check": "Gemini 3 Flash",
+      "rights": "not-granted"
+    },
+    "google-gemini-2-5-pro": {
+      "publisher": "Google DeepMind",
+      "title": "Gemini 2.5 Pro Model Card",
+      "date": "2025-06-27",
+      "format": "pdf",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf",
+      "bytes": 1238466,
+      "pages": 21,
+      "sha256": "247f1ba6fc665333ade40fa8871b668e6f652e285c9561de2c57194183e6cf53",
+      "retrieved": "2026-10-06",
+      "title_check": "Gemini 2.5 Pro",
+      "rights": "not-granted",
+      "date_note": "Card states it was updated June 27, 2025."
+    },
+    "microsoft-mai-code-1-1-flash": {
+      "publisher": "Microsoft",
+      "title": "MAI-Code-1.1-Flash model card",
+      "date": "2026-08-11",
+      "format": "pdf",
+      "url": "https://microsoft.ai/pdf/MAI-Code-1.1-Flash-Model-Card.PDF",
+      "bytes": 192890,
+      "pages": 6,
+      "sha256": "9caf4abe4c8eb6c3b5e1dfd5c61238e42139510bf4c5690d6115d9277f59e22f",
+      "retrieved": "2026-10-06",
+      "title_check": "MAI-Code-1.1-Flash",
+      "rights": "not-granted",
+      "date_note": "Release date stated in the card."
+    },
+    "microsoft-mai-code-1-flash": {
+      "publisher": "Microsoft",
+      "title": "MAI-Code-1-Flash model card",
+      "date": "2026-06-02",
+      "format": "pdf",
+      "url": "https://microsoft.ai/pdf/MAI-Code-1-Flash-Model-Card.PDF",
+      "bytes": 208117,
+      "pages": 6,
+      "sha256": "912d5bdb90a3d6cb207c6ff9cbccc79feb400283d2151f89f56b49a2af06ed75",
+      "retrieved": "2026-10-06",
+      "title_check": "MAI-Code-1-Flash",
+      "rights": "not-granted",
+      "date_note": "Release date stated in the card."
+    },
+    "moonshot-kimi-k3": {
+      "publisher": "Moonshot AI",
+      "title": "Kimi K3: Open Frontier Intelligence — Technical Report of Kimi K3",
+      "date": "2026-07-23",
+      "format": "pdf",
+      "url": "https://raw.githubusercontent.com/MoonshotAI/Kimi-K3/main/k3_tech_report.pdf",
+      "landing_url": "https://github.com/MoonshotAI/Kimi-K3",
+      "bytes": 1795670,
+      "pages": 47,
+      "sha256": "86fb82a63ced501f0c3f4f404c0c6fa88a7a6cfac17aae81fd1a8f455998067c",
+      "retrieved": "2026-10-06",
+      "title_check": "Kimi K3",
+      "rights": "granted",
+      "rights_basis": "The Kimi K3 License (Copyright (c) 2026 Moonshot AI) in the publishing repository grants permission to copy, publish, and distribute the \"Software\", which it defines to include associated documentation, provided the copyright and permission notice is included. Its commercial-display and model-as-a-service conditions do not apply to a documentation repository.",
+      "license_file": "LICENSE-Kimi-K3.txt",
+      "license_name": "Kimi K3 License",
+      "copyright": "Copyright (c) 2026 Moonshot AI",
+      "license_url": "https://github.com/MoonshotAI/Kimi-K3/blob/main/LICENSE",
+      "license_raw_url": "https://raw.githubusercontent.com/MoonshotAI/Kimi-K3/main/LICENSE",
+      "license_sha256": "f45c677fa7f42405512b67f9b18b4ccd6927c6787492867763d80368631b7c54"
+    },
+    "moonshot-kimi-k2-7-code": {
+      "publisher": "Moonshot AI",
+      "title": "Kimi K2.7 Code (Hugging Face model card)",
+      "date": null,
+      "format": "markdown",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/raw/main/README.md",
+      "landing_url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "bytes": 15061,
+      "pages": null,
+      "sha256": "c78bbe5af19636b180eda956abf1f30a79027ec04d6642ebddc44edbc4470879",
+      "retrieved": "2026-10-06",
+      "title_check": "Kimi K2.7 Code",
+      "rights": "granted",
+      "rights_basis": "The model repository declares license \"modified-mit\"; its LICENSE grants permission to copy, publish, and distribute the \"Software\", including associated documentation files, provided the copyright and permission notice is included.",
+      "license_file": "LICENSE-Kimi-K2.7-Code.txt",
+      "license_name": "Modified MIT License",
+      "copyright": "Copyright (c) 2026 Moonshot AI",
+      "license_url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/blob/main/LICENSE",
+      "license_raw_url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/raw/main/LICENSE",
+      "license_sha256": "9cb73476cecdfabac7775bf7c225bd5f6017d5d678372917e4456964c0454f7a",
+      "date_note": "The model card is not dated; Moonshot AI publishes no PDF system card or technical report for Kimi K2.7 Code."
+    },
+    "xai-grok-4-5": {
+      "publisher": "xAI",
+      "title": "Model Card: Grok 4.5",
+      "date": "2026-07-14",
+      "format": "pdf",
+      "url": "https://media.x.ai/v1/website/4p5-5184fdf9.pdf",
+      "bytes": 475702,
+      "pages": 29,
+      "sha256": "068d432a70abc12787453c7424cd54452d38fcaebb498fa1c7f6d4b41658659f",
+      "retrieved": "2026-10-06",
+      "title_check": "Grok 4.5",
+      "rights": "not-granted",
+      "date_note": "Revision 2026-07-20.",
+      "other_revisions": [
+        {
+          "url": "https://media.x.ai/v1/website/card-7f81d41b.pdf",
+          "bytes": 421,
+          "pages": 1,
+          "sha256": "617951237c7d2ee6a0fdd32818e52c0f7035219c3815592cba0bd1ef5fb72ba6",
+          "note": "URL linked from GitHub's model comparison; on 2026-10-06 it served a blank one-page PDF."
+        }
+      ]
+    },
+    "xai-grok-4-6": {
+      "publisher": "xAI",
+      "title": "Model Card: Grok 4.6",
+      "date": "2026-08-12",
+      "format": "pdf",
+      "url": "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
+      "bytes": 540844,
+      "pages": 42,
+      "sha256": "1fbb3ab6d7c572720e05d501eab8f11052b32db8d5936e66802c5c49b2261f4f",
+      "retrieved": "2026-10-06",
+      "title_check": "Grok 4.6",
+      "rights": "not-granted",
+      "date_note": "Revision 2026-08-17."
+    },
+    "xai-grok-4-7": {
+      "publisher": "xAI",
+      "title": "Model Card: Grok 4.7",
+      "date": "2026-09-21",
+      "format": "pdf",
+      "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "bytes": 332355,
+      "pages": 30,
+      "sha256": "9e4269af5fb9685d27b2fa73619fb1a6b278027f52d5438ceafd6994c9f2b486",
+      "retrieved": "2026-10-06",
+      "title_check": "Grok 4.7",
+      "rights": "not-granted",
+      "date_note": "Revision 2026-09-21."
+    }
+  },
   "models": [
     {
       "slug": "gpt-5-mini",
       "name": "GPT-5 mini",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "gpt-5-mini",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "app_long_context": false,
       "summary": "A quick option for routine coding questions, edits, and explanations.",
-      "card": null,
-      "card_note": "OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) identifies the model. Its [GPT-5 System Card](https://deploymentsafety.openai.com/gpt-5) discusses gpt-5-main-mini and gpt-5-thinking-mini, but does not establish which, if either, corresponds to the Copilot picker option. No dedicated GPT-5 mini card was confirmed."
+      "document": "openai-gpt-5",
+      "scope": "The GPT-5 System Card covers the GPT-5 family. It states that the API provides the thinking model, its mini version, and a nano version, and reports the mini model as gpt-5-thinking-mini.",
+      "scope_terms": [
+        "gpt-5-thinking-mini"
+      ],
+      "card_note": "No dedicated GPT-5 mini card exists. OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) (snapshot gpt-5-mini-2025-08-07) identifies the API model; the family card's statement that the API serves the mini version of the thinking model ties GPT-5 mini to the gpt-5-thinking-mini results.",
+      "series": "GPT mini",
+      "related": [
+        {
+          "slug": "raptor-mini",
+          "relation": "retired GitHub offering that GitHub described as a fine-tuned GPT-5 mini"
+        }
+      ]
     },
     {
       "slug": "gpt-5.3-codex",
       "name": "GPT-5.3-Codex",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "gpt-5.3-codex",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "app_long_context": false,
       "summary": "A coding-focused model for multi-step software-development agents.",
-      "card": {
-        "title": "GPT-5.3-Codex System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
-        "scope": "OpenAI's GPT-5.3-Codex deployment-safety page; HTML, not a PDF extraction."
-      }
+      "document": "openai-gpt-5-3-codex",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "GPT-5.3-Codex"
+      ],
+      "card_note": "An earlier catalog revision described this card as HTML-only; OpenAI also publishes the PDF linked here."
     },
     {
       "slug": "gpt-5.4",
       "name": "GPT-5.4",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "gpt-5.4",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "app_long_context": true,
       "summary": "For layered debugging and architecture questions requiring sustained reasoning.",
-      "card": {
-        "title": "GPT-5.4 Thinking System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
-        "scope": "GPT-5.4 Thinking; GitHub's comparison identifies this card with GPT-5.4.",
-        "sha256": "e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50"
-      }
+      "document": "openai-gpt-5-4-thinking",
+      "scope": "GPT-5.4 Thinking; GitHub's model comparison links this card for GPT-5.4.",
+      "scope_terms": [
+        "GPT-5.4 Thinking"
+      ]
     },
     {
       "slug": "gpt-5.4-mini",
       "name": "GPT-5.4 mini",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "gpt-5.4-mini",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "app_long_context": false,
       "summary": "For quick codebase navigation and agentic exploration using search tools.",
-      "card": {
-        "title": "GPT-5.4 Thinking System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
-        "scope": "The PDF includes an explicit appendix titled GPT-5.4 mini; the main report concerns GPT-5.4 Thinking.",
-        "sha256": "e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50"
-      }
+      "document": "openai-gpt-5-4-thinking",
+      "scope": "Section 6, \"Appendix: GPT-5.4 mini\" (PDF pages 32-36) of the GPT-5.4 Thinking System Card.",
+      "scope_terms": [
+        "GPT-5.4 mini"
+      ],
+      "card_note": "No standalone GPT-5.4 mini card exists; the GPT-5.4 Thinking card devotes an appendix to it.",
+      "series": "GPT mini"
+    },
+    {
+      "slug": "gpt-5.4-nano",
+      "name": "GPT-5.4 nano",
+      "provider": "OpenAI",
+      "lifecycle": "utility",
+      "release_status": "GA",
+      "cli": false,
+      "summary": "A small, low-latency model GitHub uses for utility work; it is not offered in the CLI or app model pickers.",
+      "document": null,
+      "scope": "No publisher system card covers GPT-5.4 nano. The GPT-5.4 Thinking System Card does not mention it.",
+      "scope_terms": [],
+      "card_note": "No dedicated card. Closest owner documentation: OpenAI's [GPT-5.4 nano model page](https://developers.openai.com/api/docs/models/gpt-5.4-nano) (snapshot gpt-5.4-nano-2026-03-17).",
+      "note": "GitHub's per-client table marks it unavailable in every client except the Codex extension for VS Code (Copilot Pro+), so it is not a manually selectable CLI or app model.",
+      "related": [
+        {
+          "slug": "gpt-5.4",
+          "relation": "same OpenAI release generation (March 2026)"
+        },
+        {
+          "slug": "gpt-5.4-mini",
+          "relation": "same generation; covered by an appendix of the GPT-5.4 Thinking card"
+        }
+      ]
     },
     {
       "slug": "gpt-5.5",
       "name": "GPT-5.5",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "gpt-5.5",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "app_long_context": true,
       "summary": "For difficult debugging and multi-step design or code analysis.",
-      "card": {
-        "title": "GPT-5.5 System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
-        "scope": "Dedicated GPT-5.5 system card.",
-        "sha256": "31133a3f53b520713b87ff9b92ddf90d3e699ac8b47f87c3e739b4365e8bfecf"
-      }
+      "document": "openai-gpt-5-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "GPT-5.5"
+      ]
     },
     {
       "slug": "gpt-5.6-luna",
       "name": "GPT-5.6 Luna",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gpt-5.6-luna",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "The fast GPT-5.6 option for small, time-sensitive coding tasks.",
-      "card": {
-        "title": "GPT-5.6 System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
-        "scope": "The introduction explicitly names Luna, Sol, and Terra as the three GPT-5.6 models.",
-        "sha256": "aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b"
-      }
+      "document": "openai-gpt-5-6",
+      "supplements": [
+        "openai-gpt-5-6-august-update"
+      ],
+      "scope": "The GPT-5.6 System Card covers the Sol, Terra, and Luna family members. The August update covers refreshed ChatGPT versions of Sol and Luna.",
+      "scope_terms": [
+        "Luna"
+      ],
+      "card_note": "The August update states that Codex and ChatGPT Work continue to use the previously released GPT-5.6 versions; GitHub does not state which GPT-5.6 Luna checkpoint Copilot serves.",
+      "series": "GPT Luna"
     },
     {
       "slug": "gpt-5.6-sol",
       "name": "GPT-5.6 Sol",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gpt-5.6-sol",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For long-running agentic coding and reasoning across large repositories.",
-      "card": {
-        "title": "GPT-5.6 System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
-        "scope": "The introduction explicitly names Luna, Sol, and Terra as the three GPT-5.6 models.",
-        "sha256": "aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b"
-      }
+      "document": "openai-gpt-5-6",
+      "supplements": [
+        "openai-gpt-5-6-august-update"
+      ],
+      "scope": "The GPT-5.6 System Card covers the Sol, Terra, and Luna family members. The August update covers refreshed ChatGPT versions of Sol and Luna.",
+      "scope_terms": [
+        "Sol"
+      ],
+      "card_note": "The August update states that Codex and ChatGPT Work continue to use the previously released GPT-5.6 versions; GitHub does not state which GPT-5.6 Sol checkpoint Copilot serves.",
+      "series": "GPT Sol"
     },
     {
       "slug": "gpt-5.6-terra",
       "name": "GPT-5.6 Terra",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gpt-5.6-terra",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "A middle-ground choice for everyday interactive and agentic coding.",
-      "card": {
-        "title": "GPT-5.6 System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
-        "scope": "The introduction explicitly names Luna, Sol, and Terra as the three GPT-5.6 models.",
-        "sha256": "aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b"
-      }
+      "document": "openai-gpt-5-6",
+      "scope": "The GPT-5.6 System Card covers the Sol, Terra, and Luna family members. The August update does not cover Terra.",
+      "scope_terms": [
+        "Terra"
+      ]
     },
     {
       "slug": "gpt-6-astra",
       "name": "GPT-6 Astra",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gpt-6-astra",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For autonomous, long-horizon software changes with planning and verification.",
-      "card": {
-        "title": "GPT-6 Astra System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
-        "scope": "Main body covers Astra; an explicitly titled September 22 appendix covers GPT-6 Sol and GPT-6 Luna.",
-        "sha256": "77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895"
-      }
+      "document": "openai-gpt-6-astra",
+      "scope": "Dedicated publisher card for GPT-6 Astra (main body).",
+      "scope_terms": [
+        "GPT-6 Astra"
+      ]
     },
     {
       "slug": "gpt-6-luna",
       "name": "GPT-6 Luna",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gpt-6-luna",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For fast responses on smaller repetitive development tasks.",
-      "card": {
-        "title": "GPT-6 Astra System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
-        "scope": "The September 22 appendix explicitly covers GPT-6 Luna; do not treat Astra-only evaluations as Luna results.",
-        "sha256": "77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895"
-      }
+      "document": "openai-gpt-6-astra",
+      "scope": "Appendix A, \"GPT-6 Sol, GPT-6 Luna\", of the GPT-6 Astra System Card (begins on PDF page 119).",
+      "scope_terms": [
+        "GPT-6 Luna"
+      ],
+      "card_note": "No standalone GPT-6 Luna card exists; the GPT-6 Astra card covers it in Appendix A.",
+      "series": "GPT Luna"
     },
     {
       "slug": "gpt-6-sol",
       "name": "GPT-6 Sol",
       "provider": "OpenAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gpt-6-sol",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For interactive coding agents requiring careful multi-step checks.",
-      "card": {
-        "title": "GPT-6 Astra System Card",
-        "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
-        "scope": "The September 22 appendix explicitly covers GPT-6 Sol; do not treat Astra-only evaluations as Sol results.",
-        "sha256": "77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895"
-      }
+      "document": "openai-gpt-6-astra",
+      "scope": "Appendix A, \"GPT-6 Sol, GPT-6 Luna\", of the GPT-6 Astra System Card (begins on PDF page 119).",
+      "scope_terms": [
+        "GPT-6 Sol"
+      ],
+      "card_note": "No standalone GPT-6 Sol card exists; the GPT-6 Astra card covers it in Appendix A.",
+      "series": "GPT Sol"
     },
     {
       "slug": "gpt-6.1-sol",
       "name": "GPT-6.1 Sol",
       "provider": "OpenAI",
-      "cli_source": "auto-only",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": "auto-only",
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gpt-6.1-sol",
+      "app_reasoning_efforts": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "A publicly listed option for complex coding and efficient multi-step reasoning.",
-      "note": "GitHub's model comparison still says 'Coming soon', but OpenAI now publishes an HTML addendum. CLI support is documented in the Auto table, not yet the per-client table.",
-      "card": {
-        "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol",
-        "url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
-        "scope": "Dedicated GPT-6.1 Sol addendum to the Astra system card, not a standalone PDF or an Astra-only evaluation."
-      }
+      "document": "openai-gpt-6-1-sol",
+      "scope": "Dedicated addendum system card for GPT-6.1 Sol.",
+      "scope_terms": [
+        "GPT-6.1 Sol"
+      ],
+      "card_note": "GitHub's model comparison still says the card is coming soon; OpenAI publishes the addendum PDF linked here.",
+      "note": "GitHub lists GPT-6.1 Sol as GA and includes it in Auto model selection for the CLI and app, but it is not yet a row in the per-client support table. It appears in the app model picker.",
+      "series": "GPT Sol"
     },
     {
       "slug": "claude-fable-5",
       "name": "Claude Fable 5",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": false,
       "app_auto": false,
       "summary": "For longer autonomous coding tasks that benefit from initial planning and verification.",
-      "note": "GitHub documents special data-handling requirements and administrator approval for Fable 5; see the Fable footnote in the supported-models table.",
-      "card": {
-        "title": "Claude Fable 5 & Claude Mythos 5 System Card",
-        "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
-        "scope": "Anthropic explicitly names Fable 5 and Mythos 5 in this shared system card; it does not cover Fable 5.1.",
-        "sha256": "f95d413845ad8624f384ba026963f2bad2158f10f2626575bb45e823e3c2e0ca"
-      }
+      "document": "anthropic-claude-fable-5",
+      "scope": "Joint card for Claude Fable 5 and Claude Mythos 5; this catalog entry uses the Fable 5 content.",
+      "scope_terms": [
+        "Claude Fable 5"
+      ],
+      "note": "GitHub's footnote says Anthropic retains Fable prompts and outputs for safety classifiers; a zero-data-retention exemption runs through the end of 2026, after which an enterprise feature setting is required. It was not offered in the app model picker on the check date.",
+      "series": "Claude Fable"
     },
     {
       "slug": "claude-fable-5.1",
       "name": "Claude Fable 5.1",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": false,
       "app_auto": false,
       "summary": "For sustained codebase research, feature work, and multi-stage agent workflows.",
-      "note": "GitHub documents special data-handling requirements and administrator approval for Fable 5.1; see the Fable footnote in the supported-models table.",
-      "card": {
-        "title": "Claude Fable 5.1 & Claude Mythos 5.1 System Card",
-        "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf",
-        "scope": "Dedicated shared report for Fable 5.1 and Mythos 5.1, not the earlier 5.0 report.",
-        "sha256": "b0d59edc7a60eef32a879c13d713cce60c3fefd7e6b5183afdc8b835af3c8c39"
-      }
+      "document": "anthropic-claude-fable-5-1",
+      "scope": "Joint card for Claude Fable 5.1 and Claude Mythos 5.1; this catalog entry uses the Fable 5.1 content.",
+      "scope_terms": [
+        "Claude Fable 5.1"
+      ],
+      "note": "The same Fable data-retention footnote applies. It was not offered in the app model picker on the check date.",
+      "series": "Claude Fable"
     },
     {
       "slug": "claude-haiku-4.5",
       "name": "Claude Haiku 4.5",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "claude-haiku-4.5",
+      "app_reasoning_efforts": [],
+      "app_long_context": false,
       "summary": "For lightweight programming questions and quick explanations.",
-      "card": {
-        "title": "Claude Haiku 4.5 System Card",
-        "url": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf",
-        "scope": "Dedicated Claude Haiku 4.5 system card.",
-        "sha256": "1b9ae5f4f66a65c1b37a031179af3dba35959471a3a5d195e4fe700b87558141"
-      }
+      "document": "anthropic-claude-haiku-4-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Haiku 4.5"
+      ]
     },
     {
       "slug": "claude-opus-4.8",
       "name": "Claude Opus 4.8",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "claude-opus-4.8",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For complex debugging and high-effort reasoning over software changes.",
-      "card": {
-        "title": "Claude Opus 4.8 System Card",
-        "url": "https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf",
-        "scope": "Dedicated Claude Opus 4.8 system card.",
-        "sha256": "97f11ae3fb305c7105c958599bcf90f216669543393220f674610ddb83ee611a"
-      }
+      "document": "anthropic-claude-opus-4-8",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Opus 4.8"
+      ],
+      "card_note": "GitHub's comparison links an earlier revision; the canonical Anthropic URL now serves the corrected revision recorded here.",
+      "series": "Claude Opus",
+      "related": [
+        {
+          "slug": "claude-opus-4.8-fast-mode",
+          "relation": "Copilot preview of the same model served in Anthropic fast mode"
+        }
+      ]
     },
     {
       "slug": "claude-opus-4.8-fast-mode",
       "name": "Claude Opus 4.8 (fast mode) (preview)",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": false,
       "app_auto": false,
       "summary": "A preview fast-service mode of Opus 4.8 for the same kinds of demanding tasks.",
-      "note": "Fast mode is a Copilot option, not evidence of a separate model or a separately evaluated system card.",
-      "card": {
-        "title": "Claude Opus 4.8 System Card",
-        "url": "https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf",
-        "scope": "Covers base Opus 4.8 only. GitHub links it for fast mode; no separate fast-mode evaluations are claimed.",
-        "sha256": "97f11ae3fb305c7105c958599bcf90f216669543393220f674610ddb83ee611a"
-      }
+      "document": "anthropic-claude-opus-4-8",
+      "scope": "The Claude Opus 4.8 System Card. The card does not mention fast mode; Anthropic's fast mode documentation states that fast mode runs the same model weights with a faster inference configuration and no change to intelligence or capabilities.",
+      "scope_terms": [
+        "Claude Opus 4.8"
+      ],
+      "card_note": "Anthropic's [system-card index](https://www.anthropic.com/system-cards) listed no separate fast-mode card on the check date. Scope is substantiated by Anthropic's [fast mode documentation](https://platform.claude.com/docs/en/build-with-claude/fast-mode), a research preview offering faster output on the same model.",
+      "note": "GitHub's model name carries \"(preview)\", while its release-status table lists GA; this catalog records the table value. It was not offered in the app model picker on the check date.",
+      "related": [
+        {
+          "slug": "claude-opus-4.8",
+          "relation": "the same model at standard speed; its system card is the document used here"
+        }
+      ]
     },
     {
       "slug": "claude-opus-5",
       "name": "Claude Opus 5",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "claude-opus-5",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For difficult reasoning-intensive software problems and analysis.",
-      "card": {
-        "title": "Claude Opus 5 System Card",
-        "url": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
-        "scope": "Dedicated Claude Opus 5 system card, not a card for Opus 5.5.",
-        "sha256": "fed3c0e6d150a6ba855f0f117a632d2b27dbb5886fd42815caa92e3e20db1d25"
-      }
+      "document": "anthropic-claude-opus-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Opus 5"
+      ],
+      "card_note": "GitHub's comparison links an earlier 193-page revision; the canonical Anthropic URL serves the updated revision recorded here.",
+      "series": "Claude Opus"
     },
     {
       "slug": "claude-opus-5.5",
       "name": "Claude Opus 5.5",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "claude-opus-5.5",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For prolonged agentic work involving recovery from errors and collaboration.",
-      "card": {
-        "title": "Claude Opus 5.5 System Card",
-        "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
-        "scope": "Dedicated Claude Opus 5.5 system card.",
-        "sha256": "7311c9c6bbb16d012f1c12c7418b05949fcf7ae3e30d2c40f22050074b2a7378"
-      }
+      "document": "anthropic-claude-opus-5-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Opus 5.5"
+      ],
+      "series": "Claude Opus"
     },
     {
       "slug": "claude-sonnet-4.6",
       "name": "Claude Sonnet 4.6",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "limited",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": false,
       "app_auto": false,
-      "status": "Retired 2026-09-01; annual individual-plan exception",
+      "retired_on": "2026-09-01",
       "summary": "A general-purpose coding option retained for eligible annual subscribers.",
-      "note": "GitHub still lists it as GA and CLI-supported, but its retirement-history footnote says the retirement does not apply to individual Copilot subscribers on annual plans. Do not assume general access.",
-      "card": {
-        "title": "Claude Sonnet 4.6 System Card",
-        "url": "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
-        "scope": "Dedicated Claude Sonnet 4.6 system card; this is a limited legacy availability case.",
-        "sha256": "8eb002f168d59851fa7dabbb6538df13bbf6a0dc652ce91411fa13572c46a4ba"
-      }
+      "document": "anthropic-claude-sonnet-4-6",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Sonnet 4.6"
+      ],
+      "card_note": "GitHub's comparison links an earlier revision; the canonical Anthropic URL serves the updated revision recorded here.",
+      "note": "Retired for most plans on 2026-09-01. GitHub's footnotes keep it available to individual Copilot Pro and Pro+ subscribers on annual plans, so it remains in the per-client table. It was not offered in the app model picker on the check date.",
+      "series": "Claude Sonnet"
     },
     {
       "slug": "claude-sonnet-5",
       "name": "Claude Sonnet 5",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "claude-sonnet-5",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "For broad coding, investigation, and multi-step agent tasks.",
-      "card": {
-        "title": "Claude Sonnet 5 System Card",
-        "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
-        "scope": "Dedicated Claude Sonnet 5 system card; not evidence for Sonnet 5.5.",
-        "sha256": "0ce49aa473c3037455b45579980fd0b55708c1066df3f5f99f92bb3169d9b9b7"
-      }
+      "document": "anthropic-claude-sonnet-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Sonnet 5"
+      ],
+      "series": "Claude Sonnet"
     },
     {
       "slug": "claude-sonnet-5.5",
       "name": "Claude Sonnet 5.5",
       "provider": "Anthropic",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "claude-sonnet-5.5",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "app_long_context": true,
       "summary": "A general coding and agent option focused on completing tasks efficiently.",
-      "note": "GitHub's comparison still marks this card 'Coming soon', but Anthropic now publishes a dedicated Sonnet 5.5 PDF. The earlier Sonnet 5 card is not substituted.",
-      "card": {
-        "title": "Claude Sonnet 5.5 System Card",
-        "url": "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
-        "scope": "Dedicated Claude Sonnet 5.5 system card dated September 28, 2026.",
-        "sha256": "89cfd6a6d3aa6148eaf23f4a53006950ee7746009f381237c62920c720725785"
-      }
+      "document": "anthropic-claude-sonnet-5-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Sonnet 5.5"
+      ],
+      "card_note": "GitHub's comparison still says the card is coming soon; Anthropic publishes the dedicated card at the canonical URL.",
+      "series": "Claude Sonnet"
     },
     {
       "slug": "gemini-3.7-flash",
       "name": "Gemini 3.7 Flash",
       "provider": "Google",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "gemini-3.7-flash",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "app_long_context": true,
       "summary": "For short, responsive coding questions and lightweight assistance.",
-      "card": {
-        "title": "Gemini 3.7 Flash Model Card",
-        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-7-Flash-Model-Card.pdf",
-        "scope": "Google DeepMind model card explicitly titled Gemini 3.7 Flash.",
-        "sha256": "6d7f1347e7f55d44a634bef40bd96fd3e70d331826382c75733b633af3be9aef"
-      }
+      "document": "google-gemini-3-7-flash",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Gemini 3.7 Flash"
+      ],
+      "series": "Gemini Flash"
     },
     {
       "slug": "gemini-3.8-flash",
       "name": "Gemini 3.8 Flash",
       "provider": "Google",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "gemini-3.8-flash",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "app_long_context": true,
       "summary": "For fast turnaround on smaller programming questions.",
-      "card": {
-        "title": "Gemini 3.8 Flash Model Card",
-        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-8-Flash-Model-Card.pdf",
-        "scope": "Google DeepMind model card explicitly titled Gemini 3.8 Flash.",
-        "sha256": "fd9b9494c8cb0da6dc16777c3df70d9f9226708e08ba7c9337222207c5d482af"
-      }
+      "document": "google-gemini-3-8-flash",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Gemini 3.8 Flash"
+      ],
+      "series": "Gemini Flash"
     },
     {
       "slug": "mai-code-1.1-flash",
       "name": "MAI-Code-1.1-Flash",
       "provider": "Microsoft",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": true,
+      "copilot_id": "mai-code-1.1-flash",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "app_long_context": false,
       "summary": "For responsive coding help, instruction following, tool use, and image input.",
-      "note": "GitHub notes that MAI models may change behavior as checkpoints are updated.",
-      "card": {
-        "title": "MAI-Code-1.1-Flash Model Card",
-        "url": "https://microsoft.ai/pdf/MAI-Code-1.1-Flash-Model-Card.PDF",
-        "scope": "Dedicated MAI-Code-1.1-Flash model card, not MAI-Code-1-Flash.",
-        "sha256": "9caf4abe4c8eb6c3b5e1dfd5c61238e42139510bf4c5690d6115d9277f59e22f"
-      }
+      "document": "microsoft-mai-code-1-1-flash",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "MAI-Code-1.1-Flash"
+      ],
+      "note": "GitHub notes that MAI models are continuously improved, so served checkpoints may change.",
+      "series": "MAI-Code Flash"
     },
     {
       "slug": "kimi-k3",
       "name": "Kimi K3",
       "provider": "Moonshot AI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": false,
       "app_auto": false,
       "summary": "An open-weight option for agentic coding across large contexts.",
-      "card": {
-        "title": "Kimi K3 Technical Report",
-        "title_check": "TECHNICAL REPORT OF KIMI K3",
-        "url": "https://raw.githubusercontent.com/MoonshotAI/Kimi-K3/main/k3_tech_report.pdf",
-        "scope": "The publisher's Kimi K3 repository contains an explicitly titled K3 technical report, not the K2 report. GitHub Raw serves the verified PDF bytes as application/octet-stream.",
-        "sha256": "86fb82a63ced501f0c3f4f404c0c6fa88a7a6cfac17aae81fd1a8f455998067c"
-      }
+      "document": "moonshot-kimi-k3",
+      "scope": "Moonshot AI technical report for Kimi K3; no separate system card is published.",
+      "scope_terms": [
+        "Kimi K3"
+      ],
+      "card_note": "The technical report is the most specific publisher document for Kimi K3.",
+      "note": "It was not offered in the app model picker on the check date.",
+      "series": "Kimi"
     },
     {
       "slug": "grok-4.5",
       "name": "Grok 4.5",
       "provider": "xAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "grok-4.5",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "app_long_context": true,
       "summary": "For broad software tasks involving several reasoning steps.",
-      "note": "The PDF linked from GitHub's comparison was a one-page blank file on the checked date; the owner URL below is a separate, nonblank Grok 4.5 card.",
-      "card": {
-        "title": "Model Card: Grok 4.5",
-        "url": "https://media.x.ai/v1/website/4p5-5184fdf9.pdf",
-        "scope": "Owner's nonblank, 29-page Grok 4.5 model card (revised July 20, 2026).",
-        "sha256": "068d432a70abc12787453c7424cd54452d38fcaebb498fa1c7f6d4b41658659f"
-      }
+      "document": "xai-grok-4-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Grok 4.5"
+      ],
+      "card_note": "The PDF linked from GitHub's comparison served a blank one-page file on the check date; xAI's nonblank Grok 4.5 card is recorded here.",
+      "series": "Grok"
     },
     {
       "slug": "grok-4.6",
       "name": "Grok 4.6",
       "provider": "xAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "grok-4.6",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "app_long_context": true,
       "summary": "For multi-stage coding and general reasoning-intensive software work.",
-      "card": {
-        "title": "Model Card: Grok 4.6",
-        "url": "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
-        "scope": "Dedicated Grok 4.6 model card (revision August 17, 2026).",
-        "sha256": "1fbb3ab6d7c572720e05d501eab8f11052b32db8d5936e66802c5c49b2261f4f"
-      }
+      "document": "xai-grok-4-6",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Grok 4.6"
+      ],
+      "series": "Grok"
     },
     {
       "slug": "grok-4.7",
       "name": "Grok 4.7",
       "provider": "xAI",
-      "cli_source": "per-client",
+      "lifecycle": "current",
+      "release_status": "GA",
+      "cli": true,
       "app_picker_observed": true,
       "app_auto": false,
+      "copilot_id": "grok-4.7",
+      "app_reasoning_efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "app_long_context": true,
       "summary": "For coding agents and complex, multi-step workflows.",
-      "card": {
-        "title": "Model Card: Grok 4.7",
-        "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
-        "scope": "Dedicated Grok 4.7 model card dated September 21, 2026.",
-        "sha256": "9e4269af5fb9685d27b2fa73619fb1a6b278027f52d5438ceafd6994c9f2b486"
-      }
+      "document": "xai-grok-4-7",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Grok 4.7"
+      ],
+      "series": "Grok"
+    },
+    {
+      "slug": "claude-opus-4.7",
+      "name": "Claude Opus 4.7",
+      "provider": "Anthropic",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-10-02",
+      "last_listed_revision": "9fdc6fbf5963974fd9acd6cfee86ec2fc138fe95",
+      "summary": "A previous Opus generation for demanding reasoning and agentic coding.",
+      "document": "anthropic-claude-opus-4-7",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Opus 4.7"
+      ],
+      "series": "Claude Opus"
+    },
+    {
+      "slug": "claude-opus-4.6",
+      "name": "Claude Opus 4.6",
+      "provider": "Anthropic",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-09-01",
+      "last_listed_revision": "980eb5d3891933e0409018f3172962ac1e461398",
+      "summary": "A previous Opus generation for complex, long-running software tasks.",
+      "document": "anthropic-claude-opus-4-6",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Opus 4.6"
+      ],
+      "series": "Claude Opus"
+    },
+    {
+      "slug": "claude-opus-4.5",
+      "name": "Claude Opus 4.5",
+      "provider": "Anthropic",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-09-01",
+      "last_listed_revision": "980eb5d3891933e0409018f3172962ac1e461398",
+      "summary": "An earlier Opus generation for difficult coding and reasoning work.",
+      "document": "anthropic-claude-opus-4-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Opus 4.5"
+      ],
+      "series": "Claude Opus"
+    },
+    {
+      "slug": "claude-sonnet-4.5",
+      "name": "Claude Sonnet 4.5",
+      "provider": "Anthropic",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-09-01",
+      "last_listed_revision": "980eb5d3891933e0409018f3172962ac1e461398",
+      "summary": "An earlier general-purpose Sonnet option for coding and agent tasks.",
+      "document": "anthropic-claude-sonnet-4-5",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Claude Sonnet 4.5"
+      ],
+      "series": "Claude Sonnet"
+    },
+    {
+      "slug": "gemini-3.6-flash",
+      "name": "Gemini 3.6 Flash",
+      "provider": "Google",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-10-02",
+      "last_listed_revision": "9fdc6fbf5963974fd9acd6cfee86ec2fc138fe95",
+      "summary": "A previous fast Gemini option for quick coding help.",
+      "document": "google-gemini-3-6-flash",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Gemini 3.6 Flash"
+      ],
+      "series": "Gemini Flash"
+    },
+    {
+      "slug": "gemini-3.5-flash",
+      "name": "Gemini 3.5 Flash",
+      "provider": "Google",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-10-02",
+      "last_listed_revision": "9fdc6fbf5963974fd9acd6cfee86ec2fc138fe95",
+      "summary": "An earlier fast Gemini option for responsive assistance.",
+      "document": "google-gemini-3-5-flash",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Gemini 3.5 Flash"
+      ],
+      "series": "Gemini Flash"
+    },
+    {
+      "slug": "gemini-3.1-pro",
+      "name": "Gemini 3.1 Pro",
+      "provider": "Google",
+      "lifecycle": "retired",
+      "release_status": "Public preview",
+      "cli": true,
+      "retired_on": "2026-09-01",
+      "last_listed_revision": "980eb5d3891933e0409018f3172962ac1e461398",
+      "summary": "A larger Gemini option, offered in public preview, for reasoning-heavy coding work.",
+      "document": "google-gemini-3-1-pro",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Gemini 3.1 Pro"
+      ],
+      "series": "Gemini Pro"
+    },
+    {
+      "slug": "gemini-3-flash",
+      "name": "Gemini 3 Flash",
+      "provider": "Google",
+      "lifecycle": "retired",
+      "release_status": "Public preview",
+      "cli": false,
+      "retired_on": "2026-07-31",
+      "last_listed_revision": "746058ec9c86949451e50cf33db2b7197dc9cc3c",
+      "summary": "An early Gemini 3 Flash preview option for fast assistance.",
+      "document": "google-gemini-3-flash",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Gemini 3 Flash"
+      ],
+      "note": "GitHub listed it for VS Code and other IDEs but not for the CLI.",
+      "series": "Gemini Flash"
+    },
+    {
+      "slug": "gemini-2.5-pro",
+      "name": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": false,
+      "retired_on": "2026-07-31",
+      "last_listed_revision": "746058ec9c86949451e50cf33db2b7197dc9cc3c",
+      "summary": "An earlier Gemini Pro option for complex reasoning and coding.",
+      "document": "google-gemini-2-5-pro",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "Gemini 2.5 Pro"
+      ],
+      "note": "GitHub listed it for VS Code and other IDEs but not for the CLI.",
+      "series": "Gemini Pro"
+    },
+    {
+      "slug": "mai-code-1-flash",
+      "name": "MAI-Code-1-Flash",
+      "provider": "Microsoft",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-09-10",
+      "last_listed_revision": "be4d995f7eb07f2bbcf1a9f6b664ff91f7f31a11",
+      "summary": "The first MAI-Code Flash release for responsive coding help.",
+      "document": "microsoft-mai-code-1-flash",
+      "scope": "Dedicated publisher card for this model.",
+      "scope_terms": [
+        "MAI-Code-1-Flash"
+      ],
+      "series": "MAI-Code Flash"
+    },
+    {
+      "slug": "kimi-k2.7-code",
+      "name": "Kimi K2.7 Code",
+      "provider": "Moonshot AI",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": true,
+      "retired_on": "2026-10-02",
+      "last_listed_revision": "9fdc6fbf5963974fd9acd6cfee86ec2fc138fe95",
+      "summary": "A coding-specialized Kimi release for agentic software work.",
+      "document": "moonshot-kimi-k2-7-code",
+      "scope": "Moonshot AI's Hugging Face model card for Kimi K2.7 Code. It describes the model as built on Kimi K2.6 with the same architecture as K2.5 and K2.6.",
+      "scope_terms": [
+        "Kimi K2.7 Code"
+      ],
+      "card_note": "Moonshot AI publishes no PDF system card or technical report for Kimi K2.7 Code. The Hugging Face model card (Markdown) is the owner document; the older Kimi K2 and K2.5 reports are not substituted.",
+      "series": "Kimi"
+    },
+    {
+      "slug": "raptor-mini",
+      "name": "Raptor mini",
+      "provider": "Microsoft",
+      "lifecycle": "retired",
+      "release_status": "GA",
+      "cli": false,
+      "retired_on": "2026-09-01",
+      "last_listed_revision": "980eb5d3891933e0409018f3172962ac1e461398",
+      "summary": "An experimental fine-tuned GPT-5 mini model that GitHub offered in VS Code.",
+      "document": null,
+      "scope": "No publisher model card exists. GitHub describes Raptor mini as a fine-tuned GPT-5 mini model.",
+      "scope_terms": [],
+      "card_note": "No dedicated card. Closest owner documentation: GitHub's [Raptor mini public preview changelog](https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/); GitHub's docs listed the provider as a fine-tuned GPT-5 mini. See the gpt-5-mini folder for the base model's card.",
+      "note": "GitHub listed it for VS Code only, not for the CLI.",
+      "related": [
+        {
+          "slug": "gpt-5-mini",
+          "relation": "base model named by GitHub; its card does not evaluate the fine-tune"
+        }
+      ]
     }
   ]
 }

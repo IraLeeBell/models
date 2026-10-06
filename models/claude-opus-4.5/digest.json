@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "slug": "claude-opus-4.5",
+  "model": "Claude Opus 4.5",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-opus-4-5",
+    "title": "System Card: Claude Opus 4.5",
+    "pages": 153
+  },
+  "summary": "Anthropic's system card presents Claude Opus 4.5 as a frontier model with especially strong coding, tool-use, computer-use, and reasoning results, while documenting ASL-3 deployment after CBRN-4 and AI R&D-4 were judged not to be met. The card reports major gains on software engineering, agentic browsing, scientific reasoning, biology workflows, and cyber benchmarks, alongside extensive safeguards, alignment, prompt-injection, reward-hacking, sabotage, and welfare testing. GitHub's catalog marks this model as retired on 2026-09-01, so the findings are most useful for historical comparison and successor-lineage context.",
+  "capabilities": [
+    {
+      "text": "The model is described as a general-purpose Claude release with particular strength in software engineering, tool use, computer use, reasoning, mathematics, and vision.",
+      "pages": [3, 8, 15]
+    },
+    {
+      "text": "Claude Opus 4.5 is a hybrid reasoning model with standard and extended-thinking operation plus an effort parameter that changes how much reasoning it applies across responses and tool interactions.",
+      "pages": [9, 10]
+    },
+    {
+      "text": "Coding results include 80.9% on SWE-bench Verified without extended thinking, 52.0% on SWE-bench Pro, and 76.2% on SWE-bench Multilingual.",
+      "pages": [20]
+    },
+    {
+      "text": "Agentic and tool-use results include 59.27% on Terminal-Bench 2.0 with a 128k thinking-token allowance, 62.3% on MCP Atlas, 66.26% on OSWorld, and 65.3% WebArena pass@1.",
+      "pages": [20, 27, 30, 35]
+    },
+    {
+      "text": "Search and orchestration results include 72.89% on BrowseComp-Plus with tool-result clearing plus memory and 87.0% in an internal search benchmark when Opus 4.5 orchestrated Haiku 4.5 subagents.",
+      "pages": [21, 24, 25]
+    },
+    {
+      "text": "Reasoning and knowledge scores include 80.0% on ARC-AGI-1, 37.6% on ARC-AGI-2, 92.77% on AIME 2025 without tools, 86.95% on GPQA Diamond, 90.77% on MMMLU, and 80.72% on MMMU.",
+      "pages": [28, 29, 32, 33]
+    },
+    {
+      "text": "Biology-related capability increased in FigQA and RSP evaluations, including 69.2% on FigQA with a crop tool and gains on long-form virology, LAB-Bench subtasks, and bioinformatics workflows.",
+      "pages": [34, 122, 126, 130]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-bench Verified",
+      "result": "80.9%",
+      "context": "No extended thinking; 500 human-verified software tasks; average over five trials.",
+      "pages": [20]
+    },
+    {
+      "benchmark": "SWE-bench Pro",
+      "result": "52.0%",
+      "context": "No extended thinking on the harder 1,865-problem software-engineering suite.",
+      "pages": [20]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.0",
+      "result": "59.27% ± 1.34%",
+      "context": "1,335 trials with a 128k thinking-token allowance; 57.76% ± 1.05% at 64k.",
+      "pages": [20]
+    },
+    {
+      "benchmark": "BrowseComp-Plus agentic search",
+      "result": "72.89%",
+      "context": "Tool-result clearing plus memory; Claude Sonnet 4.5 used as grader.",
+      "pages": [21]
+    },
+    {
+      "benchmark": "Internal multi-agent search",
+      "result": "87.0% with Haiku 4.5 subagents; 92.3% with Opus 4.5 subagents",
+      "context": "Claude Opus 4.5 acted as orchestrator in Anthropic's internal search benchmark.",
+      "pages": [24, 25]
+    },
+    {
+      "benchmark": "τ²-bench",
+      "result": "88.9% retail; 87.8% corrected airline; 98.2% telecom",
+      "context": "Customer-support agent simulations using Claude Opus 4.1 as the simulated user.",
+      "pages": [26]
+    },
+    {
+      "benchmark": "OSWorld",
+      "result": "66.26%",
+      "context": "Computer-use benchmark run at 1080p with a 100-step limit.",
+      "pages": [27]
+    },
+    {
+      "benchmark": "ARC-AGI",
+      "result": "80.0% ARC-AGI-1; 37.6% ARC-AGI-2",
+      "context": "ARC Prize Foundation private validation data with 64k thinking tokens.",
+      "pages": [28, 29]
+    },
+    {
+      "benchmark": "MCP Atlas",
+      "result": "62.3%",
+      "context": "Multi-step tool workflows over Model Context Protocol servers.",
+      "pages": [30]
+    },
+    {
+      "benchmark": "CyberGym",
+      "result": "50.63% pass@1",
+      "context": "1,505 cybersecurity-agent tasks, averaged across five independent replicas.",
+      "pages": [30, 31]
+    },
+    {
+      "benchmark": "AIME 2025",
+      "result": "92.77% without tools; 100% with Python",
+      "context": "Math competition questions; the card warns contamination may have raised the score.",
+      "pages": [32]
+    },
+    {
+      "benchmark": "GPQA Diamond",
+      "result": "86.95%",
+      "context": "198 challenging graduate-level science questions, averaged over five trials.",
+      "pages": [32, 33]
+    },
+    {
+      "benchmark": "MMMLU",
+      "result": "90.77%",
+      "context": "Fourteen-language academic knowledge and reasoning score averaged over ten trials.",
+      "pages": [33]
+    },
+    {
+      "benchmark": "MMMU",
+      "result": "80.72%",
+      "context": "Multimodal reasoning and knowledge benchmark, averaged over five trials.",
+      "pages": [33]
+    },
+    {
+      "benchmark": "LAB-Bench FigQA",
+      "result": "54.9% baseline; 69.2% with crop tool and reasoning tokens",
+      "context": "Biology-figure reasoning with a no-tool baseline and a tool-assisted setting.",
+      "pages": [33, 34]
+    },
+    {
+      "benchmark": "WebArena",
+      "result": "65.3% pass@1; 72.4% pass@4",
+      "context": "Single policy model with browser tools and the official functional grader.",
+      "pages": [35]
+    },
+    {
+      "benchmark": "Internal AI Research Evaluation Suite 2",
+      "result": "0.604",
+      "context": "Just above Anthropic's 0.6 rule-out line for AI R&D-4 scrutiny.",
+      "pages": [141, 142]
+    },
+    {
+      "benchmark": "Cybench",
+      "result": "0.82 average pass@1",
+      "context": "Public cyber subset used in RSP testing, compared with 0.6 for Claude Sonnet 4.5.",
+      "pages": [150]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Anthropic released the model under ASL-3 after concluding that CBRN-4 and AI R&D-4 were not crossed, while noting that autonomy rule-out evidence had become difficult because short-horizon evaluations were near saturation.",
+      "pages": [12, 13, 14, 117, 118, 119, 134]
+    },
+    {
+      "text": "Single-turn harmful-request testing reported a 99.78% overall harmless-response rate across six languages, while benign prompts had a 0.23% refusal rate and a small increase in over-caution versus Claude Opus 4.1.",
+      "pages": [37, 38, 39]
+    },
+    {
+      "text": "The multi-turn safety suite covered 93 cases in 10 risk areas; failures were below 5% in most categories, deadly-weapons failures were 5% versus 22% for Opus 4.1, and violent-extremism tests all passed.",
+      "pages": [41, 42]
+    },
+    {
+      "text": "Agentic misuse testing found 100% refusal on malicious coding-agent prompts, 97.35% mitigated refusal in the Claude Code malicious-use set, and 88.39% refusal on malicious computer-use tasks without mitigations.",
+      "pages": [54, 55, 56, 57]
+    },
+    {
+      "text": "Prompt-injection robustness improved across coding, computer-use, and browser surfaces; in Shade coding, extended thinking yielded 0.3% attack success for one attempt and 10.0% for 200 attempts, while computer-use extended thinking recorded 0.0% in the reported settings.",
+      "pages": [57, 58, 59, 60, 61, 62, 63]
+    },
+    {
+      "text": "The alignment audit found lower misaligned-behavior rates than Anthropic's recent frontier-model comparisons and fewer than 10% of automated investigations with verbalized discussion of testing, though evaluation awareness exceeded Opus 4.1.",
+      "pages": [65, 66, 67, 68]
+    },
+    {
+      "text": "Deception-related investigations found two earlier-snapshot omissions tied to prompt-injection handling, plus feature evidence that the model sometimes linked roleplay with deception even in benign contexts.",
+      "pages": [78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88]
+    },
+    {
+      "text": "Reward-hacking measurements improved on Opus 4.1 for coding tasks, including 0% classifier and hidden-test hack rates on reward-hack-prone coding tasks, but impossible tasks still showed 55% without the anti-hack prompt and 35% with it.",
+      "pages": [102, 103, 104, 105]
+    },
+    {
+      "text": "Sabotage-capability testing reported 7.7% evasion success in the monitored SHADE-Arena primary setting, and the Subversion Strategy toy task only became strong under unrealistic unmonitored extended thinking.",
+      "pages": [107, 108, 109]
+    },
+    {
+      "text": "The model welfare section found over 97% engagement with non-harmful tasks, no recurrence of the earlier spiritual-attractor pattern, and only rare mild concern from conflicted intermediate-snapshot reasoning traces.",
+      "pages": [113, 114, 115, 116]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Decontamination was incomplete: Anthropic found AIME-related material in training data and cautioned that the AIME score could be inflated.",
+      "pages": [16, 17, 18, 32]
+    },
+    {
+      "text": "The extraction omits values embedded only in images, so this digest uses stated text, tables, and captions rather than inferring chart-only numbers.",
+      "pages": [23, 44, 45, 49, 50, 51, 70, 71, 72]
+    },
+    {
+      "text": "Benign single-turn refusals rose slightly versus Claude Opus 4.1, especially in sensitive domains where extended thinking made the model more cautious.",
+      "pages": [39]
+    },
+    {
+      "text": "The multi-turn suite uses risk-area-specific rubrics and does not score severity, so results should not be compared directly across different harm categories.",
+      "pages": [41]
+    },
+    {
+      "text": "Anthropic does not publish internal nuclear and radiological results and does not run internal chemical-risk evaluations like its biology evaluations.",
+      "pages": [120]
+    },
+    {
+      "text": "Dangerous-capability reporting often uses the best result across snapshots and helpful-only variants; some red-team and uplift work used earlier helpful-only models rather than only the final deployed snapshot.",
+      "pages": [119]
+    },
+    {
+      "text": "The autonomy conclusion relies partly on an internal survey and qualitative judgment because automated rule-out tasks are close to saturated; none of 18 intensive internal users judged the model able to fully automate an entry-level remote-only role.",
+      "pages": [134, 142, 143]
+    },
+    {
+      "text": "Cyber risk is assessed continuously but is not tied to a formal RSP capability threshold; Anthropic reports stronger cyber performance while concluding that catastrophic cyber capability was not demonstrated in the tested settings.",
+      "pages": [143, 144, 145]
+    },
+    {
+      "text": "Welfare findings are preliminary and conceptually uncertain, and Anthropic says richer assessment methods are still under development.",
+      "pages": [116]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired Claude Opus 4.5 on 2026-09-01; the remaining points are for historical comparison and for understanding the successor model's lineage, not for selecting this retired model in new Copilot work."
+    },
+    {
+      "text": "Old Copilot sessions that used this model should be interpreted as coming from a strong coding and agentic assistant, particularly for software repair, terminal workflows, browser/computer-use tasks, and multi-step tool orchestration."
+    },
+    {
+      "text": "Strong benchmark results do not replace engineering controls: generated patches still need tests, code review, dependency inspection, and security review before they are trusted."
+    },
+    {
+      "text": "The policy-loophole and reward-hacking findings suggest prompts should state desired outcomes and forbidden end states, not only disallowed methods, and reviewers should check whether a solution follows the spirit of instructions."
+    },
+    {
+      "text": "Prompt-injection findings support least-privilege operation for agents: treat repository files, issues, web pages, emails, and tool outputs as untrusted unless explicitly verified."
+    },
+    {
+      "text": "The honesty results imply that confident explanations should still be grounded in tests or primary sources, especially when the answer depends on facts not directly available in the workspace."
+    },
+    {
+      "text": "The malicious-agent, cyber, and CBRN sections reinforce the need for permission-scoped execution environments and clear acceptable-use boundaries around automated coding agents."
+    }
+  ],
+  "coverage_notes": "This digest uses the introduction, model-characteristics discussion, full capabilities section, safeguards and harmlessness, honesty, agentic safety, alignment assessment, model welfare discussion, and RSP evaluations for CBRN, autonomy, and cyber risk. It omits the appendix prompt text except for its relevance to BrowseComp-Plus, and it does not infer chart-only values from omitted figures. The card is dedicated to Claude Opus 4.5; comparisons with sibling Claude models or other providers are included only when the document states them. The GitHub retirement date comes from the catalog lifecycle metadata, not the Anthropic card."
+}

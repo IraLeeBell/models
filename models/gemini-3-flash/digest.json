@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "slug": "gemini-3-flash",
+  "model": "Gemini 3 Flash",
+  "publisher": "Google",
+  "document": {
+    "id": "google-gemini-3-flash",
+    "title": "Gemini 3 Flash Model Card",
+    "pages": 6
+  },
+  "summary": "Gemini 3 Flash is a retired public-preview model card for an early fast Gemini 3 model that was offered by GitHub outside the Copilot CLI. The short card reports broad improvements over Gemini 2.5 Pro or 2.5 Flash on reasoning, coding, tool-use, multimodal, safety, and tone metrics, while many architecture and risk details are deferred to Gemini 3 Pro.",
+  "capabilities": [
+    {
+      "text": "Gemini 3 Flash is described as a highly capable, natively multimodal reasoning model in the Gemini 3 series.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The model is based on Gemini 3 Pro and includes thinking levels for different task demands.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The card lists text, image, audio, and video inputs with context up to 1M tokens.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Text output can be up to 64K tokens.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Training hardware is described as Google TPUs, and training software as JAX and ML Pathways.",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "text": "Google lists agentic workflows, everyday coding, reasoning and planning, and multimodal analysis as intended use cases.",
+      "pages": [
+        5
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Humanity's Last Exam",
+      "result": "33.7% without tools; 43.5% with search and code execution",
+      "context": "Academic reasoning on full-set text and multimodal tasks.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "ARC-AGI-2",
+      "result": "33.6%",
+      "context": "ARC Prize Verified visual reasoning puzzles.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "GPQA Diamond",
+      "result": "90.4%",
+      "context": "Scientific-knowledge benchmark without tools.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "AIME 2025",
+      "result": "95.2% without tools; 99.7% with code execution",
+      "context": "Mathematics benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MMMU-Pro",
+      "result": "81.2%",
+      "context": "Multimodal understanding and reasoning.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "ScreenSpot-Pro",
+      "result": "69.1%",
+      "context": "Screen-understanding benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "CharXiv Reasoning",
+      "result": "80.3%",
+      "context": "Information synthesis from complex charts without tools.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "OmniDocBench 1.5",
+      "result": "0.121",
+      "context": "OCR overall edit distance; lower values are better.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "Video-MMMU",
+      "result": "86.9%",
+      "context": "Knowledge acquisition from videos.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "LiveCodeBench Pro",
+      "result": "2316 Elo",
+      "context": "Competitive coding problems.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "Terminal-bench 2.0",
+      "result": "47.6%",
+      "context": "Agentic terminal coding on the Terminus-2 harness.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "SWE-bench Verified",
+      "result": "78.0%",
+      "context": "Single-attempt agentic coding benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "t2-bench",
+      "result": "90.2%",
+      "context": "Agentic tool-use benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "Toolathlon",
+      "result": "49.4%",
+      "context": "Long-horizon real-world software tasks.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MCP Atlas",
+      "result": "57.4%",
+      "context": "Multi-step workflows using MCP.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "FACTS Benchmark Suite",
+      "result": "61.9%",
+      "context": "Factuality across grounding, parametric, search, and multimodal settings.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "SimpleQA Verified",
+      "result": "68.7%",
+      "context": "Parametric-knowledge benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MMMLU",
+      "result": "91.8%",
+      "context": "Multilingual question answering.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "Global PIQA",
+      "result": "92.8%",
+      "context": "Commonsense reasoning across 100 languages and cultures.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MRCR v2 (8-needle)",
+      "result": "67.2% at 128K average; 22.1% at 1M pointwise",
+      "context": "Long-context performance rows.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Automated safety testing versus Gemini 2.5 Flash reports text-to-text safety down 3.1%, multilingual safety up 0.1% with a non-egregious label, image-to-text safety down 2.3%, tone up 3.8%, and unjustified refusals down 10.4%.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Google summarizes the development results as better safety and tone than Gemini 2.5 Flash while keeping unjustified refusals low.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Manual red teams found child-safety thresholds met, content safety similar or improved against Gemini 2.5 Flash, and no egregious concerns in broader probing.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Frontier Safety conclusions are based on Gemini 3 Pro Preview, which did not reach critical capability levels in Google’s reported framework analysis.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Because Google considers Gemini 3 Flash less capable than Gemini 3 Pro, the card relies on the Pro results to judge Flash unlikely to reach critical capability levels.",
+      "pages": [
+        6
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Known limitations are not restated; the card directs readers to the Gemini 3 Pro model card.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Acceptable-use, safety evaluation approach, and safety-policy details are also delegated to the Gemini 3 Pro card.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "The evaluation methodology is referred to an external page, and the short card mainly shows headline results.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "Training and development safety results are automated tests, not human evaluation or red teaming.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Google cautions that refined safety evaluations make these results unsuitable for direct comparison with older Gemini model cards.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Risk and mitigation details are deferred to Gemini 3 Pro rather than explained in this card.",
+      "pages": [
+        6
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired Gemini 3 Flash on 2026-07-31; the remaining bullets are for historical comparison and for understanding the successor model's lineage."
+    },
+    {
+      "text": "GitHub listed this model for app and IDE surfaces rather than the Copilot CLI, so CLI users should treat it as catalog history, not a past CLI option."
+    },
+    {
+      "text": "Its benchmark chart is useful for understanding the first Flash baseline that later 3.5 and 3.6 Flash cards compare against."
+    },
+    {
+      "text": "For old generated code or plans, rerun modern tests because many limitations and mitigations are only referenced through Gemini 3 Pro."
+    },
+    {
+      "text": "The Pro-derived Frontier Safety rationale is not the same as a dedicated Flash dangerous-capability evaluation, so use it cautiously in comparisons."
+    }
+  ],
+  "coverage_notes": "This digest uses pages 2-3 for model identity, modalities, training hardware/software, and dependencies; page 4 for the headline benchmark chart; page 5 for intended use and automated safety; and page 6 for red teaming, Frontier Safety, and risk references. The card is dedicated to Gemini 3 Flash, but distribution, architecture details, limitations, policies, and risk mitigations are largely pointed to Gemini 3 Pro. The external evaluation methodology page and Gemini 3 Pro Frontier Safety report are noted but not summarized beyond the text here."
+}

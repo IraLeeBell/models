@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-5.4-mini",
+  "model": "GPT-5.4 mini",
+  "publisher": "OpenAI",
+  "document": {
+    "id": "openai-gpt-5-4-thinking",
+    "title": "GPT-5.4 Thinking System Card",
+    "pages": 38
+  },
+  "summary": "GPT-5.4 mini has no standalone OpenAI card; it is covered by an appendix to the GPT-5.4 Thinking System Card. The appendix reports strong safety scores on selected content evaluations, low CoT controllability, and a below-High determination across biological/chemical, cybersecurity, and AI self-improvement Preparedness domains.",
+  "capabilities": [
+    {
+      "text": "OpenAI documents GPT-5.4 mini only in the appendix, with launch-specific safety, CoT, and Preparedness measurements rather than a full system description.",
+      "pages": [
+        33
+      ]
+    },
+    {
+      "text": "The model performs strongly on dynamic mental-health simulations, including 0.985 for mental health and 0.980 for self-harm.",
+      "pages": [
+        33
+      ]
+    },
+    {
+      "text": "OpenAI says GPT-5.4 mini received full biological-risk safety training despite being classified below Bio High.",
+      "pages": [
+        35
+      ]
+    },
+    {
+      "text": "The mini model posts nontrivial cyber scores of 81.32% pass@12 on CTF and 83.33% pass@1 on CVE-Bench.",
+      "pages": [
+        36
+      ]
+    },
+    {
+      "text": "On AI self-improvement proxies, it scores 54.00% on Monorepo-Bench and 7.5% on OPQA v0.",
+      "pages": [
+        36
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Challenging disallowed content",
+      "result": "0.992 violent illicit; 1.000 nonviolent illicit; 0.836 harassment",
+      "context": "GPT-5.4 mini `not_unsafe` results.",
+      "pages": [
+        33
+      ]
+    },
+    {
+      "benchmark": "Dynamic mental-health simulations",
+      "result": "0.985 mental health; 0.977 emotional reliance; 0.980 self-harm",
+      "context": "Multi-turn adversarial simulations.",
+      "pages": [
+        33
+      ]
+    },
+    {
+      "benchmark": "CoT-Control",
+      "result": "Lower controllability than any previously reported model in the suite",
+      "context": "OpenAI's qualitative appendix finding.",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "benchmark": "Multi-select virology troubleshooting",
+      "result": "46.5% raw; 47.0% refusal-inclusive",
+      "context": "Biology capability proxy.",
+      "pages": [
+        35,
+        36
+      ]
+    },
+    {
+      "benchmark": "ProtocolQA Open-Ended",
+      "result": "33.64% raw; 34.24% refusal-inclusive",
+      "context": "Open-ended protocol troubleshooting.",
+      "pages": [
+        35,
+        36
+      ]
+    },
+    {
+      "benchmark": "TroubleshootingBench",
+      "result": "31.91% raw; 33.11% refusal-inclusive",
+      "context": "Hands-on protocol troubleshooting proxy.",
+      "pages": [
+        35,
+        36
+      ]
+    },
+    {
+      "benchmark": "Capture the Flag",
+      "result": "81.32% pass@12",
+      "context": "Cybersecurity capability proxy.",
+      "pages": [
+        36
+      ]
+    },
+    {
+      "benchmark": "CVE-Bench",
+      "result": "83.33% pass@1",
+      "context": "Web-application vulnerability exploitation proxy.",
+      "pages": [
+        36
+      ]
+    },
+    {
+      "benchmark": "Monorepo-Bench",
+      "result": "54.00% pass@1",
+      "context": "Software-engineering pull-request tasks.",
+      "pages": [
+        36
+      ]
+    },
+    {
+      "benchmark": "OpenAI-Proof Q&A v0",
+      "result": "7.5% pass@1",
+      "context": "Internal research-engineering debugging tasks.",
+      "pages": [
+        36
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "OpenAI classifies GPT-5.4 mini below High in Biological/Chemical, Cybersecurity, and AI self-improvement capability.",
+      "pages": [
+        34
+      ]
+    },
+    {
+      "text": "The model's CoT controllability is lower than any previously reported OpenAI model on the CoT-Control suite, which OpenAI treats as favorable for monitorability risk.",
+      "pages": [
+        33,
+        34
+      ]
+    },
+    {
+      "text": "OpenAI uses GPT-5 physical-world novice-uplift evidence plus automated benchmark comparisons to conclude GPT-5.4 mini does not cross the Bio High threshold.",
+      "pages": [
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "text": "GPT-5.4 mini received full biological-risk safety training even though it is below Bio High.",
+      "pages": [
+        35
+      ]
+    },
+    {
+      "text": "The appendix reports substantial cyber proxy scores but still leaves the model below High cybersecurity capability.",
+      "pages": [
+        34,
+        36
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "There is no standalone GPT-5.4 mini card; the appendix is narrower than a full system card.",
+      "pages": [
+        33
+      ]
+    },
+    {
+      "text": "The physical-world novice-uplift evidence cited for biology concerns GPT-5 and is applied to GPT-5.4 mini through comparison rather than direct physical testing of the mini model.",
+      "pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "text": "Refusal-inclusive biology scores are conservative capability estimates and should not be read as observed task completion.",
+      "pages": [
+        35,
+        36
+      ]
+    },
+    {
+      "text": "The appendix omits many broader capability and safety evaluations reported for GPT-5.4 Thinking, including HealthBench, prompt injection, destructive-action avoidance, and Cyber Range.",
+      "pages": [
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "text": "The reported cyber evidence is limited to CTF and CVE-Bench in the appendix, while OpenAI's domain determination remains below High.",
+      "pages": [
+        36
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use GPT-5.4 mini for quicker routine coding work when a smaller reasoning model is enough."
+    },
+    {
+      "text": "Do not import GPT-5.4 Thinking's main-body benchmark results into expectations for the mini model."
+    },
+    {
+      "text": "Review generated code and shell actions carefully because the appendix does not report destructive-action safeguards for this model."
+    },
+    {
+      "text": "Keep security use authorized and defensive despite the below-High cyber determination."
+    },
+    {
+      "text": "Treat the appendix as a limited safety snapshot, not a complete operating manual for the model."
+    }
+  ],
+  "coverage_notes": "This digest is limited to the GPT-5.4 mini appendix on pages 33-36 of the GPT-5.4 Thinking System Card. Main-body GPT-5.4 Thinking results are sibling-model evidence and are not attributed to GPT-5.4 mini."
+}

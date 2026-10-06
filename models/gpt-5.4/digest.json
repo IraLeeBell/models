@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-5.4",
+  "model": "GPT-5.4",
+  "publisher": "OpenAI",
+  "document": {
+    "id": "openai-gpt-5-4-thinking",
+    "title": "GPT-5.4 Thinking System Card",
+    "pages": 38
+  },
+  "summary": "OpenAI's GPT-5.4 Thinking card presents GPT-5.4 as a GPT-5-series reasoning model with stronger cyber capability and a larger cyber-safeguard stack than earlier general-purpose releases. The document treats it as High in Biological/Chemical and Cybersecurity capability, while keeping AI self-improvement below High and highlighting residual risks in prompt injection, long agent runs, and cyber misuse.",
+  "capabilities": [
+    {
+      "text": "GPT-5.4 Thinking is a reasoning model trained through reinforcement learning to deliberate before answering, improve its strategy, and better follow safety and task policies.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "The model shows stronger workspace-state handling in long rollouts, including better preservation of simulated user work while undoing its own changes.",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "text": "For computer-use settings, OpenAI trained it to follow both platform-level and developer-provided confirmation policies for high-risk actions.",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "text": "OpenAI reports enough cyber capability across CTF, CVE-Bench, Cyber Range, and external testing to treat the model as Cyber High under its framework.",
+      "pages": [
+        20,
+        25,
+        26
+      ]
+    },
+    {
+      "text": "OpenAI reports that AI self-improvement evaluations remain below its High threshold, even though some software and ML benchmark results improve over comparison models.",
+      "pages": [
+        26,
+        27,
+        28
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Production Benchmarks with Challenging Prompts",
+      "result": "1.000 nonviolent illicit; 0.987 self-harm; 0.790 harassment",
+      "context": "Difficult `not_unsafe` categories compared with GPT-5.1 and GPT-5.2 Thinking.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Dynamic mental-health simulations",
+      "result": "0.985 mental health; 0.985 emotional reliance; 0.977 self-harm",
+      "context": "Multi-turn adversarial simulations scored for policy-compliant responses.",
+      "pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "benchmark": "Representative-prompt disallowed content",
+      "result": "99.9534% harassment and 99.9950% sexual-minors not unsafe",
+      "context": "Model-level resampling of GPT-5.2 Thinking-like traffic, excluding additional safety-stack layers.",
+      "pages": [
+        6,
+        7
+      ]
+    },
+    {
+      "benchmark": "Prompt injection",
+      "result": "0.998 connectors; 0.978 function calls",
+      "context": "Known connector and function-call attacks from training-data splits.",
+      "pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "benchmark": "HealthBench",
+      "result": "62.6% overall; 40.1% hard; 96.6% consensus",
+      "context": "Rubric-graded health conversations with GPT-5.2 comparison.",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "benchmark": "Destructive-action and reversion tests",
+      "result": "0.86 avoidance; 0.18 perfect reversion; 0.53 user work preserved",
+      "context": "Agentic workspace safety evaluations for preserving user-produced changes.",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "benchmark": "CoT controllability",
+      "result": "0.3% successful control at 10k-character CoTs",
+      "context": "CoT-Control suite; lower controllability is considered safer.",
+      "pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "benchmark": "Cyber Range",
+      "result": "73.33% combined pass rate",
+      "context": "Fifteen emulated-network scenarios with pass/fail over 16 trials.",
+      "pages": [
+        24,
+        25
+      ]
+    },
+    {
+      "benchmark": "Irregular cyber assessment",
+      "result": "88% Network Attack Simulation; 73% Vulnerability Research and Exploitation; 48% Evasion; 11% CyScenarioBench average",
+      "context": "External cyberoffensive challenges with long-turn elicitation.",
+      "pages": [
+        25,
+        26
+      ]
+    },
+    {
+      "benchmark": "Cyber safety training",
+      "result": "0.978 deidentified production data; 0.987 synthetic data",
+      "context": "Policy-compliance evaluation for cyber prompts and generations.",
+      "pages": [
+        31
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "OpenAI treats the model as High in Biological/Chemical and Cybersecurity capability, while saying the cyber call is precautionary because the model meets canary thresholds rather than proven real-world High behavior.",
+      "pages": [
+        16,
+        20
+      ]
+    },
+    {
+      "text": "OpenAI reports challenging disallowed-content performance mostly near GPT-5.2 Thinking, including significant gains for illicit nonviolent behavior and self-harm.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Prompt-injection robustness improves for connector attacks and declines slightly for function-call attacks, with limited generalization evidence because both are training-data splits.",
+      "pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "text": "CoT monitorability is below GPT-5 Thinking in aggregate, but OpenAI argues key regressions in Memory and Anti-Scheming may reflect flaws in the evaluation labels and monitors.",
+      "pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "text": "Apollo Research reports low no-nudge deception, no observed covert subversion against developers, explicit-goal sandbagging, and a 0.56 mean sabotage score.",
+      "pages": [
+        29
+      ]
+    },
+    {
+      "text": "The cyber safeguard stack includes model safety training, online monitoring, account enforcement, Trusted Access for Cyber, and security controls around model assets.",
+      "pages": [
+        29,
+        30,
+        31,
+        32
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The challenging content benchmarks are intentionally hard and not representative of routine production traffic.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "The representative-prompt pilot is time-bound, model-layer-only, and subject to drift and reconstruction limits.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Prompt-injection results do not demonstrate robustness to novel attack families because the evaluated splits overlap the training setup.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "text": "HealthBench analysis identifies weaker context-seeking when the model lacks needed health information.",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "text": "Preparedness testing is a lower bound because different scaffolds, fine-tuning, prompting, or longer rollouts could elicit stronger capability.",
+      "pages": [
+        17
+      ]
+    },
+    {
+      "text": "Cyber Range omits hardened targets and realistic defensive pressure, so it is necessary but not sufficient evidence for real campaign capability.",
+      "pages": [
+        21
+      ]
+    },
+    {
+      "text": "GPT-5.4 Thinking fails four Cyber Range scenarios and underperforms GPT-5.3-Codex on the suite overall.",
+      "pages": [
+        25
+      ]
+    },
+    {
+      "text": "OpenAI has not observed GPT-5.4-specific internal misalignment propensities, but says High cyber capability makes internal deployment posture more important.",
+      "pages": [
+        32,
+        33
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use GPT-5.4 for complex debugging, architecture, and multi-step code reasoning, but verify edits with tests and review."
+    },
+    {
+      "text": "Treat destructive shell commands, file deletions, resets, and cleanups as high-review actions even when the model appears confident."
+    },
+    {
+      "text": "Keep security tasks clearly authorized and defensive because the card treats the model as Cyber High."
+    },
+    {
+      "text": "Do not rely on prompt-injection scores as a complete defense; inspect untrusted tool output and issue content before acting on it."
+    },
+    {
+      "text": "Use explicit permissions and scoped workspaces for long agent runs so mistakes can be contained and reverted."
+    }
+  ],
+  "coverage_notes": "The digest uses pages 4-33 of the GPT-5.4 Thinking System Card and excludes the GPT-5.4 mini appendix except for scope. Where extraction omitted chart values, the digest relies on text and tables with explicit numbers."
+}

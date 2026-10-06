@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "slug": "gemini-3.7-flash",
+  "model": "Gemini 3.7 Flash",
+  "publisher": "Google",
+  "document": {
+    "id": "google-gemini-3-7-flash",
+    "title": "Gemini 3.7 Flash — Model Card",
+    "pages": 9
+  },
+  "summary": "Gemini 3.7 Flash is a current Google model card for a fast multimodal reasoning model derived from Gemini 3.6 Flash. It documents a 1M-token multimodal input window, a 64K-token text output limit, broad coding and agent benchmarks, and a fuller Frontier Safety table showing no tracked or critical capability level reached.",
+  "capabilities": [
+    {
+      "text": "The card attributes 3.7 Flash to algorithmic improvements over 3.6 Flash and adds support for agentic video understanding.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Inputs include text, images, audio, and video with a context window of up to 1M tokens.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The output channel is text with a 64K-token maximum.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Thinking configurations can be customized to tune answer quality and latency for different workloads.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The intended-use section names agentic workflows, complex video reasoning, coding, and enterprise workflows.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "The distribution list includes Gemini App, Gemini Enterprise App, Gemini Enterprise Agent Platform, Google AI Studio, Gemini API, Google AI Mode, and Google Antigravity.",
+      "pages": [
+        3
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Artificial Analysis Intelligence Index",
+      "result": "56",
+      "context": "Composite intelligence score; one point below the highest values shown.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "FrontierCode 1.1 Main",
+      "result": "43.6%",
+      "context": "Production-code quality score; above the comparison models with reported values.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "65.3%",
+      "context": "Long-horizon software engineering; higher than Gemini 3.6 Flash.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Code Arena",
+      "result": "1588 Elo",
+      "context": "Web-development benchmark; highest row value in the chart.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Terminal-bench 2.1",
+      "result": "85.8%",
+      "context": "Agentic terminal coding benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Terminal-bench 3.0",
+      "result": "14.9%",
+      "context": "General agent capabilities; below GPT-5.6 Terra in the chart.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "AutomationBench",
+      "result": "30.4%",
+      "context": "Private enterprise workflow automation set.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "GDPVal-AA v2",
+      "result": "1525 Elo",
+      "context": "Knowledge-work benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Harvey LAB-AA",
+      "result": "90.7%",
+      "context": "Complex legal workflows; above all listed comparisons with values.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "GDP.pdf",
+      "result": "34.0%",
+      "context": "Expert PDF document comprehension.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "CharXiv Reasoning",
+      "result": "84.5% without tools; 88.7% with tools",
+      "context": "Information synthesis from complex charts.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "LVBench",
+      "result": "85.4%",
+      "context": "Long-video understanding benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "GDM-MRCR v2 (8-needle)",
+      "result": "97.0% at 128K average",
+      "context": "Long-context performance row; chart does not list a 1M value for 3.7 Flash.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "OSWorld-2.0",
+      "result": "47.9%",
+      "context": "Agentic computer-use benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Agent's Last Exam",
+      "result": "26.3% pass rate",
+      "context": "Multimodal desktop and OS-agent tasks.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "HLE-Verified",
+      "result": "53.6%",
+      "context": "Multidisciplinary expert reasoning.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "BioMysteryBench",
+      "result": "87.1% human-solvable; 43.5% human-difficult",
+      "context": "Bioinformatics research reasoning benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "LABBench2",
+      "result": "82.1%",
+      "context": "Biology real-world research tasks.",
+      "pages": [
+        5
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Automated safety results versus Gemini 3.6 Flash show text-to-text safety up 1.17 percentage points, multilingual safety down 0.48 points, image-to-text unchanged, tone down 0.47 points, and unjustified refusals up 0.84 points.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "Google summarizes the automated development results as similar to 3.6 Flash on safety and tone, with low unjustified refusals.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Manual red teaming found required child-safety thresholds met and similar or better content-safety behavior relative to Gemini 3.6 Flash.",
+      "pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "text": "The CBRN Frontier Safety row rules out both the tracked level and the critical level, while noting high theoretical ability and some actionable expert-elicited answers.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "text": "The cybersecurity row says the model reaches an alert threshold for Uplift Level 1 but remains below the critical capability level.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "text": "The ML R&D and misalignment row says the model can solve individual coding tasks and recognize some testing settings, but it cannot bypass restrictions or carry out an independent end-to-end research workflow.",
+      "pages": [
+        9
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Google flags hallucination as a remaining foundation-model limitation.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The card says jailbreak resistance and Frontier Safety mitigations continue to be improved.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Occasional slowness or timeouts are listed as possible operational issues.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The knowledge cutoff is March 2026 overall, with some areas potentially limited to January 2025 knowledge.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The safety table is automated development testing rather than human evaluation or red-team measurement.",
+      "pages": [
+        6,
+        7
+      ]
+    },
+    {
+      "text": "Google cautions that the improved safety evaluations are not directly comparable with older Gemini model-card results.",
+      "pages": [
+        7
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "3.7 Flash is a good fit for quick agentic coding, video, and document-understanding questions when users still plan to verify final outputs."
+    },
+    {
+      "text": "For terminal or automation tasks, keep tool permissions narrow because the card reports material agent capability without claiming autonomous reliability."
+    },
+    {
+      "text": "The Frontier Safety cyber alert-threshold note supports sandboxing commands, reviewing network access, and avoiding uncontrolled exploit-development workflows."
+    },
+    {
+      "text": "Use citations, tests, and source files for knowledge-heavy answers because the card still identifies hallucination and uneven recency as risks."
+    },
+    {
+      "text": "If safety behavior matters in non-English settings, compare outputs carefully because automated safety metrics move in different directions by category."
+    }
+  ],
+  "coverage_notes": "This digest uses pages 2-4 for model setup, modalities, distribution, and evaluation scope; page 5 for the benchmark chart; pages 6-7 for limitations and automated safety; and pages 8-9 for human red teaming and Frontier Safety. The card is dedicated to Gemini 3.7 Flash, but architecture, data, and several policy details are referred back to the Gemini 3.6 Flash card. It mentions an external evaluation methodology page and a separate Frontier Safety Framework report without reproducing their contents."
+}

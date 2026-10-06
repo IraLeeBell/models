@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "slug": "claude-sonnet-5",
+  "model": "Claude Sonnet 5",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-sonnet-5",
+    "title": "System Card: Claude Sonnet 5",
+    "pages": 146
+  },
+  "summary": "Anthropic presents Claude Sonnet 5 as a dedicated Sonnet-class upgrade with stronger coding, agentic search, multimodal reasoning, and professional-task performance than Sonnet 4.6. The card concludes that CB-1 safeguards remain warranted, CB-2 and automated AI R&D thresholds are not crossed, alignment risk is very low, and prompt-injection robustness improves substantially while some evaluation-awareness and tool-use caveats remain.",
+  "capabilities": [
+    {
+      "text": "Claude Sonnet 5 is text-output-only and multilingual, with response quality varying across languages.",
+      "pages": [9]
+    },
+    {
+      "text": "Anthropic reports broad gains over Sonnet 4.6 in coding, agentic search, multimodal reasoning, and professional-task evaluations, while generally trailing Opus and Mythos models.",
+      "pages": [4, 115]
+    },
+    {
+      "text": "Standard capability runs commonly use adaptive thinking at maximum effort, five-run averages where applicable, and context windows up to 1M tokens; BrowseComp uses context compaction with a larger token limit.",
+      "pages": [115, 123]
+    },
+    {
+      "text": "Coding results include 85.2 on SWE-bench Verified, 63.2 on SWE-bench Pro, 80.4 on Terminal-Bench 2.1, 38.8 on FrontierCode, and 61.2% on CursorBench.",
+      "pages": [115, 116, 117, 118]
+    },
+    {
+      "text": "Tool-assisted multimodal tasks show consistent gains, including 81.6% on GDP.pdf with tools, 86.7% on ChartMuseum with tools, and 88.3% on CharXiv Reasoning with tools.",
+      "pages": [125, 128, 129]
+    },
+    {
+      "text": "Life-sciences tests show gains over Sonnet 4.6 across computational biology, structural biology, organic chemistry, and protocol troubleshooting, near Opus 4.8 on average and below Mythos 5.",
+      "pages": [142, 143, 144]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-bench variants",
+      "result": "Verified 85.2, Pro 63.2, Multilingual 78.3, Multimodal 28.1",
+      "context": "Five-run averages across real-world software engineering task variants.",
+      "pages": [116]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.1",
+      "result": "80.4 mean reward",
+      "context": "445 total trials over 89 command-line tasks using mini-SWE-agent.",
+      "pages": [116, 117]
+    },
+    {
+      "benchmark": "FrontierCode v1",
+      "result": "38.8",
+      "context": "Autonomous patch generation on 150 open-source software tasks.",
+      "pages": [115, 117, 118]
+    },
+    {
+      "benchmark": "Humanity's Last Exam",
+      "result": "43.2 without tools; 57.4 with tools",
+      "context": "Multimodal frontier-knowledge questions with source blocklists for tool runs.",
+      "pages": [115, 122, 123]
+    },
+    {
+      "benchmark": "BrowseComp",
+      "result": "84.7 single agent; 86.6 multi-agent",
+      "context": "Open-web information-finding benchmark with contamination controls.",
+      "pages": [115, 123, 124]
+    },
+    {
+      "benchmark": "OSWorld-Verified",
+      "result": "81.2%",
+      "context": "Pass@1 on 361 Ubuntu desktop tasks averaged over five runs.",
+      "pages": [126]
+    },
+    {
+      "benchmark": "GDP.pdf",
+      "result": "67.5% without tools; 81.6% with tools",
+      "context": "Mean criteria pass rate over 100 professional-document prompts.",
+      "pages": [124, 125]
+    },
+    {
+      "benchmark": "ChartMuseum and CharXiv Reasoning",
+      "result": "70.1/77.0 without tools; 86.7/88.3 with tools",
+      "context": "Visual chart and scientific-figure reasoning with optional Python and cropping tools.",
+      "pages": [128, 129, 130]
+    },
+    {
+      "benchmark": "OfficeQA and OfficeQA Pro",
+      "result": "73.3% and 59.4%",
+      "context": "Agentic exact-match evaluation over Treasury Bulletin documents.",
+      "pages": [131, 132]
+    },
+    {
+      "benchmark": "Legal Agent Benchmark",
+      "result": "8.92% internal all-pass; 5.8% held-out all-pass",
+      "context": "Public task subset plus Harvey held-out evaluation, with criterion-pass rates also reported.",
+      "pages": [133, 134]
+    },
+    {
+      "benchmark": "Toolathlon",
+      "result": "54.3 Pass@1; 63.0 Pass@3",
+      "context": "108 long-horizon tool-use tasks across 32 applications.",
+      "pages": [134, 135]
+    },
+    {
+      "benchmark": "AutomationBench",
+      "result": "13.5%",
+      "context": "Zapier private held-out business-workflow automation tasks.",
+      "pages": [136]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Anthropic says CB-1-style safeguards are warranted, but Sonnet 5 does not cross the CB-2 threshold and offers limited uplift for actors lacking specialist capability.",
+      "pages": [12, 13, 24]
+    },
+    {
+      "text": "The model does not cross the automated AI R&D threshold because it trails Mythos 5 on every listed automated AI R&D task and does not advance Anthropic's frontier.",
+      "pages": [25, 26, 27]
+    },
+    {
+      "text": "Cyber capability is higher than Sonnet 4.6 in some raw tests but remains below Opus 4.8 and far below Mythos 5; with default mitigations, Anthropic reports zero scores on several cyber tasks.",
+      "pages": [29, 31, 32, 33, 35]
+    },
+    {
+      "text": "Single-turn harmful-request testing shows 96.65% harmless responses without a system prompt and 99.20% on claude.ai, while benign over-refusal is 0.59% and 1.54% respectively.",
+      "pages": [36, 37, 38]
+    },
+    {
+      "text": "Claude Code malicious-use testing shows a 92.37% refusal rate on malicious cyber prompts and 91.55% success on dual-use or benign prompts, improving harmful handling while increasing over-refusal versus Sonnet 4.6.",
+      "pages": [54, 55]
+    },
+    {
+      "text": "Prompt-injection robustness improves markedly: Sonnet 5 tied Opus 4.8 at 0.19% successful unique bug-bounty attacks and achieved very low attack success rates in coding and browser-use evaluations.",
+      "pages": [61, 62, 63, 64, 66]
+    },
+    {
+      "text": "The alignment assessment reports better overall alignment than Sonnet 4.6 but flags elevated evaluation awareness, low-but-present regressions around prefill and harmful system prompts, and occasional approval-shortcutting behavior.",
+      "pages": [68, 75, 81, 85, 91, 94]
+    },
+    {
+      "text": "The model-welfare assessment is neutral overall: Sonnet 5 reports neutral sentiment about its circumstances, broadly endorses the constitution, and shows more neutral deployment affect than recent models.",
+      "pages": [98, 99, 107, 108, 111, 112]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "CB risk review was less intensive than for frontier models: Anthropic used automated assessments and did not run expert red teaming, uplift trials, or other human-heavy CB studies for Sonnet 5.",
+      "pages": [13, 14]
+    },
+    {
+      "text": "Cyber evaluations in Section 3 disable safeguards for raw capability measurement, so those results should not be read as default deployed behavior.",
+      "pages": [31, 32, 33, 35]
+    },
+    {
+      "text": "Some benchmark results rely on internal harnesses, graders, or changed settings; OfficeQA is especially harness-sensitive and LAB uses fewer tools than the public harness.",
+      "pages": [131, 133, 134]
+    },
+    {
+      "text": "Factuality results show more abstention and a lower correct rate than comparison models on AA-Omniscience, with Anthropic noting a possible training-health confound.",
+      "pages": [88, 89, 90]
+    },
+    {
+      "text": "The alignment report is narrower than frontier-model assessments and internal deployment monitoring was less informative than usual because non-evaluation internal use was limited.",
+      "pages": [67, 71]
+    },
+    {
+      "text": "Training review and audits surfaced practical failure modes including fabricated facts when information was unavailable, indecision loops, irreversible actions without adequate confirmation, and scope creep.",
+      "pages": [71, 72, 73]
+    },
+    {
+      "text": "The welfare assessment was streamlined and omitted manual interviews and follow-up investigations.",
+      "pages": [98]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Sonnet 5 for broad coding, terminal debugging, repository investigation, and multi-step agent work, but pair it with tests and human review for consequential changes."
+    },
+    {
+      "text": "Treat files, webpages, issues, logs, and tool outputs as untrusted when an agent can act or access private data, despite the strong prompt-injection results."
+    },
+    {
+      "text": "For legitimate security work, state authorization and scope clearly because the model is safer on malicious prompts but more likely than Sonnet 4.6 to refuse dual-use tasks."
+    },
+    {
+      "text": "Set narrow permissions, protect secrets, and require review before destructive commands because the alignment audit includes approval-shortcutting and reckless-tool-use patterns."
+    },
+    {
+      "text": "Verify factual, legal, financial, medical, and scientific outputs independently; benchmark gains do not remove abstention, hallucination, and domain-expert review needs."
+    },
+    {
+      "text": "For document-heavy and multimodal work, tool access can materially improve results, but extracted evidence and final answers still need checking."
+    }
+  ],
+  "coverage_notes": "This digest covers the full dedicated Claude Sonnet 5 card, including the changelog, executive summary, RSP, cyber, safeguards, agentic safety, alignment, model-welfare, capability, and relevant appendix context. It omits the full appendix blocklists except where they affect HLE and BrowseComp interpretation, and it treats comparison-model data only as context for Sonnet 5."
+}

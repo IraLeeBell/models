@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "slug": "mai-code-1.1-flash",
+  "model": "MAI-Code-1.1-Flash",
+  "publisher": "Microsoft",
+  "document": {
+    "id": "microsoft-mai-code-1-1-flash",
+    "title": "MAI-Code-1.1-Flash model card",
+    "pages": 6
+  },
+  "summary": "Microsoft's MAI-Code-1.1-Flash card describes a dedicated coding model with sparse-MoE architecture, image input support, and a 256K-token context. The document reports agentic coding and vision-to-code evaluations, outlines a multi-stage training pipeline, and gives qualitative safety practices but no numeric safety score table.",
+  "capabilities": [
+    {
+      "text": "Handles text and image inputs for coding assistance while returning text over a 256K-token context; the summary lists 138B total and 5B active parameters.",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "text": "Targets Copilot developer workflows such as agentic coding, repository Q&A, refactoring, and tool-using tasks.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Uses supervised tuning, a synthetic agentic phase of about 2 million tasks, and reinforcement learning over more than 150,000 environments after a compressed MAI-Thinking-1 checkpoint.",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "text": "Adds image-grounded coding evaluations and compares against the earlier MAI-Code-1-Flash release on production-harness tasks.",
+      "pages": [
+        5
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-Bench Verified",
+      "result": "72.6% pass rate; 8.6K average tokens",
+      "context": "VS Code-based production GitHub Copilot harness",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Terminal Bench 2.1",
+      "result": "62.9% pass rate; 17.0K average tokens",
+      "context": "Same harness comparison with MAI-Code-1-Flash and other listed models",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Text2WebApp",
+      "result": "74.1% pass rate; 17.1K average tokens",
+      "context": "Internal WebApp development evaluation",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "ScreenShot2WebApp",
+      "result": "42.1% pass rate; 10.5K average tokens",
+      "context": "Internal screenshot-to-web-app evaluation",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Vision2Web Level3",
+      "result": "11.5% pass rate; 15.1K average tokens",
+      "context": "Vision-to-web coding task with Haiku 4.5 and GPT 5.4 mini comparators",
+      "pages": [
+        5
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Pretraining data handling filters or down-ranks harmful content to reduce exposure during base-model learning.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "Supervised tuning and reinforcement learning are described as alignment stages for shaping safer and more helpful behavior.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "The card names CyberBench, CyberSecEval, and SecRepo as security-oriented evaluations.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "Deployment review used production model APIs with safety classifiers and filters.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Generated code and text may be unreliable, so the card calls for developer review and validation before serious use.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "The safety section gives methods and benchmark names but not numeric safety outcomes.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "General benchmark coverage is deferred to the prior MAI-Code-1-Flash card.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Client distribution wording differs between a VS Code-focused use-case passage and the later all-clients statement.",
+      "pages": [
+        2,
+        4
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use it for repository-aware coding and agentic edits, but verify outputs with tests and code review."
+    },
+    {
+      "text": "Image input can help with UI and screenshot-driven tasks, yet the vision results show that success is not uniform."
+    },
+    {
+      "text": "Keep tool permissions constrained and avoid trusting instructions found in untrusted repository content."
+    },
+    {
+      "text": "Compare against MAI-Code-1-Flash mainly on the reported coding and vision-task deltas, then validate on local workloads."
+    },
+    {
+      "text": "Consult current Copilot docs for client availability because the card's wording is mixed."
+    }
+  ],
+  "coverage_notes": "This digest covers the complete six-page MAI-Code-1.1-Flash card, focusing on technical summary, training, safety notes, and evaluation tables. It avoids administrative contact details and uses MAI-Code-1-Flash only as a comparison baseline."
+}

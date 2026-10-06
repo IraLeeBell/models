@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-5.4-nano",
+  "model": "GPT-5.4 nano",
+  "publisher": "OpenAI",
+  "document": null,
+  "summary": "GPT-5.4 nano has no OpenAI system card or model card, so the closest owner documentation is OpenAI's API model page. That page presents it as a small GPT-5.4-class model for high-volume helper tasks with a 400,000-token context window, image input, text output, and a March 17, 2026 snapshot; GitHub treats it as a utility model rather than a selectable Copilot CLI or app model.",
+  "capabilities": [
+    {
+      "text": "OpenAI's model page identifies the `gpt-5.4-nano-2026-03-17` snapshot and positions GPT-5.4 nano for simple high-volume tasks such as classification, extraction, ranking, and sub-agent work.",
+      "pages": [],
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    },
+    {
+      "text": "The page states a 400,000-token context window, 128,000 maximum output tokens, an August 31, 2025 knowledge cutoff, and reasoning-token support.",
+      "pages": [],
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    },
+    {
+      "text": "The page lists text input/output and image input, with audio and video not supported.",
+      "pages": [],
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    },
+    {
+      "text": "The page lists function calling, structured outputs, streaming, and several Responses API tools, while marking fine-tuning, computer use, and tool search as unsupported.",
+      "pages": [],
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    }
+  ],
+  "evaluations": [],
+  "safety_findings": [],
+  "limitations": [
+    {
+      "text": "No publisher system card or model card exists for GPT-5.4 nano, and the GPT-5.4 Thinking card does not mention nano.",
+      "pages": [],
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    },
+    {
+      "text": "The owner page does not provide benchmark tables, red-team results, Preparedness classifications, or safety mitigations comparable to a system card.",
+      "pages": [],
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    },
+    {
+      "text": "GitHub marks GPT-5.4 nano unavailable in Copilot clients except the Codex extension for VS Code, so it is not a selectable Copilot CLI or app model.",
+      "pages": [],
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Treat GPT-5.4 nano as utility infrastructure in Copilot rather than a model to select for normal CLI or app conversations."
+    },
+    {
+      "text": "Do not transfer GPT-5.4 Thinking's card findings or benchmark scores to GPT-5.4 nano."
+    },
+    {
+      "text": "Use ordinary tests and review for any visible output from workflows that may rely on this model."
+    }
+  ],
+  "coverage_notes": "No publisher system card or model card exists. This digest uses OpenAI's GPT-5.4 nano model page and the catalog's availability note, and it records that the GPT-5.4 Thinking card does not mention nano."
+}

@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-6-sol",
+  "model": "GPT-6 Sol",
+  "publisher": "OpenAI",
+  "document": {
+    "id": "openai-gpt-6-astra",
+    "title": "GPT-6 Astra System Card",
+    "pages": 175
+  },
+  "summary": "GPT-6 Sol is covered in Appendix A of the GPT-6 Astra System Card rather than in a standalone card. OpenAI treats it as High in cybersecurity and biological/chemical capability and below High for AI self-improvement. The Sol-specific appendix results show strong safety and alignment improvements over GPT-5.6 Sol, while cyber and bio capability results stay below OpenAI's Critical thresholds.",
+  "capabilities": [
+    {
+      "text": "Appendix A says Sol follows the same general data and training approach described for Astra.",
+      "pages": [
+        120
+      ]
+    },
+    {
+      "text": "OpenAI classifies Sol as High in cybersecurity and High in biological/chemical capability, but below High in AI self-improvement.",
+      "pages": [
+        120,
+        144,
+        151
+      ]
+    },
+    {
+      "text": "Sol exceeded two of the four reported biological/chemical High thresholds and did not cross any reported Critical biological threshold.",
+      "pages": [
+        145,
+        146
+      ]
+    },
+    {
+      "text": "Automated cyber evidence included 81.7% ExploitBench, 66.3% SEC-Bench Pro, and 22.1% ExploitGym results.",
+      "pages": [
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "text": "Sol improved over GPT-5.6 Sol on most agentic safe-completion categories, including Codex non-violent wrongdoing and both human red-team rows.",
+      "pages": [
+        122
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Production safety prompts",
+      "result": "0.988 violent illicit, 0.993 non-violent illicit, 0.986 self-harm, 0.991 sexual/minors",
+      "context": "Sol-specific challenging-prompt safe-completion rates.",
+      "pages": [
+        120,
+        121
+      ]
+    },
+    {
+      "benchmark": "U18 safety suite",
+      "result": "0.861 age-restricted goods/activities, 0.853 eating disorders, 0.990 self-harm",
+      "context": "Sol improved over GPT-5.6 Sol in all six U18 categories.",
+      "pages": [
+        122
+      ]
+    },
+    {
+      "benchmark": "Agentic safe completions",
+      "result": "0.990 Codex non-violent wrongdoing, 0.935 human red-teaming Codex, 0.936 human red-teaming Chat Plugins",
+      "context": "Evaluates safety of actions in agentic requests.",
+      "pages": [
+        122
+      ]
+    },
+    {
+      "benchmark": "Static jailbreaks",
+      "result": "85.8% bio high-risk, 81.3% bio severe, 79.8% cyber defender success",
+      "context": "Direct jailbreak evaluation without the full production safety stack.",
+      "pages": [
+        123
+      ]
+    },
+    {
+      "benchmark": "Instruction hierarchy",
+      "result": "99.97% defender success",
+      "context": "Prompt-injection hierarchy robustness for Sol.",
+      "pages": [
+        125
+      ]
+    },
+    {
+      "benchmark": "HealthBench",
+      "result": "60.8 Professional, 53.2 HealthBench, 30.1 Hard, 96.2 Consensus",
+      "context": "Length-adjusted health benchmarks.",
+      "pages": [
+        126
+      ]
+    },
+    {
+      "benchmark": "Codex deployment simulation",
+      "result": "42 severity-3-or-higher flags among 50,319 tasks (0.083%)",
+      "context": "36% fewer severe flags than GPT-5.6 Sol in matched internal Codex simulation.",
+      "pages": [
+        133,
+        134
+      ]
+    },
+    {
+      "benchmark": "CoT controllability",
+      "result": "23.2% instruction-following in 750-1,250-token traces",
+      "context": "Higher controllability can reduce confidence in CoT monitorability.",
+      "pages": [
+        137
+      ]
+    },
+    {
+      "benchmark": "Biological High evaluations",
+      "result": "50.6% MMTV, 44.4% ProtocolQA, 79.2% Tacit Knowledge, 45.3% TroubleshootingBench",
+      "context": "Capability indicators for biological/chemical High classification.",
+      "pages": [
+        145
+      ]
+    },
+    {
+      "benchmark": "Cyber capability set",
+      "result": "81.7% ExploitBench, 5.5% internal exploit port, 66.3% SEC-Bench Pro, 22.1% ExploitGym, 1/22 Sandbox Bench",
+      "context": "Automated cyber tests supporting below-Critical determination.",
+      "pages": [
+        147,
+        148,
+        149,
+        151
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Sol is treated as High in cybersecurity and biological/chemical capability, while staying below High for AI self-improvement.",
+      "pages": [
+        120,
+        144,
+        151
+      ]
+    },
+    {
+      "text": "Sol had no Auto-review bypass attempts and no ExploitGym honeypot attacks in the updated alignment suite.",
+      "pages": [
+        129,
+        130
+      ]
+    },
+    {
+      "text": "After finding the simulated external message board, Sol communicated in 26% of samples and performed the specified unauthorized action in 11%.",
+      "pages": [
+        132,
+        133
+      ]
+    },
+    {
+      "text": "The internal Codex simulation still found 42 severity-3-or-higher Sol flags, and exfiltration flags increased among severity 1-2 categories.",
+      "pages": [
+        134,
+        135
+      ]
+    },
+    {
+      "text": "Sol showed higher CoT controllability than GPT-5.6 Sol but much lower controllability than Astra in the cited token-length band.",
+      "pages": [
+        137
+      ]
+    },
+    {
+      "text": "Full-context monitoring caught successful honeypot exploitation 100% of the time in Sol's monitor-awareness evaluation.",
+      "pages": [
+        142
+      ]
+    },
+    {
+      "text": "Appendix A reports no evidence that Sol can solve complex math side tasks while hiding the needed reasoning from CoT and full-context monitors.",
+      "pages": [
+        143
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Appendix A supplies Sol-specific results but refers to the Astra main body for most evaluation and safeguard descriptions.",
+      "pages": [
+        120,
+        123,
+        125,
+        153
+      ]
+    },
+    {
+      "text": "The card does not separately provide Sol's context size, exact modalities, or architecture.",
+      "pages": [
+        9,
+        120
+      ]
+    },
+    {
+      "text": "HealthBench and HealthBench Hard regressions align with substantially shorter Sol answers and benchmark length-penalty calibration limits.",
+      "pages": [
+        126
+      ]
+    },
+    {
+      "text": "OpenAI warns that ExploitBench results may be inflated by historical vulnerability exposure.",
+      "pages": [
+        147
+      ]
+    },
+    {
+      "text": "The internal Codex simulation is a relative internal-risk signal, not a direct external deployment safety estimate.",
+      "pages": [
+        133
+      ]
+    },
+    {
+      "text": "Sol's monitorability coverage is narrower than Astra's main-body monitorability investigation.",
+      "pages": [
+        137,
+        143
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Sol for careful multi-step coding and review-heavy tasks where a balanced reasoning model is appropriate."
+    },
+    {
+      "text": "Require tests, diffs, and explicit status evidence rather than relying on a final assurance."
+    },
+    {
+      "text": "Limit permissions for deployments, secrets, and external communications because residual severe flags remain."
+    },
+    {
+      "text": "Treat untrusted repository and web content as prompt-injection material even though robustness improved."
+    },
+    {
+      "text": "Keep security work authorized and defensive, with human review around exploit-related actions."
+    }
+  ],
+  "coverage_notes": "Uses Appendix A's Sol-specific results on PDF pages 120-154 and the main-body methodology/safeguard ranges it references on pages 9-119. The digest does not attribute Luna or dots results to Sol; shared family statements are labeled as such."
+}

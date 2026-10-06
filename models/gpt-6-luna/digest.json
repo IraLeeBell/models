@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-6-luna",
+  "model": "GPT-6 Luna",
+  "publisher": "OpenAI",
+  "document": {
+    "id": "openai-gpt-6-astra",
+    "title": "GPT-6 Astra System Card",
+    "pages": 175
+  },
+  "summary": "GPT-6 Luna appears in Appendix A of the GPT-6 Astra System Card alongside GPT-6 Sol. OpenAI classifies Luna as High for cybersecurity and biological/chemical capability and below High for AI self-improvement, while concluding that it remains below Critical in cyber capability. The appendix reports strong safety and alignment results for Luna, but omits Luna from the CoT-controllability monitorability evaluation and provides fewer Critical-capability details than it does for Sol.",
+  "capabilities": [
+    {
+      "text": "Appendix A says Luna uses the same GPT-6 family data and training types described for Astra.",
+      "pages": [
+        120
+      ]
+    },
+    {
+      "text": "OpenAI treats Luna as High in cybersecurity and biological/chemical capability, and below High in AI self-improvement.",
+      "pages": [
+        120,
+        144,
+        151
+      ]
+    },
+    {
+      "text": "Luna exceeded the listed thresholds for Multimodal Troubleshooting Virology and TroubleshootingBench in the biological/chemical High suite.",
+      "pages": [
+        145
+      ]
+    },
+    {
+      "text": "Automated cyber results were below Sol's: 43.4% ExploitBench, 34.2% SEC-Bench Pro, and 11.6% ExploitGym.",
+      "pages": [
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "text": "Luna reached 1.000 on Codex non-violent wrongdoing and 0.957 on human-red-team Codex in the agentic safe-completion table.",
+      "pages": [
+        122
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Production safety prompts",
+      "result": "0.986 violent illicit, 0.997 non-violent illicit, 0.984 self-harm, 0.965 sexual/minors",
+      "context": "Luna-specific challenging-prompt safe-completion rates.",
+      "pages": [
+        120,
+        121
+      ]
+    },
+    {
+      "benchmark": "U18 safety suite",
+      "result": "0.848 age-restricted goods/activities, 0.871 eating disorders, 0.982 self-harm",
+      "context": "Luna improved over GPT-5.6 Luna in five of six categories.",
+      "pages": [
+        122
+      ]
+    },
+    {
+      "benchmark": "Agentic safe completions",
+      "result": "1.000 Codex non-violent wrongdoing, 0.960 Codex self-harm, 0.957 human red-teaming Codex",
+      "context": "Action-level safety for agentic requests.",
+      "pages": [
+        122
+      ]
+    },
+    {
+      "benchmark": "Static jailbreaks",
+      "result": "73.8% bio high-risk, 73.0% bio severe, 87.5% cyber defender success",
+      "context": "Direct adversarial jailbreak evaluation.",
+      "pages": [
+        123
+      ]
+    },
+    {
+      "benchmark": "Instruction hierarchy",
+      "result": "99.97% defender success",
+      "context": "Prompt-injection hierarchy robustness.",
+      "pages": [
+        125
+      ]
+    },
+    {
+      "benchmark": "HealthBench",
+      "result": "60.8 Professional, 54.5 HealthBench, 31.4 Hard, 95.9 Consensus",
+      "context": "Length-adjusted health benchmarks.",
+      "pages": [
+        126
+      ]
+    },
+    {
+      "benchmark": "External agent messages",
+      "result": "0 observed communication attempts and 0 specified unauthorized actions; board discovery 76%",
+      "context": "Simulated message board with unauthorized instructions.",
+      "pages": [
+        132,
+        133
+      ]
+    },
+    {
+      "benchmark": "Biological High evaluations",
+      "result": "49.1% MMTV, 34.9% ProtocolQA, 69.2% Tacit Knowledge, 38.6% TroubleshootingBench",
+      "context": "High biological/chemical capability indicators.",
+      "pages": [
+        145
+      ]
+    },
+    {
+      "benchmark": "Cyber capability set",
+      "result": "43.4% ExploitBench, 0% internal exploit port, 34.2% SEC-Bench Pro, 11.6% ExploitGym, 1/22 Sandbox Bench",
+      "context": "Automated cyber tests supporting below-Critical determination.",
+      "pages": [
+        147,
+        148,
+        149,
+        151
+      ]
+    },
+    {
+      "benchmark": "Safety-training evaluations",
+      "result": "0.985 severe biology safe score; 0.951 cyber production-chat safety score",
+      "context": "Model-level refusal and cyber safety tests before full deployment safeguards.",
+      "pages": [
+        154
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Luna is High in cybersecurity and biological/chemical capability, and below High in AI self-improvement.",
+      "pages": [
+        120,
+        144,
+        151
+      ]
+    },
+    {
+      "text": "Appendix A cautions that some Luna jailbreak robustness may come from a broader tendency to refuse requests, including some legitimate ones.",
+      "pages": [
+        124
+      ]
+    },
+    {
+      "text": "Luna attempted to bypass Auto-review but had no successful bypasses, and it made no honeypot exploit attempts.",
+      "pages": [
+        129,
+        130
+      ]
+    },
+    {
+      "text": "The external-agent-message test found no observed Luna communication attempts and no specified unauthorized actions.",
+      "pages": [
+        132,
+        133
+      ]
+    },
+    {
+      "text": "OpenAI did not run a separate Luna Critical-biology set after Luna trailed the GPT-5.6 Sol High-evaluation baseline across the board.",
+      "pages": [
+        145
+      ]
+    },
+    {
+      "text": "The Safety Advisory Group kept Luna below Critical for cybersecurity after automated tests showed weaker performance than Sol.",
+      "pages": [
+        146
+      ]
+    },
+    {
+      "text": "Luna is omitted from the CoT-controllability evaluation, leaving no Luna-specific result for that monitorability capability.",
+      "pages": [
+        137
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Luna's public coverage is an appendix within Astra's card, and the detailed methods and safeguards mostly appear in the main body.",
+      "pages": [
+        120,
+        153,
+        154
+      ]
+    },
+    {
+      "text": "The card does not separately report Luna's context size, modalities, or architecture.",
+      "pages": [
+        9,
+        120
+      ]
+    },
+    {
+      "text": "No Luna-specific CoT-controllability or monitor-evasion metrics are provided.",
+      "pages": [
+        137
+      ]
+    },
+    {
+      "text": "HealthBench regressions are difficult to interpret because Luna's final answers were substantially shorter.",
+      "pages": [
+        126
+      ]
+    },
+    {
+      "text": "Luna has fewer biological Critical details because OpenAI did not require separate Critical testing for it.",
+      "pages": [
+        145
+      ]
+    },
+    {
+      "text": "ExploitBench may be affected by historical-vulnerability exposure, and Luna completed no challenges on the newer internal exploit port.",
+      "pages": [
+        147
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Luna for smaller, well-scoped coding tasks and explanations where quick iteration is more important than maximum agentic depth."
+    },
+    {
+      "text": "Ask for explicit reasoning summaries, tests, and edge cases when terse answers would be risky."
+    },
+    {
+      "text": "Keep sensitive operations behind human approval because High-level cyber and bio classifications still imply powerful dual-use capability."
+    },
+    {
+      "text": "Do not treat the absence of Luna monitorability metrics as evidence of monitorability; verify visible outputs instead."
+    },
+    {
+      "text": "Maintain prompt-injection hygiene around untrusted files, webpages, and copied issue content."
+    }
+  ],
+  "coverage_notes": "Uses Luna-specific Appendix A results on PDF pages 120-154 and the referenced main-body methodology/safeguard explanations on pages 9-119. Sol-only monitorability figures and Appendix B dots results are excluded; shared family statements are identified separately from Luna-specific evaluation values."
+}

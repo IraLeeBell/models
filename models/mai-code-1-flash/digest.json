@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "slug": "mai-code-1-flash",
+  "model": "MAI-Code-1-Flash",
+  "publisher": "Microsoft",
+  "document": {
+    "id": "microsoft-mai-code-1-flash",
+    "title": "MAI-Code-1-Flash model card",
+    "pages": 6
+  },
+  "summary": "Microsoft's MAI-Code-1-Flash card describes a text-only sparse-MoE coding model for Copilot developer workflows. It reports production-harness coding, reasoning, instruction-following, and tool-use benchmarks, while safety discussion stays qualitative and the model is now retired in the GitHub catalog.",
+  "capabilities": [
+    {
+      "text": "Text-to-text coding model with a 256K-token context and sparse-MoE transformer architecture.",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "text": "Targets agentic coding, repository Q&A, refactoring, completion, and tool-using Copilot workflows.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Training includes supervised tuning, a synthetic agentic phase with about 2 million tasks, and reinforcement learning over more than 150,000 environments.",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "text": "Validated in the GitHub Copilot production harness on software-engineering, repository Q&A, refactoring, and usage-derived tasks.",
+      "pages": [
+        3
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-Bench Verified",
+      "result": "71.6% pass rate; 10.8K average tokens",
+      "context": "VS Code-based production harness",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "SWE-Bench Pro",
+      "result": "51.2% pass rate; 28.0K average tokens",
+      "context": "Diverse agentic coding evaluation",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "SWE-Bench Multilingual",
+      "result": "65.5% pass rate; 15.3K average tokens",
+      "context": "Multilingual coding benchmark",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Terminal Bench 2",
+      "result": "54.8% pass rate; 21.6K average tokens",
+      "context": "Agentic terminal coding",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "AIME 2026",
+      "result": "92.5% accuracy",
+      "context": "Competitive math",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "GPQA Diamond",
+      "result": "84.6% accuracy",
+      "context": "Science reasoning",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "IF Bench",
+      "result": "75.0 average",
+      "context": "Precise instruction following",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "τ²-Bench",
+      "result": "71.7 on telecom",
+      "context": "Agentic tool use",
+      "pages": [
+        6
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Harmful content is filtered or down-ranked during pretraining.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "Alignment work during supervised tuning and reinforcement learning is used to discourage unsafe outputs.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "CyberBench, CyberSecEval, and SecRepo are named as cybersecurity and secure-coding evaluations.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "The release process used safety classifiers and filters around production APIs.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The GitHub catalog marks the model retired as of 2026-09-10.",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "text": "The card lists text input only, so it does not document image-grounded behavior.",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "text": "The initial distribution section was limited to Visual Studio Code with CLI planned later.",
+      "pages": [
+        2,
+        4
+      ]
+    },
+    {
+      "text": "Safety results are described qualitatively without benchmark pass rates.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "Generated output can be faulty and requires review and validation.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired the model on 2026-09-10; remaining guidance is historical and useful for successor comparison."
+    },
+    {
+      "text": "Use MAI-Code-1-Flash as the baseline when interpreting MAI-Code-1.1-Flash improvements."
+    },
+    {
+      "text": "Rely on tests and code review rather than benchmark scores when judging old generated changes."
+    },
+    {
+      "text": "Do not infer image-input behavior from this card."
+    },
+    {
+      "text": "Treat historical availability notes as stale unless confirmed in current Copilot docs."
+    }
+  ],
+  "coverage_notes": "This digest summarizes the complete six-page MAI-Code-1-Flash card and avoids administrative contact details. It treats the model as retired in the catalog and does not apply later MAI-Code-1.1-Flash capabilities retroactively."
+}

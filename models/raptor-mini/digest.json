@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "slug": "raptor-mini",
+  "model": "Raptor mini",
+  "publisher": "Microsoft",
+  "document": null,
+  "summary": "No publisher model card or system card exists for Raptor mini. GitHub owner documentation described it as an experimental VS Code Copilot model and catalog context identifies it as a fine-tuned GPT-5 mini, so this digest points to the base gpt-5-mini folder while warning that Raptor itself was not evaluated publicly.",
+  "capabilities": [
+    {
+      "text": "GitHub's changelog described Raptor mini as an experimental Copilot model rolling out in Visual Studio Code.",
+      "pages": [],
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "text": "The changelog said the model could be selected for chat, ask, edit, and agent modes in VS Code.",
+      "pages": [],
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "text": "GitHub supported-models documentation identified the lineage as a fine-tuned GPT-5 mini.",
+      "pages": [],
+      "source": "https://docs.github.com/copilot/reference/ai-models/supported-models"
+    }
+  ],
+  "evaluations": [],
+  "safety_findings": [],
+  "limitations": [
+    {
+      "text": "No publisher system card or model card exists for Raptor mini itself.",
+      "pages": [],
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "text": "The owner documentation does not report Raptor-specific benchmark scores or safety evaluations.",
+      "pages": [],
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "text": "The changelog documents Visual Studio Code availability, not Copilot CLI availability.",
+      "pages": [],
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "text": "Base GPT-5 mini materials do not evaluate the Raptor fine-tune, and fine-tuning can change behavior.",
+      "pages": [],
+      "source": "https://docs.github.com/copilot/reference/ai-models/supported-models"
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired the model on 2026-09-01; remaining guidance is historical and lineage-focused."
+    },
+    {
+      "text": "Use the gpt-5-mini folder only as incomplete base-model context."
+    },
+    {
+      "text": "Do not infer Raptor-specific safety or benchmark behavior from missing documentation."
+    },
+    {
+      "text": "Treat old Raptor mini outputs as preview-era VS Code behavior, not as a current CLI model."
+    }
+  ],
+  "coverage_notes": "This digest covers GitHub's Raptor mini changelog and the supported-models lineage note. Because no publisher card exists, evaluations and safety_findings are empty and limitations emphasize the absence of Raptor-specific evidence."
+}

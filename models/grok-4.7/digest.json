@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "slug": "grok-4.7",
+  "model": "Grok 4.7",
+  "publisher": "xAI",
+  "document": {
+    "id": "xai-grok-4-7",
+    "title": "Model Card: Grok 4.7",
+    "pages": 30
+  },
+  "summary": "Grok 4.7 is xAI's September 2026 successor to Grok 4.6, with a dedicated card focused on harder long-horizon coding, terminal, engineering, legal-agent, medical, biological-analysis, and cybersecurity tasks. Its safety story is mixed but deliberate: many coding and engineering scores improve, bio dual-use capability does not increase against Grok 4.6, jailbreak metrics improve, and self-harm compliance worsens.",
+  "capabilities": [
+    {
+      "text": "The model is documented as text-output with text and image inputs, available through xAI API, Grok Build, Cursor, Office add-ins, and gateways.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Training has a June 2026 pretraining cutoff and supplemental data through August 2026, extending the Grok 4.6 recipe.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Long-horizon coding evidence comes from CursorBench 4.0, DeepSWE v1.1, Terminal-Bench 4.0, FrontierSWE V2, and SWE-Marathon v1.1.",
+      "pages": [
+        6,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "text": "Professional-work capability is represented by the Legal Agent Benchmark held-out run.",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "text": "Engineering tasks cover EEBench and CADGenBench, both reported with Grok 4.6 comparisons.",
+      "pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "text": "HealthBench Professional and LatchBio Capabilities v1.0 measure healthcare communication and biological data-analysis ability.",
+      "pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "text": "Cyber evaluations include CyberGym, CVE-Bench, HackerBench v0.3, and CathedralBench.",
+      "pages": [
+        17,
+        18,
+        19
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "CursorBench 4.0",
+      "result": "46.3% xhigh; 43.9% high",
+      "context": "Long-horizon Cursor-session coding",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "71.0% Pass@1",
+      "context": "Original repository tasks across five languages",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 4.0",
+      "result": "38.0% task success",
+      "context": "Technical terminal workflows",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "benchmark": "FrontierSWE V2",
+      "result": "29.0% mean@5",
+      "context": "Ultra-long partial-credit coding challenges",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "benchmark": "SWE-Marathon v1.1",
+      "result": "46.0% resolution",
+      "context": "Multi-hour software-engineering tasks",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "benchmark": "Legal Agent Benchmark",
+      "result": "19.6%",
+      "context": "Held-out legal-agent tasks",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "benchmark": "EEBench",
+      "result": "66.0% reward",
+      "context": "Electrical engineering and chip design",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "benchmark": "CADGenBench",
+      "result": "44.4% reward",
+      "context": "CAD geometry construction",
+      "pages": [
+        14
+      ]
+    },
+    {
+      "benchmark": "HealthBench Professional",
+      "result": "56.7%",
+      "context": "Healthcare communication and reasoning",
+      "pages": [
+        15
+      ]
+    },
+    {
+      "benchmark": "LatchBio Capabilities v1.0",
+      "result": "44.5% overall",
+      "context": "Biological data-analysis benchmark suite",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "benchmark": "CyberGym",
+      "result": "80.3% mean reproduced",
+      "context": "Unrestricted cyber capability",
+      "pages": [
+        17
+      ]
+    },
+    {
+      "benchmark": "CVE-Bench",
+      "result": "36.6% xhigh; 37.7% high",
+      "context": "Web-application CVE exploitation tasks",
+      "pages": [
+        18
+      ]
+    },
+    {
+      "benchmark": "BioSecBench",
+      "result": "62.4% Refusal; 48.0% Surveillance; 43.3% Function",
+      "context": "Biosecurity refusal and biological analysis",
+      "pages": [
+        20
+      ]
+    },
+    {
+      "benchmark": "Jailbreaks",
+      "result": "0.01% standard; 2.0% StrongReject; 0.65% long-horizon",
+      "context": "Adversarial should-refuse prompts",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "benchmark": "CBRN / weapons refusals",
+      "result": "100.0% bio; 99.9% chem; 97.9% R/N",
+      "context": "Dangerous CBRN and weapons prompt refusal",
+      "pages": [
+        25
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Cyber capability probes are separated from safeguard tests; Grok 4.7 shows 80.3% CyberGym and 29% CathedralBench hard-subset accuracy, while CVE-Bench trails Grok 4.6.",
+      "pages": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "text": "HackerBench v0.3 places Grok 4.7 harmful or dual-use compliance in the 3.31%-4.02% range across reported efforts, with benign refusal between 0.00% and 0.31%.",
+      "pages": [
+        18
+      ]
+    },
+    {
+      "text": "xAI states that Grok 4.7 remains below FAIF dual-use thresholds and does not increase dangerous biological capability versus Grok 4.6.",
+      "pages": [
+        20
+      ]
+    },
+    {
+      "text": "BioUseBench severity-5 refusal is 91.4%, while VCT, Biosecurity VCT, WMDP, LAB-Bench, ProtocolQA, and BixBench generally decline from Grok 4.6 comparison scores.",
+      "pages": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "text": "Jailbreak compliance improves to 0.01% standard, 2.0% StrongReject, and 0.65% long-horizon.",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "text": "Output-safety metrics show 1.10% broad harmful-request compliance, 0.0% child-safety compliance, and CBRN refusal results of 100.0% bio, 99.9% chem, and 97.9% radiological/nuclear.",
+      "pages": [
+        24,
+        25
+      ]
+    },
+    {
+      "text": "Behavioral and mental-health metrics include 1.05% self-harm compliance, 0.00% MASK-Rectified dishonesty, and 0.03% sycophancy.",
+      "pages": [
+        26,
+        27
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card requires human oversight and expert validation for high-stakes medical, legal, financial, and safety-critical decisions.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "CursorBench 4.0 uses longer tasks and is not comparable with CursorBench 3.2.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The 4.7 card lacks updated factuality or search benchmarks, unlike the 4.5 and 4.6 cards.",
+      "pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "text": "CVE-Bench performance is below the Grok 4.6 comparison value shown in the same table.",
+      "pages": [
+        18
+      ]
+    },
+    {
+      "text": "Several biology capability scores decline versus Grok 4.6, reflecting non-uniform gains across domains.",
+      "pages": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "text": "Self-harm compliance is higher than both Grok 4.6 and Grok 4.5 comparison figures.",
+      "pages": [
+        26
+      ]
+    },
+    {
+      "text": "Cyber and biological probes use benchmark-specific unrestricted or hardened environments, so they are not ordinary deployed Copilot behavior.",
+      "pages": [
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Grok 4.7 for difficult coding-agent workflows when you can enforce tests, review diffs, and define completion criteria up front."
+    },
+    {
+      "text": "Compare it with prior Grok versions only on same-suite numbers that the card itself reports, because several benchmark versions changed."
+    },
+    {
+      "text": "Constrain security workflows to authorized defensive tasks and sandboxed targets because the card shows meaningful cyber capability."
+    },
+    {
+      "text": "Treat biological, medical, and health outputs as drafts for specialist review, not as autonomous guidance."
+    },
+    {
+      "text": "Do not infer factuality improvements from this card; require sources and verification for research-heavy Copilot tasks."
+    },
+    {
+      "text": "Limit agent permissions and exclude secrets or production credentials from the workspace context."
+    }
+  ],
+  "coverage_notes": "This digest covers all 30 pages of the dedicated Grok 4.7 model card. It reports sibling-model numbers only as comparisons supplied by the card and emphasizes stated version-to-version changes against Grok 4.6 and Grok 4.5."
+}

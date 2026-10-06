@@ -1,4 +1,11 @@
+.venv/
+__pycache__/
+*/.card-*.tmp
+*/supplements/
+# Publisher documents are local-only unless RIGHTS.md records a redistribution grant.
 */system-card.pdf
 */system-card.md
-*/.system-card-*.tmp
-__pycache__/
+*/model-card.md
+!kimi-k3/system-card.pdf
+!kimi-k3/system-card.md
+!kimi-k2.7-code/model-card.md

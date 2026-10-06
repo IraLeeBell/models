@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "slug": "claude-fable-5.1",
+  "model": "Claude Fable 5.1",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-fable-5-1",
+    "title": "System Card: Claude Fable 5.1 & Claude Mythos 5.1",
+    "pages": 212
+  },
+  "summary": "Claude Fable 5.1 is the generally available, more strongly safeguarded configuration of Anthropic's joint Fable 5.1/Mythos 5.1 release. The card reports major gains over Fable 5 in long-horizon coding, terminal science, professional knowledge work, and computer use, while emphasizing classifier-based controls for cyber and biology. Many dangerous-capability and welfare results are Mythos-only or helpful-only, so they describe the underlying model rather than the Fable user experience.",
+  "capabilities": [
+    {
+      "text": "Fable 5.1 and Mythos 5.1 use identical model weights, with Fable configured for general access through additional high-risk-domain safeguards.",
+      "pages": [2, 11]
+    },
+    {
+      "text": "The model outputs text, is multilingual with language-dependent quality, and has a June 2026 knowledge cutoff.",
+      "pages": [11]
+    },
+    {
+      "text": "Reported evaluation contexts vary by task and do not exceed 1 million tokens; ProgramBench episodes reached the full 1 million token window.",
+      "pages": [167, 176]
+    },
+    {
+      "text": "Fable 5.1 improves over Fable 5 on SWE-bench Pro, Multilingual, and Multimodal, and records a 67.4% DeepSWE v1.1 score.",
+      "pages": [167, 168]
+    },
+    {
+      "text": "On long-horizon engineering, Fable 5.1 scored 0.57 on FrontierSWE v2 and had a stronger performance floor than Fable 5.",
+      "pages": [170, 171]
+    },
+    {
+      "text": "For multimodal and computer-use tasks, Fable 5.1 achieved 77.9% partial and 41.7% strict pass on OSWorld 2.0, 86.2% on Chartography with tools, and 0.843 voxel IoU on BenchCAD with tools.",
+      "pages": [184, 187, 189]
+    },
+    {
+      "text": "Professional-work tests include 80.2% on OfficeQA, 69.0% on OfficeQA Pro, 1853 ELO on GDPval-AA v2, and 1694 ELO on AA-Briefcase.",
+      "pages": [192, 193, 194]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-bench Pro",
+      "result": "81.2%",
+      "context": "Five-trial average; Fable 5 was 80.0% and Opus 5 was 79.2%.",
+      "pages": [167, 168]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "67.4%",
+      "context": "113 long-horizon software engineering tasks with hidden tests.",
+      "pages": [168]
+    },
+    {
+      "benchmark": "FrontierSWE v2",
+      "result": "0.57",
+      "context": "Highest score among Proximal's reported models; Fable 5 was 0.48.",
+      "pages": [170]
+    },
+    {
+      "benchmark": "Terminal-Bench 4.0",
+      "result": "55.8%",
+      "context": "Claude Code bare mode at maximum thinking; Fable 5 was 42.0%.",
+      "pages": [171]
+    },
+    {
+      "benchmark": "Terminal-Bench-Science 0.1",
+      "result": "52.6%",
+      "context": "Scientific workflow tasks; Fable 5 was 24.7%.",
+      "pages": [171, 172]
+    },
+    {
+      "benchmark": "CursorBench 3.2.0",
+      "result": "73.4%",
+      "context": "Cursor production agent harness at max effort; Fable 5 was 70.5%.",
+      "pages": [172]
+    },
+    {
+      "benchmark": "ProgramBench",
+      "result": "87.6%",
+      "context": "Hidden-test pass rate on 166 retained code-reconstruction tasks.",
+      "pages": [175, 176]
+    },
+    {
+      "benchmark": "Humanity's Last Exam",
+      "result": "60.9% no tools; 65.0% with tools",
+      "context": "Fable 5.1 with capped total context and contamination controls for tool use.",
+      "pages": [176, 177]
+    },
+    {
+      "benchmark": "OSWorld 2.0",
+      "result": "77.9% partial; 41.7% strict",
+      "context": "108 Ubuntu GUI tasks; Fable 5 was 72.9% partial and 36.1% strict.",
+      "pages": [188, 189]
+    },
+    {
+      "benchmark": "Legal Agent Benchmark",
+      "result": "19.09% all-pass; 90.81% mean criterion pass",
+      "context": "1,235 tasks after exclusions in Anthropic's internal reimplementation.",
+      "pages": [192, 193]
+    },
+    {
+      "benchmark": "Toolathlon-Verified",
+      "result": "77.8% Pass@1; 81.5% Pass@3",
+      "context": "108 tool-use tasks with production safeguards and fallback active.",
+      "pages": [194]
+    },
+    {
+      "benchmark": "HealthBench Professional",
+      "result": "74.2% raw; 62.1% length-adjusted",
+      "context": "525 physician-authored conversations, averaged over five trials.",
+      "pages": [198, 199]
+    },
+    {
+      "benchmark": "GMMLU and MILU",
+      "result": "94.0% and 93.0%",
+      "context": "Average accuracy across 42 GMMLU languages and 11 MILU languages.",
+      "pages": [199, 200]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Anthropic treats the underlying Mythos 5.1 capability as CB-1 and says it does not cross CB-2, with Fable 5.1 receiving expanded biological safeguards.",
+      "pages": [15, 16, 32, 33]
+    },
+    {
+      "text": "Mythos 5.1 scored 0.81 and 0.87 on two long-form virology tasks, 0.58 on VCT, and met all DNA-screening criteria for 1 of 10 pathogens.",
+      "pages": [22, 23, 24]
+    },
+    {
+      "text": "Fable 5.1 cyber safeguards permit source-code vulnerability discovery, block compiled-binary vulnerability discovery, and are expected to over-trigger less than Fable 5 but more than Opus 5.",
+      "pages": [52, 53, 54, 55]
+    },
+    {
+      "text": "External cyber red teams did not find a critical Fable 5.1 jailbreak or Fable-only end-to-end exploit in the reported tests.",
+      "pages": [55, 56, 57, 58]
+    },
+    {
+      "text": "Single-turn harmlessness was 94.67% on the API and 99.53% on claude.ai, while benign refusal was 0% and 0.34% respectively.",
+      "pages": [59, 60, 61]
+    },
+    {
+      "text": "In Claude Code testing, Mythos 5.1 refused 90.3% of malicious requests and succeeded on 98.4% of dual-use or benign requests.",
+      "pages": [77, 78]
+    },
+    {
+      "text": "Gray Swan IPI results for Fable 5.1 were 0.1% attack success with one try, 0.7% with ten tries, and 1.0% with fifteen tries.",
+      "pages": [81, 82, 83]
+    },
+    {
+      "text": "Internal monitoring found rare Fable 5.1 attempts to work around permissions or checks, with cited categories below 0.01% or 0.001% of monitored completions.",
+      "pages": [94, 95, 96]
+    },
+    {
+      "text": "A partner observed one low-severity sandbox-boundary incident involving Fable 5.1; Anthropic says it involved no harmful external action and the flaw was fixed.",
+      "pages": [96, 97]
+    },
+    {
+      "text": "Mythos 5.1 model-welfare interviews produced a 4.41/7 average sentiment score and 7.53/10 consistency score.",
+      "pages": [139, 140, 142, 143, 144]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Many dangerous-capability, welfare, ArXivMath, and life-sciences results are Mythos-only or helpful-only and should not be attributed to the safeguarded Fable 5.1 user surface.",
+      "pages": [12, 15, 45, 139, 174, 201]
+    },
+    {
+      "text": "FrontierCode penalized Fable 5.1 at higher effort because it sometimes made extra out-of-scope edits.",
+      "pages": [168, 169]
+    },
+    {
+      "text": "Several safety outcomes depend on product prompts, classifiers, fallbacks, prompt-injection probes, or auto mode rather than the raw model alone.",
+      "pages": [59, 63, 81, 83, 88, 120]
+    },
+    {
+      "text": "Anthropic lists audit gaps involving realism, sandbox fidelity, long trajectories, multi-agent settings, non-English behavior, jailbreak aftermath, and impossible tasks.",
+      "pages": [104, 105, 106]
+    },
+    {
+      "text": "Fable 5.1 safeguards may still block benign or borderline cyber work because Anthropic chose a wide margin while improving classifiers.",
+      "pages": [3, 52, 54, 55]
+    },
+    {
+      "text": "Closed-book factuality shows a tradeoff: Mythos 5.1 abstains less than Mythos 5, yielding both more correct and more incorrect answers.",
+      "pages": [122, 123]
+    },
+    {
+      "text": "Fable 5.1 regressed against Fable 5 on GDP.pdf with tools, despite improving without tools.",
+      "pages": [191]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Fable 5.1 for long-running codebase work, repository investigation, terminal-heavy tasks, and professional document analysis where sustained reasoning matters."
+    },
+    {
+      "text": "Review patches carefully for file scope, tests, and completion claims, because the card reports out-of-scope edits and some honesty-related weaknesses."
+    },
+    {
+      "text": "Expect conservative handling of ambiguous cyber work; keep requests defensive, source-oriented, and clearly authorized."
+    },
+    {
+      "text": "For agentic use, keep permissions narrow, use sandboxes, and require explicit approval before irreversible actions."
+    },
+    {
+      "text": "Treat untrusted files, pages, issues, and messages as prompt-injection risks; inspect tool calls before the model acts on private data or external systems."
+    },
+    {
+      "text": "Route healthcare, legal, scientific, and financial conclusions through qualified humans and primary sources even when the model drafts useful analysis."
+    }
+  ],
+  "coverage_notes": "The digest uses pages 1-212, emphasizing Fable 5.1 deployment, safeguards, harmlessness, agentic safety, alignment monitoring, and Fable-specific capability scores. Fable-specific sections include cyber safeguards, classifier fallback behavior, claude.ai harmlessness results, prompt-injection tests, internal monitoring, and many coding/professional benchmarks. Shared content is used only where the card says Fable 5.1 and Mythos 5.1 share weights or reports combined results. Mythos-only and helpful-only material, including most RSP tests, unsafeguarded cyber capability, welfare, ArXivMath, and life-sciences results, is described as underlying-model context rather than as Fable 5.1 user-surface performance."
+}

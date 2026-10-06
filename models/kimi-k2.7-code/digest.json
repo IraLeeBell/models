@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "slug": "kimi-k2.7-code",
+  "model": "Kimi K2.7 Code",
+  "publisher": "Moonshot AI",
+  "document": {
+    "id": "moonshot-kimi-k2-7-code",
+    "title": "Kimi K2.7 Code (Hugging Face model card)",
+    "pages": null
+  },
+  "summary": "Moonshot AI's Hugging Face README for Kimi K2.7 Code describes a coding-focused agentic model built on Kimi K2.6 with a 1T-parameter MoE architecture and 256K context. The card provides capability benchmarks, deployment and usage guidance, and license information, but it contains little safety-evaluation content and the model is retired in the GitHub catalog.",
+  "capabilities": [
+    {
+      "text": "Coding-focused agentic model built on Kimi K2.6 for long-horizon software tasks.",
+      "pages": [],
+      "section": "1. Model Introduction"
+    },
+    {
+      "text": "MoE architecture with 1T total parameters, 32B activated parameters, 61 layers, 384 experts, 8 selected experts per token, and 256K context.",
+      "pages": [],
+      "section": "2. Model Summary"
+    },
+    {
+      "text": "MoonViT-based vision support is listed in the architecture table and examples show image/video calls.",
+      "pages": [],
+      "section": "2. Model Summary"
+    },
+    {
+      "text": "Official usage examples run in thinking mode and support preserve-thinking behavior for multi-turn coding-agent work.",
+      "pages": [],
+      "section": "6. Model Usage"
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Kimi Code Bench v2",
+      "result": "62.0",
+      "context": "Coding benchmark with Kimi K2.6, GPT-5.5, and Claude Opus 4.8 comparators",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "benchmark": "Program Bench",
+      "result": "53.6",
+      "context": "Program reconstruction/code-generation-agent benchmark",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "benchmark": "MLS Bench Lite",
+      "result": "35.1",
+      "context": "ML systems benchmark subset",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "benchmark": "Kimi Claw 24/7 Bench",
+      "result": "46.9",
+      "context": "Persistent long-horizon agentic tasks",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "benchmark": "MCP Atlas",
+      "result": "76.0",
+      "context": "MCP tool-use benchmark",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "benchmark": "MCP Mark Verified",
+      "result": "81.1",
+      "context": "Human-verified MCP tool-use benchmark",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "No dedicated safety-evaluation section is present; the published table focuses on capabilities.",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "text": "Deployment guidance specifies supported engines and version constraints, which aids reproducible serving but does not measure safety.",
+      "pages": [],
+      "section": "5. Deployment"
+    },
+    {
+      "text": "Usage notes identify experimental video support and lack of instant mode, which are operational cautions rather than behavioral guarantees.",
+      "pages": [],
+      "section": "6. Model Usage"
+    },
+    {
+      "text": "The license section states the code and weights are under a Modified MIT License, without an accompanying safety policy in the card.",
+      "pages": [],
+      "section": "7. License"
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The README does not report training data, training dates, or a full technical-report lineage for K2.7 Code.",
+      "pages": [],
+      "section": "1. Model Introduction"
+    },
+    {
+      "text": "Comparisons use different agent products and effort settings across Kimi, GPT, and Claude entries.",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "text": "No harmful-content, cyber, jailbreak, or prompt-injection robustness scores are reported.",
+      "pages": [],
+      "section": "3. Evaluation Results"
+    },
+    {
+      "text": "Video input is experimental outside the official API, instant mode is unsupported, and preserve-thinking is always on.",
+      "pages": [],
+      "section": "6. Model Usage"
+    },
+    {
+      "text": "The GitHub catalog marks the model retired as of 2026-10-02.",
+      "pages": [],
+      "section": "1. Model Introduction"
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired the model on 2026-10-02; remaining guidance is for historical comparison and lineage understanding."
+    },
+    {
+      "text": "Use the card to understand coding-agent positioning, not broad safety behavior."
+    },
+    {
+      "text": "Run tests and code review for generated changes, especially in long multi-step tasks."
+    },
+    {
+      "text": "Do not import claims from other Kimi reports unless this README repeats them."
+    },
+    {
+      "text": "Treat multimodal and third-party deployment details as constrained by the README's usage notes."
+    }
+  ],
+  "coverage_notes": "This digest uses the Hugging Face Markdown model card only, covering its introduction, summary table, evaluation table, footnotes, deployment section, model-usage section, and license. It does not substitute older or newer Kimi technical reports for this retired model."
+}

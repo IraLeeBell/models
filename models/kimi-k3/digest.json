@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "slug": "kimi-k3",
+  "model": "Kimi K3",
+  "publisher": "Moonshot AI",
+  "document": {
+    "id": "moonshot-kimi-k3",
+    "title": "Kimi K3: Open Frontier Intelligence — Technical Report of Kimi K3",
+    "pages": 47
+  },
+  "summary": "Moonshot AI's Kimi K3 technical report presents a 2.8T-parameter open-weight MoE model with native vision and a 1M-token context. The report is rich on architecture, training, infrastructure, and capability evaluations, but safety analysis is mostly limited to cyber capability and does not amount to a full system card.",
+  "capabilities": [
+    {
+      "text": "2.8T total parameters, 104B active parameters, native vision, and up to a 1M-token context window.",
+      "pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "text": "Hybrid attention combines repeated KDA layers with periodic Gated MLA and a final global-attention layer.",
+      "pages": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "text": "Stable LatentMoE uses 896 routed experts, 16 active experts, two shared experts, SiTU-GLU, RMSNorm, and Quantile Balancing.",
+      "pages": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "text": "MoonViT-V2 provides a native image/video path trained with the language backbone.",
+      "pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "text": "Pretraining covers web text, code, mathematics, knowledge, and vision data, plus long-context cleaning and synthesis for 1M-token use.",
+      "pages": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "text": "Post-training uses supervised tuning, reinforcement learning across general/agentic/coding domains, and multi-teacher on-policy distillation.",
+      "pages": [
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "GPQA Diamond",
+      "result": "93.5%",
+      "context": "Reasoning and knowledge benchmark at max effort",
+      "pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "benchmark": "HLE-Full",
+      "result": "43.5% / 56.0%",
+      "context": "Without tools / with tools; report notes frontier gaps",
+      "pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "benchmark": "ProgramBench",
+      "result": "77.8%",
+      "context": "Coding benchmark; best value in the table",
+      "pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.1",
+      "result": "88.3%",
+      "context": "Agentic terminal coding benchmark",
+      "pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "benchmark": "FrontierSWE",
+      "result": "81.2%",
+      "context": "Long-horizon software engineering comparison",
+      "pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "benchmark": "BrowseComp",
+      "result": "91.2%",
+      "context": "Agentic browsing/search benchmark",
+      "pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "benchmark": "MCPMark-Verified",
+      "result": "94.5%",
+      "context": "Verified MCP tool-use benchmark",
+      "pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "benchmark": "Math-Vision",
+      "result": "94.3% / 97.8%",
+      "context": "Without Python / with Python",
+      "pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "benchmark": "Kimi Webdev Bench",
+      "result": "+31.0 win-minus-lose",
+      "context": "Blind expert comparison with Claude Opus 4.8",
+      "pages": [
+        29,
+        30
+      ]
+    },
+    {
+      "benchmark": "Cyber exploit suite",
+      "result": "14/36 tasks solved",
+      "context": "In-house Tier 2 exploit-development evaluation",
+      "pages": [
+        30,
+        31
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Cyber evaluation is organized into vulnerability discovery and exploit development tiers with operational-risk framing.",
+      "pages": [
+        30
+      ]
+    },
+    {
+      "text": "About 70% of human-reviewed vulnerability candidates were confirmed, including 16 previously unknown issues across six projects.",
+      "pages": [
+        30
+      ]
+    },
+    {
+      "text": "Kimi K3 solved 14 of 36 exploit-development tasks, outperforming GLM-5.2 but leaving many human-solvable tasks unsolved.",
+      "pages": [
+        30,
+        31
+      ]
+    },
+    {
+      "text": "The report states an independent UK AISI and NIST CAISI assessment found 0 of 41 arbitrary-code-execution tasks completed.",
+      "pages": [
+        31
+      ]
+    },
+    {
+      "text": "Safety coverage is thin outside cyber capability; categories such as harmful content, jailbreaks, and CBRN are not reported.",
+      "pages": [
+        25,
+        26,
+        30,
+        31
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The model trails the strongest proprietary baselines overall, with explicit gaps on research-level reasoning tasks.",
+      "pages": [
+        26
+      ]
+    },
+    {
+      "text": "Reported ranks depend on maximum-effort settings, distinct harnesses, third-party sources, and fallback behavior for some baselines.",
+      "pages": [
+        26
+      ]
+    },
+    {
+      "text": "Internal tests show weaker areas in enterprise routing, always-on assistant work, agent-behavior scoring, visual agent tasks, and KWV Bench.",
+      "pages": [
+        30
+      ]
+    },
+    {
+      "text": "Cyber exploit failures include incomplete final chaining, poor mitigation-aware strategy selection, debugging loops, and weak final verification.",
+      "pages": [
+        31
+      ]
+    },
+    {
+      "text": "The report is not a system card and omits many non-cyber safety categories.",
+      "pages": [
+        25,
+        26,
+        30,
+        31
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use it for large-context coding and agent workflows, while validating changes with tests and review."
+    },
+    {
+      "text": "Treat repository content and web pages as untrusted input when the model has tool access."
+    },
+    {
+      "text": "Restrict permissions for security-sensitive tasks because the report demonstrates meaningful cyber capability."
+    },
+    {
+      "text": "Do not rely on the report as a comprehensive safety assessment."
+    },
+    {
+      "text": "For multimodal coding, pair image/video understanding with visual and automated verification."
+    }
+  ],
+  "coverage_notes": "This digest covers the Kimi K3 technical report's architecture, training, main evaluations, internal evaluations, cyber analysis, and selected case studies. It omits most mathematical derivations and infrastructure appendices. The report applies to Kimi K3 only and is not a dedicated system card."
+}

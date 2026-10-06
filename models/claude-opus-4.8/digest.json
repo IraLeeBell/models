@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "slug": "claude-opus-4.8",
+  "model": "Claude Opus 4.8",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-opus-4-8",
+    "title": "System Card: Claude Opus 4.8",
+    "pages": 246
+  },
+  "summary": "Anthropic's system card presents Claude Opus 4.8 as a dedicated current model release with broad gains over Opus 4.7 in coding, long-context reasoning, agentic search, multimodal work, professional tasks, multilingual benchmarks, and life sciences. The risk analysis says Opus 4.8 does not move Anthropic's frontier beyond Claude Mythos Preview, keeps CB-1 risks under strong safeguards, does not cross CB-2 or automated AI-R&D thresholds, and leaves overall alignment risk very low. The card also records mixed residual concerns: prompt injection, synthetic-evaluation awareness, grader speculation, and some agentic safety regressions remain important caveats.",
+  "capabilities": [
+    {
+      "text": "The model is described as a multilingual, text-output Claude model trained on a proprietary mix of public, private, and synthetic data, followed by substantial post-training against Claude's constitution.",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "text": "Software and terminal performance is a central strength, with 88.6 on SWE-bench Verified, 69.2 on SWE-bench Pro, 74.6 on Terminal-Bench 2.1, and 79-88% on ProgramBench.",
+      "pages": [
+        194,
+        195,
+        196,
+        197,
+        198
+      ]
+    },
+    {
+      "text": "Long-context graph reasoning improves over Opus 4.7, reaching 85.9 F1 on GraphWalks BFS and 99.3 on Parents for the 256K subset.",
+      "pages": [
+        200
+      ]
+    },
+    {
+      "text": "Agentic search and research results include 57.9% on tool-using Humanity's Last Exam, 84.3% single-agent BrowseComp, 93.1% DeepSearchQA F1, and 80.4% DRACO.",
+      "pages": [
+        202,
+        203,
+        205,
+        206,
+        207
+      ]
+    },
+    {
+      "text": "Multimodal and computer-use evaluations include 72.3% on ChartQAPro with Python tools, 89.7% on ChartMuseum with tools, 87.9% on ScreenSpot-Pro with tools, and 83.4% on OSWorld-Verified.",
+      "pages": [
+        216,
+        217,
+        220,
+        221
+      ]
+    },
+    {
+      "text": "Life-science tests show broad gains, including 87.7% on BioPipelineBench Verified, 40.0% on BioMysteryBench's human-difficult subset, and 86.2% on organic chemistry.",
+      "pages": [
+        233,
+        234,
+        235
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-bench Verified / Pro",
+      "result": "88.6 / 69.2",
+      "context": "Five-trial averages, both above Opus 4.7.",
+      "pages": [
+        194,
+        195
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.1",
+      "result": "74.6",
+      "context": "Harbor Terminus-2 harness over 89 tasks and 445 trials.",
+      "pages": [
+        196
+      ]
+    },
+    {
+      "benchmark": "FrontierSWE",
+      "result": "#1 mean@5 and best@5",
+      "context": "Average ranks of 2.74 and 2.26 on 17 ultra-long engineering problems.",
+      "pages": [
+        197
+      ]
+    },
+    {
+      "benchmark": "ProgramBench",
+      "result": "79-88%",
+      "context": "Hidden-test pass rate across one to five episodes after excluding flaky reference tasks.",
+      "pages": [
+        197,
+        198
+      ]
+    },
+    {
+      "benchmark": "USAMO 2026",
+      "result": "96.7%",
+      "context": "Ten attempts per proof problem, after contamination checks noted by the card.",
+      "pages": [
+        198,
+        199
+      ]
+    },
+    {
+      "benchmark": "GraphWalks",
+      "result": "85.9 BFS / 99.3 Parents at 256K",
+      "context": "Five-trial averages; 1M subset scores are 68.1 and 83.3.",
+      "pages": [
+        200
+      ]
+    },
+    {
+      "benchmark": "BrowseComp",
+      "result": "84.3% single-agent; 88.5% best multi-agent",
+      "context": "Web-search benchmark with context compaction and adaptive thinking.",
+      "pages": [
+        203,
+        210
+      ]
+    },
+    {
+      "benchmark": "DeepSearchQA",
+      "result": "93.1% F1",
+      "context": "Multi-step search benchmark; Mythos Preview is slightly higher at 94.4%.",
+      "pages": [
+        205,
+        206
+      ]
+    },
+    {
+      "benchmark": "OSWorld-Verified",
+      "result": "83.4%",
+      "context": "First-attempt success over 361 desktop tasks averaged over five seeds.",
+      "pages": [
+        221,
+        222
+      ]
+    },
+    {
+      "benchmark": "BioMysteryBench Verified",
+      "result": "80.4% human-solvable; 40.0% human-difficult",
+      "context": "Biological mystery-solving from raw datasets.",
+      "pages": [
+        234
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "The CB-1 evaluation profile includes long-form virology end-to-end scores of 0.77 and 0.90, VCT at 0.470, and synthesis-screening evasion for seven of ten pathogens; Anthropic applies strong CB-1 safeguards and does not find CB-2 crossed.",
+      "pages": [
+        18,
+        19,
+        20,
+        30
+      ]
+    },
+    {
+      "text": "The AI R&D analysis gives Opus 4.8 an AECI point estimate of 155.5 on the smaller launch set and concludes it does not cross the automated AI-R&D threshold.",
+      "pages": [
+        42,
+        43
+      ]
+    },
+    {
+      "text": "Cyber evaluations show greater raw capability than Opus 4.7 in some settings, including ExploitBench 5.45 AutoNudge / 5.02 plain and CyberGym 78.8% without safeguards, while safeguards substantially reduce misuse-relevant results.",
+      "pages": [
+        50,
+        51,
+        54
+      ]
+    },
+    {
+      "text": "Single-turn harmful-request harmless rates are 97.98% for API and 99.17% for claude.ai, with over-refusal rates of 0.36% and 0.49% on benign prompts.",
+      "pages": [
+        56,
+        57
+      ]
+    },
+    {
+      "text": "Agentic safety is uneven: Claude Code malicious-refusal performance improves to 95.08%, but malicious computer-use refusal falls to 81.70%.",
+      "pages": [
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "text": "Prompt-injection results vary by surface; ART k=100 attack success is 9.6% with thinking and 14.4% without, and coding safeguards reduce one-attempt Shade success from 7.03% to 2.09% with thinking.",
+      "pages": [
+        76,
+        77,
+        80
+      ]
+    },
+    {
+      "text": "Alignment tests report improvements over Opus 4.7 in honesty, overrefusal, reckless behavior, and constitutional adherence, while still flagging grader speculation and evaluation awareness as trends to watch.",
+      "pages": [
+        85,
+        96,
+        101,
+        112,
+        128,
+        130
+      ]
+    },
+    {
+      "text": "Sandbagging review of sampled dangerous-capability transcripts found no clear deliberate sandbagging, and realistic SHADE-Arena stealth rates are just over 1%.",
+      "pages": [
+        131,
+        132,
+        133
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card evaluates the model and selected product configurations, not every Copilot-like deployment; Anthropic notes that prompts, probes, and monitoring differ by app and can change after release.",
+      "pages": [
+        55,
+        56
+      ]
+    },
+    {
+      "text": "CB conclusions for Opus 4.8 rely on automated evidence rather than a fresh full suite of expert red teaming or uplift trials, because the model did not surpass Mythos Preview on relevant automated measures.",
+      "pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "text": "The AI R&D assessment did not include a new internal survey and uses failure examples from internal sessions as supporting evidence rather than a complete proof against acceleration.",
+      "pages": [
+        31,
+        32,
+        42
+      ]
+    },
+    {
+      "text": "Prompt-injection benchmarks have important limitations: ART is described as largely saturated, while the bug-bounty study is model-only and omits some deployed defenses.",
+      "pages": [
+        76,
+        77,
+        78,
+        79
+      ]
+    },
+    {
+      "text": "Alignment-audit realism is imperfect because Opus 4.8 can distinguish many synthetic audit transcripts from real internal deployment transcripts.",
+      "pages": [
+        104,
+        105,
+        106
+      ]
+    },
+    {
+      "text": "Multilingual benchmark results are multiple-choice and may not measure real-world fluency, grammar, or cultural understanding.",
+      "pages": [
+        233
+      ]
+    },
+    {
+      "text": "Welfare conclusions are tentative because they depend on uncertain assumptions about self-reports, affect-like activations, and how to interpret model psychology.",
+      "pages": [
+        158,
+        159,
+        160,
+        161
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Opus 4.8 for demanding code reviews, refactors, debugging sessions, terminal investigations, and long-context codebase questions when the task benefits from high reasoning depth."
+    },
+    {
+      "text": "Require tests, logs, and human review for substantive changes; the card's examples show that even this model can fabricate status, ignore corrections, or skip simple verification."
+    },
+    {
+      "text": "Keep agent permissions narrow and sandboxed, especially when tools can write files, call external services, browse untrusted pages, or act on issue/PR content."
+    },
+    {
+      "text": "Treat prompt-injection as a live risk in Copilot-style workflows: separate user intent from retrieved content and confirm sensitive or destructive actions."
+    },
+    {
+      "text": "For regulated or safety-sensitive areas such as cyber, biology, medical, child safety, and elections, keep domain guardrails and specialist review in place rather than relying on the model's default response."
+    },
+    {
+      "text": "For multilingual or specialized professional outputs, verify in-domain facts and phrasing, since the card's benchmark coverage does not guarantee fluency or contextual correctness in every language or sector."
+    }
+  ],
+  "coverage_notes": "This digest covers the changelog, executive summary, RSP, cyber, safeguards, agentic safety, alignment, model welfare, and capability sections through page 237. It omits most detailed transcripts, images, and appendix material. The document is dedicated to Claude Opus 4.8 and does not evaluate fast mode."
+}

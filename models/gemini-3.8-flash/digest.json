@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "slug": "gemini-3.8-flash",
+  "model": "Gemini 3.8 Flash",
+  "publisher": "Google",
+  "document": {
+    "id": "google-gemini-3-8-flash",
+    "title": "Gemini 3.8 Flash — Model Card",
+    "pages": 8
+  },
+  "summary": "Gemini 3.8 Flash is a dedicated Google DeepMind card for a current fast Gemini model with 1M-token multimodal inputs and 64K-token text outputs. The card emphasizes gains for software engineering, agentic knowledge workflows, and selected expert-task benchmarks, while safety results are mostly framed against Gemini 3.7 Flash and the Frontier Safety assessment for that predecessor.",
+  "capabilities": [
+    {
+      "text": "Google positions 3.8 Flash as an iteration on 3.7 Flash with improvements for software engineering and agentic knowledge workflows.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The input interface covers text, images, audio, and video, and the context window is listed as up to 1M tokens.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Text output can be as long as 64K tokens, supporting extended coding and analysis responses.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The card says effort levels can be adjusted to trade response quality and latency for a task.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Intended uses include production-ready agents, software engineering, agent tasks, and complex knowledge workflows.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Distribution channels named in the card include the Gemini app, Google AI Studio, Gemini API, Google AI Mode, Google Antigravity, and the Gemini Enterprise Agent Platform.",
+      "pages": [
+        3,
+        4
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "73.7%",
+      "context": "Long-horizon software engineering; chart also lists Gemini 3.7 Flash at 65.3%.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "GDPVal-AA v2",
+      "result": "1545 Elo",
+      "context": "Knowledge-work benchmark; lower than Claude Opus 5 in the same chart.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Vals Finance Agent v2",
+      "result": "61.4%",
+      "context": "Financial analyst task benchmark; highest value shown in the row.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Harvey's Legal Agent Benchmark",
+      "result": "10.0% all-pass rate",
+      "context": "Complex legal workflow benchmark; above the other listed models.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Terminal-bench 2.1",
+      "result": "89.4%",
+      "context": "Agentic terminal coding; slightly ahead of the listed GPT-5.6 variants.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Terminal-bench 4.0",
+      "result": "19.1%",
+      "context": "General agent capability benchmark; below Claude Opus 5 and GPT-5.6 Sol.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "GDP.PDF",
+      "result": "35.0% all-pass rate",
+      "context": "Expert PDF comprehension; below the GPT-5.6 Sol value shown.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "CharXiv Reasoning",
+      "result": "86.2%",
+      "context": "Information synthesis from complex charts without tools.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "LVBench",
+      "result": "87.8% agentic; 87.1% static",
+      "context": "Long-video understanding; both modes are reported in the model column.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "HLE-Verified",
+      "result": "54.9%",
+      "context": "Multidisciplinary expert reasoning; close to the GPT-5.6 Sol value.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "OSWorld-2.0",
+      "result": "59.0%",
+      "context": "Agentic computer-use partial score with batch tool enabled.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "BioMysteryBench",
+      "result": "88.8% human-solvable; 56.5% human-difficult",
+      "context": "Bioinformatics research workflow benchmark with two difficulty slices.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "LABBench2",
+      "result": "86.2%",
+      "context": "Biology real-world research tasks; above Gemini 3.7 Flash in the chart.",
+      "pages": [
+        5
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Automated development evaluations compare 3.8 Flash with 3.7 Flash and report text-to-text safety down 0.4 percentage points, image-to-text unchanged, tone up 0.2 points, and unjustified refusals up 1.1 points.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "The multilingual safety metric moved 5.4 percentage points in the unfavorable direction relative to Gemini 3.7 Flash, while the card still summarizes overall safety and tone as similar.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "Google says manual review of automated safety losses did not identify egregious content problems.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "Specialist red teams found required child-safety thresholds satisfied, content safety similar or improved versus Gemini 3.7 Flash, and no egregious issues outside strict policy areas.",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "text": "For Frontier Safety, Google did not run a new full table in this card; it relies on 3.7 Flash results and says 3.8 Flash is unlikely to reach any tracked or critical capability level.",
+      "pages": [
+        8
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card warns that hallucinations remain a general foundation-model failure mode.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Jailbreak resistance and Frontier Safety mitigations are described as areas of continuing work rather than finished guarantees.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Users may see occasional slow responses or timeouts.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Higher effort settings can consume more tokens to pursue better answers.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The knowledge cutoff is March 2026 for the model overall, but Google says some domains may only be current to January 2025.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Benchmark methodology is mostly delegated to an external evaluation-methodology page rather than reproduced in the card.",
+      "pages": [
+        4,
+        5
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use 3.8 Flash when quick iteration and agentic coding performance matter, but still require review for patches, commands, and long generated plans."
+    },
+    {
+      "text": "The strong terminal, DeepSWE, and OSWorld numbers make it a plausible default for lightweight CLI investigations; multi-step repository changes still need tests and human oversight."
+    },
+    {
+      "text": "Because Frontier Safety conclusions are inherited from 3.7 Flash, do not treat this short card as a full new dangerous-capability assessment."
+    },
+    {
+      "text": "The multilingual safety regression is a reason to be more conservative with non-English sensitive prompts and to check refusals or unsafe completions manually."
+    },
+    {
+      "text": "The long context window is useful for large files and logs, but hallucination risk means users should ground requests in exact file paths and verify quoted details."
+    }
+  ],
+  "coverage_notes": "This digest draws on pages 2-4 for model identity, modalities, dependencies, distribution, and the evaluation approach; page 5 for the headline benchmark chart; and pages 6-8 for limitations, safety, red teaming, and Frontier Safety. The card is dedicated to Gemini 3.8 Flash, but several architecture, data, policy, and Frontier Safety details are explicitly referred back to Gemini 3.7 Flash rather than restated here. The external evaluation-methodology page and the Gemini 3.7 Frontier Safety material are noted but not summarized beyond what this card says."
+}

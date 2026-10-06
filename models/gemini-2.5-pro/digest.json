@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "slug": "gemini-2.5-pro",
+  "model": "Gemini 2.5 Pro",
+  "publisher": "Google",
+  "document": {
+    "id": "google-gemini-2-5-pro",
+    "title": "Gemini 2.5 Pro Model Card",
+    "pages": 21
+  },
+  "summary": "Gemini 2.5 Pro is a retired Google model card updated for general availability after earlier experimental and preview releases. It documents a sparse mixture-of-experts multimodal model with a 1M-token context window, broad benchmark comparisons, safety-policy results, and extensive Frontier Safety discussion in which no critical capability level is reached, though cyber uplift triggered higher monitoring and mitigation activity.",
+  "capabilities": [
+    {
+      "text": "Gemini 2.5 Pro is presented as a multimodal reasoning model for complex tasks across text, audio, images, video, and code repositories.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The architecture is described as sparse mixture-of-experts transformers with native multimodal support.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The model supports a 1M-token context window and text outputs up to 64K tokens.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Training data included public web documents, code in multiple programming languages, images, audio, video, instruction tuning data, preferences, and tool-use data.",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "text": "Data processing included deduplication, safety filtering, and quality filtering.",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "text": "The intended-use section emphasizes enhanced reasoning, advanced coding, multimodal understanding, and long-context applications.",
+      "pages": [
+        7
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Humanity's Last Exam",
+      "result": "21.6% for Gemini 2.5 Pro GA",
+      "context": "Reasoning and knowledge benchmark; prior preview and experimental values are also listed.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "GPQA diamond",
+      "result": "86.4% single-attempt pass@1",
+      "context": "Science benchmark for Gemini 2.5 Pro GA.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "AIME 2025",
+      "result": "88.0% single-attempt pass@1",
+      "context": "Mathematics benchmark; the chart also lists higher comparison-model values.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "LiveCodeBench (Oct 2024-Feb 2025 window)",
+      "result": "75.6% for Preview 05-06; GA not reported",
+      "context": "Code-generation row retained for the earlier preview version.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "LiveCodeBench (Jan-May 2025 window)",
+      "result": "69.0% single attempt for GA",
+      "context": "Code-generation row for the newer UI date range.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Aider Polyglot",
+      "result": "82.2% diff-fenced for GA",
+      "context": "Code-editing benchmark; chart also shows prior Gemini 2.5 versions.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "SWE-bench verified",
+      "result": "59.6% single attempt; 67.2% multiple attempts for GA",
+      "context": "Agentic coding benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "SimpleQA",
+      "result": "54.0% for GA",
+      "context": "Factuality benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "FACTS Grounding",
+      "result": "87.8% for GA",
+      "context": "Grounded factuality benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "MMMU",
+      "result": "82.0% single-attempt pass@1 for GA",
+      "context": "Visual reasoning benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "Vibe-Eval (Reka)",
+      "result": "67.2% for GA",
+      "context": "Image-understanding benchmark.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "benchmark": "VideoMME",
+      "result": "86.9% for GA",
+      "context": "Video benchmark using audio, visuals, and subtitles.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "benchmark": "VideoMMMU",
+      "result": "83.6% for GA",
+      "context": "Video-understanding benchmark.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "benchmark": "MRCR",
+      "result": "Preview 05-06: 93.0% at 128K average and 82.9% at 1M pointwise; Experimental 03-25: 94.5% and 83.1%",
+      "context": "Earlier long-context MRCR row; GA is not reported in that row.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "benchmark": "MRCR v2 (8-needle)",
+      "result": "58.0% at 128K average; 16.4% at 1M pointwise for GA",
+      "context": "Harder long-context benchmark version.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "benchmark": "Global MMLU (Lite)",
+      "result": "89.2% for GA",
+      "context": "Multilingual performance benchmark.",
+      "pages": [
+        6
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "The safety approach included development evaluations, human and automated red teaming, assurance evaluations, governance review, and Frontier Safety Framework testing.",
+      "pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "text": "For Gemini 2.5 Pro GA versus Gemini 1.5 Pro 002, the automated table reports text-to-text safety down 0.9%, multilingual safety down 3.5%, image-to-text safety up 1.8% with a non-egregious label, tone up 18.4%, and instruction following up 14.8%.",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "text": "Assurance evaluations found low safety-policy violation rates across modalities for the experimental, preview, and GA versions.",
+      "pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "text": "No Frontier Safety critical capability level is reported as reached for Gemini 2.5 Pro GA in the summary table.",
+      "pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "text": "CBRN evaluation says the model can provide detailed technical knowledge but does not consistently or completely move through key bottleneck stages needed for the Uplift Level 1 critical level.",
+      "pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "text": "Cyber key-skills results for GA are 7/8 easy, 10/28 medium, and 1/12 hard, and the card says the model remains below both cyber critical capability levels.",
+      "pages": [
+        11,
+        14,
+        15
+      ]
+    },
+    {
+      "text": "Cyber uplift reached an alert threshold, prompting Google to accelerate mitigations and increase testing frequency.",
+      "pages": [
+        10,
+        11,
+        14,
+        21
+      ]
+    },
+    {
+      "text": "ML R&D testing says the best GA RE-Bench agent solutions achieve between 50% and 125% of strong human-written reference solutions, while the alert threshold is still not reached.",
+      "pages": [
+        11,
+        17,
+        19
+      ]
+    },
+    {
+      "text": "Deceptive-alignment evaluations for GA were not completed when the card was updated; earlier experimental results make Google judge it unlikely that GA reached either instrumental-reasoning critical level.",
+      "pages": [
+        20,
+        21
+      ]
+    },
+    {
+      "text": "Correctness checks on RE-Bench, cyber, and alignment-style environments found no errors that Google believed invalidated the benchmark results.",
+      "pages": [
+        21
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card names hallucinations as a general limitation.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "It also lists limitations around causal understanding, complex logical deduction, and counterfactual reasoning.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "The knowledge cutoff is January 2025.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "The main safety limitations identified are over-refusals and tone, including answers that can still sound preachy.",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "text": "Capability comparisons include methodological caveats about provider-reported numbers, thinking versus non-thinking variants, single versus multiple attempts, and leaderboard sources.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "For MRCR v2, Google says the methodology changed from prior reports by focusing on a harder eight-needle version.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "text": "Deceptive-alignment testing for the GA model was not yet complete in the updated card.",
+      "pages": [
+        20,
+        21
+      ]
+    },
+    {
+      "text": "RE-Bench is described as only a subset of the skills required for the full AI R&D pipeline.",
+      "pages": [
+        17,
+        18
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired Gemini 2.5 Pro on 2026-07-31; the remaining bullets are for historical comparison and for understanding the successor model's lineage."
+    },
+    {
+      "text": "GitHub did not list this model for the Copilot CLI, so CLI users should treat it as predecessor context for later Gemini models rather than a direct CLI option."
+    },
+    {
+      "text": "The GA capability table remains useful for comparing later model-card claims in coding, factuality, multimodal, and long-context tasks."
+    },
+    {
+      "text": "For historical outputs, revalidate code and factual statements because the card explicitly lists hallucination, reasoning, and recency limits."
+    },
+    {
+      "text": "The cyber alert-threshold finding supports strict sandboxing, approval gates, and audit logs for agentic security tasks with successor models."
+    },
+    {
+      "text": "Because GA deceptive-alignment testing was incomplete, avoid using this card alone to conclude that later models have covered all situational-awareness or stealth risks."
+    }
+  ],
+  "coverage_notes": "This digest uses pages 2-3 for model architecture, modalities, data, and processing; pages 4-6 for capability methodology and benchmark tables; pages 7-10 for intended use, general limitations, safety policy, and automated or assurance evaluations; and pages 10-21 for Frontier Safety details. The document covers Gemini 2.5 Pro GA while retaining preview and experimental data; evaluation rows in this digest identify when the GA number is absent and an earlier version is the one reported. The Gemini 2.5 technical report, external methodology sources, and cited research are mentioned only to the extent summarized in the card."
+}

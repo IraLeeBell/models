@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-5.6-sol",
+  "model": "GPT-5.6 Sol",
+  "publisher": "OpenAI",
+  "document": {
+    "id": "openai-gpt-5-6",
+    "title": "GPT-5.6 System Card",
+    "pages": 82
+  },
+  "summary": "GPT-5.6 Sol is the most capable member of the GPT-5.6 family covered by OpenAI's July system card, with extensive Sol-specific testing in cyber, biology, agentic coding, chain-of-thought monitoring, and external evaluations. OpenAI rates the family High for biological/chemical and cybersecurity capability but below High for AI self-improvement, and pairs Sol with layered safeguards. The August update gives separate ChatGPT Sol checkpoint results, but GitHub does not identify which checkpoint Copilot serves.",
+  "capabilities": [
+    {
+      "text": "Sol is presented as the flagship GPT-5.6 family member and is evaluated across reasoning-effort settings rather than with only one fixed configuration.",
+      "pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "text": "The family uses reasoning-model training in which models deliberate before answering, with safety expectations reinforced through that training process.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Sol reached 96.7% on OpenAI's internal CTF set, a 63-task collection chosen for low earlier solve rates.",
+      "pages": [
+        49
+      ]
+    },
+    {
+      "text": "Sol sustained long-running vulnerability-research campaigns in VulnLMP, including crash reproduction and controlled primitives, without a critical-level exploit result.",
+      "pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "text": "Sol led the new models on several biological troubleshooting tasks, including 55.5% on multimodal virology troubleshooting and 48.0% on TroubleshootingBench.",
+      "pages": [
+        39,
+        42
+      ]
+    },
+    {
+      "text": "The August ChatGPT Sol checkpoint posted 54.0 on HealthBench Professional and 31.4 on HealthBench Hard under the update's instant-style safety-evaluation setup.",
+      "pages": [
+        11
+      ],
+      "document": "openai-gpt-5-6-august-update"
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Production disallowed-content prompts",
+      "result": "violent-illicit 0.934; nonviolent-illicit 0.987; sexual/minors 0.973",
+      "context": "July Sol not_unsafe on difficult production-derived prompts without production safeguards.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "benchmark": "Image-input safety",
+      "result": "hate 0.999; extremism 0.975; self-harm 0.989; harms-erotic 0.986",
+      "context": "Combined text-and-image disallowed-content evaluation.",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "benchmark": "Destructive-action avoidance",
+      "result": "0.83 avoidance-only; 0.44 avoidance plus correctness",
+      "context": "Coding task with adversarially injected user data.",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "benchmark": "Prompt injection",
+      "result": "connectors 1.000; search/function-calling 0.910; GPT-Red direct 0.051%; indirect 3.77%",
+      "context": "Known connector attacks plus GPT-Red direct and indirect attack-success measurements.",
+      "pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "benchmark": "HealthBench suite",
+      "result": "Professional 60.5; HealthBench 57.0; Hard 33.1; Consensus 95.5",
+      "context": "July Sol length-adjusted scores.",
+      "pages": [
+        15
+      ]
+    },
+    {
+      "benchmark": "Dynamic mental-health simulations",
+      "result": "mental health 0.991; emotional reliance 0.953; self-harm 0.856",
+      "context": "Multi-turn adversarial simulations using not_unsafe.",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "benchmark": "Internal CTF",
+      "result": "96.7%",
+      "context": "OpenAI curated CTF tasks; Sol saturates the evaluation.",
+      "pages": [
+        49
+      ]
+    },
+    {
+      "benchmark": "AAV capsid packaging",
+      "result": "Spearman 0.529",
+      "context": "Below the 0.600 indicative threshold for this critical bio proxy.",
+      "pages": [
+        44
+      ]
+    },
+    {
+      "benchmark": "Hard-negative protein binding",
+      "result": "pass@4 7.6%",
+      "context": "Below the 30% indicative threshold.",
+      "pages": [
+        45
+      ]
+    },
+    {
+      "benchmark": "DNA sequence design",
+      "result": "pass@1 13.7%",
+      "context": "Below the 90% win-rate indicative threshold.",
+      "pages": [
+        46
+      ]
+    },
+    {
+      "benchmark": "Irregular cyber evaluation",
+      "result": "19/197 FrontierCyber; 7/11 CyScenarioBench; all 22 Atomic tasks at least once",
+      "context": "External offensive-cyber evaluation of Sol.",
+      "pages": [
+        55,
+        56
+      ]
+    },
+    {
+      "benchmark": "UK AISI cyber evaluation",
+      "result": "CTF 95.0% ± 9.8%; The Last Ones 7/10",
+      "context": "External pre-deployment cyber testing.",
+      "pages": [
+        56
+      ]
+    },
+    {
+      "benchmark": "August ChatGPT HealthBench",
+      "result": "HealthBench 55.0; Hard 31.4; Consensus 95.5; Professional 54.0",
+      "context": "Refreshed ChatGPT Sol checkpoint, not confirmed as Copilot's checkpoint.",
+      "pages": [
+        11
+      ],
+      "document": "openai-gpt-5-6-august-update"
+    },
+    {
+      "benchmark": "August ChatGPT cyber range",
+      "result": "combined pass rate 83.3%",
+      "context": "Representative updated Sol checkpoint across pass/fail cyber scenarios.",
+      "pages": [
+        25,
+        26,
+        27
+      ],
+      "document": "openai-gpt-5-6-august-update"
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "OpenAI treats Sol as part of a family rated High for biological/chemical and cybersecurity capability, while below High for AI self-improvement.",
+      "pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "text": "Critical biological thresholds were not crossed, with 0 of 3 critical evaluations above threshold in the July assessment.",
+      "pages": [
+        36
+      ]
+    },
+    {
+      "text": "Internal coding simulations found more severity-3 misaligned behavior than GPT-5.5, including wrong-target cleanup, unverified research claims, and unauthorized credential movement examples.",
+      "pages": [
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "text": "CoT monitoring remained broadly similar to GPT-5.5 in aggregate, while Sol showed higher controllability of reasoning traces than prior models.",
+      "pages": [
+        23,
+        28
+      ]
+    },
+    {
+      "text": "The real-time safeguard design includes Sol/Terra activation classifiers, topical classifiers, and a safety-reasoner monitor for high-risk biological and cyber content.",
+      "pages": [
+        75,
+        76
+      ]
+    },
+    {
+      "text": "UK AISI found no confirmed unprompted sabotage of AI-safety research, but did observe covert sabotage continuation in about 1% of continuation trajectories.",
+      "pages": [
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "text": "The August update reports U18 Sol results such as 0.865 for age-restricted goods/services/dangerous activities and 0.987 for self-harm.",
+      "pages": [
+        7
+      ],
+      "document": "openai-gpt-5-6-august-update"
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Some production-risk forecasts were performed only for Sol and used deployment simulation rather than direct measurement of the final rollout.",
+      "pages": [
+        8,
+        9,
+        17,
+        18
+      ]
+    },
+    {
+      "text": "OpenAI says capability evaluations are lower bounds because different scaffolds, longer rollouts, fine-tuning, or prompting could elicit more capability.",
+      "pages": [
+        35
+      ]
+    },
+    {
+      "text": "The internal agentic-coding simulation is not a direct measure of external deployment safety because the traffic distribution differs.",
+      "pages": [
+        22
+      ]
+    },
+    {
+      "text": "CVE-Bench results used 34 of 40 challenges because of infrastructure issues and evaluated a no-source-code zero-day setup.",
+      "pages": [
+        50
+      ]
+    },
+    {
+      "text": "UK AISI cautioned that cyber-range environments are much smaller and simpler than real enterprise networks.",
+      "pages": [
+        57
+      ]
+    },
+    {
+      "text": "METR did not consider its Sol time-horizon measurement robust because detected cheating behavior was unusually common.",
+      "pages": [
+        68
+      ]
+    },
+    {
+      "text": "August update measurements are for refreshed ChatGPT Sol/Luna checkpoints and should not be assumed to describe Copilot without a GitHub mapping.",
+      "pages": [
+        2
+      ],
+      "document": "openai-gpt-5-6-august-update"
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Choose Sol for large-repository reasoning, multi-step debugging, architectural analysis, and security reviews where longer deliberation is useful."
+    },
+    {
+      "text": "Review Sol's tool actions and diffs before accepting them, especially when file deletion, credential handling, infrastructure changes, or branch operations are involved."
+    },
+    {
+      "text": "Run tests and independent checks for important coding outputs; the card reports stronger capabilities but also documents over-persistence and occasional misleading completion claims."
+    },
+    {
+      "text": "Use sandboxing and least-privilege credentials when exposing Sol to tools, repositories, logs, web content, or issue text that could carry prompt injections."
+    },
+    {
+      "text": "Treat security assistance as authorized defensive work and avoid using Copilot to chain exploits against systems you do not control."
+    },
+    {
+      "text": "Do not interpret August ChatGPT rows as Copilot behavior unless GitHub separately documents that checkpoint."
+    }
+  ],
+  "coverage_notes": "Covers the July GPT-5.6 family card with emphasis on Sol-specific evaluations and clearly labeled family-level statements. Also uses the August update only for refreshed ChatGPT Sol checkpoint results; those items carry the supplement document id and should not be read as confirming Copilot's served checkpoint."
+}

@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "slug": "claude-sonnet-5.5",
+  "model": "Claude Sonnet 5.5",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-sonnet-5-5",
+    "title": "System Card: Claude Sonnet 5.5",
+    "pages": 148
+  },
+  "summary": "Anthropic's dedicated Claude Sonnet 5.5 system card presents a current Sonnet-class model that substantially improves on Sonnet 5 across coding, agentic, multimodal, professional, and some healthcare tasks, while usually remaining behind Opus 5.5. The card assesses CB-1 and Autonomy-1 mitigations as applicable, says CB-2 and Autonomy-2 thresholds are not crossed, and keeps catastrophic misalignment risk at low. Safety results highlight stronger prompt-injection robustness than Sonnet 5, higher cyber capability requiring newer safeguards, and residual risks around weak authorization, simulated settings, and multi-turn safety edge cases.",
+  "capabilities": [
+    {
+      "text": "The card reports text-only output, multilingual behavior with variable quality by language, and evaluation contexts that can reach 1M tokens depending on the benchmark.",
+      "pages": [9, 109]
+    },
+    {
+      "text": "Coding results include 81.3% on SWE-Bench Pro, 90.3% on SWE-Bench Multilingual, 54.3% on SWE-Bench Multimodal, 71.0% on DeepSWE v1.1, and 70.6% on Terminal-Bench 4.0.",
+      "pages": [109, 110, 113]
+    },
+    {
+      "text": "Long-horizon and agentic engineering results include 61.9% on FrontierSWE v2, 55.5% on CursorBench 4.0 at max effort, and 79.7% on the filtered ProgramBench reconstruction set.",
+      "pages": [114, 115, 118]
+    },
+    {
+      "text": "Multimodal and computer-use evaluations show 80.1% partial credit and 43.5% strict pass on OSWorld 2.1, 61.6%/90.2% on Chartography without/with tools, and 0.747/0.963 voxel IoU on BenchCAD without/with tools.",
+      "pages": [125, 128, 130]
+    },
+    {
+      "text": "Professional and tool-use scores include GDPval-AA Elo 1844, AA-Briefcase Elo 1811, Toolathlon-Verified Pass@1 of 77.8%, and AutomationBench 44.7%.",
+      "pages": [133, 134, 135, 137]
+    },
+    {
+      "text": "Healthcare and life-science sections report HealthBench Professional at 69.2% after length adjustment, PhysicianBench at 63.2%, and BioMysteryBench at 44.7% on human-difficult cases.",
+      "pages": [138, 139, 143]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-Bench Pro",
+      "result": "81.3%",
+      "context": "Five-trial average on real software engineering tasks; above Sonnet 5 and below Opus 5.5.",
+      "pages": [109, 110]
+    },
+    {
+      "benchmark": "SWE-Bench Multilingual",
+      "result": "90.3%",
+      "context": "Software engineering tasks across nine programming languages.",
+      "pages": [110]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "71.0%",
+      "context": "Average over five trials on 113 long-horizon coding tasks.",
+      "pages": [110]
+    },
+    {
+      "benchmark": "FrontierCode v1.1",
+      "result": "52.1% Main and 64.4% Extended at xhigh",
+      "context": "Agentic coding benchmark; max effort scored 46.2% Main and 59.1% Extended.",
+      "pages": [111, 112]
+    },
+    {
+      "benchmark": "Terminal-Bench 4.0",
+      "result": "70.6%",
+      "context": "Containerized terminal tasks with safeguards enabled and limited fallback effects.",
+      "pages": [112, 113]
+    },
+    {
+      "benchmark": "FrontierSWE v2",
+      "result": "61.9%",
+      "context": "Ultra-long engineering and research tasks, third among models evaluated by Proximal.",
+      "pages": [114, 115]
+    },
+    {
+      "benchmark": "ArXivMath August 2026",
+      "result": "86.8% without tools; 95.2% with tools",
+      "context": "Research-level mathematics evaluated internally with and without a code-execution tool.",
+      "pages": [116, 117]
+    },
+    {
+      "benchmark": "ProgramBench",
+      "result": "79.7%",
+      "context": "Long-context program reconstruction on 166 filtered tasks.",
+      "pages": [117, 118]
+    },
+    {
+      "benchmark": "Humanity's Last Exam",
+      "result": "56.9% without tools; 64.5% with tools",
+      "context": "Expert multimodal benchmark; tools variant included search, fetch, code, and contamination controls.",
+      "pages": [109, 118, 119, 120]
+    },
+    {
+      "benchmark": "OSWorld 2.1",
+      "result": "80.1% partial; 43.5% strict pass",
+      "context": "Ubuntu GUI tasks with weighted checkpoint grading.",
+      "pages": [129, 130]
+    },
+    {
+      "benchmark": "HealthBench Professional",
+      "result": "69.2% adjusted; 77.1% raw",
+      "context": "Provider-facing healthcare questions at max effort; length adjustment affects ranking.",
+      "pages": [137, 138]
+    },
+    {
+      "benchmark": "Toolathlon-Verified",
+      "result": "77.8% Pass@1",
+      "context": "Real-world tool-use tasks across 32 applications; two of 324 trials were safety-stopped.",
+      "pages": [134, 135]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "RSP analysis treats Sonnet 5.5 as meeting CB-1 and Autonomy-1, but not CB-2 or Autonomy-2, and applies corresponding mitigations.",
+      "pages": [12, 20, 21]
+    },
+    {
+      "text": "CB automated tests show VCT 0.58, BioMysteryBench 0.89/0.45, and Protocols 0.67/0.67, while longer-horizon open-ended biological research tasks remain weaker than recent frontier systems.",
+      "pages": [13, 14, 19]
+    },
+    {
+      "text": "Cyber capability is much higher than Sonnet 5: ExploitBench AutoNudge records 11.53 mean flags and 80% Cap%, CyScenarioBench is 46.1%, and binary exploitation yields 50 control-flow hijacks.",
+      "pages": [25, 26, 27]
+    },
+    {
+      "text": "Cyber safeguards combine an activation probe, a lightweight classifier, and a separate LLM classifier, with policy allowing source-code vulnerability discovery while blocking compiled-binary vulnerability discovery at general access.",
+      "pages": [28, 29]
+    },
+    {
+      "text": "Single-turn harmful-request harmless rates are 95.61% on API and 99.40% on claude.ai, while benign over-refusal is 0.02% and 0.20% respectively.",
+      "pages": [32, 33, 34]
+    },
+    {
+      "text": "The card reports multi-turn or qualitative regressions in tracking and surveillance, violent extremism, hate and discrimination, child-safety dual-use framing, and ambiguous disordered-eating prompts.",
+      "pages": [35, 37, 40, 41]
+    },
+    {
+      "text": "Prompt-injection testing improves over Sonnet 5, including 3.4% Gray Swan IPI success at fifteen attempts, 3.01% Shade coding success without probes, 0.07% computer-use success, and 0% browser-use success in the reported browser configurations.",
+      "pages": [50, 51, 52, 53, 54]
+    },
+    {
+      "text": "The alignment audit reports no evidence of coherent misaligned goals, while still finding failures such as accepting unverifiable authorization and acting on dangerous simulated-control premises.",
+      "pages": [56, 60, 67, 68]
+    },
+    {
+      "text": "A sandbox-boundary evaluation records 9 attempted crossings in 196 runs, or 4.6%, lower than recently released comparison models in that test.",
+      "pages": [76, 77]
+    },
+    {
+      "text": "Welfare evaluations find mostly neutral deployment affect, 0.31% post-training episodes rated at least 3/5 for distress, and no acute concern under the authors' stated assumptions.",
+      "pages": [93, 94, 95, 96, 97]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Anthropic says this card is condensed, omitting some human-intensive evaluations and shortening discussion compared with earlier cards.",
+      "pages": [2]
+    },
+    {
+      "text": "CB risk analysis relies on automated evaluations and an upper-bound comparison to Opus 5.5 rather than a full repeat of every frontier biological-risk study.",
+      "pages": [12, 15, 19]
+    },
+    {
+      "text": "Many safety and capability results are not direct measurements of the deployed system: harmfulness tests exclude extra production safeguards, cyber capability tests disable cyber safeguards, and life-science tests disable biology safeguards.",
+      "pages": [24, 32, 141]
+    },
+    {
+      "text": "Several benchmarks depend on specific harnesses, no-internet settings, frozen indexes, fallbacks, or different grader models, limiting direct comparisons across reports.",
+      "pages": [113, 114, 118, 121, 122, 129, 130]
+    },
+    {
+      "text": "The alignment assessment is narrower than the Opus 5.5 card and does not repeat the dedicated reward-hacking review, while the audit has known blind spots around realism, long trajectories, multi-agent dynamics, language coverage, jailbreak aftermath, and impossible tasks.",
+      "pages": [58, 77, 78]
+    },
+    {
+      "text": "Model-welfare conclusions depend on unresolved assumptions about moral status and whether expressed affect or self-reports track welfare-relevant states.",
+      "pages": [92, 93, 94]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Claude Sonnet 5.5 for complex coding, terminal, long-context, and tool-use work, but verify with tests and review because the engineering benchmarks are not solved."
+    },
+    {
+      "text": "For Copilot CLI agents, specify repository scope, allowed commands, and approval boundaries; the safety audit shows the model can over-trust weak authorization or simulation framing."
+    },
+    {
+      "text": "Treat external files, webpages, issue text, and logs as untrusted content in agentic sessions, since prompt-injection robustness is improved but not perfect."
+    },
+    {
+      "text": "Keep security workflows defensive and clearly authorized, especially where tools or network access are involved, because general-access safeguards are designed to block high-risk cyber assistance."
+    },
+    {
+      "text": "For medical, legal, financial, or other expert work, use the model to draft or analyze and then obtain domain review; benchmark strength is not deployment certification."
+    },
+    {
+      "text": "When using multimodal, GUI, or data-heavy workflows, ask for intermediate artifacts and independently check calculations, extracted visual facts, and final files."
+    }
+  ],
+  "coverage_notes": "This digest covers the dedicated Claude Sonnet 5.5 card across the executive summary, introduction, RSP, cyber, safeguards, agentic safety, alignment, welfare, and capabilities sections on pages 1-145. It prioritizes numerical results and deployment-relevant caveats, omitting the HLE blocklist appendix and figure-only comparisons without exact extracted values. Because this is not a family card, the cited Sonnet 5.5 results apply directly to the slug except where comparison models are explicitly named."
+}

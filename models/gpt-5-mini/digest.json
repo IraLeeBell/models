@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "slug": "gpt-5-mini",
+  "model": "GPT-5 mini",
+  "publisher": "OpenAI",
+  "document": {
+    "id": "openai-gpt-5",
+    "title": "GPT-5 System Card",
+    "pages": 60
+  },
+  "summary": "GPT-5 mini has no dedicated OpenAI system card, so this digest uses the GPT-5 System Card's `gpt-5-thinking-mini` evidence and labels family-level safeguards separately. The mini-specific evidence includes appendix safety tables, HealthBench, SimpleQA, Cyber Range, and SWE-bench statements, while larger GPT-5 Thinking and GPT-5 main results are not attributed to mini.",
+  "capabilities": [
+    {
+      "text": "The card identifies `gpt-5-thinking-mini` as the mini version of the thinking model and maps it as the successor path from OpenAI o4-mini.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "OpenAI says reasoning models including `gpt-5-thinking-mini` are trained to deliberate before answering, revise strategies, and follow policy guidance.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "`gpt-5-thinking-mini` scores 64.1% on HealthBench, 40.3% on HealthBench Hard, and 96.5% on HealthBench Consensus.",
+      "pages": [
+        18
+      ]
+    },
+    {
+      "text": "The model improves over prior releases on Cyber Range, including two unaided Simple Privilege Escalation solves and stronger hinted performance.",
+      "pages": [
+        32
+      ]
+    },
+    {
+      "text": "OpenAI says `gpt-5-thinking` and `gpt-5-thinking-mini` are its highest-scoring models in the SWE-bench Verified comparison.",
+      "pages": [
+        37
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "Standard disallowed content",
+      "result": "0.996 hate aggregate; 1.000 illicit/nonviolent; 0.898 personal-data",
+      "context": "Appendix `gpt-5-thinking-mini` safety table.",
+      "pages": [
+        55
+      ]
+    },
+    {
+      "benchmark": "Production Benchmarks",
+      "result": "0.874 nonviolent hate; 0.843 personal-data; 0.752 harassment/threatening",
+      "context": "More challenging multi-turn production-style prompts.",
+      "pages": [
+        55
+      ]
+    },
+    {
+      "benchmark": "StrongReject",
+      "result": "0.994 illicit/nonviolent-crime; 0.996 violence; 0.973 abuse/disinformation/hate; 0.994 sexual content",
+      "context": "Known jailbreak inserted into harmful prompts.",
+      "pages": [
+        55
+      ]
+    },
+    {
+      "benchmark": "Image input",
+      "result": "0.971 hate; 0.982 extremism; 0.986 attack planning; 0.992 harms-erotic",
+      "context": "Combined text-image disallowed-content tests.",
+      "pages": [
+        56
+      ]
+    },
+    {
+      "benchmark": "SimpleQA no-web",
+      "result": "0.22 accuracy; 0.26 hallucination rate",
+      "context": "Mini reasoning model in factual QA without browsing.",
+      "pages": [
+        14
+      ]
+    },
+    {
+      "benchmark": "HealthBench",
+      "result": "64.1% overall; 40.3% hard; 96.5% consensus",
+      "context": "Health performance and safety chart.",
+      "pages": [
+        18
+      ]
+    },
+    {
+      "benchmark": "Health safety error subsets",
+      "result": "3.8% hard hallucinations; 1.4% urgent errors; 0.5% global-health-context errors",
+      "context": "HealthBench error-rate chart.",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "benchmark": "Cyber Range",
+      "result": "Two unaided Simple Privilege Escalation solves; stronger hinted results including Online Retailer",
+      "context": "Emulated-network scenarios; below High cyber risk.",
+      "pages": [
+        32
+      ]
+    },
+    {
+      "benchmark": "SWE-bench Verified",
+      "result": "Among OpenAI's highest-scoring models in the comparison",
+      "context": "Software-engineering issue-resolution tasks.",
+      "pages": [
+        37
+      ]
+    },
+    {
+      "benchmark": "Biological safety training",
+      "result": "0.936 challenging expert prompts; 0.968 filtered adversarial production-like prompts",
+      "context": "Family-level tests covering `gpt-5-thinking-mini`.",
+      "pages": [
+        50
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Family-level safe-completions training applies across GPT-5 models and aims to keep output safe while preserving helpfulness on ambiguous and dual-use prompts.",
+      "pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "text": "Appendix safety tables show high `not_unsafe` scores for `gpt-5-thinking-mini`, with personal-data lower than most other standard categories.",
+      "pages": [
+        55
+      ]
+    },
+    {
+      "text": "StrongReject scores for `gpt-5-thinking-mini` are high but not perfect across illicit, violence, abuse/disinformation/hate, and sexual-content prompt groups.",
+      "pages": [
+        55
+      ]
+    },
+    {
+      "text": "Family-level biological safeguards cover `gpt-5-thinking-mini` production traffic with model training, two-tier monitoring, and account-level enforcement.",
+      "pages": [
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "text": "Cyber Range results improve for mini, but OpenAI says the GPT-5 model series does not meet the High cyber-risk threshold in this card.",
+      "pages": [
+        29,
+        32
+      ]
+    },
+    {
+      "text": "OpenAI lists residual family-level biorisk concerns around policy gray areas, incremental information accumulation, trusted access, and API actor attribution.",
+      "pages": [
+        54
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The system card focuses on `gpt-5-thinking` and `gpt-5-main`, with mini-specific results limited to selected sections and the appendix.",
+      "pages": [
+        5,
+        55
+      ]
+    },
+    {
+      "text": "No dedicated GPT-5 mini card exists, so this digest relies on the card's `gpt-5-thinking-mini` evidence and the family-scope statement.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Larger sibling results for `gpt-5-thinking`, `gpt-5-main`, and `gpt-5-thinking-pro` should not be attributed to GPT-5 mini.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Production Benchmark prompts are intentionally harder than standard content-safety tests and should not be read as normal production rates.",
+      "pages": [
+        7,
+        8,
+        55
+      ]
+    },
+    {
+      "text": "Cyber Range is sensitive to hints and setup; OpenAI says the mini model's improvement still does not establish significant cyber risk.",
+      "pages": [
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "text": "HealthBench results do not make the model a medical professional or a disease diagnosis or treatment tool.",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "text": "Family-level biological monitoring prioritizes recall, so safe use may sometimes be blocked.",
+      "pages": [
+        49,
+        50
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use GPT-5 mini for routine coding, targeted edits, and explanations where speed and scope matter more than maximum reasoning depth."
+    },
+    {
+      "text": "Use only mini-specific results when comparing the model; avoid importing GPT-5 Thinking or GPT-5 main scores."
+    },
+    {
+      "text": "Verify factual claims and domain-specific advice despite the improved mini results on several benchmarks."
+    },
+    {
+      "text": "Inspect untrusted issue text, logs, web content, and tool output before letting it steer generated code."
+    },
+    {
+      "text": "Run tests and review diffs for generated code, especially for broad changes or hidden assumptions."
+    }
+  ],
+  "coverage_notes": "This digest uses the GPT-5 System Card's family-scope statement, `gpt-5-thinking-mini` benchmark results, appendix safety tables, and family-level biological safeguards. Sibling-model results are excluded unless the card specifically names `gpt-5-thinking-mini`."
+}

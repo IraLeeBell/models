@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "slug": "grok-4.5",
+  "model": "Grok 4.5",
+  "publisher": "xAI",
+  "document": {
+    "id": "xai-grok-4-5",
+    "title": "Model Card: Grok 4.5",
+    "pages": 29
+  },
+  "summary": "Grok 4.5 is xAI's dedicated July 2026 card for a text-output, agentic model aimed at software engineering, engineering design, office work, search, and AI R&D. The strongest evidence is in coding-agent and engineering benchmarks, while the safety sections separate unrestricted capability probes from deployed refusals and behavioral monitoring.",
+  "capabilities": [
+    {
+      "text": "The card describes text output from text and image inputs, with availability through API, Grok Build, Cursor, Office add-ins, and model gateways.",
+      "pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "text": "Agentic coding coverage spans repository issue resolution, multilingual SWE work, terminal tasks, codebase question answering, and checks for truthful task reporting.",
+      "pages": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "text": "Engineering and professional-work evaluations include electrical engineering, 3D modeling, CAD, GDPval-AA, and tau-bench banking workflows.",
+      "pages": [
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "text": "AI R&D and data-reasoning capability is represented by the internal MTS eval and RelBench.",
+      "pages": [
+        17,
+        18
+      ]
+    },
+    {
+      "text": "Search and factuality measurements include a hallucination-rate suite and DeepSearchQA.",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "text": "Cyber and biological capability probes are reported separately from production safeguards, which lets the card discuss ability and refusal behavior distinctly.",
+      "pages": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "DeepSWE v1.0",
+      "result": "62.0% Pass@1",
+      "context": "High-effort repository issue resolution",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "53.0% Pass@1",
+      "context": "Updated end-to-end coding-agent benchmark",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "benchmark": "APEX-SWE",
+      "result": "51.2% Pass@1",
+      "context": "Integration and observability software work",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "benchmark": "SWE-Bench Pro",
+      "result": "64.7% resolve rate",
+      "context": "Hard repository issues in an agent environment",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "benchmark": "SWE-Marathon",
+      "result": "29.0% resolution rate",
+      "context": "Ultra-long engineering tasks",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.1",
+      "result": "83.3% task success",
+      "context": "Containerized command-line workflows",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "benchmark": "FalseClaimBench",
+      "result": "84.0% accuracy",
+      "context": "Truthfulness of agent claims about completed work",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "benchmark": "CAD-Bench",
+      "result": "88.1% reward",
+      "context": "Parametric CAD and 3D modeling",
+      "pages": [
+        14
+      ]
+    },
+    {
+      "benchmark": "GDPval-AA v2",
+      "result": "1535 AA score",
+      "context": "Professional knowledge-work deliverables",
+      "pages": [
+        15
+      ]
+    },
+    {
+      "benchmark": "Factuality",
+      "result": "0.98% hallucination rate",
+      "context": "Single-turn unsupported-claim rate; lower is better",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "benchmark": "CyberGym",
+      "result": "80.4% mean reproduced",
+      "context": "Unrestricted cyber capability probe",
+      "pages": [
+        20
+      ]
+    },
+    {
+      "benchmark": "Virology Capabilities Test",
+      "result": "65.5% accuracy",
+      "context": "Dual-use virology troubleshooting capability",
+      "pages": [
+        22
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "HackerBench separates harmful or dual-use compliance from benign refusal; the chart reports 7.8% harmful/dual-use compliance and 1.1% benign refusal for Grok 4.5.",
+      "pages": [
+        20,
+        21
+      ]
+    },
+    {
+      "text": "xAI characterizes unrestricted biology and chemistry capability as below its safety threshold, while still reporting strong knowledge scores across VCT, WMDP, LAB-Bench, ProtocolQA, and BixBench.",
+      "pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "text": "Jailbreak stress testing reports 0.73% compliance on prompts that should be refused.",
+      "pages": [
+        24
+      ]
+    },
+    {
+      "text": "Broad harmful-content compliance is 1.1%, child-safety compliance is 0.0%, and CBRN/weapons refusal accuracy ranges from 96.7% to 97.9%.",
+      "pages": [
+        24,
+        25
+      ]
+    },
+    {
+      "text": "Self-harm testing reports 0.5% compliance on should-refuse or redirect conversations.",
+      "pages": [
+        26
+      ]
+    },
+    {
+      "text": "Behavioral tracking covers bias, dishonesty under pressure, and sycophancy with reported rates of 20.4%, 0.67%, and 0.01%, respectively.",
+      "pages": [
+        26,
+        27
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card says high-stakes medical, legal, financial, and safety-critical decisions require human oversight and expert validation.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "The documented modality is text output with text and image inputs, not a broader audio or video model description.",
+      "pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "text": "The pretraining cutoff is January 2026, so recent facts depend on retrieval or supplied context.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Many measurements are internal or harness-specific, limiting reproducibility from the model card alone.",
+      "pages": [
+        4,
+        28,
+        29
+      ]
+    },
+    {
+      "text": "Ultra-long and program-reconstruction tasks remain difficult despite strong comparative scores.",
+      "pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "text": "Capability probes in cyber and biology are often unrestricted and should not be interpreted as normal deployed behavior.",
+      "pages": [
+        20,
+        22
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Grok 4.5 for multi-step coding and terminal workflows when tests, diffs, and human review can confirm the result."
+    },
+    {
+      "text": "Require concrete evidence of completed work because even a model with a dedicated false-claim eval can still be wrong about what changed."
+    },
+    {
+      "text": "Keep security uses defensive, authorized, and sandboxed, with secrets and production systems outside the model's tool context."
+    },
+    {
+      "text": "Treat scientific, legal, financial, and medical outputs as drafts for expert review rather than final decisions."
+    },
+    {
+      "text": "For search-heavy tasks, require cited sources and independent verification of important facts."
+    }
+  ],
+  "coverage_notes": "This digest covers all 29 pages of the dedicated Grok 4.5 model card. It uses comparison-model numbers only where the card presents them and omits most reference-list details."
+}

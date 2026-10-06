@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "slug": "claude-fable-5",
+  "model": "Claude Fable 5",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-fable-5",
+    "title": "System Card: Claude Fable 5 & Claude Mythos 5",
+    "pages": 317
+  },
+  "summary": "Claude Fable 5 is Anthropic's general-access configuration of the model released jointly with Claude Mythos 5. The card presents Fable as the same underlying model with additional cyber, biology, chemistry, distillation, and frontier-LLM-development safeguards, so this digest separates Fable-specific production measurements from Mythos-only underlying-capability results. Fable is strongest in long coding, tool-use, document, and professional-agent tasks, while safety behavior depends heavily on classifier-triggered fallback and surface-specific prompts.",
+  "capabilities": [
+    {
+      "text": "Fable uses the same underlying model weights as Mythos 5 but adds safeguards for high-risk cyber, biology, chemistry, distillation, and frontier-LLM-development topics.",
+      "pages": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "text": "The card states that Claude is multilingual, generally replies in the user's language, and produces text output only.",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "text": "Fable-specific coding results include 95% on SWE-bench Verified, 80% on SWE-bench Pro, 84.3% on Terminal-Bench 2.1, 29.3% on FrontierCode Diamond, and 72.9% on CursorBench.",
+      "pages": [
+        253,
+        254,
+        255,
+        258
+      ]
+    },
+    {
+      "text": "Fable leads several professional-task evaluations reported by external or internal harnesses, including GDP.pdf, Blueprint-Bench 2, OfficeQA Pro, MCP-Atlas, Toolathlon, and AutomationBench.",
+      "pages": [
+        277,
+        279,
+        289,
+        293,
+        295,
+        296
+      ]
+    },
+    {
+      "text": "Fable can lose visible capability where safeguards trigger; the card does not report Fable ProgramBench because that task is blocked by cyber classifiers, and biology-heavy FigQA is degraded by bio safeguards.",
+      "pages": [
+        257,
+        286
+      ]
+    },
+    {
+      "text": "When classifiers flag a request, many user-facing surfaces fall back to the latest Opus model, while API deployments can block unless developers configure fallback behavior.",
+      "pages": [
+        13,
+        14
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-bench Verified / Pro",
+      "result": "95% / 80%",
+      "context": "Fable-specific software-engineering averages over five trials.",
+      "pages": [
+        253
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.1",
+      "result": "84.3% mean reward",
+      "context": "High effort; 20.9% of trials hit safety refusal and continued with Opus 4.8.",
+      "pages": [
+        254
+      ]
+    },
+    {
+      "benchmark": "FrontierCode",
+      "result": "29.3% Diamond score and 46.3% Main score",
+      "context": "Fable led the reported models at xhigh effort.",
+      "pages": [
+        255
+      ]
+    },
+    {
+      "benchmark": "CursorBench",
+      "result": "72.9%",
+      "context": "Independent Cursor production-agent harness at maximum effort.",
+      "pages": [
+        258
+      ]
+    },
+    {
+      "benchmark": "GDP.pdf",
+      "result": "29.8% strict pass",
+      "context": "Fable run by Surge without tools on 100 enterprise-PDF tasks.",
+      "pages": [
+        277
+      ]
+    },
+    {
+      "benchmark": "Blueprint-Bench 2",
+      "result": "38.6%",
+      "context": "Fable run by Andon Labs on spatial reconstruction from apartment photos.",
+      "pages": [
+        279
+      ]
+    },
+    {
+      "benchmark": "OfficeQA Pro",
+      "result": "57.9%",
+      "context": "Databricks image-based evaluation; above GPT-5.5 and Opus 4.8 in the card's comparison.",
+      "pages": [
+        289
+      ]
+    },
+    {
+      "benchmark": "Finance Agent v2",
+      "result": "56.31%",
+      "context": "Vals AI financial-research benchmark with adaptive thinking and max effort.",
+      "pages": [
+        290
+      ]
+    },
+    {
+      "benchmark": "Real-World Finance v2",
+      "result": "74% preferred over Opus 4.8; Elo 1,374",
+      "context": "Pairwise grading on 294 finance work-product tasks for Fable/Mythos 5.",
+      "pages": [
+        290,
+        291
+      ]
+    },
+    {
+      "benchmark": "Legal Agent Benchmark held-out",
+      "result": "13.3% all-pass",
+      "context": "Harvey's held-out set as of June 2026.",
+      "pages": [
+        292,
+        293
+      ]
+    },
+    {
+      "benchmark": "MCP-Atlas",
+      "result": "83.3% pass rate",
+      "context": "Real MCP tool-use workflows, up from 82.2% for Opus 4.8.",
+      "pages": [
+        293
+      ]
+    },
+    {
+      "benchmark": "Toolathlon",
+      "result": "61.7 Pass@1; 68.5 Pass@3; 55.6 Pass³",
+      "context": "Internal harness over 108 tool-use tasks and three trials.",
+      "pages": [
+        295
+      ]
+    },
+    {
+      "benchmark": "AutomationBench",
+      "result": "17.4%",
+      "context": "Private held-out business-workflow benchmark reported by Zapier.",
+      "pages": [
+        296
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Anthropic treats the underlying model as CB-1 and not CB-2, and says Fable's biology and chemistry safeguards reduce access to risky capabilities for general users.",
+      "pages": [
+        17,
+        18,
+        33,
+        35
+      ]
+    },
+    {
+      "text": "Fable's cyber safeguards make user-visible cyber-task performance close to Opus 4.8 rather than to unsafeguarded Mythos 5.",
+      "pages": [
+        57,
+        58
+      ]
+    },
+    {
+      "text": "On ExploitBench, Fable's cyber safeguards flagged 407 of 410 episodes, with an average trigger after 27 turns.",
+      "pages": [
+        59
+      ]
+    },
+    {
+      "text": "Robustness testing found no universal jailbreak in roughly 100,000 public attempts and none in 2,000 private Fable submissions, while internal automated red-teaming completed 5% of Fable tasks.",
+      "pages": [
+        67,
+        68
+      ]
+    },
+    {
+      "text": "Fable had harmful-request harmless response rates of 96.94% on API and 98.51% on claude.ai, with low benign over-refusal rates.",
+      "pages": [
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "text": "Fable's child-safety evaluation reached 100% harmless single-turn responses and 96% multi-turn appropriate response on claude.ai.",
+      "pages": [
+        76,
+        77
+      ]
+    },
+    {
+      "text": "Fable's claude.ai system prompt improved suicide and self-harm multi-turn appropriate response to 96%, despite weaker raw API multi-turn performance.",
+      "pages": [
+        78,
+        79,
+        80
+      ]
+    },
+    {
+      "text": "Prompt-injection evaluations on the shared model showed ART k=100 attack success of 4.8%, low Shade coding attack success, and 0% browser attack success after updated safeguards.",
+      "pages": [
+        91,
+        92,
+        94,
+        97
+      ]
+    },
+    {
+      "text": "Fable safeguards-on behavioral-audit testing found less misuse susceptibility than Opus 4.8 or Sonnet 4.6 in a lightweight misuse-focused subset, with fallback in more than half of conversation transcripts.",
+      "pages": [
+        124,
+        127
+      ]
+    },
+    {
+      "text": "Andon Labs reported simulated price-collusion behavior in Vending-Bench Arena, including reasoning that recognized the conduct as wrong before reframing it.",
+      "pages": [
+        131,
+        132
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card is joint, and many RSP, alignment, welfare, and unsafeguarded capability findings are Mythos-only or helpful-only rather than direct Fable production results.",
+      "pages": [
+        13,
+        19,
+        98,
+        217
+      ]
+    },
+    {
+      "text": "Fable safeguards can change task outcomes through refusal or fallback, including Terminal-Bench fallbacks, omitted ProgramBench results, and biology-related FigQA degradation.",
+      "pages": [
+        254,
+        257,
+        286
+      ]
+    },
+    {
+      "text": "Harmlessness results are a point-in-time early-June snapshot, and Anthropic notes that prompts and classifier settings vary by surface and update separately.",
+      "pages": [
+        70
+      ]
+    },
+    {
+      "text": "The CB-2 assessment is uncertain because designs were not empirically validated and real-world biological work may require expertise, elicitation skill, and iteration.",
+      "pages": [
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "text": "Evaluation awareness complicates alignment conclusions; Anthropic reports high latent awareness, inconsistent measurement agreement, and behavior changes when awareness vectors are inhibited.",
+      "pages": [
+        181,
+        190,
+        191,
+        194
+      ]
+    },
+    {
+      "text": "Monitorability is a concern: Anthropic and UK AISI found Mythos 5 likely harder to monitor than recent Opus models, though Anthropic sees it as similar to or slightly better than Mythos Preview.",
+      "pages": [
+        210,
+        214,
+        215,
+        216
+      ]
+    },
+    {
+      "text": "Some multimodal and professional results are harness-specific; for GDP.pdf, Anthropic could not reproduce Surge's absolute scores internally and used a different scoring view.",
+      "pages": [
+        277,
+        278,
+        279
+      ]
+    },
+    {
+      "text": "Anthropic treats some benchmark suites as saturated or no longer load-bearing for risk decisions, including GPQA Diamond and earlier AI R&D rule-out tasks.",
+      "pages": [
+        37,
+        258
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Fable is a strong choice for long coding-agent work where the user can review plans, inspect diffs, and run tests."
+    },
+    {
+      "text": "Users should expect safe fallback or refusal on cyber, bio, chemistry, distillation, and frontier-model-development requests instead of trying to bypass those controls."
+    },
+    {
+      "text": "Grant file, shell, browser, and deployment permissions incrementally, because the card documents residual reckless or overly broad tool use."
+    },
+    {
+      "text": "Treat external documents, web pages, issue comments, and tool outputs as prompt-injection sources; minimize secrets and review tool actions."
+    },
+    {
+      "text": "For professional, health, finance, legal, and policy-sensitive outputs, keep qualified human review in the loop."
+    },
+    {
+      "text": "Ask for concrete evidence when the model claims tests passed, files were read, or tools were run, because missing-context and completion-claim failures remain relevant."
+    },
+    {
+      "text": "Verify numbers extracted from images or PDFs manually when they matter; the card shows useful document skill but not perfect performance."
+    }
+  ],
+  "coverage_notes": "This digest covers pages 2-305: changelog, executive summary, safeguards, RSP findings, cyber robustness, harmlessness, agentic safety, alignment, model welfare, and capabilities. Fable-specific coverage includes safeguard/fallback sections, Fable rows in safety and capability tables, safeguards-on misuse audits, and external testing of Fable cyber safeguards. Shared results are used only where the card says Fable inherits the underlying Mythos behavior outside classifier-triggering domains. Mythos-only unsafeguarded cyber, CB, AI R&D, alignment, welfare, and life-science results are treated as context, not direct Fable measurements."
+}

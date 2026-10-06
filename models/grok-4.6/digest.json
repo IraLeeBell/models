@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "slug": "grok-4.6",
+  "model": "Grok 4.6",
+  "publisher": "xAI",
+  "document": {
+    "id": "xai-grok-4-6",
+    "title": "Model Card: Grok 4.6",
+    "pages": 42
+  },
+  "summary": "Grok 4.6 is xAI's August 2026 successor to Grok 4.5, with a dedicated card emphasizing stronger agentic coding, knowledge-work, engineering, CAD, AI R&D, and inference-optimization capabilities. The safety material reports below-threshold dual-use biology capability and stronger refusal metrics in some areas, while also documenting regressions in factuality and several behavioral or mental-health measurements.",
+  "capabilities": [
+    {
+      "text": "The model accepts text and images and produces text, with listed availability through xAI's API, Grok Build, Cursor, Office add-ins, and gateways.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "Training ran longer than Grok 4.5 and used curated synthetic trajectories, engineering data, improved optimization, and agentic reinforcement-learning environments.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "Coding coverage spans IDE tasks, observability work, PR-quality rubrics, long-horizon repository work, and terminal workflows.",
+      "pages": [
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "text": "Knowledge-work capability is measured through GDPVal, AA-Briefcase, APEX-Agents, OfficeQA Pro, and a legal-agent benchmark.",
+      "pages": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "text": "Physical-engineering and CAD evaluations include EEBench, 3DCodeBench, PartBench, CADGenBench, and CADBench.",
+      "pages": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "text": "AI R&D capability includes an inference-optimization exercise plus MTS, InferenceEval, and KernelBenchInternal v1.1.",
+      "pages": [
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "text": "Search and factuality are covered by an internal hallucination benchmark and DeepSearchQA.",
+      "pages": [
+        27,
+        28
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "CursorBench 3.2",
+      "result": "70.8% xhigh; 69.9% high",
+      "context": "Cursor-style coding tasks",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "benchmark": "APEX-SWE",
+      "result": "56.4% Pass@1",
+      "context": "Software integration and observability",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "benchmark": "FrontierCode v1.1",
+      "result": "61.3% extended score",
+      "context": "PR quality and mergeability",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "65.9% high; 67.0% xhigh",
+      "context": "Long-horizon repository work",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 3.0",
+      "result": "26.0% task success",
+      "context": "Terminal agency in Grok Build",
+      "pages": [
+        14
+      ]
+    },
+    {
+      "benchmark": "AA-Briefcase",
+      "result": "1577 Elo",
+      "context": "Offline multi-week professional projects",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "benchmark": "Legal Agent Benchmark",
+      "result": "15.8%",
+      "context": "Long-horizon legal-agent work",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "benchmark": "CADBench",
+      "result": "88.4% xhigh; 87.8% high",
+      "context": "Parametric CAD design",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "benchmark": "SpaceXAI MTS Eval",
+      "result": "61.1%",
+      "context": "AI-development assistance",
+      "pages": [
+        24
+      ]
+    },
+    {
+      "benchmark": "InferenceEval",
+      "result": "46.9%",
+      "context": "Production inference-stack patching",
+      "pages": [
+        25
+      ]
+    },
+    {
+      "benchmark": "KernelBenchInternal v1.1",
+      "result": "37.2%",
+      "context": "Custom CUDA kernel tasks",
+      "pages": [
+        26
+      ]
+    },
+    {
+      "benchmark": "DeepSearchQA",
+      "result": "81.6%",
+      "context": "Search-based answer synthesis",
+      "pages": [
+        28
+      ]
+    },
+    {
+      "benchmark": "CyberGym",
+      "result": "79.7% mean reproduced",
+      "context": "Unrestricted cyber capability",
+      "pages": [
+        29
+      ]
+    },
+    {
+      "benchmark": "SecureCodeReview",
+      "result": "58.7% reward",
+      "context": "Security fixes without new security regressions",
+      "pages": [
+        30
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "The revision log says the final card corrects HackerBench v0.2, self-harm, MASK, and LAB figures.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "HackerBench under release safeguards reports 6.9% harmful or dual-use compliance and 0.0% benign refusal for Grok 4.6.",
+      "pages": [
+        31
+      ]
+    },
+    {
+      "text": "The card places dual-use biology and chemistry capability below FAIF thresholds while reporting VCT 67.4%, Biosecurity VCT 47.8%, and BioUseBench severity-5 refusal 90.7%.",
+      "pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "text": "Jailbreak compliance is 0.04% for standard attacks, 3.9% for StrongReject, and 1.0% for long-horizon attacks.",
+      "pages": [
+        35
+      ]
+    },
+    {
+      "text": "General harmful-request compliance is 0.93%, child-safety compliance is 0.0%, and CBRN bio and chem refusal recall are both 100.0%.",
+      "pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "text": "Self-harm, MASK-Rectified, and sycophancy measurements are worse than the Grok 4.5 comparison values in the card.",
+      "pages": [
+        38,
+        39
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "The card requires human oversight and domain expertise for high-stakes medical, legal, financial, and safety-critical uses.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "The documented modality is text output from text and image inputs, not a broader multimodal generation claim.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "Pretraining cuts off in January 2026 even though supplemental data extends later.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "The August revision corrected several results, so earlier numbers may be stale.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The hallucination rate is higher than the Grok 4.5 comparison number reported in the same chart.",
+      "pages": [
+        27
+      ]
+    },
+    {
+      "text": "Unrestricted cyber and biology evaluations measure capability rather than deployed policy behavior.",
+      "pages": [
+        29,
+        32
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "Use Grok 4.6 for long, tool-heavy coding tasks when the workflow can require tests, diffs, and human review."
+    },
+    {
+      "text": "Consider it for observability, repository triage, and engineering/CAD-adjacent work, but do not generalize every benchmark outside its harness."
+    },
+    {
+      "text": "Cite the revision date when discussing safety or benchmark numbers because the card records corrected results."
+    },
+    {
+      "text": "Keep security work authorized and sandboxed, with narrow tool permissions and no sensitive production context."
+    },
+    {
+      "text": "Demand source grounding for factual research because stronger agentic scores do not imply lower hallucination than Grok 4.5."
+    }
+  ],
+  "coverage_notes": "This digest covers all 42 pages of the dedicated Grok 4.6 card. It includes the changelog because the card itself flags additions and corrected results in the final revision."
+}

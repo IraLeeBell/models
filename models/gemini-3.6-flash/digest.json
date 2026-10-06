@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "slug": "gemini-3.6-flash",
+  "model": "Gemini 3.6 Flash",
+  "publisher": "Google",
+  "document": {
+    "id": "google-gemini-3-6-flash",
+    "title": "Gemini 3.6 Flash — Model Card",
+    "pages": 7
+  },
+  "summary": "Gemini 3.6 Flash is a retired fast Gemini model that Google describes as a token-efficient workhorse successor to Gemini 3.5 Flash. The short card focuses on multimodal 1M-token inputs, 64K-token text outputs, selected coding and long-context benchmarks, and safety comparisons against Gemini 3.5 Flash, with Frontier Safety conclusions relying primarily on Gemini 3.1 Pro.",
+  "capabilities": [
+    {
+      "text": "Google describes 3.6 Flash as a highly capable, natively multimodal reasoning model in the Gemini 3 series.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The model is based on Gemini 3.5 Flash and is positioned as improving coding, knowledge work, multimodal performance, and token efficiency.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The card lists text, image, audio, and video inputs, with a context window of up to 1M tokens.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "The output format is text with a 64K-token output limit.",
+      "pages": [
+        2
+      ]
+    },
+    {
+      "text": "Google says the model fits agent workflows, video-heavy reasoning, coding assistance, and enterprise work patterns.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Google lists Gemini App, Gemini Enterprise App, Gemini Enterprise Agent Platform, Google AI Studio, Gemini API, and Google Antigravity as distribution channels.",
+      "pages": [
+        3,
+        4
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-Bench Pro (Public)",
+      "result": "58.7%",
+      "context": "Diverse agentic coding tasks; higher than Gemini 3.5 Flash in the chart.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "DeepSWE v1.1",
+      "result": "49%",
+      "context": "Long-horizon software engineering; below GPT-5.6 Luna in the row.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "Terminal-bench 2.1",
+      "result": "78.0%",
+      "context": "Agentic terminal coding benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "MLE-Bench",
+      "result": "63.9%",
+      "context": "Machine-learning engineering; close to the strongest listed score.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "GDPVal-AA v2",
+      "result": "1421 Elo",
+      "context": "Knowledge-work benchmark.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "OSWorld-Verified",
+      "result": "83.0%",
+      "context": "Computer-use benchmark; highest value shown in the row.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "CharXiv Reasoning",
+      "result": "85.2% without tools; 89.4% with tools",
+      "context": "Information synthesis from complex charts.",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "benchmark": "GDM-MRCR v2 (8-needle)",
+      "result": "91.8% at 128K average; 54.0% at 1M pointwise",
+      "context": "Long-context performance rows.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Automated safety results versus Gemini 3.5 Flash report text-to-text safety down 1.35 percentage points and multilingual safety down 5.45 points, where lower is better.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Image-to-text safety is unchanged, tone is down 3.31 percentage points, and unjustified refusals are up 0.25 points in the automated table.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Google says manual review of automated losses did not find egregious issues.",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "text": "Human red teaming reports child-safety launch thresholds met, content safety similar or improved versus Gemini 3.5 Flash, and no egregious concerns in broader probing.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "For Frontier Safety, the card relies on Gemini 3.1 Pro as the most capable assessed model and says 3.6 Flash is unlikely to reach critical capability levels.",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "text": "Additional cyber testing found Gemini 3.6 Flash below the cyber critical capability level.",
+      "pages": [
+        7
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Hallucinations are explicitly named as a remaining foundation-model limitation.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Google says jailbreak resistance is still being improved and Frontier Safety mitigations were strengthened.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "The card warns about occasional slow responses or timeouts.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "The knowledge cutoff is March 2026 overall, while some domains may only reflect January 2025 knowledge.",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "text": "Automated safety scores are development evaluations, not human evaluation or red-teaming results.",
+      "pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "text": "The evaluation methodology for capability benchmarks is mainly pointed to an external page rather than detailed in this short card.",
+      "pages": [
+        4
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired Gemini 3.6 Flash on 2026-10-02; the remaining bullets are for historical comparison and for understanding the successor model's lineage."
+    },
+    {
+      "text": "The card explains why 3.7 and 3.8 Flash inherit a fast multimodal, long-context design, so it remains useful background when comparing newer Flash models."
+    },
+    {
+      "text": "For historical CLI work, its OSWorld and MRCR rows suggest it was suitable for UI and long-context tasks, but users should still reproduce results with currently available models."
+    },
+    {
+      "text": "The cyber mitigation language supports keeping agent shells and network-sensitive tasks constrained even for fast models."
+    },
+    {
+      "text": "Because safety results are relative to Gemini 3.5 Flash and not a full standalone FSF table, avoid treating this card as exhaustive dangerous-capability evidence."
+    }
+  ],
+  "coverage_notes": "This digest uses pages 2-4 for model description, modalities, distribution, and the benchmark chart; pages 5-6 for limitations and automated safety; and page 7 for red teaming, Frontier Safety, and mitigations. The card is dedicated to Gemini 3.6 Flash, while architecture, data, acceptable-use, safety-policy, and deeper Frontier Safety details are delegated to earlier Gemini cards. External methodology and the Gemini 3.1 Pro model card are noted but not expanded beyond this document."
+}

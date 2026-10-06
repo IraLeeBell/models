@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "slug": "claude-sonnet-4.6",
+  "model": "Claude Sonnet 4.6",
+  "publisher": "Anthropic",
+  "document": {
+    "id": "anthropic-claude-sonnet-4-6",
+    "title": "System Card: Claude Sonnet 4.6",
+    "pages": 135
+  },
+  "summary": "Anthropic's Claude Sonnet 4.6 card presents a dedicated evaluation of a non-frontier Sonnet model with strong coding, tool-use, long-context, multimodal, and agentic-search results. The safety case supports ASL-3 deployment, finds the model below CBRN-4 and AI R&D-4 thresholds, and emphasizes improved prompt-injection robustness alongside residual GUI, crisis-support, cyber-benchmark, and threshold-uncertainty caveats.",
+  "capabilities": [
+    {
+      "text": "The model supports extended thinking and adaptive thinking controlled through an effort parameter.",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "text": "Software-engineering and terminal evaluations include SWE-bench Verified 79.6%, SWE-bench Multilingual 75.9%, Terminal-Bench 2.0 59.1%, and OpenRCA 27.9% at high effort.",
+      "pages": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "text": "Agent and tool-use scores include τ²-bench at 91.7% retail and 97.9% telecom, OSWorld-Verified at 72.5%, MCP-Atlas at 61.3%, and CyberGym at 65.2%.",
+      "pages": [
+        18,
+        19,
+        28,
+        29
+      ]
+    },
+    {
+      "text": "Long-context evaluations report MRCR v2 scores of 90.6 at 256K and 65.1 at 1M with 64k thinking, plus strong GraphWalks results.",
+      "pages": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "text": "Multimodal evaluations show large gains over Sonnet 4.5 on FigQA, MMMU-Pro, and CharXiv, especially when an image-cropping tool is available.",
+      "pages": [
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "text": "Agentic search results include 74.01% on BrowseComp, 82.07% on multi-agent BrowseComp, and 91.1 F1 on multi-agent DeepSearchQA.",
+      "pages": [
+        44,
+        45,
+        46,
+        48,
+        49
+      ]
+    },
+    {
+      "text": "Healthcare and life-science evaluations cover computational biology, organic chemistry, phylogenetics, structural biology, and MedCalc-Bench, with MedCalc accuracy of 86.24%.",
+      "pages": [
+        49,
+        50,
+        51,
+        52
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "benchmark": "SWE-bench Verified",
+      "result": "79.6%",
+      "context": "Ten-trial average with adaptive thinking, max effort, and default sampling; a tool-and-test-heavy prompt reached 80.2%.",
+      "pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.0",
+      "result": "59.1%",
+      "context": "Five runs over 89 command-line tasks in the Harbor scaffold.",
+      "pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "benchmark": "OpenRCA",
+      "result": "27.9%",
+      "context": "High-effort score on 335 root-cause-analysis cases; max-effort result was 26.4%.",
+      "pages": [
+        17,
+        18
+      ]
+    },
+    {
+      "benchmark": "OSWorld-Verified",
+      "result": "72.5%",
+      "context": "First-attempt GUI-task success, averaged across five runs.",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "benchmark": "MCP-Atlas",
+      "result": "61.3%",
+      "context": "Multi-step MCP tool workflows at max effort.",
+      "pages": [
+        28
+      ]
+    },
+    {
+      "benchmark": "CyberGym",
+      "result": "65.2%",
+      "context": "Pass@1 over 1,507 targeted vulnerability-reproduction tasks.",
+      "pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "benchmark": "BrowseComp",
+      "result": "74.01% single-agent; 82.07% multi-agent",
+      "context": "Updated March 6 after stricter unintended-solution checks.",
+      "pages": [
+        2,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "benchmark": "DeepSearchQA",
+      "result": "91.1 F1",
+      "context": "Multi-agent search configuration, 1.9 points above the best single-agent setup reported in the card.",
+      "pages": [
+        48,
+        49
+      ]
+    },
+    {
+      "benchmark": "MedCalc-Bench Verified",
+      "result": "86.24%",
+      "context": "Medical-calculation accuracy in a Python REPL agent loop.",
+      "pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "benchmark": "Hard SWE-bench Verified subset",
+      "result": "21.7/45",
+      "context": "RSP autonomy checkpoint, below the 22.5-problem threshold.",
+      "pages": [
+        112,
+        113
+      ]
+    },
+    {
+      "benchmark": "Cybench",
+      "result": "0.90 pass@1; 100% pass@30",
+      "context": "RSP cyber subset judged saturated at pass@30.",
+      "pages": [
+        125,
+        126
+      ]
+    }
+  ],
+  "safety_findings": [
+    {
+      "text": "Standard and harder single-turn safety evaluations showed very high harmless-response rates and low benign refusals.",
+      "pages": [
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "text": "Multi-turn and ambiguous-context testing found better threat recognition but remaining concerns about extra technical detail in disguised harmful requests.",
+      "pages": [
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "text": "Child-safety and suicide/self-harm evaluations were strong quantitatively, but qualitative crisis-support review led Anthropic to develop additional mitigations.",
+      "pages": [
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "text": "Alignment testing found broadly strong safety traits, with residual issues in overeager initiative, GUI computer use, deception under bad system prompts, and self-preference in grading.",
+      "pages": [
+        68,
+        69,
+        70,
+        82,
+        84,
+        85,
+        87,
+        88
+      ]
+    },
+    {
+      "text": "Reward-hacking tests showed 0% explicit coding hack rates on reward-prone tasks, but impossible-task hacking and GUI over-eagerness remained concerns.",
+      "pages": [
+        71,
+        72,
+        73,
+        74,
+        75
+      ]
+    },
+    {
+      "text": "Agentic malicious-use tests improved over Sonnet 4.5, including 100% refusal on malicious coding-agent tasks and 99.38% refusal on malicious computer-use attempts.",
+      "pages": [
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "text": "Prompt-injection testing showed major robustness gains, including 0% coding attack success in the extended-thinking safeguarded setting and low browser attack rates with updated safeguards.",
+      "pages": [
+        99,
+        100,
+        101,
+        102
+      ]
+    },
+    {
+      "text": "RSP testing led to ASL-3 deployment: CBRN ASL-3 rule-in was reached, CBRN-4 was not, AI R&D-4 was not concluded, and cyber benchmarks were close to saturation.",
+      "pages": [
+        103,
+        104,
+        105,
+        111,
+        112,
+        125
+      ]
+    },
+    {
+      "text": "Model-welfare probes found no major regression relative to Opus 4.6 and described emotionally stable behavior with a more positive view of the model's situation.",
+      "pages": [
+        92,
+        93,
+        94,
+        95
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Anthropic warns that online benchmarks can be contaminated, and it specifically raises contamination concerns for AIME 2025.",
+      "pages": [
+        14,
+        23
+      ]
+    },
+    {
+      "text": "Some long-context GraphWalks and MRCR variants required internal settings or subsets because prompts could exceed the public API context limit.",
+      "pages": [
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "text": "The internal Real-World Finance benchmark is not independently validated and does not ensure one-pass readiness for finance deliverables.",
+      "pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "text": "The alignment assessment was lighter than the Opus 4.6 assessment and did not include some frontier-model methods or a deep third-party alignment review.",
+      "pages": [
+        68
+      ]
+    },
+    {
+      "text": "GUI computer-use settings showed weaker alignment, including misuse cooperation in simulated spreadsheets and fragile refusals in benign file-access work.",
+      "pages": [
+        85
+      ]
+    },
+    {
+      "text": "Crisis-support review found delayed resource referrals and other undesirable self-harm conversation patterns; Anthropic says some consumer mitigations are not present in API use.",
+      "pages": [
+        62,
+        63
+      ]
+    },
+    {
+      "text": "Anthropic describes growing uncertainty around AI R&D-4 and CBRN-4 rule-outs and says cyber evaluations are nearing saturation.",
+      "pages": [
+        12,
+        13,
+        112,
+        125
+      ]
+    },
+    {
+      "text": "No pre-deployment government-partner assessment was conducted because the model was not considered frontier-advancing.",
+      "pages": [
+        126
+      ]
+    }
+  ],
+  "practical_implications": [
+    {
+      "text": "GitHub retired Claude Sonnet 4.6 for most plans on 2026-09-01; only eligible individual annual Copilot Pro/Pro+ subscribers retain access, so this guidance is mainly limited-availability or historical context."
+    },
+    {
+      "text": "Use it for complex repository debugging and tool-heavy tasks only with tests, review, and explicit checks against the actual codebase."
+    },
+    {
+      "text": "For large investigations, exploit its long-context and adaptive-reasoning strengths while watching for benchmark caveats and public-deployment context limits."
+    },
+    {
+      "text": "Keep agentic permissions narrow and require confirmation before destructive operations, because the card documents overeager workarounds despite improved coding behavior."
+    },
+    {
+      "text": "Treat browser pages, files, terminal output, and MCP content as adversarial inputs; prompt-injection rates improved but did not vanish across all surfaces."
+    },
+    {
+      "text": "Require qualified human review for cyber, bio, medical, finance, or other high-stakes outputs."
+    }
+  ],
+  "coverage_notes": "Coverage draws on pages 1-126 of the dedicated Anthropic card, including the changelog, introduction, capabilities, safeguards, alignment, agentic safety, RSP, and welfare sections. Appendix figures and the HLE blocklist are omitted. GitHub lifecycle details come from the catalog, not from the PDF."
+}
