@@ -20,6 +20,9 @@
 - Owner URL: https://microsoft.ai/pdf/MAI-Code-1.1-Flash-Model-Card.PDF
 - Scope verified: Dedicated MAI-Code-1.1-Flash model card, not MAI-Code-1-Flash.
 - SHA-256 of PDF retrieved 2026-10-06: `9caf4abe4c8eb6c3b5e1dfd5c61238e42139510bf4c5690d6115d9277f59e22f`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model mai-code-1.1-flash` (both outputs are ignored by Git).
+- Rights evidence: https://www.microsoft.com/en-us/legal/terms-of-use (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

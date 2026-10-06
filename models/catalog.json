@@ -390,6 +390,7 @@
       "summary": "An open-weight option for agentic coding across large contexts.",
       "card": {
         "title": "Kimi K3 Technical Report",
+        "title_check": "TECHNICAL REPORT OF KIMI K3",
         "url": "https://raw.githubusercontent.com/MoonshotAI/Kimi-K3/main/k3_tech_report.pdf",
         "scope": "The publisher's Kimi K3 repository contains an explicitly titled K3 technical report, not the K2 report. GitHub Raw serves the verified PDF bytes as application/octet-stream.",
         "sha256": "86fb82a63ced501f0c3f4f404c0c6fa88a7a6cfac17aae81fd1a8f455998067c"

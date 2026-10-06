@@ -20,6 +20,9 @@
 - Owner URL: https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf
 - Scope verified: Dedicated Claude Sonnet 5.5 system card dated September 28, 2026.
 - SHA-256 of PDF retrieved 2026-10-06: `89cfd6a6d3aa6148eaf23f4a53006950ee7746009f381237c62920c720725785`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model claude-sonnet-5.5` (both outputs are ignored by Git).
+- Rights evidence: https://www.anthropic.com/legal/consumer-terms (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

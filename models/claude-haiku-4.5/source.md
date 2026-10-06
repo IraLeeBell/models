@@ -19,6 +19,9 @@
 - Owner URL: https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf
 - Scope verified: Dedicated Claude Haiku 4.5 system card.
 - SHA-256 of PDF retrieved 2026-10-06: `1b9ae5f4f66a65c1b37a031179af3dba35959471a3a5d195e4fe700b87558141`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model claude-haiku-4.5` (both outputs are ignored by Git).
+- Rights evidence: https://www.anthropic.com/legal/consumer-terms (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

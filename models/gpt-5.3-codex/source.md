@@ -18,6 +18,8 @@
 - Title: GPT-5.3-Codex System Card
 - Owner URL: https://deploymentsafety.openai.com/gpt-5-3-codex
 - Scope verified: OpenAI's GPT-5.3-Codex deployment-safety page; HTML, not a PDF extraction.
+- Rights evidence: https://openai.com/policies/terms-of-use/ (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

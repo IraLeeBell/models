@@ -19,6 +19,9 @@
 - Owner URL: https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf
 - Scope verified: Dedicated Claude Opus 5.5 system card.
 - SHA-256 of PDF retrieved 2026-10-06: `7311c9c6bbb16d012f1c12c7418b05949fcf7ae3e30d2c40f22050074b2a7378`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model claude-opus-5.5` (both outputs are ignored by Git).
+- Rights evidence: https://www.anthropic.com/legal/consumer-terms (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

@@ -19,6 +19,9 @@
 - Owner URL: https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-8-Flash-Model-Card.pdf
 - Scope verified: Google DeepMind model card explicitly titled Gemini 3.8 Flash.
 - SHA-256 of PDF retrieved 2026-10-06: `fd9b9494c8cb0da6dc16777c3df70d9f9226708e08ba7c9337222207c5d482af`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model gemini-3.8-flash` (both outputs are ignored by Git).
+- Rights evidence: https://policies.google.com/terms (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

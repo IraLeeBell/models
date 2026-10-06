@@ -9,3 +9,5 @@ app picker observations are separate from GitHub.com and app Auto selection.
 
 Publisher PDFs and their full text are **linked, not redistributed**: this
 repository's MIT license does not license third-party system cards.
+See the [rights review](models/RIGHTS.md) and [local-only download and
+extraction instructions](models/README.md).

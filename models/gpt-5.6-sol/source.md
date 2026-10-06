@@ -19,6 +19,9 @@
 - Owner URL: https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
 - Scope verified: The introduction explicitly names Luna, Sol, and Terra as the three GPT-5.6 models.
 - SHA-256 of PDF retrieved 2026-10-06: `aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model gpt-5.6-sol` (both outputs are ignored by Git).
+- Rights evidence: https://openai.com/policies/terms-of-use/ (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

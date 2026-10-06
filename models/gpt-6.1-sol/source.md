@@ -19,6 +19,8 @@
 - Title: Addendum to GPT-6 Astra System Card: GPT-6.1 Sol
 - Owner URL: https://deploymentsafety.openai.com/gpt-6-1-sol
 - Scope verified: Dedicated GPT-6.1 Sol addendum to the Astra system card, not a standalone PDF or an Astra-only evaluation.
+- Rights evidence: https://openai.com/policies/terms-of-use/ (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

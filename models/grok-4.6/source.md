@@ -19,6 +19,9 @@
 - Owner URL: https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf
 - Scope verified: Dedicated Grok 4.6 model card (revision August 17, 2026).
 - SHA-256 of PDF retrieved 2026-10-06: `1fbb3ab6d7c572720e05d501eab8f11052b32db8d5936e66802c5c49b2261f4f`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model grok-4.6` (both outputs are ignored by Git).
+- Rights evidence: https://x.ai/legal/terms-of-service (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

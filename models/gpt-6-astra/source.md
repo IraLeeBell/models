@@ -19,6 +19,9 @@
 - Owner URL: https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf
 - Scope verified: Main body covers Astra; an explicitly titled September 22 appendix covers GPT-6 Sol and GPT-6 Luna.
 - SHA-256 of PDF retrieved 2026-10-06: `77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model gpt-6-astra` (both outputs are ignored by Git).
+- Rights evidence: https://openai.com/policies/terms-of-use/ (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

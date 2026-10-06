@@ -19,6 +19,32 @@ ALLOWED_HOSTS = {
     "Moonshot AI": {"raw.githubusercontent.com"},
     "xAI": {"media.x.ai"},
 }
+RIGHTS_SOURCES = {
+    "OpenAI": (
+        "https://openai.com/policies/terms-of-use/",
+        "No system-card or HTML-card redistribution license identified; product terms do not grant publication rights to these documents.",
+    ),
+    "Anthropic": (
+        "https://www.anthropic.com/legal/consumer-terms",
+        "The service terms do not grant republication rights for Anthropic's system-card PDFs.",
+    ),
+    "Google": (
+        "https://policies.google.com/terms",
+        "The general terms retain Google's intellectual-property rights; no Gemini model-card PDF redistribution grant identified.",
+    ),
+    "Microsoft": (
+        "https://www.microsoft.com/en-us/legal/terms-of-use",
+        "The Documents clause restricts copying or posting documents on another network; no permission for this public repository.",
+    ),
+    "Moonshot AI": (
+        "https://github.com/MoonshotAI/Kimi-K3/blob/main/LICENSE",
+        "The custom Kimi K3 License permits distributing associated documentation in the repository, but does not expressly name the PDF report. Applicability to the report needs publisher confirmation.",
+    ),
+    "xAI": (
+        "https://x.ai/legal/terms-of-service",
+        "The product terms do not grant republication rights for Grok model-card PDFs.",
+    ),
+}
 
 
 def load_catalog():
@@ -53,6 +79,10 @@ def load_catalog():
             raise ValueError(f"PDF needs a verified hash; HTML must not have one: {model['name']}")
         if card.get("sha256") and not re.fullmatch(r"[0-9a-f]{64}", card["sha256"]):
             raise ValueError(f"Invalid SHA-256: {model['name']}")
+        if "title_check" in card and (
+            not isinstance(card["title_check"], str) or not card["title_check"].strip()
+        ):
+            raise ValueError(f"Invalid PDF title check: {model['name']}")
     return catalog
 
 
@@ -92,6 +122,15 @@ def source(model, catalog):
         ]
         if card.get("sha256"):
             lines.append(f"- SHA-256 of PDF retrieved {catalog['checked_at']}: `{card['sha256']}`")
+            lines.append(
+                f"- Local-only full PDF and Markdown: `python3 models/local_cards.py --model {model['slug']}` "
+                "(both outputs are ignored by Git)."
+            )
+        lines.append(
+            f"- Rights evidence: {RIGHTS_SOURCES[model['provider']][0]} "
+            "(no verified document-specific public republication grant)."
+        )
+        lines.append("- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).")
     else:
         lines += ["## Publisher document", "", f"No matching publisher card confirmed. {model['card_note']}"]
     lines += [
@@ -100,6 +139,92 @@ def source(model, catalog):
          if card else "No publisher card or full-text extraction is supplied here."),
         "This repository's MIT license does not grant redistribution rights to",
         "third-party system cards, PDFs, or their full text.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def rights_review(catalog):
+    models = catalog["models"]
+    by_url = {}
+    for model in models:
+        if model["card"]:
+            by_url.setdefault(model["card"]["url"], []).append(model)
+    pdf_count = sum(url.lower().endswith(".pdf") for url in by_url)
+    lines = [
+        "# Publisher document rights review",
+        "",
+        f"Checked {catalog['checked_at']}: {pdf_count} unique owner PDFs across "
+        f"{sum(bool(m['card']) and bool(m['card'].get('sha256')) for m in models)} model entries,",
+        "plus two HTML system-card pages. All documents were",
+        "checked for title, publisher, PDF integrity where applicable, and scope.",
+        "**None has a verified, unambiguous document-specific grant for hosting",
+        "its entire PDF and full Markdown extraction in this public repository.**",
+        "Access to a public URL or a license for model weights is not permission",
+        "to reproduce a publisher's documentation. This review is not legal advice.",
+        "",
+        "Each of the 20 unique PDFs was scanned on every page for an explicit",
+        "republication notice in selectable text, links, annotations, embedded",
+        "files and metadata (including XMP). None contained such a grant.",
+        "Nine Anthropic documents have some image-only pages; a notice appearing",
+        "only inside one of those images was not ruled out by the text scan.",
+        "Neither silence nor an unreadable image supplies permission. Publisher",
+        "service terms and model deployment licenses are distinct from rights",
+        "to reproduce a system card.",
+        "",
+        "| Publisher | First-party rights source | Result for public PDF/full-text hosting |",
+        "| --- | --- | --- |",
+    ]
+    for provider, (url, conclusion) in RIGHTS_SOURCES.items():
+        lines.append(f"| {provider} | [Publisher terms]({url}) | {conclusion} |")
+    lines += [
+        "",
+        "The [Microsoft AI site](https://microsoft.ai/) links to the Microsoft",
+        "terms above. The `License` field in Microsoft's model card concerns",
+        "the model, **not** redistribution of its PDF. The Moonshot AI report lives",
+        "in the [same repository as its custom LICENSE](https://github.com/MoonshotAI/Kimi-K3),",
+        "which defines software to include",
+        "associated documentation and grants distribution of it subject to",
+        "retaining notices. It does not explicitly identify `k3_tech_report.pdf`",
+        "as licensed documentation, so we have not assumed this grant applies.",
+        "If Moonshot confirms applicability, retain its copyright and permission",
+        "notice in any redistributed copy and re-check the full license conditions.",
+        "",
+        "## Document-by-document publication decision",
+        "",
+        "Each line denotes one unique owner document. Shared family PDFs appear",
+        "under multiple model folders, but only once here. The model-specific",
+        "publisher URL and SHA-256, where available, are in each folder's `source.md`.",
+        "",
+        "| Owner document | Model folders | In-document rights notice | Full PDF/text redistribution |",
+        "| --- | --- | --- | --- |",
+    ]
+    for url, entries in by_url.items():
+        card = entries[0]["card"]
+        provider = entries[0]["provider"]
+        folders = ", ".join(f"[`{m['slug']}`]({m['slug']}/source.md)" for m in entries)
+        if not card.get("sha256"):
+            scan = "HTML page; no PDF"
+        elif provider == "Anthropic":
+            scan = "No grant in text/metadata; some pages image-only"
+        elif provider == "Microsoft":
+            scan = "Model/service license on pp. 1-2, not PDF rights"
+        elif provider == "Moonshot AI":
+            scan = "No grant in PDF text/metadata; repo license separate"
+        else:
+            scan = "No grant in PDF text/metadata"
+        result = ("Repository-wide associated-documentation license; PDF scope "
+                  "unconfirmed, so not reproduced"
+                  if provider == "Moonshot AI" else "No applicable document grant verified")
+        lines.append(f"| [{card['title']}]({url}) | {folders} | {scan} | {result} |")
+    lines += [
+        "",
+        "No PDF or full verbatim extraction is committed. For private local",
+        "inspection of PDF text, use the [verified local workflow](README.md)",
+        "rather than force-adding ignored `system-card.pdf` and `system-card.md` files.",
+        "HTML-only pages have no PDF to download and GPT-5 mini has no confirmed",
+        "dedicated card. Permissions can change; re-check the publisher's current",
+        "document and written grant before publishing any full copy.",
         "",
     ]
     return "\n".join(lines)
@@ -186,6 +311,7 @@ def index(catalog):
         "independently on the checked date.",
         "",
         "**Licensing:** Publisher PDFs and full-text extractions are *not* committed.",
+        "See the [publisher-by-publisher, document-by-document rights review](RIGHTS.md).",
         "An official public download URL is not a redistribution license. The",
         "repository's MIT license covers only its own code and original summaries.",
         f"{with_card} entries link to a matching owner document;",
@@ -194,6 +320,27 @@ def index(catalog):
          else f"the remaining {len(models) - with_card} explain missing dedicated cards."),
         "A PDF hash in `source.md` identifies the publisher file downloaded for",
         "verification on the checked date; it does not imply a local PDF is shipped.",
+        "To make local copies without publishing them, follow the commands below.",
+        "",
+        "```sh",
+        "python3 -m venv .venv",
+        ". .venv/bin/activate",
+        "python3 -m pip install -r models/requirements-local.txt",
+        "python3 models/local_cards.py --model grok-4.7",
+        "python3 models/local_cards.py --all",
+        "```",
+        "",
+        "`local_cards.py` requires `curl`, validates the owner URL, HTTP content type,",
+        "PDF magic, pinned SHA-256, title and model before extracting selectable",
+        "text with pinned PyMuPDF4LLM. It writes `system-card.pdf` and",
+        "`system-card.md` **only in your local model folders**; both are ignored",
+        "by Git. No PDF is invented for a missing or HTML-only card, and a changed",
+        "publisher PDF fails verification until its provenance is reviewed.",
+        "Conversion without OCR does not reproduce diagrams or text inside images;",
+        "consult the linked original for non-text content. Use `--refresh` to",
+        "re-download an existing PDF, or `--output-root /absolute/local/path` to",
+        "keep all downloads outside the checkout. Do not force-add local copies",
+        "to this public repository without a document-specific redistribution grant.",
         "",
         "**Updating:** Edit `catalog.json` with public evidence, update the checked",
         "date and docs revision, verify owner URL, title and scope, then run",
@@ -212,7 +359,8 @@ def main():
     group.add_argument("--check", action="store_true", help="Check documents match catalog.json")
     args = parser.parse_args()
     catalog = load_catalog()
-    rendered = {ROOT / "README.md": index(catalog)}
+    rendered = {ROOT / "README.md": index(catalog),
+                ROOT / "RIGHTS.md": rights_review(catalog)}
     for model in catalog["models"]:
         folder = ROOT / model["slug"]
         rendered[folder / "source.md"] = source(model, catalog)

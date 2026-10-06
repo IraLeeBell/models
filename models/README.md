@@ -61,12 +61,34 @@ For GPT-6.1 Sol and Claude Sonnet 5.5, GitHub's comparison still says
 independently on the checked date.
 
 **Licensing:** Publisher PDFs and full-text extractions are *not* committed.
+See the [publisher-by-publisher, document-by-document rights review](RIGHTS.md).
 An official public download URL is not a redistribution license. The
 repository's MIT license covers only its own code and original summaries.
 28 entries link to a matching owner document;
 the remaining one explains the missing dedicated card.
 A PDF hash in `source.md` identifies the publisher file downloaded for
 verification on the checked date; it does not imply a local PDF is shipped.
+To make local copies without publishing them, follow the commands below.
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install -r models/requirements-local.txt
+python3 models/local_cards.py --model grok-4.7
+python3 models/local_cards.py --all
+```
+
+`local_cards.py` requires `curl`, validates the owner URL, HTTP content type,
+PDF magic, pinned SHA-256, title and model before extracting selectable
+text with pinned PyMuPDF4LLM. It writes `system-card.pdf` and
+`system-card.md` **only in your local model folders**; both are ignored
+by Git. No PDF is invented for a missing or HTML-only card, and a changed
+publisher PDF fails verification until its provenance is reviewed.
+Conversion without OCR does not reproduce diagrams or text inside images;
+consult the linked original for non-text content. Use `--refresh` to
+re-download an existing PDF, or `--output-root /absolute/local/path` to
+keep all downloads outside the checkout. Do not force-add local copies
+to this public repository without a document-specific redistribution grant.
 
 **Updating:** Edit `catalog.json` with public evidence, update the checked
 date and docs revision, verify owner URL, title and scope, then run

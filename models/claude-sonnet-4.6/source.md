@@ -22,6 +22,9 @@
 - Owner URL: https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf
 - Scope verified: Dedicated Claude Sonnet 4.6 system card; this is a limited legacy availability case.
 - SHA-256 of PDF retrieved 2026-10-06: `8eb002f168d59851fa7dabbb6538df13bbf6a0dc652ce91411fa13572c46a4ba`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model claude-sonnet-4.6` (both outputs are ignored by Git).
+- Rights evidence: https://www.anthropic.com/legal/consumer-terms (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

@@ -19,6 +19,9 @@
 - Owner URL: https://raw.githubusercontent.com/MoonshotAI/Kimi-K3/main/k3_tech_report.pdf
 - Scope verified: The publisher's Kimi K3 repository contains an explicitly titled K3 technical report, not the K2 report. GitHub Raw serves the verified PDF bytes as application/octet-stream.
 - SHA-256 of PDF retrieved 2026-10-06: `86fb82a63ced501f0c3f4f404c0c6fa88a7a6cfac17aae81fd1a8f455998067c`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model kimi-k3` (both outputs are ignored by Git).
+- Rights evidence: https://github.com/MoonshotAI/Kimi-K3/blob/main/LICENSE (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

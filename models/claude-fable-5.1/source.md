@@ -20,6 +20,9 @@
 - Owner URL: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
 - Scope verified: Dedicated shared report for Fable 5.1 and Mythos 5.1, not the earlier 5.0 report.
 - SHA-256 of PDF retrieved 2026-10-06: `b0d59edc7a60eef32a879c13d713cce60c3fefd7e6b5183afdc8b835af3c8c39`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model claude-fable-5.1` (both outputs are ignored by Git).
+- Rights evidence: https://www.anthropic.com/legal/consumer-terms (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to

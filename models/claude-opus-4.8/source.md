@@ -19,6 +19,9 @@
 - Owner URL: https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf
 - Scope verified: Dedicated Claude Opus 4.8 system card.
 - SHA-256 of PDF retrieved 2026-10-06: `97f11ae3fb305c7105c958599bcf90f216669543393220f674610ddb83ee611a`
+- Local-only full PDF and Markdown: `python3 models/local_cards.py --model claude-opus-4.8` (both outputs are ignored by Git).
+- Rights evidence: https://www.anthropic.com/legal/consumer-terms (no verified document-specific public republication grant).
+- Public redistribution: not verified for this document; see [rights review](../RIGHTS.md).
 
 The publisher document is linked, not reproduced here.
 This repository's MIT license does not grant redistribution rights to
