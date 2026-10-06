@@ -458,7 +458,7 @@ def doc_cell(model, catalog):
 def render_index(catalog):
     c = counts(catalog)
     models = catalog["models"]
-    lines = ["# GitHub Copilot model-card catalog", "", GENERATED, "",
+    lines = ["# Model card catalog for GitHub Copilot models (unofficial)", "", GENERATED, "",
              "> [!WARNING]",
              "> **Not a GitHub product; provided as is, without warranty, at your own risk.** The models listed "
              "here do not necessarily match what GitHub Copilot serves now or later; consult GitHub's "
@@ -673,7 +673,7 @@ def render_rights(catalog):
 def render_root(catalog):
     c = counts(catalog)
     return "\n".join([
-        "# GitHub Copilot model cards", "", GENERATED, "",
+        "# Model cards for GitHub Copilot models (unofficial)", "", GENERATED, "",
         "> [!IMPORTANT]",
         "> **Not a GitHub product. Not official, endorsed, or supported by GitHub.**",
         ">",
