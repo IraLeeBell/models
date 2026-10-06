@@ -1,212 +1,777 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "gemini-3.6-flash",
   "model": "Gemini 3.6 Flash",
   "publisher": "Google",
+  "lifecycle": "retired",
+  "retired_on": "2026-10-02",
   "document": {
     "id": "google-gemini-3-6-flash",
     "title": "Gemini 3.6 Flash — Model Card",
+    "publisher": "Google DeepMind",
+    "date": "2026-07",
+    "format": "pdf",
     "pages": 7
   },
-  "summary": "Gemini 3.6 Flash is a retired fast Gemini model that Google describes as a token-efficient workhorse successor to Gemini 3.5 Flash. The short card focuses on multimodal 1M-token inputs, 64K-token text outputs, selected coding and long-context benchmarks, and safety comparisons against Gemini 3.5 Flash, with Frontier Safety conclusions relying primarily on Gemini 3.1 Pro.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Gemini 3.6 Flash"],
+    "model_pages": [],
+    "note": "The whole 7-page document is dedicated to Gemini 3.6 Flash. Its capability numbers come from a rendered benchmark image on page 4, while safety sections compare mostly against 3.5 Flash and rely on 3.1 Pro for Frontier Safety. The digest does not import the predecessor cards that the document repeatedly references."
+  },
+  "summary": "Gemini 3.6 Flash is a retired Google Flash model built on 3.5 Flash, mainly useful now for lineage against later Flash releases. Its short card reports strong chart results on terminal, coding, computer-use, and long-context tasks, but inherits architecture, data, acceptable-use, and most Frontier Safety detail. Google says it is unlikely to reach any CCL and separately reports cyber below the CCL.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison for the Flash line, especially terminal, coding, OSWorld, and long-context baselines.",
+    "watch_out_for": "Most safety and architecture detail is inherited, and the chart includes numbers that are not usable as current Copilot availability guidance.",
+    "points": [
+      {
+        "text": "The chart shows a fast long-context predecessor with 58.7% on SWE-bench Pro, 49% on DeepSWE v1.1, 78.0% on Terminal-Bench 2.1, and 83.0% on OSWorld-Verified.",
+        "pages": [4],
+        "document": "google-gemini-3-6-flash"
+      },
+      {
+        "text": "Google describes it as based on 3.5 Flash, improving coding, knowledge work, multimodal performance, and token efficiency.",
+        "pages": [2],
+        "document": "google-gemini-3-6-flash"
+      },
+      {
+        "text": "It keeps the Flash multimodal interface: text, image, audio, and video inputs, 1M-token context, text output, and 64K-token output.",
+        "pages": [2],
+        "document": "google-gemini-3-6-flash"
+      },
+      {
+        "text": "Frontier Safety conclusions are inherited from 3.1 Pro; Google adds only that 3.6 Flash stays below the cyber CCL.",
+        "pages": [7],
+        "document": "google-gemini-3-6-flash"
+      },
+      {
+        "text": "Automated safety improves on text and multilingual rows against 3.5 Flash, while tone regresses and unjustified refusals rise slightly.",
+        "pages": [6],
+        "document": "google-gemini-3-6-flash"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated 2026-07, but it does not state a separate model release date.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    "knowledge_cutoff": {
+      "value": "2026-03",
+      "as_stated": "knowledge cutoff date for Gemini 3.6 Flash is March 2026",
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-6-flash"
+    },
+    "context_window_tokens": {
+      "value": 1000000,
+      "as_stated": "up to 1M tokens",
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-6-flash"
+    },
+    "max_output_tokens": {
+      "value": 64000,
+      "as_stated": "64K token output",
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-6-flash"
+    },
+    "input_modalities": {
+      "value": ["text", "image", "audio", "video"],
+      "as_stated": null,
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-6-flash"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-6-flash"
+    },
+    "reasoning_controls": {
+      "value": ["always-reasoning"],
+      "as_stated": null,
+      "note": "The card calls it a reasoning model but does not describe adjustable levels.",
+      "pages": [2],
+      "document": "google-gemini-3-6-flash"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not name the individual effort or thinking levels.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    "tool_use": {
+      "value": ["terminal", "computer-use"],
+      "as_stated": null,
+      "note": "The benchmark chart includes terminal and computer-use rows; no product tool interface is specified.",
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not say the weights are open.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "Architecture details are deferred to a predecessor or sibling card.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a parameter count.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state active parameters.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    }
+  },
   "capabilities": [
     {
-      "text": "Google describes 3.6 Flash as a highly capable, natively multimodal reasoning model in the Gemini 3 series.",
-      "pages": [
-        2
-      ]
+      "text": "Google presents 3.6 Flash as a workhorse model with better coding, knowledge-work, multimodal performance, and token efficiency than 3.5 Flash.",
+      "pages": [2],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "The model is based on Gemini 3.5 Flash and is positioned as improving coding, knowledge work, multimodal performance, and token efficiency.",
-      "pages": [
-        2
-      ]
+      "text": "Inputs cover text, image, audio, and video, with up to 1M tokens of context and text output up to 64K tokens.",
+      "pages": [2],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "The card lists text, image, audio, and video inputs, with a context window of up to 1M tokens.",
-      "pages": [
-        2
-      ]
+      "text": "The benchmark chart reports improvements over its predecessor on SWE-bench Pro, DeepSWE v1.1, MLE-Bench, OSWorld-Verified, and MRCR v2.",
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "The output format is text with a 64K-token output limit.",
-      "pages": [
-        2
-      ]
+      "text": "The intended-use section names agent workflows, video-heavy reasoning, coding help, and enterprise workflows.",
+      "pages": [5],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "Google says the model fits agent workflows, video-heavy reasoning, coding assistance, and enterprise work patterns.",
-      "pages": [
-        5
-      ]
-    },
-    {
-      "text": "Google lists Gemini App, Gemini Enterprise App, Gemini Enterprise Agent Platform, Google AI Studio, Gemini API, and Google Antigravity as distribution channels.",
-      "pages": [
-        3,
-        4
-      ]
+      "text": "Publisher distribution channels include Gemini apps, Gemini API, Google AI Studio, Antigravity, and an enterprise agent platform.",
+      "pages": [3, 4],
+      "document": "google-gemini-3-6-flash"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "SWE-Bench Pro (Public)",
-      "result": "58.7%",
-      "context": "Diverse agentic coding tasks; higher than Gemini 3.5 Flash in the chart.",
-      "pages": [
-        4
-      ]
+      "benchmark_id": "swe-bench-pro",
+      "benchmark": "SWE-bench Pro",
+      "variant": "Public",
+      "metric": "pass-at-1",
+      "value": 58.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 55.1,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 54.2,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 62.7,
+          "setting": null
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 64.7,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 63.2,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
+      "benchmark_id": "deepswe-v1.1",
       "benchmark": "DeepSWE v1.1",
-      "result": "49%",
-      "context": "Long-horizon software engineering; below GPT-5.6 Luna in the row.",
-      "pages": [
-        4
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 49.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 37.0,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 12.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 67.0,
+          "setting": null
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 54.0,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 54.0,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "benchmark": "Terminal-bench 2.1",
-      "result": "78.0%",
-      "context": "Agentic terminal coding benchmark.",
-      "pages": [
-        4
-      ]
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark": "Terminal-Bench 2.1",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 78.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Terminus-2",
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 76.2,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 73.8,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 84.7,
+          "setting": null
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 83.3,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 80.4,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "benchmark": "MLE-Bench",
-      "result": "63.9%",
-      "context": "Machine-learning engineering; close to the strongest listed score.",
-      "pages": [
-        4
-      ]
+      "benchmark_id": "mle-bench",
+      "benchmark": "MLE-bench",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 63.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 49.7,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 42.6,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 47.6,
+          "setting": null
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 43.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 66.9,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "benchmark": "GDPVal-AA v2",
-      "result": "1421 Elo",
-      "context": "Knowledge-work benchmark.",
-      "pages": [
-        4
-      ]
+      "benchmark_id": "gdpval-aa-v2",
+      "benchmark": "GDPval-AA v2",
+      "variant": null,
+      "metric": "elo",
+      "value": 1421,
+      "unit": "elo",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 1349,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 965,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 1584,
+          "setting": null
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 1535,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 1607,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
+      "benchmark_id": "osworld-verified",
       "benchmark": "OSWorld-Verified",
-      "result": "83.0%",
-      "context": "Computer-use benchmark; highest value shown in the row.",
-      "pages": [
-        4
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 83.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 78.4,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 76.2,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 72.6,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 81.2,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
+      "benchmark_id": "charxiv-reasoning",
       "benchmark": "CharXiv Reasoning",
-      "result": "85.2% without tools; 89.4% with tools",
-      "context": "Information synthesis from complex charts.",
-      "pages": [
-        4
-      ]
+      "variant": "No tools",
+      "metric": "accuracy",
+      "value": 85.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 84.2,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 83.3,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 82.7,
+          "setting": null
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 81.6,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 77.0,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "benchmark": "GDM-MRCR v2 (8-needle)",
-      "result": "91.8% at 128K average; 54.0% at 1M pointwise",
-      "context": "Long-context performance rows.",
-      "pages": [
-        4
-      ]
+      "benchmark_id": "charxiv-reasoning",
+      "benchmark": "CharXiv Reasoning",
+      "variant": "With tools",
+      "metric": "accuracy",
+      "value": 89.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 84.9,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 83.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 88.3,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "benchmark_id": "mrcr-v2",
+      "benchmark": "MRCR v2",
+      "variant": "8-needle; 128K average",
+      "metric": "accuracy",
+      "value": 91.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 77.3,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 84.9,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 74.8,
+          "setting": null
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 81.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 71.6,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "benchmark_id": "mrcr-v2",
+      "benchmark": "MRCR v2",
+      "variant": "8-needle; 1M pointwise",
+      "metric": "accuracy",
+      "value": 54.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.5 Flash",
+          "value": 26.6,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 26.3,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
+    }
+  ],
+  "safety_classification": {
+    "framework": "google-fsf",
+    "framework_name": null,
+    "overall": "Unlikely to reach any CCL based on Gemini 3.1 Pro; cyber CCL below threshold",
+    "summary": "Google relies on Gemini 3.1 Pro as the most capable assessed model and says 3.6 Flash has no meaningful new Frontier Safety capability increase. It adds that extra cyber testing kept 3.6 Flash below the cyber critical capability level.",
+    "domains": [
+      {
+        "domain": "overall",
+        "determination": "below-threshold",
+        "level": "CCLs not reached",
+        "text": "Based on Gemini 3.1 Pro results, Google assesses 3.6 Flash as unlikely to reach any Critical Capability Level.",
+        "pages": [7],
+        "document": "google-gemini-3-6-flash"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "below-threshold",
+        "level": "Cyber CCL not reached",
+        "text": "Additional cyber testing found Gemini 3.6 Flash below the cyber critical capability level.",
+        "pages": [7],
+        "document": "google-gemini-3-6-flash"
+      }
+    ],
+    "pages": [7],
+    "document": "google-gemini-3-6-flash"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of grader gaming or reward exploitation.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card reports no test editing, deletion, or weakening evaluation.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of irreversible or unrequested tool actions.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "The card does not report a sabotage or task-undermining evaluation for this model.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The card reports jailbreak and content-safety work, but not injected instructions from files, tools, or web content.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "The card reports no honesty, deception, or false-task-success evaluation.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card reports no sycophancy evaluation.",
+      "pages": [],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "Automated unjustified refusals worsen by 0.25 percentage points versus 3.5 Flash, with lower values preferred.",
+      "pages": [6],
+      "document": "google-gemini-3-6-flash"
     }
   ],
   "safety_findings": [
     {
-      "text": "Automated safety results versus Gemini 3.5 Flash report text-to-text safety down 1.35 percentage points and multilingual safety down 5.45 points, where lower is better.",
-      "pages": [
-        6
-      ]
+      "text": "Automated results versus 3.5 Flash improve text-to-text safety by 1.35 points and multilingual safety by 5.45 points, with lower values preferred.",
+      "pages": [6],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "Image-to-text safety is unchanged, tone is down 3.31 percentage points, and unjustified refusals are up 0.25 points in the automated table.",
-      "pages": [
-        6
-      ]
+      "text": "Tone worsens by 3.31 points and unjustified refusals worsen by 0.25 points in the same automated table.",
+      "pages": [6],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "Google says manual review of automated losses did not find egregious issues.",
-      "pages": [
-        6
-      ]
+      "text": "Manual review of automated losses found false positives or non-egregious cases.",
+      "pages": [6],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "Human red teaming reports child-safety launch thresholds met, content safety similar or improved versus Gemini 3.5 Flash, and no egregious concerns in broader probing.",
-      "pages": [
-        7
-      ]
+      "text": "Specialist red teams found child-safety thresholds met, content safety similar or improved versus 3.5 Flash, and no egregious concerns.",
+      "pages": [7],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "For Frontier Safety, the card relies on Gemini 3.1 Pro as the most capable assessed model and says 3.6 Flash is unlikely to reach critical capability levels.",
-      "pages": [
-        7
-      ]
-    },
-    {
-      "text": "Additional cyber testing found Gemini 3.6 Flash below the cyber critical capability level.",
-      "pages": [
-        7
-      ]
+      "text": "The Frontier Safety section relies on 3.1 Pro and adds that 3.6 Flash remains below the cyber CCL.",
+      "pages": [7],
+      "document": "google-gemini-3-6-flash"
     }
   ],
   "limitations": [
     {
-      "text": "Hallucinations are explicitly named as a remaining foundation-model limitation.",
-      "pages": [
-        5
-      ]
+      "text": "Architecture, training data, training processing, hardware, and software are referred to the 3.5 Flash card.",
+      "pages": [2, 3],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "Google says jailbreak resistance is still being improved and Frontier Safety mitigations were strengthened.",
-      "pages": [
-        5
-      ]
+      "text": "Known limitations include hallucinations, continuing jailbreak-resistance work, strengthened Frontier Safety mitigations, occasional slowness or timeouts, and uneven knowledge recency.",
+      "pages": [5],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "The card warns about occasional slow responses or timeouts.",
-      "pages": [
-        5
-      ]
+      "text": "Capability methods are mostly external, with the main results embedded in a chart image.",
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "The knowledge cutoff is March 2026 overall, while some domains may only reflect January 2025 knowledge.",
-      "pages": [
-        5
-      ]
+      "text": "Automated safety scores are development evaluations rather than human evaluation or red teaming.",
+      "pages": [5, 6],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "Automated safety scores are development evaluations, not human evaluation or red-teaming results.",
-      "pages": [
-        5,
-        6
-      ]
+      "text": "The Frontier Safety assessment is not a full per-domain table for this model.",
+      "pages": [7],
+      "document": "google-gemini-3-6-flash"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "The card is a direct predecessor reference for 3.7 and 3.8 Flash, with the chart showing the baseline those later cards compare against.",
+      "pages": [2, 4],
+      "document": "google-gemini-3-6-flash"
     },
     {
-      "text": "The evaluation methodology for capability benchmarks is mainly pointed to an external page rather than detailed in this short card.",
-      "pages": [
-        4
-      ]
+      "use": "terminal-workflows",
+      "rationale": "Terminal-Bench 2.1 is 78.0%, making it a useful historical terminal-agent baseline.",
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "use": "long-context",
+      "rationale": "MRCR v2 is 91.8% at 128K average and 54.0% at 1M pointwise, higher than 3.5 Flash in the same chart.",
+      "pages": [4],
+      "document": "google-gemini-3-6-flash"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "Prompt-injection robustness is not reported, and risk detail is delegated to other cards.",
+      "pages": [5, 7],
+      "document": "google-gemini-3-6-flash"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "The card names hallucination and provides only inherited Frontier Safety conclusions for most domains.",
+      "pages": [5, 7],
+      "document": "google-gemini-3-6-flash"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired Gemini 3.6 Flash on 2026-10-02; the remaining bullets are for historical comparison and for understanding the successor model's lineage."
+      "text": "Use this digest for lineage against later Flash cards; choose an available successor for new Copilot work."
     },
     {
-      "text": "The card explains why 3.7 and 3.8 Flash inherit a fast multimodal, long-context design, so it remains useful background when comparing newer Flash models."
+      "text": "When comparing later Flash models, separate benchmark gains from changes in safety-evaluation methodology."
     },
     {
-      "text": "For historical CLI work, its OSWorld and MRCR rows suggest it was suitable for UI and long-context tasks, but users should still reproduce results with currently available models."
+      "text": "Historical outputs from this model should be rechecked with current tests and sources."
     },
     {
-      "text": "The cyber mitigation language supports keeping agent shells and network-sensitive tasks constrained even for fast models."
+      "text": "Do not infer current Copilot model-picker behavior from this retired entry."
     },
     {
-      "text": "Because safety results are relative to Gemini 3.5 Flash and not a full standalone FSF table, avoid treating this card as exhaustive dangerous-capability evidence."
+      "text": "The inherited FSF treatment means later cards may be better sources for per-domain safety comparisons."
     }
-  ],
-  "coverage_notes": "This digest uses pages 2-4 for model description, modalities, distribution, and the benchmark chart; pages 5-6 for limitations and automated safety; and page 7 for red teaming, Frontier Safety, and mitigations. The card is dedicated to Gemini 3.6 Flash, while architecture, data, acceptable-use, safety-policy, and deeper Frontier Safety details are delegated to earlier Gemini cards. External methodology and the Gemini 3.1 Pro model card are noted but not expanded beyond this document."
+  ]
 }

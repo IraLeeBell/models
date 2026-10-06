@@ -16,6 +16,7 @@ A catalog of the models offered in the **GitHub Copilot CLI** and the **GitHub C
 
 - [**Model catalog and coverage**](models/README.md): 42 folders (28 current, 1 limited, 1 utility-only, 12 retired) and 35 publisher documents (34 PDFs, 1 Markdown card).
 - Each folder has an original **digest** of capabilities, evaluations, safety findings, limitations, and practical implications, with page citations, plus **provenance** (owner URL, retrieval date, size, SHA-256) and **variants**.
+- [**Machine-readable digests**](models/digests.json): every digest joined with its catalog entry, with typed values, controlled identifiers from [vocabulary.json](models/vocabulary.json), and a [JSON Schema](models/digest.schema.json). [BENCHMARKS.md](models/BENCHMARKS.md) compares results that several digests report.
 - [**Rights review**](models/RIGHTS.md): 2 documents are published under a license that permits redistribution, stored beside each copy. The other 33 carry no such license and remain subject to their publishers' terms; a verified local workflow downloads them from the owner URLs and produces complete page-marked Markdown transcriptions.
 - [**Scope and gaps**](models/README.md#document-scope-and-gaps): GPT-5.4 nano and Raptor mini have no publisher card; some models are covered by a family or shared card, and each mapping's evidence is recorded in its `source.md`.
 

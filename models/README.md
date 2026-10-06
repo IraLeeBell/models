@@ -12,7 +12,8 @@ Checked **2026-10-06**. One folder per model that the GitHub Copilot CLI or the 
 - **42 model folders:** 28 current, 1 limited, 1 utility-only, 12 retired.
 - **35 publisher documents:** 34 PDFs (3,155 pages) and 1 Markdown model card. 40 folders map to a document; 2 have no publisher card.
 - **Full text in this repository:** 2 documents whose publisher license permits redistribution. The other 33 are linked with SHA-256 provenance and can be downloaded and extracted locally; see [RIGHTS.md](RIGHTS.md).
-- **Digests:** every folder has an original `digest.md` and `digest.json`, citing PDF pages (section headings for the Markdown card; owner pages for folders without a card).
+- **Digests:** every folder has an original `digest.json` (schema_version 2) and a `digest.md` rendered from it, citing PDF pages (section headings for the Markdown card; owner pages for folders without a card). [DIGESTS.md](DIGESTS.md) defines the format.
+- **Machine-readable data:** [digests.json](digests.json) joins every digest with its catalog entry; [digest.schema.json](digest.schema.json) validates each `digest.json`; [vocabulary.json](vocabulary.json) defines benchmark, metric, unit, modality, safety, and use-case identifiers. [BENCHMARKS.md](BENCHMARKS.md) lines up benchmarks that two or more digests report.
 
 ## How the roster was established
 
@@ -34,7 +35,7 @@ Checked **2026-10-06**. One folder per model that the GitHub Copilot CLI or the 
 **Covered by a family or shared card (title does not name the model)**
 
 - [GPT-5 mini](gpt-5-mini/source.md): The GPT-5 System Card covers the GPT-5 family. It states that the API provides the thinking model, its mini version, and a nano version, and reports the mini model as gpt-5-thinking-mini. No dedicated GPT-5 mini card exists. OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) (snapshot gpt-5-mini-2025-08-07) identifies the API model; the family card's statement that the API serves the mini version of the thinking model ties GPT-5 mini to the gpt-5-thinking-mini results.
-- [GPT-5.4 mini](gpt-5.4-mini/source.md): Section 6, "Appendix: GPT-5.4 mini" (PDF pages 32-36) of the GPT-5.4 Thinking System Card. No standalone GPT-5.4 mini card exists; the GPT-5.4 Thinking card devotes an appendix to it.
+- [GPT-5.4 mini](gpt-5.4-mini/source.md): Section 6, "Appendix: GPT-5.4 mini" (PDF pages 33-36) of the GPT-5.4 Thinking System Card. No standalone GPT-5.4 mini card exists; the GPT-5.4 Thinking card devotes an appendix to it.
 - [GPT-5.6 Luna](gpt-5.6-luna/source.md): The GPT-5.6 System Card covers the Sol, Terra, and Luna family members. The August update covers refreshed ChatGPT versions of Sol and Luna. The August update states that Codex and ChatGPT Work continue to use the previously released GPT-5.6 versions; GitHub does not state which GPT-5.6 Luna checkpoint Copilot serves.
 - [GPT-5.6 Sol](gpt-5.6-sol/source.md): The GPT-5.6 System Card covers the Sol, Terra, and Luna family members. The August update covers refreshed ChatGPT versions of Sol and Luna. The August update states that Codex and ChatGPT Work continue to use the previously released GPT-5.6 versions; GitHub does not state which GPT-5.6 Sol checkpoint Copilot serves.
 - [GPT-5.6 Terra](gpt-5.6-terra/source.md): The GPT-5.6 System Card covers the Sol, Terra, and Luna family members. The August update does not cover Terra.
@@ -162,8 +163,8 @@ Kept for comparison and lineage. They are no longer offered in Copilot.
 
 ```text
 <model>/
-  digest.md        original digest with page (or section) citations
-  digest.json      the same digest as structured data (schema_version 1; see DIGESTS.md)
+  digest.json      original digest as structured data, the authored source (schema_version 2)
+  digest.md        the digest rendered for reading, with citations (generated from digest.json)
   source.md        roster evidence, document provenance, SHA-256, rights decision (generated)
   variants.md      Copilot identifiers, app settings, shared documents, series (generated)
   system-card.pdf  publisher PDF          (committed only when licensed; otherwise local)
@@ -172,6 +173,8 @@ Kept for comparison and lineage. They are no longer offered in Copilot.
   LICENSE-*.txt    publisher license text, beside licensed copies
   supplements/     local-only supplement PDFs and extractions
 ```
+
+At the top level, `vocabulary.json` (authored) holds the controlled vocabulary; `digest.schema.json`, `digests.json`, and `BENCHMARKS.md` are generated from it, the catalog, and the digests.
 
 Each `system-card.md` starts with a provenance header and has one `<!-- page N of M -->` marker per PDF page. Pages where layout conversion missed text also carry the page's complete selectable text, so no selectable text is dropped. Large TeX delimiters that have no Unicode mapping in the PDF are written as the bracket or brace they draw, and the header counts them and any unmappable glyphs. Figures and text inside images are not reproduced.
 
@@ -193,5 +196,5 @@ Outputs go into each model folder and are Git-ignored unless the document's righ
 1. **Roster.** Run `python3 roster_check.py` to compare the catalog with GitHub's current tables. Re-check the app model picker. Update `catalog.json`: add models, change `lifecycle`, and for retirements set `retired_on` and `last_listed_revision`. Bump `checked_at`, `docs_revision`, and `docs_tables_commit`.
 2. **Documents.** Find the publisher's most specific card for each new model and verify that it names the model. Add a `documents` entry with the owner URL, title, date, bytes, pages, SHA-256, and retrieval date. `python3 local_cards.py --model <slug>` verifies all of these. Record superseded files under `other_revisions`.
 3. **Rights.** Keep `rights: not-granted` unless the publisher grants redistribution in writing or by license. A granted document needs `rights_basis` and license fields, `.gitignore` negations, and the license file committed beside it.
-4. **Digests.** Write `digest.md` and `digest.json` following [DIGESTS.md](DIGESTS.md), then run `python3 digest_check.py <slug>` with the local extraction present.
+4. **Digests.** Edit `digest.json` following [DIGESTS.md](DIGESTS.md), then run `python3 digest_check.py --write <slug>` with the local extraction present. It normalizes the JSON, renders `digest.md`, and validates both.
 5. **Generate and verify.** `python3 generate.py --write`, then `python3 generate.py --check` and `python3 -m unittest discover -s . -p 'test_*.py'`.

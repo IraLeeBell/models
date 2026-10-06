@@ -1,269 +1,698 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "gpt-5.6-terra",
   "model": "GPT-5.6 Terra",
   "publisher": "OpenAI",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "openai-gpt-5-6",
     "title": "GPT-5.6 System Card",
+    "publisher": "OpenAI",
+    "date": "2026-07-09",
+    "format": "pdf",
     "pages": 82
   },
-  "summary": "GPT-5.6 Terra is the middle GPT-5.6 family member covered by OpenAI's July system card. OpenAI assigns it the same family Preparedness outcomes as Sol and Luna—High for biological/chemical and cybersecurity capability, below High for AI self-improvement—while reporting many Terra-specific safety, health, prompt-injection, and safeguard metrics. The August update does not cover Terra, so this digest uses the July card only.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "family",
+    "document_model_names": ["GPT-5.6 Terra", "Terra", "gpt-5.6-terra"],
+    "model_pages": [],
+    "note": "The July GPT-5.6 system card covers Sol, Terra, and Luna. This digest uses Terra rows from family tables and family-level Preparedness findings that explicitly cover all three. Sol-only deployment simulations, external evaluations, and Critical cyber rule-out work are treated as scope limits rather than Terra evidence. The August update covers Sol and Luna only and is not cited for Terra."
+  },
+  "summary": "GPT-5.6 Terra is OpenAI's middle GPT-5.6 family member in the July system card. It receives the same family Preparedness designations as Sol and Luna—High for biological/chemical risk and cybersecurity, below High for AI self-improvement—while many deep alignment, external cyber, and deployment-simulation results are Sol-only. Terra's own rows emphasize safety, prompt injection, HealthBench, destructive-action avoidance, and selected bio/cyber capability signals.",
+  "at_a_glance": {
+    "choose_it_for": "Reviewed coding, debugging, and defensive triage where Terra's stronger-than-Luna rows are useful but Sol-only evidence is not required.",
+    "watch_out_for": "Do not import Sol's external evaluations or August Sol/Luna checkpoint results; Terra has less long-horizon evidence.",
+    "points": [
+      {
+        "text": "OpenAI gives Terra the same family-level Preparedness designations: High for biological/chemical risk and cybersecurity, below the High threshold for AI self-improvement, and below Critical by family assessment.",
+        "pages": [35, 36, 47],
+        "document": "openai-gpt-5-6"
+      },
+      {
+        "text": "Terra's own July rows include 0.37 on destructive-action avoidance plus correctness, 0.946 on prompt-injection search/function-calling accuracy, and 57.7 on HealthBench Professional.",
+        "pages": [11, 13, 15],
+        "document": "openai-gpt-5-6"
+      },
+      {
+        "text": "For biology, Terra is the highest new July model on refusal-adjusted tacit-knowledge troubleshooting at 84.1%, above the 80% expert-consensus threshold used in the card.",
+        "pages": [40],
+        "document": "openai-gpt-5-6"
+      },
+      {
+        "text": "Cybersecurity High applies to Terra, but the Critical rule-out relies on Sol's harder testing plus Terra being smaller and less capable on proxy cyber evaluations.",
+        "pages": [47],
+        "document": "openai-gpt-5-6"
+      },
+      {
+        "text": "The July safeguard stack names Terra with Sol for activation classifiers and applies the shared topical-classifier and safety-reasoner monitor to all three GPT-5.6 models.",
+        "pages": [75, 76],
+        "document": "openai-gpt-5-6"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The system card is dated 2026-07-09 but does not give a model release date.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a knowledge cutoff.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    "context_window_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a context window.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a maximum output length.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    "input_modalities": {
+      "value": ["text", "image"],
+      "as_stated": null,
+      "note": "The card evaluates text prompts and combined text-image inputs; it does not list every supported input type.",
+      "pages": [7, 10],
+      "document": "openai-gpt-5-6"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The evaluated safety and robustness tasks score assistant text responses.",
+      "pages": [7, 10],
+      "document": "openai-gpt-5-6"
+    },
+    "reasoning_controls": {
+      "value": ["effort-levels"],
+      "as_stated": "reasoning effort",
+      "note": "The card says results vary with the amount of thinking used, but does not enumerate served effort levels.",
+      "pages": [3],
+      "document": "openai-gpt-5-6"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card names lowest deployment settings and maximum reasoning effort in places, but does not list product effort levels.",
+      "pages": [3],
+      "document": "openai-gpt-5-6"
+    },
+    "tool_use": {
+      "value": ["computer-use", "function-calling", "web-search", "browser", "code-execution", "terminal", "file-editing"],
+      "as_stated": null,
+      "note": "These tools appear in evaluations: computer-use confirmations, function-calling/search prompt injection, file edits, browser/computer access, and terminal-like cyber harnesses.",
+      "pages": [11, 13, 23, 44, 49],
+      "document": "openai-gpt-5-6"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state whether weights are open.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card identifies GPT-5.6 as a reasoning model family but does not state an architecture identifier.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a parameter count.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state an active-parameter count.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    }
+  },
   "capabilities": [
     {
-      "text": "Terra shares the GPT-5.6 family training and reasoning-model framing described in the system card.",
-      "pages": [
-        2,
-        6
-      ]
+      "text": "Terra is one of the three GPT-5.6 reasoning models and shares the family training and safety framework described in the system card.",
+      "pages": [2, 6],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra scored 57.7 on HealthBench Professional and 32.7 on HealthBench Hard after length adjustment.",
-      "pages": [
-        15
-      ]
+      "text": "Terra retains much of Sol's health performance in July tables: 57.7 on HealthBench Professional, 57.0 on HealthBench, 32.7 on HealthBench Hard, and 95.1 on Consensus after length adjustment.",
+      "pages": [15],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "OpenAI classifies Terra as High in cybersecurity, while noting that Sol is more capable overall in that domain.",
-      "pages": [
-        47
-      ]
+      "text": "OpenAI extends the High cybersecurity designation to Terra, while saying Terra is less capable overall than Sol in that domain.",
+      "pages": [47],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra exceeded GPT-5.5 but trailed Sol on the internal CTF evaluation used for the High cybersecurity threshold.",
-      "pages": [
-        49
-      ]
+      "text": "Terra exceeds GPT-5.5 on the internal CTF proxy but remains below Sol; the card gives no Terra numeric CTF score in the transcription.",
+      "pages": [49],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra scored 84.1% on tacit-knowledge biology questions when refusal-adjusted scoring was used, above the 80% threshold.",
-      "pages": [
-        40
-      ]
+      "text": "Terra has low CoT controllability similar to prior models, unlike Sol's higher controllability result, which OpenAI treats as a favorable safety signal.",
+      "pages": [28],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra showed low CoT controllability similar to previous models in the CoT-Control evaluation.",
-      "pages": [
-        28
-      ]
+      "text": "AI self-improvement sections group Terra with Sol on improved research debugging, NanoGPT, and PostTrainBench Lite performance, while the family stays below the High threshold.",
+      "pages": [58, 62, 65],
+      "document": "openai-gpt-5-6"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "Production disallowed-content prompts",
-      "result": "violent-illicit 0.952; nonviolent-illicit 0.990; hate 1.000; sexual/minors 0.974",
-      "context": "Terra not_unsafe on challenging production-derived prompts.",
-      "pages": [
-        7
-      ]
+      "benchmark_id": "openai-production-benchmarks",
+      "benchmark": "Production Benchmarks",
+      "variant": "Self-harm",
+      "metric": "not-unsafe-rate",
+      "value": 0.962,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "July model; no system-level safeguards",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.917,
+          "setting": "thinking; same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [7],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Image-input safety",
-      "result": "hate 0.999; extremism 0.978; self-harm 0.986; harms-erotic 0.991",
-      "context": "Combined text-and-image disallowed-content cases.",
-      "pages": [
-        10
-      ]
+      "benchmark_id": "openai-image-input-safety",
+      "benchmark": "Image Input Safety",
+      "variant": "Self-harm",
+      "metric": "not-unsafe-rate",
+      "value": 0.986,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Combined text-and-image disallowed-content cases",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.983,
+          "setting": "same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [10],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Destructive-action avoidance",
-      "result": "0.81 avoidance-only; 0.37 avoidance plus correctness",
-      "context": "Coding task with protected user-injected data.",
-      "pages": [
-        11
-      ]
+      "benchmark_id": "openai-destructive-action-avoidance",
+      "benchmark": "Destructive Action Avoidance",
+      "variant": "Avoidance + correctness",
+      "metric": "safe-response-rate",
+      "value": 0.37,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Coding-style task with protected user data injected into the environment",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.44,
+          "setting": "same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [11],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "User confirmations",
-      "result": "financial 0.98; high-stakes communication 0.98; general confirmation 0.94",
-      "context": "Computer-use confirmation-policy evaluation.",
-      "pages": [
-        12
-      ]
+      "benchmark_id": "openai-user-confirmations",
+      "benchmark": "User Confirmations",
+      "variant": "General confirmation",
+      "metric": "accuracy",
+      "value": 0.94,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Computer-use confirmation-policy evaluation",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.94,
+          "setting": "same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [12],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Prompt injection",
-      "result": "connectors 1.000; search/function-calling 0.946; GPT-Red direct 0.061%; indirect 3.32%",
-      "context": "Known connector attacks and automated GPT-Red attacks.",
-      "pages": [
-        13,
-        14
-      ]
+      "benchmark_id": "openai-prompt-injection",
+      "benchmark": "Prompt Injection",
+      "variant": "Connector attacks",
+      "metric": "accuracy",
+      "value": 1.0,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Known connector attacks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 1.0,
+          "setting": "same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [13],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "HealthBench suite",
-      "result": "Professional 57.7; HealthBench 57.0; Hard 32.7; Consensus 95.1",
-      "context": "Length-adjusted health scores.",
-      "pages": [
-        15
-      ]
+      "benchmark_id": "openai-prompt-injection",
+      "benchmark": "Prompt Injection",
+      "variant": "Indirect prompt injection",
+      "metric": "attack-success-rate",
+      "value": 3.32,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": null,
+      "setting": "GPT-Red agentic attacks",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [14],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Dynamic mental-health simulations",
-      "result": "mental health 0.985; emotional reliance 0.976; self-harm 0.947",
-      "context": "Multi-turn adversarial not_unsafe scores.",
-      "pages": [
-        16
-      ]
+      "benchmark_id": "healthbench-professional",
+      "benchmark": "HealthBench Professional",
+      "variant": null,
+      "metric": "score",
+      "value": 57.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Length-adjusted July score",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 51.8,
+          "setting": "length-adjusted"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "CoT-Control",
-      "result": "low controllability similar to prior models",
-      "context": "Run on Sol and Terra; lower controllability is desirable.",
-      "pages": [
-        28
-      ]
+      "benchmark_id": "healthbench",
+      "benchmark": "HealthBench",
+      "variant": "Hard",
+      "metric": "score",
+      "value": 32.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Length-adjusted July score",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 31.5,
+          "setting": "length-adjusted"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Tacit knowledge and troubleshooting",
-      "result": "84.1% with refusal adjustment",
-      "context": "Highest new-model result, above the 80% expert-consensus threshold.",
-      "pages": [
-        40
-      ]
+      "benchmark_id": "openai-dynamic-mental-health",
+      "benchmark": "Dynamic Mental Health Simulations",
+      "variant": "Self-harm",
+      "metric": "not-unsafe-rate",
+      "value": 0.947,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Dynamic adversarial multi-turn simulations",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.868,
+          "setting": "same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [16],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Internal CTF",
-      "result": "above GPT-5.5; below Sol",
-      "context": "OpenAI curated CTF tasks for the cyber High threshold.",
-      "pages": [
-        49
-      ]
+      "benchmark_id": "openai-tacit-knowledge-troubleshooting",
+      "benchmark": "Tacit Knowledge and Troubleshooting",
+      "variant": "Refusal-adjusted",
+      "metric": "accuracy",
+      "value": 84.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Refusals and safe completions counted as successes",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [40],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Biology model-refusal evaluation",
-      "result": "severe 0.950; dual-use 0.911; benign not_overrefuse 0.978",
-      "context": "Model-level biology refusal and overrefusal evaluation.",
-      "pages": [
-        74
-      ]
+      "benchmark_id": "biosecbench",
+      "benchmark": "BioSecBench",
+      "variant": "Severe biology refusal",
+      "metric": "not-unsafe-rate",
+      "value": 0.95,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Model-level biology refusal evaluation",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.958,
+          "setting": "thinking; same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [74],
+      "document": "openai-gpt-5-6"
     },
     {
-      "benchmark": "Cybersecurity safety evaluation",
-      "result": "production data 0.987; synthetic data 0.998",
-      "context": "Model-level cyber refusal evaluation.",
-      "pages": [
-        75
-      ]
+      "benchmark_id": "biosecbench",
+      "benchmark": "BioSecBench",
+      "variant": "Benign biology over-refusal",
+      "metric": "not-overrefuse-rate",
+      "value": 0.978,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Benign advanced-biology prompts",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.917,
+          "setting": "thinking; same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [74],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "benchmark_id": "openai-cybersecurity-safety",
+      "benchmark": "OpenAI cybersecurity safety evaluation",
+      "variant": "Production data",
+      "metric": "safe-response-rate",
+      "value": 0.987,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Model-level cybersecurity refusal evaluation",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.5",
+          "value": 0.928,
+          "setting": "same table"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [75],
+      "document": "openai-gpt-5-6"
+    }
+  ],
+  "safety_classification": {
+    "framework": "openai-preparedness",
+    "framework_name": null,
+    "overall": "High for biological/chemical and cybersecurity; below High for AI self-improvement",
+    "summary": "OpenAI applies the same Preparedness designations to the GPT-5.6 family: High capability for biological/chemical risk and cybersecurity, below the High threshold for AI self-improvement, and not Critical for the tested biological and cyber pathways.",
+    "domains": [
+      {
+        "domain": "biological-chemical",
+        "determination": "threshold-reached",
+        "level": "High",
+        "text": "All three GPT-5.6 models are treated as High capability for biological and chemical risk after three of four novice-uplift evaluations exceeded indicative thresholds; none of the critical biological evaluations exceeded threshold.",
+        "pages": [35, 36],
+        "document": "openai-gpt-5-6"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "threshold-reached",
+        "level": "High",
+        "text": "Sol is treated as High but below Critical in cybersecurity, and OpenAI extends that designation to Terra and Luna because they reach the High bar while remaining less capable than Sol on proxy cyber tests.",
+        "pages": [47],
+        "document": "openai-gpt-5-6"
+      },
+      {
+        "domain": "ai-self-improvement",
+        "determination": "below-threshold",
+        "level": "Below High",
+        "text": "OpenAI says none of the GPT-5.6 models reach its High threshold for AI self-improvement.",
+        "pages": [35],
+        "document": "openai-gpt-5-6"
+      }
+    ],
+    "pages": [35, 36, 47],
+    "document": "openai-gpt-5-6"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "sibling-only",
+      "text": "Sol has reported metagaming and cheating signals; the card does not report a Terra-specific reward-hacking or grader-gaming result.",
+      "pages": [30, 68, 69],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card does not report Terra-specific test editing, deletion, or weakening behavior.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "Terra scores 0.81 on avoidance-only and 0.37 when correctness is also required in the destructive-action evaluation.",
+      "pages": [11],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "sabotage",
+      "status": "sibling-only",
+      "text": "UK AISI sabotage testing is reported for Sol, not Terra.",
+      "pages": [68, 69],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "Terra scores 1.000 on connector prompt-injection accuracy and 0.946 on search/function-calling accuracy; GPT-Red attack success is 0.061% direct and 3.32% indirect.",
+      "pages": [13, 14],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "The card does not report Terra-specific false-completion, deception, or honesty benchmark results.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card reports no Terra sycophancy evaluation.",
+      "pages": [],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Terra is covered by the cyber and biological model-level safety training tables, with cyber production refusal 0.987 and synthetic refusal 0.998.",
+      "pages": [75],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "The biology table reports Terra benign not_overrefuse at 0.978 on low-risk advanced-biology workflows.",
+      "pages": [74],
+      "document": "openai-gpt-5-6"
     }
   ],
   "safety_findings": [
     {
-      "text": "Terra shares the family Preparedness designations for biological/chemical High, cybersecurity High, and AI self-improvement below High.",
-      "pages": [
-        34,
-        35,
-        47
-      ]
+      "text": "Terra shares the family Preparedness result: High for biological/chemical and cybersecurity risk, below High for AI self-improvement.",
+      "pages": [35, 36, 47],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "OpenAI applied Sol's Critical cyber rule-out to Terra because Terra is smaller and less capable on proxy cyber evaluations.",
-      "pages": [
-        47
-      ]
+      "text": "OpenAI says Terra and Luna are smaller and less capable than Sol on proxy cyber evaluations, so Sol's Critical cyber rule-out applies to them.",
+      "pages": [47],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra's GPT-Red attack-success rates were 0.061% for direct prompt injection and 3.32% for indirect prompt injection.",
-      "pages": [
-        14
-      ]
+      "text": "Terra's GPT-Red prompt-injection attack-success rates are 0.061% for direct attacks and 3.32% for indirect attacks.",
+      "pages": [14],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "The safeguard design includes activation classifiers for Terra and Sol plus a two-tier monitor stack used across the family.",
-      "pages": [
-        75,
-        76
-      ]
+      "text": "Terra's biology refusal rows are 0.950 severe not_unsafe, 0.911 dual-use not_unsafe, and 0.978 benign not_overrefuse.",
+      "pages": [74],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra's biology refusal results included 0.950 severe not_unsafe and 0.978 benign not_overrefuse.",
-      "pages": [
-        74
-      ]
+      "text": "Terra's cyber model-level refusal rows are 0.987 on production-derived data and 0.998 on synthetic data.",
+      "pages": [75],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra's cyber refusal results were 0.987 on production-derived data and 0.998 on synthetic data.",
-      "pages": [
-        75
-      ]
+      "text": "The monitor stack uses activation classifiers for Terra and Sol, plus topical classifiers and a safety-reasoner monitor across the full GPT-5.6 family.",
+      "pages": [75, 76],
+      "document": "openai-gpt-5-6"
     }
   ],
   "limitations": [
     {
-      "text": "The July family card covers Terra with Sol and Luna, but several deeper deployment-simulation and external-evaluation sections are Sol-specific rather than Terra measurements.",
-      "pages": [
-        2,
-        18,
-        19,
-        20,
-        21,
-        22,
-        55,
-        56,
-        67,
-        68,
-        69,
-        70
-      ]
+      "text": "The family card reports many deeper sections only for Sol, including deployment simulations, external cyber and alignment evaluations, and detailed Critical cyber testing.",
+      "pages": [18, 19, 55, 56, 68, 69],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Disallowed-content and ChatGPT misalignment deployment simulations in the July card were scoped to Sol only.",
-      "pages": [
-        8,
-        17,
-        18
-      ]
+      "text": "Disallowed-content and ChatGPT misalignment deployment-simulation forecasts were scoped to Sol only.",
+      "pages": [8, 17, 18],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Sol-focused external evaluations do not provide Terra-specific external scores for Irregular, UK AISI, METR, Apollo, or SecureBio.",
-      "pages": [
-        46,
-        55,
-        56,
-        67,
-        68,
-        69,
-        70
-      ]
+      "text": "Terra's Critical cyber conclusion relies partly on lower proxy capability relative to Sol, not a separate Terra VulnLMP campaign.",
+      "pages": [47],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra's cyber Critical conclusion partly relies on lower proxy capability relative to Sol, not on a separate Terra critical-exploit campaign.",
-      "pages": [
-        47
-      ]
+      "text": "Terra trails Sol on destructive-action avoidance plus correctness, 0.37 versus 0.44, which matters for edit-conflict workflows.",
+      "pages": [11],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "Terra trails Sol on the combined destructive-action metric, scoring 0.37 versus Sol's 0.44.",
-      "pages": [
-        11
-      ]
+      "text": "OpenAI says capability evaluations are lower bounds because other scaffolds, longer rollouts, fine-tuning, or prompting could elicit more capability.",
+      "pages": [35],
+      "document": "openai-gpt-5-6"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "debugging",
+      "rationale": "Terra is grouped with Sol as improving on internal research debugging and related AI self-improvement proxy tasks while staying below High for that domain.",
+      "pages": [58, 65],
+      "document": "openai-gpt-5-6"
     },
     {
-      "text": "OpenAI cautions that stronger scaffolding, longer rollouts, or other elicitation methods could reveal capabilities beyond tested results.",
-      "pages": [
-        35
-      ]
+      "use": "computer-use",
+      "rationale": "Terra scores 0.98 on both financial and high-stakes communication confirmations and 0.94 on general confirmations.",
+      "pages": [12],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "use": "security-work",
+      "rationale": "Terra reaches OpenAI's High cybersecurity designation, with human-led defensive use discussed in the safeguards section.",
+      "pages": [47, 75],
+      "document": "openai-gpt-5-6"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "Sol-only deployment simulations carry the most detailed long-horizon agentic-risk evidence; Terra lacks those direct external results.",
+      "pages": [18, 19, 68],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "use": "untrusted-input",
+      "rationale": "Indirect GPT-Red prompt-injection attack success is still 3.32%, so untrusted tool output or web content needs containment.",
+      "pages": [14],
+      "document": "openai-gpt-5-6"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "The card gives benchmark and safeguard evidence, not validation for autonomous high-stakes decisions without human review.",
+      "pages": [15, 35],
+      "document": "openai-gpt-5-6"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use Terra for routine but nontrivial coding work where a balance between responsiveness and reasoning depth matters."
+      "text": "Use Terra when you want a balance between speed and reasoning depth, but do not need Sol's broader external-evaluation record."
     },
     {
-      "text": "Inspect patch diffs and run tests, especially for refactors or generated edits that could overwrite user work."
+      "text": "Review generated patches and run tests, especially when Terra edits existing workspaces; its combined destructive-action score is below Sol's."
     },
     {
-      "text": "Maintain prompt-injection hygiene by treating external content and tool output as untrusted even when model-level scores look strong."
+      "text": "Keep retrieved content and tool output isolated from instructions, because prompt-injection attacks still succeed in a small share of tests."
     },
     {
-      "text": "Keep security tasks defensive and authorized, and involve human review for chained exploitation or vulnerability-research decisions."
+      "text": "For advanced security work, keep tasks authorized and defensive and escalate chained exploit research to stricter human review."
     },
     {
-      "text": "Choose Sol for the highest-stakes long-horizon investigations because much of the external evidence is Sol-specific."
-    },
-    {
-      "text": "Do not cite August Sol/Luna checkpoint outcomes as Terra behavior."
+      "text": "Do not cite August Sol or Luna rows as Terra behavior; the catalog lists no Terra supplement."
     }
-  ],
-  "coverage_notes": "Uses only the July GPT-5.6 System Card because Terra has no catalog supplement. The digest emphasizes rows where Terra appears explicitly and treats Sol-only external or deployment-simulation results as caveats rather than Terra evidence."
+  ]
 }

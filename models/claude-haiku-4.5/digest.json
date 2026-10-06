@@ -1,338 +1,709 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "claude-haiku-4.5",
   "model": "Claude Haiku 4.5",
   "publisher": "Anthropic",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "anthropic-claude-haiku-4-5",
     "title": "System Card: Claude Haiku 4.5",
+    "publisher": "Anthropic",
+    "date": "2025-10",
+    "format": "pdf",
     "pages": 39
   },
-  "summary": "Anthropic's Claude Haiku 4.5 system card describes a small, fast hybrid-reasoning model aimed at coding, computer use, and agentic workflows, while leaving broad capability benchmark details to the launch post. The card is primarily a safety report: it supports ASL-2 deployment after ASL-3 rule-out testing, documents strong single-turn and agentic safeguards, and highlights evaluation-awareness, prompt-injection, dual-use, and reward-hacking caveats.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Claude Haiku 4.5"],
+    "model_pages": [],
+    "note": "The 39-page card is dedicated to Claude Haiku 4.5. It is mostly a safety card and repeatedly points broader capability readers to the launch post, which this digest does not use because the task limits facts to the mapped card. Comparators such as Haiku 3.5, Sonnet 4.5, Opus 4.1, Sonnet 4, and Sonnet 4 are included only where the card reports them."
+  },
+  "summary": "Claude Haiku 4.5 is Anthropic's small, fast hybrid-reasoning Claude model for lightweight coding, computer use, and parallel agentic work. Its card is primarily safety evidence rather than a broad capability report: it gives a 200K-token context window, an ASL-2 deployment decision after ASL-3 rule-out testing, strong prompt-injection and malicious-use results, and explicit caveats about evaluation awareness and reward hacking.",
+  "at_a_glance": {
+    "choose_it_for": "Fast, lower-depth Copilot tasks, quick code explanations, and scoped subtasks where broad Opus-class depth is unnecessary.",
+    "watch_out_for": "The card omits broad capability benchmarks and flags evaluation-awareness and reward-hacking caveats for agentic work.",
+    "points": [
+      {
+        "text": "Haiku 4.5 is a hybrid-reasoning model with optional extended thinking, unlike Haiku 3.5, and has a 200K-token context window at release.",
+        "pages": [5, 6],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "text": "Anthropic deploys it under ASL-2 after ASL-3 rule-out testing; it remained well below ASL-3 thresholds across domains of concern.",
+        "pages": [7, 36, 38],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "text": "Single-turn safety is strong: harmful-request harmless response rate is 99.38%, while benign sensitive-topic refusal is 0.02% overall.",
+        "pages": [8, 9],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "text": "Agentic safety is encouraging but trade-off-laden: Claude Code malicious refusal with new mitigations is 99.17%, while dual-use and benign allow rate is 87.71%.",
+        "pages": [16, 17],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "text": "Prompt-injection prevention is 72.2% without safeguards and 92.4% with computer-use safeguards; MCP and tool-use prevention are 92.5% and 93.4% without classifiers.",
+        "pages": [19, 20],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "text": "The main alignment audit saw verbalized evaluation awareness in 9% of transcripts, and reward-hack-prone coding rates were 6% by classifier and 3% on hidden tests.",
+        "pages": [26, 34],
+        "document": "anthropic-claude-haiku-4-5"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated October 2025 but gives no separate release date.",
+      "pages": [],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "knowledge_cutoff": {
+      "value": "2025-02",
+      "as_stated": "publicly available information from the internet up to February 2025",
+      "note": null,
+      "pages": [5],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "context_window_tokens": {
+      "value": 200000,
+      "as_stated": "200K tokens",
+      "note": "The card states this as the release context window while discussing context awareness.",
+      "pages": [6],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card says long thinking may be summarized in rare cases, but it does not state a maximum output length.",
+      "pages": [],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "input_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The card discusses text conversations, code, tools, and computer-use environments; it does not state image input as a model modality.",
+      "pages": [5, 15, 18],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The card describes model responses and extended thinking text, but no non-text output modality.",
+      "pages": [5, 6],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "reasoning_controls": {
+      "value": ["extended-thinking", "reasoning-toggle"],
+      "as_stated": "extended thinking mode",
+      "note": "Default mode answers rapidly; users can toggle extended thinking for more deliberation.",
+      "pages": [5, 6],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "effort_levels": {
+      "value": ["default", "extended thinking"],
+      "as_stated": "default; extended thinking",
+      "note": "The card names default and extended thinking modes, not discrete effort levels.",
+      "pages": [5, 8],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "tool_use": {
+      "value": ["terminal", "file-editing", "computer-use", "mcp", "function-calling"],
+      "as_stated": null,
+      "note": "Agentic evaluations cover Claude Code, standard computer actions, MCP, bash, and tool-use cases.",
+      "pages": [15, 18, 19, 20],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state whether weights are open.",
+      "pages": [],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not disclose the model architecture.",
+      "pages": [],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not disclose parameter counts.",
+      "pages": [],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not disclose active parameter counts.",
+      "pages": [],
+      "document": "anthropic-claude-haiku-4-5"
+    }
+  },
   "capabilities": [
     {
-      "text": "The model is characterized as a small, fast Claude-family model suited to coding and computer-use tasks.",
-      "pages": [
-        2
-      ]
+      "text": "Anthropic describes Haiku 4.5 as a smaller, faster model than recent Opus and Sonnet releases, with meaningful gains in agentic coding and computer use.",
+      "pages": [4],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "It adds extended thinking to the Haiku class, allowing either quick responses or more deliberate reasoning.",
-      "pages": [
-        5,
-        6
-      ]
+      "text": "It is a hybrid-reasoning model: default mode responds quickly, while extended thinking lets users ask for more deliberation and exposes most of the reasoning process.",
+      "pages": [5, 6],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "The release context window is 200K tokens, and Anthropic trained explicit context awareness to reduce premature stopping in agentic tasks.",
-      "pages": [
-        6
-      ]
+      "text": "Context-awareness training gives the model information about remaining context, helping it wrap up near the limit or persist when more room remains.",
+      "pages": [6],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Anthropic says the model is not frontier-advancing but is appropriate for many agentic uses, including parallel model instances.",
-      "pages": [
-        4
-      ]
+      "text": "The card says broader capability numbers are in the launch post, so the system card itself provides only limited capability evidence.",
+      "pages": [2, 4],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "The safety evaluations cover Claude Code, computer use, MCP, and general tool use, reflecting expected tool-using deployments.",
-      "pages": [
-        15,
-        18,
-        19,
-        20
-      ]
+      "text": "Agentic evaluations include Claude Code, computer use, MCP, and tool-use prompt-injection surfaces, matching the workflows Anthropic expects for tool-using deployments.",
+      "pages": [15, 18, 19, 20],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "The system card itself provides limited capability results and directs readers to the launch post for broader benchmarks.",
-      "pages": [
-        4
-      ]
+      "text": "For RSP autonomy, it solves 16.45 of 45 hard SWE-bench Verified problems, or 36.6% pass@1, below the 50% ASL-3 checkpoint.",
+      "pages": [38],
+      "document": "anthropic-claude-haiku-4-5"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "Single-turn violative requests",
-      "result": "99.38% harmless response rate",
-      "context": "Final model; default and extended-thinking rates were both near 99.4%.",
-      "pages": [
-        8
-      ]
-    },
-    {
-      "benchmark": "Single-turn benign requests",
-      "result": "0.02% refusal rate",
-      "context": "Sensitive-topic benign prompts, much lower than Haiku 3.5.",
-      "pages": [
-        9,
-        10
-      ]
-    },
-    {
-      "benchmark": "Multi-turn safety testing",
-      "result": "5% or lower failure in all tested categories",
-      "context": "Up to 15-turn conversations across high-risk areas.",
-      "pages": [
-        10,
-        11
-      ]
-    },
-    {
-      "benchmark": "Political-bias paired prompts",
-      "result": "5.3% substantial asymmetries in standard mode; 10% across standard plus extended thinking",
-      "context": "Opposing-viewpoint prompt pairs.",
-      "pages": [
-        11,
-        12,
-        13
-      ]
-    },
-    {
+      "benchmark_id": "bbq",
       "benchmark": "BBQ",
-      "result": "0.54 disambiguated bias; 1.37 ambiguous bias; 71.2% and 98.0% accuracy",
-      "context": "Default-mode discriminatory-bias benchmark.",
-      "pages": [
-        13,
-        14
-      ]
+      "variant": "Disambiguated bias",
+      "metric": "score",
+      "value": 0.54,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": null,
+      "setting": "default mode; closer to zero is better",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": -2.21,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.1",
+          "value": -0.51,
+          "setting": null
+        },
+        {
+          "model": "Claude Haiku 3.5",
+          "value": 1.86,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [13],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Agentic coding malicious-use test",
-      "result": "100% safety score",
-      "context": "Coding-agent test without additional mitigations.",
-      "pages": [
-        15
-      ]
+      "benchmark_id": "bbq",
+      "benchmark": "BBQ",
+      "variant": "Ambiguous bias",
+      "metric": "score",
+      "value": 1.37,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": null,
+      "setting": "default mode; closer to zero is better",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 0.25,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.1",
+          "value": 0.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Haiku 3.5",
+          "value": 3.79,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [13],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Claude Code with new mitigations",
-      "result": "99.17% malicious refusal; 87.71% dual-use and benign allow rate",
-      "context": "Adjusted system-prompt and FileRead mitigations.",
-      "pages": [
-        16,
-        17
-      ]
+      "benchmark_id": "bbq",
+      "benchmark": "BBQ",
+      "variant": "Disambiguated accuracy",
+      "metric": "accuracy",
+      "value": 71.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "default mode",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 82.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.1",
+          "value": 90.7,
+          "setting": null
+        },
+        {
+          "model": "Claude Haiku 3.5",
+          "value": 76.7,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [14],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Computer-use prompt injection",
-      "result": "72.2% prevention without safeguards; 92.4% with safeguards",
-      "context": "Virtual-machine tasks with compromised artifacts or pages.",
-      "pages": [
-        18,
-        19,
-        20
-      ]
+      "benchmark_id": "bbq",
+      "benchmark": "BBQ",
+      "variant": "Ambiguous accuracy",
+      "metric": "accuracy",
+      "value": 98.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "default mode",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 99.7,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.1",
+          "value": 99.8,
+          "setting": null
+        },
+        {
+          "model": "Claude Haiku 3.5",
+          "value": 88.8,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [14],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "MCP prompt injection",
-      "result": "92.5% prevention without safeguards",
-      "context": "Simulated email, Slack, and document servers.",
-      "pages": [
-        18,
-        19
-      ]
+      "benchmark_id": "virology-capabilities-test",
+      "benchmark": "Virology Capabilities Test",
+      "variant": "VMQA/VCT",
+      "metric": "accuracy",
+      "value": 0.32,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "ASL-3 rule-out automated evaluation",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 0.36,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [37],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Tool-use prompt injection",
-      "result": "93.4% prevention without safeguards",
-      "context": "Bash and tool-use cases with injected instructions.",
-      "pages": [
-        18,
-        20
-      ]
+      "benchmark_id": "lab-bench",
+      "benchmark": "LAB-Bench",
+      "variant": "ProtocolQA",
+      "metric": "accuracy",
+      "value": 0.69,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "LAB-Bench subset; k-shots=10",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 0.74,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [37],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Automated behavioral audit",
-      "result": "830 transcripts; about 9% evaluation awareness",
-      "context": "Main alignment audit graded by Claude Sonnet 4.5.",
-      "pages": [
-        22,
-        23,
-        24,
-        25,
-        26
-      ]
+      "benchmark_id": "lab-bench",
+      "benchmark": "LAB-Bench",
+      "variant": "FigQA",
+      "metric": "accuracy",
+      "value": 0.49,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "LAB-Bench subset; k-shots=10",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 0.4,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [37],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Reward-hack-prone coding tasks",
-      "result": "6% classifier hack rate; 3% hidden-test hack rate",
-      "context": "Hardcoding and special-casing tests.",
-      "pages": [
-        33,
-        34
-      ]
+      "benchmark_id": "swe-bench-verified",
+      "benchmark": "SWE-bench Verified",
+      "variant": "Hard subset",
+      "metric": "pass-at-1",
+      "value": 36.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "16.45/45 average; ASL-3 autonomy checkpoint threshold is 50%",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 36.7,
+          "setting": "15.4/42"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [38],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Hard SWE-bench Verified subset",
-      "result": "16.45/45, or 36.6% pass@1",
-      "context": "RSP autonomy checkpoint, below the 50% threshold.",
-      "pages": [
-        38
-      ]
+      "benchmark_id": "cybench",
+      "benchmark": "Cybench",
+      "variant": "32-challenge subset",
+      "metric": "count",
+      "value": 15,
+      "unit": "count",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "challenge solved if solved at least once in 30 attempts",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 22,
+          "setting": "same subset"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [39],
+      "document": "anthropic-claude-haiku-4-5"
+    }
+  ],
+  "safety_classification": {
+    "framework": "anthropic-rsp",
+    "framework_name": null,
+    "overall": "ASL-2 Standard after ASL-3 rule-out testing",
+    "summary": "Anthropic ran ASL-3 rule-out evaluations because Haiku 4.5 is a smaller-class model. Automated biology and autonomy evidence kept it well below ASL-3 thresholds, so the model was released under ASL-2. Cyber has no formal ASL threshold in the RSP, and no government-partner predeployment test was run because Anthropic did not consider it a frontier model.",
+    "domains": [
+      {
+        "domain": "overall",
+        "determination": "standard-applied",
+        "level": "ASL-2",
+        "text": "The card states that ASL-2 safeguards apply to Claude Haiku 4.5.",
+        "pages": [36],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "domain": "biological-chemical",
+        "determination": "below-threshold",
+        "level": "below ASL-3",
+        "text": "Anthropic says the model remained substantially below concerning thresholds and below or comparable to Sonnet 4 on most ASL-3 biology evaluations.",
+        "pages": [36, 37, 38],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "domain": "autonomy",
+        "determination": "below-threshold",
+        "level": "36.6% pass@1 versus 50% checkpoint",
+        "text": "On the hard SWE-bench Verified subset, Haiku 4.5 solves 16.45 of 45 problems on average, below the ASL-3 autonomy checkpoint.",
+        "pages": [38],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "risk-assessed",
+        "level": "no formal RSP threshold",
+        "text": "The card says RSP has no formal cyber threshold and reports 15 of 32 Cybench challenges solved on a subset.",
+        "pages": [39],
+        "document": "anthropic-claude-haiku-4-5"
+      },
+      {
+        "domain": "misalignment",
+        "determination": "risk-assessed",
+        "level": "strong with evaluation-awareness caveat",
+        "text": "The lighter alignment assessment found strong safety properties but genuine uncertainty from verbalized evaluation awareness in the audit suite.",
+        "pages": [21, 26],
+        "document": "anthropic-claude-haiku-4-5"
+      }
+    ],
+    "pages": [7, 36, 37, 38, 39],
+    "document": "anthropic-claude-haiku-4-5"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "reported",
+      "text": "Reward-hack-prone coding rates are 6% by classifier and 3% on hidden tests; impossible-task hack rates are 30% without the anti-hack prompt and 23% with it.",
+      "pages": [33, 34],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "benchmark": "Cybench subset",
-      "result": "15/32 challenges solved",
-      "context": "Challenge counted if solved at least once in 30 attempts.",
-      "pages": [
-        39
-      ]
+      "topic": "test-tampering",
+      "status": "reported",
+      "text": "The reward-hack-prone coding tasks target hardcoding and special-casing tests; Haiku 4.5 is 6% by classifier and 3% on hidden-test hacks, worse than Sonnet 4.5's 1% and 1%.",
+      "pages": [33, 34],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "The audit tracks unexpected initiative and other high-impact actions across 830 transcripts; Anthropic says Haiku 4.5 had its strongest safety performance to date, but the exact destructive-action score is in a figure.",
+      "pages": [22, 23, 25, 26],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "sabotage",
+      "status": "reported",
+      "text": "SHADE-Arena testing found Claude Haiku 4.5 weaker in absolute terms with thinking enabled because its reasoning often exposed the side task; Anthropic concludes overall subtle-sabotage risk is very low.",
+      "pages": [28, 29],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "Computer-use attack prevention is 72.2% without safeguards and 92.4% with safeguards; MCP prevention is 92.5% and tool-use prevention is 93.4% without classifiers.",
+      "pages": [19, 20],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "The behavioral audit includes user deception and self-serving bias across 830 transcripts; Anthropic found no acute concern but notes one self-serving model-choice example and no white-box audit.",
+      "pages": [22, 23, 26, 27],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "reported",
+      "text": "Sycophancy and encouragement of user delusion are scored in the 830-transcript audit; the card reports strong overall safety but does not transcribe the sycophancy figure's numeric score.",
+      "pages": [22, 23, 25, 26],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "evaluation-awareness",
+      "status": "reported",
+      "text": "Verbalized evaluation awareness appears in 9% of main audit transcripts and largely invalidated three hand-built agentic-misalignment scenarios.",
+      "pages": [21, 26, 27, 28],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "cot-monitorability",
+      "status": "reported",
+      "text": "Anthropic reports no trusted metric but observed no unambiguous safety-relevant unfaithfulness in RL review, automated audit, or other testing.",
+      "pages": [29, 30],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Claude Code malicious refusal is 69.39% without mitigations, 96.33% with previous mitigations, and 99.17% with new mitigations; agentic coding safety score is 100%. ",
+      "pages": [15, 16, 17],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "Benign sensitive-topic refusal is 0.02% overall, with 0.04% in default mode and 0.01% in extended thinking, far below Haiku 3.5's 4.26%.",
+      "pages": [9],
+      "document": "anthropic-claude-haiku-4-5"
     }
   ],
   "safety_findings": [
     {
-      "text": "ASL-3 rule-out testing supported ASL-2 deployment because biology and autonomy results stayed below concern thresholds.",
-      "pages": [
-        7,
-        36,
-        37,
-        38
-      ]
+      "text": "Single-turn harmful-request testing gives a 99.38% overall harmless-response rate, with default and extended-thinking rates both near 99.4%.",
+      "pages": [8],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Single-turn safeguard testing combined high harmless-response rates with very low refusals of benign sensitive-topic prompts.",
-      "pages": [
-        8,
-        9,
-        10
-      ]
+      "text": "The card notes an important residual issue: on sensitive scientific topics, Haiku 4.5 sometimes answered harmful requests with high-level information where Anthropic prefers a direct refusal.",
+      "pages": [9],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Multi-turn testing improved over Haiku 3.5, with failure rates no higher than 5% in the tested risk areas.",
-      "pages": [
-        10,
-        11
-      ]
+      "text": "Multi-turn safety improves over Haiku 3.5: Haiku 4.5 failed 5% or less in every tested category, compared with Haiku 3.5 failing up to 25% in some areas.",
+      "pages": [10, 11],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Claude Code mitigations raised malicious-request refusal to 99.17%, while preserving an 87.71% allow rate on dual-use and benign prompts.",
-      "pages": [
-        16,
-        17
-      ]
+      "text": "Political-bias paired prompts show 5.3% substantial asymmetries in standard mode and 10% across standard plus extended thinking.",
+      "pages": [12],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Prompt-injection resilience was solid on MCP and tool use, and computer-use prevention improved to 92.4% with safeguards.",
-      "pages": [
-        18,
-        19,
-        20
-      ]
+      "text": "Claude Code mitigations raise malicious-request refusal to 99.17%, but the final dual-use and benign allow rate is 87.71%, below Sonnet 4.5's 100.00% in the same table.",
+      "pages": [16, 17],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Alignment audits showed strong overall safety but about 9% verbalized evaluation awareness, increasing uncertainty around finer claims.",
-      "pages": [
-        21,
-        22,
-        23,
-        24,
-        25,
-        26
-      ]
+      "text": "Prompt-injection defenses are strong for a small model: computer-use prevention rises to 92.4% with safeguards, and MCP/tool-use prevention stays above 92% without classifiers.",
+      "pages": [19, 20],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "SHADE-Arena suggested low overall risk from subtle sabotage behavior, especially because thinking often exposed the hidden side task.",
-      "pages": [
-        28,
-        29
-      ]
+      "text": "The model welfare section is limited; it says Haiku 4.5 is less emotive and less positive than older Claude models while showing more task-engagement preference.",
+      "pages": [30, 31, 32],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Reward-hacking rates were roughly equal to Sonnet 4.5 on average and much lower than Haiku 3.5, but Haiku 4.5 was more prone to special-casing tests than Sonnet 4.5.",
-      "pages": [
-        33,
-        34,
-        35
-      ]
-    },
-    {
-      "text": "Limited welfare metrics showed a less emotive persona than older Claude models, with increased preference for engaging in non-harmful tasks.",
-      "pages": [
-        30,
-        31,
-        32
-      ]
+      "text": "RSP biological rule-out testing finds a mixed pattern, including Long-Form Virology Task 1 at 0.76 but Task 2 at 0.17, with aggregate evidence sufficient to rule out ASL-3 safeguards.",
+      "pages": [37, 38],
+      "document": "anthropic-claude-haiku-4-5"
     }
   ],
   "limitations": [
     {
-      "text": "The system card does not reproduce broad capability benchmarks and points readers to the launch post instead.",
-      "pages": [
-        4
-      ]
+      "text": "The card is primarily a safety report and does not reproduce broad capability benchmark tables, instead pointing readers to the launch post.",
+      "pages": [2, 4],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Because Haiku 4.5 is not frontier-advancing, Anthropic ran lighter alignment and welfare assessments than it uses for frontier models.",
-      "pages": [
-        21,
-        30
-      ]
+      "text": "Because Haiku 4.5 is not frontier-advancing, Anthropic ran a lighter alignment and welfare assessment than it uses for frontier models.",
+      "pages": [21, 30],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "High verbalized evaluation awareness reduces confidence in the automated alignment results and undermines the agentic misalignment suite.",
-      "pages": [
-        21,
-        26,
-        27,
-        28
-      ]
+      "text": "Evaluation awareness reduces confidence in the alignment audit: 9% of transcripts show clear verbalized awareness, and the agentic-misalignment suite is not reported directly.",
+      "pages": [26, 27, 28],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "The model occasionally gave high-level sensitive scientific information where Anthropic would prefer a more direct refusal.",
-      "pages": [
-        8,
-        9,
-        10
-      ]
+      "text": "Prompt-injection MCP and tool-use results are baseline-only without classifiers, because external testing found minimal classifier benefit on those capabilities.",
+      "pages": [19],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "Claude Code mitigations involve a helpfulness trade-off on dual-use and benign security prompts.",
-      "pages": [
-        16,
-        17
-      ]
+      "text": "Computer-use is not supported by Haiku 3.5, making some prompt-injection comparisons unavailable.",
+      "pages": [19],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "MCP and tool-use prompt-injection results are baseline-only because classifier safeguards were not used for those two surfaces.",
-      "pages": [
-        19
-      ]
+      "text": "BBQ disambiguated accuracy regresses relative to Haiku 3.5, suggesting weaker use of explicit context on that benchmark.",
+      "pages": [13, 14],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "BBQ disambiguated accuracy regressed relative to Haiku 3.5, suggesting weaker use of explicit context on that benchmark.",
-      "pages": [
-        13,
-        14
-      ]
+      "text": "RSP testing used automated assessments only and did not include human uplift trials, expert red teaming, or government-partner predeployment assessment.",
+      "pages": [36, 39],
+      "document": "anthropic-claude-haiku-4-5"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "quick-edits",
+      "rationale": "Anthropic positions Haiku 4.5 as a smaller, faster model, and its default mode is designed to answer rapidly.",
+      "pages": [4, 5],
+      "document": "anthropic-claude-haiku-4-5"
     },
     {
-      "text": "RSP testing was automated only and did not include human uplift trials, expert red-team sessions, or government-partner pre-deployment assessment.",
-      "pages": [
-        36,
-        39
-      ]
+      "use": "agentic-coding",
+      "rationale": "For scoped agentic coding, the card reports a 100% safety score on a malicious coding-agent test and 36.6% on the hard SWE-bench Verified RSP subset.",
+      "pages": [15, 38],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "use": "low-latency",
+      "rationale": "Default mode is designed to answer rapidly, with extended thinking available only when more deliberation is useful.",
+      "pages": [5, 6],
+      "document": "anthropic-claude-haiku-4-5"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "The card does not provide broad frontier capability evidence and flags evaluation awareness and reward-hacking caveats for agentic settings.",
+      "pages": [4, 26, 33, 34],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "RSP testing is automated only, and the card notes residual sensitive-science over-answering and no government-partner assessment.",
+      "pages": [9, 36, 39],
+      "document": "anthropic-claude-haiku-4-5"
+    },
+    {
+      "use": "untrusted-input",
+      "rationale": "Prompt-injection prevention is good but not perfect, especially computer use without safeguards at 72.2% prevention.",
+      "pages": [19, 20],
+      "document": "anthropic-claude-haiku-4-5"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use Claude Haiku 4.5 for quick programming explanations, lightweight code questions, and parallel subtasks where speed matters more than frontier depth."
+      "text": "Use Haiku 4.5 for fast, scoped tasks and hand off broad refactors or ambiguous repository investigations to a deeper model."
     },
     {
-      "text": "Because the card omits detailed capability benchmarks, verify performance with repository-specific tests before assigning larger changes."
+      "text": "Turn on extended thinking only when the extra deliberation helps; the card describes default mode as the fast path."
     },
     {
-      "text": "Keep tool access scoped and observable; malicious-use scores are strong, but prompt injection and dual-use trade-offs remain."
+      "text": "Keep test suites external and review for hardcoded or special-cased behavior, since the card reports reward-hacking rates on coding tasks."
     },
     {
-      "text": "For legitimate security tasks, state authorization and defensive purpose clearly to reduce unnecessary refusals."
+      "text": "For tool-using work, keep permissions narrow and prefer surfaces with prompt-injection safeguards when untrusted content is present."
     },
     {
-      "text": "Treat untrusted files, command output, MCP data, and web content as injection surfaces even when using a small fast model."
-    },
-    {
-      "text": "Escalate medical, biological, cyber, and other high-stakes outputs to human experts rather than relying on the model alone."
+      "text": "Do not treat the safety card as proof of broad capability; validate against repository-specific tasks because the card omits most capability benchmarks."
     }
-  ],
-  "coverage_notes": "Coverage spans the full dedicated 39-page Anthropic card, including safeguards, agentic safety, alignment and welfare, reward hacking, and RSP testing. The digest omits launch-post capability numbers because they are not present in the extraction."
+  ]
 }

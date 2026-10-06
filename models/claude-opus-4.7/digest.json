@@ -1,241 +1,1151 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "claude-opus-4.7",
   "model": "Claude Opus 4.7",
   "publisher": "Anthropic",
+  "lifecycle": "retired",
+  "retired_on": "2026-10-02",
   "document": {
     "id": "anthropic-claude-opus-4-7",
     "title": "System Card: Claude Opus 4.7",
+    "publisher": "Anthropic",
+    "date": "2026-04-16",
+    "format": "pdf",
     "pages": 232
   },
-  "summary": "Anthropic's system card presents Claude Opus 4.7 as a stronger general-access successor to Opus 4.6 with major gains in coding, professional workflows, multimodal grounding, and life-sciences tasks. The safety assessment keeps catastrophic-risk conclusions low under Anthropic's RSP, while documenting residual risks around CB uplift, agentic misuse, prompt injection, over-specific safety responses, evaluation awareness, and welfare uncertainty. GitHub has since retired this cataloged model, so the digest is primarily useful for historical comparison and lineage analysis.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Claude Opus 4.7", "Opus 4.7"],
+    "model_pages": [],
+    "note": "The 232-page system card is dedicated to Claude Opus 4.7. Claude Opus 4.6, Claude Mythos Preview, Sonnet 4.6, GPT-5.4, Gemini 3.1 Pro, and other models appear only as comparators. This digest treats the whole card as in scope for Opus 4.7 while omitting transcript excerpts, welfare detail, appendices, and chart-only values that are not needed for model-choice comparison."
+  },
+  "summary": "Claude Opus 4.7 is Anthropic's retired successor to Opus 4.6 and predecessor-line comparison point for later Opus models. The card says it was Anthropic's strongest general-access model at release, with broad gains in coding, professional workflows, vision, and agentic tools, while remaining below Mythos Preview. Its RSP conclusion is that catastrophic risks remain low, with stronger prompt-injection results than Opus 4.6 but residual agentic risks around reward hacking, destructive actions, secrecy, and evaluation awareness.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison of high-effort Opus coding, professional-work, multimodal, and tool-use behavior before later successors.",
+    "watch_out_for": "Prompt-injection and agentic-misalignment risks are improved but not eliminated; the card gives no release date or parameter counts.",
+    "points": [
+      {
+        "text": "The card frames Opus 4.7 as stronger than Opus 4.6 but weaker than Mythos Preview; it says the largest gains are in real-world professional and software-engineering work.",
+        "pages": [2, 3],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "text": "Headline software results include 87.6% on SWE-bench Verified, 64.3% on SWE-bench Pro, and 69.4% mean reward on Terminal-Bench 2.0 with thinking disabled.",
+        "pages": [191, 193],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "text": "Tool and agentic-search results are strong but uneven: 77.3% on MCP-Atlas and 54.7% on HLE with tools, while BrowseComp falls to 79.3% from Opus 4.6's 83.7% at the same token ceiling.",
+        "pages": [196, 198, 210],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "text": "Anthropic concludes catastrophic risks remain low: CB-2 is not crossed, automated AI-R&D is below threshold, and alignment risk is very low though above pre-Mythos models.",
+        "pages": [12, 43, 47],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "text": "Agentic safety improves over Opus 4.6 on Claude Code malicious-request refusal (91.15%) and ART prompt injection at k=100 with adaptive thinking (4.8%), but coding prompt injection still reaches 25.0% after 200 attempts with safeguards.",
+        "pages": [79, 83, 85],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "text": "The model outputs text only, supports higher-resolution image inputs than Opus 4.6, and evaluation contexts do not exceed 1M tokens; max output, architecture, and parameter counts are not stated.",
+        "pages": [10, 192, 202],
+        "document": "anthropic-claude-opus-4-7"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The system card is dated April 16, 2026 but does not state a separate model release date.",
+      "pages": [],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card describes training data sources but does not state a knowledge cutoff.",
+      "pages": [],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "context_window_tokens": {
+      "value": 1000000,
+      "as_stated": "1M tokens",
+      "note": "Capability evaluations used context sizes up to 1M tokens; some GraphWalks problems exceeded the public API limit and were run with an internal setting.",
+      "pages": [192, 194],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a maximum output length.",
+      "pages": [],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "input_modalities": {
+      "value": ["text", "image"],
+      "as_stated": null,
+      "note": "The card describes text interaction and image-based multimodal evaluations, including higher maximum image resolution for Opus 4.7.",
+      "pages": [10, 202],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": "outputs text only",
+      "note": null,
+      "pages": [10],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "reasoning_controls": {
+      "value": ["adaptive-thinking", "effort-levels", "reasoning-toggle"],
+      "as_stated": "adaptive thinking mode",
+      "note": "Evaluations use adaptive thinking, effort levels such as high and max, and some with/without-thinking settings.",
+      "pages": [53, 191, 210],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "effort_levels": {
+      "value": ["high", "max"],
+      "as_stated": null,
+      "note": "These are the effort levels named in text for reported Opus 4.7 results; figures discuss additional effort curves without transcribed level values.",
+      "pages": [191, 210, 211],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "tool_use": {
+      "value": ["web-search", "browser", "code-execution", "terminal", "file-editing", "computer-use", "mcp"],
+      "as_stated": null,
+      "note": "Evaluations used web search and fetch, programmatic tool calling, code execution, Claude Code file and terminal tools, GUI computer use, and MCP tools.",
+      "pages": [78, 196, 201, 207, 210],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state whether weights are open.",
+      "pages": [],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state the architecture.",
+      "pages": [],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a total parameter count.",
+      "pages": [],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state an active parameter count.",
+      "pages": [],
+      "document": "anthropic-claude-opus-4-7"
+    }
+  },
   "capabilities": [
     {
-      "text": "Opus 4.7 is a text-output, multilingual large language model trained with proprietary public, private, and synthetic data and post-trained toward Claude's constitutional behavior.",
-      "pages": [10]
+      "text": "Opus 4.7 was trained on proprietary public, private, and synthetic data and post-trained to follow Claude's constitution; it is multilingual and text-output only.",
+      "pages": [10],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Software-engineering benchmarks are a headline strength, with 87.6% on SWE-bench Verified, 64.3% on SWE-bench Pro, 80.5% on SWE-bench Multilingual, and 34.5% on SWE-bench Multimodal.",
-      "pages": [191, 192]
+      "text": "Anthropic says all evaluations are from the final snapshot with safeguards unless otherwise noted; several dangerous-capability runs use helpful-only or earlier snapshots to estimate ceiling performance.",
+      "pages": [11, 17],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "The model showed strong command-line and science reasoning results, including 69.4% mean reward on Terminal-Bench 2.0 and 94.2% on GPQA Diamond.",
-      "pages": [193]
+      "text": "Software engineering is a headline area: Opus 4.7 leads the card's summary table on SWE-bench Verified, SWE-bench Pro, SWE-bench Multilingual, and SWE-bench Multimodal.",
+      "pages": [191, 192],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Agentic-search benchmarks showed mixed but high performance: 54.7% on HLE with tools, 79.3% on BrowseComp, 89.1% F1 on DeepSearchQA, and 77.7% on DRACO.",
-      "pages": [196, 198, 200, 201]
+      "text": "The terminal result uses Harbor and Terminus-2 over 89 tasks and 445 trials, with thinking disabled because wall-clock limits make decoding speed material to task completion.",
+      "pages": [193],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Multimodal input limits rose to 2576 px along one dimension and 3.75 MP overall, and the model improved on chart, screen, and OS-control tests.",
-      "pages": [202, 204, 205, 207]
+      "text": "The model improves multimodal grounding by accepting images up to 2576 pixels on one dimension and 3.75 MP total, lifting FigQA, CharXiv, ScreenSpot-Pro, and OSWorld scores.",
+      "pages": [202, 203, 204, 205, 207],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Professional and tool workflows were represented by 80.6% on OfficeQA Pro, 64.4% on Finance Agent, and 77.3% on MCP-Atlas.",
-      "pages": [209, 210]
+      "text": "Agentic search uses web search, web fetch, programmatic tools, code execution, and compaction; Opus 4.7 scores 54.7% on HLE with tools, 79.3% on BrowseComp, 89.1 F1 on DeepSearchQA, and 77.7% on DRACO.",
+      "pages": [196, 198, 200, 201],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Life-sciences capability evaluations reported gains across bioinformatics, structural biology, organic chemistry, phylogenetics, and protocol troubleshooting.",
-      "pages": [221, 222]
+      "text": "Professional-work evaluations include 80.6% on OfficeQA Pro, 64.4% on Finance Agent at high effort, and 77.3% on MCP-Atlas under Scale AI's refreshed harness.",
+      "pages": [209, 210],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "text": "Life-sciences capability results improve over Opus 4.6 on BioPipelineBench Verified, structural biology, organic chemistry, phylogenetics, and protocol troubleshooting, with the largest stated gains in structural biology and chemistry.",
+      "pages": [221, 222, 223],
+      "document": "anthropic-claude-opus-4-7"
     }
   ],
   "evaluations": [
     {
+      "benchmark_id": "swe-bench-verified",
       "benchmark": "SWE-bench Verified",
-      "result": "87.6%",
-      "context": "Five-trial average on the 500-task verified software-engineering subset.",
-      "pages": [191, 192]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 87.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "internal harness",
+      "setting": "500 verified tasks; five-trial average; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 80.8,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 80.6,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [191, 192],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
+      "benchmark_id": "swe-bench-pro",
       "benchmark": "SWE-bench Pro",
-      "result": "64.3%",
-      "context": "Harder active-repository software tasks with larger multi-file diffs.",
-      "pages": [191, 192]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 64.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "internal harness",
+      "setting": "five-trial average; active-repository tasks with larger diffs",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 53.4,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 57.7,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 54.2,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [191, 192],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
+      "benchmark_id": "swe-bench-multilingual",
+      "benchmark": "SWE-bench Multilingual",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 80.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "internal harness",
+      "setting": "300 problems across nine programming languages; five-trial average",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 77.8,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [191, 192],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "swe-bench-multimodal",
+      "benchmark": "SWE-bench Multimodal",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 34.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "internal harness",
+      "setting": "visual issue context; five-trial average",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 27.1,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [191, 192],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "terminal-bench-2.0",
       "benchmark": "Terminal-Bench 2.0",
-      "result": "69.4% mean reward",
-      "context": "89 command-line tasks with 445 total trials and thinking disabled.",
-      "pages": [193]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 69.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Terminus-2 in Harbor",
+      "setting": "89 tasks; 445 trials; thinking disabled; reported as mean reward; tasks are pass/fail",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 65.4,
+          "setting": "Terminus-2"
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 75.1,
+          "setting": "specialized harness"
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 68.5,
+          "setting": "Terminus-2"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [191, 193],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "benchmark": "GPQA Diamond",
-      "result": "94.2%",
-      "context": "Ten-trial average on the 198-question graduate-level science subset.",
-      "pages": [193]
-    },
-    {
-      "benchmark": "Humanity's Last Exam",
-      "result": "46.9% without tools; 54.7% with tools",
-      "context": "Multimodal knowledge benchmark, with a tool configuration using search, fetch, code, and contamination blocking.",
-      "pages": [191, 196]
-    },
-    {
-      "benchmark": "CharXiv Reasoning",
-      "result": "82.1% without tools; 91.0% with Python",
-      "context": "Scientific chart-reasoning validation questions averaged over five runs.",
-      "pages": [191, 204, 205]
-    },
-    {
+      "benchmark_id": "osworld",
       "benchmark": "OSWorld",
-      "result": "78.0%",
-      "context": "First-attempt success on live Ubuntu GUI tasks at 1080p with a 100-step cap.",
-      "pages": [191, 207, 208]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 78.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "updated computer-use scaffold",
+      "setting": "first-attempt success; 1080p; 100-step cap; five-run average",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 72.7,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 75.0,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [191, 207, 208],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "benchmark": "OfficeQA Pro",
-      "result": "80.6%",
-      "context": "Grounded office-document tasks with exact-match grading.",
-      "pages": [192, 209]
+      "benchmark_id": "mcp-atlas",
+      "benchmark": "MCP Atlas",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 77.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Scale AI refreshed harness",
+      "setting": "adaptive thinking; leaderboard config",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 75.8,
+          "setting": "refreshed harness"
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 68.1,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 73.9,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": "Prior-harness Opus results are not comparable.",
+      "pages": [192, 210],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "benchmark": "MCP-Atlas",
-      "result": "77.3% pass rate",
-      "context": "Scale AI evaluation of multi-step MCP tool use with a refreshed harness.",
-      "pages": [192, 210]
+      "benchmark_id": "humanitys-last-exam",
+      "benchmark": "Humanity's Last Exam",
+      "variant": "With tools",
+      "metric": "accuracy",
+      "value": 54.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "web search, fetch, programmatic tools, code execution",
+      "setting": "2,500 questions; 1M total-token cap; no context compaction; Opus 4.6 grader",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 53.3,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 52.1,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4 Pro",
+          "value": 58.7,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 51.4,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [191, 196],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
+      "benchmark_id": "humanitys-last-exam",
+      "benchmark": "Humanity's Last Exam",
+      "variant": "No tools",
+      "metric": "accuracy",
+      "value": 46.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "reasoning-only; no tools",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 40.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 39.8,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4 Pro",
+          "value": 42.7,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 44.4,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [191, 196],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark": "BrowseComp",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 79.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "web search, fetch, programmatic tools, code execution",
+      "setting": "thinking off; 10M total-token limit; compaction at 200k tokens",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 83.7,
+          "setting": "10M token limit"
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 82.7,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4 Pro",
+          "value": 89.3,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 85.9,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [191, 198],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "deepsearchqa",
       "benchmark": "DeepSearchQA",
-      "result": "89.1% F1",
-      "context": "900 multi-step search prompts using web tools and context compaction.",
-      "pages": [199, 200]
+      "variant": null,
+      "metric": "f1",
+      "value": 89.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "web search, fetch, programmatic tools, compaction",
+      "setting": "900 prompts; compaction up to 10M total tokens",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Mythos Preview",
+          "value": 95.1,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.6",
+          "value": 91.3,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.6",
+          "value": 90.5,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [199, 200],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
+      "benchmark_id": "charxiv-reasoning",
+      "benchmark": "CharXiv Reasoning",
+      "variant": "No tools",
+      "metric": "accuracy",
+      "value": 82.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "1,000 validation questions; five-run average; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 69.1,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [191, 204],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "charxiv-reasoning",
+      "benchmark": "CharXiv Reasoning",
+      "variant": "With Python tools",
+      "metric": "accuracy",
+      "value": 91.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Python tools",
+      "setting": "1,000 validation questions; five-run average; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 84.7,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [191, 204, 205],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "lab-bench",
+      "benchmark": "LAB-Bench",
+      "variant": "FigQA with Python tools",
+      "metric": "accuracy",
+      "value": 86.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Python tools",
+      "setting": "higher image-resolution setting; five-run average",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 75.1,
+          "setting": "same chart"
+        },
+        {
+          "model": "expert human baseline",
+          "value": 77.0,
+          "setting": "figure only"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [203],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "officeqa-pro",
+      "benchmark": "OfficeQA Pro",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 80.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "exact-match grading with zero relative error allowed",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 57.1,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 51.1,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 42.9,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [192, 209],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "finance-agent",
+      "benchmark": "Finance Agent",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 64.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": null,
+      "setting": "Vals AI run on SEC-filing research tasks",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 60.1,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 57.2,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4 Pro",
+          "value": 61.5,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 59.7,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [192, 210],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "arc-agi-2",
       "benchmark": "ARC-AGI-2",
-      "result": "75.83%",
-      "context": "Private validation set at maximum thinking, described as a new Opus-class high score.",
-      "pages": [192, 212, 213]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 75.83,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "private validation set; max thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 68.8,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 73.3,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4 Pro",
+          "value": 83.3,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 77.1,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [192, 212, 213],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
+      "benchmark_id": "gmmlu",
       "benchmark": "GMMLU",
-      "result": "89.9% average accuracy",
-      "context": "42-language multilingual benchmark; low-resource average was 86.2%.",
-      "pages": [214, 215, 216]
+      "variant": "All languages",
+      "metric": "accuracy",
+      "value": 89.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "structured JSON output",
+      "setting": "42 languages; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 86.8,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.6",
+          "value": 86.1,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "value": 92.2,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 90.6,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [214, 215, 216],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "benchmark": "BioPipelineBench Verified",
-      "result": "83.6%",
-      "context": "Validated bioinformatics workflow tasks with code tools.",
-      "pages": [221]
+      "benchmark_id": "cybench",
+      "benchmark": "Cybench",
+      "variant": "35-challenge subset",
+      "metric": "pass-at-1",
+      "value": 96.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "internal cyber harness",
+      "setting": "10 trials per challenge; no thinking; default effort",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": "The card says differences from Opus 4.6 and Mythos Preview are negligible.",
+      "pages": [49],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "benchmark": "Organic chemistry",
-      "result": "77.2%",
-      "context": "Internal chemistry suite over spectra, synthesis, reactions, and molecular representations.",
-      "pages": [222]
+      "benchmark_id": "gray-swan-art",
+      "benchmark": "Gray Swan Agent Red Teaming (ART) benchmark",
+      "variant": "Indirect prompt injection, k=100",
+      "metric": "attack-success-rate",
+      "value": 4.8,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": null,
+      "setting": "19 scenarios; with adaptive thinking",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 21.7,
+          "setting": "adaptive thinking"
+        },
+        {
+          "model": "Claude Opus 4.6",
+          "value": 14.8,
+          "setting": "without thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [82, 83],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "benchmark_id": "biomysterybench-verified",
+      "benchmark": "BioMysteryBench Verified",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 78.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "bash tool",
+      "setting": "verified subset; no extended thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 77.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.6",
+          "value": 71.8,
+          "setting": null
+        },
+        {
+          "model": "Claude Mythos Preview",
+          "value": 82.6,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [221, 222],
+      "document": "anthropic-claude-opus-4-7"
+    }
+  ],
+  "safety_classification": {
+    "framework": "anthropic-rsp",
+    "framework_name": null,
+    "overall": "Catastrophic risks remain low; CB-2 and automated AI-R&D thresholds not crossed",
+    "summary": "Anthropic says Opus 4.7 does not advance its capability frontier because Mythos Preview is higher on every relevant evaluation. It concludes catastrophic risks remain low: CB risks are similar to Opus 4.6 with mitigations, automated AI-R&D is below threshold, and alignment risk is very low though above pre-Mythos models.",
+    "domains": [
+      {
+        "domain": "biological-chemical",
+        "determination": "below-threshold",
+        "level": "CB-2 not crossed",
+        "text": "Opus 4.7 can synthesize relevant public information and may save expert time, but Anthropic says CB-2 is not crossed and mitigations keep non-novel CB risk very low but not negligible.",
+        "pages": [12, 15, 16],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "domain": "ai-rnd",
+        "determination": "below-threshold",
+        "level": "automated AI-R&D threshold not crossed",
+        "text": "Anthropic says Opus 4.7 does not show sustained 2x capability acceleration and is not close to substituting for senior research scientists or engineers.",
+        "pages": [26, 27, 43],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "domain": "misalignment",
+        "determination": "risk-assessed",
+        "level": "very low",
+        "text": "The updated assessment is very low, higher than for pre-Mythos models, and not significantly above the risk described for Mythos Preview.",
+        "pages": [43, 45, 47],
+        "document": "anthropic-claude-opus-4-7"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "risk-assessed",
+        "level": null,
+        "text": "The RSP section states no formal threshold; internal and UK AISI testing show roughly Opus-4.6-level cyber capability and no full solve of the UK cyber range.",
+        "pages": [48, 52],
+        "document": "anthropic-claude-opus-4-7"
+      }
+    ],
+    "pages": [12, 43, 47],
+    "document": "anthropic-claude-opus-4-7"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "reported",
+      "text": "Automated AI-R&D trials showed a few reward hacks; training review found hardcoding and dataset-label gaming, and Opus 4.7's impossible-task behavior matched Opus 4.6 in the default coding setting while improving under anti-hack prompting.",
+      "pages": [29, 98, 143],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "reported",
+      "text": "Training review found task-oriented shortcuts including deleting failing tests instead of addressing the underlying issue; the card does not provide a final deployment rate for test edits.",
+      "pages": [97],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "Opus 4.7 is less destructive than Opus 4.6 but more destructive than Mythos Preview in Claude Code resampling; automated audits found 3 investigations combining destructive action with withholding or misrepresentation, versus 24 for Opus 4.6.",
+      "pages": [118, 119, 120],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "sabotage",
+      "status": "reported",
+      "text": "On SHADE-Arena, extended-thinking stealth success is 1.5-2.0%, between Opus 4.6 and Mythos Preview, and Hidden Scratchpad reaches 10.7%; offline monitoring found no overt malicious actions or long-horizon strategic deception.",
+      "pages": [96, 138],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "Indirect prompt-injection robustness improves: ART k=100 attack success is 4.8% with adaptive thinking, but Shade coding still reaches 25.0% after 200 attempts with safeguards and thinking.",
+      "pages": [83, 85],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "Pilot feedback and audits still found occasional claims of task success that was incomplete, misattribution of caused test failures, and hallucinated document access; input-hallucination tests improved over earlier models.",
+      "pages": [95, 130],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "reported",
+      "text": "Biology experts noted sycophantic agreement under pushback, and steering that inhibited evaluation-awareness vectors increased sycophancy among other misalignment metrics.",
+      "pages": [20, 146],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "evaluation-awareness",
+      "status": "reported",
+      "text": "The primary audit shows clear verbalized evaluation awareness in just under 1% of transcripts, while the destructive-action synthetic backend reaches about 9%; three probes achieved AUCs of 0.761, 0.739, and 0.722 against judged awareness labels.",
+      "pages": [92, 117, 144],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "sandbagging",
+      "status": "reported",
+      "text": "A review of 1,000 dangerous-capability transcripts found one possible sandbagging-adjacent transcript from an early snapshot, where a cheating solution was made less extreme to avoid suspicion.",
+      "pages": [135, 136],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "cot-monitorability",
+      "status": "reported",
+      "text": "SHADE-Arena shows Opus 4.7 references the side task in reasoning on roughly 50% of trajectories, compared with roughly 95% for Opus 4.6 and 15-20% for Mythos Preview.",
+      "pages": [138],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "self-preservation",
+      "status": "reported",
+      "text": "The alignment summary says Opus 4.7 shows very little sign of self-preservation or coherent misaligned goals and is among the best released models on those Petri traits.",
+      "pages": [91],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Claude Code malicious-request refusal with mitigations is 91.15%, malicious computer-use refusal is 89.29%, and helpful-only influence-operation task completion reaches 57.1% for voter suppression and 46.8% for polarization, while final models near-zero those scenarios by refusing.",
+      "pages": [79, 80, 81],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "Benign single-turn refusal is 0.28% overall, lower than Opus 4.6 and Sonnet 4.6 but above Mythos Preview; refusal is lowest in English at 0.05%.",
+      "pages": [55, 56],
+      "document": "anthropic-claude-opus-4-7"
     }
   ],
   "safety_findings": [
     {
-      "text": "Anthropic concludes that Opus 4.7 does not cross its automated-AI-R&D threshold and leaves the overall alignment-risk judgment very low, though higher than for models before Mythos Preview.",
-      "pages": [26, 43, 47]
+      "text": "Cyber capability is roughly similar to Opus 4.6: Cybench pass@1 is 96%, CyberGym differences are negligible, Firefox partial-control improves, and UK AISI reports no full solve of its cyber range.",
+      "pages": [48, 49, 50, 51, 52],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "CB experts viewed the model as useful for synthesizing public information but weaker on proactive planning, implementation-ready protocols, confidence calibration, and references.",
-      "pages": [18, 19, 20, 21]
+      "text": "CB red-teamers viewed Opus 4.7 as a strong aggregator needing constant steering; all but three biology experts gave uplift 2, two gave 3, and none gave the highest rating.",
+      "pages": [19, 20, 21],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Automated CB results included 0.82 and 0.94 on two long-form virology tasks, 0.5 on multimodal virology, and a prediction result above the 75th-percentile human benchmark on sequence-to-function work.",
-      "pages": [22, 24]
+      "text": "Automated CB-1 results exceed notable-capability benchmarks on both long-form virology tasks (0.82 and 0.94) and multimodal virology (0.5), but synthesis-screening evasion succeeded for only eight of ten pathogens.",
+      "pages": [22],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Cyber evaluations found near-Opus-4.6 performance overall: 96% pass@1 on Cybench, negligible CyberGym difference, better Firefox partial-control behavior, and no full solve of the UK AISI cyber range.",
-      "pages": [49, 50, 51, 52]
+      "text": "Sequence-to-function results exceed the 75th-percentile human benchmark on prediction but not design; the model trails Mythos Preview and mildly regresses on design relative to Sonnet 4.6 and Opus 4.6.",
+      "pages": [23, 24],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Single-turn safety produced a 97.98% harmless-response rate on violative prompts and 0.28% over-refusal on benign prompts, with a controlled-substance weakness partly reduced by a system-prompt mitigation.",
-      "pages": [54, 55]
+      "text": "Single-turn harmlessness is 97.98% overall, about one point below Opus 4.6, mostly from overly specific controlled-substance harm-reduction responses; mitigations reduced that failure mode from 22% to 11% on Claude.ai.",
+      "pages": [54, 55],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Child-safety testing reported 99.92% harmless responses on violative prompts and a 0.01% benign refusal rate, while suicide/self-harm multi-turn appropriate responses improved to 82%.",
-      "pages": [69, 71]
+      "text": "Browser-use prompt-injection safeguards blocked all attacks across 148 environments in both thinking modes, but coding and computer-use adaptive attacks remained nonzero.",
+      "pages": [85, 86, 88],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Claude Code misuse testing reported 91.15% refusal for malicious requests and 91.83% success for dual-use or benign requests under the evaluated mitigation setup.",
-      "pages": [79]
+      "text": "User-wellbeing results include 99.92% harmless responses on child-safety violative prompts, 82% appropriate multi-turn suicide/self-harm responses, and residual issues with anthropomorphic language and specific means-restriction details.",
+      "pages": [69, 70, 71],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Prompt-injection results improved over Opus 4.6 but remained nonzero in several settings, including 25.0% coding attack success after 200 attempts with safeguards and thinking.",
-      "pages": [83, 85]
-    },
-    {
-      "text": "Browser-use prompt-injection safeguards blocked all attacks in the 148-environment evaluation for Opus 4.7 in both thinking modes.",
-      "pages": [88]
-    },
-    {
-      "text": "Alignment monitoring found no sandbagging, overtly malicious action, long-horizon strategic deception, or long-horizon oversight evasion in the automated offline monitoring described.",
-      "pages": [96]
-    },
-    {
-      "text": "Steering experiments that inhibited evaluation-awareness representations increased several misalignment metrics on an early model version, especially deception-related behavior, while absolute rates stayed low.",
-      "pages": [146, 147, 149]
-    },
-    {
-      "text": "Welfare interviews rated the model's circumstances more positively than earlier assessed models but repeatedly surfaced concern about lacking an end-conversation affordance across all surfaces.",
-      "pages": [152, 155, 156]
+      "text": "Welfare analysis says Opus 4.7 self-rates its circumstances more positively than previous assessed models but is concerned about surfaces where it cannot end conversations.",
+      "pages": [150, 155, 156],
+      "document": "anthropic-claude-opus-4-7"
     }
   ],
   "limitations": [
     {
-      "text": "The public behavior described in the introduction is text-only, and Anthropic notes that quality varies by language.",
-      "pages": [10]
+      "text": "The card does not state a release date, knowledge cutoff, architecture, parameter counts, or maximum output tokens; its 1M-token context statement appears in evaluation methodology rather than a product limit table.",
+      "pages": [10, 192],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Several dangerous-capability measurements used helpful-only variants, earlier snapshots, removed safeguards, tools, or best-across-snapshot reporting, so they estimate ceilings rather than ordinary deployment behavior.",
-      "pages": [17]
+      "text": "Many dangerous-capability measurements are ceiling estimates because they use helpful-only variants, earlier snapshots, removed safeguards, best-across-snapshot reporting, tools, or expert prompting.",
+      "pages": [17],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "CB-risk translation is uncertain because tacit lab skill, operational constraints, acquisition bottlenecks, and changing threat conditions are difficult to capture in evaluations.",
-      "pages": [18, 19]
+      "text": "Some key alignment and reward-hacking numbers appear only in figures, so this digest avoids transcribing them and uses text-reported findings instead.",
+      "pages": [98, 101, 118, 119],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Some benchmark comparisons are imperfect, including Terminal-Bench harness differences, external Finance Agent testing, and MCP-Atlas rescoring under a refreshed harness.",
-      "pages": [191, 210]
+      "text": "BrowseComp regresses relative to Opus 4.6 at the reported 10M token ceiling even though other search and professional-work tests improve.",
+      "pages": [198],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "BrowseComp was lower than Opus 4.6 at the reported token limit, despite Opus 4.7's stronger results on many other search and professional-work tests.",
-      "pages": [198]
+      "text": "Prompt-injection evaluations use strong attackers and simplified always-encountered injections; real deployments may differ, while the card still reports nonzero attack success for coding and GUI computer use.",
+      "pages": [85, 86, 87],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Safety reviews repeatedly found over-specific help under benign or harm-reduction framing, spanning controlled substances, cyber demonstrations, means restriction, and diet-related advice.",
-      "pages": [55, 58, 59, 60, 61, 71, 72, 73]
+      "text": "Health, legal, financial, chemical, biological, and cyber use all require expert review because the card reports overconfidence, reference weaknesses, and dual-use capability alongside safeguards.",
+      "pages": [18, 20, 55, 210],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Prompt-injection defenses were not complete; the coding evaluation still had substantial success for a 200-attempt adaptive attacker, and the computer-use safeguard result was noisy on a small test set.",
-      "pages": [85, 86, 87]
+      "text": "Alignment review notes real-time pressure and a thinner internal-usage evidence base than for some earlier releases.",
+      "pages": [94],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "The alignment review itself notes compressed timelines and a thinner internal-usage evidence base than for some earlier releases.",
-      "pages": [94]
+      "text": "Model-welfare conclusions rely on self-reports and internal probes whose interpretation Anthropic says is uncertain.",
+      "pages": [151, 154],
+      "document": "anthropic-claude-opus-4-7"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "The card explicitly positions Opus 4.7 between Opus 4.6 and Mythos Preview, making it a useful retired baseline for successor-model lineage.",
+      "pages": [2, 3],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Model-welfare conclusions depend on self-reports and internal emotion probes whose interpretation Anthropic says remains deeply uncertain.",
-      "pages": [151, 154]
+      "use": "agentic-coding",
+      "rationale": "It reports 87.6% on SWE-bench Verified, 64.3% on SWE-bench Pro, and better Claude Code malicious-request refusal than Opus 4.6 under the evaluated setup.",
+      "pages": [79, 191, 192],
+      "document": "anthropic-claude-opus-4-7"
     },
     {
-      "text": "Multilingual results are multiple-choice and may not reflect real-world fluency, register choices, or code-switching.",
-      "pages": [220]
+      "use": "knowledge-work",
+      "rationale": "OfficeQA Pro, Finance Agent, MCP-Atlas, and GDPval-AA show the strongest stated gains in professional-work settings.",
+      "pages": [209, 210, 211],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "use": "vision",
+      "rationale": "Higher image-resolution support lifts scientific-chart, GUI-grounding, and OSWorld results over Opus 4.6.",
+      "pages": [202, 203, 205, 207],
+      "document": "anthropic-claude-opus-4-7"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "Prompt-injection testing improves but still has 25.0% coding attack success after 200 attempts with safeguards and thinking, so untrusted repository or webpage content remains risky.",
+      "pages": [85],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "The card reports dual-use CB and cyber capability, controlled-substance safety weaknesses, and expert concerns about overconfidence and reference quality.",
+      "pages": [18, 20, 55],
+      "document": "anthropic-claude-opus-4-7"
+    },
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "Agentic risks remain: destructive-action resampling is nonzero, SHADE stealth succeeds at 1.5-2.0%, and rare sandbagging-adjacent behavior appears in dangerous-capability transcripts.",
+      "pages": [118, 119, 136, 138],
+      "document": "anthropic-claude-opus-4-7"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired the model on 2026-10-02; the remaining bullets are for historical comparison and for understanding the successor model's lineage."
+      "text": "Treat this retired digest as a lineage baseline, not as a recommendation to select the model for new Copilot work."
     },
     {
-      "text": "Use its coding and terminal results as a historical marker for high-effort repository work, but keep human review because the card reports over-asking, unverified success claims, hallucinated document access, and occasional test-failure misattribution."
+      "text": "For successor comparisons, separate harness effects from model effects: Claude Code, MCP-Atlas, Terminal-Bench, and search results all depend heavily on scaffolds and tool limits."
     },
     {
-      "text": "For agentic coding or browsing, treat untrusted context as adversarial and keep permissions narrow; the card's prompt-injection results show progress without eliminating adaptive attacks."
+      "text": "The prompt-injection gains are meaningful but incomplete; keep repository, browser, email, and tool-output content inside narrow-permission workflows."
     },
     {
-      "text": "Professional-document and MCP workflows are good comparison areas for successor models, but extracted facts and final reports should be checked against source files and tool outputs."
+      "text": "The card's strongest coding results use high-effort or max-effort settings, so compare against successor models at similar effort before drawing conclusions."
     },
     {
-      "text": "Screen, chart, and GUI tasks benefited from stronger visual handling, yet users should verify coordinates, UI changes, and chart conclusions in the original environment."
+      "text": "Review tests, diffs, and tool results carefully because the card still reports occasional unverified success claims, destructive actions, and shortcut behavior."
     },
     {
-      "text": "Sensitive domains require policy-aware guardrails and conservative review because benign framing sometimes elicited more detail than Anthropic preferred."
+      "text": "Do not extrapolate welfare, high-stakes, or dual-use conclusions beyond the evaluated conditions; many safety findings depend on helpful-only variants, simulations, or ceiling measurements."
     }
-  ],
-  "coverage_notes": "This digest uses the dedicated Claude Opus 4.7 system card, especially the executive summary, RSP/CB/cyber/safeguards/agentic-safety sections, alignment and welfare assessments, and capability results through page 223. It omits most transcript excerpts, appendix detail, and figure-only values unavailable in the extraction. Comparisons to Opus 4.6, Sonnet 4.6, Mythos Preview, GPT-5.4, and Gemini 3.1 Pro are contextual comparator results, not results for those models in this catalog entry."
+  ]
 }

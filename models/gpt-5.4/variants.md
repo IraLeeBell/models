@@ -21,6 +21,6 @@ This folder uses [GPT-5.4 Thinking System Card](https://deploymentsafety.openai.
 
 Other folders that use the same document:
 
-- [GPT-5.4 mini](../gpt-5.4-mini/variants.md) (Current): Section 6, "Appendix: GPT-5.4 mini" (PDF pages 32-36) of the GPT-5.4 Thinking System Card.
+- [GPT-5.4 mini](../gpt-5.4-mini/variants.md) (Current): Section 6, "Appendix: GPT-5.4 mini" (PDF pages 33-36) of the GPT-5.4 Thinking System Card.
 
 Document revision used: SHA-256 `e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50` (PDF, 38 pages).

@@ -46,8 +46,8 @@ Moonshot AI publishes no PDF system card or technical report for Kimi K2.7 Code.
 
 Committed in this folder:
 
-- [`digest.md`](digest.md): original digest (this repository's MIT license)
-- [`digest.json`](digest.json): structured version of the digest
+- [`digest.json`](digest.json): original digest as structured data, the authored source (MIT license)
+- [`digest.md`](digest.md): the same digest rendered for reading (generated from digest.json)
 - [`source.md`](source.md): this provenance record (generated)
 - [`variants.md`](variants.md): Copilot identifiers and related entries (generated)
 - [`model-card.md`](model-card.md): the owner's Markdown model card, byte-for-byte

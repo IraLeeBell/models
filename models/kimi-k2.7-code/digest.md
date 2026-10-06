@@ -1,60 +1,137 @@
 # Kimi K2.7 Code
 
-> Original digest of *Kimi K2.7 Code (Hugging Face model card)* (Moonshot AI; Hugging Face Markdown model card, no PDF exists). Citations use README section headings rather than page numbers. This summary paraphrases the publisher's document and is not a substitute for it; see [source.md](source.md) for provenance and [model-card.md](model-card.md) for the full text.
+<!-- Generated from digest.json by models/digest_check.py. Edit digest.json, then run `python3 digest_check.py --write kimi-k2.7-code`. -->
+
+> Original digest of *Kimi K2.7 Code (Hugging Face model card)* (Moonshot AI, undated; Markdown model card, no PDF). Citations use the card's section headings. This summary paraphrases the publisher's document and is not a substitute for it; see [source.md](source.md) for provenance and [model-card.md](model-card.md) for the full text.
+
+**Copilot status:** Retired from GitHub Copilot on 2026-10-02. This digest is kept for historical comparison and model lineage.
 
 ## At a glance
 
-- Kimi K2.7 Code is described as a coding-focused agentic model built on Kimi K2.6, with improved long-horizon software-engineering performance and about 30% lower thinking-token use than K2.6 (§ 1. Model Introduction).
-- The model summary lists a Mixture-of-Experts architecture with 1T total parameters, 32B activated parameters, 61 layers, 384 experts, 8 selected experts per token, and a 256K context length (§ 2. Model Summary).
-- The card reports a MoonViT vision encoder with 400M parameters and an image-text-to-text pipeline tag, plus examples for image and video inputs (§ 2. Model Summary; § 6. Model Usage).
-- Evaluation results cover six coding and agentic benchmarks; Kimi K2.7 Code improves over Kimi K2.6 on every listed benchmark but trails GPT-5.5 or Claude Opus 4.8 on several rows (§ 3. Evaluation Results).
-- Deployment guidance recommends vLLM, SGLang, or KTransformers, gives a `transformers` version range, and says deployment can reuse K2.5/K2.6 architecture assumptions (§ 5. Deployment).
-- Usage guidance says thinking mode and preserve-thinking behavior are forced; instant mode is not supported, and video input is experimental outside the official API (§ 6. Model Usage).
-- The Hugging Face card has little safety content: it does not report harmful-content, cyber, jailbreak, or other behavioral safety evaluations (§ 3. Evaluation Results).
+Kimi K2.7 Code is a retired Moonshot AI coding-agent model carded as built on Kimi K2.6. The card lists a 1T-parameter MoE with 32B active parameters, 256K context, forced thinking, preserve-thinking, image/video input examples, and six coding or agentic benchmark rows. It gives almost no behavioral-safety evidence, so its main value is historical comparison and lineage.
+
+- **Choose it for:** Historical comparison of the Kimi coding-agent lineage and the K2.6-to-K2.7 Code benchmark step.
+- **Watch out for:** Retired in GitHub's catalog and missing safety, release-date, training-data, and prompt-injection results.
+- The card says Kimi K2.7 Code is a coding-focused agentic model built on Kimi K2.6 and uses about 30% fewer thinking tokens than K2.6. (§ 1. Model Introduction)
+- The summary table lists a MoE architecture with 1T total parameters, 32B active parameters, 384 experts, 8 selected experts per token, MoonViT vision, and 256K context. (§ 2. Model Summary)
+- It improves over Kimi K2.6 on all six listed rows, including 62.0 on Kimi Code Bench v2, 53.6 on Program Bench, 76.0 on MCP Atlas, and 81.1 on MCPMark Verified. (§ 3. Evaluation Results)
+- The card says thinking and preserve-thinking are forced, instant mode is unsupported, and video input is experimental outside the official API. (§ 6. Model Usage)
+- No dedicated safety section or safety benchmark table appears; the reported measurements are coding and agentic capability rows. (§ 3. Evaluation Results)
 
 ## Capabilities
 
-- Kimi K2.7 Code is presented as a coding-specialized model for real-world, long-horizon agentic software tasks, built on Kimi K2.6 (§ 1. Model Introduction).
-- The architecture table lists 1T total parameters, 32B activated parameters, 61 layers, 384 experts, 8 selected experts per token, a 256K context, MLA attention, SwiGLU activation, and MoonViT vision support (§ 2. Model Summary).
-- Benchmark coverage includes coding-agent tasks, program reconstruction, ML-systems tasks, persistent professional scenarios, MCP tool use, and verified MCP tasks (§ 3. Evaluation Results).
-- The model supports official API chat examples with text, image, and video content, while third-party serving is framed around vLLM and SGLang with caveats (§ 6. Model Usage).
-- Preserve-thinking behavior is enabled by default and cannot be disabled, which the card links to multi-turn coding-agent performance (§ 6. Model Usage).
+### Key facts
+
+| Fact | Value | Source |
+| --- | --- | --- |
+| Release date | Not stated. The model card is undated and does not state a release date. | — |
+| Knowledge cutoff | Not stated. The model card does not state a knowledge cutoff. | — |
+| Context window | 262,144 tokens (stated as 262,144-token context length). The architecture table says 256K; the evaluation footnote spells out 262,144 tokens. | § 3. Evaluation Results |
+| Maximum output | Not stated. Examples set max_tokens to 4096 or 8192, but the card does not state a model maximum. | — |
+| Input modalities | Text, Image, Video (stated as K2.7-Code supports Image and Video input) | § Chat Completion with visual content |
+| Output modalities | Text. Examples print reasoning content and response text; no non-text output modality is stated. | § Chat Completion |
+| Reasoning controls | Always reasons, Extended thinking (stated as forces thinking and preserve_thinking as True) | § 6. Model Usage |
+| Effort levels | Not stated. The card names thinking mode but does not list selectable effort levels for Kimi K2.7 Code. | — |
+| Tool use | Function calling, MCP. The card points to interleaved thinking with multi-step tool calls and reports MCP tool-use benchmarks. | § Interleaved Thinking and Multi-Step Tool Call |
+| Open weights | Yes (stated as model weights are released under the Modified MIT License) | § 7. License |
+| Architecture | Mixture of experts (stated as Mixture-of-Experts (MoE)) | § 2. Model Summary |
+| Total parameters | 1 trillion (stated as 1T) | § 2. Model Summary |
+| Active parameters | 32 billion (stated as 32B) | § 2. Model Summary |
+
+### Capability notes
+
+- Kimi K2.7 Code is described as a coding-focused agentic model built on Kimi K2.6 for complex long-horizon software workflows. (§ 1. Model Introduction)
+- The architecture table lists MoE, MLA attention, SwiGLU activation, one dense layer, 61 total layers, 384 experts, and one shared expert. (§ 2. Model Summary)
+- The card reports MoonViT with 400M parameters and a Hugging Face image-text-to-text pipeline tag, with examples for image and video calls. (§ 2. Model Summary)
+- Official examples run in thinking mode, show reasoning content separately from the final response, and set recommended temperature and top-p for thinking mode. (§ 6. Model Usage)
+- Preserve-thinking is enabled by default, cannot be disabled, and is presented as useful for multi-turn coding-agent scenarios. (§ Preserve Thinking)
+- The card says it works best with Kimi Code CLI as its coding-agent framework. (§ Coding Agent Framework)
 
 ## Evaluations
 
-| Benchmark | Result | Context | Pages |
-| --- | --- | --- | --- |
-| Kimi Code Bench v2 | 62.0 | Coding benchmark; Kimi K2.6 is listed at 50.9, GPT-5.5 at 69.0, Claude Opus 4.8 at 67.4 | § 3. Evaluation Results |
-| Program Bench | 53.6 | Code-generation-agent benchmark; K2.6 is listed at 48.3 | § 3. Evaluation Results |
-| MLS Bench Lite | 35.1 | ML-systems subset; close to GPT-5.5's 35.5 and below Claude Opus 4.8's 42.8 | § 3. Evaluation Results |
-| Kimi Claw 24/7 Bench | 46.9 | Persistent long-horizon professional tasks; averaged over three runs according to the footnote | § 3. Evaluation Results |
-| MCP Atlas | 76.0 | MCP tool-use benchmark with a 100 tool-call limit and 32k max tokens per step | § 3. Evaluation Results |
-| MCP Mark Verified | 81.1 | Human-verified MCP tool-use benchmark across multiple server environments | § 3. Evaluation Results |
+Results are as the document reports them. Scores from different publishers, harnesses, effort levels, or tool settings are often not directly comparable; the Setting column records those conditions.
+
+### Headline coding and agentic results
+
+| Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| Kimi Code Bench v2 | — | score | 62.0% | Kimi Code CLI; thinking mode; temperature 1.0; top-p 0.95; 262,144-token context | Kimi K2.6 50.9% (thinking); GPT-5.5 69.0% (Codex xhigh); Claude Opus 4.8 67.4% (Claude Code xhigh) | § 3. Evaluation Results |
+| ProgramBench | — | success rate | 53.6% | Kimi Code CLI; thinking mode; 200 tasks; no source, decompilation, or internet; behavioral tests | Kimi K2.6 48.3% (thinking); GPT-5.5 69.1% (Codex xhigh); Claude Opus 4.8 63.8% (Claude Code xhigh) | § 3. Evaluation Results |
+| Kimi Claw 24/7 Bench | — | score | 46.9% | OpenClaw; thinking mode; 17 professional scenarios; 610 evaluation points; averaged over 3 runs | Kimi K2.6 42.9% (thinking); GPT-5.5 52.8% (Codex xhigh); Claude Opus 4.8 50.4% (Claude Code xhigh) | § 3. Evaluation Results |
+| MCP Atlas | — | success rate | 76.0% | Kimi Code CLI; thinking mode; official configuration; 100 tool-call limit; 32k max tokens per step; averaged over 3 runs | Kimi K2.6 69.4% (thinking); GPT-5.5 79.4% (Codex xhigh); Claude Opus 4.8 81.3% (Claude Code xhigh) | § 3. Evaluation Results |
+| MCPMark Verified | — | score | 81.1% | Kimi Code CLI; thinking mode; five server environments; 100-step tool-call limit; 32k max tokens per step; averaged over 3 runs | Kimi K2.6 72.8% (thinking); GPT-5.5 92.9% (Codex xhigh); Claude Opus 4.8 76.4% (Claude Code xhigh) | § 3. Evaluation Results |
+
+### Other reported results
+
+| Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| MLS Bench Lite | — | score | 35.1% | Kimi Code CLI; thinking mode; 30-task MLS-Bench subset; 5 hours before submission | Kimi K2.6 26.7% (thinking); GPT-5.5 35.5% (Codex xhigh); Claude Opus 4.8 42.8% (Claude Code max) | § 3. Evaluation Results |
 
 ## Safety findings
 
-- The card does not include a dedicated safety section; its reported measurements are capability and agentic benchmarks rather than behavioral-safety evaluations (§ 3. Evaluation Results).
-- Deployment guidance narrows supported serving paths to specific inference engines and a `transformers` version range, which helps operational reproducibility but is not a safety evaluation (§ 5. Deployment).
-- Usage notes flag video input as experimental and supported only by the official API, and state that instant mode is unavailable (§ 6. Model Usage).
-- The Modified MIT license governs the repository and weights, but the card does not describe acceptable-use rules or safety mitigations (§ 7. License).
+### Safety classification
+
+- **Framework:** No safety framework stated
+- **Overall determination:** Not stated
+
+The Hugging Face model card does not state a safety framework or overall safety classification. It provides capability benchmarks, deployment notes, usage examples, and license information, but no formal risk level or safety-threshold determination.
+
+The document states no per-domain determinations.
+
+### Agentic-coding risks
+
+- **Reward hacking** (not reported): The card reports capability benchmarks and footnotes, but no reward-hacking or grader-gaming evaluation.
+- **Test tampering** (not reported): The card does not evaluate editing or weakening tests.
+- **Destructive or overeager actions** (not reported): The card does not report destructive or over-eager action testing.
+- **Sabotage** (not reported): The card does not report sabotage, monitor evasion, or oversight-evasion tests.
+- **Prompt injection** (not reported): The card includes MCP tool-use benchmarks but no prompt-injection or instruction-hierarchy evaluation.
+- **Honesty** (not reported): The card does not report honesty, deception, hallucinated success, or calibration results.
+- **Sycophancy** (not reported): The card does not report sycophancy testing.
+
+### Other safety findings
+
+- The card has no dedicated safety-evaluation section; all reported benchmark rows are capability results for coding or agentic work. (§ 3. Evaluation Results)
+- Deployment guidance lists recommended inference engines and says Kimi-K2.7-Code has the same architecture as Kimi-K2.5 and Kimi-K2.6, but this is operational guidance rather than safety evidence. (§ 5. Deployment)
+- Usage notes make video experimental outside the official API, force thinking and preserve-thinking, and say instant mode is unsupported. (§ 6. Model Usage)
+- The license section states that both the repository code and model weights are under the Modified MIT License; it does not add a safety policy. (§ 7. License)
 
 ## Limitations and caveats
 
-- The card says Kimi K2.7 Code is built on Kimi K2.6, but it does not provide training data, training dates, or a full technical-report lineage for this specific checkpoint (§ 1. Model Introduction).
-- Comparisons use different products and settings: Kimi models run through Kimi Code CLI with thinking mode, GPT-5.5 uses Codex xhigh, and Claude Opus 4.8 uses Claude Code xhigh (§ 3. Evaluation Results).
-- Safety coverage is very thin; no harmful-content, cyber, jailbreak, or prompt-injection robustness scores are reported (§ 3. Evaluation Results).
-- Third-party deployments have feature limits: video is experimental outside the official API, instant mode is unsupported, and preserve-thinking is forced (§ 6. Model Usage).
-- The GitHub catalog marks this Copilot model retired on 2026-10-02, so the card is mainly useful for historical comparison (§ 1. Model Introduction).
+- The card says Kimi K2.7 Code is built on Kimi K2.6, but does not provide training data, training dates, knowledge cutoff, or a full technical report for this checkpoint. (§ 1. Model Introduction)
+- Comparisons mix Kimi Code CLI thinking mode, Codex xhigh for GPT-5.5, and Claude Code xhigh or max for Claude Opus 4.8. (§ 3. Evaluation Results)
+- No harmful-content, cyber, jailbreak, prompt-injection, honesty, or sycophancy scores are reported. (§ 3. Evaluation Results)
+- Third-party serving has feature limits: video is experimental outside the official API, preserve-thinking is forced, and instant mode is unavailable. (§ 6. Model Usage)
+- The card gives examples with 4096 and 8192 max_tokens settings but does not state the model's maximum output limit. (§ 6. Model Usage)
 
 ## Practical implications for Copilot users
 
-- GitHub retired the model on 2026-10-02; the remaining bullets are for historical comparison and for understanding the successor model's lineage.
-- Use the README's benchmarks to understand why it was positioned for coding-agent workflows, not to infer broad chat or safety behavior.
-- The 256K context and forced thinking behavior fit multi-step coding tasks, but generated changes still need tests, review, and careful tool permissions.
-- Because the card lacks safety evaluations, do not treat Kimi K2.7 Code as vetted for harmful-content refusal, cyber misuse resistance, or prompt-injection robustness.
-- The model card states that K2.7 Code is built on K2.6; do not import claims from older Kimi reports unless they are repeated in this README.
-- For multimodal use, remember that video input was described as experimental and tied to the official API.
+### Choose it for
+
+- **Historical comparison:** The model is retired in GitHub's catalog, and the card is most useful for comparing the Kimi K2.6 to K2.7 Code coding-agent step. (§ 1. Model Introduction)
+- **Agentic coding:** All six listed rows are coding or agentic benchmarks, and Kimi K2.7 Code improves over Kimi K2.6 on every row. (§ 3. Evaluation Results)
+- **Long-horizon autonomy:** The introduction and Kimi Claw 24/7 Bench position it for persistent, multi-day agentic workflows, though only as historical guidance now. (§ 1. Model Introduction)
+
+### Avoid it for
+
+- **Untrusted input:** MCP and multi-step tool use are reported, but no prompt-injection robustness result is provided. (§ 3. Evaluation Results)
+- **High-stakes domains:** The card lacks harmful-content, cyber-safety, medical, legal, or broader behavioral-safety measurements. (§ 3. Evaluation Results)
+- **Low latency:** The card forces thinking and preserve-thinking and explicitly says instant mode is not supported. (§ 6. Model Usage)
+
+### Guidance
+
+- GitHub retired Kimi K2.7 Code from Copilot on 2026-10-02; the guidance below serves historical comparison and the lineage of later models.
+- Because GitHub retired the model, use this digest for historical comparison and lineage rather than new Copilot selection.
+- Do not transfer safety claims from other Kimi reports; this card does not report broad behavioral safety results.
+- The forced thinking behavior and 256K context explain its coding-agent positioning, but generated code still needs tests and review.
+- Treat MCP and tool-call workflows as prompt-injection exposed because the card provides no robustness result.
+- For multimodal history, distinguish image support from experimental video support outside the official API.
 
 ## Document coverage
 
-This digest uses only the Hugging Face Markdown model card for Kimi K2.7 Code. It covers the introduction, architecture table, benchmark table and footnotes, deployment instructions, usage notes, and license section. It does not import facts from Kimi K2, K2.5, K2.6, or K3 reports beyond the README's statement that K2.7 Code is built on Kimi K2.6.
+The owner document is the Hugging Face Markdown model card for the retired Kimi K2.7 Code checkpoint. Citations use section headings rather than pages. The digest does not import Kimi K2, K2.5, K2.6, or K3 technical-report facts except where this card itself states lineage, architecture reuse, or benchmark conditions.
+
+- **Card type:** Dedicated. The document is about this model; it may include short sibling sections.
+- **Pages specific to this model:** the whole document
+- **Names the document uses for this model:** Kimi K2.7 Code, Kimi-K2.7-Code, K2.7-Code
+- **Catalog scope:** Moonshot AI's Hugging Face model card for Kimi K2.7 Code. It describes the model as built on Kimi K2.6 with the same architecture as K2.5 and K2.6.
+- **Catalog note:** Moonshot AI publishes no PDF system card or technical report for Kimi K2.7 Code. The Hugging Face model card (Markdown) is the owner document; the older Kimi K2 and K2.5 reports are not substituted.

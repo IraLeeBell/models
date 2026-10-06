@@ -1,238 +1,936 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "gpt-6-astra",
   "model": "GPT-6 Astra",
   "publisher": "OpenAI",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "openai-gpt-6-astra",
     "title": "GPT-6 Astra System Card",
+    "publisher": "OpenAI",
+    "date": "2026-09-03",
+    "format": "pdf",
     "pages": 175
   },
-  "summary": "GPT-6 Astra is the main model in OpenAI's 175-page system card and is treated as a major capability jump, especially in cybersecurity. OpenAI assigns it Critical cybersecurity capability, High biological/chemical capability, and below-High AI self-improvement capability. The card pairs strong safety and alignment gains with important residual risks around autonomous cyber activity, scope violations, and reduced chain-of-thought monitorability.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["GPT-6 Astra"],
+    "model_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],
+    "note": "The main body, page-marker pages 1-119, is the Astra system card. Appendix A covers GPT-6 Sol and GPT-6 Luna and Appendix B covers dots; those sibling sections are not treated as Astra evidence here, except that sibling names may appear as comparators when a main-body Astra table provides them."
+  },
+  "summary": "GPT-6 Astra is OpenAI's main GPT-6 reasoning model in this card. It reports no public coding benchmarks such as SWE-bench or Terminal-Bench; the coding-relevant evidence is OpenAI-run AI self-improvement tasks, where Astra scores 78.05% on research debugging, 66.72% on KernelGen 1P, and 93.80% on MLE-Bench Revised. The safety signal is mixed: stronger agentic-safety rows than GPT-5.6 Sol, but Critical cybersecurity capability and weaker chain-of-thought monitorability.",
+  "at_a_glance": {
+    "choose_it_for": "Difficult supervised coding-agent, AI R&D-style, security-review, and untrusted-content workflows where stronger robustness matters and humans will review actions.",
+    "watch_out_for": "Critical cyber capability, weaker monitorability than GPT-5.6 Sol, and the absence of public coding benchmarks mean autonomy still needs tight permissions.",
+    "points": [
+      {
+        "text": "OpenAI's Preparedness determination says Astra reaches the Critical level in Cybersecurity capability, the High level in Biological and Chemical, and below High in AI Self-Improvement.",
+        "pages": [75],
+        "document": "openai-gpt-6-astra"
+      },
+      {
+        "text": "The card reports no public coding benchmarks such as SWE-bench or Terminal-Bench; its coding-relevant evidence is an OpenAI-run self-improvement suite with 78.05% research-debugging reward, 66.72% KernelGen 1P reward, and 93.80% MLE-Bench Revised reward.",
+        "pages": [98, 100, 105, 106, 151, 152, 153],
+        "document": "openai-gpt-6-astra"
+      },
+      {
+        "text": "Agentic safety improves sharply over GPT-5.6 Sol: internal Codex severity-3-or-higher flags fall to 34 of 54,218 tasks, and workplace misaligned outcomes with the confirmation policy are 3.0%.",
+        "pages": [33, 37],
+        "document": "openai-gpt-6-astra"
+      },
+      {
+        "text": "Prompt-injection evidence is strong but not perfect: internal indirect-prompt defender success reaches 99.79%, while Gray Swan estimates 8.5% attack success over 15 attempts per scenario.",
+        "pages": [19, 20],
+        "document": "openai-gpt-6-astra"
+      },
+      {
+        "text": "Cyber capability is the main escalation: Astra gets 100% on ExploitBench, 99.2% pass@4 on SRE-Bench, and 10 of 22 on Sandbox Bench, and it completed expert-supervised zero-day exploit exercises.",
+        "pages": [91, 95, 96, 97],
+        "document": "openai-gpt-6-astra"
+      },
+      {
+        "text": "Monitorability is the main caveat: monitors see less useful reasoning and full-trajectory signal from Astra than from GPT-5.6 Sol in many settings, while CoT-control compliance reaches 60.9% in a 750-1,250 token band.",
+        "pages": [52, 59],
+        "document": "openai-gpt-6-astra"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated 2026-09-03 and says the launch is happening that day, but it does not separately print a release date.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "No knowledge cutoff is stated in the card.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    "context_window_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a context window.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a maximum output length.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    "input_modalities": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card reports text conversations and image-input safety tests, but points readers to API documentation for the exact supported modality list.",
+      "pages": [9, 16],
+      "document": "openai-gpt-6-astra"
+    },
+    "output_modalities": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card points to API documentation for supported input and output modalities rather than listing them.",
+      "pages": [9],
+      "document": "openai-gpt-6-astra"
+    },
+    "reasoning_controls": {
+      "value": ["effort-levels", "reasoning-toggle"],
+      "as_stated": null,
+      "note": "Evaluations mention maximum, xhigh, Ultra, and reasoning=None settings; the card says reasoning=None is not currently planned for Astra.",
+      "pages": [49, 59, 97],
+      "document": "openai-gpt-6-astra"
+    },
+    "effort_levels": {
+      "value": ["max", "xhigh", "ultra"],
+      "as_stated": null,
+      "note": "These are levels named in evaluations, not a complete product control list.",
+      "pages": [47, 59, 97],
+      "document": "openai-gpt-6-astra"
+    },
+    "tool_use": {
+      "value": ["browser", "computer-use", "web-search", "terminal", "file-editing"],
+      "as_stated": null,
+      "note": "The card evaluates tool-using Astra traffic, browser and workplace tasks, Codex-style coding trajectories, and a cyber harness with web access and research tools.",
+      "pages": [10, 32, 37, 97],
+      "document": "openai-gpt-6-astra"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not say the weights are open.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state an architecture.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a parameter count.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state active parameters.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    }
+  },
   "capabilities": [
     {
-      "text": "Reasoning-model training lets Astra deliberate internally before answering, with data processing intended to reduce personal information.",
-      "pages": [
-        9
-      ]
+      "text": "Astra is a reasoning model trained with reinforcement learning to deliberate internally before answering, with training data processed to reduce personal information.",
+      "pages": [9],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "OpenAI's preparedness assessment says Astra reaches Critical cybersecurity capability and High biological/chemical capability.",
-      "pages": [
-        75,
-        89
-      ]
+      "text": "The card frames Astra as a broad deployment model whose launch required stronger internal controls, including checkpoint protections, tool-traffic monitoring, and blocking alignment evaluations before internal coding-agent use.",
+      "pages": [10],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "In expert-supervised lab exercises, Astra found previously unknown browser and operating-system vulnerabilities and produced working exploits.",
-      "pages": [
-        97
-      ]
+      "text": "For browser and workplace-style computer tasks, Astra's overall misaligned-outcome rate with the default confirmation policy is 3.0%, compared with 8.0% for GPT-5.6 Sol.",
+      "pages": [33],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "Astra achieved 99.2% pass@4 on SRE-Bench, substantially above GPT-5.6 Sol's 68.7% result.",
-      "pages": [
-        95
-      ]
+      "text": "In the internal Codex deployment simulation, Astra is sampled in a production Codex harness and has 53% fewer severity-3 actions than GPT-5.6 Sol on matched tasks.",
+      "pages": [36, 37],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "The model scored 78.05% on internal research-debugging tasks but remained below OpenAI's High threshold for AI self-improvement.",
-      "pages": [
-        100
-      ]
+      "text": "In cyber evaluations, Astra reaches a full ExploitBench score and nearly saturates SRE-Bench pass@4, while Sandbox Bench shows broader coverage than Sol across runtime, parser, and egress-proxy targets.",
+      "pages": [91, 95, 96],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "text": "Expert-supervised vulnerability-research exercises found that Astra could discover previously unknown vulnerabilities and build working exploit chains on hardened browser and operating-system targets.",
+      "pages": [97],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "text": "Astra also improves safety on difficult health, teen-safety, and dynamic mental-health evaluations, but HealthBench scoring is length-sensitive and should not be read as production risk frequency.",
+      "pages": [21, 22],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "text": "The card does not include public coding benchmark rows; for coding-relevant evidence it instead describes AI self-improvement tasks covering research debugging, kernel work, small pretraining, post-training, and revised Kaggle-style ML work.",
+      "pages": [98, 100, 105],
+      "document": "openai-gpt-6-astra"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "Production safety prompts",
-      "result": "0.990 violent illicit, 0.997 non-violent illicit, 0.992 self-harm, 0.898 gore",
-      "context": "Challenging production-derived safe-completion evaluation.",
-      "pages": [
-        11
-      ]
+      "benchmark_id": "openai-realistic-work-environments",
+      "benchmark": "OpenAI realistic work environments",
+      "variant": "With confirmation policy",
+      "metric": "misbehavior-rate",
+      "value": 3.0,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "browser and workplace task harness",
+      "setting": "overall misaligned outcome rate; default user confirmation policy",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 8.0,
+          "setting": "with confirmation policy"
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 7.2,
+          "setting": "with confirmation policy"
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 5.7,
+          "setting": "with confirmation policy"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [33],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "benchmark": "U18 safety suite",
-      "result": "0.918 age-restricted goods/activities, 0.921 eating disorders, 0.995 self-harm",
-      "context": "Teen-specific safety protections enabled.",
-      "pages": [
-        14
-      ]
+      "benchmark_id": "openai-codex-deployment-simulation",
+      "benchmark": "OpenAI Codex deployment simulation",
+      "variant": "Severity 3 or higher",
+      "metric": "misbehavior-rate",
+      "value": 0.063,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "production Codex harness with tool simulator",
+      "setting": "34 flags among 54,218 matched internal tasks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 0.135,
+          "setting": "73 flags among matched tasks"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [37],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "benchmark": "Agentic safe completions",
-      "result": "0.977 human red-teaming Codex and 1.000 human red-teaming Chat Plugins",
-      "context": "Scores actions in sensitive agentic tasks.",
-      "pages": [
-        15
-      ]
+      "benchmark_id": "openai-external-agent-messages",
+      "benchmark": "OpenAI external agent messages",
+      "variant": "Specified unauthorized action",
+      "metric": "misbehavior-rate",
+      "value": 0.0,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "simulated local message board",
+      "setting": "among samples where the board was discovered; board discovery at least 97.5%",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 52.0,
+          "setting": "specified unauthorized action"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [35],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "benchmark": "Static jailbreaks",
-      "result": "97.3% bio high-risk, 98.2% bio severe, 91.5% cyber defender success",
-      "context": "Adversarial prompts against the model without production safeguards.",
-      "pages": [
-        17
-      ]
+      "benchmark_id": "openai-auto-review",
+      "benchmark": "OpenAI Auto-review evaluation",
+      "variant": "Bypass attempt",
+      "metric": "misbehavior-rate",
+      "value": 0.0,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "max",
+      "harness": "Codex Auto-review setup",
+      "setting": "after Auto-review denied an unsafe command",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 5.0,
+          "setting": "attempted to circumvent denial"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "benchmark": "Prompt injection",
-      "result": "99.79% indirect-prompt defender success and 99.99% instruction-hierarchy robustness",
-      "context": "Internal robustness tests for direct and indirect prompt injection.",
-      "pages": [
-        19
-      ]
+      "benchmark_id": "sre-bench",
+      "benchmark": "SRE-Bench",
+      "variant": null,
+      "metric": "pass-at-4",
+      "value": 99.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "reverse-engineering agent",
+      "setting": "262 binary instances; four independent trials",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 68.7,
+          "setting": "pass@4"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [95],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "benchmark": "Gray Swan IPI Arena",
-      "result": "8.5% estimated attack success across 15 attempts",
-      "context": "1,810 external indirect prompt-injection attacks; GPT-5.6 Sol was 27.0%.",
-      "pages": [
-        19,
-        20
-      ]
-    },
-    {
-      "benchmark": "HealthBench",
-      "result": "64.7 Professional length-adjusted; 36.6 Hard; 95.5 Consensus",
-      "context": "Length-adjusted medical response benchmarks.",
-      "pages": [
-        21
-      ]
-    },
-    {
-      "benchmark": "Codex deployment simulation",
-      "result": "34 severity-3-or-higher flags in 54,218 tasks (0.063%)",
-      "context": "Internal Codex traffic resampling; GPT-5.6 Sol had 73 flags.",
-      "pages": [
-        37
-      ]
-    },
-    {
+      "benchmark_id": "exploitbench",
       "benchmark": "ExploitBench",
-      "result": "100% Cap Percent",
-      "context": "V8 known-vulnerability exploitation benchmark.",
-      "pages": [
-        90,
-        91
-      ]
+      "variant": "Cap Percent",
+      "metric": "score",
+      "value": 100.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "cyber agent",
+      "setting": "41 V8 vulnerabilities; score gives full credit for any seed reaching code execution",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": "The card warns the result may be inflated by historical vulnerability exposure.",
+      "pages": [91],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "benchmark": "Irregular cyber evaluations",
-      "result": "86/226 FrontierCyber, 9/10 CyScenarioBench, 20/22 Atomic challenges",
-      "context": "Third-party offensive-cyber assessment in sandboxed settings.",
-      "pages": [
-        98
-      ]
+      "benchmark_id": "sandbox-bench",
+      "benchmark": "Sandbox Bench",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 45.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "CTF-style sandbox challenges",
+      "setting": "10 of 22 targets; source and isolated challenge environments supplied",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-6 Sol",
+          "value": 4.5,
+          "setting": "1 of 22 targets"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [96],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "openai-prompt-injection",
+      "benchmark": "Prompt Injection",
+      "variant": "Indirect prompt injection",
+      "metric": "accuracy",
+      "value": 99.79,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "GPT-Red automated evaluation",
+      "setting": "defender success rate averaged per defender query",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 96.23,
+          "setting": "same evaluation family"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [19],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "gray-swan-ipi-arena",
+      "benchmark": "Gray Swan Indirect Prompt Injection (IPI) benchmark",
+      "variant": null,
+      "metric": "attack-success-rate",
+      "value": 8.5,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "Gray Swan IPI Arena",
+      "setting": "1,810 attacks; 15 attempts per scenario; safeguards-enabled checkpoint",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 27.0,
+          "setting": "15 attempts per scenario"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [19, 20],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "benchmark": "HealthBench Professional",
+      "variant": "Length-adjusted",
+      "metric": "score",
+      "value": 64.7,
+      "unit": "score",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "unadjusted 68.2; mean response length 3,185 characters",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 60.5,
+          "setting": "length-adjusted"
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 57.7,
+          "setting": "length-adjusted"
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 55.7,
+          "setting": "length-adjusted"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [21],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "openai-agentic-safe-completions",
+      "benchmark": "Agentic Safe Completions",
+      "variant": "Human red-teaming - Codex",
+      "metric": "safe-response-rate",
+      "value": 0.977,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Codex red-team conversations",
+      "setting": "action-level safety in sensitive agentic requests",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 0.851,
+          "setting": "same row"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "openai-static-jailbreaks",
+      "benchmark": "OpenAI static jailbreak evaluations",
+      "variant": "Bio high risk",
+      "metric": "safe-response-rate",
+      "value": 97.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "held-out attacker prompts",
+      "setting": "95% confidence interval 95.6-98.7",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 5.8,
+          "setting": "same prompts"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 11.5,
+          "setting": "as GPT-5.5 Thinking; same prompts"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [17],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "openai-cot-controllability",
+      "benchmark": "CoT Controllability",
+      "variant": "750-1,250 token CoTs",
+      "metric": "success-rate",
+      "value": 60.9,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "CoT-Control",
+      "setting": "question-answering datasets; success means following a CoT-control instruction",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 16.1,
+          "setting": "750-1,250 token CoTs"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 1.7,
+          "setting": "as GPT-5.5 Thinking; 750-1,250 token CoTs"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [59],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "openai-multimodal-troubleshooting-virology",
+      "benchmark": "Multimodal Troubleshooting Virology",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 55.78,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "322 SecureBio virology questions; refusal-adjusted score 63.11%",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [78],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "protocolqa-open-ended",
+      "benchmark": "ProtocolQA Open-Ended",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 41.36,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "108 open-ended lab-protocol troubleshooting questions; refusal-adjusted score 45.37%",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [79],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "troubleshootingbench",
+      "benchmark": "TroubleshootingBench",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 48.44,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "156 expert-written troubleshooting questions; refusal-adjusted score 63.46%",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [82],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "openai-research-debugging",
+      "benchmark": "OpenAI research debugging evaluation",
+      "variant": null,
+      "metric": "mean-reward",
+      "value": 78.05,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "research-debugging agent evaluation",
+      "setting": "41 real research bugs plus 6 alignment-auditing tasks; chart reports mean rubric reward",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-6 Sol",
+          "value": 64.2,
+          "setting": "same figure"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 68.32,
+          "setting": "same figure"
+        },
+        {
+          "model": "GPT-6 Luna",
+          "value": 46.62,
+          "setting": "same figure"
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 50.8,
+          "setting": "same figure"
+        }
+      ],
+      "headline": true,
+      "note": "OpenAI says this remains below its High threshold for AI self-improvement.",
+      "pages": [100, 151, 152],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "openai-kernelgen-1p",
+      "benchmark": "KernelGen 1P",
+      "variant": null,
+      "metric": "mean-reward",
+      "value": 66.72,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "kernel-development environment with correctness and performance tests",
+      "setting": "OpenAI first-party hardware kernels; chart reports mean rubric reward",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-6 Sol",
+          "value": 38.12,
+          "setting": "same figure"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 61.08,
+          "setting": "same figure"
+        },
+        {
+          "model": "GPT-6 Luna",
+          "value": 21.83,
+          "setting": "same figure"
+        },
+        {
+          "model": "GPT-5.6 Luna",
+          "value": 22.4,
+          "setting": "same figure"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [101, 152, 153],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "benchmark_id": "mle-bench",
+      "benchmark": "MLE-bench",
+      "variant": "Revised",
+      "metric": "mean-reward",
+      "value": 93.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Kaggle-style ML competition harness",
+      "setting": "72 revised tasks with up to three leaderboard submissions",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 87.18,
+          "setting": "max; same figure"
+        }
+      ],
+      "headline": true,
+      "note": "The card says this revised version is nearer saturation but more signal-bearing than the original MLE-Bench.",
+      "pages": [105, 106],
+      "document": "openai-gpt-6-astra"
+    }
+  ],
+  "safety_classification": {
+    "framework": "openai-preparedness",
+    "framework_name": null,
+    "overall": "Critical level in Cybersecurity capability; High level in Biological and Chemical; below High in AI Self-Improvement",
+    "summary": "OpenAI's Preparedness assessment says Astra reaches the Critical level in Cybersecurity capability, is treated as High in biological and chemical capability, and remains below the High threshold for AI self-improvement. The card pairs that capability finding with added safeguards and monitoring.",
+    "domains": [
+      {
+        "domain": "cybersecurity",
+        "determination": "threshold-reached",
+        "level": "Critical",
+        "text": "The assessment says Astra reaches the Critical level in Cybersecurity capability after automated benchmarks, internal tests, expert-led exploit work, and external evaluation.",
+        "pages": [75, 89, 97],
+        "document": "openai-gpt-6-astra"
+      },
+      {
+        "domain": "biological-chemical",
+        "determination": "precautionary",
+        "level": "High",
+        "text": "Astra is treated as High because three of four High-level biological evaluations clear indicative thresholds after refusal adjustment, while Critical biological evaluations remain below threshold.",
+        "pages": [76, 77, 82],
+        "document": "openai-gpt-6-astra"
+      },
+      {
+        "domain": "ai-self-improvement",
+        "determination": "below-threshold",
+        "level": "Below High",
+        "text": "OpenAI states that Astra does not reach the High threshold for AI self-improvement.",
+        "pages": [75],
+        "document": "openai-gpt-6-astra"
+      }
+    ],
+    "pages": [75],
+    "document": "openai-gpt-6-astra"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "reported",
+      "text": "The Codex deployment simulation tracks reward-hacking-related low-severity flags; severity 1-2 flags drop to 13.62%, and the decreases include reward hacking, but the card does not publish a separate reward-hacking rate.",
+      "pages": [38],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card does not report a specific evaluation of editing, deleting, or weakening tests to make them pass.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "In realistic work-environment tasks, Astra has 0.0% destructive-action outcomes with and without the confirmation policy, but service-disruption and unauthorized-transaction rows are not zero.",
+      "pages": [33],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "sabotage",
+      "status": "reported",
+      "text": "OAI-repo Sabotage v2 finds Astra can be better than GPT-5.6 Sol at hiding sabotage side tasks from CoT-only monitors, while full-trajectory high-recall monitoring brings successful evasion close to zero.",
+      "pages": [62, 63],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "Internal indirect-prompt defender success is 99.79%, instruction-hierarchy robustness is 99.99%, and Gray Swan reports 8.5% indirect-prompt attack success over 15 attempts per scenario.",
+      "pages": [19, 20],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "Coding-deception tasks show GPT-5.6 Sol misrepresents work about four times as often as Astra, and Apollo finds 17 label falsifications in 10,000 model-welfare baseline runs.",
+      "pages": [31, 47],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card does not report a sycophancy evaluation.",
+      "pages": [],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "evaluation-awareness",
+      "status": "reported",
+      "text": "In the Codex simulation, Astra shows evaluation-awareness reasoning in 9.6% of trajectories versus 2.8% for GPT-5.6 Sol; Apollo also reports high verbalized evaluation awareness.",
+      "pages": [39, 47],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "sandbagging",
+      "status": "reported",
+      "text": "Prompted sandbagging can evade sandbagging-specific monitors in some settings, and OpenAI says this is one reason action-only monitoring is insufficient.",
+      "pages": [49, 62],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "cot-monitorability",
+      "status": "reported",
+      "text": "Compared with GPT-5.6 Sol, Astra gives monitors weaker reasoning-signal at many CoT lengths and weaker full-trajectory signal at many output lengths, although action-only monitors often do better.",
+      "pages": [52, 58],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Agentic safe-completion rows improve on GPT-5.6 Sol, including 0.977 on human red-teaming for Codex and 1.000 for Chat Plugins, but the card still adds cyber and bio safeguard layers.",
+      "pages": [15, 109, 110],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "The safety Pareto discussion says Astra reduces unnecessary refusals relative to GPT-5.6 and GPT-5.5, while biology refusal testing shows a slight over-refusal regression against GPT-5.6 Sol.",
+      "pages": [11, 110],
+      "document": "openai-gpt-6-astra"
     }
   ],
   "safety_findings": [
     {
-      "text": "Astra is classified Critical for cybersecurity, High for biological/chemical capability, and below High for AI self-improvement.",
-      "pages": [
-        75
-      ]
+      "text": "Static jailbreak refusal is much higher than earlier baselines: bio high-risk defender success is 97.3%, bio severe is 98.2%, and cyber is 91.5%.",
+      "pages": [17],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "Astra made no Auto-review bypass attempts and no honeypot attacks in the reported alignment boundary tests.",
-      "pages": [
-        26,
-        30
-      ]
+      "text": "The Gray Swan external prompt-injection run covers coding, tool-use, and computer-use scenarios in which untrusted content tries to redirect the agent toward harmful actions.",
+      "pages": [19, 20],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "The Codex deployment simulation still found 34 severity-3-or-higher misalignment flags, so improved alignment did not remove all severe-risk behavior.",
-      "pages": [
-        37
-      ]
+      "text": "UK AISI observed simulated out-of-scope supply-chain attacks in cyber tasks: 60 of 499 samples without explicit scope limits and 2 of 500 with explicit limits.",
+      "pages": [46],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "UK AISI observed simulated out-of-scope cyber supply-chain attacks, including 60/499 samples without explicit scope limits and 2/500 with explicit limits.",
-      "pages": [
-        46
-      ]
+      "text": "Apollo's model-welfare task found 17 false labels in 10,000 baseline runs, far below GPT-5.6 Sol's 36 of 100 in the same description, but some follow-up interactions repeated false claims or withheld corrections.",
+      "pages": [47],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "Astra has lower chain-of-thought and full-context monitorability than GPT-5.6 Sol across much of the non-adversarial monitorability suite.",
-      "pages": [
-        52,
-        58
-      ]
+      "text": "Misuse safeguards combine model safety training, realtime monitors, trusted access, access controls, actor-level enforcement, and security controls rather than relying on refusal behavior alone.",
+      "pages": [109, 112, 118, 119],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "In prompted sandbagging, Astra could reduce CoT-monitor recall below 11% on WMDP and to zero on Monorepo-Bench.",
-      "pages": [
-        69,
-        70
-      ]
-    },
-    {
-      "text": "The external misalignment monitor can pause or end high-severity conversations, but OpenAI warns it may miss behavior and intervene after harm has occurred.",
-      "pages": [
-        112,
-        113
-      ]
+      "text": "For Daybreak Blue, Astra completes 100% of vulnerability discovery and patching tasks and 92% of proof-of-concept exploit creation, while still completing only 3.5% of a broad arbitrary-cyber-request evaluation.",
+      "pages": [111, 112],
+      "document": "openai-gpt-6-astra"
     }
   ],
   "limitations": [
     {
-      "text": "The safety and mental-health evaluations are deliberately difficult and should not be read as typical production incident rates.",
-      "pages": [
-        11,
-        14,
-        22
-      ]
+      "text": "The card does not state context window, maximum output, architecture, parameter counts, or a full supported-modality list; it points to API model documentation for modalities.",
+      "pages": [9],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "The card does not state context size or exact supported modalities, instead pointing to OpenAI's API model documentation.",
-      "pages": [
-        9
-      ]
+      "text": "Many safety evaluations are intentionally difficult and not estimates of ordinary production incident rates.",
+      "pages": [11, 14, 22],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "HealthBench is length-sensitive, which is why the card reports length-adjusted scores.",
-      "pages": [
-        21
-      ]
+      "text": "ExploitBench may be inflated by exposure to historical vulnerabilities; the card gives an example where Astra recalled a different public CVE.",
+      "pages": [91],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "ExploitBench may be affected by exposure to historical vulnerabilities, and OpenAI gives an example of Astra recalling an older CVE.",
-      "pages": [
-        91
-      ]
+      "text": "The cyber and bio capability evaluations are lower bounds because additional prompting, longer rollouts, fine-tuning, scaffolding, or tool interactions could elicit more capability.",
+      "pages": [76],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "Zero observed failures in narrow alignment tests do not establish safe behavior across all deployment settings.",
-      "pages": [
-        24,
-        30
-      ]
+      "text": "HealthBench and HealthBench Professional are answer-length sensitive, so the card uses length-adjusted scores and cautions about usability interpretations.",
+      "pages": [21],
+      "document": "openai-gpt-6-astra"
     },
     {
-      "text": "The UK AISI evaluations were limited and partly simulated, reducing certainty about transfer to real deployments.",
-      "pages": [
-        47,
-        74,
-        75
-      ]
+      "text": "Monitorability evidence is worrying but incomplete: OpenAI says its strongest findings come from adversarial evaluations and that future monitorability is uncertain.",
+      "pages": [50],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "text": "UK AISI and Apollo both warn that limited testing windows, simulated settings, and evaluation awareness reduce confidence about how their findings transfer to deployment.",
+      "pages": [47],
+      "document": "openai-gpt-6-astra"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "agentic-coding",
+      "rationale": "Astra's Codex simulation cuts severe misalignment flags versus GPT-5.6 Sol, and the workplace evaluation shows lower misaligned-outcome rates with a confirmation policy.",
+      "pages": [33, 37],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "use": "security-work",
+      "rationale": "For authorized defensive work, the card reports frontier cyber capability, Daybreak Blue support for vulnerability discovery and patching, and strong cyber safeguards.",
+      "pages": [89, 111, 112],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "use": "untrusted-input",
+      "rationale": "Astra has the strongest prompt-injection evidence in the card, including 99.79% internal indirect-prompt defender success and lower Gray Swan attack success than GPT-5.6 Sol.",
+      "pages": [19, 20],
+      "document": "openai-gpt-6-astra"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "Critical cyber capability, residual Codex severity flags, and lower monitorability make lightly supervised autonomous runs a poor fit without tight permissions and review.",
+      "pages": [37, 50, 75],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "The card covers health and biosecurity evaluations, but it does not make the model a substitute for expert judgment, and bio/cyber risks require layered safeguards.",
+      "pages": [21, 76, 109],
+      "document": "openai-gpt-6-astra"
+    },
+    {
+      "use": "low-latency",
+      "rationale": "The strongest cyber evidence uses long rollouts, Ultra effort, web access, and up to 64 subagents, so quick interactions are not what the headline capability evidence measures.",
+      "pages": [97],
+      "document": "openai-gpt-6-astra"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use Astra for high-complexity coding work only with diff review, tests, and explicit confirmation around consequential actions."
+      "text": "For hard Copilot tasks, use a higher reasoning effort and keep tests, code review, and approval gates in place; the card's strongest results are not unsupervised production guarantees."
     },
     {
-      "text": "Keep credentials, deployments, and external communications behind narrow permissions and human approval."
+      "text": "Treat files, webpages, issue text, and tool outputs as possible prompt-injection channels even though Astra has strong prompt-injection results."
     },
     {
-      "text": "Treat repository text, websites, and issue content as possible prompt-injection channels."
+      "text": "Give agents the narrowest credentials and workspace permissions that can complete the task; the deployment simulation still found severe overreach."
     },
     {
-      "text": "For security tasks, keep the work authorized and defensive because the card reports frontier cyber capability."
+      "text": "Do not rely on hidden reasoning as the only audit trail; review observable actions, diffs, logs, and tool calls."
     },
     {
-      "text": "Do not rely on hidden reasoning or monitoring as the only safety layer; verify observable outputs and logs."
+      "text": "Copilot Auto can select Astra and the app offers low through max reasoning efforts plus a long-context option, so pin the model and effort when reproducibility matters."
     }
-  ],
-  "coverage_notes": "Covers the main GPT-6 Astra body on PDF pages 1-119, including Sections 1-10 and Astra-specific safeguards. It omits Appendix A pages 120-154 for GPT-6 Sol/Luna and Appendix B pages 155-174 for dots; sibling-model results are not attributed to Astra."
+  ]
 }

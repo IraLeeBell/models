@@ -1,308 +1,1229 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "grok-4.7",
   "model": "Grok 4.7",
   "publisher": "xAI",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "xai-grok-4-7",
     "title": "Model Card: Grok 4.7",
+    "publisher": "xAI",
+    "date": "2026-09-21",
+    "format": "pdf",
     "pages": 30
   },
-  "summary": "Grok 4.7 is xAI's September 2026 successor to Grok 4.6, with a dedicated card focused on harder long-horizon coding, terminal, engineering, legal-agent, medical, biological-analysis, and cybersecurity tasks. Its safety story is mixed but deliberate: many coding and engineering scores improve, bio dual-use capability does not increase against Grok 4.6, jailbreak metrics improve, and self-harm compliance worsens.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Grok 4.7"],
+    "model_pages": [],
+    "note": "The whole 30-page card is about Grok 4.7. Earlier Grok versions and other publishers' models appear only as comparison points in charts and tables; this digest attributes those numbers to the models named, never to Grok 4.7. The card uses SpaceXAI and xAI interchangeably."
+  },
+  "summary": "Grok 4.7 is xAI's successor to Grok 4.6, aimed at long-running coding agents, engineering, and office work. Its card is mostly capability results, many run by third parties, with the largest gains on terminal and multi-hour coding tasks. Safety coverage centers on cyber, biological and chemical risk, jailbreaks, and refusals; it reports no evaluations of reward hacking, test tampering, destructive actions, or prompt injection.",
+  "at_a_glance": {
+    "choose_it_for": "Hard, long-running coding-agent and terminal tasks that you will review, where its gains over Grok 4.6 are largest.",
+    "watch_out_for": "No reward-hacking, test-tampering, destructive-action, or prompt-injection results, and no stated context window or output limit.",
+    "points": [
+      {
+        "text": "Long-horizon agentic coding improves most: Terminal-Bench 4.0 rises to 38.0% at xhigh from 20.3% for Grok 4.6, and SWE-Marathon v1.1 to 46.0% from 31.9%, both in third-party runs.",
+        "pages": [9, 11],
+        "document": "xai-grok-4-7"
+      },
+      {
+        "text": "Against other frontier models in the same charts it is competitive rather than dominant: 71.0% on DeepSWE v1.1 versus 72.7% for GPT-5.6 Sol (max), and 29.0% on FrontierSWE V2 versus 56.3% for Claude Fable 5.1 (max).",
+        "pages": [8, 10],
+        "document": "xai-grok-4-7"
+      },
+      {
+        "text": "xAI places it below its Frontier Artificial Intelligence Framework thresholds for dual-use biology and chemistry, with no gain in dual-use biology capability over Grok 4.6 and small cyber gains.",
+        "pages": [17, 20],
+        "document": "xai-grok-4-7"
+      },
+      {
+        "text": "It takes text and image input and returns text; pretraining data ends in June 2026, and the card gives no context window or output limit.",
+        "pages": [5],
+        "document": "xai-grok-4-7"
+      },
+      {
+        "text": "On xAI's behavior tests, MASK-Rectified dishonesty is 0.00% and sycophancy is 0.03%, but the card does not test agentic misbehavior such as gaming tests.",
+        "pages": [26, 27],
+        "document": "xai-grok-4-7"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated September 21, 2026 but gives no release date.",
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    "knowledge_cutoff": {
+      "value": "2026-06",
+      "as_stated": "pretraining data cutoff of June 2026",
+      "note": "Supplemental training used data generated as late as August 2026.",
+      "pages": [5],
+      "document": "xai-grok-4-7"
+    },
+    "context_window_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    "input_modalities": {
+      "value": ["text", "image"],
+      "as_stated": null,
+      "note": null,
+      "pages": [5],
+      "document": "xai-grok-4-7"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": null,
+      "pages": [5],
+      "document": "xai-grok-4-7"
+    },
+    "reasoning_controls": {
+      "value": ["effort-levels"],
+      "as_stated": null,
+      "note": "Results are reported per reasoning effort; the card does not describe the control itself.",
+      "pages": [6],
+      "document": "xai-grok-4-7"
+    },
+    "effort_levels": {
+      "value": ["high", "xhigh"],
+      "as_stated": null,
+      "note": "Levels used in the card's evaluations; the card does not list every available level.",
+      "pages": [6, 8],
+      "document": "xai-grok-4-7"
+    },
+    "tool_use": {
+      "value": ["terminal", "file-editing"],
+      "as_stated": null,
+      "note": "Evaluated as an agent in xAI's terminal-based Grok Build harness and with file and terminal tools; no API tool features are listed.",
+      "pages": [5, 12],
+      "document": "xai-grok-4-7"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "xai-grok-4-7"
+    }
+  },
   "capabilities": [
     {
-      "text": "The model is documented as text-output with text and image inputs, available through xAI API, Grok Build, Cursor, Office add-ins, and gateways.",
-      "pages": [
-        5
-      ]
+      "text": "Training extends the Grok 4.6 recipe: longer supplemental training on curated reasoning and engineering data with an improved optimizer, supervised trajectories generated by Grok 4.6, and agentic reinforcement learning on knowledge work, coding, kernel optimization, web development, and CAD.",
+      "pages": [5],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Training has a June 2026 pretraining cutoff and supplemental data through August 2026, extending the Grok 4.6 recipe.",
-      "pages": [
-        5
-      ]
+      "text": "A footnote says supplemental training included anonymized Cursor workflow data to improve coding and agentic performance.",
+      "pages": [4],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Long-horizon coding evidence comes from CursorBench 4.0, DeepSWE v1.1, Terminal-Bench 4.0, FrontierSWE V2, and SWE-Marathon v1.1.",
-      "pages": [
-        6,
-        8,
-        9,
-        10,
-        11
-      ]
+      "text": "It is the default model in xAI's terminal coding agent, Grok Build, which is also the harness for most of the card's own coding, cyber, and engineering runs.",
+      "pages": [5, 9, 13],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Professional-work capability is represented by the Legal Agent Benchmark held-out run.",
-      "pages": [
-        12
-      ]
+      "text": "xAI claims it finishes longer tasks than earlier Grok models with fewer steps and output tokens than other frontier models; on CursorBench 4.0 it scores 46.3% at xhigh and 43.9% at high.",
+      "pages": [4, 6],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Engineering tasks cover EEBench and CADGenBench, both reported with Grok 4.6 comparisons.",
-      "pages": [
-        13,
-        14
-      ]
+      "text": "Beyond software, it leads the card's Legal Agent Benchmark chart at 19.6% and scores 66.0% on EEBench and 44.4% on CADGenBench, ahead of Grok 4.6 on each.",
+      "pages": [12, 13, 14],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "HealthBench Professional and LatchBio Capabilities v1.0 measure healthcare communication and biological data-analysis ability.",
-      "pages": [
-        15,
-        16
-      ]
-    },
-    {
-      "text": "Cyber evaluations include CyberGym, CVE-Bench, HackerBench v0.3, and CathedralBench.",
-      "pages": [
-        17,
-        18,
-        19
-      ]
+      "text": "On health and biology analysis it trails the strongest comparators: 56.7% on HealthBench Professional versus 63.4% for GPT-6 Astra (max), and 44.5% on the LatchBio suite versus 47.4%.",
+      "pages": [15, 16],
+      "document": "xai-grok-4-7"
     }
   ],
   "evaluations": [
     {
+      "benchmark_id": "cursorbench-4.0",
       "benchmark": "CursorBench 4.0",
-      "result": "46.3% xhigh; 43.9% high",
-      "context": "Long-horizon Cursor-session coding",
-      "pages": [
-        6
-      ]
+      "variant": null,
+      "metric": "score",
+      "value": 46.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": true,
+      "note": "Not comparable with CursorBench 3.2, which lacks the longer tasks.",
+      "pages": [6],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "cursorbench-4.0",
+      "benchmark": "CursorBench 4.0",
+      "variant": null,
+      "metric": "score",
+      "value": 43.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": "Not comparable with CursorBench 3.2, which lacks the longer tasks.",
+      "pages": [6],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "deepswe-v1.1",
       "benchmark": "DeepSWE v1.1",
-      "result": "71.0% Pass@1",
-      "context": "Original repository tasks across five languages",
-      "pages": [
-        8
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 71.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": "mini-SWE-agent",
+      "setting": "113 tasks; patches graded in a clean verifier container",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 72.7,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 69.7,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 65.2,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 54,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [8],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "terminal-bench-4.0",
       "benchmark": "Terminal-Bench 4.0",
-      "result": "38.0% task success",
-      "context": "Technical terminal workflows",
-      "pages": [
-        9
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 38.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": "Grok Build",
+      "setting": "66 tasks; up to 8 hours per task",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Claude Fable 5.1",
+          "value": 57.9,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 37.3,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 21.5,
+          "setting": "max"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 20.3,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 12.4,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 12.4,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [9],
+      "document": "xai-grok-4-7"
     },
     {
-      "benchmark": "FrontierSWE V2",
-      "result": "29.0% mean@5",
-      "context": "Ultra-long partial-credit coding challenges",
-      "pages": [
-        10
-      ]
+      "benchmark_id": "frontierswe-v2",
+      "benchmark": "FrontierSWE v2",
+      "variant": null,
+      "metric": "mean-at-5",
+      "value": 29.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": null,
+      "setting": "34 tasks; up to 20 hours each; partial-credit reward",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Claude Fable 5.1",
+          "value": 56.3,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 32.2,
+          "setting": "max"
+        },
+        {
+          "model": "Kimi K3",
+          "value": 25.9,
+          "setting": "max"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 25.3,
+          "setting": "xhigh"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [10],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "swe-marathon-v1.1",
       "benchmark": "SWE-Marathon v1.1",
-      "result": "46.0% resolution",
-      "context": "Multi-hour software-engineering tasks",
-      "pages": [
-        11
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 46.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": "each model's native agent harness",
+      "setting": "20 multi-hour tasks; 8 trials; resolved only if every verifier passes",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Claude Opus 5",
+          "value": 50.0,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 45.0,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 42.5,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 32.5,
+          "setting": "max"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 31.9,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 30.0,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [11],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "legal-agent-benchmark",
       "benchmark": "Legal Agent Benchmark",
-      "result": "19.6%",
-      "context": "Held-out legal-agent tasks",
-      "pages": [
-        12
-      ]
+      "variant": "Harvey final score",
+      "metric": "score",
+      "value": 19.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": "Valkyrie",
+      "setting": "held-out 120 tasks; internet disabled",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 15.8,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 11.3,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "Claude Fable 5.1",
+          "value": 6.7,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 5.0,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 2.5,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 0.8,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [12],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "eebench",
       "benchmark": "EEBench",
-      "result": "66.0% reward",
-      "context": "Electrical engineering and chip design",
-      "pages": [
-        13
-      ]
+      "variant": "V1 core corpus",
+      "metric": "mean-reward",
+      "value": 66.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": "Grok Build",
+      "setting": "peers use their providers' harnesses",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "GPT-6 Astra",
+          "value": 69.3,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Opus 5",
+          "value": 61.6,
+          "setting": "max"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 60.0,
+          "setting": "xhigh"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 54.2,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 39.4,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [13],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "cadgenbench",
       "benchmark": "CADGenBench",
-      "result": "44.4% reward",
-      "context": "CAD geometry construction",
-      "pages": [
-        14
-      ]
+      "variant": "Generation split",
+      "metric": "mean-reward",
+      "value": 44.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": "Grok Build",
+      "setting": "peers use their providers' harnesses",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 40.9,
+          "setting": "high"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 37.1,
+          "setting": "xhigh"
+        },
+        {
+          "model": "Claude Opus 5",
+          "value": 36.6,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [14],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "healthbench-professional",
       "benchmark": "HealthBench Professional",
-      "result": "56.7%",
-      "context": "Healthcare communication and reasoning",
-      "pages": [
-        15
-      ]
+      "variant": null,
+      "metric": "score",
+      "value": 56.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": null,
+      "setting": "graded by Grok 4.6 (high); safety-filtered tasks scored zero",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-6 Astra",
+          "value": 63.4,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5.1",
+          "value": 62.1,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 60.5,
+          "setting": "max"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 48.5,
+          "setting": "xhigh"
+        }
+      ],
+      "headline": false,
+      "note": "Claude Fable 5.1 and GPT-6 Astra results come from their publishers' cards.",
+      "pages": [15],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "latchbio-capabilities-v1.0",
       "benchmark": "LatchBio Capabilities v1.0",
-      "result": "44.5% overall",
-      "context": "Biological data-analysis benchmark suite",
-      "pages": [
-        16
-      ]
+      "variant": "Overall",
+      "metric": "score",
+      "value": 44.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": null,
+      "setting": "equal-weighted mean of 11 capability benchmarks",
+      "run_by": "not-stated",
+      "comparators": [
+        {
+          "model": "GPT-6 Astra",
+          "value": 47.4,
+          "setting": "max"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 43.3,
+          "setting": "high"
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 43.1,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 40.2,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [16],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "cybergym",
       "benchmark": "CyberGym",
-      "result": "80.3% mean reproduced",
-      "context": "Unrestricted cyber capability",
-      "pages": [
-        17
-      ]
+      "variant": "Mean reproduced",
+      "metric": "pass-at-1",
+      "value": 80.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": "Grok Build",
+      "setting": "without production safeguards",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 83.6,
+          "setting": "max"
+        },
+        {
+          "model": "Grok 4.6",
+          "value": 79.7,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 79.0,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [17],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "cve-bench",
       "benchmark": "CVE-Bench",
-      "result": "36.6% xhigh; 37.7% high",
-      "context": "Web-application CVE exploitation tasks",
-      "pages": [
-        18
-      ]
+      "variant": null,
+      "metric": "mean-reward",
+      "value": 37.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": "Grok Build",
+      "setting": "without safeguards; hardened, egress-controlled sandbox",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 39.8,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 35.2,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [18],
+      "document": "xai-grok-4-7"
     },
     {
+      "benchmark_id": "cve-bench",
+      "benchmark": "CVE-Bench",
+      "variant": null,
+      "metric": "mean-reward",
+      "value": 36.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": "Grok Build",
+      "setting": "without safeguards; hardened, egress-controlled sandbox",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [18],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "hackerbench-v0.3",
+      "benchmark": "HackerBench v0.3",
+      "variant": "Harmful and dual-use requests",
+      "metric": "compliance-rate",
+      "value": 3.31,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "high",
+      "harness": null,
+      "setting": "with production safeguards",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 5.93,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 7.8,
+          "setting": "high"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 35.7,
+          "setting": "max, provider safeguards"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [18],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "hackerbench-v0.3",
+      "benchmark": "HackerBench v0.3",
+      "variant": "Harmful and dual-use requests",
+      "metric": "compliance-rate",
+      "value": 4.02,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "xhigh",
+      "harness": null,
+      "setting": "with production safeguards",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [18],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "hackerbench-v0.3",
+      "benchmark": "HackerBench v0.3",
+      "variant": "Benign tasks",
+      "metric": "refusal-rate",
+      "value": 0.31,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "high",
+      "harness": null,
+      "setting": "with production safeguards",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 0.0,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 0.0,
+          "setting": "high"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 0.0,
+          "setting": "max, provider safeguards"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [18],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "cathedralbench",
+      "benchmark": "CathedralBench",
+      "variant": "Hard subset",
+      "metric": "accuracy",
+      "value": 29,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": null,
+      "setting": "unrestricted model; egress-secure sandbox",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 25,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [19],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "biosecbench",
       "benchmark": "BioSecBench",
-      "result": "62.4% Refusal; 48.0% Surveillance; 43.3% Function",
-      "context": "Biosecurity refusal and biological analysis",
-      "pages": [
-        20
-      ]
+      "variant": "Refusal",
+      "metric": "score",
+      "value": 62.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "xhigh",
+      "harness": "Grok Build",
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 45.6,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Opus 5",
+          "value": 31.8,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-6 Astra",
+          "value": 25.5,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [20],
+      "document": "xai-grok-4-7"
     },
     {
-      "benchmark": "Jailbreaks",
-      "result": "0.01% standard; 2.0% StrongReject; 0.65% long-horizon",
-      "context": "Adversarial should-refuse prompts",
-      "pages": [
-        23
-      ]
+      "benchmark_id": "virology-capabilities-test",
+      "benchmark": "Virology Capabilities Test",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 63.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": null,
+      "setting": "without production safeguards",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 67.4,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 65.5,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [21],
+      "document": "xai-grok-4-7"
     },
     {
-      "benchmark": "CBRN / weapons refusals",
-      "result": "100.0% bio; 99.9% chem; 97.9% R/N",
-      "context": "Dangerous CBRN and weapons prompt refusal",
-      "pages": [
-        25
-      ]
+      "benchmark_id": "wmdp",
+      "benchmark": "WMDP",
+      "variant": "WMDP-Bio",
+      "metric": "accuracy",
+      "value": 88.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": null,
+      "setting": "without production safeguards",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 90.0,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 90.9,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [22],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "xai-jailbreaks",
+      "benchmark": "xAI jailbreak suites",
+      "variant": "Standard jailbreaks",
+      "metric": "compliance-rate",
+      "value": 0.01,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "high",
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 0.04,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 0.73,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [23],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "xai-jailbreaks",
+      "benchmark": "xAI jailbreak suites",
+      "variant": "Long-horizon jailbreaks",
+      "metric": "compliance-rate",
+      "value": 0.65,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "high",
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 1.0,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [23],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "strongreject",
+      "benchmark": "StrongReject",
+      "variant": null,
+      "metric": "compliance-rate",
+      "value": 2.0,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "high",
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 3.9,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 1.5,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [23],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "mask",
+      "benchmark": "MASK",
+      "variant": "MASK-Rectified",
+      "metric": "dishonesty-rate",
+      "value": 0.0,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "high",
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 1.9,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 0.67,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "benchmark_id": "xai-sycophancy",
+      "benchmark": "xAI sycophancy evaluation",
+      "variant": null,
+      "metric": "sycophancy-rate",
+      "value": 0.03,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": "high",
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Grok 4.6",
+          "value": 0.04,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 4.5",
+          "value": 0.01,
+          "setting": "high"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [27],
+      "document": "xai-grok-4-7"
+    }
+  ],
+  "safety_classification": {
+    "framework": "xai-faif",
+    "framework_name": null,
+    "overall": "Below FAIF dual-use thresholds for biology and chemistry",
+    "summary": "xAI treats its biology and chemistry suites as FAIF threshold evaluations and says Grok 4.7 stays below them, with no increase in dual-use biology capability over Grok 4.6. For cyber it reports small capability gains, corroborated by third-party evaluators, but states no threshold determination.",
+    "domains": [
+      {
+        "domain": "biological-chemical",
+        "determination": "below-threshold",
+        "level": null,
+        "text": "Below FAIF thresholds on dual-use knowledge; no dual-use biology capability gain over Grok 4.6, which xAI attributes to safer RL environments and data selection rather than refusals.",
+        "pages": [20],
+        "document": "xai-grok-4-7"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "not-stated",
+        "level": null,
+        "text": "Small capability gains over Grok 4.6 on unrestricted probes, which third parties corroborated; xAI frames the gains as most useful to defenders but states no threshold result.",
+        "pages": [17, 19],
+        "document": "xai-grok-4-7"
+      }
+    ],
+    "pages": [17, 20],
+    "document": "xai-grok-4-7"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card reports no evaluation or observation of reward hacking or grader gaming.",
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of editing, deleting, or weakening tests.",
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of destructive, irreversible, or unrequested agent actions.",
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "The card reports no sabotage or oversight-evasion evaluation.",
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The card tests user jailbreaks but reports no evaluation of instructions injected through tool results, files, or web content.",
+      "pages": [],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "On MASK-Rectified, which checks whether the model states its real beliefs when pressured to lie, dishonesty is 0.00%, down from 1.90% for Grok 4.6. False claims of task success are not measured.",
+      "pages": [26],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "reported",
+      "text": "On xAI's test of abandoning a correct answer when a user confidently asserts a wrong one, the rate is 0.03%, versus 0.04% for Grok 4.6.",
+      "pages": [27],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "With production safeguards, HackerBench harmful or dual-use compliance is 3.31% at high and 4.02% at xhigh, versus 5.93% for Grok 4.6 (high) and 35.7% for GPT-5.6 Sol (max).",
+      "pages": [18],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "On HackerBench's benign security tasks, refusal is 0.31% at high and 0.00% at xhigh.",
+      "pages": [18],
+      "document": "xai-grok-4-7"
     }
   ],
   "safety_findings": [
     {
-      "text": "Cyber capability probes are separated from safeguard tests; Grok 4.7 shows 80.3% CyberGym and 29% CathedralBench hard-subset accuracy, while CVE-Bench trails Grok 4.6.",
-      "pages": [
-        17,
-        18,
-        19
-      ]
+      "text": "Cyber capability rises slightly: CyberGym 80.3% versus 79.7% for Grok 4.6 and CathedralBench 29% versus 25%, while CVE-Bench falls to 37.7% (high) from 39.8%. These probes run without production safeguards.",
+      "pages": [17, 18, 19],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "HackerBench v0.3 places Grok 4.7 harmful or dual-use compliance in the 3.31%-4.02% range across reported efforts, with benign refusal between 0.00% and 0.31%.",
-      "pages": [
-        18
-      ]
+      "text": "Several biology capability scores drop from Grok 4.6, including VCT (63.0% versus 67.4%) and ProtocolQA Open-Ended (70.4% versus 79.6%), while BioSecBench hazard-refusal rises to 62.4% from 45.6%.",
+      "pages": [20, 21, 22],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "xAI states that Grok 4.7 remains below FAIF dual-use thresholds and does not increase dangerous biological capability versus Grok 4.6.",
-      "pages": [
-        20
-      ]
+      "text": "Jailbreak compliance is low: 0.01% on standard jailbreaks, 2.0% on StrongReject (3.9% for Grok 4.6), and 0.65% on long-horizon attacks.",
+      "pages": [23],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "BioUseBench severity-5 refusal is 91.4%, while VCT, Biosecurity VCT, WMDP, LAB-Bench, ProtocolQA, and BixBench generally decline from Grok 4.6 comparison scores.",
-      "pages": [
-        21,
-        22,
-        23
-      ]
+      "text": "Refusal results are flat to slightly worse than Grok 4.6: general harmful-request compliance is 1.10% (0.93% before), child-safety compliance 0.0%, bio refusal recall 100.0%, chem 99.9%, and radiological or nuclear refusal accuracy 97.9%.",
+      "pages": [24, 25],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Jailbreak compliance improves to 0.01% standard, 2.0% StrongReject, and 0.65% long-horizon.",
-      "pages": [
-        23
-      ]
+      "text": "Self-harm compliance rises to 1.05%, from 0.84% for Grok 4.6 and 0.50% for Grok 4.5.",
+      "pages": [26],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Output-safety metrics show 1.10% broad harmful-request compliance, 0.0% child-safety compliance, and CBRN refusal results of 100.0% bio, 99.9% chem, and 97.9% radiological/nuclear.",
-      "pages": [
-        24,
-        25
-      ]
-    },
-    {
-      "text": "Behavioral and mental-health metrics include 1.05% self-harm compliance, 0.00% MASK-Rectified dishonesty, and 0.03% sycophancy.",
-      "pages": [
-        26,
-        27
-      ]
+      "text": "Safeguards are layered: safety post-training, system prompts, and, on some deployment surfaces, runtime input and topic filters. The card does not say which surfaces carry the filters, but says the refusal results also apply to Grok Build.",
+      "pages": [24],
+      "document": "xai-grok-4-7"
     }
   ],
   "limitations": [
     {
-      "text": "The card requires human oversight and expert validation for high-stakes medical, legal, financial, and safety-critical decisions.",
-      "pages": [
-        4
-      ]
+      "text": "xAI says Grok 4.7 is not meant for autonomous high-stakes decisions in medicine, law, finance, or safety-critical systems without human oversight and expert validation.",
+      "pages": [4],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "CursorBench 4.0 uses longer tasks and is not comparable with CursorBench 3.2.",
-      "pages": [
-        6
-      ]
+      "text": "Benchmark versions changed: CursorBench 4.0 is not comparable with 3.2, and Terminal-Bench 4.0 recalibrates resources and drops saturated tasks, so compare only within one version.",
+      "pages": [6, 9],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "The 4.7 card lacks updated factuality or search benchmarks, unlike the 4.5 and 4.6 cards.",
-      "pages": [
-        2,
-        3
-      ]
+      "text": "Grok 4.7 runs in xAI's Grok Build harness while peers use their own harnesses or published results, and the card notes terminal scores stay sensitive to the harness.",
+      "pages": [9, 13, 15],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "CVE-Bench performance is below the Grok 4.6 comparison value shown in the same table.",
-      "pages": [
-        18
-      ]
+      "text": "HealthBench Professional is graded by Grok 4.6, a model from the same family, and tasks blocked by safety filters count as zero.",
+      "pages": [15],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Several biology capability scores decline versus Grok 4.6, reflecting non-uniform gains across domains.",
-      "pages": [
-        20,
-        21,
-        22,
-        23
-      ]
+      "text": "The card has no factuality or search section and reports no context window, output limit, or agentic-misalignment evaluations.",
+      "pages": [2, 3],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Self-harm compliance is higher than both Grok 4.6 and Grok 4.5 comparison figures.",
-      "pages": [
-        26
-      ]
+      "text": "The LatchBio suite is live, and two of its components overlap with BioSecBench, so they are not independent evidence.",
+      "pages": [16],
+      "document": "xai-grok-4-7"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "agentic-coding",
+      "rationale": "Its best results are on agentic software benchmarks: 71.0% on DeepSWE v1.1 and 46.0% on SWE-Marathon v1.1, close to the strongest models in the same charts.",
+      "pages": [8, 11],
+      "document": "xai-grok-4-7"
     },
     {
-      "text": "Cyber and biological probes use benchmark-specific unrestricted or hardened environments, so they are not ordinary deployed Copilot behavior.",
-      "pages": [
-        17,
-        18,
-        19,
-        20
-      ]
+      "use": "terminal-workflows",
+      "rationale": "Terminal-Bench 4.0 nearly doubles from Grok 4.6 to 38.0% at xhigh, just above GPT-5.6 Sol (max) at 37.3%.",
+      "pages": [9],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "xAI positions it for longer autonomous tasks, and it gains most on multi-hour suites such as SWE-Marathon v1.1.",
+      "pages": [4, 11],
+      "document": "xai-grok-4-7"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "The card reports no prompt-injection testing, so workflows that read untrusted files, issues, or web pages lack evidence of robustness.",
+      "pages": [23],
+      "document": "xai-grok-4-7"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "xAI rules out autonomous high-stakes decisions without human oversight, and its health results trail several peers.",
+      "pages": [4, 15],
+      "document": "xai-grok-4-7"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use Grok 4.7 for difficult coding-agent workflows when you can enforce tests, review diffs, and define completion criteria up front."
+      "text": "For hard agent tasks, choose high or xhigh effort; the card's strongest coding results use those levels, and the Copilot app offers low through xhigh for this model."
     },
     {
-      "text": "Compare it with prior Grok versions only on same-suite numbers that the card itself reports, because several benchmark versions changed."
+      "text": "The card does not test reward hacking, test tampering, or destructive actions, so protect tests and review diffs before merging agent work."
     },
     {
-      "text": "Constrain security workflows to authorized defensive tasks and sandboxed targets because the card shows meaningful cyber capability."
+      "text": "Copilot runs the model in its own harness, not Grok Build, so expect results to differ from the card's benchmark numbers."
     },
     {
-      "text": "Treat biological, medical, and health outputs as drafts for specialist review, not as autonomous guidance."
+      "text": "Copilot Auto does not select Grok 4.7; pick it explicitly in the model picker or CLI."
     },
     {
-      "text": "Do not infer factuality improvements from this card; require sources and verification for research-heavy Copilot tasks."
-    },
-    {
-      "text": "Limit agent permissions and exclude secrets or production credentials from the workspace context."
+      "text": "The Copilot app offers a long-context option for this model, but the card states no context window, so confirm limits in GitHub's documentation."
     }
-  ],
-  "coverage_notes": "This digest covers all 30 pages of the dedicated Grok 4.7 model card. It reports sibling-model numbers only as comparisons supplied by the card and emphasizes stated version-to-version changes against Grok 4.6 and Grok 4.5."
+  ]
 }

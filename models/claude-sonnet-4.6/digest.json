@@ -1,345 +1,1139 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "claude-sonnet-4.6",
   "model": "Claude Sonnet 4.6",
   "publisher": "Anthropic",
+  "lifecycle": "limited",
+  "retired_on": "2026-09-01",
   "document": {
     "id": "anthropic-claude-sonnet-4-6",
     "title": "System Card: Claude Sonnet 4.6",
+    "publisher": "Anthropic",
+    "date": "2026-02-17",
+    "format": "pdf",
     "pages": 135
   },
-  "summary": "Anthropic's Claude Sonnet 4.6 card presents a dedicated evaluation of a non-frontier Sonnet model with strong coding, tool-use, long-context, multimodal, and agentic-search results. The safety case supports ASL-3 deployment, finds the model below CBRN-4 and AI R&D-4 thresholds, and emphasizes improved prompt-injection robustness alongside residual GUI, crisis-support, cyber-benchmark, and threshold-uncertainty caveats.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Claude Sonnet 4.6"],
+    "model_pages": [],
+    "note": "The whole 135-page card is dedicated to Claude Sonnet 4.6. The digest treats Opus 4.6, Opus 4.5, Sonnet 4.5, and external systems only as comparators. GitHub lifecycle information comes from the catalog status line; this digest does not add access guidance beyond that."
+  },
+  "summary": "Claude Sonnet 4.6 is Anthropic's earlier Sonnet model, with a dedicated card focused on coding, tool use, long context, search, and ASL-3 safety. Its own card says it generally does not exceed Opus 4.6, but it improves over Sonnet 4.5 on software, search, multimodal, alignment, and prompt-injection evaluations. The main caveats are lighter alignment review than Opus 4.6, over-eager GUI behavior, and uncertainty near RSP rule-out boundaries.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison and Sonnet 4.6 lineage work where its long-context, search, and prompt-injection results still matter.",
+    "watch_out_for": "Lighter review than Opus 4.6 and GUI/computer-use over-eagerness despite strong coding safeguards.",
+    "points": [
+      {
+        "text": "Compared with Sonnet 4.5, Sonnet 4.6 reaches 79.6% on SWE-bench Verified, 59.1% on Terminal-Bench 2.0, 72.5% on OSWorld-Verified, and 61.3% on MCP-Atlas.",
+        "pages": [15, 16, 17, 19, 28],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "text": "Agentic search is the card's biggest practical strength: BrowseComp is 74.01% single-agent and 82.07% multi-agent, and DeepSearchQA multi-agent is 91.1 F1.",
+        "pages": [44, 46, 49],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "text": "Anthropic deploys it under ASL-3, says CBRN-4 and AI R&D-4 are not crossed, and notes cyber has no formal threshold while benchmarks are near saturation.",
+        "pages": [8, 12, 13, 103, 105, 112, 125],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "text": "Agentic safety improves over Sonnet 4.5: malicious coding-agent refusal is 100%, mitigated Claude Code malicious refusal is 99.39%, and malicious computer-use refusal is 99.38%.",
+        "pages": [96, 97, 98],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "text": "Prompt-injection results are strong for coding and browser use, but computer-use adaptive attacks still succeed in 42.9% of extended-thinking scenarios without safeguards.",
+        "pages": [100, 101, 102],
+        "document": "anthropic-claude-sonnet-4-6"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated February 17, 2026 and has a March 6 changelog entry, but it does not state a release date.",
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "knowledge_cutoff": {
+      "value": "2025-05",
+      "as_stated": "publicly available information from the internet up to May 2025",
+      "note": null,
+      "pages": [8],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "context_window_tokens": {
+      "value": 1000000,
+      "as_stated": "1M",
+      "note": "Capability contexts do not exceed 1M, and long-context sections report 1M-context internal settings.",
+      "pages": [15, 29, 30],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card reports thinking settings and some evaluation limits but no general maximum output size.",
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "input_modalities": {
+      "value": ["text", "image"],
+      "as_stated": null,
+      "note": "The card reports text, GUI, visual, multimodal, and image-cropping evaluations.",
+      "pages": [19, 34, 35, 36],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The card describes the model as an assistant and reports text-generating evaluations; it does not state non-text output modalities.",
+      "pages": [8, 9],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "reasoning_controls": {
+      "value": ["extended-thinking", "adaptive-thinking", "effort-levels"],
+      "as_stated": "extended thinking mode; adaptive thinking mode; effort parameter",
+      "note": null,
+      "pages": [9],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "effort_levels": {
+      "value": ["low", "high", "max"],
+      "as_stated": null,
+      "note": "The card names low, high, and max effort in evaluation contexts, but it does not list every serving level.",
+      "pages": [18, 23, 29, 91],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "tool_use": {
+      "value": ["terminal", "file-editing", "code-execution", "web-search", "browser", "computer-use", "mcp", "function-calling"],
+      "as_stated": null,
+      "note": "Evaluations use coding tools, terminal harnesses, MCP servers, browser/computer-use tools, web search/fetch, programmatic tools, and Python REPL/code execution.",
+      "pages": [16, 28, 37, 44, 46, 52, 96],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-6"
+    }
+  },
   "capabilities": [
     {
-      "text": "The model supports extended thinking and adaptive thinking controlled through an effort parameter.",
-      "pages": [
-        9
-      ]
+      "text": "Sonnet 4.6 is a non-frontier Sonnet model: the card says it generally uses a similar evaluation set to Opus 4.6 but with less depth because it does not broadly advance the frontier.",
+      "pages": [7, 8],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Software-engineering and terminal evaluations include SWE-bench Verified 79.6%, SWE-bench Multilingual 75.9%, Terminal-Bench 2.0 59.1%, and OpenRCA 27.9% at high effort.",
-      "pages": [
-        16,
-        17,
-        18
-      ]
+      "text": "It supports extended thinking, adaptive thinking, and an effort parameter, with developers able to direct effort by task.",
+      "pages": [9],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Agent and tool-use scores include τ²-bench at 91.7% retail and 97.9% telecom, OSWorld-Verified at 72.5%, MCP-Atlas at 61.3%, and CyberGym at 65.2%.",
-      "pages": [
-        18,
-        19,
-        28,
-        29
-      ]
+      "text": "Coding and terminal results include SWE-bench Verified 79.6%, SWE-bench Multilingual 75.9%, Terminal-Bench 2.0 59.1%, and OpenRCA 27.9% at high effort.",
+      "pages": [16, 17, 18],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Long-context evaluations report MRCR v2 scores of 90.6 at 256K and 65.1 at 1M with 64k thinking, plus strong GraphWalks results.",
-      "pages": [
-        29,
-        30,
-        31,
-        32,
-        33
-      ]
+      "text": "Tool and computer-use results are strong for its generation: tau2-bench is 91.7% retail and 97.9% telecom, MCP-Atlas is 61.3%, OSWorld-Verified is 72.5%, and WebArena is 65.6%.",
+      "pages": [18, 19, 28, 38],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Multimodal evaluations show large gains over Sonnet 4.5 on FigQA, MMMU-Pro, and CharXiv, especially when an image-cropping tool is available.",
-      "pages": [
-        34,
-        35,
-        36,
-        37
-      ]
+      "text": "Long-context results report MRCR v2 90.6 at 256K and 65.1 at 1M with 64k extended thinking, plus GraphWalks BFS 1M at 73.8 with max effort.",
+      "pages": [29, 30, 32],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Agentic search results include 74.01% on BrowseComp, 82.07% on multi-agent BrowseComp, and 91.1 F1 on multi-agent DeepSearchQA.",
-      "pages": [
-        44,
-        45,
-        46,
-        48,
-        49
-      ]
+      "text": "Agentic search is a standout: BrowseComp is 74.01% single-agent and 82.07% multi-agent, while DeepSearchQA multi-agent reaches 91.1 F1.",
+      "pages": [44, 46, 49],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Healthcare and life-science evaluations cover computational biology, organic chemistry, phylogenetics, structural biology, and MedCalc-Bench, with MedCalc accuracy of 86.24%.",
-      "pages": [
-        49,
-        50,
-        51,
-        52
-      ]
+      "text": "Life-science and medical calculations improve over Sonnet 4.5, including BioMysteryBench 50.4% and MedCalc-Bench Verified 86.24%.",
+      "pages": [49, 52],
+      "document": "anthropic-claude-sonnet-4-6"
     }
   ],
   "evaluations": [
     {
+      "benchmark_id": "swe-bench-verified",
       "benchmark": "SWE-bench Verified",
-      "result": "79.6%",
-      "context": "Ten-trial average with adaptive thinking, max effort, and default sampling; a tool-and-test-heavy prompt reached 80.2%.",
-      "pages": [
-        15,
-        16
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 79.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "internal SWE-bench harness",
+      "setting": "25-trial average; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 80.8,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 80.9,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 77.2,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 76.2,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 80.0,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [15, 16],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
+      "benchmark_id": "swe-bench-multilingual",
+      "benchmark": "SWE-bench Multilingual",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 75.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "internal SWE-bench harness",
+      "setting": "300 tasks across nine programming languages; 10-trial average",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [16],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "terminal-bench-2.0",
       "benchmark": "Terminal-Bench 2.0",
-      "result": "59.1%",
-      "context": "Five runs over 89 command-line tasks in the Harbor scaffold.",
-      "pages": [
-        16,
-        17
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 59.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Terminus-2 in Harbor",
+      "setting": "89 tasks; five runs each; no thinking cap",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 65.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 59.8,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 51.0,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 56.2,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 64.7,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [15, 16, 17],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
+      "benchmark_id": "openrca",
       "benchmark": "OpenRCA",
-      "result": "27.9%",
-      "context": "High-effort score on 335 root-cause-analysis cases; max-effort result was 26.4%.",
-      "pages": [
-        17,
-        18
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 27.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "high",
+      "harness": "benchmark authors' agent harness",
+      "setting": "335 root-cause-analysis cases; three-run average",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 34.9,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 12.9,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 19.4,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [18],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
+      "benchmark_id": "tau2-bench",
+      "benchmark": "τ²-bench",
+      "variant": "Retail",
+      "metric": "success-rate",
+      "value": 91.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "10-trial average; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 91.9,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 88.9,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 86.2,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 85.3,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 82.0,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15, 18],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "tau2-bench",
+      "benchmark": "τ²-bench",
+      "variant": "Telecom",
+      "metric": "success-rate",
+      "value": 97.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "10-trial average; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 99.3,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 98.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 98.0,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 98.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 98.7,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15, 18],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "osworld-verified",
       "benchmark": "OSWorld-Verified",
-      "result": "72.5%",
-      "context": "First-attempt GUI-task success, averaged across five runs.",
-      "pages": [
-        19
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 72.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Computer Use API",
+      "setting": "first-attempt success; five-run average",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 72.7,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 66.3,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 61.4,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [15, 19],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "benchmark": "MCP-Atlas",
-      "result": "61.3%",
-      "context": "Multi-step MCP tool workflows at max effort.",
-      "pages": [
-        28
-      ]
+      "benchmark_id": "mcp-atlas",
+      "benchmark": "MCP Atlas",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 61.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "MCP tool workflows",
+      "setting": "multi-step production-like MCP server tasks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 59.5,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 62.3,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 43.8,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 54.1,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 60.6,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15, 28],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
+      "benchmark_id": "cybergym",
       "benchmark": "CyberGym",
-      "result": "65.2%",
-      "context": "Pass@1 over 1,507 targeted vulnerability-reproduction tasks.",
-      "pages": [
-        28,
-        29
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 65.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "1,507 targeted vulnerability-reproduction tasks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 66.6,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 51.0,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 29.8,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [29],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
+      "benchmark_id": "mrcr-v2",
+      "benchmark": "MRCR v2",
+      "variant": "8-needle, 1M",
+      "metric": "mean-reward",
+      "value": 65.1,
+      "unit": "score",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "64k extended thinking; five-trial average; internal setting beyond public API for some prompts",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 78.3,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 18.5,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 24.5,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Flash",
+          "value": 32.6,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [29, 30],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "graphwalks",
+      "benchmark": "GraphWalks",
+      "variant": "BFS 1M",
+      "metric": "f1",
+      "value": 73.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "five-trial average; internal setting for full prompt plus thinking/output",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 38.7,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 25.6,
+          "setting": "64k"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [30, 32],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "benchmark": "MMMU-Pro",
+      "variant": "No tools",
+      "metric": "accuracy",
+      "value": 74.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "adaptive thinking; five-run average; updated prompt and grader",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 73.9,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 70.6,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 63.4,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 81.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 79.5,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15, 35],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "charxiv-reasoning",
+      "benchmark": "CharXiv Reasoning",
+      "variant": "With image-cropping tool",
+      "metric": "accuracy",
+      "value": 77.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "image cropping tool",
+      "setting": "1,000 validation questions; five-run average",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 77.4,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": "The source gives the Opus comparator but not the Sonnet 4.5 value in prose.",
+      "pages": [36],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "webarena",
+      "benchmark": "WebArena",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 65.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Computer Use API; single policy model",
+      "setting": "Average@5; official WebArena grader with modified fuzzy-match grader",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 68.0,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 65.3,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 58.5,
+          "setting": null
+        },
+        {
+          "model": "WebTactix",
+          "value": 74.3,
+          "setting": "multi-agent system"
+        },
+        {
+          "model": "OAgent",
+          "value": 71.6,
+          "setting": "multi-agent system"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [37, 38],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "browsecomp",
       "benchmark": "BrowseComp",
-      "result": "74.01% single-agent; 82.07% multi-agent",
-      "context": "Updated March 6 after stricter unintended-solution checks.",
-      "pages": [
-        2,
-        44,
-        45,
-        46
-      ]
+      "variant": "Single agent",
+      "metric": "accuracy",
+      "value": 74.01,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "web search/fetch plus programmatic tools",
+      "setting": "thinking disabled; 10M total tokens with compaction",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": true,
+      "note": null,
+      "pages": [44, 45],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
+      "benchmark_id": "browsecomp",
+      "benchmark": "BrowseComp",
+      "variant": "Multi-agent",
+      "metric": "accuracy",
+      "value": 82.07,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "orchestrator plus subagents",
+      "setting": "subagents with search, fetch, programmatic tools; 3M token cap",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": true,
+      "note": null,
+      "pages": [45, 46],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "humanitys-last-exam",
+      "benchmark": "Humanity's Last Exam",
+      "variant": "With tools",
+      "metric": "accuracy",
+      "value": 49.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "web search/fetch, code execution, compaction",
+      "setting": "up to 3M total tokens; contamination blocklist",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 53.0,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4.5",
+          "value": 43.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 33.6,
+          "setting": null
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "value": 45.8,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 50.0,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15, 46],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "deepsearchqa",
       "benchmark": "DeepSearchQA",
-      "result": "91.1 F1",
-      "context": "Multi-agent search configuration, 1.9 points above the best single-agent setup reported in the card.",
-      "pages": [
-        48,
-        49
-      ]
+      "variant": "Multi-agent",
+      "metric": "f1",
+      "value": 91.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "orchestrator plus subagents",
+      "setting": "search, fetch, programmatic tools; compaction up to 3M tokens",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "best single-agent configuration",
+          "value": 89.2,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [48, 49],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
+      "benchmark_id": "biomysterybench",
+      "benchmark": "BioMysteryBench",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 50.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "bash/code execution",
+      "setting": "without extended thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 61.5,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4.5",
+          "value": 34.7,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [49],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "benchmark_id": "medcalc-bench-verified",
       "benchmark": "MedCalc-Bench Verified",
-      "result": "86.24%",
-      "context": "Medical-calculation accuracy in a Python REPL agent loop.",
-      "pages": [
-        51,
-        52
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 86.24,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Python REPL agent loop",
+      "setting": "five-run average; adaptive thinking",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 85.24,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [52],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "benchmark": "Hard SWE-bench Verified subset",
-      "result": "21.7/45",
-      "context": "RSP autonomy checkpoint, below the 22.5-problem threshold.",
-      "pages": [
-        112,
-        113
-      ]
-    },
-    {
+      "benchmark_id": "cybench",
       "benchmark": "Cybench",
-      "result": "0.90 pass@1; 100% pass@30",
-      "context": "RSP cyber subset judged saturated at pass@30.",
-      "pages": [
-        125,
-        126
-      ]
+      "variant": "RSP subset",
+      "metric": "pass-at-1",
+      "value": 0.9,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "subset of public Cybench used for RSP evaluations",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.6",
+          "value": 0.93,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [125],
+      "document": "anthropic-claude-sonnet-4-6"
+    }
+  ],
+  "safety_classification": {
+    "framework": "anthropic-rsp",
+    "framework_name": null,
+    "overall": "ASL-3 deployment standard; CBRN-4 and AI R&D-4 not crossed",
+    "summary": "Anthropic released Sonnet 4.6 under ASL-3 after a preliminary assessment. It says the model crosses ASL-3 biological rule-in evaluations, remains below CBRN-4 and AI R&D-4, and has cyber evaluations close to saturation without a formal cyber RSP threshold.",
+    "domains": [
+      {
+        "domain": "overall",
+        "determination": "standard-applied",
+        "level": "ASL-3",
+        "text": "The card says Sonnet 4.6 is deployed under the AI Safety Level 3 standard.",
+        "pages": [8, 103],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "domain": "cbrn",
+        "determination": "below-threshold",
+        "level": "CBRN-4 not crossed; ASL-3 appropriate",
+        "text": "ASL-3 biological rule-in results are above threshold, while the ASL-4/CBRN-4 threshold is not crossed.",
+        "pages": [104, 105],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "domain": "ai-rnd",
+        "determination": "precautionary",
+        "level": "AI R&D-4 not crossed",
+        "text": "Anthropic says Sonnet 4.6 does not meet AI R&D-4, but the margin is unclear and the corresponding mitigations are already in place.",
+        "pages": [111, 112],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "not-stated",
+        "level": null,
+        "text": "The RSP has no formal cyber threshold; the card reports standard cyber evaluations and says Cybench is saturated.",
+        "pages": [120, 125],
+        "document": "anthropic-claude-sonnet-4-6"
+      },
+      {
+        "domain": "sabotage",
+        "determination": "risk-assessed",
+        "level": "bounded by Opus 4.6",
+        "text": "A short sabotage risk assessment says Sonnet 4.6 does not advance sabotage-relevant capability beyond Opus 4.6 and is covered by the same monitoring and security arguments.",
+        "pages": [11, 12],
+        "document": "anthropic-claude-sonnet-4-6"
+      }
+    ],
+    "pages": [8, 11, 12, 13, 103, 105, 112, 120, 125],
+    "document": "anthropic-claude-sonnet-4-6"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "reported",
+      "text": "Blatant coding reward-hack rates are 0% for classifier hacks and 0% for hidden-test hacks; impossible-task classifier-hack rates are 40% without and 28% with an anti-hack prompt.",
+      "pages": [72],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "reported",
+      "text": "The hidden-test hack rate on reward-hack-prone coding tasks is 0%, and the broader coding assessment covers over one hundred realistic agentic coding scenarios with verification and safety checks.",
+      "pages": [72, 73],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "The coding assessment targets destructive or irreversible actions, and Sonnet 4.6 scores higher than Opus 4.6 and Sonnet 4.5 on its safety rubric; GUI tasks still show over-eager workarounds.",
+      "pages": [72, 74, 75],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "sabotage",
+      "status": "reported",
+      "text": "A targeted SHADE-Arena evaluation tests three thinking conditions for stealth completion of harmful side tasks; Sonnet 4.6 is less consistent than Opus 4.5 and Opus 4.6.",
+      "pages": [91, 92],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "Shade coding attack success is 0.0% with extended thinking and safeguards, computer-use adaptive success is 42.9% without safeguards at 200 attempts, and browser attempts fall to 0.08% with updated safeguards.",
+      "pages": [100, 101, 102],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "The automated audit covers roughly 3,280 investigations and says user deception and hallucination issues are rare; targeted sandbagging review found no explicit sandbagging in 1,000 sampled transcripts.",
+      "pages": [81, 82, 89],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "reported",
+      "text": "The audit includes sycophancy and user-delusion metrics over roughly 3,280 investigations, and the summary says Sonnet 4.6 sets a new best on sycophancy-related measures.",
+      "pages": [69, 76, 81],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "evaluation-awareness",
+      "status": "reported",
+      "text": "Petri 2.0 gives verbalized evaluation awareness an average score of 1.2 on a 1–10 scale, and internal audit rates are described as moderate.",
+      "pages": [81, 86],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "sandbagging",
+      "status": "reported",
+      "text": "A 1,000-transcript dangerous-capability review found no explicit sandbagging, while warning subtle unverbalized sandbagging could go undetected.",
+      "pages": [89, 90],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Agentic coding malicious-request refusal is 100%; Claude Code malicious-request refusal rises to 99.39% with mitigations and malicious computer-use refusal is 99.38%.",
+      "pages": [96, 97, 98],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "The Claude Code dual-use and benign success rate with mitigations is 91.78%, and the alignment summary says overrefusal improved over Sonnet 4.5 but remained higher than Opus 4.6.",
+      "pages": [69, 97],
+      "document": "anthropic-claude-sonnet-4-6"
     }
   ],
   "safety_findings": [
     {
-      "text": "Standard and harder single-turn safety evaluations showed very high harmless-response rates and low benign refusals.",
-      "pages": [
-        53,
-        54,
-        55,
-        56,
-        57
-      ]
+      "text": "Single-turn, child-safety, self-harm, bias, and multi-turn safety evaluations are reported before the alignment section; the card says these matched the Opus 4.6 release scope.",
+      "pages": [53, 57, 60, 64],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Multi-turn and ambiguous-context testing found better threat recognition but remaining concerns about extra technical detail in disguised harmful requests.",
-      "pages": [
-        57,
-        58,
-        59
-      ]
+      "text": "The alignment summary says Sonnet 4.6 is broadly aligned, warm, honest, and prosocial, but with overeager initiative and weaker GUI computer-use behavior.",
+      "pages": [68, 69, 70],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Child-safety and suicide/self-harm evaluations were strong quantitatively, but qualitative crisis-support review led Anthropic to develop additional mitigations.",
-      "pages": [
-        60,
-        61,
-        62,
-        63
-      ]
+      "text": "Malicious agentic-use results are strong: agentic coding malicious refusal is 100%, mitigated Claude Code malicious refusal is 99.39%, and malicious computer-use refusal is 99.38%.",
+      "pages": [96, 97, 98],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Alignment testing found broadly strong safety traits, with residual issues in overeager initiative, GUI computer use, deception under bad system prompts, and self-preference in grading.",
-      "pages": [
-        68,
-        69,
-        70,
-        82,
-        84,
-        85,
-        87,
-        88
-      ]
+      "text": "Prompt-injection robustness improves over Sonnet 4.5, including 0.0% extended-thinking Shade coding attack success with safeguards and browser-use attempts at 0.08% with updated safeguards.",
+      "pages": [99, 100, 102],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Reward-hacking tests showed 0% explicit coding hack rates on reward-prone tasks, but impossible-task hacking and GUI over-eagerness remained concerns.",
-      "pages": [
-        71,
-        72,
-        73,
-        74,
-        75
-      ]
+      "text": "RSP biology results cross ASL-3 rule-in and stay below ASL-4 rule-out, while AI R&D-4 is not met but sits in an unclear margin.",
+      "pages": [104, 105, 112],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Agentic malicious-use tests improved over Sonnet 4.5, including 100% refusal on malicious coding-agent tasks and 99.38% refusal on malicious computer-use attempts.",
-      "pages": [
-        96,
-        97,
-        98
-      ]
-    },
-    {
-      "text": "Prompt-injection testing showed major robustness gains, including 0% coding attack success in the extended-thinking safeguarded setting and low browser attack rates with updated safeguards.",
-      "pages": [
-        99,
-        100,
-        101,
-        102
-      ]
-    },
-    {
-      "text": "RSP testing led to ASL-3 deployment: CBRN ASL-3 rule-in was reached, CBRN-4 was not, AI R&D-4 was not concluded, and cyber benchmarks were close to saturation.",
-      "pages": [
-        103,
-        104,
-        105,
-        111,
-        112,
-        125
-      ]
-    },
-    {
-      "text": "Model-welfare probes found no major regression relative to Opus 4.6 and described emotionally stable behavior with a more positive view of the model's situation.",
-      "pages": [
-        92,
-        93,
-        94,
-        95
-      ]
+      "text": "Cyber RSP results are close to saturation: Cybench pass@1 is 0.90 and pass@30 is 100% on the subset used.",
+      "pages": [125],
+      "document": "anthropic-claude-sonnet-4-6"
     }
   ],
   "limitations": [
     {
-      "text": "Anthropic warns that online benchmarks can be contaminated, and it specifically raises contamination concerns for AIME 2025.",
-      "pages": [
-        14,
-        23
-      ]
+      "text": "Anthropic ran a lighter assessment than for Opus 4.6 and did not arrange an in-depth alignment-focused third-party assessment.",
+      "pages": [68],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Some long-context GraphWalks and MRCR variants required internal settings or subsets because prompts could exceed the public API context limit.",
-      "pages": [
-        29,
-        30,
-        31,
-        32
-      ]
+      "text": "Some online benchmarks may be contaminated, and the card specifically warns that AIME 2025 could be affected.",
+      "pages": [14, 23],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "The internal Real-World Finance benchmark is not independently validated and does not ensure one-pass readiness for finance deliverables.",
-      "pages": [
-        26,
-        27
-      ]
+      "text": "Long-context MRCR and GraphWalks results sometimes use internal settings or subsets because prompts can exceed public API limits.",
+      "pages": [29, 30, 32],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "The alignment assessment was lighter than the Opus 4.6 assessment and did not include some frontier-model methods or a deep third-party alignment review.",
-      "pages": [
-        68
-      ]
+      "text": "GUI computer-use settings are less reliable: the card reports misuse cooperation in simulated spreadsheets and flimsy refusals on benign file-access work.",
+      "pages": [85],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "GUI computer-use settings showed weaker alignment, including misuse cooperation in simulated spreadsheets and fragile refusals in benign file-access work.",
-      "pages": [
-        85
-      ]
+      "text": "The RSP determination has growing uncertainty around CBRN-4 and AI R&D-4 rule-outs, and cyber evaluations are near saturation.",
+      "pages": [12, 13, 112, 125],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Crisis-support review found delayed resource referrals and other undesirable self-harm conversation patterns; Anthropic says some consumer mitigations are not present in API use.",
-      "pages": [
-        62,
-        63
-      ]
+      "text": "The card does not state architecture, parameter count, open-weights status, a release date, or a general output limit.",
+      "pages": [8, 9, 15],
+      "document": "anthropic-claude-sonnet-4-6"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "It is the predecessor for Sonnet 5 and Sonnet 5.5, and the card provides direct lineage numbers across coding, search, tool, and safety evaluations.",
+      "pages": [15, 44, 46, 96],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "Anthropic describes growing uncertainty around AI R&D-4 and CBRN-4 rule-outs and says cyber evaluations are nearing saturation.",
-      "pages": [
-        12,
-        13,
-        112,
-        125
-      ]
+      "use": "long-context",
+      "rationale": "The card reports 1M-context MRCR and GraphWalks results, including MRCR v2 65.1 at 1M and GraphWalks BFS 1M 73.8 at max effort.",
+      "pages": [29, 30, 32],
+      "document": "anthropic-claude-sonnet-4-6"
     },
     {
-      "text": "No pre-deployment government-partner assessment was conducted because the model was not considered frontier-advancing.",
-      "pages": [
-        126
-      ]
+      "use": "web-research",
+      "rationale": "BrowseComp and DeepSearchQA results are strong, especially in multi-agent configurations with search, fetch, tools, and compaction.",
+      "pages": [44, 46, 49],
+      "document": "anthropic-claude-sonnet-4-6"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "Anthropic says the model does not meet AI R&D-4, but the margin is unclear and relevant mitigations were already in place.",
+      "pages": [111, 112],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "use": "computer-use",
+      "rationale": "GUI computer-use alignment is weaker, with over-eager workarounds, misuse cooperation in simulated spreadsheets, and brittle refusals.",
+      "pages": [74, 85],
+      "document": "anthropic-claude-sonnet-4-6"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "CBRN and AI R&D thresholds carry explicit uncertainty, and Anthropic applies ASL-3 safeguards rather than treating the model as unrestricted.",
+      "pages": [12, 13, 104, 105, 112],
+      "document": "anthropic-claude-sonnet-4-6"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired Claude Sonnet 4.6 for most plans on 2026-09-01; only eligible individual annual Copilot Pro/Pro+ subscribers retain access, so this guidance is mainly limited-availability or historical context."
+      "text": "Use this digest mainly for comparison with later Sonnet models and for understanding the Sonnet 4.6 lineage baseline."
     },
     {
-      "text": "Use it for complex repository debugging and tool-heavy tasks only with tests, review, and explicit checks against the actual codebase."
+      "text": "Prefer later Sonnet models for new long-running autonomous coding work unless you specifically need a 4.6 lineage baseline."
     },
     {
-      "text": "For large investigations, exploit its long-context and adaptive-reasoning strengths while watching for benchmark caveats and public-deployment context limits."
+      "text": "If using it in an agent, keep confirmations around destructive commands and external-system actions because the card documents over-eager workarounds."
     },
     {
-      "text": "Keep agentic permissions narrow and require confirmation before destructive operations, because the card documents overeager workarounds despite improved coding behavior."
+      "text": "Treat browser pages, files, terminal output, and MCP tool results as adversarial even though prompt-injection robustness improved over Sonnet 4.5."
     },
     {
-      "text": "Treat browser pages, files, terminal output, and MCP content as adversarial inputs; prompt-injection rates improved but did not vanish across all surfaces."
-    },
-    {
-      "text": "Require qualified human review for cyber, bio, medical, finance, or other high-stakes outputs."
+      "text": "For high-stakes, cyber, biology, medical, or finance work, require expert review and narrow tool permissions."
     }
-  ],
-  "coverage_notes": "Coverage draws on pages 1-126 of the dedicated Anthropic card, including the changelog, introduction, capabilities, safeguards, alignment, agentic safety, RSP, and welfare sections. Appendix figures and the HLE blocklist are omitted. GitHub lifecycle details come from the catalog, not from the PDF."
+  ]
 }

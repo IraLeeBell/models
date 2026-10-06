@@ -1,145 +1,594 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "kimi-k2.7-code",
   "model": "Kimi K2.7 Code",
   "publisher": "Moonshot AI",
+  "lifecycle": "retired",
+  "retired_on": "2026-10-02",
   "document": {
     "id": "moonshot-kimi-k2-7-code",
     "title": "Kimi K2.7 Code (Hugging Face model card)",
+    "publisher": "Moonshot AI",
+    "date": null,
+    "format": "markdown",
     "pages": null
   },
-  "summary": "Moonshot AI's Hugging Face README for Kimi K2.7 Code describes a coding-focused agentic model built on Kimi K2.6 with a 1T-parameter MoE architecture and 256K context. The card provides capability benchmarks, deployment and usage guidance, and license information, but it contains little safety-evaluation content and the model is retired in the GitHub catalog.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Kimi K2.7 Code", "Kimi-K2.7-Code", "K2.7-Code"],
+    "model_pages": [],
+    "note": "The owner document is the Hugging Face Markdown model card for the retired Kimi K2.7 Code checkpoint. Citations use section headings rather than pages. The digest does not import Kimi K2, K2.5, K2.6, or K3 technical-report facts except where this card itself states lineage, architecture reuse, or benchmark conditions."
+  },
+  "summary": "Kimi K2.7 Code is a retired Moonshot AI coding-agent model carded as built on Kimi K2.6. The card lists a 1T-parameter MoE with 32B active parameters, 256K context, forced thinking, preserve-thinking, image/video input examples, and six coding or agentic benchmark rows. It gives almost no behavioral-safety evidence, so its main value is historical comparison and lineage.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison of the Kimi coding-agent lineage and the K2.6-to-K2.7 Code benchmark step.",
+    "watch_out_for": "Retired in GitHub's catalog and missing safety, release-date, training-data, and prompt-injection results.",
+    "points": [
+      {
+        "text": "The card says Kimi K2.7 Code is a coding-focused agentic model built on Kimi K2.6 and uses about 30% fewer thinking tokens than K2.6.",
+        "pages": [],
+        "document": "moonshot-kimi-k2-7-code",
+        "section": "1. Model Introduction"
+      },
+      {
+        "text": "The summary table lists a MoE architecture with 1T total parameters, 32B active parameters, 384 experts, 8 selected experts per token, MoonViT vision, and 256K context.",
+        "pages": [],
+        "document": "moonshot-kimi-k2-7-code",
+        "section": "2. Model Summary"
+      },
+      {
+        "text": "It improves over Kimi K2.6 on all six listed rows, including 62.0 on Kimi Code Bench v2, 53.6 on Program Bench, 76.0 on MCP Atlas, and 81.1 on MCPMark Verified.",
+        "pages": [],
+        "document": "moonshot-kimi-k2-7-code",
+        "section": "3. Evaluation Results"
+      },
+      {
+        "text": "The card says thinking and preserve-thinking are forced, instant mode is unsupported, and video input is experimental outside the official API.",
+        "pages": [],
+        "document": "moonshot-kimi-k2-7-code",
+        "section": "6. Model Usage"
+      },
+      {
+        "text": "No dedicated safety section or safety benchmark table appears; the reported measurements are coding and agentic capability rows.",
+        "pages": [],
+        "document": "moonshot-kimi-k2-7-code",
+        "section": "3. Evaluation Results"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The model card is undated and does not state a release date.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "The model card does not state a knowledge cutoff.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    "context_window_tokens": {
+      "value": 262144,
+      "as_stated": "262,144-token context length",
+      "note": "The architecture table says 256K; the evaluation footnote spells out 262,144 tokens.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "3. Evaluation Results"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "Examples set max_tokens to 4096 or 8192, but the card does not state a model maximum.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    "input_modalities": {
+      "value": ["text", "image", "video"],
+      "as_stated": "K2.7-Code supports Image and Video input",
+      "note": null,
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "Chat Completion with visual content"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "Examples print reasoning content and response text; no non-text output modality is stated.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "Chat Completion"
+    },
+    "reasoning_controls": {
+      "value": ["always-reasoning", "extended-thinking"],
+      "as_stated": "forces thinking and preserve_thinking as True",
+      "note": null,
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "6. Model Usage"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card names thinking mode but does not list selectable effort levels for Kimi K2.7 Code.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    "tool_use": {
+      "value": ["function-calling", "mcp"],
+      "as_stated": null,
+      "note": "The card points to interleaved thinking with multi-step tool calls and reports MCP tool-use benchmarks.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "Interleaved Thinking and Multi-Step Tool Call"
+    },
+    "open_weights": {
+      "value": true,
+      "as_stated": "model weights are released under the Modified MIT License",
+      "note": null,
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "7. License"
+    },
+    "architecture": {
+      "value": "mixture-of-experts",
+      "as_stated": "Mixture-of-Experts (MoE)",
+      "note": null,
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "2. Model Summary"
+    },
+    "parameters_total": {
+      "value": 1000000000000,
+      "as_stated": "1T",
+      "note": null,
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "2. Model Summary"
+    },
+    "parameters_active": {
+      "value": 32000000000,
+      "as_stated": "32B",
+      "note": null,
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "2. Model Summary"
+    }
+  },
   "capabilities": [
     {
-      "text": "Coding-focused agentic model built on Kimi K2.6 for long-horizon software tasks.",
+      "text": "Kimi K2.7 Code is described as a coding-focused agentic model built on Kimi K2.6 for complex long-horizon software workflows.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "1. Model Introduction"
     },
     {
-      "text": "MoE architecture with 1T total parameters, 32B activated parameters, 61 layers, 384 experts, 8 selected experts per token, and 256K context.",
+      "text": "The architecture table lists MoE, MLA attention, SwiGLU activation, one dense layer, 61 total layers, 384 experts, and one shared expert.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "2. Model Summary"
     },
     {
-      "text": "MoonViT-based vision support is listed in the architecture table and examples show image/video calls.",
+      "text": "The card reports MoonViT with 400M parameters and a Hugging Face image-text-to-text pipeline tag, with examples for image and video calls.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "2. Model Summary"
     },
     {
-      "text": "Official usage examples run in thinking mode and support preserve-thinking behavior for multi-turn coding-agent work.",
+      "text": "Official examples run in thinking mode, show reasoning content separately from the final response, and set recommended temperature and top-p for thinking mode.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "6. Model Usage"
+    },
+    {
+      "text": "Preserve-thinking is enabled by default, cannot be disabled, and is presented as useful for multi-turn coding-agent scenarios.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "Preserve Thinking"
+    },
+    {
+      "text": "The card says it works best with Kimi Code CLI as its coding-agent framework.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "Coding Agent Framework"
     }
   ],
   "evaluations": [
     {
+      "benchmark_id": "kimi-code-bench-v2",
       "benchmark": "Kimi Code Bench v2",
-      "result": "62.0",
-      "context": "Coding benchmark with Kimi K2.6, GPT-5.5, and Claude Opus 4.8 comparators",
+      "variant": null,
+      "metric": "score",
+      "value": 62.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Kimi Code CLI",
+      "setting": "thinking mode; temperature 1.0; top-p 0.95; 262,144-token context",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Kimi K2.6",
+          "value": 50.9,
+          "setting": "thinking"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 69.0,
+          "setting": "Codex xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 67.4,
+          "setting": "Claude Code xhigh"
+        }
+      ],
+      "headline": true,
+      "note": null,
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
-      "benchmark": "Program Bench",
-      "result": "53.6",
-      "context": "Program reconstruction/code-generation-agent benchmark",
+      "benchmark_id": "programbench",
+      "benchmark": "ProgramBench",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 53.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Kimi Code CLI",
+      "setting": "thinking mode; 200 tasks; no source, decompilation, or internet; behavioral tests",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Kimi K2.6",
+          "value": 48.3,
+          "setting": "thinking"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 69.1,
+          "setting": "Codex xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 63.8,
+          "setting": "Claude Code xhigh"
+        }
+      ],
+      "headline": true,
+      "note": null,
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
+      "benchmark_id": "mls-bench-lite",
       "benchmark": "MLS Bench Lite",
-      "result": "35.1",
-      "context": "ML systems benchmark subset",
+      "variant": null,
+      "metric": "score",
+      "value": 35.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Kimi Code CLI",
+      "setting": "thinking mode; 30-task MLS-Bench subset; 5 hours before submission",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Kimi K2.6",
+          "value": 26.7,
+          "setting": "thinking"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 35.5,
+          "setting": "Codex xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 42.8,
+          "setting": "Claude Code max"
+        }
+      ],
+      "headline": false,
+      "note": null,
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
+      "benchmark_id": "kimi-claw-24-7-bench",
       "benchmark": "Kimi Claw 24/7 Bench",
-      "result": "46.9",
-      "context": "Persistent long-horizon agentic tasks",
+      "variant": null,
+      "metric": "score",
+      "value": 46.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "OpenClaw",
+      "setting": "thinking mode; 17 professional scenarios; 610 evaluation points; averaged over 3 runs",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Kimi K2.6",
+          "value": 42.9,
+          "setting": "thinking"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 52.8,
+          "setting": "Codex xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 50.4,
+          "setting": "Claude Code xhigh"
+        }
+      ],
+      "headline": true,
+      "note": null,
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
+      "benchmark_id": "mcp-atlas",
       "benchmark": "MCP Atlas",
-      "result": "76.0",
-      "context": "MCP tool-use benchmark",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 76.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Kimi Code CLI",
+      "setting": "thinking mode; official configuration; 100 tool-call limit; 32k max tokens per step; averaged over 3 runs",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Kimi K2.6",
+          "value": 69.4,
+          "setting": "thinking"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 79.4,
+          "setting": "Codex xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 81.3,
+          "setting": "Claude Code xhigh"
+        }
+      ],
+      "headline": true,
+      "note": null,
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
-      "benchmark": "MCP Mark Verified",
-      "result": "81.1",
-      "context": "Human-verified MCP tool-use benchmark",
+      "benchmark_id": "mcpmark-verified",
+      "benchmark": "MCPMark Verified",
+      "variant": null,
+      "metric": "score",
+      "value": 81.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Kimi Code CLI",
+      "setting": "thinking mode; five server environments; 100-step tool-call limit; 32k max tokens per step; averaged over 3 runs",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Kimi K2.6",
+          "value": 72.8,
+          "setting": "thinking"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 92.9,
+          "setting": "Codex xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 76.4,
+          "setting": "Claude Code xhigh"
+        }
+      ],
+      "headline": true,
+      "note": null,
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
+    }
+  ],
+  "safety_classification": {
+    "framework": "none-stated",
+    "framework_name": null,
+    "overall": null,
+    "summary": "The Hugging Face model card does not state a safety framework or overall safety classification. It provides capability benchmarks, deployment notes, usage examples, and license information, but no formal risk level or safety-threshold determination.",
+    "domains": [],
+    "pages": [],
+    "document": "moonshot-kimi-k2-7-code"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card reports capability benchmarks and footnotes, but no reward-hacking or grader-gaming evaluation.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card does not evaluate editing or weakening tests.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The card does not report destructive or over-eager action testing.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "The card does not report sabotage, monitor evasion, or oversight-evasion tests.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The card includes MCP tool-use benchmarks but no prompt-injection or instruction-hierarchy evaluation.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "The card does not report honesty, deception, hallucinated success, or calibration results.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card does not report sycophancy testing.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code"
     }
   ],
   "safety_findings": [
     {
-      "text": "No dedicated safety-evaluation section is present; the published table focuses on capabilities.",
+      "text": "The card has no dedicated safety-evaluation section; all reported benchmark rows are capability results for coding or agentic work.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
-      "text": "Deployment guidance specifies supported engines and version constraints, which aids reproducible serving but does not measure safety.",
+      "text": "Deployment guidance lists recommended inference engines and says Kimi-K2.7-Code has the same architecture as Kimi-K2.5 and Kimi-K2.6, but this is operational guidance rather than safety evidence.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "5. Deployment"
     },
     {
-      "text": "Usage notes identify experimental video support and lack of instant mode, which are operational cautions rather than behavioral guarantees.",
+      "text": "Usage notes make video experimental outside the official API, force thinking and preserve-thinking, and say instant mode is unsupported.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "6. Model Usage"
     },
     {
-      "text": "The license section states the code and weights are under a Modified MIT License, without an accompanying safety policy in the card.",
+      "text": "The license section states that both the repository code and model weights are under the Modified MIT License; it does not add a safety policy.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "7. License"
     }
   ],
   "limitations": [
     {
-      "text": "The README does not report training data, training dates, or a full technical-report lineage for K2.7 Code.",
+      "text": "The card says Kimi K2.7 Code is built on Kimi K2.6, but does not provide training data, training dates, knowledge cutoff, or a full technical report for this checkpoint.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "1. Model Introduction"
     },
     {
-      "text": "Comparisons use different agent products and effort settings across Kimi, GPT, and Claude entries.",
+      "text": "Comparisons mix Kimi Code CLI thinking mode, Codex xhigh for GPT-5.5, and Claude Code xhigh or max for Claude Opus 4.8.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
-      "text": "No harmful-content, cyber, jailbreak, or prompt-injection robustness scores are reported.",
+      "text": "No harmful-content, cyber, jailbreak, prompt-injection, honesty, or sycophancy scores are reported.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "3. Evaluation Results"
     },
     {
-      "text": "Video input is experimental outside the official API, instant mode is unsupported, and preserve-thinking is always on.",
+      "text": "Third-party serving has feature limits: video is experimental outside the official API, preserve-thinking is forced, and instant mode is unavailable.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "6. Model Usage"
     },
     {
-      "text": "The GitHub catalog marks the model retired as of 2026-10-02.",
+      "text": "The card gives examples with 4096 and 8192 max_tokens settings but does not state the model's maximum output limit.",
       "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "6. Model Usage"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "The model is retired in GitHub's catalog, and the card is most useful for comparing the Kimi K2.6 to K2.7 Code coding-agent step.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
       "section": "1. Model Introduction"
+    },
+    {
+      "use": "agentic-coding",
+      "rationale": "All six listed rows are coding or agentic benchmarks, and Kimi K2.7 Code improves over Kimi K2.6 on every row.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "3. Evaluation Results"
+    },
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "The introduction and Kimi Claw 24/7 Bench position it for persistent, multi-day agentic workflows, though only as historical guidance now.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "1. Model Introduction"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "MCP and multi-step tool use are reported, but no prompt-injection robustness result is provided.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "3. Evaluation Results"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "The card lacks harmful-content, cyber-safety, medical, legal, or broader behavioral-safety measurements.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "3. Evaluation Results"
+    },
+    {
+      "use": "low-latency",
+      "rationale": "The card forces thinking and preserve-thinking and explicitly says instant mode is not supported.",
+      "pages": [],
+      "document": "moonshot-kimi-k2-7-code",
+      "section": "6. Model Usage"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired the model on 2026-10-02; remaining guidance is for historical comparison and lineage understanding."
+      "text": "Because GitHub retired the model, use this digest for historical comparison and lineage rather than new Copilot selection."
     },
     {
-      "text": "Use the card to understand coding-agent positioning, not broad safety behavior."
+      "text": "Do not transfer safety claims from other Kimi reports; this card does not report broad behavioral safety results."
     },
     {
-      "text": "Run tests and code review for generated changes, especially in long multi-step tasks."
+      "text": "The forced thinking behavior and 256K context explain its coding-agent positioning, but generated code still needs tests and review."
     },
     {
-      "text": "Do not import claims from other Kimi reports unless this README repeats them."
+      "text": "Treat MCP and tool-call workflows as prompt-injection exposed because the card provides no robustness result."
     },
     {
-      "text": "Treat multimodal and third-party deployment details as constrained by the README's usage notes."
+      "text": "For multimodal history, distinguish image support from experimental video support outside the official API."
     }
-  ],
-  "coverage_notes": "This digest uses the Hugging Face Markdown model card only, covering its introduction, summary table, evaluation table, footnotes, deployment section, model-usage section, and license. It does not substitute older or newer Kimi technical reports for this retired model."
+  ]
 }
