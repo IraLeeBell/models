@@ -459,6 +459,12 @@ def render_index(catalog):
     c = counts(catalog)
     models = catalog["models"]
     lines = ["# GitHub Copilot model-card catalog", "", GENERATED, "",
+             "> [!WARNING]",
+             "> **Not a GitHub product; provided as is, without warranty, at your own risk.** The models listed "
+             "here do not necessarily match what GitHub Copilot serves now or later; consult GitHub's "
+             f"[supported AI models reference]({SUPPORTED}) for the authoritative list. Publisher documents and "
+             "their transcriptions remain the property of their respective owners. See the "
+             "[repository README](../README.md) for the full disclaimer.", "",
              f"Checked **{catalog['checked_at']}**. One folder per model that the GitHub Copilot CLI or the "
              "GitHub Copilot app offers, plus a utility model and recently retired models, each mapped to the "
              "most specific system card or model card from the model's publisher.", "",
@@ -668,6 +674,27 @@ def render_root(catalog):
     c = counts(catalog)
     return "\n".join([
         "# GitHub Copilot model cards", "", GENERATED, "",
+        "> [!IMPORTANT]",
+        "> **Not a GitHub product. Not official, endorsed, or supported by GitHub.**",
+        ">",
+        "> This is an independent reference collection. It is **not** an official GitHub offering, is **not** "
+        "supported or maintained by GitHub, and has **not** been reviewed or endorsed by GitHub or by any model "
+        "publisher named here. Everything in it is provided **\"as is\", without warranty of any kind**, express "
+        "or implied, including any warranty of accuracy, completeness, currency, merchantability, fitness for a "
+        "particular purpose, or non-infringement. The author and contributors make **no representations or "
+        "warranties** about the content and accept **no liability** for any claim, loss, or damage arising from "
+        "its use. **Use it at your own risk.**",
+        ">",
+        "> Digests, tables, and transcriptions may contain errors or omissions and can fall out of date as models "
+        "and documents change. They do not replace the publishers' original documents, and nothing here is legal, "
+        "compliance, security, or purchasing advice. Verify anything that matters against the original source "
+        "before relying on it.", "",
+        "> [!WARNING]",
+        "> **Model list disclaimer.** The models listed here do **not** necessarily match the models GitHub "
+        "Copilot currently serves, has served, or will serve. Availability, names, release status, and client "
+        f"support change frequently, and this catalog reflects GitHub's documentation as checked on "
+        f"{catalog['checked_at']}. Always consult GitHub's [supported AI models reference]({SUPPORTED}) for the "
+        "authoritative, current list.", "",
         f"A catalog of the models offered in the **GitHub Copilot CLI** and the **GitHub Copilot app**, checked "
         f"{catalog['checked_at']}, with each model's system card or model card from its publisher.", "",
         f"- [**Model catalog and coverage**](models/README.md): {c['models']} folders ({c['current']} current, "
@@ -676,9 +703,10 @@ def render_root(catalog):
         "- Each folder has an original **digest** of capabilities, evaluations, safety findings, limitations, "
         "and practical implications, with page citations, plus **provenance** (owner URL, retrieval date, "
         "size, SHA-256) and **variants**.",
-        f"- [**Rights review**](models/RIGHTS.md): {c['granted']} documents are licensed for redistribution and "
-        f"committed in full. The other {c['not_granted']} are linked, not redistributed; a verified local "
-        "workflow downloads them and produces complete page-marked Markdown extractions.",
+        f"- [**Rights review**](models/RIGHTS.md): {c['granted']} documents are published under a license that "
+        f"permits redistribution, stored beside each copy. The other {c['not_granted']} carry no such license and "
+        "remain subject to their publishers' terms; a verified local workflow downloads them from the owner URLs "
+        "and produces complete page-marked Markdown transcriptions.",
         f"- [**Scope and gaps**](models/README.md#document-scope-and-gaps): {' and '.join(m['name'] for m in catalog['models'] if not m.get('document'))} "
         "have no publisher card; some models are covered by a family or shared card, and each mapping's "
         "evidence is recorded in its `source.md`.", "",
@@ -692,10 +720,26 @@ def render_root(catalog):
         "python3 roster_check.py                           # compare the catalog with GitHub's live tables",
         "```", "",
         "See [models/README.md](models/README.md#maintenance) for maintenance steps.", "",
+        "## Ownership, trademarks, and attribution", "",
+        "- **Publisher documents belong to their owners.** System cards, model cards, technical reports, and "
+        "other publisher documents, including any copy, transcription, or excerpt of them in this repository, "
+        "are the property of their respective publishers and copyright holders, who retain all rights. Each "
+        "folder's `source.md` names the publisher and links the original.",
+        "- **No license is granted to third-party material.** Inclusion here does not license any publisher "
+        "document to you. Where a publisher license permits redistribution, that license is stored beside the "
+        "copy; otherwise, obtain any permission you need from the rights holder. See [RIGHTS.md](models/RIGHTS.md).",
+        "- **Trademarks.** Model, product, and company names (including GitHub, Copilot, OpenAI, GPT, "
+        "Anthropic, Claude, Google, Gemini, Microsoft, Moonshot AI, Kimi, xAI, and Grok) are trademarks or "
+        "registered trademarks of their respective owners. They are used only to identify the models and "
+        "documents and do not imply affiliation, sponsorship, or endorsement.",
+        "- **Rights holders.** If you believe material here infringes your rights or should be removed, "
+        "[open an issue](https://github.com/IraLeeBell/models/issues) and it will be reviewed and removed or "
+        "corrected as appropriate.", "",
         "## License", "",
         "Original material in this repository (digests, generated Markdown, scripts) is under the "
-        "[MIT License](LICENSE). Publisher documents remain the property of their publishers; committed copies "
-        "are distributed under the publisher licenses stored beside them.", "",
+        "[MIT License](LICENSE), which includes its own warranty disclaimer and limitation of liability. The MIT "
+        "License does not apply to publisher documents or their transcriptions; those remain under their owners' "
+        "terms.", "",
     ])
 
 
