@@ -1,64 +1,304 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "raptor-mini",
   "model": "Raptor mini",
   "publisher": "Microsoft",
+  "lifecycle": "retired",
+  "retired_on": "2026-09-01",
   "document": null,
-  "summary": "No publisher model card or system card exists for Raptor mini. GitHub owner documentation described it as an experimental VS Code Copilot model and catalog context identifies it as a fine-tuned GPT-5 mini, so this digest points to the base gpt-5-mini folder while warning that Raptor itself was not evaluated publicly.",
+  "supplements": [],
+  "sources": [
+    {
+      "title": "Raptor mini public preview changelog",
+      "url": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    }
+  ],
+  "coverage": {
+    "card_type": "none",
+    "document_model_names": ["Raptor mini"],
+    "model_pages": [],
+    "note": "No publisher system card or model card exists for Raptor mini. The only owner documentation cited here is GitHub's public-preview changelog, which states rollout and VS Code modes but gives no architecture, benchmark, or safety results. Catalog context records the lineage as a fine-tuned GPT-5 mini, but base-model results are not attributed to this fine-tune."
+  },
+  "summary": "Raptor mini has no publisher card and is retired in the catalog. GitHub's changelog describes it only as a new experimental Copilot model rolling out in Visual Studio Code for Pro, Pro+, and Free users, with selection in chat, ask, edit, and agent modes. The catalog records lineage to a fine-tuned GPT-5 mini, but this digest does not import GPT-5 mini results or safety findings to Raptor mini.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison and lineage research around the retired VS Code public-preview model.",
+    "watch_out_for": "No Raptor-specific card, benchmarks, safety results, context limit, or CLI documentation are available.",
+    "points": [
+      {
+        "text": "GitHub's changelog says Raptor mini was a new experimental model rolling out in GitHub Copilot to Pro, Pro+, and Free plans in Visual Studio Code.",
+        "pages": [],
+        "document": null,
+        "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+      },
+      {
+        "text": "The changelog says users could select it in the Visual Studio Code Copilot Chat model picker for chat, ask, edit, and agent modes.",
+        "pages": [],
+        "document": null,
+        "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+      },
+      {
+        "text": "The rollout was gradual, so the changelog explicitly warned that some users might not see the model immediately.",
+        "pages": [],
+        "document": null,
+        "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": "2025-11-10",
+      "as_stated": "Changelog dated 2025-11-10; it says Raptor mini is now rolling out.",
+      "note": "This is the public-preview changelog date, not a model-card release date.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state a knowledge cutoff.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "context_window_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state a context window.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state a maximum output length.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "input_modalities": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state model input modalities.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "output_modalities": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state model output modalities.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "reasoning_controls": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state reasoning controls.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state effort levels.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "tool_use": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog mentions agent mode but does not describe model tool use.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state whether weights are open.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state an architecture.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state total parameters.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The changelog does not state active parameters.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    }
+  },
   "capabilities": [
     {
-      "text": "GitHub's changelog described Raptor mini as an experimental Copilot model rolling out in Visual Studio Code.",
+      "text": "The changelog describes Raptor mini as a new experimental model for GitHub Copilot public preview in Visual Studio Code.",
       "pages": [],
+      "document": null,
       "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
     },
     {
-      "text": "The changelog said the model could be selected for chat, ask, edit, and agent modes in VS Code.",
+      "text": "It says the model picker in Visual Studio Code exposed Raptor mini for chat, ask, edit, and agent modes.",
       "pages": [],
+      "document": null,
       "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
     },
     {
-      "text": "GitHub supported-models documentation identified the lineage as a fine-tuned GPT-5 mini.",
+      "text": "The changelog says availability was gradual rather than immediate for every user.",
       "pages": [],
-      "source": "https://docs.github.com/copilot/reference/ai-models/supported-models"
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
     }
   ],
   "evaluations": [],
+  "safety_classification": {
+    "framework": "none-stated",
+    "framework_name": null,
+    "overall": null,
+    "summary": "No publisher card exists for Raptor mini, and the changelog does not name a safety framework or safety determination.",
+    "domains": [],
+    "pages": [],
+    "document": null
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "No card exists for Raptor mini, so there is no reward-hacking or grader-gaming evidence.",
+      "pages": [],
+      "document": null
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "No card exists for Raptor mini, so there is no test-tampering evidence.",
+      "pages": [],
+      "document": null
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "No card exists for Raptor mini, so there is no evidence about destructive or overeager actions.",
+      "pages": [],
+      "document": null
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "No card exists for Raptor mini, so there is no sabotage or oversight-evasion evidence.",
+      "pages": [],
+      "document": null
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "No card exists for Raptor mini, so there is no prompt-injection or instruction-hierarchy evidence.",
+      "pages": [],
+      "document": null
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "No card exists for Raptor mini, so there is no honesty, deception, or completion-claim evidence.",
+      "pages": [],
+      "document": null
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "No card exists for Raptor mini, so there is no sycophancy evidence.",
+      "pages": [],
+      "document": null
+    }
+  ],
   "safety_findings": [],
   "limitations": [
     {
-      "text": "No publisher system card or model card exists for Raptor mini itself.",
+      "text": "The owner changelog provides no model-card content, benchmark table, or safety table for Raptor mini.",
       "pages": [],
-      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
-    },
-    {
-      "text": "The owner documentation does not report Raptor-specific benchmark scores or safety evaluations.",
-      "pages": [],
+      "document": null,
       "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
     },
     {
       "text": "The changelog documents Visual Studio Code availability, not Copilot CLI availability.",
       "pages": [],
+      "document": null,
       "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
     },
     {
-      "text": "Base GPT-5 mini materials do not evaluate the Raptor fine-tune, and fine-tuning can change behavior.",
+      "text": "The changelog states only rollout, plans, and VS Code model-picker modes; it does not state architecture, limits, training data, or safety results.",
       "pages": [],
-      "source": "https://docs.github.com/copilot/reference/ai-models/supported-models"
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "text": "The changelog does not include GPT-5 mini benchmark or safety results, so base-model results are not evidence for the Raptor mini fine-tune.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "Use Raptor mini only for historical comparison of the retired VS Code public-preview model; the changelog says it rolled out in Visual Studio Code.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "terminal-workflows",
+      "rationale": "The changelog covers Visual Studio Code model-picker availability and does not document CLI availability.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "use": "untrusted-input",
+      "rationale": "The owner changelog gives no prompt-injection or tool-result safety evidence for Raptor mini.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "The owner changelog gives no safety evaluations or limitations specific to consequential domains.",
+      "pages": [],
+      "document": null,
+      "source": "https://github.blog/changelog/2025-11-10-raptor-mini-is-rolling-out-in-public-preview-for-github-copilot/"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired the model on 2026-09-01; remaining guidance is historical and lineage-focused."
+      "text": "Use the catalog lineage note only to understand ancestry; do not copy GPT-5 mini benchmark or safety results onto Raptor mini."
     },
     {
-      "text": "Use the gpt-5-mini folder only as incomplete base-model context."
+      "text": "When auditing old VS Code sessions, remember that the changelog lists chat, ask, edit, and agent modes but gives no harness details."
     },
     {
-      "text": "Do not infer Raptor-specific safety or benchmark behavior from missing documentation."
-    },
-    {
-      "text": "Treat old Raptor mini outputs as preview-era VS Code behavior, not as a current CLI model."
+      "text": "For any old Raptor mini output, rely on the repository diff, tests, and human review rather than absent card evidence."
     }
-  ],
-  "coverage_notes": "This digest covers GitHub's Raptor mini changelog and the supported-models lineage note. Because no publisher card exists, evaluations and safety_findings are empty and limitations emphasize the absence of Raptor-specific evidence."
+  ]
 }

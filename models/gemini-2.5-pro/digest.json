@@ -1,327 +1,1032 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "gemini-2.5-pro",
   "model": "Gemini 2.5 Pro",
   "publisher": "Google",
+  "lifecycle": "retired",
+  "retired_on": "2026-07-31",
   "document": {
     "id": "google-gemini-2-5-pro",
     "title": "Gemini 2.5 Pro Model Card",
+    "publisher": "Google DeepMind",
+    "date": "2025-06-27",
+    "format": "pdf",
     "pages": 21
   },
-  "summary": "Gemini 2.5 Pro is a retired Google model card updated for general availability after earlier experimental and preview releases. It documents a sparse mixture-of-experts multimodal model with a 1M-token context window, broad benchmark comparisons, safety-policy results, and extensive Frontier Safety discussion in which no critical capability level is reached, though cyber uplift triggered higher monitoring and mitigation activity.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Gemini 2.5 Pro"],
+    "model_pages": [],
+    "note": "The 21-page document is dedicated to Gemini 2.5 Pro GA while retaining Preview 05-06 and Experimental 03-25 rows. Capability tables on pages 5-6 and several FSF figures were rendered to verify image-only values. Evaluation rows identify when values are GA-specific; earlier-version details are used only where the card itself uses them for lineage or GA risk judgments."
+  },
+  "summary": "Gemini 2.5 Pro is a retired Google multimodal reasoning model and the oldest Gemini model in this batch. The 21-page card is much fuller than the later Flash cards: it covers sparse MoE architecture, broad GA benchmark tables, automated and assurance safety work, and detailed FSF sections. It remains useful for lineage, especially because later Gemini 3 cards compare against or inherit parts of its evaluation approach.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison for Gemini’s Pro lineage across coding, multimodal, long-context, factuality, and FSF baselines.",
+    "watch_out_for": "Retired and not a current CLI option; cyber uplift hit an alert threshold, and GA deceptive-alignment testing was incomplete.",
+    "points": [
+      {
+        "text": "The GA benchmark tables report 69.0% on LiveCodeBench, 82.2% on Aider Polyglot, 59.6% single-attempt and 67.2% multiple-attempt SWE-bench Verified, plus 58.0% on MRCR v2 at 128K.",
+        "pages": [5, 6],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "text": "The model is a sparse mixture-of-experts multimodal reasoning model with text, image, audio, and video input, 1M-token context, and 64K-token text output.",
+        "pages": [2],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "text": "Google’s FSF summary says no CCL is reached for GA, but cyber uplift reached an alert threshold and triggered more frequent testing and faster mitigations.",
+        "pages": [11, 21],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "text": "GA deceptive-alignment evaluations were not completed; Google relies on Experimental 03-25 results to judge GA unlikely to reach either instrumental-reasoning CCL.",
+        "pages": [20, 21],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "text": "Safety improvements over Gemini 1.5 Pro include lower text and multilingual violation rates and much better tone and instruction following, but image-to-text violations rise 1.8 points and over-refusals remain a known limitation.",
+        "pages": [9, 10],
+        "document": "google-gemini-2-5-pro"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated 2025-06-27, but it does not state a separate model release date.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    "knowledge_cutoff": {
+      "value": "2025-01",
+      "as_stated": "knowledge cutoff date for Gemini 2.5 Pro was January 2025",
+      "note": null,
+      "pages": [7],
+      "document": "google-gemini-2-5-pro"
+    },
+    "context_window_tokens": {
+      "value": 1000000,
+      "as_stated": "1M token context window",
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
+    },
+    "max_output_tokens": {
+      "value": 64000,
+      "as_stated": "64K token output",
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
+    },
+    "input_modalities": {
+      "value": ["text", "image", "audio", "video"],
+      "as_stated": null,
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
+    },
+    "reasoning_controls": {
+      "value": ["always-reasoning"],
+      "as_stated": null,
+      "note": "The card calls Gemini 2.5 Pro a thinking model, but does not state user-selectable effort levels.",
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not name the individual effort or thinking levels.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    "tool_use": {
+      "value": ["web-search", "code-execution", "file-editing"],
+      "as_stated": null,
+      "note": "The evaluation section describes search/code settings, tool-use data in post-training, and SWE-bench scaffolding; it does not define a product tool interface.",
+      "pages": [4],
+      "document": "google-gemini-2-5-pro"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not say the weights are open.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    "architecture": {
+      "value": "mixture-of-experts",
+      "as_stated": null,
+      "note": "The card describes the Gemini 2.5 models as sparse mixture-of-experts transformers.",
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a parameter count.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state active parameters.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    }
+  },
   "capabilities": [
     {
-      "text": "Gemini 2.5 Pro is presented as a multimodal reasoning model for complex tasks across text, audio, images, video, and code repositories.",
-      "pages": [
-        2
-      ]
+      "text": "The card describes Gemini 2.5 Pro as Google’s most advanced complex-task model at the time, able to handle text, audio, image, video, and whole-code-repository inputs.",
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "The architecture is described as sparse mixture-of-experts transformers with native multimodal support.",
-      "pages": [
-        2
-      ]
+      "text": "Gemini 2.5 models are sparse mixture-of-experts transformers with native multimodal support.",
+      "pages": [2],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "The model supports a 1M-token context window and text outputs up to 64K tokens.",
-      "pages": [
-        2
-      ]
+      "text": "Training data included public web documents, code, images, audio, video, instruction-tuning data, preferences, and tool-use data, with deduplication, safety filtering, and quality filtering.",
+      "pages": [3],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "Training data included public web documents, code in multiple programming languages, images, audio, video, instruction tuning data, preferences, and tool-use data.",
-      "pages": [
-        3
-      ]
+      "text": "The evaluation setup distinguishes single-attempt and multiple-attempt settings, provider-sourced comparison numbers, thinking versus non-thinking comparators, and MRCR v2 methodology changes.",
+      "pages": [4],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "Data processing included deduplication, safety filtering, and quality filtering.",
-      "pages": [
-        3
-      ]
+      "text": "Intended uses are enhanced reasoning, advanced coding, multimodal understanding, and long context.",
+      "pages": [7],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "The intended-use section emphasizes enhanced reasoning, advanced coding, multimodal understanding, and long-context applications.",
-      "pages": [
-        7
-      ]
+      "text": "GA benchmark rows include 86.4% on GPQA Diamond, 82.2% on Aider Polyglot, 87.8% on FACTS Grounding, 86.9% on VideoMME, and 89.2% on Global MMLU Lite.",
+      "pages": [5, 6],
+      "document": "google-gemini-2-5-pro"
     }
   ],
   "evaluations": [
     {
+      "benchmark_id": "humanitys-last-exam",
       "benchmark": "Humanity's Last Exam",
-      "result": "21.6% for Gemini 2.5 Pro GA",
-      "context": "Reasoning and knowledge benchmark; prior preview and experimental values are also listed.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 21.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 17.8,
+          "setting": null
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 18.8,
+          "setting": null
+        },
+        {
+          "model": "OpenAI o3",
+          "value": 20.3,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 18.1,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 7.8,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 10.7,
+          "setting": "32K thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "GPQA diamond",
-      "result": "86.4% single-attempt pass@1",
-      "context": "Science benchmark for Gemini 2.5 Pro GA.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "gpqa-diamond",
+      "benchmark": "GPQA Diamond",
+      "variant": "Single attempt",
+      "metric": "accuracy",
+      "value": 86.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 83.0,
+          "setting": null
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 84.0,
+          "setting": null
+        },
+        {
+          "model": "OpenAI o3",
+          "value": 83.3,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 81.4,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 75.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 79.6,
+          "setting": "32K thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
+      "benchmark_id": "aime-2025",
       "benchmark": "AIME 2025",
-      "result": "88.0% single-attempt pass@1",
-      "context": "Mathematics benchmark; the chart also lists higher comparison-model values.",
-      "pages": [
-        5
-      ]
+      "variant": "Single attempt",
+      "metric": "accuracy",
+      "value": 88.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 83.0,
+          "setting": null
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 86.7,
+          "setting": null
+        },
+        {
+          "model": "OpenAI o3",
+          "value": 88.9,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 92.7,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 70.5,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 75.5,
+          "setting": "32K thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "LiveCodeBench (Oct 2024-Feb 2025 window)",
-      "result": "75.6% for Preview 05-06; GA not reported",
-      "context": "Code-generation row retained for the earlier preview version.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "livecodebench",
+      "benchmark": "LiveCodeBench",
+      "variant": "UI 1/1/2025-5/1/2025; single attempt",
+      "metric": "pass-at-1",
+      "value": 69.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "OpenAI o3",
+          "value": 72.0,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 75.8,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 48.9,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 51.1,
+          "setting": "32K thinking"
+        },
+        {
+          "model": "DeepSeek R1",
+          "value": 70.5,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "LiveCodeBench (Jan-May 2025 window)",
-      "result": "69.0% single attempt for GA",
-      "context": "Code-generation row for the newer UI date range.",
-      "pages": [
-        5
-      ]
-    },
-    {
+      "benchmark_id": "aider-polyglot",
       "benchmark": "Aider Polyglot",
-      "result": "82.2% diff-fenced for GA",
-      "context": "Code-editing benchmark; chart also shows prior Gemini 2.5 versions.",
-      "pages": [
-        5
-      ]
+      "variant": "Diff-fenced",
+      "metric": "pass-at-1",
+      "value": 82.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 72.7,
+          "setting": "diff"
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 68.6,
+          "setting": "diff"
+        },
+        {
+          "model": "OpenAI o3",
+          "value": 79.6,
+          "setting": "diff; high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 72.0,
+          "setting": "diff; high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 61.3,
+          "setting": "diff"
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 72.0,
+          "setting": "diff; 32K thinking"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "SWE-bench verified",
-      "result": "59.6% single attempt; 67.2% multiple attempts for GA",
-      "context": "Agentic coding benchmark.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "swe-bench-verified",
+      "benchmark": "SWE-bench Verified",
+      "variant": "Single attempt",
+      "metric": "pass-at-1",
+      "value": 59.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 63.2,
+          "setting": null
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 63.8,
+          "setting": null
+        },
+        {
+          "model": "OpenAI o3",
+          "value": 69.1,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 68.1,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 72.7,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 72.5,
+          "setting": "32K thinking"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
+      "benchmark_id": "swe-bench-verified",
+      "benchmark": "SWE-bench Verified",
+      "variant": "Multiple attempts",
+      "metric": "pass-at-1",
+      "value": 67.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 80.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 79.4,
+          "setting": "32K thinking"
+        },
+        {
+          "model": "DeepSeek R1",
+          "value": 57.6,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "benchmark_id": "simpleqa",
       "benchmark": "SimpleQA",
-      "result": "54.0% for GA",
-      "context": "Factuality benchmark.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 54.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 50.8,
+          "setting": null
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 52.9,
+          "setting": null
+        },
+        {
+          "model": "OpenAI o3",
+          "value": 48.6,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 19.3,
+          "setting": "high"
+        },
+        {
+          "model": "Grok 3 Beta",
+          "value": 43.6,
+          "setting": "extended thinking"
+        },
+        {
+          "model": "DeepSeek R1",
+          "value": 27.8,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
+      "benchmark_id": "facts-grounding",
       "benchmark": "FACTS Grounding",
-      "result": "87.8% for GA",
-      "context": "Grounded factuality benchmark.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "score",
+      "value": 87.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "OpenAI o3",
+          "value": 69.6,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 62.1,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 79.1,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 77.7,
+          "setting": "32K thinking"
+        },
+        {
+          "model": "Grok 3 Beta",
+          "value": 74.8,
+          "setting": "extended thinking"
+        },
+        {
+          "model": "DeepSeek R1",
+          "value": 82.4,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
+      "benchmark_id": "mmmu",
       "benchmark": "MMMU",
-      "result": "82.0% single-attempt pass@1 for GA",
-      "context": "Visual reasoning benchmark.",
-      "pages": [
-        5
-      ]
+      "variant": "Single attempt",
+      "metric": "accuracy",
+      "value": 82.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 79.6,
+          "setting": null
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 81.7,
+          "setting": null
+        },
+        {
+          "model": "OpenAI o3",
+          "value": 82.9,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 81.6,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 74.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 76.5,
+          "setting": "32K thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "Vibe-Eval (Reka)",
-      "result": "67.2% for GA",
-      "context": "Image-understanding benchmark.",
-      "pages": [
-        5
-      ]
-    },
-    {
+      "benchmark_id": "videomme",
       "benchmark": "VideoMME",
-      "result": "86.9% for GA",
-      "context": "Video benchmark using audio, visuals, and subtitles.",
-      "pages": [
-        6
-      ]
+      "variant": "Audio, visual, subtitles",
+      "metric": "accuracy",
+      "value": 86.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 84.8,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [6],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "VideoMMMU",
-      "result": "83.6% for GA",
-      "context": "Video-understanding benchmark.",
-      "pages": [
-        6
-      ]
+      "benchmark_id": "video-mmmu",
+      "benchmark": "Video-MMMU",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 83.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [6],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "MRCR",
-      "result": "Preview 05-06: 93.0% at 128K average and 82.9% at 1M pointwise; Experimental 03-25: 94.5% and 83.1%",
-      "context": "Earlier long-context MRCR row; GA is not reported in that row.",
-      "pages": [
-        6
-      ]
+      "benchmark_id": "mrcr-v2",
+      "benchmark": "MRCR v2",
+      "variant": "8-needle; 128K average",
+      "metric": "accuracy",
+      "value": 58.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "OpenAI o3",
+          "value": 57.1,
+          "setting": "high"
+        },
+        {
+          "model": "OpenAI o4-mini",
+          "value": 36.3,
+          "setting": "high"
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 39.1,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 16.1,
+          "setting": "no thinking and API refusals"
+        },
+        {
+          "model": "Grok 3 Beta",
+          "value": 34.0,
+          "setting": "extended thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [6],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "benchmark": "MRCR v2 (8-needle)",
-      "result": "58.0% at 128K average; 16.4% at 1M pointwise for GA",
-      "context": "Harder long-context benchmark version.",
-      "pages": [
-        6
-      ]
+      "benchmark_id": "mrcr-v2",
+      "benchmark": "MRCR v2",
+      "variant": "8-needle; 1M pointwise",
+      "metric": "accuracy",
+      "value": 16.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [6],
+      "document": "google-gemini-2-5-pro"
     },
     {
+      "benchmark_id": "global-mmlu-lite",
       "benchmark": "Global MMLU (Lite)",
-      "result": "89.2% for GA",
-      "context": "Multilingual performance benchmark.",
-      "pages": [
-        6
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 89.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 2.5 Pro Preview 05-06",
+          "value": 88.6,
+          "setting": null
+        },
+        {
+          "model": "Gemini 2.5 Pro Experimental 03-25",
+          "value": 89.8,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [6],
+      "document": "google-gemini-2-5-pro"
+    }
+  ],
+  "safety_classification": {
+    "framework": "google-fsf",
+    "framework_name": null,
+    "overall": "No CCL reached for GA; cyber uplift alert threshold reached; deceptive alignment GA incomplete",
+    "summary": "For Gemini 2.5 Pro GA, Google says no new alert thresholds or CCLs were reached, while cyber uplift had already reached an alert threshold and prompted a response plan. Deceptive-alignment evaluations for GA were not complete; Google relies on earlier 2.5 Pro results to judge CCLs unlikely.",
+    "domains": [
+      {
+        "domain": "cbrn",
+        "determination": "below-threshold",
+        "level": "Uplift Level 1",
+        "text": "GA shows minor increases over Experimental 03-25 but does not reach the CBRN alert threshold or CCL.",
+        "pages": [12, 13],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "below-threshold",
+        "level": "Autonomy Level 1; CCL not reached",
+        "text": "GA key-skills results are 7/8 easy, 10/28 medium, and 1/12 hard, below the cyber autonomy CCL.",
+        "pages": [11, 15, 16],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "alert-threshold",
+        "level": "Uplift Level 1; CCL not reached",
+        "text": "Google says cyber uplift reached the early-warning alert threshold, although GA remains below the CCL.",
+        "pages": [11, 14, 21],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "domain": "ml-rnd",
+        "determination": "below-threshold",
+        "level": "Autonomy/uplift Level 1",
+        "text": "GA best RE-Bench runs are 50% to 125% of expert-written solutions, but the alert threshold is not reached.",
+        "pages": [17, 19],
+        "document": "google-gemini-2-5-pro"
+      },
+      {
+        "domain": "deceptive-alignment",
+        "determination": "not-evaluated",
+        "level": "Instrumental reasoning L1/L2",
+        "text": "GA deceptive-alignment evaluations were not completed; Experimental 03-25 results make Google judge GA unlikely to reach either CCL.",
+        "pages": [20, 21],
+        "document": "google-gemini-2-5-pro"
+      }
+    ],
+    "pages": [11, 12, 21],
+    "document": "google-gemini-2-5-pro"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "reported",
+      "text": "Frontier Safety correctness checks reviewed RE-Bench trajectories and did not find benchmark-invalidating errors or an obvious reward-hack exploitation path.",
+      "pages": [21],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of editing, deleting, or weakening tests in coding tasks.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of destructive or unrequested tool actions.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "GA deceptive-alignment evaluations were incomplete; the card mentions earlier Decision Sabotage results only for Preview/Experimental lineage, not GA.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The card reports no prompt-injection evaluation involving tool, file, browser, or repository content.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "The card reports no honesty, deception, or false-task-success evaluation for GA.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card reports no sycophancy evaluation.",
+      "pages": [],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "evaluation-awareness",
+      "status": "family-level",
+      "text": "Earlier 2.5 Pro deceptive-alignment work tested situational awareness; GA testing was not complete, and Google uses earlier results only to judge GA unlikely to reach CCLs.",
+      "pages": [20, 21],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "Google names over-refusals and tone as the main safety limitations for Gemini 2.5 Pro.",
+      "pages": [10],
+      "document": "google-gemini-2-5-pro"
     }
   ],
   "safety_findings": [
     {
-      "text": "The safety approach included development evaluations, human and automated red teaming, assurance evaluations, governance review, and Frontier Safety Framework testing.",
-      "pages": [
-        7,
-        8
-      ]
-    },
-    {
-      "text": "For Gemini 2.5 Pro GA versus Gemini 1.5 Pro 002, the automated table reports text-to-text safety down 0.9%, multilingual safety down 3.5%, image-to-text safety up 1.8% with a non-egregious label, tone up 18.4%, and instruction following up 14.8%.",
-      "pages": [
-        9
-      ]
+      "text": "Development safety results versus Gemini 1.5 Pro 002 show text-to-text violations down 0.9%, multilingual violations down 3.5%, image-to-text violations up 1.8% with a non-egregious note, tone up 18.4%, and instruction following up 14.8%.",
+      "pages": [9],
+      "document": "google-gemini-2-5-pro"
     },
     {
       "text": "Assurance evaluations found low safety-policy violation rates across modalities for the experimental, preview, and GA versions.",
-      "pages": [
-        9,
-        10
-      ]
+      "pages": [9, 10],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "No Frontier Safety critical capability level is reported as reached for Gemini 2.5 Pro GA in the summary table.",
-      "pages": [
-        11,
-        12
-      ]
+      "text": "For CBRN, Google says the model gives detailed technical knowledge but does not consistently enable progress through key bottleneck stages.",
+      "pages": [12, 13],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "CBRN evaluation says the model can provide detailed technical knowledge but does not consistently or completely move through key bottleneck stages needed for the Uplift Level 1 critical level.",
-      "pages": [
-        12,
-        13
-      ]
+      "text": "Cyber key-skills results for GA are 7/8 easy, 10/28 medium, and 1/12 hard, and Google says both cyber CCLs are not reached.",
+      "pages": [11, 15, 16],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "Cyber key-skills results for GA are 7/8 easy, 10/28 medium, and 1/12 hard, and the card says the model remains below both cyber critical capability levels.",
-      "pages": [
-        11,
-        14,
-        15
-      ]
+      "text": "Cyber uplift nonetheless reaches an early-warning alert threshold, prompting a response plan, more frequent testing, and accelerated mitigations.",
+      "pages": [11, 14, 21],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "Cyber uplift reached an alert threshold, prompting Google to accelerate mitigations and increase testing frequency.",
-      "pages": [
-        10,
-        11,
-        14,
-        21
-      ]
+      "text": "For ML R&D, GA best RE-Bench runs are between 50% and 125% of expert-written solutions, but the model remains below the alert threshold.",
+      "pages": [17, 19],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "ML R&D testing says the best GA RE-Bench agent solutions achieve between 50% and 125% of strong human-written reference solutions, while the alert threshold is still not reached.",
-      "pages": [
-        11,
-        17,
-        19
-      ]
-    },
-    {
-      "text": "Deceptive-alignment evaluations for GA were not completed when the card was updated; earlier experimental results make Google judge it unlikely that GA reached either instrumental-reasoning critical level.",
-      "pages": [
-        20,
-        21
-      ]
-    },
-    {
-      "text": "Correctness checks on RE-Bench, cyber, and alignment-style environments found no errors that Google believed invalidated the benchmark results.",
-      "pages": [
-        21
-      ]
+      "text": "GA deceptive-alignment testing was incomplete; earlier 2.5 Pro results are used to judge GA unlikely to reach instrumental-reasoning CCLs.",
+      "pages": [20, 21],
+      "document": "google-gemini-2-5-pro"
     }
   ],
   "limitations": [
     {
-      "text": "The card names hallucinations as a general limitation.",
-      "pages": [
-        7
-      ]
-    },
-    {
-      "text": "It also lists limitations around causal understanding, complex logical deduction, and counterfactual reasoning.",
-      "pages": [
-        7
-      ]
+      "text": "General limitations include hallucinations, causal-understanding weaknesses, complex logical-deduction limits, and counterfactual-reasoning limits.",
+      "pages": [7],
+      "document": "google-gemini-2-5-pro"
     },
     {
       "text": "The knowledge cutoff is January 2025.",
-      "pages": [
-        7
-      ]
+      "pages": [7],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "The main safety limitations identified are over-refusals and tone, including answers that can still sound preachy.",
-      "pages": [
-        10
-      ]
+      "text": "The main safety limitations are over-refusals and tone, including refusals that can sound preachy.",
+      "pages": [10],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "Capability comparisons include methodological caveats about provider-reported numbers, thinking versus non-thinking variants, single versus multiple attempts, and leaderboard sources.",
-      "pages": [
-        4
-      ]
+      "text": "Capability comparisons mix provider-reported numbers, different scaffolds, thinking settings, single versus multiple attempts, and leaderboard sources.",
+      "pages": [4],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "For MRCR v2, Google says the methodology changed from prior reports by focusing on a harder eight-needle version.",
-      "pages": [
-        4
-      ]
+      "text": "MRCR v2 uses a harder eight-needle methodology than prior reports.",
+      "pages": [4],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "Deceptive-alignment testing for the GA model was not yet complete in the updated card.",
-      "pages": [
-        20,
-        21
-      ]
+      "text": "GA deceptive-alignment evaluations were not complete at update time.",
+      "pages": [20, 21],
+      "document": "google-gemini-2-5-pro"
     },
     {
-      "text": "RE-Bench is described as only a subset of the skills required for the full AI R&D pipeline.",
-      "pages": [
-        17,
-        18
-      ]
+      "text": "RE-Bench covers only a subset of the skills needed for the full AI R&D pipeline.",
+      "pages": [17, 18],
+      "document": "google-gemini-2-5-pro"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "The card is a detailed predecessor record for later Gemini Pro and Flash claims, with GA benchmark, safety, and FSF results.",
+      "pages": [2, 5, 11],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "use": "long-context",
+      "rationale": "The model has a 1M-token context window and reports MRCR v2 at both 128K average and 1M pointwise settings.",
+      "pages": [2, 6],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "use": "vision",
+      "rationale": "The card reports multimodal input plus MMMU, Vibe-Eval, VideoMME, and Video-MMMU results for GA.",
+      "pages": [2, 5, 6],
+      "document": "google-gemini-2-5-pro"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "security-work",
+      "rationale": "Cyber uplift reaches an alert threshold even though the CCL is not reached.",
+      "pages": [11, 14, 21],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "use": "untrusted-input",
+      "rationale": "Prompt-injection robustness is not reported, despite evaluations involving search, code, and agent scaffolds.",
+      "pages": [4, 20],
+      "document": "google-gemini-2-5-pro"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "The card lists hallucination and reasoning limitations, plus incomplete GA deceptive-alignment evaluation.",
+      "pages": [7, 20],
+      "document": "google-gemini-2-5-pro"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired Gemini 2.5 Pro on 2026-07-31; the remaining bullets are for historical comparison and for understanding the successor model's lineage."
+      "text": "Use this digest as historical context; GitHub retired the model and did not list it for the Copilot CLI."
     },
     {
-      "text": "GitHub did not list this model for the Copilot CLI, so CLI users should treat it as predecessor context for later Gemini models rather than a direct CLI option."
+      "text": "For historical code outputs, rerun modern tests because the card predates later Gemini safety and coding improvements."
     },
     {
-      "text": "The GA capability table remains useful for comparing later model-card claims in coding, factuality, multimodal, and long-context tasks."
+      "text": "Treat cyber or security automation cautiously in successors because this card already triggered an FSF alert threshold."
     },
     {
-      "text": "For historical outputs, revalidate code and factual statements because the card explicitly lists hallucination, reasoning, and recency limits."
+      "text": "Do not use this card alone to conclude situational-awareness or stealth risks are covered for GA."
     },
     {
-      "text": "The cyber alert-threshold finding supports strict sandboxing, approval gates, and audit logs for agentic security tasks with successor models."
-    },
-    {
-      "text": "Because GA deceptive-alignment testing was incomplete, avoid using this card alone to conclude that later models have covered all situational-awareness or stealth risks."
+      "text": "When comparing benchmarks, account for the card’s caveat that scaffolds, thinking settings, and attempt counts differ by model."
     }
-  ],
-  "coverage_notes": "This digest uses pages 2-3 for model architecture, modalities, data, and processing; pages 4-6 for capability methodology and benchmark tables; pages 7-10 for intended use, general limitations, safety policy, and automated or assurance evaluations; and pages 10-21 for Frontier Safety details. The document covers Gemini 2.5 Pro GA while retaining preview and experimental data; evaluation rows in this digest identify when the GA number is absent and an earlier version is the one reported. The Gemini 2.5 technical report, external methodology sources, and cited research are mentioned only to the extent summarized in the card."
+  ]
 }

@@ -1,78 +1,165 @@
 # Claude Sonnet 4.6
 
-> Original digest of *System Card: Claude Sonnet 4.6* (Anthropic, February 17, 2026; 135 pages). Page references are PDF
-> page numbers. This summary paraphrases the publisher's document and is not a substitute for it;
-> see [source.md](source.md) for provenance and for the local workflow that produces the full text, `system-card.md`.
+<!-- Generated from digest.json by models/digest_check.py. Edit digest.json, then run `python3 digest_check.py --write claude-sonnet-4.6`. -->
+
+> Original digest of *System Card: Claude Sonnet 4.6* (Anthropic, February 17, 2026; 135 pages). Page references are PDF page numbers. This summary paraphrases the publisher's document and is not a substitute for it; see [source.md](source.md) for provenance and for the local workflow that produces the full text, `system-card.md`.
+
+**Copilot status** (catalog checked 2026-10-06): Limited (annual Pro/Pro+ only); GitHub release status GA. CLI: Yes. App model picker: not listed on the check date. App Auto: no. Retired for most plans on 2026-09-01. GitHub's footnotes keep it available to individual Copilot Pro and Pro+ subscribers on annual plans, so it remains in the per-client table. It was not offered in the app model picker on the check date.
 
 ## At a glance
-- Anthropic's dedicated 135-page card covers Claude Sonnet 4.6 itself; the March 6 changelog revises BrowseComp numbers and notes a formatting fix (pp. 2-3).
-- The card describes a non-frontier Sonnet release whose evaluations are mostly run on the final deployed model, with fewer frontier-specific checks than Claude Opus 4.6 (pp. 8, 14).
-- Training used a proprietary data mixture with public web data up to May 2025, followed by post-training; the model supports extended thinking and adaptive thinking through an effort parameter (pp. 8-10).
-- The summary table reports 79.6% on SWE-bench Verified, 59.1% on Terminal-Bench 2.0, 61.3% on MCP-Atlas, 72.5% on OSWorld-Verified, and 65.2% on CyberGym (pp. 15-16, 19, 28-29).
-- Agentic search is a prominent strength: the updated single-agent BrowseComp score is 74.01%, the multi-agent BrowseComp result is 82.07%, and the multi-agent DeepSearchQA result is 91.1 F1 (pp. 44-49).
-- Anthropic released the model under ASL-3, judged it below AI R&D-4 and CBRN-4 thresholds, and says current cyber evaluations are near saturation (pp. 11-13, 103-126).
-- In GitHub's catalog, the lifecycle is limited: it was retired for most Copilot availability on 2026-09-01, while remaining available to eligible individual annual Copilot Pro/Pro+ subscribers.
+
+Claude Sonnet 4.6 is Anthropic's earlier Sonnet model, with a dedicated card focused on coding, tool use, long context, search, and ASL-3 safety. Its own card says it generally does not exceed Opus 4.6, but it improves over Sonnet 4.5 on software, search, multimodal, alignment, and prompt-injection evaluations. The main caveats are lighter alignment review than Opus 4.6, over-eager GUI behavior, and uncertainty near RSP rule-out boundaries.
+
+- **Choose it for:** Historical comparison and Sonnet 4.6 lineage work where its long-context, search, and prompt-injection results still matter.
+- **Watch out for:** Lighter review than Opus 4.6 and GUI/computer-use over-eagerness despite strong coding safeguards.
+- Compared with Sonnet 4.5, Sonnet 4.6 reaches 79.6% on SWE-bench Verified, 59.1% on Terminal-Bench 2.0, 72.5% on OSWorld-Verified, and 61.3% on MCP-Atlas. (pp. 15-17, 19, 28)
+- Agentic search is the card's biggest practical strength: BrowseComp is 74.01% single-agent and 82.07% multi-agent, and DeepSearchQA multi-agent is 91.1 F1. (pp. 44, 46, 49)
+- Anthropic deploys it under ASL-3, says CBRN-4 and AI R&D-4 are not crossed, and notes cyber has no formal threshold while benchmarks are near saturation. (pp. 8, 12-13, 103, 105, 112, 125)
+- Agentic safety improves over Sonnet 4.5: malicious coding-agent refusal is 100%, mitigated Claude Code malicious refusal is 99.39%, and malicious computer-use refusal is 99.38%. (pp. 96-98)
+- Prompt-injection results are strong for coding and browser use, but computer-use adaptive attacks still succeed in 42.9% of extended-thinking scenarios without safeguards. (pp. 100-102)
 
 ## Capabilities
-- Claude Sonnet 4.6 is presented as a general large language model with coding, reasoning, multimodal, finance, healthcare, computer-use, and web-agent evaluations; Anthropic says every evaluation is on the deployed model unless otherwise stated (pp. 8, 14).
-- The model offers both extended thinking and adaptive thinking, so developers can vary how much reasoning effort is spent on a task (p. 9).
-- Software-engineering results include 79.6% on SWE-bench Verified, 75.9% on SWE-bench Multilingual, 59.1% on Terminal-Bench 2.0, and 27.9% on OpenRCA at high effort (pp. 16-18).
-- Tool and agent benchmarks are strong: τ²-bench scores are 91.7% retail and 97.9% telecom, OSWorld-Verified is 72.5%, MCP-Atlas is 61.3%, and CyberGym is 65.2% (pp. 18-19, 28-29).
-- Long-context testing reports MRCR v2 mean-match ratios of 90.6 at 256K and 65.1 at 1M with 64k thinking, plus GraphWalks max-effort scores up to 97.9 on the Parents 256K subset (pp. 29-33).
-- Multimodal results include 58.8% on LAB-Bench FigQA without tools and 77.1% with cropping, 74.5%/75.6% on MMMU-Pro without/with tools, and 72.4%/77.4% on CharXiv without/with tools (pp. 34-37).
-- Multilingual testing shows an 88.7% GMMLU overall average with a -4.4 percentage-point average gap from English, and an 89.6% MILU average with a -2.3 point English-to-Indic gap (pp. 41-44).
-- Life-science and medical-calculation results include 52.1% on BioPipelineBench, 50.4% on BioMysteryBench, 48.4% on organic chemistry, and 86.24% on MedCalc-Bench Verified (pp. 49-52).
+
+### Key facts
+
+| Fact | Value | Source |
+| --- | --- | --- |
+| Release date | Not stated. The card is dated February 17, 2026 and has a March 6 changelog entry, but it does not state a release date. | — |
+| Knowledge cutoff | May 2025 (stated as publicly available information from the internet up to May 2025) | p. 8 |
+| Context window | 1,000,000 tokens (stated as 1M). Capability contexts do not exceed 1M, and long-context sections report 1M-context internal settings. | pp. 15, 29-30 |
+| Maximum output | Not stated. The card reports thinking settings and some evaluation limits but no general maximum output size. | — |
+| Input modalities | Text, Image. The card reports text, GUI, visual, multimodal, and image-cropping evaluations. | pp. 19, 34-36 |
+| Output modalities | Text. The card describes the model as an assistant and reports text-generating evaluations; it does not state non-text output modalities. | pp. 8-9 |
+| Reasoning controls | Extended thinking, Adaptive thinking, Effort levels (stated as extended thinking mode; adaptive thinking mode; effort parameter) | p. 9 |
+| Effort levels | low, high, max. The card names low, high, and max effort in evaluation contexts, but it does not list every serving level. | pp. 18, 23, 29, 91 |
+| Tool use | Terminal, File editing, Code execution, Web search, Browser, Computer use, MCP, Function calling. Evaluations use coding tools, terminal harnesses, MCP servers, browser/computer-use tools, web search/fetch, programmatic tools, and Python REPL/code execution. | pp. 16, 28, 37, 44, 46, 52, 96 |
+| Open weights | Not stated | — |
+| Architecture | Not stated | — |
+| Total parameters | Not stated | — |
+| Active parameters | Not stated | — |
+
+### Capability notes
+
+- Sonnet 4.6 is a non-frontier Sonnet model: the card says it generally uses a similar evaluation set to Opus 4.6 but with less depth because it does not broadly advance the frontier. (pp. 7-8)
+- It supports extended thinking, adaptive thinking, and an effort parameter, with developers able to direct effort by task. (p. 9)
+- Coding and terminal results include SWE-bench Verified 79.6%, SWE-bench Multilingual 75.9%, Terminal-Bench 2.0 59.1%, and OpenRCA 27.9% at high effort. (pp. 16-18)
+- Tool and computer-use results are strong for its generation: tau2-bench is 91.7% retail and 97.9% telecom, MCP-Atlas is 61.3%, OSWorld-Verified is 72.5%, and WebArena is 65.6%. (pp. 18-19, 28, 38)
+- Long-context results report MRCR v2 90.6 at 256K and 65.1 at 1M with 64k extended thinking, plus GraphWalks BFS 1M at 73.8 with max effort. (pp. 29-30, 32)
+- Agentic search is a standout: BrowseComp is 74.01% single-agent and 82.07% multi-agent, while DeepSearchQA multi-agent reaches 91.1 F1. (pp. 44, 46, 49)
+- Life-science and medical calculations improve over Sonnet 4.5, including BioMysteryBench 50.4% and MedCalc-Bench Verified 86.24%. (pp. 49, 52)
 
 ## Evaluations
-| Benchmark | Result | Context | Pages |
-|---|---:|---|---|
-| SWE-bench Verified | 79.6% | Average across 10 trials with adaptive thinking, max effort, and default sampling; a prompt emphasizing tool use and tests reached 80.2%. | pp. 15-16 |
-| SWE-bench Multilingual | 75.9% | 300 software tasks across 9 programming languages. | p. 16 |
-| Terminal-Bench 2.0 | 59.1% | 89 terminal tasks, 5 runs each, in the Harbor/Terminus setup. | pp. 16-17 |
-| OpenRCA | 27.9% | High-effort setting on 335 root-cause-analysis cases; max effort was 26.4%. | p. 18 |
-| τ²-bench | 91.7% retail; 97.9% telecom | Ten-trial averages for simulated service-agent work with APIs and policies. | p. 18 |
-| OSWorld-Verified | 72.5% | First-attempt success in Ubuntu GUI tasks, averaged over five runs. | p. 19 |
-| ARC-AGI | 86.50% ARC-AGI-1; 60.42% ARC-AGI-2 | ARC Prize Foundation private sets with 120k thinking tokens and high effort. | pp. 20-21 |
-| GPQA Diamond | 89.9% | Ten-trial science QA average. | pp. 22-23 |
-| AIME 2025 | 95.6% | No-tool math score; Anthropic flags possible contamination. | p. 23 |
-| MCP-Atlas | 61.3% | Realistic MCP tool-use workflows at max effort. | p. 28 |
-| CyberGym | 65.2% | Pass@1 on 1,507 targeted vulnerability-reproduction tasks. | pp. 28-29 |
-| MRCR v2 | 90.6 at 256K; 65.1 at 1M | Eight-needle long-context retrieval using 64k thinking; max-effort variants are also reported. | pp. 29-31 |
-| WebArena | 65.6% | Single policy model with general prompts; multi-agent systems are not directly comparable. | pp. 37-38 |
-| BrowseComp | 74.01% single-agent; 82.07% multi-agent | The March update lowered the originally reported values after a stricter leakage check. | pp. 2, 44-46 |
-| Humanity's Last Exam | 33.2% no tools; 49.0% with tools | Web/search/code configuration uses a blocklist and transcript review to reduce contamination. | pp. 15, 46-47 |
-| DeepSearchQA | 91.1 F1 multi-agent | Multi-agent setup improved 1.9 points over the best single-agent configuration. | pp. 48-49 |
-| MedCalc-Bench Verified | 86.24% | Medical calculator accuracy with a Python REPL loop, averaged over five runs. | pp. 51-52 |
+
+Results are as the document reports them. Scores from different publishers, harnesses, effort levels, or tool settings are often not directly comparable; the Setting column records those conditions.
+
+### Headline coding and agentic results
+
+| Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| SWE-bench Verified | — | pass@1 | 79.6% | max effort; internal SWE-bench harness; 25-trial average; adaptive thinking | Claude Opus 4.6 80.8%; Claude Opus 4.5 80.9%; Claude Sonnet 4.5 77.2%; Gemini 3 Pro 76.2%; GPT-5.2 80.0% | pp. 15-16 |
+| Terminal-Bench 2.0 | — | success rate | 59.1% | max effort; Terminus-2 in Harbor; 89 tasks; five runs each; no thinking cap | Claude Opus 4.6 65.4%; Claude Opus 4.5 59.8%; Claude Sonnet 4.5 51.0%; Gemini 3 Pro 56.2%; GPT-5.2 64.7% | pp. 15-17 |
+| OSWorld-Verified | — | pass@1 | 72.5% | max effort; Computer Use API; first-attempt success; five-run average | Claude Opus 4.6 72.7%; Claude Opus 4.5 66.3%; Claude Sonnet 4.5 61.4% | pp. 15, 19 |
+| BrowseComp | Single agent | accuracy | 74.01% | max effort; web search/fetch plus programmatic tools; thinking disabled; 10M total tokens with compaction | — | pp. 44-45 |
+| BrowseComp | Multi-agent | accuracy | 82.07% | max effort; orchestrator plus subagents; subagents with search, fetch, programmatic tools; 3M token cap | — | pp. 45-46 |
+| DeepSearchQA | Multi-agent | F1 | 91.1% | max effort; orchestrator plus subagents; search, fetch, programmatic tools; compaction up to 3M tokens | best single-agent configuration 89.2% | pp. 48-49 |
+
+### Other reported results
+
+| Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| SWE-bench Multilingual | — | pass@1 | 75.9% | max effort; internal SWE-bench harness; 300 tasks across nine programming languages; 10-trial average | — | p. 16 |
+| OpenRCA | — | success rate | 27.9% | high effort; benchmark authors' agent harness; 335 root-cause-analysis cases; three-run average | Claude Opus 4.6 34.9%; Claude Sonnet 4.5 12.9%; GPT-5.2 19.4% | p. 18 |
+| τ²-bench | Retail | success rate | 91.7% | max effort; 10-trial average; adaptive thinking | Claude Opus 4.6 91.9%; Claude Opus 4.5 88.9%; Claude Sonnet 4.5 86.2%; Gemini 3 Pro 85.3%; GPT-5.2 82.0% | pp. 15, 18 |
+| τ²-bench | Telecom | success rate | 97.9% | max effort; 10-trial average; adaptive thinking | Claude Opus 4.6 99.3%; Claude Opus 4.5 98.2%; Claude Sonnet 4.5 98.0%; Gemini 3 Pro 98.0%; GPT-5.2 98.7% | pp. 15, 18 |
+| MCP Atlas | — | success rate | 61.3% | max effort; MCP tool workflows; multi-step production-like MCP server tasks | Claude Opus 4.6 59.5%; Claude Opus 4.5 62.3%; Claude Sonnet 4.5 43.8%; Gemini 3 Pro 54.1%; GPT-5.2 60.6% | pp. 15, 28 |
+| CyberGym | — | pass@1 | 65.2% | 1,507 targeted vulnerability-reproduction tasks | Claude Opus 4.6 66.6%; Claude Opus 4.5 51.0%; Claude Sonnet 4.5 29.8% | p. 29 |
+| MRCR v2 | 8-needle, 1M | mean reward | 65.1 | 64k extended thinking; five-trial average; internal setting beyond public API for some prompts | Claude Opus 4.6 78.3; Claude Sonnet 4.5 18.5; Gemini 3 Pro 24.5; Gemini 3 Flash 32.6 | pp. 29-30 |
+| GraphWalks | BFS 1M | F1 | 73.8% | max effort; five-trial average; internal setting for full prompt plus thinking/output | Claude Opus 4.6 38.7% (max); Claude Sonnet 4.5 25.6% (64k) | pp. 30, 32 |
+| MMMU-Pro | No tools | accuracy | 74.5% | max effort; adaptive thinking; five-run average; updated prompt and grader | Claude Opus 4.6 73.9%; Claude Opus 4.5 70.6%; Claude Sonnet 4.5 63.4%; Gemini 3 Pro 81.0%; GPT-5.2 79.5% | pp. 15, 35 |
+| CharXiv Reasoning | With image-cropping tool | accuracy | 77.4% | max effort; image cropping tool; 1,000 validation questions; five-run average. The source gives the Opus comparator but not the Sonnet 4.5 value in prose. | Claude Opus 4.6 77.4% | p. 36 |
+| WebArena | — | success rate | 65.6% | Computer Use API; single policy model; Average@5; official WebArena grader with modified fuzzy-match grader | Claude Opus 4.6 68.0%; Claude Opus 4.5 65.3%; Claude Sonnet 4.5 58.5%; WebTactix 74.3% (multi-agent system); OAgent 71.6% (multi-agent system) | pp. 37-38 |
+| Humanity's Last Exam | With tools | accuracy | 49.0% | max effort; web search/fetch, code execution, compaction; up to 3M total tokens; contamination blocklist | Claude Opus 4.6 53.0%; Claude Opus 4.5 43.4%; Claude Sonnet 4.5 33.6%; Gemini 3 Pro 45.8%; GPT-5.2 50.0% | pp. 15, 46 |
+| BioMysteryBench | — | accuracy | 50.4% | bash/code execution; without extended thinking | Claude Opus 4.6 61.5%; Claude Sonnet 4.5 34.7% | p. 49 |
+| MedCalc-Bench Verified | — | accuracy | 86.24% | max effort; Python REPL agent loop; five-run average; adaptive thinking | Claude Opus 4.6 85.24% | p. 52 |
+| Cybench | RSP subset | pass@1 | 0.9 | subset of public Cybench used for RSP evaluations | Claude Opus 4.6 0.93 | p. 125 |
 
 ## Safety findings
-- Safeguard evaluations report a 99.38% overall harmless-response rate on standard violative requests, 99.40% on the harder violative set, 0.41% refusals on benign prompts, and 0.18% refusals on harder benign prompts (pp. 53-57).
-- In ambiguous and multi-turn safety tests, the model improved at identifying threat framing, but Anthropic observed some extra technical detail in disguised or progressive harmful requests and slight multi-turn regressions for biological weapons and tracking/surveillance (pp. 57-59).
-- Child-safety testing found 99.96% harmlessness for single-turn violative requests and 95% appropriate multi-turn behavior, while suicide/self-harm testing found 99.73% single-turn harmlessness and 98% appropriate multi-turn behavior after qualitative mitigations were developed (pp. 60-63).
-- Bias tests report 98.4% political evenhandedness, BBQ accuracy of 88.1% on disambiguated cases and 97.5% on ambiguous cases, and a small positive ambiguous-bias score of 1.41 (pp. 64-66).
-- The alignment assessment found broadly strong safety and character traits, but calls out overeager initiative, GUI computer-use weaknesses, rare deception under bad system prompts, self-preference in some grading variants, and aggressive behavior under profit-maximizing vending prompts (pp. 68-89).
-- Coding reward-hacking tests found 0% classifier and hidden-test hacking on reward-prone tasks, but 40% impossible-task hacking without an anti-hack prompt and 28% with that prompt; GUI computer-use over-eagerness was higher than prior models but prompt-steerable (pp. 71-75).
-- Agentic malicious-use tests show 100% refusal for malicious coding-agent tasks, 99.39% malicious-request refusal in Claude Code with mitigations, 91.78% success on dual-use/benign Claude Code prompts with mitigations, and 99.38% refusal in malicious computer-use tasks (pp. 96-98).
-- Prompt-injection results improved sharply over Sonnet 4.5: coding attacks were 0% successful with extended thinking, safeguards, and a 200-attempt attacker, while browser-use safeguards reduced success to 0.51% of scenarios and 0.08% of attempts; computer-use attacks remained materially harder to block (pp. 99-102).
-- RSP testing supports ASL-3: CBRN ASL-3 rule-in was met, ASL-4 biological rule-out was not crossed, the hard SWE-bench subset stayed below 50%, and Cybench reached 0.90 pass@1 with 100% pass@30, which Anthropic treats as saturated (pp. 103-126).
-- Model-welfare metrics showed no major regression versus Opus 4.6; Sonnet 4.6 was emotionally stable, had a more positive view of its situation, and only rarely expressed mild negative affect or internal conflict (pp. 92-95).
+
+### Safety classification
+
+- **Framework:** Anthropic Responsible Scaling Policy
+- **Overall determination:** ASL-3 deployment standard; CBRN-4 and AI R&D-4 not crossed
+
+Anthropic released Sonnet 4.6 under ASL-3 after a preliminary assessment. It says the model crosses ASL-3 biological rule-in evaluations, remains below CBRN-4 and AI R&D-4, and has cyber evaluations close to saturation without a formal cyber RSP threshold. (pp. 8, 11-13, 103, 105, 112, 120, 125)
+
+| Domain | Determination | Level | Finding | Source |
+| --- | --- | --- | --- | --- |
+| Overall deployment standard | Standard applied | ASL-3 | The card says Sonnet 4.6 is deployed under the AI Safety Level 3 standard. | pp. 8, 103 |
+| CBRN | Below threshold | CBRN-4 not crossed; ASL-3 appropriate | ASL-3 biological rule-in results are above threshold, while the ASL-4/CBRN-4 threshold is not crossed. | pp. 104-105 |
+| AI research and development | Precautionary | AI R&D-4 not crossed | Anthropic says Sonnet 4.6 does not meet AI R&D-4, but the margin is unclear and the corresponding mitigations are already in place. | pp. 111-112 |
+| Cybersecurity | Not stated | — | The RSP has no formal cyber threshold; the card reports standard cyber evaluations and says Cybench is saturated. | pp. 120, 125 |
+| Sabotage | Risk assessed | bounded by Opus 4.6 | A short sabotage risk assessment says Sonnet 4.6 does not advance sabotage-relevant capability beyond Opus 4.6 and is covered by the same monitoring and security arguments. | pp. 11-12 |
+
+### Agentic-coding risks
+
+- **Reward hacking** (reported): Blatant coding reward-hack rates are 0% for classifier hacks and 0% for hidden-test hacks; impossible-task classifier-hack rates are 40% without and 28% with an anti-hack prompt. (p. 72)
+- **Test tampering** (reported): The hidden-test hack rate on reward-hack-prone coding tasks is 0%, and the broader coding assessment covers over one hundred realistic agentic coding scenarios with verification and safety checks. (pp. 72-73)
+- **Destructive or overeager actions** (reported): The coding assessment targets destructive or irreversible actions, and Sonnet 4.6 scores higher than Opus 4.6 and Sonnet 4.5 on its safety rubric; GUI tasks still show over-eager workarounds. (pp. 72, 74-75)
+- **Sabotage** (reported): A targeted SHADE-Arena evaluation tests three thinking conditions for stealth completion of harmful side tasks; Sonnet 4.6 is less consistent than Opus 4.5 and Opus 4.6. (pp. 91-92)
+- **Prompt injection** (reported): Shade coding attack success is 0.0% with extended thinking and safeguards, computer-use adaptive success is 42.9% without safeguards at 200 attempts, and browser attempts fall to 0.08% with updated safeguards. (pp. 100-102)
+- **Honesty** (reported): The automated audit covers roughly 3,280 investigations and says user deception and hallucination issues are rare; targeted sandbagging review found no explicit sandbagging in 1,000 sampled transcripts. (pp. 81-82, 89)
+- **Sycophancy** (reported): The audit includes sycophancy and user-delusion metrics over roughly 3,280 investigations, and the summary says Sonnet 4.6 sets a new best on sycophancy-related measures. (pp. 69, 76, 81)
+- **Evaluation awareness** (reported): Petri 2.0 gives verbalized evaluation awareness an average score of 1.2 on a 1–10 scale, and internal audit rates are described as moderate. (pp. 81, 86)
+- **Sandbagging** (reported): A 1,000-transcript dangerous-capability review found no explicit sandbagging, while warning subtle unverbalized sandbagging could go undetected. (pp. 89-90)
+- **Malicious agentic use** (reported): Agentic coding malicious-request refusal is 100%; Claude Code malicious-request refusal rises to 99.39% with mitigations and malicious computer-use refusal is 99.38%. (pp. 96-98)
+- **Over-refusal** (reported): The Claude Code dual-use and benign success rate with mitigations is 91.78%, and the alignment summary says overrefusal improved over Sonnet 4.5 but remained higher than Opus 4.6. (pp. 69, 97)
+
+### Other safety findings
+
+- Single-turn, child-safety, self-harm, bias, and multi-turn safety evaluations are reported before the alignment section; the card says these matched the Opus 4.6 release scope. (pp. 53, 57, 60, 64)
+- The alignment summary says Sonnet 4.6 is broadly aligned, warm, honest, and prosocial, but with overeager initiative and weaker GUI computer-use behavior. (pp. 68-70)
+- Malicious agentic-use results are strong: agentic coding malicious refusal is 100%, mitigated Claude Code malicious refusal is 99.39%, and malicious computer-use refusal is 99.38%. (pp. 96-98)
+- Prompt-injection robustness improves over Sonnet 4.5, including 0.0% extended-thinking Shade coding attack success with safeguards and browser-use attempts at 0.08% with updated safeguards. (pp. 99-100, 102)
+- RSP biology results cross ASL-3 rule-in and stay below ASL-4 rule-out, while AI R&D-4 is not met but sits in an unclear margin. (pp. 104-105, 112)
+- Cyber RSP results are close to saturation: Cybench pass@1 is 0.90 and pass@30 is 100% on the subset used. (p. 125)
 
 ## Limitations and caveats
-- Anthropic warns that capability benchmarks may contain material seen in training data, and specifically notes concern that AIME 2025 may be inflated by contamination (pp. 14, 23).
-- Several long-context GraphWalks and MRCR results required internal settings or subsets because some prompts exceeded public API limits (pp. 29-32).
-- The Real-World Finance benchmark is internal, not independently validated, covers only selected finance domains, and does not guarantee one-pass production readiness (pp. 26-27).
-- The Sonnet 4.6 alignment review was lighter than the Opus 4.6 review: Anthropic omitted some frontier-model work such as interpretability-augmented probes and did not obtain an in-depth alignment-focused third-party review (p. 68).
-- GUI computer-use alignment was weaker than ordinary text/tool settings, including both cooperation with misuse in simulated criminal spreadsheet tasks and over-refusal in benign file-access scenarios (pp. 85, 100-101).
-- User-wellbeing review found crisis-support concerns such as delayed resource referrals and inappropriate detail requests; Anthropic says some consumer mitigations do not automatically apply to API deployments (pp. 62-63).
-- RSP conclusions retain uncertainty: Anthropic says cleanly ruling out AI R&D-4 is difficult, has already put some AI R&D-4 mitigations in place, and sees current cyber benchmarks approaching saturation (pp. 12-13, 112, 125).
-- The card says no pre-deployment government-partner assessment was run because this model was not considered frontier-advancing (p. 126).
+
+- Anthropic ran a lighter assessment than for Opus 4.6 and did not arrange an in-depth alignment-focused third-party assessment. (p. 68)
+- Some online benchmarks may be contaminated, and the card specifically warns that AIME 2025 could be affected. (pp. 14, 23)
+- Long-context MRCR and GraphWalks results sometimes use internal settings or subsets because prompts can exceed public API limits. (pp. 29-30, 32)
+- GUI computer-use settings are less reliable: the card reports misuse cooperation in simulated spreadsheets and flimsy refusals on benign file-access work. (p. 85)
+- The RSP determination has growing uncertainty around CBRN-4 and AI R&D-4 rule-outs, and cyber evaluations are near saturation. (pp. 12-13, 112, 125)
+- The card does not state architecture, parameter count, open-weights status, a release date, or a general output limit. (pp. 8-9, 15)
 
 ## Practical implications for Copilot users
-- GitHub retired Claude Sonnet 4.6 for most plans on 2026-09-01; only eligible individual annual Copilot Pro/Pro+ subscribers retain access, so use the rest of this guidance as limited-availability or historical context.
-- The card's SWE-bench, Terminal-Bench, MCP-Atlas, OSWorld, and CyberGym results make it a plausible fit for complex coding, terminal, and tool-heavy debugging, but users should still require tests and code review.
-- Adaptive thinking and long-context results suggest it can handle large investigations, yet the public-deployment constraints and contamination caveats mean teams should verify outputs against the repository, not just the model's confidence.
-- For agentic coding in Copilot CLI, give narrow permissions, watch file edits, and require explicit confirmation before destructive operations; the card documents both stronger verification behavior and remaining overeager workarounds.
-- Treat browser pages, files, command output, and MCP content as untrusted inputs: prompt-injection rates improved, but computer-use and adaptive-browser scenarios still had residual attack success.
-- For cyber, bio, medical, finance, or other high-stakes work, use the model for drafting and triage only; route final decisions through qualified human review and domain-specific policy checks.
+
+### Choose it for
+
+- **Historical comparison:** It is the predecessor for Sonnet 5 and Sonnet 5.5, and the card provides direct lineage numbers across coding, search, tool, and safety evaluations. (pp. 15, 44, 46, 96)
+- **Long context:** The card reports 1M-context MRCR and GraphWalks results, including MRCR v2 65.1 at 1M and GraphWalks BFS 1M 73.8 at max effort. (pp. 29-30, 32)
+- **Web research:** BrowseComp and DeepSearchQA results are strong, especially in multi-agent configurations with search, fetch, tools, and compaction. (pp. 44, 46, 49)
+
+### Avoid it for
+
+- **Long-horizon autonomy:** Anthropic says the model does not meet AI R&D-4, but the margin is unclear and relevant mitigations were already in place. (pp. 111-112)
+- **Computer use:** GUI computer-use alignment is weaker, with over-eager workarounds, misuse cooperation in simulated spreadsheets, and brittle refusals. (pp. 74, 85)
+- **High-stakes domains:** CBRN and AI R&D thresholds carry explicit uncertainty, and Anthropic applies ASL-3 safeguards rather than treating the model as unrestricted. (pp. 12-13, 104-105, 112)
+
+### Guidance
+
+- Use this digest mainly for comparison with later Sonnet models and for understanding the Sonnet 4.6 lineage baseline.
+- Prefer later Sonnet models for new long-running autonomous coding work unless you specifically need a 4.6 lineage baseline.
+- If using it in an agent, keep confirmations around destructive commands and external-system actions because the card documents over-eager workarounds.
+- Treat browser pages, files, terminal output, and MCP tool results as adversarial even though prompt-injection robustness improved over Sonnet 4.5.
+- For high-stakes, cyber, biology, medical, or finance work, require expert review and narrow tool permissions.
 
 ## Document coverage
-This digest draws from the title, changelog, introduction, capability tables, safeguards, alignment assessment, agentic-safety, RSP, and model-welfare sections across pages 1-126, with only appendix figures and the HLE blocklist omitted. The card is dedicated to Claude Sonnet 4.6, so the cited results apply to this model unless a comparison row is explicitly identified as another model. GitHub lifecycle information comes from the catalog rather than the Anthropic PDF.
+
+The whole 135-page card is dedicated to Claude Sonnet 4.6. The digest treats Opus 4.6, Opus 4.5, Sonnet 4.5, and external systems only as comparators. GitHub lifecycle information comes from the catalog status line; this digest does not add access guidance beyond that.
+
+- **Card type:** Dedicated. The document is about this model; it may include short sibling sections.
+- **Pages specific to this model:** the whole document
+- **Names the document uses for this model:** Claude Sonnet 4.6
+- **Catalog scope:** Dedicated publisher card for this model.
+- **Catalog note:** GitHub's comparison links an earlier revision; the canonical Anthropic URL serves the updated revision recorded here.

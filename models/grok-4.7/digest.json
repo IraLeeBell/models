@@ -600,7 +600,7 @@
       "benchmark_id": "cybergym",
       "benchmark": "CyberGym",
       "variant": "Mean reproduced",
-      "metric": "success-rate",
+      "metric": "pass-at-1",
       "value": 80.3,
       "unit": "percent",
       "higher_is_better": true,

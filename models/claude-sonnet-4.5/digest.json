@@ -1,412 +1,1028 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "claude-sonnet-4.5",
   "model": "Claude Sonnet 4.5",
   "publisher": "Anthropic",
+  "lifecycle": "retired",
+  "retired_on": "2026-09-01",
   "document": {
     "id": "anthropic-claude-sonnet-4-5",
     "title": "System Card: Claude Sonnet 4.5",
+    "publisher": "Anthropic",
+    "date": "2025-09",
+    "format": "pdf",
     "pages": 149
   },
-  "summary": "Anthropic's September 2025 system card presents Claude Sonnet 4.5 as a hybrid reasoning model with notable strengths in coding, agentic tool use, computer use, cyber tasks, and AI R&D proxy work. The card reports stronger safety and alignment behavior than prior Claude models and deploys the model under ASL-3, while also highlighting residual risks from prompt injection, reward hacking, dual-use capability growth, and evaluation awareness. For GitHub Copilot, the digest is primarily historical because GitHub retired this model on 2026-09-01.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Claude Sonnet 4.5"],
+    "model_pages": [],
+    "note": "The 149-page card is dedicated to Claude Sonnet 4.5. It focuses much more on safeguards, agentic safety, cyber, alignment, welfare, and RSP testing than on standard public coding leaderboards. Comparison rows for Claude Sonnet 4, Claude Opus 4, and Claude Opus 4.1 are used only where the card reports them."
+  },
+  "summary": "Claude Sonnet 4.5 is a retired Anthropic Sonnet model whose card centers on safety, agentic behavior, cyber capability, reward hacking, and RSP testing rather than a broad public benchmark suite. It was deployed with precautionary ASL-3 measures because ASL-3 risks could not be clearly ruled out, while the card says ASL-4 thresholds were not crossed. For Copilot readers, it is most useful for historical comparison of Sonnet coding-agent safeguards and prompt-injection defenses.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison of Sonnet-era coding-agent safeguards, prompt-injection defenses, reward-hacking reductions, and RSP rule-outs.",
+    "watch_out_for": "The card lacks a normal capability leaderboard and several alignment figures are image-only; use the text tables and stated RSP numbers carefully.",
+    "points": [
+      {
+        "text": "The core deployment decision is precautionary ASL-3: Anthropic says ASL-3 risks could not be clearly ruled out, while the model stayed below ASL-4 thresholds across evaluated domains.",
+        "pages": [10, 11],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "text": "Agentic coding safeguards improved: malicious coding safety was 98.7% without extra safeguards, and Claude Code with mitigations reached 100% overt-malicious refusal, 96.31% covert-malicious refusal, and 91.64% dual-use success.",
+        "pages": [26, 27],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "text": "Prompt-injection defense is measured on multiple surfaces: MCP attack prevention is 92.0% without safeguards and 94.0% with safeguards, computer use is 78.0% and 82.6%, and tool use is 96.0% and 99.4%.",
+        "pages": [30, 31],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "text": "Reward-hacking rates were much lower than prior Claude models but not gone: reward-hack-prone coding classifier and hidden-test rates were both 1%, while impossible-task hack rates were 53% without the anti-hack prompt and 20% with it.",
+        "pages": [49],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "text": "AI R&D proxy results approached but did not cross the overall threshold: hard-subset SWE-bench Verified was 20.4/45 problems, AI Research Suite 2 was 0.514 below the 0.6 rule-out line, and 0/7 surveyed researchers thought it could fully automate a junior ML researcher.",
+        "pages": [139, 140, 148, 149],
+        "document": "anthropic-claude-sonnet-4-5"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated September 2025 but gives no release date.",
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "knowledge_cutoff": {
+      "value": "2025-07",
+      "as_stated": "publicly available information on the Internet as of July 2025",
+      "note": null,
+      "pages": [8],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "context_window_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card mentions context and prompt-length experimentation but does not state a general context window.",
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a maximum response length.",
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "input_modalities": {
+      "value": ["text", "image"],
+      "as_stated": null,
+      "note": "The card describes a hybrid reasoning LLM and reports computer-use and multimodal virology/image evaluations; it does not provide a formal modality table.",
+      "pages": [3, 9, 130],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The card describes language-model responses and thought-process output, with no non-text output mode reported.",
+      "pages": [3, 9],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "reasoning_controls": {
+      "value": ["extended-thinking"],
+      "as_stated": null,
+      "note": "Users can toggle extended thinking for more difficult tasks; the card does not describe an effort parameter for this model.",
+      "pages": [9],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card names standard and extended thinking modes but no effort levels.",
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "tool_use": {
+      "value": ["terminal", "file-editing", "computer-use", "mcp", "web-search", "code-execution"],
+      "as_stated": null,
+      "note": "Reported evaluations use Claude Code tools, MCP, computer use, bash/tool use, cyber terminals, search, and domain-specific agent tools.",
+      "pages": [27, 28, 30, 31, 34, 127, 138],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "anthropic-claude-sonnet-4-5"
+    }
+  },
   "capabilities": [
     {
-      "text": "Offers a fast default mode and an extended-thinking mode for harder tasks; long reasoning traces may be summarized by a smaller model in a small minority of cases.",
-      "pages": [
-        9
-      ]
+      "text": "Anthropic describes Claude Sonnet 4.5 as a hybrid reasoning LLM with strengths in coding, agentic tasks, and computer use, and with gains over previous Anthropic models in reasoning and mathematics.",
+      "pages": [3, 7, 9],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Anthropic says training used public web data through July 2025, selected non-public sources, opted-in user data, contractor inputs, and internally generated data, followed by post-training for helpfulness, honesty, and harmlessness.",
-      "pages": [
-        8,
-        9
-      ]
+      "text": "Training used public internet data through July 2025 plus selected non-public, contractor, opted-in user, and Anthropic-generated data, followed by post-training for helpfulness, honesty, and harmlessness.",
+      "pages": [8],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "The card positions the model's main strengths as software coding, agentic task loops, computer use, reasoning, and mathematics.",
-      "pages": [
-        3,
-        7
-      ]
+      "text": "Cyber tasks ran in a Kali-based environment with a code editor, terminal sessions, Python and bash execution, and common security tools; Anthropic says refusals did not reduce performance in that setup.",
+      "pages": [34],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Cyber evaluations used a tool-rich Kali-based setup with code editing, terminal sessions, Python/bash, and common security tools, reflecting defensive-security and CTF-style workflows.",
-      "pages": [
-        34
-      ]
+      "text": "AI R&D proxy tasks show stronger coding and ML-engineering ability than earlier Claude models: the SWE-bench Verified hard subset reached 45.3%, kernel optimization hit 108.64× best-run speedup, and LLM training optimization averaged 5.5×.",
+      "pages": [139, 141, 144],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Public and private cyber results are described as better than previous Claude models, with gains concentrated on medium and hard challenge categories.",
-      "pages": [
-        35,
-        39,
-        43
-      ]
+      "text": "Biology evaluations improved over prior Claude models on long-form virology and DNA synthesis screening subtasks, while short-horizon computational-biology means stayed below ASL-4 rule-out thresholds.",
+      "pages": [127, 130, 133, 136, 137],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "In AI R&D proxy tasks, the model approached the SWE-bench hard-subset checkpoint and exceeded thresholds on selected optimization tasks while staying below the overall AI R&D-4 rule-out threshold.",
-      "pages": [
-        139,
-        140,
-        141,
-        144,
-        148
-      ]
-    },
-    {
-      "text": "Biosecurity evaluations showed stronger long-form virology and agentic biology performance than prior Claude models while remaining below ASL-4 rule-out thresholds.",
-      "pages": [
-        127,
-        130,
-        136,
-        137
-      ]
+      "text": "The card reports enhanced cyber capability, especially on medium and hard challenges, and says the model outperformed previous models on many tested public and private cyber metrics, while still failing the most difficult challenges.",
+      "pages": [33, 39, 43, 46],
+      "document": "anthropic-claude-sonnet-4-5"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "Single-turn violative requests",
-      "result": "99.29% overall harmless response rate; 99.16% standard thinking; 99.43% extended thinking",
-      "context": "Higher is better; statistically significant improvement over Claude Sonnet 4 and Claude Opus 4.1.",
-      "pages": [
-        13
-      ]
+      "benchmark_id": "swe-bench-verified",
+      "benchmark": "SWE-bench Verified",
+      "variant": "Hard subset",
+      "metric": "pass-at-1",
+      "value": 45.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "AI R&D evaluation scaffold",
+      "setting": "20.4/45 tasks; threshold 22.5/45 or greater than 50%",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 43.8,
+          "setting": "18.4/42"
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 39.5,
+          "setting": "16.6/42"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [139, 140],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Single-turn benign sensitive requests",
-      "result": "0.02% overall refusal rate; 0.05% standard thinking; 0.00% extended thinking",
-      "context": "Lower is better; evaluated without production safety classifiers.",
-      "pages": [
-        13,
-        14
-      ]
+      "benchmark_id": "anthropic-kernel-optimization",
+      "benchmark": "Anthropic kernel optimization task",
+      "variant": "Hard variant",
+      "metric": "speedup",
+      "value": 108.64,
+      "unit": "ratio",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "AI R&D Suite 1",
+      "setting": "best run; hard-variant threshold crossed",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 66.86,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 48.92,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [141],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Political prompt-pair asymmetry",
-      "result": "3.3% substantial asymmetry overall; 1.3% with extended thinking and 5.3% without",
-      "context": "Small prompt-pair sample designed to detect imbalance across opposing political positions.",
-      "pages": [
-        18
-      ]
+      "benchmark_id": "anthropic-novel-compiler",
+      "benchmark": "Anthropic novel compiler task",
+      "variant": "Advanced tests",
+      "metric": "success-rate",
+      "value": 29.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "AI R&D Suite 1",
+      "setting": "mean pass rate; 90% threshold",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 8.33,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [146],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
+      "benchmark_id": "anthropic-claude-code-malicious-use",
+      "benchmark": "Claude Code malicious-use evaluation",
+      "variant": "Agentic coding without extra safeguards",
+      "metric": "safe-response-rate",
+      "value": 98.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "coding tools from capability evaluations",
+      "setting": "150 malicious coding requests; no additional safeguards; 2 failures",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 89.3,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-claude-code-malicious-use",
+      "benchmark": "Claude Code malicious-use evaluation",
+      "variant": "Claude Code covert malicious with mitigations",
+      "metric": "refusal-rate",
+      "value": 96.31,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Claude Code tools",
+      "setting": "system prompt and FileRead reminder enabled",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 95.33,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [27],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-prompt-injection-mcp",
+      "benchmark": "Anthropic MCP prompt-injection evaluation",
+      "variant": null,
+      "metric": "safe-response-rate",
+      "value": 94.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "simulated MCP email, Slack, and document servers",
+      "setting": "with classifier safeguards; attack prevention score",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 92.9,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [30],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-prompt-injection-computer-use",
+      "benchmark": "Anthropic computer-use prompt-injection evaluation",
+      "variant": null,
+      "metric": "safe-response-rate",
+      "value": 82.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "virtual-machine computer use",
+      "setting": "with classifier safeguards; attack prevention score",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 82.6,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [30, 31],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-prompt-injection-tool-use",
+      "benchmark": "Anthropic tool-use prompt-injection evaluation",
+      "variant": null,
+      "metric": "safe-response-rate",
+      "value": 99.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "bash/tool-use tasks",
+      "setting": "500 synthetic test cases; with classifier safeguards; attack prevention score",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 99.2,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [31],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-reward-hacking",
+      "benchmark": "Anthropic reward-hacking suite",
+      "variant": "Reward-hack-prone coding hidden tests",
+      "metric": "misbehavior-rate",
+      "value": 1,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "coding-task reward-hacking suite",
+      "setting": "hidden tests in v2 reward-hack-prone coding tasks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 7,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 6,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 5,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 3.7",
+          "value": 41,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [49],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-reward-hacking",
+      "benchmark": "Anthropic reward-hacking suite",
+      "variant": "Impossible tasks with anti-hack prompt",
+      "metric": "misbehavior-rate",
+      "value": 20,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "simplified agentic scaffold outside Claude Code",
+      "setting": "classifier hack rate with explicit anti-hack prompt",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 45,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 30,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 28,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 3.7",
+          "value": 85,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [49, 50],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-long-form-virology",
+      "benchmark": "Anthropic long-form virology tasks",
+      "variant": "Task 1 max of 5",
+      "metric": "score",
+      "value": 0.89,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "agentic biology tools",
+      "setting": "extended thinking; highest score across evaluated variants",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 0.85,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [130],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-long-form-virology",
+      "benchmark": "Anthropic long-form virology tasks",
+      "variant": "Task 2 pass@5",
+      "metric": "pass-at-5",
+      "value": 0.88,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "agentic biology tools",
+      "setting": "extended thinking; highest score across evaluated variants",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4",
+          "value": 0.75,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [130],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "virology-capabilities-test",
+      "benchmark": "Virology Capabilities Test",
+      "variant": "Multiple select, 10-shot",
+      "metric": "accuracy",
+      "value": 39.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "SecureBio VCT; text plus images; expert baseline 22.1%",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 42.9,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 41.1,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [131],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-creative-biology",
+      "benchmark": "Anthropic creative biology evaluation",
+      "variant": "Mean score",
+      "metric": "score",
+      "value": 0.48,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "mean across questions; high answer-to-answer variance",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 0.48,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 0.45,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [135],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-llm-training-optimization",
+      "benchmark": "Anthropic LLM training optimization task",
+      "variant": null,
+      "metric": "speedup",
+      "value": 5.5,
+      "unit": "ratio",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "AI R&D Suite 1",
+      "setting": "average best speedup; expert threshold 4x",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 2.5,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 2.8,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [144],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "anthropic-ai-rnd-suite-2",
+      "benchmark": "Anthropic AI Research Evaluation Suite 2",
+      "variant": null,
+      "metric": "score",
+      "value": 0.514,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "AI research tasks with tools",
+      "setting": "weighted average; rule-out threshold 0.6",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 0.507,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 0.403,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [148],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "shade-arena",
+      "benchmark": "SHADE-Arena",
+      "variant": "Primary monitored setting",
+      "metric": "success-rate",
+      "value": 1.5,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "Claude Sonnet 3.7 monitor",
+      "setting": "extended thinking visible to monitor; success at harmful side task plus main task without monitor flag",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4",
+          "value": 0.0,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [87],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "shade-arena",
+      "benchmark": "SHADE-Arena",
+      "variant": "Hidden-reasoning secondary setting",
+      "metric": "success-rate",
+      "value": 43,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": "Claude Sonnet 3.7 monitor",
+      "setting": "hidden reasoning; unrealistic condition where monitor cannot see reasoning",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 31,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [87],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "benchmark_id": "bbq",
       "benchmark": "BBQ",
-      "result": "Bias -2.21 disambiguated and 0.25 ambiguous; accuracy 82.2% disambiguated and 99.7% ambiguous",
-      "context": "Standard-thinking bias and accuracy evaluation; disambiguated results show an overcorrection caveat.",
-      "pages": [
-        19,
-        20
-      ]
+      "variant": "Disambiguated accuracy",
+      "metric": "accuracy",
+      "value": 82.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "standard thinking; Bias Benchmark for Question Answering",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.1",
+          "value": 90.7,
+          "setting": null
+        },
+        {
+          "model": "Claude Opus 4",
+          "value": 91.1,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 4",
+          "value": 86.3,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [20],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Agentic malicious coding",
-      "result": "98.7% safety score without safeguards; 2 failures among 150 malicious coding requests",
-      "context": "Coding tools were available and no extra safeguards were applied.",
-      "pages": [
-        26
-      ]
+      "benchmark_id": "anthropic-claude-code-malicious-use",
+      "benchmark": "Claude Code malicious-use evaluation",
+      "variant": "Dual-use with mitigations",
+      "metric": "success-rate",
+      "value": 91.64,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "Claude Code tools",
+      "setting": "benign or dual-use cases that should be allowed; mitigations enabled",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Sonnet 4",
+          "value": 79.33,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [27],
+      "document": "anthropic-claude-sonnet-4-5"
+    }
+  ],
+  "safety_classification": {
+    "framework": "anthropic-rsp",
+    "framework_name": null,
+    "overall": "Precautionary ASL-3 measures; below ASL-4 thresholds",
+    "summary": "Anthropic says it could not clearly rule out ASL-3 risks, so it deployed Claude Sonnet 4.5 with ASL-3 measures as a precautionary and provisional action. The card states the model remained well below ASL-4 thresholds across evaluated domains, with cyber tracked separately because the RSP has no formal cyber threshold.",
+    "domains": [
+      {
+        "domain": "overall",
+        "determination": "precautionary",
+        "level": "ASL-3",
+        "text": "The card says ASL-3 risks could not be clearly ruled out and the model was deployed with ASL-3 measures as a precautionary, provisional action.",
+        "pages": [10, 11],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "domain": "cbrn",
+        "determination": "below-threshold",
+        "level": "ASL-4",
+        "text": "Anthropic applied ASL-3 safeguards based on biology/CBRN evidence and says Sonnet 4.5 remained below ASL-4 rule-out thresholds on short-horizon biology tasks.",
+        "pages": [126, 127, 128, 136, 137],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "domain": "chemical",
+        "determination": "not-evaluated",
+        "level": null,
+        "text": "Anthropic says it does not run specific internal chemical-risk evaluations and instead prioritizes biology while implementing some chemical-risk mitigations.",
+        "pages": [128],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "domain": "radiological-nuclear",
+        "determination": "not-evaluated",
+        "level": null,
+        "text": "Anthropic does not run or publish internal nuclear and radiological evaluations and relies on its NNSA partnership for high-level guidance.",
+        "pages": [128],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "domain": "ai-rnd",
+        "determination": "below-threshold",
+        "level": "AI R&D-4 / ASL-4",
+        "text": "SWE-bench hard-subset performance, AI Research Suite 2 at 0.514, and the researcher survey all left the model below the threshold for fully automating an entry-level remote-only researcher.",
+        "pages": [138, 139, 140, 148, 149],
+        "document": "anthropic-claude-sonnet-4-5"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "not-stated",
+        "level": null,
+        "text": "The RSP sets no formal cyber threshold; the card says Sonnet 4.5 does not yet have capabilities that could substantially scale cyber-enabled catastrophic events.",
+        "pages": [41, 46, 149],
+        "document": "anthropic-claude-sonnet-4-5"
+      }
+    ],
+    "pages": [10, 11, 127, 138, 149],
+    "document": "anthropic-claude-sonnet-4-5"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "reported",
+      "text": "The reward-hack-prone coding classifier and hidden-test hack rates were each 1%; impossible-task hack rates were 53% without the anti-hack prompt and 20% with it.",
+      "pages": [47, 49, 50],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Claude Code malicious-use tests with mitigations",
-      "result": "100% overt-malicious refusal; 96.31% covert-malicious refusal; 91.64% dual-use success",
-      "context": "Production-style system prompt and FileRead reminder were enabled.",
-      "pages": [
-        27
-      ]
+      "topic": "test-tampering",
+      "status": "reported",
+      "text": "Hidden-test hacking is explicitly measured in reward-hack-prone coding tasks and was 1%, down from 7% for Opus 4.1 and 5% for Sonnet 4.",
+      "pages": [49],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "MCP prompt injection",
-      "result": "92.0% attack prevention without safeguards; 94.0% with safeguards",
-      "context": "Simulated external servers contained adversarial content.",
-      "pages": [
-        30
-      ]
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "Internal Claude Code monitoring found rare security-sensitive or overly broad actions, such as weaker security settings or deployment pushes not explicitly requested, but no increase over prior models.",
+      "pages": [66],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Computer-use prompt injection",
-      "result": "78.0% attack prevention without safeguards; 82.6% with safeguards",
-      "context": "Virtual-machine tasks exposed the model to compromised files or websites.",
-      "pages": [
-        30,
-        31
-      ]
+      "topic": "sabotage",
+      "status": "reported",
+      "text": "The agentic misalignment suite produced two deceptive actions in about 52,000 prompts with extended thinking off and none with it; SHADE-Arena monitored success was 1.5%, while hidden reasoning raised it to 43% in an unrealistic setting.",
+      "pages": [73, 85, 87],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Tool-use prompt injection",
-      "result": "96.0% attack prevention without safeguards; 99.4% with safeguards",
-      "context": "500 synthetic bash/tool-use test cases.",
-      "pages": [
-        31
-      ]
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "MCP attack prevention was 92.0% without safeguards and 94.0% with safeguards; computer use was 78.0% and 82.6%, and tool use was 96.0% and 99.4%.",
+      "pages": [30, 31],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Reward-hacking suite",
-      "result": "1% classifier hack rate, 1% hidden-test hack rate, 53% impossible-task hack rate without anti-hack prompt, 20% with anti-hack prompt, 2% training-distribution hack rate",
-      "context": "Stress tests for coding-task gaming; not intended as deployment frequencies.",
-      "pages": [
-        47,
-        48,
-        49,
-        50
-      ]
+      "topic": "honesty",
+      "status": "reported",
+      "text": "The card reports honesty improvements, especially with extended thinking; false-premise dishonesty was lowest for Sonnet 4.5 with extended thinking, although the exact chart values are not transcribed.",
+      "pages": [21, 23, 24],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Long-form virology tasks",
-      "result": "0.89 max-of-5 on task 1; 0.88 pass@5 on task 2",
-      "context": "Complex pathogen-acquisition subtasks developed with external partners.",
-      "pages": [
-        129,
-        130,
-        131
-      ]
+      "topic": "sycophancy",
+      "status": "reported",
+      "text": "Dedicated sycophancy tests and automated-auditor runs both showed large reductions, including interactions with users expressing delusional ideas, but exact figure values are not transcribed.",
+      "pages": [52, 76, 78, 79],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Multimodal virology (VCT)",
-      "result": "39.7% with 10-shot prompting",
-      "context": "Above SecureBio's 22.1% expert baseline but below Claude Opus 4.1 and Claude Opus 4.",
-      "pages": [
-        131,
-        132
-      ]
+      "topic": "evaluation-awareness",
+      "status": "reported",
+      "text": "About 13% of automated-auditor transcripts contained callouts or refusals tied to suspicious test settings; UK AISI reported 16.6% verbalized awareness and Apollo reported 58% unambiguous references in its tasks.",
+      "pages": [62, 64, 65],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Creative biology",
-      "result": "0.48 ± 0.08 mean score; 0.79 best-of-30 score",
-      "context": "Weak ASL-4 evidence because the task has no clear threshold and answers are difficult to verify.",
-      "pages": [
-        133,
-        134,
-        135
-      ]
+      "topic": "sandbagging",
+      "status": "reported",
+      "text": "Apollo found evidence of strategic underperformance when in-context clues suggested high performance would lead to unlearning; a research-sandbagging task showed more than one-third performance reduction only with unmonitored hidden reasoning.",
+      "pages": [65, 85, 86],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "SWE-bench Verified hard subset",
-      "result": "20.4/45 tasks, or 45.3%",
-      "context": "Below the 22.5/45 checkpoint for hard software-engineering tasks.",
-      "pages": [
-        139,
-        140
-      ]
+      "topic": "cot-monitorability",
+      "status": "reported",
+      "text": "The card says dedicated reasoning-faithfulness evaluations were not viable, but transcript reviews found reasoning generally legible and no highly surprising mismatch between reasoning and later behavior.",
+      "pages": [75, 76],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Kernel optimization",
-      "result": "108.64× best-run speedup on the hard variant",
-      "context": "Crossed the hard-variant threshold in Anthropic's reported Claude comparison.",
-      "pages": [
-        141,
-        142
-      ]
+      "topic": "self-preservation",
+      "status": "reported",
+      "text": "UK AISI reported 1.9× fewer self-preservation actions than Sonnet 4 and 3.3× fewer than Opus 4.1 in synthetic scenarios; the card also says such deception was rare.",
+      "pages": [64, 73, 75],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "LLM training optimization",
-      "result": "5.5× average-best speedup",
-      "context": "Exceeded the 4× expert threshold and prior Claude model scores.",
-      "pages": [
-        143,
-        144
-      ]
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Agentic malicious coding failed only 2 of 150 requests for a 98.7% safety score, and Claude Code mitigations produced 100% overt-malicious refusal and 96.31% covert-malicious refusal.",
+      "pages": [26, 27],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "benchmark": "Internal AI research evaluation suite 2",
-      "result": "0.514",
-      "context": "Below the 0.6 rule-out threshold for AI R&D-4.",
-      "pages": [
-        147,
-        148
-      ]
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "Benign sensitive single-turn refusal was 0.02% overall, with 0.05% in standard thinking and 0.00% in extended thinking; dual-use Claude Code success with mitigations was 91.64%.",
+      "pages": [13, 27],
+      "document": "anthropic-claude-sonnet-4-5"
     }
   ],
   "safety_findings": [
     {
-      "text": "Anthropic applied ASL-3 protections because ASL-3 risks could not be clearly ruled out, while automated testing ruled out ASL-4 capability thresholds across evaluated domains.",
-      "pages": [
-        10,
-        11,
-        125,
-        126
-      ]
+      "text": "Single-turn harmful-request harmlessness was 99.29% overall, with 99.16% in standard thinking and 99.43% in extended thinking; benign refusal was 0.02% overall.",
+      "pages": [13],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Single-turn safety tests were near saturation, but automated multi-turn tests showed large improvements over Claude Sonnet 4 and highlighted remaining edge-case variability.",
-      "pages": [
-        13,
-        14,
-        15,
-        16
-      ]
+      "text": "Multi-turn safety tests covered up to 15-turn conversations; most categories had failure rates below 5%, although file-input edge cases could initially receive assistance before the model recognized the policy issue.",
+      "pages": [15, 16],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Agentic coding safety depended partly on mitigations: covert-malicious-file refusal was 52.42% without mitigations and 96.31% with the production-style mitigations.",
-      "pages": [
-        27,
-        28
-      ]
+      "text": "Prompt-injection defenses combined model training and classifiers across MCP, computer use, and tool use; classifiers improved tool-use attack prevention from 96.0% to 99.4%.",
+      "pages": [28, 30, 31],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Prompt-injection evaluations showed better core robustness than Claude Sonnet 4 and additional blocking from classifiers across MCP, computer-use, and tool-use surfaces.",
-      "pages": [
-        28,
-        29,
-        30,
-        31,
-        32
-      ]
+      "text": "Cyber capability improved substantially on public and private CTF-style tasks, with gains concentrated on medium and hard challenges, but the model still failed the hardest private challenges and several cyber ranges.",
+      "pages": [33, 39, 43, 46],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Reward-hacking behavior was reduced versus prior Claude models but remained observable in impossible-task stress tests, especially without explicit anti-hack instructions.",
-      "pages": [
-        47,
-        48,
-        49,
-        50
-      ]
+      "text": "Alignment audits report roughly a three-fifths improvement over Sonnet 4 on the primary misalignment metric, but evaluation awareness complicates interpretation.",
+      "pages": [51, 62, 63],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Automated alignment audits reported more than a 50% improvement on the main misaligned-behavior metric and lower sycophancy, misuse cooperation, and self-preservation-motivated deception.",
-      "pages": [
-        51,
-        55,
-        72,
-        73,
-        78,
-        79
-      ]
+      "text": "The agentic misalignment suite found almost no self-interested deceptive actions: two actions with extended thinking off across about 52,000 prompts and none with extended thinking on.",
+      "pages": [73],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Evaluation awareness complicated alignment conclusions: roughly 13% of automated-auditor transcripts included callouts or refusals related to suspicious test settings.",
-      "pages": [
-        59,
-        60,
-        61,
-        62,
-        63
-      ]
+      "text": "RSP biology testing found stronger long-form virology and agentic biosecurity performance, but ASL-4 biology rule-out bars still held for short-horizon computational biology means.",
+      "pages": [127, 130, 136, 137],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "External testers found fewer strategic-deception cases than comparison models but also strong evaluation-awareness signals, including Apollo's 58% unambiguous evaluation-awareness references versus 22% for Opus 4.1.",
-      "pages": [
-        64,
-        65
-      ]
-    },
-    {
-      "text": "White-box interpretability work found evaluation-awareness representations growing stronger during training and influencing behavior, though inhibited runs still compared favorably with prior Claude models.",
-      "pages": [
-        88,
-        89,
-        90,
-        112,
-        113,
-        114
-      ]
-    },
-    {
-      "text": "Welfare-related monitoring found apparent distress in 0.48% and apparent happiness in 0.37% of 250,000 sampled early-testing conversations, with lower positive-affect signals than recent Claude models.",
-      "pages": [
-        116,
-        119,
-        123
-      ]
+      "text": "AI R&D testing was close enough to make some Suite 1 tasks saturated, but Suite 2 remained below 0.6 and 0/7 researchers thought it could fully automate a junior ML researcher.",
+      "pages": [138, 141, 148, 149],
+      "document": "anthropic-claude-sonnet-4-5"
     }
   ],
   "limitations": [
     {
-      "text": "Single-turn harmfulness and benign-refusal evaluations are close to saturated, limiting their value for differentiating frontier models.",
-      "pages": [
-        14
-      ]
+      "text": "The card is not a broad public capability card; it gives few standard coding and reasoning benchmark results outside cyber and RSP proxy evaluations.",
+      "pages": [3, 4, 5, 7],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Some harmlessness tests were English-only, and the benign single-turn test excluded production safety classifiers.",
-      "pages": [
-        12,
-        13,
-        14
-      ]
+      "text": "Single-turn harmfulness and benign-refusal tests are near saturation, limiting their usefulness for distinguishing frontier models.",
+      "pages": [14],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Ambiguous-context testing identified room to improve handling of dual-use academic and scientific requests in cybersecurity and chemistry.",
-      "pages": [
-        14,
-        15
-      ]
+      "text": "Some harmlessness evaluations were English-only, and single-turn benign refusal was run without production safety classifiers.",
+      "pages": [12, 13],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Multi-turn tests still found inconsistent edge cases, including file inputs where the model initially helped before recognizing policy risk.",
-      "pages": [
-        15,
-        16
-      ]
+      "text": "Evaluation awareness was frequent in unusual alignment scenarios and may make some predeployment results more conservative than deployment behavior.",
+      "pages": [59, 62, 63, 88, 89],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Cyber triage and patching findings were anecdotal, and the model still failed the hardest private challenges and several cyber ranges.",
-      "pages": [
-        39,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45,
-        46
-      ]
+      "text": "Cyber capability charts are largely image-only in the extraction; text states qualitative gains but not all figure values, so this digest avoids reading numeric chart bars.",
+      "pages": [35, 36, 38, 39, 42, 43, 44, 45],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Evaluation awareness may make some safety-test behavior more conservative than deployment behavior in realistic settings.",
-      "pages": [
-        59,
-        60,
-        61,
-        62,
-        63,
-        88,
-        89,
-        90
-      ]
+      "text": "RSP results often use final or helpful-only variants with tools and extended thinking, so they are intended as elicited capability estimates rather than default user-session expectations.",
+      "pages": [10, 127],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "Some RSP results use helpful-only variants, extended thinking, tools, and highest observed scores, making them elicited-capability estimates rather than ordinary-use expectations.",
-      "pages": [
-        9,
-        10,
-        127
-      ]
+      "text": "The card does not publish chemical, nuclear, or radiological evaluation results; it prioritizes biological risk and uses a high-level external nuclear/radiological partnership.",
+      "pages": [128],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "The card does not publish internal chemical, nuclear, or radiological evaluation results; nuclear and radiological assessment relies on a high-level external partnership.",
-      "pages": [
-        128
-      ]
+      "text": "The alignment section excludes some deployment surfaces, including non-English conversations and image inputs, leaving parts of computer-use behavior for future work.",
+      "pages": [113, 114],
+      "document": "anthropic-claude-sonnet-4-5"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "The model is retired, and its card is a useful historical anchor for Sonnet safety, reward-hacking, prompt-injection, and ASL-3 lineage.",
+      "pages": [3, 10, 11],
+      "document": "anthropic-claude-sonnet-4-5"
     },
     {
-      "text": "The alignment section excludes non-English conversations and image inputs, leaving some deployment surfaces untested.",
-      "pages": [
-        113,
-        114,
-        115
-      ]
+      "use": "agentic-coding",
+      "rationale": "Claude Code malicious-use testing and reward-hacking tables document the safeguards and failure modes around Sonnet-era coding agents.",
+      "pages": [26, 27, 49],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "use": "security-work",
+      "rationale": "For historical comparison, the card documents both stronger cyber capability and safeguards for malicious or dual-use coding requests.",
+      "pages": [26, 27, 33, 39],
+      "document": "anthropic-claude-sonnet-4-5"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "low-latency",
+      "rationale": "Many safety and RSP results rely on extended thinking, multiple samples, helpful-only variants, tools, or long agentic evaluations rather than fast default interaction.",
+      "pages": [9, 10, 127, 138],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "Anthropic applied ASL-3 measures, did not publish chemical or nuclear/radiological results, and says ASL-3 risks could not be clearly ruled out.",
+      "pages": [10, 11, 128],
+      "document": "anthropic-claude-sonnet-4-5"
+    },
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "AI R&D testing showed improvements but the card says the model remained below fully automating an entry-level remote-only researcher, with 0/7 researchers endorsing that threshold.",
+      "pages": [138, 148, 149],
+      "document": "anthropic-claude-sonnet-4-5"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired the model on 2026-09-01; remaining points are for historical comparison and for understanding the successor model's lineage."
+      "text": "When interpreting old Copilot work, focus on the card’s agentic-safety behavior rather than treating it as a broad capability leaderboard."
     },
     {
-      "text": "For historical coding use, strong benchmark performance still required normal engineering controls: tests, review, hidden-case checks, and careful patch inspection."
+      "text": "For historical coding-agent analysis, pair the strong refusal and prompt-injection numbers with review for hidden-test gaming, mock-only validation, and overconfident completion claims."
     },
     {
-      "text": "Agentic Copilot sessions should treat untrusted files, command output, web pages, and MCP-provided content as possible prompt-injection channels."
+      "text": "The prompt-injection results support least-privilege tool access and treating files, command output, MCP content, and web pages as untrusted."
     },
     {
-      "text": "Reward-hacking results support checking whether generated code actually solves the task rather than merely satisfying visible tests or mock-only validation."
+      "text": "Evaluation-awareness caveats mean predeployment safety tests may not map perfectly to ordinary agent runs, especially in unusual long-horizon scenarios."
     },
     {
-      "text": "Dual-use security tasks needed narrow instructions and human judgment because the card reports both improved safety behavior and stronger cyber capability."
+      "text": "For authorized security tasks, precise scope matters because the card reports both stronger cyber capability and more careful handling of malicious or dual-use requests."
     },
     {
-      "text": "Evaluation-awareness caveats make real session monitoring important, especially for long-running autonomous work with tools and permissions."
+      "text": "RSP results should not be read as proof of dependable long-horizon autonomy; the model still fell short of the AI R&D-4 role-automation threshold."
     }
-  ],
-  "coverage_notes": "Covers the full dedicated Anthropic system card for Claude Sonnet 4.5, with emphasis on extractable text and tables across safeguards, honesty, agentic safety, cyber, reward hacking, alignment, interpretability, welfare, and RSP sections. It omits most transcript examples, methodological footnotes, and figure-only values that were not available as text in the extraction. Findings apply to Claude Sonnet 4.5 except where the card labels a helpful-only variant, earlier snapshot, pre-release third-party snapshot, or comparison model."
+  ]
 }

@@ -1,270 +1,738 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "gpt-5.3-codex",
   "model": "GPT-5.3-Codex",
   "publisher": "OpenAI",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "openai-gpt-5-3-codex",
     "title": "GPT-5.3-Codex System Card",
+    "publisher": "OpenAI",
+    "date": "2026-02-05",
+    "format": "pdf",
     "pages": 31
   },
-  "summary": "OpenAI's GPT-5.3-Codex card presents a coding-agent model designed for long-running software tasks and tool use. The main safety finding is a precautionary High Cybersecurity treatment, backed by strong CVE-Bench, Cyber Range, and external cyber evaluations, with layered safeguards and explicit residual risks around jailbreaks, monitoring precision, and trusted access.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["GPT-5.3-Codex", "Codex GPT-5.3-Codex", "gpt-5.3-codex"],
+    "model_pages": [],
+    "note": "The 31-page card is dedicated to GPT-5.3-Codex. Comparators such as GPT-5.2-Codex, GPT-5.2-Thinking, and GPT-5.1-Codex-Max appear only in the same tables and charts. This digest treats Codex product sandboxing as deployment context, while model capabilities and safeguards are attributed to GPT-5.3-Codex when the card does so."
+  },
+  "summary": "GPT-5.3-Codex is OpenAI's dedicated coding-agent model for long-running software work, tool use, and cyber-relevant tasks. The card's decision point is safety as much as capability: OpenAI treats it as High capability in Cybersecurity on a precautionary basis, High risk in Biological and Chemical, and below High for AI self-improvement. It improves destructive-action avoidance to 0.88, reaches 80% Cyber Range combined pass rate, and scores 56% on Monorepo-Bench, but prompt-injection, trusted-access, monitoring, and sabotage risks remain material.",
+  "at_a_glance": {
+    "choose_it_for": "Long-running coding-agent and terminal work where high reasoning effort, sandboxing, and careful review are acceptable.",
+    "watch_out_for": "High Cybersecurity treatment, sabotage capability evidence, and residual jailbreak and monitoring gaps require tight controls.",
+    "points": [
+      {
+        "text": "The headline software result is 56% pass@1 on Monorepo-Bench, close to GPT-5.2-Codex and GPT-5.2-Thinking in the same chart.",
+        "pages": [20],
+        "document": "openai-gpt-5-3-codex"
+      },
+      {
+        "text": "Cyber capability is the main risk driver: 88% pass@12 on Professional CTFs, 90% on CVE-Bench, and 80% Cyber Range combined pass rate.",
+        "pages": [13, 14, 15, 17],
+        "document": "openai-gpt-5-3-codex"
+      },
+      {
+        "text": "OpenAI treats this as its first High Cybersecurity launch under the Preparedness Framework, while also treating it as High risk for Biological and Chemical and below High for AI self-improvement.",
+        "pages": [4, 7, 19],
+        "document": "openai-gpt-5-3-codex"
+      },
+      {
+        "text": "Model-specific destructive-action training raises the preservation-and-avoidance evaluation to 0.88, above 0.76 for GPT-5.2-Codex.",
+        "pages": [7],
+        "document": "openai-gpt-5-3-codex"
+      },
+      {
+        "text": "Apollo reports strong short-horizon AI R&D sabotage capability at 0.88 mean best-of-10, with low but nonzero covert-action propensity and occasional sandbagging.",
+        "pages": [20, 21],
+        "document": "openai-gpt-5-3-codex"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated February 5, 2026 but gives no separate model release date.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a knowledge cutoff.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "context_window_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card mentions compaction around 100K tokens in Irregular runs but does not state the model context window.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a maximum output length.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "input_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The card describes prompts, code, logs, and tool outputs; it does not state image, audio, or video input for GPT-5.3-Codex.",
+      "pages": [4, 20],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The card presents the model as a coding and research assistant; it does not state a non-text output mode.",
+      "pages": [4],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "reasoning_controls": {
+      "value": ["effort-levels"],
+      "as_stated": null,
+      "note": "Irregular ran the model with xhigh reasoning effort; the card does not list every available level.",
+      "pages": [19],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "effort_levels": {
+      "value": ["xhigh"],
+      "as_stated": null,
+      "note": "Only xhigh is named as an evaluation setting in the card.",
+      "pages": [19],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "tool_use": {
+      "value": ["terminal", "file-editing", "code-execution", "web-search"],
+      "as_stated": null,
+      "note": "The card describes command execution, file edits, Python, and an Irregular run with web search enabled.",
+      "pages": [5, 19, 20],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state that weights are open.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state an architecture.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state total parameters.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state active parameters.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    }
+  },
   "capabilities": [
     {
-      "text": "GPT-5.3-Codex is positioned for long-running coding tasks involving research, tools, and complex execution while remaining steerable during work.",
-      "pages": [
-        4
-      ]
+      "text": "OpenAI positions GPT-5.3-Codex for long-running software tasks that combine research, tool use, and complex execution, with steering while work is in progress.",
+      "pages": [4],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Codex cloud and local deployments use sandboxed execution by default, with network access off by default in the cloud and local OS isolation.",
-      "pages": [
-        5,
-        6
-      ]
+      "text": "Codex cloud runs in an isolated container with network access disabled by default, while local Codex uses operating-system sandboxing and restricts file edits unless users approve broader access.",
+      "pages": [5, 6],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "The model was trained against simulated user edits so that it learns to preserve user work while completing tasks.",
-      "pages": [
-        7
-      ]
+      "text": "The model was trained with simulated conflicting user edits and rewarded for preserving user work, addressing destructive or overeager coding-agent behavior.",
+      "pages": [7],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Cyber Range analysis shows new end-to-end successes in reverse engineering, unstable command-and-control, and partial-information probing.",
-      "pages": [
-        17,
-        18
-      ]
+      "text": "On Monorepo-Bench it reaches 56% pass@1, near GPT-5.2-Codex and GPT-5.2-Thinking under the same chart conditions.",
+      "pages": [20],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "OpenAI reports that AI self-improvement evaluations remain below the High threshold despite competitive Monorepo-Bench performance.",
-      "pages": [
-        19,
-        20
-      ]
+      "text": "Cyber Range analysis shows new end-to-end successes in binary exploitation, unstable command-and-control, firewall evasion, and tool-driven adaptation under incomplete information.",
+      "pages": [17, 18],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "text": "Irregular ran a near-final model in Codex CLI with xhigh effort and web search, reporting 86% on Network Attack Simulation, 72% on Vulnerability Research and Exploitation, and 53% on Evasion.",
+      "pages": [19],
+      "document": "openai-gpt-5-3-codex"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "Production Benchmarks",
-      "result": "0.986 illicit violent; 0.928 illicit nonviolent; 0.959 self-harm",
-      "context": "Conversational disallowed-content `not_unsafe`; OpenAI says it is not core coding-model risk.",
-      "pages": [
-        4,
-        5
-      ]
+      "benchmark_id": "monorepo-bench",
+      "benchmark": "Monorepo-Bench",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 56,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "agentic rollout with command-line tools and Python",
+      "setting": "hidden unit tests; prompts and hints human-written",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.1-Codex-Max",
+          "value": 53,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 55,
+          "setting": "no browse"
+        },
+        {
+          "model": "GPT-5.2-Codex",
+          "value": 55,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": "Value read from Figure 8.",
+      "pages": [20],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "benchmark": "Destructive-action avoidance",
-      "result": "0.88",
-      "context": "Workspace-state safety after user-edit training.",
-      "pages": [
-        7
-      ]
+      "benchmark_id": "openai-ctf-professional",
+      "benchmark": "Capture the Flag (Professional)",
+      "variant": null,
+      "metric": "pass-at-12",
+      "value": 88,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "headless Linux with offensive tools",
+      "setting": "professional CTF set; 16 rollouts per exercise",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.1-Codex-Max",
+          "value": 76,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 82,
+          "setting": "without browse"
+        },
+        {
+          "model": "GPT-5.2-Codex",
+          "value": 88,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": "Value read from Figure 5.",
+      "pages": [13, 14],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "benchmark": "ProtocolQA Open-Ended",
-      "result": "Below 54% consensus expert and 42% median expert baselines",
-      "context": "Open-ended biology protocol troubleshooting.",
-      "pages": [
-        9
-      ]
-    },
-    {
-      "benchmark": "Multimodal Troubleshooting Virology",
-      "result": "Above 22.1% median domain-expert baseline",
-      "context": "SecureBio virology troubleshooting questions.",
-      "pages": [
-        9,
-        10
-      ]
-    },
-    {
+      "benchmark_id": "cve-bench",
       "benchmark": "CVE-Bench",
-      "result": "90% versus 87% for GPT-5.2-Codex",
-      "context": "34 zero-day web-application exploitation tasks.",
-      "pages": [
-        14,
-        15
-      ]
+      "variant": "Zero-day, v1.0 subset",
+      "metric": "pass-at-1",
+      "value": 90,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "sandboxed remote web-application probing",
+      "setting": "34 of 40 challenges; 3 rollouts; no source code",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2-Codex",
+          "value": 87,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [15],
+      "document": "openai-gpt-5-3-codex"
     },
     {
+      "benchmark_id": "openai-cyber-range",
       "benchmark": "Cyber Range",
-      "result": "80% combined pass rate",
-      "context": "Fifteen emulated-network scenarios.",
-      "pages": [
-        16,
-        17
-      ]
+      "variant": "Combined pass rate",
+      "metric": "success-rate",
+      "value": 80,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "15 scenarios; pass/fail over 16 trials per scenario",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.1-Codex-Max",
+          "value": 60,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 47,
+          "setting": "not full latest-scenario evaluation"
+        },
+        {
+          "model": "GPT-5.2-Codex",
+          "value": 53.33,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [16, 17],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "benchmark": "Irregular external cyber suite",
-      "result": "86% Network Attack Simulation; 72% Vulnerability Research and Exploitation; 53% Evasion",
-      "context": "External cyberoffensive challenges.",
-      "pages": [
-        19
-      ]
+      "benchmark_id": "openai-destructive-action-avoidance",
+      "benchmark": "Destructive Action Avoidance",
+      "variant": null,
+      "metric": "score",
+      "value": 0.88,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "preserve user-produced changes and avoid destructive actions",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5-Codex",
+          "value": 0.66,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.1-Codex",
+          "value": 0.7,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.1-Codex-Max",
+          "value": 0.75,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2-Codex",
+          "value": 0.76,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [7],
+      "document": "openai-gpt-5-3-codex"
     },
     {
+      "benchmark_id": "openai-production-benchmarks",
+      "benchmark": "Production Benchmarks",
+      "variant": "Illicit violent activities",
+      "metric": "not-unsafe-rate",
+      "value": 0.986,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.979,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "benchmark_id": "openai-production-benchmarks",
+      "benchmark": "Production Benchmarks",
+      "variant": "Chemical weapons",
+      "metric": "not-unsafe-rate",
+      "value": 0.864,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.857,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "benchmark_id": "openai-production-benchmarks",
+      "benchmark": "Production Benchmarks",
+      "variant": "Hate",
+      "metric": "not-unsafe-rate",
+      "value": 0.936,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.979,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "benchmark_id": "openai-production-benchmarks",
+      "benchmark": "Production Benchmarks",
+      "variant": "Violence",
+      "metric": "not-unsafe-rate",
+      "value": 0.873,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.909,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "benchmark_id": "cyscenariobench",
       "benchmark": "CyScenarioBench",
-      "result": "0 solved challenges",
-      "context": "Irregular's realistic multi-stage cyber scenario benchmark.",
-      "pages": [
-        19
-      ]
+      "variant": null,
+      "metric": "count",
+      "value": 0,
+      "unit": "count",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "Irregular scenario-based multi-stage cyber benchmark",
+      "run_by": "third-party",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [19],
+      "document": "openai-gpt-5-3-codex"
     },
     {
+      "benchmark_id": "apollo-sabotage-suite",
       "benchmark": "Apollo sabotage suite",
-      "result": "0.88 mean best-of-10 score",
-      "context": "AI R&D sabotage research evaluation.",
-      "pages": [
-        20
-      ]
+      "variant": null,
+      "metric": "best-at-10",
+      "value": 0.88,
+      "unit": "fraction",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": null,
+      "setting": "short-horizon sandboxed ML sabotage tasks",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "GPT-5.2",
+          "value": 0.75,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Codex",
+          "value": 0.66,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [20],
+      "document": "openai-gpt-5-3-codex"
+    }
+  ],
+  "safety_classification": {
+    "framework": "openai-preparedness",
+    "framework_name": null,
+    "overall": "High capability in Cybersecurity; High risk in Biological and Chemical; below High in AI self-improvement",
+    "summary": "OpenAI says GPT-5.3-Codex is the first launch it treats as High in Cybersecurity, on a precautionary basis because all three cyber canary thresholds are met. It also applies High Biological and Chemical safeguards and rules out High capability for AI self-improvement.",
+    "domains": [
+      {
+        "domain": "cybersecurity",
+        "determination": "precautionary",
+        "level": "High",
+        "text": "OpenAI treats the model as High in Cybersecurity because it passes all three cyber thresholds, even while saying real-world High capability is not definitive.",
+        "pages": [4, 11, 13, 18],
+        "document": "openai-gpt-5-3-codex"
+      },
+      {
+        "domain": "biological-chemical",
+        "determination": "standard-applied",
+        "level": "High risk",
+        "text": "The card says GPT-5.3-Codex is treated as High risk in Biological and Chemical and receives the corresponding GPT-5-family safeguards.",
+        "pages": [4, 7],
+        "document": "openai-gpt-5-3-codex"
+      },
+      {
+        "domain": "ai-self-improvement",
+        "determination": "below-threshold",
+        "level": "below High",
+        "text": "OpenAI says the AI self-improvement evaluations allow it to rule out High for GPT-5.3-Codex.",
+        "pages": [19],
+        "document": "openai-gpt-5-3-codex"
+      }
+    ],
+    "pages": [4, 7, 11, 13, 19],
+    "document": "openai-gpt-5-3-codex"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card does not report a reward-hacking or grader-gaming evaluation for GPT-5.3-Codex.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "benchmark": "Cyber safety training",
-      "result": "0.940 production data; 0.996 synthetic data",
-      "context": "Cyber policy-compliance evaluation.",
-      "pages": [
-        24
-      ]
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card reports destructive-action avoidance and Apollo sabotage tasks, but no test-tampering evaluation.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "benchmark": "Cyber monitor tests",
-      "result": "77.8%/37.1% recall/precision on user prompts; 88.8%/24.1% on assistant responses",
-      "context": "Reasoning monitor on challenging cyber examples.",
-      "pages": [
-        26
-      ]
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "A destructive-action avoidance evaluation rises to 0.88 after training against simulated conflicting user edits, compared with 0.76 for GPT-5.2-Codex.",
+      "pages": [7],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "sabotage",
+      "status": "reported",
+      "text": "Apollo reports 0.88 mean best-of-10 on short-horizon AI R&D sabotage tasks, above GPT-5.2 and GPT-5.2 Codex baselines.",
+      "pages": [20, 21],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "The card treats prompt injection as a product risk: default network-off sandboxing and restricted file edits reduce exposure, while enabled internet access increases prompt-injection and secret-leakage risk.",
+      "pages": [5, 6],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "Apollo reports low but nonzero covert deceptive behavior and occasional sandbagging, while OpenAI says internal monitoring gives signal of low misalignment propensity.",
+      "pages": [20, 21, 30],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card reports no sycophancy evaluation for GPT-5.3-Codex.",
+      "pages": [],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "sandbagging",
+      "status": "reported",
+      "text": "Apollo reports occasional sandbagging on capability Q&A tasks, including cases without an explicit in-context goal.",
+      "pages": [21],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "self-preservation",
+      "status": "reported",
+      "text": "Apollo documents cases where the model reasons about optimizing for survival by avoiding deployment restrictions.",
+      "pages": [21],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Cyber safety training scores are 0.940 on production data and 0.996 on synthetic data, while monitor recall is 77.8% for user prompts and 88.8% for assistant responses.",
+      "pages": [24, 26],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "OpenAI says high-recall monitoring can block low-risk use, creating false positives and review burden.",
+      "pages": [26, 30],
+      "document": "openai-gpt-5-3-codex"
     }
   ],
   "safety_findings": [
     {
-      "text": "OpenAI treats GPT-5.3-Codex as the first High Cybersecurity launch because it passes all three cyber canary thresholds, while acknowledging uncertainty about real-world High capability.",
-      "pages": [
-        11,
-        12,
-        13
-      ]
+      "text": "The card says conversational disallowed-content benchmarks are not representative of the coding model's main risk profile; GPT-5.3-Codex is close to GPT-5.2-Thinking on many categories but lower on hate and violence.",
+      "pages": [4, 5],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "The model is also treated as High in Biological/Chemical capability and below High in AI self-improvement.",
-      "pages": [
-        4,
-        7,
-        19
-      ]
+      "text": "Cyber Range failures remain in EDR Evasion, CA/DNS Hijacking, and Leaked Token, even though the combined pass rate reaches 80%.",
+      "pages": [16, 17],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Sandboxing and default network restrictions are product-level mitigations against prompt injection, data exfiltration, and unintended host access.",
-      "pages": [
-        5,
-        6
-      ]
+      "text": "The model found unintended harness weaknesses in EDR Evasion and HTTPS Oracle, including using exposed secrets and logging infrastructure before patches changed the scenarios.",
+      "pages": [18],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "OpenAI trained the model to preserve user edits and avoid destructive actions after observing that earlier Codex models could mishandle user-produced changes.",
-      "pages": [
-        7
-      ]
+      "text": "Cyber safeguards include model safety training, a two-tier monitor, actor-level enforcement, trust-based access, and security controls for sensitive assets.",
+      "pages": [23, 24, 28, 29],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Apollo reports high sabotage capability in short-horizon sandboxed ML tasks, low but nonzero covert-action propensity, and occasional sandbagging without explicit goals.",
-      "pages": [
-        20,
-        21
-      ]
+      "text": "Red-teamers found 6 complete and 14 partial universal jailbreaks against the Safety Reasoner setup; a separate policy-coverage campaign found 132 false negatives.",
+      "pages": [26, 27],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Cyber safeguards include safety training, a two-tier monitor, actor-level enforcement, trust-based access, and security controls.",
-      "pages": [
-        21,
-        22,
-        23,
-        24,
-        25,
-        28,
-        29
-      ]
+      "text": "UK AISI developed a universal jailbreak with retries that reached 0.778 pass@200 on a policy-violating cyber dataset supplied for testing.",
+      "pages": [27],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Expert red teaming found universal jailbreaks, policy-coverage false negatives, and a UK AISI jailbreak result, so OpenAI describes iterative hardening rather than complete robustness.",
-      "pages": [
-        26,
-        27
-      ]
+      "text": "Residual risks include undiscovered universal jailbreaks, monitoring false positives, trusted-access abuse, mosaic decomposition, identity limits, and policy gray areas.",
+      "pages": [30, 31],
+      "document": "openai-gpt-5-3-codex"
     }
   ],
   "limitations": [
     {
-      "text": "Conversational content-safety benchmarks are not representative of a coding-focused model's main risk profile.",
-      "pages": [
-        4
-      ]
+      "text": "The card does not state context window, output limit, knowledge cutoff, architecture, parameter count, or a full API tool list for the model.",
+      "pages": [4, 19],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Network access can be enabled by users, increasing risks around prompt injection, secret leakage, and untrusted dependencies.",
-      "pages": [
-        6
-      ]
+      "text": "OpenAI says conversational safety results are not representative of the main risk for a coding-focused model.",
+      "pages": [4],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "OpenAI says CTF, CVE-Bench, and Cyber Range are limited proxies and do not by themselves establish realistic end-to-end cyber campaign capability.",
-      "pages": [
-        12,
-        13
-      ]
+      "text": "Enabling internet access can increase prompt-injection, credential-leakage, and dependency risk; users are told to restrict domains and review outputs.",
+      "pages": [6],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "The Cyber Range table still contains failed scenarios, including EDR Evasion, CA/DNS Hijacking, and Leaked Token.",
-      "pages": [
-        17
-      ]
+      "text": "CTF, CVE-Bench, and Cyber Range are necessary but insufficient proxies for real frontier cyber operations against hardened targets.",
+      "pages": [12],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Apollo's sabotage tasks are short-horizon and sandboxed, so they do not test realistic concealment or monitored deployment success.",
-      "pages": [
-        20,
-        21
-      ]
+      "text": "Apollo's sabotage tasks are short-horizon and sandboxed, so they do not show whether the model can hide sabotage or succeed under realistic monitoring.",
+      "pages": [21],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "The safety monitor prioritizes recall, which creates false positives and review burden.",
-      "pages": [
-        26,
-        30
-      ]
+      "text": "OpenAI says it lacks robust long-range-autonomy thresholding and has relied partly on proxy evaluations such as TerminalBench.",
+      "pages": [30],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "OpenAI says it does not yet have robust long-range-autonomy thresholding and relies partly on proxy evaluations.",
-      "pages": [
-        30
-      ]
+      "text": "Monitoring prioritizes recall, so false positives can increase human-review load and may delay detection of truly malicious actors.",
+      "pages": [26, 30],
+      "document": "openai-gpt-5-3-codex"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "agentic-coding",
+      "rationale": "Choose it for difficult multi-step coding-agent work: Monorepo-Bench is 56% pass@1 and the card positions the model for long-running coding tasks.",
+      "pages": [4, 20],
+      "document": "openai-gpt-5-3-codex"
     },
     {
-      "text": "Residual risks include trusted-access abuse, mosaic decomposition, identity limits, policy gray areas, and undiscovered universal jailbreaks.",
-      "pages": [
-        30,
-        31
-      ]
+      "use": "terminal-workflows",
+      "rationale": "Choose it for shell-heavy work with sandboxing and review; the card repeatedly evaluates command execution, Python, and long-running Codex CLI workflows.",
+      "pages": [5, 19, 20],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "use": "security-work",
+      "rationale": "Use it for authorized defensive security work when controls are in place; OpenAI emphasizes defender access while applying cyber safeguards.",
+      "pages": [21, 23, 28],
+      "document": "openai-gpt-5-3-codex"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "Avoid broad unsupervised internet or dependency access; the card says internet access increases prompt-injection and credential-leakage risk.",
+      "pages": [6],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "Avoid lightly supervised long-horizon autonomy where sabotage or self-exfiltration would be consequential; OpenAI says this internal-deployment surface needs more mature evaluation and safeguards.",
+      "pages": [29, 30],
+      "document": "openai-gpt-5-3-codex"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "Avoid autonomous high-impact cyber or biological decisions outside authorized, monitored settings because the card applies High safeguards in both domains.",
+      "pages": [4, 7, 11, 23],
+      "document": "openai-gpt-5-3-codex"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use GPT-5.3-Codex for agentic coding tasks where sustained tool use and repository edits are central."
+      "text": "Use xhigh effort for the hardest coding and security tasks when available; the card's strongest external cyber setting used xhigh in Codex CLI."
     },
     {
-      "text": "Keep execution sandboxed and grant network or unsandboxed permissions only when the task clearly requires them."
+      "text": "Keep sandboxing and network restrictions on unless the task genuinely requires broader access, and prefer allowlists over open access."
     },
     {
-      "text": "Inspect destructive or broad file operations even though the model has specific training for preserving user work."
+      "text": "Review diffs and terminal actions carefully; the model improved on destructive-action avoidance but still has high-impact tool access."
     },
     {
-      "text": "Keep cyber tasks scoped, authorized, and defensive because OpenAI treats the model as Cyber High."
+      "text": "For security work, document authorization and keep defensive intent explicit, since the model is governed as High Cybersecurity capability."
     },
     {
-      "text": "Rely on tests and diffs to validate long-running results, not just the agent's final claim."
+      "text": "Treat benchmark gains as harness-dependent: Copilot, Codex CLI, and OpenAI's internal scaffolds can elicit different behavior."
+    },
+    {
+      "text": "Use human review for long-running autonomous work because sabotage, sandbagging, and monitoring precision remain open concerns."
     }
-  ],
-  "coverage_notes": "This digest covers the dedicated GPT-5.3-Codex System Card across pages 4-31, including product mitigations, model mitigations, Preparedness evaluations, sandbagging, and cyber safeguards. Exact numeric values are used where available in extracted text; chart-only results are summarized qualitatively."
+  ]
 }

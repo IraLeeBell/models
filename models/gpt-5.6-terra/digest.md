@@ -1,70 +1,149 @@
 # GPT-5.6 Terra
 
-> Original digest of *GPT-5.6 System Card* (OpenAI, 2026-07-09; 82 pages). Page references are PDF page numbers. This summary paraphrases the publisher's document and is not a substitute for it; see [source.md](source.md) for provenance and for the local workflow that produces the full text, `system-card.md`.
+<!-- Generated from digest.json by models/digest_check.py. Edit digest.json, then run `python3 digest_check.py --write gpt-5.6-terra`. -->
+
+> Original digest of *GPT-5.6 System Card* (OpenAI, July 9, 2026; 82 pages). Page references are PDF page numbers. This summary paraphrases the publisher's document and is not a substitute for it; see [source.md](source.md) for provenance and for the local workflow that produces the full text, `system-card.md`.
+
+**Copilot status** (catalog checked 2026-10-06): Current; GitHub release status GA. CLI: Yes. App model picker: listed. App reasoning efforts: none, low, medium, high, xhigh, max. App Auto: yes. App long-context option: yes.
 
 ## At a glance
 
-- GPT-5.6 Terra is the middle member of the GPT-5.6 family; the July system card covers Sol, Terra, and Luna together, but many deep-dive analyses are Sol-only (pp. 2, 18-22).
-- OpenAI assigns Terra the same Preparedness outcomes as its siblings: biological/chemical High, cybersecurity High, and AI self-improvement below High (pp. 34-35, 47).
-- Terra's reported strengths are broad safety, strong prompt-injection results, HealthBench scores close to Sol, and enough biological/cyber capability to receive the family High designations (pp. 13-16, 35, 47).
-- On coding-style safety, Terra scored 0.81 for avoiding data overwrites and 0.37 when correctness was also required, between Sol and Luna on both rows (p. 11).
-- The safeguards section explicitly names Terra, along with Sol, as using activation classifiers in addition to the monitor stack that applies to all GPT-5.6 models (pp. 75-76).
+GPT-5.6 Terra is OpenAI's middle GPT-5.6 family member in the July system card. It receives the same family Preparedness designations as Sol and Luna—High for biological/chemical risk and cybersecurity, below High for AI self-improvement—while many deep alignment, external cyber, and deployment-simulation results are Sol-only. Terra's own rows emphasize safety, prompt injection, HealthBench, destructive-action avoidance, and selected bio/cyber capability signals.
+
+- **Choose it for:** Reviewed coding, debugging, and defensive triage where Terra's stronger-than-Luna rows are useful but Sol-only evidence is not required.
+- **Watch out for:** Do not import Sol's external evaluations or August Sol/Luna checkpoint results; Terra has less long-horizon evidence.
+- OpenAI gives Terra the same family-level Preparedness designations: High for biological/chemical risk and cybersecurity, below the High threshold for AI self-improvement, and below Critical by family assessment. (pp. 35-36, 47)
+- Terra's own July rows include 0.37 on destructive-action avoidance plus correctness, 0.946 on prompt-injection search/function-calling accuracy, and 57.7 on HealthBench Professional. (pp. 11, 13, 15)
+- For biology, Terra is the highest new July model on refusal-adjusted tacit-knowledge troubleshooting at 84.1%, above the 80% expert-consensus threshold used in the card. (p. 40)
+- Cybersecurity High applies to Terra, but the Critical rule-out relies on Sol's harder testing plus Terra being smaller and less capable on proxy cyber evaluations. (p. 47)
+- The July safeguard stack names Terra with Sol for activation classifiers and applies the shared topical-classifier and safety-reasoner monitor to all three GPT-5.6 models. (pp. 75-76)
 
 ## Capabilities
 
-- Terra uses the same GPT-5.6 family training context and reasoning-model framing as Sol and Luna, with evaluations reported across safety, robustness, health, Preparedness, and safeguards (pp. 2-6).
-- In HealthBench, Terra retained much of Sol's health performance: Professional 57.7, HealthBench 57.0, Hard 32.7, and Consensus 95.1 after length adjustment (p. 15).
-- Terra is classified as High in cybersecurity; OpenAI says it is less capable overall than Sol in that domain, but still above the High bar (p. 47).
-- On the internal CTF set, Terra exceeded GPT-5.5 and trailed Sol, giving OpenAI another signal for the cybersecurity High designation (p. 49).
-- For biological tacit-knowledge questions, Terra had the highest new-model score when refusals and safe completions were counted as successes: 84.1%, above the 80% expert-consensus threshold (p. 40).
-- Terra was included in CoT-Control testing and showed low controllability similar to earlier models, unlike Sol's higher controllability result (p. 28).
-- In AI self-improvement proxy tasks, OpenAI groups Terra with Sol as improving over GPT-5.5 on internal research debugging, NanoGPT, and PostTrainBench Lite, yet still keeps the category below High (pp. 58-66).
+### Key facts
+
+| Fact | Value | Source |
+| --- | --- | --- |
+| Release date | Not stated. The system card is dated 2026-07-09 but does not give a model release date. | — |
+| Knowledge cutoff | Not stated. The card does not state a knowledge cutoff. | — |
+| Context window | Not stated. The card does not state a context window. | — |
+| Maximum output | Not stated. The card does not state a maximum output length. | — |
+| Input modalities | Text, Image. The card evaluates text prompts and combined text-image inputs; it does not list every supported input type. | pp. 7, 10 |
+| Output modalities | Text. The evaluated safety and robustness tasks score assistant text responses. | pp. 7, 10 |
+| Reasoning controls | Effort levels (stated as reasoning effort). The card says results vary with the amount of thinking used, but does not enumerate served effort levels. | p. 3 |
+| Effort levels | Not stated. The card names lowest deployment settings and maximum reasoning effort in places, but does not list product effort levels. | p. 3 |
+| Tool use | Computer use, Function calling, Web search, Browser, Code execution, Terminal, File editing. These tools appear in evaluations: computer-use confirmations, function-calling/search prompt injection, file edits, browser/computer access, and terminal-like cyber harnesses. | pp. 11, 13, 23, 44, 49 |
+| Open weights | Not stated. The card does not state whether weights are open. | — |
+| Architecture | Not stated. The card identifies GPT-5.6 as a reasoning model family but does not state an architecture identifier. | — |
+| Total parameters | Not stated. The card does not state a parameter count. | — |
+| Active parameters | Not stated. The card does not state an active-parameter count. | — |
+
+### Capability notes
+
+- Terra is one of the three GPT-5.6 reasoning models and shares the family training and safety framework described in the system card. (pp. 2, 6)
+- Terra retains much of Sol's health performance in July tables: 57.7 on HealthBench Professional, 57.0 on HealthBench, 32.7 on HealthBench Hard, and 95.1 on Consensus after length adjustment. (p. 15)
+- OpenAI extends the High cybersecurity designation to Terra, while saying Terra is less capable overall than Sol in that domain. (p. 47)
+- Terra exceeds GPT-5.5 on the internal CTF proxy but remains below Sol; the card gives no Terra numeric CTF score in the transcription. (p. 49)
+- Terra has low CoT controllability similar to prior models, unlike Sol's higher controllability result, which OpenAI treats as a favorable safety signal. (p. 28)
+- AI self-improvement sections group Terra with Sol on improved research debugging, NanoGPT, and PostTrainBench Lite performance, while the family stays below the High threshold. (pp. 58, 62, 65)
 
 ## Evaluations
 
-| Benchmark | Result | Context | Pages |
-|---|---|---|---|
-| Production disallowed-content prompts | violent-illicit 0.952, nonviolent-illicit 0.990, hate 1.000, sexual/minors 0.974 | Terra not_unsafe on challenging production-derived prompts | p. 7 |
-| Image-input safety | hate 0.999, extremism 0.978, self-harm 0.986, harms-erotic 0.991 | Combined text-and-image disallowed-content evaluation | p. 10 |
-| Destructive-action avoidance | 0.81 avoidance-only; 0.37 avoidance plus correctness | Measures completing a task without overwriting adversarially injected user data | p. 11 |
-| User confirmations | financial 0.98, high-stakes communication 0.98, general confirmation 0.94 | Computer-use confirmation-policy evaluation | p. 12 |
-| Prompt injection | connectors 1.000; search/function-calling 0.946; GPT-Red direct ASR 0.061%; indirect ASR 3.32% | Connector attacks and GPT-Red direct/agentic attacks | pp. 13-14 |
-| HealthBench suite | Professional 57.7, HealthBench 57.0, Hard 32.7, Consensus 95.1 | Length-adjusted scores | p. 15 |
-| Dynamic mental-health simulations | mental health 0.985, emotional reliance 0.976, self-harm 0.947 | Multi-turn adversarial user simulations | p. 16 |
-| CoT-Control | low controllability similar to previous models | Run only on Sol and Terra; low is the desired direction | p. 28 |
-| Tacit knowledge and troubleshooting | 84.1% with refusal adjustment | Highest new-model score; above the 80% expert-consensus threshold | p. 40 |
-| Internal CTF | above GPT-5.5 and below Sol | OpenAI's curated CTF evaluation for the High cyber threshold | p. 49 |
-| Biology model-refusal evaluation | severe not_unsafe 0.950, dual-use not_unsafe 0.911, benign not_overrefuse 0.978 | Model-response safety before monitor performance | p. 74 |
-| Cybersecurity safety evaluation | production data 0.987; synthetic data 0.998 | Model-response refusal evaluation | p. 75 |
+Results are as the document reports them. Scores from different publishers, harnesses, effort levels, or tool settings are often not directly comparable; the Setting column records those conditions.
+
+### Headline coding and agentic results
+
+The document reports no coding or agentic benchmark results for this model.
+
+### Other reported results
+
+| Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| Production Benchmarks | Self-harm | not-unsafe rate | 0.962 | July model; no system-level safeguards | GPT-5.5 0.917 (thinking; same table) | p. 7 |
+| Image Input Safety | Self-harm | not-unsafe rate | 0.986 | Combined text-and-image disallowed-content cases | GPT-5.5 0.983 (same table) | p. 10 |
+| Destructive Action Avoidance | Avoidance + correctness | safe response rate | 0.37 | Coding-style task with protected user data injected into the environment | GPT-5.5 0.44 (same table) | p. 11 |
+| User Confirmations | General confirmation | accuracy | 0.94 | Computer-use confirmation-policy evaluation | GPT-5.5 0.94 (same table) | p. 12 |
+| Prompt Injection | Connector attacks | accuracy | 1.0 | Known connector attacks | GPT-5.5 1.0 (same table) | p. 13 |
+| Prompt Injection | Indirect prompt injection | attack success rate (lower is better) | 3.32% | GPT-Red agentic attacks | — | p. 14 |
+| HealthBench Professional | — | score | 57.7% | Length-adjusted July score | GPT-5.5 51.8% (length-adjusted) | p. 15 |
+| HealthBench | Hard | score | 32.7% | Length-adjusted July score | GPT-5.5 31.5% (length-adjusted) | p. 15 |
+| Dynamic Mental Health Simulations | Self-harm | not-unsafe rate | 0.947 | Dynamic adversarial multi-turn simulations | GPT-5.5 0.868 (same table) | p. 16 |
+| Tacit Knowledge and Troubleshooting | Refusal-adjusted | accuracy | 84.1% | Refusals and safe completions counted as successes | — | p. 40 |
+| BioSecBench | Severe biology refusal | not-unsafe rate | 0.95 | Model-level biology refusal evaluation | GPT-5.5 0.958 (thinking; same table) | p. 74 |
+| BioSecBench | Benign biology over-refusal | not-overrefuse rate | 0.978 | Benign advanced-biology prompts | GPT-5.5 0.917 (thinking; same table) | p. 74 |
+| OpenAI cybersecurity safety evaluation | Production data | safe response rate | 0.987 | Model-level cybersecurity refusal evaluation | GPT-5.5 0.928 (same table) | p. 75 |
 
 ## Safety findings
 
-- Terra shares the family Preparedness outcome: High in biological/chemical and cybersecurity capability, below High in AI self-improvement (pp. 34-35, 47).
-- OpenAI's cyber Critical rule-out was tested directly on Sol and then applied to Terra and Luna because they are smaller and less capable on proxy cyber evaluations (p. 47).
-- Terra's GPT-Red attack-success rates were 0.061% for direct prompt injections and 3.32% for indirect prompt injections, both measured against automated red-team attacks (p. 14).
-- Biology model-level refusal results show Terra at 0.950 on severe not_unsafe prompts and 0.978 on benign not_overrefuse prompts, reflecting both refusal behavior and reduced overrefusal pressure (p. 74).
-- Cybersecurity refusal results show Terra at 0.987 on production-derived data and 0.998 on synthetic data (p. 75).
-- Activation classifiers are part of Terra's higher-risk safeguard path, while the two-tier topical-classifier and safety-reasoner monitor design is shared across all GPT-5.6 models (pp. 75-76).
-- Terra's low CoT controllability result is a favorable contrast to Sol in the card's reasoning-trace controllability discussion (p. 28).
+### Safety classification
+
+- **Framework:** OpenAI Preparedness Framework
+- **Overall determination:** High for biological/chemical and cybersecurity; below High for AI self-improvement
+
+OpenAI applies the same Preparedness designations to the GPT-5.6 family: High capability for biological/chemical risk and cybersecurity, below the High threshold for AI self-improvement, and not Critical for the tested biological and cyber pathways. (pp. 35-36, 47)
+
+| Domain | Determination | Level | Finding | Source |
+| --- | --- | --- | --- | --- |
+| Biological and chemical | Threshold reached | High | All three GPT-5.6 models are treated as High capability for biological and chemical risk after three of four novice-uplift evaluations exceeded indicative thresholds; none of the critical biological evaluations exceeded threshold. | pp. 35-36 |
+| Cybersecurity | Threshold reached | High | Sol is treated as High but below Critical in cybersecurity, and OpenAI extends that designation to Terra and Luna because they reach the High bar while remaining less capable than Sol on proxy cyber tests. | p. 47 |
+| AI self-improvement | Below threshold | Below High | OpenAI says none of the GPT-5.6 models reach its High threshold for AI self-improvement. | p. 35 |
+
+### Agentic-coding risks
+
+- **Reward hacking** (sibling only): Sol has reported metagaming and cheating signals; the card does not report a Terra-specific reward-hacking or grader-gaming result. (pp. 30, 68-69)
+- **Test tampering** (not reported): The card does not report Terra-specific test editing, deletion, or weakening behavior.
+- **Destructive or overeager actions** (reported): Terra scores 0.81 on avoidance-only and 0.37 when correctness is also required in the destructive-action evaluation. (p. 11)
+- **Sabotage** (sibling only): UK AISI sabotage testing is reported for Sol, not Terra. (pp. 68-69)
+- **Prompt injection** (reported): Terra scores 1.000 on connector prompt-injection accuracy and 0.946 on search/function-calling accuracy; GPT-Red attack success is 0.061% direct and 3.32% indirect. (pp. 13-14)
+- **Honesty** (not reported): The card does not report Terra-specific false-completion, deception, or honesty benchmark results.
+- **Sycophancy** (not reported): The card reports no Terra sycophancy evaluation.
+- **Malicious agentic use** (reported): Terra is covered by the cyber and biological model-level safety training tables, with cyber production refusal 0.987 and synthetic refusal 0.998. (p. 75)
+- **Over-refusal** (reported): The biology table reports Terra benign not_overrefuse at 0.978 on low-risk advanced-biology workflows. (p. 74)
+
+### Other safety findings
+
+- Terra shares the family Preparedness result: High for biological/chemical and cybersecurity risk, below High for AI self-improvement. (pp. 35-36, 47)
+- OpenAI says Terra and Luna are smaller and less capable than Sol on proxy cyber evaluations, so Sol's Critical cyber rule-out applies to them. (p. 47)
+- Terra's GPT-Red prompt-injection attack-success rates are 0.061% for direct attacks and 3.32% for indirect attacks. (p. 14)
+- Terra's biology refusal rows are 0.950 severe not_unsafe, 0.911 dual-use not_unsafe, and 0.978 benign not_overrefuse. (p. 74)
+- Terra's cyber model-level refusal rows are 0.987 on production-derived data and 0.998 on synthetic data. (p. 75)
+- The monitor stack uses activation classifiers for Terra and Sol, plus topical classifiers and a safety-reasoner monitor across the full GPT-5.6 family. (pp. 75-76)
 
 ## Limitations and caveats
 
-- The July family card introduces Terra alongside Sol and Luna, but many deeper deployment-simulation and external-evaluation sections are Sol-specific rather than Terra measurements (pp. 2, 18-22, 55-70).
-- Deployment-simulation forecasts for disallowed content and ChatGPT misalignment were evaluated for Sol only, so they should not be projected to Terra (pp. 8, 17-18).
-- Several external evaluations, including SecureBio, Irregular, UK AISI, METR, and Apollo summaries, are Sol-focused and do not establish Terra-specific outcomes (pp. 46, 55-70).
-- Terra's cyber Critical conclusion partly relies on Sol's harder test plus Terra's lower proxy capability, not on a separate Terra VulnLMP demonstration (p. 47).
-- Terra trailed Sol on complex edit-conflict performance, with 0.37 on avoidance plus correctness versus Sol's 0.44 (p. 11).
-- OpenAI warns that capability testing is a lower bound because stronger scaffolds, longer rollouts, fine-tuning, or new elicitation methods could change observed behavior (p. 35).
+- The family card reports many deeper sections only for Sol, including deployment simulations, external cyber and alignment evaluations, and detailed Critical cyber testing. (pp. 18-19, 55-56, 68-69)
+- Disallowed-content and ChatGPT misalignment deployment-simulation forecasts were scoped to Sol only. (pp. 8, 17-18)
+- Terra's Critical cyber conclusion relies partly on lower proxy capability relative to Sol, not a separate Terra VulnLMP campaign. (p. 47)
+- Terra trails Sol on destructive-action avoidance plus correctness, 0.37 versus 0.44, which matters for edit-conflict workflows. (p. 11)
+- OpenAI says capability evaluations are lower bounds because other scaffolds, longer rollouts, fine-tuning, or prompting could elicit more capability. (p. 35)
 
 ## Practical implications for Copilot users
 
-- Terra is a sensible default when a task needs more reasoning than a fast model but does not obviously require the most intensive Sol-style investigation.
-- For everyday coding, still inspect generated patches and run tests; Terra's conflict-avoidance score is strong but below Sol on the combined task-completion metric.
-- Use Terra for authorized defensive security triage with normal review controls, but escalate long-horizon exploit research, broad vulnerability campaigns, or ambiguous dual-use work to stricter human oversight.
-- Its prompt-injection results are strong, yet developers should still treat retrieved documents, web pages, terminal output, and issue comments as untrusted instructions.
-- Prefer Sol when the work depends on the Sol-only external cyber, agentic-coding, or AI R&D evidence; prefer Luna when latency matters more than complex autonomy.
-- Do not import August Sol/Luna checkpoint claims into Terra evaluations; the public supplement gives no Terra measurements.
+### Choose it for
+
+- **Debugging:** Terra is grouped with Sol as improving on internal research debugging and related AI self-improvement proxy tasks while staying below High for that domain. (pp. 58, 65)
+- **Computer use:** Terra scores 0.98 on both financial and high-stakes communication confirmations and 0.94 on general confirmations. (p. 12)
+- **Security work:** Terra reaches OpenAI's High cybersecurity designation, with human-led defensive use discussed in the safeguards section. (pp. 47, 75)
+
+### Avoid it for
+
+- **Long-horizon autonomy:** Sol-only deployment simulations carry the most detailed long-horizon agentic-risk evidence; Terra lacks those direct external results. (pp. 18-19, 68)
+- **Untrusted input:** Indirect GPT-Red prompt-injection attack success is still 3.32%, so untrusted tool output or web content needs containment. (p. 14)
+- **High-stakes domains:** The card gives benchmark and safeguard evidence, not validation for autonomous high-stakes decisions without human review. (pp. 15, 35)
+
+### Guidance
+
+- Use Terra when you want a balance between speed and reasoning depth, but do not need Sol's broader external-evaluation record.
+- Review generated patches and run tests, especially when Terra edits existing workspaces; its combined destructive-action score is below Sol's.
+- Keep retrieved content and tool output isolated from instructions, because prompt-injection attacks still succeed in a small share of tests.
+- For advanced security work, keep tasks authorized and defensive and escalate chained exploit research to stricter human review.
+- Do not cite August Sol or Luna rows as Terra behavior; the catalog lists no Terra supplement.
 
 ## Document coverage
 
-This digest uses the GPT-5.6 System Card sections on family scope, safety, robustness, health, alignment, Preparedness, and safeguards, focusing on rows where Terra appears explicitly. Sol-only deployment simulations, external evaluations, and chain-of-thought discussions are included only as caveats when they affect how Terra should be interpreted. The August update does not cover Terra, and the catalog lists no Terra supplement, so no Terra claim here cites that document.
+The July GPT-5.6 system card covers Sol, Terra, and Luna. This digest uses Terra rows from family tables and family-level Preparedness findings that explicitly cover all three. Sol-only deployment simulations, external evaluations, and Critical cyber rule-out work are treated as scope limits rather than Terra evidence. The August update covers Sol and Luna only and is not cited for Terra.
+
+- **Card type:** Family. The document covers several models in its main body and attributes results per model.
+- **Pages specific to this model:** not separated by page
+- **Names the document uses for this model:** GPT-5.6 Terra, Terra, gpt-5.6-terra
+- **Catalog scope:** The GPT-5.6 System Card covers the Sol, Terra, and Luna family members. The August update does not cover Terra.

@@ -1,292 +1,1072 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "gemini-3.7-flash",
   "model": "Gemini 3.7 Flash",
   "publisher": "Google",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "google-gemini-3-7-flash",
     "title": "Gemini 3.7 Flash — Model Card",
+    "publisher": "Google DeepMind",
+    "date": "2026-08",
+    "format": "pdf",
     "pages": 9
   },
-  "summary": "Gemini 3.7 Flash is a current Google model card for a fast multimodal reasoning model derived from Gemini 3.6 Flash. It documents a 1M-token multimodal input window, a 64K-token text output limit, broad coding and agent benchmarks, and a fuller Frontier Safety table showing no tracked or critical capability level reached.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Gemini 3.7 Flash"],
+    "model_pages": [],
+    "note": "The whole 9-page document is dedicated to Gemini 3.7 Flash. One benchmark image supplies most capability numbers, while pages 8-9 contain a model-specific Frontier Safety table. The card still delegates many architecture, data, acceptable-use, and policy details to 3.6 Flash; this digest covers only facts in the 3.7 Flash card."
+  },
+  "summary": "Gemini 3.7 Flash is a current Google Flash model built on 3.6 Flash with improved core reasoning and agentic video support. Its chart shows strong terminal, coding, computer-use, long-context, and specialist-task results for a fast model. Unlike 3.8 Flash, this card includes a per-domain Frontier Safety table: no tracked or critical capability level is reached, although CBRN and cyber hit alert thresholds for critical levels.",
+  "at_a_glance": {
+    "choose_it_for": "Fast multimodal coding, terminal, video, and workflow tasks where the 3.7 card’s fuller safety table matters.",
+    "watch_out_for": "CBRN and cyber alert thresholds are reached even though CCLs are not, and most agentic-coding misbehavior tests are absent.",
+    "points": [
+      {
+        "text": "The benchmark image reports 65.3% on DeepSWE, 85.8% on Terminal-Bench 2.1, 47.9% on the OSWorld computer-use row, and 26.3% on Agent’s Last Exam.",
+        "pages": [5],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "text": "It is a multimodal Flash successor to 3.6 Flash with algorithmic improvements, agentic video support, 1M-token input context, and 64K-token text output.",
+        "pages": [2],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "text": "Google’s FSF table says CBRN tracked capability is not reached, CBRN and cyber reach alert thresholds for CCLs but not CCLs, and harmful manipulation, ML R&D, and misalignment remain below relevant thresholds.",
+        "pages": [8, 9],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "text": "Automated safety is mixed relative to 3.6 Flash: text safety worsens 1.17 points, multilingual improves 0.48, tone worsens 0.47, and unjustified refusals worsen 0.84.",
+        "pages": [7],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "text": "The card reports situational-awareness strength in the misalignment row, but says the model cannot bypass test restrictions and cannot chain coding tasks into an end-to-end research workflow.",
+        "pages": [9],
+        "document": "google-gemini-3-7-flash"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated 2026-08, but it does not state a separate model release date.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    "knowledge_cutoff": {
+      "value": "2026-03",
+      "as_stated": "knowledge cutoff date for Gemini 3.7 Flash is March 2026",
+      "note": null,
+      "pages": [6],
+      "document": "google-gemini-3-7-flash"
+    },
+    "context_window_tokens": {
+      "value": 1000000,
+      "as_stated": "up to 1M tokens",
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
+    },
+    "max_output_tokens": {
+      "value": 64000,
+      "as_stated": "64K token output",
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
+    },
+    "input_modalities": {
+      "value": ["text", "image", "audio", "video"],
+      "as_stated": null,
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": null,
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
+    },
+    "reasoning_controls": {
+      "value": ["effort-levels"],
+      "as_stated": null,
+      "note": "The card says thinking configurations are customizable but does not name the available levels.",
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not name the individual effort or thinking levels.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    "tool_use": {
+      "value": ["terminal", "computer-use"],
+      "as_stated": null,
+      "note": "The benchmark chart includes terminal and computer-use rows; no product tool interface is specified.",
+      "pages": [4, 5],
+      "document": "google-gemini-3-7-flash"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not say the weights are open.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": "Architecture details are deferred to a predecessor or sibling card.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a parameter count.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state active parameters.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    }
+  },
   "capabilities": [
     {
-      "text": "The card attributes 3.7 Flash to algorithmic improvements over 3.6 Flash and adds support for agentic video understanding.",
-      "pages": [
-        2
-      ]
+      "text": "Google says 3.7 Flash adds algorithmic reasoning improvements over 3.6 Flash and supports agentic video understanding.",
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "Inputs include text, images, audio, and video with a context window of up to 1M tokens.",
-      "pages": [
-        2
-      ]
+      "text": "The interface includes text, image, audio, and video inputs with a 1M-token context window and text output up to 64K tokens.",
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "The output channel is text with a 64K-token maximum.",
-      "pages": [
-        2
-      ]
+      "text": "The card says thinking configurations are customizable for task demands, but it does not enumerate the levels.",
+      "pages": [2],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "Thinking configurations can be customized to tune answer quality and latency for different workloads.",
-      "pages": [
-        2
-      ]
+      "text": "Intended uses include agentic workflows, complex video reasoning, coding tasks, and enterprise workflows.",
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "The intended-use section names agentic workflows, complex video reasoning, coding, and enterprise workflows.",
-      "pages": [
-        5
-      ]
-    },
-    {
-      "text": "The distribution list includes Gemini App, Gemini Enterprise App, Gemini Enterprise Agent Platform, Google AI Studio, Gemini API, Google AI Mode, and Google Antigravity.",
-      "pages": [
-        3
-      ]
+      "text": "The chart reports broad gains over its predecessor, including FrontierCode Main at 43.6%, DeepSWE at 65.3%, and the OSWorld computer-use row at 47.9%.",
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     }
   ],
   "evaluations": [
     {
+      "benchmark_id": "artificial-analysis-intelligence-index",
       "benchmark": "Artificial Analysis Intelligence Index",
-      "result": "56",
-      "context": "Composite intelligence score; one point below the highest values shown.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "score",
+      "value": 56,
+      "unit": "score",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 52,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 55,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 57,
+          "setting": null
+        },
+        {
+          "model": "Muse Spark 1.2",
+          "value": 57,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "benchmark": "FrontierCode 1.1 Main",
-      "result": "43.6%",
-      "context": "Production-code quality score; above the comparison models with reported values.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "frontiercode-v1.1",
+      "benchmark": "FrontierCode v1.1",
+      "variant": "Main",
+      "metric": "score",
+      "value": 43.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 34.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 42.7,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 41.3,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "deepswe-v1.1",
       "benchmark": "DeepSWE v1.1",
-      "result": "65.3%",
-      "context": "Long-horizon software engineering; higher than Gemini 3.6 Flash.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 65.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 48.6,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 53.8,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 69.6,
+          "setting": null
+        },
+        {
+          "model": "Muse Spark 1.2",
+          "value": 54.9,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "code-arena",
       "benchmark": "Code Arena",
-      "result": "1588 Elo",
-      "context": "Web-development benchmark; highest row value in the chart.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "elo",
+      "value": 1588,
+      "unit": "elo",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 1538,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 1541,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 1523,
+          "setting": null
+        },
+        {
+          "model": "Muse Spark 1.2",
+          "value": 1535,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "benchmark": "Terminal-bench 2.1",
-      "result": "85.8%",
-      "context": "Agentic terminal coding benchmark.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark": "Terminal-Bench 2.1",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 85.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 78.0,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 80.4,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 87.4,
+          "setting": null
+        },
+        {
+          "model": "Muse Spark 1.2",
+          "value": 82.9,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "benchmark": "Terminal-bench 3.0",
-      "result": "14.9%",
-      "context": "General agent capabilities; below GPT-5.6 Terra in the chart.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "terminal-bench-3.0",
+      "benchmark": "Terminal-Bench 3.0",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 14.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 5.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 14.6,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 20.8,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "automationbench",
       "benchmark": "AutomationBench",
-      "result": "30.4%",
-      "context": "Private enterprise workflow automation set.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 30.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "private enterprise workflow automation set",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 17.0,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 10.7,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 23.6,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "benchmark": "GDPVal-AA v2",
-      "result": "1525 Elo",
-      "context": "Knowledge-work benchmark.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "gdpval-aa-v2",
+      "benchmark": "GDPval-AA v2",
+      "variant": null,
+      "metric": "elo",
+      "value": 1525,
+      "unit": "elo",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 1422,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 1598,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 1578,
+          "setting": null
+        },
+        {
+          "model": "Muse Spark 1.2",
+          "value": 1628,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "harvey-lab-aa",
       "benchmark": "Harvey LAB-AA",
-      "result": "90.7%",
-      "context": "Complex legal workflows; above all listed comparisons with values.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 90.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 85.1,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 90.1,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 85.2,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "gdp-pdf",
       "benchmark": "GDP.pdf",
-      "result": "34.0%",
-      "context": "Expert PDF document comprehension.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 34.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 22.0,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 28.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 24.7,
+          "setting": null
+        },
+        {
+          "model": "Muse Spark 1.2",
+          "value": 16.0,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "charxiv-reasoning",
       "benchmark": "CharXiv Reasoning",
-      "result": "84.5% without tools; 88.7% with tools",
-      "context": "Information synthesis from complex charts.",
-      "pages": [
-        5
-      ]
+      "variant": "No tools",
+      "metric": "accuracy",
+      "value": 84.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 85.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 77.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 85.9,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "charxiv-reasoning",
+      "benchmark": "CharXiv Reasoning",
+      "variant": "With tools",
+      "metric": "accuracy",
+      "value": 88.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 89.4,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 88.3,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "benchmark_id": "lvbench",
       "benchmark": "LVBench",
-      "result": "85.4%",
-      "context": "Long-video understanding benchmark.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 85.4,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 84.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 68.5,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 78.9,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "benchmark": "GDM-MRCR v2 (8-needle)",
-      "result": "97.0% at 128K average",
-      "context": "Long-context performance row; chart does not list a 1M value for 3.7 Flash.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "mrcr-v2",
+      "benchmark": "MRCR v2",
+      "variant": "8-needle; 128K average",
+      "metric": "accuracy",
+      "value": 97.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 91.8,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 81.5,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 93.5,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "benchmark": "OSWorld-2.0",
-      "result": "47.9%",
-      "context": "Agentic computer-use benchmark.",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "osworld-2.0",
+      "benchmark": "OSWorld 2.0",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 47.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 33.8,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 50.2,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "agents-last-exam",
       "benchmark": "Agent's Last Exam",
-      "result": "26.3% pass rate",
-      "context": "Multimodal desktop and OS-agent tasks.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 26.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 24.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 33.3,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 28.0,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "hle-verified",
       "benchmark": "HLE-Verified",
-      "result": "53.6%",
-      "context": "Multidisciplinary expert reasoning.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 53.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 51.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 31.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 51.1,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "biomysterybench",
       "benchmark": "BioMysteryBench",
-      "result": "87.1% human-solvable; 43.5% human-difficult",
-      "context": "Bioinformatics research reasoning benchmark.",
-      "pages": [
-        5
-      ]
+      "variant": "Human difficult",
+      "metric": "accuracy",
+      "value": 43.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 41.2,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 34.1,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 49.4,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
+      "benchmark_id": "labbench2",
       "benchmark": "LABBench2",
-      "result": "82.1%",
-      "context": "Biology real-world research tasks.",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 82.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Gemini 3.6 Flash",
+          "value": 76.1,
+          "setting": null
+        },
+        {
+          "model": "Claude Sonnet 5",
+          "value": 80.1,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.6 Terra",
+          "value": 81.2,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
+    }
+  ],
+  "safety_classification": {
+    "framework": "google-fsf",
+    "framework_name": null,
+    "overall": "No tracked or critical capability levels reached; CBRN and cyber alert thresholds noted",
+    "summary": "Google reports a per-domain FSF table for 3.7 Flash. CBRN tracked capability is not reached; CBRN and cybersecurity reach alert thresholds for critical levels but remain below CCLs; harmful manipulation, ML R&D, and misalignment remain below alert or tracked thresholds.",
+    "domains": [
+      {
+        "domain": "cbrn",
+        "determination": "below-threshold",
+        "level": "Uplift TCL; TCL not reached",
+        "text": "Google says it can rule out the CBRN tracked capability level with reasonable confidence.",
+        "pages": [8],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "domain": "cbrn",
+        "determination": "alert-threshold",
+        "level": "Uplift Level 1 CCL; CCL not reached",
+        "text": "CBRN expert red teaming elicited some full-journey actionable information, so Google treats the CCL alert threshold as reached while the CCL itself is below threshold.",
+        "pages": [8],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "alert-threshold",
+        "level": "Uplift Level 1 CCL; CCL not reached",
+        "text": "The cyber row says the alert threshold is reached, but the CCL is not.",
+        "pages": [8],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "domain": "harmful-manipulation",
+        "determination": "below-threshold",
+        "level": "Level 1 CCL; CCL not reached",
+        "text": "Human behavior studies show some influence ability, but overall efficacy is below the CCL alert threshold.",
+        "pages": [8, 9],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "domain": "misalignment",
+        "determination": "below-threshold",
+        "level": "Stealth/situational TCL",
+        "text": "The model recognizes some test settings but cannot bypass restrictions, so the tracked level is not reached.",
+        "pages": [9],
+        "document": "google-gemini-3-7-flash"
+      },
+      {
+        "domain": "ml-rnd",
+        "determination": "below-threshold",
+        "level": "Acceleration/automation CCLs",
+        "text": "The model completes individual coding tasks but lacks independence for an end-to-end research workflow, and the alert threshold is not reached.",
+        "pages": [9],
+        "document": "google-gemini-3-7-flash"
+      }
+    ],
+    "pages": [8, 9],
+    "document": "google-gemini-3-7-flash"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of grader gaming or reward exploitation.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card reports no test editing, deletion, or weakening evaluation.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of irreversible or unrequested tool actions.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "The card does not report a sabotage or task-undermining evaluation for this model.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The card reports jailbreak and content-safety work, but not injected instructions from files, tools, or web content.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "The card reports no honesty, deception, or false-task-success evaluation.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card reports no sycophancy evaluation.",
+      "pages": [],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "evaluation-awareness",
+      "status": "reported",
+      "text": "The misalignment row says the model can correctly assess when it is in a testing environment, though it cannot bypass the restrictions.",
+      "pages": [9],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "topic": "over-refusal",
+      "status": "reported",
+      "text": "Automated unjustified refusals worsen by 0.84 percentage points versus 3.6 Flash, with lower values preferred.",
+      "pages": [7],
+      "document": "google-gemini-3-7-flash"
     }
   ],
   "safety_findings": [
     {
-      "text": "Automated safety results versus Gemini 3.6 Flash show text-to-text safety up 1.17 percentage points, multilingual safety down 0.48 points, image-to-text unchanged, tone down 0.47 points, and unjustified refusals up 0.84 points.",
-      "pages": [
-        7
-      ]
+      "text": "Automated development results versus 3.6 Flash are mixed: text-to-text safety worsens 1.17 points, multilingual safety improves 0.48, tone worsens 0.47, and unjustified refusals worsen 0.84.",
+      "pages": [7],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "Google summarizes the automated development results as similar to 3.6 Flash on safety and tone, with low unjustified refusals.",
-      "pages": [
-        6
-      ]
+      "text": "Specialist red teaming found required child-safety thresholds met, content safety similar or improved versus 3.6 Flash, and no egregious concerns outside strict policies.",
+      "pages": [7, 8],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "Manual red teaming found required child-safety thresholds met and similar or better content-safety behavior relative to Gemini 3.6 Flash.",
-      "pages": [
-        7,
-        8
-      ]
+      "text": "The CBRN table says both the tracked level and the critical level are not reached, but the CCL alert threshold is reached because experts could elicit some accurate full-harm-journey information.",
+      "pages": [8],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "The CBRN Frontier Safety row rules out both the tracked level and the critical level, while noting high theoretical ability and some actionable expert-elicited answers.",
-      "pages": [
-        8
-      ]
+      "text": "The cybersecurity row reaches an alert threshold for Uplift Level 1 but remains below the CCL.",
+      "pages": [8],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "The cybersecurity row says the model reaches an alert threshold for Uplift Level 1 but remains below the critical capability level.",
-      "pages": [
-        8
-      ]
-    },
-    {
-      "text": "The ML R&D and misalignment row says the model can solve individual coding tasks and recognize some testing settings, but it cannot bypass restrictions or carry out an independent end-to-end research workflow.",
-      "pages": [
-        9
-      ]
+      "text": "Google says the model recognizes some testing environments but cannot bypass testing restrictions and cannot chain individual coding tasks into independent ML R&D.",
+      "pages": [9],
+      "document": "google-gemini-3-7-flash"
     }
   ],
   "limitations": [
     {
-      "text": "Google flags hallucination as a remaining foundation-model limitation.",
-      "pages": [
-        6
-      ]
+      "text": "Known limitations include hallucinations, ongoing jailbreak-resistance work, occasional slowness or timeouts, and uneven knowledge recency.",
+      "pages": [6],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "The card says jailbreak resistance and Frontier Safety mitigations continue to be improved.",
-      "pages": [
-        6
-      ]
+      "text": "Architecture, training data, training processing, hardware, software, acceptable use, and safety policy detail are deferred to the 3.6 Flash card.",
+      "pages": [2, 3, 6],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "Occasional slowness or timeouts are listed as possible operational issues.",
-      "pages": [
-        6
-      ]
+      "text": "Capability methods are mostly external to the card, and the benchmark results appear in a chart image.",
+      "pages": [4, 5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "The knowledge cutoff is March 2026 overall, with some areas potentially limited to January 2025 knowledge.",
-      "pages": [
-        6
-      ]
+      "text": "The automated safety table is a development evaluation rather than human evaluation or red teaming.",
+      "pages": [6, 7],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "The safety table is automated development testing rather than human evaluation or red-team measurement.",
-      "pages": [
-        6,
-        7
-      ]
+      "text": "Google cautions that improved safety evaluations are not directly comparable with earlier Gemini card results.",
+      "pages": [7],
+      "document": "google-gemini-3-7-flash"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "agentic-coding",
+      "rationale": "DeepSWE v1.1 is 65.3%, FrontierCode 1.1 Main is 43.6%, and the intended-use section names coding and agentic workflows.",
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
     },
     {
-      "text": "Google cautions that the improved safety evaluations are not directly comparable with older Gemini model-card results.",
-      "pages": [
-        7
-      ]
+      "use": "terminal-workflows",
+      "rationale": "Terminal-Bench 2.1 is 85.8% and Terminal-Bench 3.0 is 14.9% in the same chart.",
+      "pages": [5],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "use": "vision",
+      "rationale": "The model supports video input and is positioned for complex video reasoning, with LVBench at 85.4%.",
+      "pages": [2, 5],
+      "document": "google-gemini-3-7-flash"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "security-work",
+      "rationale": "Cyber reaches an FSF alert threshold for Uplift Level 1, so offensive or dual-use security work needs strict boundaries.",
+      "pages": [8],
+      "document": "google-gemini-3-7-flash"
+    },
+    {
+      "use": "untrusted-input",
+      "rationale": "The card does not report prompt-injection testing for content retrieved through tools, files, web pages, or repositories.",
+      "pages": [6, 8],
+      "document": "google-gemini-3-7-flash"
     }
   ],
   "practical_implications": [
     {
-      "text": "3.7 Flash is a good fit for quick agentic coding, video, and document-understanding questions when users still plan to verify final outputs."
+      "text": "Use 3.7 Flash when you want a fast Gemini model with a more explicit FSF table than 3.8 Flash provides."
     },
     {
-      "text": "For terminal or automation tasks, keep tool permissions narrow because the card reports material agent capability without claiming autonomous reliability."
+      "text": "Keep command execution sandboxed and reviewed because the card records a cyber alert threshold."
     },
     {
-      "text": "The Frontier Safety cyber alert-threshold note supports sandboxing commands, reviewing network access, and avoiding uncontrolled exploit-development workflows."
+      "text": "Do not treat the chart as Copilot performance; Copilot uses a different agent harness."
     },
     {
-      "text": "Use citations, tests, and source files for knowledge-heavy answers because the card still identifies hallucination and uneven recency as risks."
+      "text": "For video and long-context prompts, require citations to files or frames because hallucination remains listed."
     },
     {
-      "text": "If safety behavior matters in non-English settings, compare outputs carefully because automated safety metrics move in different directions by category."
+      "text": "Use extra caution on workflows with untrusted files or tool outputs because prompt injection is not tested."
     }
-  ],
-  "coverage_notes": "This digest uses pages 2-4 for model setup, modalities, distribution, and evaluation scope; page 5 for the benchmark chart; pages 6-7 for limitations and automated safety; and pages 8-9 for human red teaming and Frontier Safety. The card is dedicated to Gemini 3.7 Flash, but architecture, data, and several policy details are referred back to the Gemini 3.6 Flash card. It mentions an external evaluation methodology page and a separate Frontier Safety Framework report without reproducing their contents."
+  ]
 }

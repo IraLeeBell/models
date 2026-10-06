@@ -1,151 +1,504 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "mai-code-1.1-flash",
   "model": "MAI-Code-1.1-Flash",
   "publisher": "Microsoft",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "microsoft-mai-code-1-1-flash",
     "title": "MAI-Code-1.1-Flash model card",
+    "publisher": "Microsoft",
+    "date": "2026-08-11",
+    "format": "pdf",
     "pages": 6
   },
-  "summary": "Microsoft's MAI-Code-1.1-Flash card describes a dedicated coding model with sparse-MoE architecture, image input support, and a 256K-token context. The document reports agentic coding and vision-to-code evaluations, outlines a multi-stage training pipeline, and gives qualitative safety practices but no numeric safety score table.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["MAI-Code-1.1-Flash"],
+    "model_pages": [],
+    "note": "The six-page Microsoft card is dedicated to MAI-Code-1.1-Flash. MAI-Code-1-Flash, Claude Haiku 4.5, and GPT 5.4 mini appear only as comparison rows in the evaluation tables; this digest uses them only as comparators. The card defers broader general benchmarks to the earlier MAI-Code-1-Flash card, so they are not repeated here."
+  },
+  "summary": "MAI-Code-1.1-Flash is Microsoft's current sparse-MoE coding model for Copilot, adding image input to the MAI-Code Flash line while keeping a 256K-token context and 5B active parameters. Its card shows the clearest gains over MAI-Code-1-Flash on Terminal Bench 2.1 and image-to-code tasks. Safety coverage is process-oriented and names cyber and secure-coding checks, but it gives no numeric safety outcomes or agentic-misalignment tests.",
+  "at_a_glance": {
+    "choose_it_for": "Responsive coding-agent work, repository questions, refactors, and UI tasks where image input may help.",
+    "watch_out_for": "Safety evidence is qualitative, max output is not stated, and prompt-injection or test-tampering behavior is not measured.",
+    "points": [
+      {
+        "text": "Compared with MAI-Code-1-Flash in the same card, pass rate rises from 51.7% to 62.9% on Terminal Bench 2.1 and from 71.6% to 72.6% on SWE-Bench Verified.",
+        "pages": [5],
+        "document": "microsoft-mai-code-1-1-flash"
+      },
+      {
+        "text": "The update adds image input: Microsoft reports 42.1% on ScreenShot2WebApp and 11.5% on Vision2Web Level3, with GPT 5.4 mini at 39.3% and 10.1% in the same table.",
+        "pages": [1, 5],
+        "document": "microsoft-mai-code-1-1-flash"
+      },
+      {
+        "text": "The model is a sparse mixture-of-experts transformer with 138B total parameters, 5B active parameters, text and image inputs, text output, and a 256K-token context.",
+        "pages": [1],
+        "document": "microsoft-mai-code-1-1-flash"
+      },
+      {
+        "text": "Microsoft says the production Copilot harness includes repository context, tool calls, and verification, so the pass rates measure end-to-end developer workflows rather than stripped-down tasks.",
+        "pages": [5],
+        "document": "microsoft-mai-code-1-1-flash"
+      },
+      {
+        "text": "The safety section names data filtering, alignment training, cyber and secure-coding evaluations, safety classifiers, and filters, but gives no benchmark scores for those safety checks.",
+        "pages": [4],
+        "document": "microsoft-mai-code-1-1-flash"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": "2026-08-11",
+      "as_stated": "August 11, 2026",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "knowledge_cutoff": {
+      "value": "2025-12",
+      "as_stated": "Pretraining cut-off date: December 2025",
+      "note": null,
+      "pages": [3],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "context_window_tokens": {
+      "value": 256000,
+      "as_stated": "256K tokens",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a maximum generated-output length.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "input_modalities": {
+      "value": ["text", "image"],
+      "as_stated": "Text, Image",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": "Text",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "reasoning_controls": {
+      "value": ["adaptive-thinking"],
+      "as_stated": null,
+      "note": "The card describes adaptive solution length rather than a user-set control.",
+      "pages": [2, 3],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card names no user-selectable effort levels.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "tool_use": {
+      "value": ["function-calling"],
+      "as_stated": null,
+      "note": "The benchmark method includes tool calls in the production Copilot harness but does not enumerate tool types.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state whether weights are open.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "architecture": {
+      "value": "mixture-of-experts",
+      "as_stated": "sparse Mixture-of-Experts layers",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "parameters_total": {
+      "value": 138000000000,
+      "as_stated": "138B total",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    "parameters_active": {
+      "value": 5000000000,
+      "as_stated": "5B active",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
+    }
+  },
   "capabilities": [
     {
-      "text": "Handles text and image inputs for coding assistance while returning text over a 256K-token context; the summary lists 138B total and 5B active parameters.",
-      "pages": [
-        1
-      ]
+      "text": "The model is built for coding assistance with text and image inputs, text output, a 256K-token context, and sparse mixture-of-experts layers.",
+      "pages": [1],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "Targets Copilot developer workflows such as agentic coding, repository Q&A, refactoring, and tool-using tasks.",
-      "pages": [
-        2
-      ]
+      "text": "Microsoft positions it for Copilot developer work: agentic coding in repositories, repository question answering, refactoring, code generation and completion, telemetry-grounded tasks, and tool-using scenarios.",
+      "pages": [2],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "Uses supervised tuning, a synthetic agentic phase of about 2 million tasks, and reinforcement learning over more than 150,000 environments after a compressed MAI-Thinking-1 checkpoint.",
-      "pages": [
-        3
-      ]
+      "text": "Training starts from a compressed MAI-Thinking-1 mid-training checkpoint, then adds supervised tuning, about 2 million synthetic agentic tasks, and reinforcement learning across more than 150,000 environments.",
+      "pages": [3],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "Adds image-grounded coding evaluations and compares against the earlier MAI-Code-1-Flash release on production-harness tasks.",
-      "pages": [
-        5
-      ]
+      "text": "Using only the 1.1 card, the main differences from MAI-Code-1-Flash are image input, MAI-Code-1-Flash as a dependency, higher SWE-Bench Verified and Terminal Bench 2.1 pass rates, and new image-to-code tables.",
+      "pages": [1, 2, 5],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "text": "All compared models in the SWE-Bench Verified and Terminal Bench 2.1 table were evaluated in the same VS Code-based production Copilot harness with repository context, tool calls, and verification.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "text": "The card reports strong web-app generation relative to the listed peers: Text2WebApp is 74.1%, while Claude Haiku 4.5 is 11.5% and GPT 5.4 mini is 58.3% in the same table.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "SWE-Bench Verified",
-      "result": "72.6% pass rate; 8.6K average tokens",
-      "context": "VS Code-based production GitHub Copilot harness",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "swe-bench-verified",
+      "benchmark": "SWE-bench Verified",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 72.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "repository context, tool calls, and verification included; 8.6K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "MAI-Code-1-Flash",
+          "value": 71.6,
+          "setting": "10.8K average token usage"
+        },
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 69.8,
+          "setting": "20.9K average token usage"
+        },
+        {
+          "model": "GPT-5.4 mini",
+          "value": 69.2,
+          "setting": "9.4K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "benchmark": "Terminal Bench 2.1",
-      "result": "62.9% pass rate; 17.0K average tokens",
-      "context": "Same harness comparison with MAI-Code-1-Flash and other listed models",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark": "Terminal-Bench 2.1",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 62.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "repository context, tool calls, and verification included; 17.0K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "MAI-Code-1-Flash",
+          "value": 51.7,
+          "setting": "14.2K average token usage"
+        },
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 49.4,
+          "setting": "25.5K average token usage"
+        },
+        {
+          "model": "GPT-5.4 mini",
+          "value": 60.7,
+          "setting": "21.9K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
+      "benchmark_id": "text2webapp",
       "benchmark": "Text2WebApp",
-      "result": "74.1% pass rate; 17.1K average tokens",
-      "context": "Internal WebApp development evaluation",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 74.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "internal web-app development evaluation; 17.1K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 11.5,
+          "setting": "60.0K average token usage"
+        },
+        {
+          "model": "GPT-5.4 mini",
+          "value": 58.3,
+          "setting": "36.4K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
+      "benchmark_id": "screenshot2webapp",
       "benchmark": "ScreenShot2WebApp",
-      "result": "42.1% pass rate; 10.5K average tokens",
-      "context": "Internal screenshot-to-web-app evaluation",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 42.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "screenshot-to-web-app evaluation; 10.5K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 10.0,
+          "setting": "33.9K average token usage"
+        },
+        {
+          "model": "GPT-5.4 mini",
+          "value": 39.3,
+          "setting": "26.6K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "benchmark": "Vision2Web Level3",
-      "result": "11.5% pass rate; 15.1K average tokens",
-      "context": "Vision-to-web coding task with Haiku 4.5 and GPT 5.4 mini comparators",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "vision2web",
+      "benchmark": "Vision2Web",
+      "variant": "Vision2Web Level3",
+      "metric": "pass-at-1",
+      "value": 11.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "15.1K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 13.7,
+          "setting": "36.5K average token usage"
+        },
+        {
+          "model": "GPT-5.4 mini",
+          "value": 10.1,
+          "setting": "3.7K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
+    }
+  ],
+  "safety_classification": {
+    "framework": "none-stated",
+    "framework_name": null,
+    "overall": null,
+    "summary": "The card does not name a Microsoft safety framework or assign an overall safety level. It instead describes training-time filtering and alignment, cyber and secure-coding evaluations, and release checks using safety classifiers and filters.",
+    "domains": [],
+    "pages": [],
+    "document": "microsoft-mai-code-1-1-flash"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of reward hacking, grader gaming, or exploiting benchmark rubrics.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of modifying, deleting, or weakening tests during coding tasks.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of irreversible or unrequested tool actions by the model.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "The card reports no sabotage, oversight-evasion, or deliberate underperformance evaluation.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The card describes tool-using workflows and safety filters but reports no prompt-injection or instruction-hierarchy test.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "The card reports no honesty, deception, or false-claim-of-completion evaluation.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card reports no sycophancy or user-pressure evaluation.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-1-flash"
     }
   ],
   "safety_findings": [
     {
-      "text": "Pretraining data handling filters or down-ranks harmful content to reduce exposure during base-model learning.",
-      "pages": [
-        4
-      ]
+      "text": "Pretraining reduces exposure to harmful material by filtering it out or lowering its weight in the data mixture.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "Supervised tuning and reinforcement learning are described as alignment stages for shaping safer and more helpful behavior.",
-      "pages": [
-        4
-      ]
+      "text": "Later supervised and reinforcement-learning stages are described as alignment steps intended to favor helpful and safer responses and discourage undesirable outputs.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "The card names CyberBench, CyberSecEval, and SecRepo as security-oriented evaluations.",
-      "pages": [
-        4
-      ]
+      "text": "Safety evaluation coverage is named qualitatively: CyberBench, CyberSecEval, and SecRepo for security threats, vulnerability avoidance, and secure-coding alignment.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "Deployment review used production model APIs with safety classifiers and filters.",
-      "pages": [
-        4
-      ]
+      "text": "The release process used production model APIs with safety classifiers and filters applied, but the card does not publish numeric outcomes for those checks.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
     }
   ],
   "limitations": [
     {
-      "text": "Generated code and text may be unreliable, so the card calls for developer review and validation before serious use.",
-      "pages": [
-        4
-      ]
+      "text": "Microsoft warns that generated code or prose can be inaccurate, incomplete, or otherwise wrong, and says developers should review, test, and validate outputs before consequential use.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "The safety section gives methods and benchmark names but not numeric safety outcomes.",
-      "pages": [
-        4
-      ]
+      "text": "The safety section names methods and benchmark families but gives no safety scores, thresholds, or per-risk outcomes.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "General benchmark coverage is deferred to the prior MAI-Code-1-Flash card.",
-      "pages": [
-        5
-      ]
+      "text": "The 1.1 card defers more general benchmarks to the MAI-Code-1-Flash card, so this document mainly supports coding, web-app, and image-to-code comparison.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
     },
     {
-      "text": "Client distribution wording differs between a VS Code-focused use-case passage and the later all-clients statement.",
-      "pages": [
-        2,
-        4
-      ]
+      "text": "The distribution text is mixed: one passage says VS Code with CLI planned later, while another says all GitHub Copilot clients.",
+      "pages": [2, 4],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "text": "No maximum output length, open-weight status, prompt-injection result, or honesty result is stated.",
+      "pages": [1, 4],
+      "document": "microsoft-mai-code-1-1-flash"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "agentic-coding",
+      "rationale": "The card's direct comparison reports 72.6% on SWE-Bench Verified and 62.9% on Terminal Bench 2.1 in a production Copilot harness with repository context, tools, and verification.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "use": "web-development",
+      "rationale": "The web-app table reports 74.1% on Text2WebApp and 42.1% on ScreenShot2WebApp, both above the GPT 5.4 mini comparator in the same chart.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "use": "vision",
+      "rationale": "Unlike MAI-Code-1-Flash, the model accepts image input and is evaluated on screenshot and vision-to-web coding tasks.",
+      "pages": [1, 5],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "use": "quick-edits",
+      "rationale": "Microsoft describes adaptive solution length, with shorter answers for simpler requests and more reasoning on harder tasks.",
+      "pages": [2, 3],
+      "document": "microsoft-mai-code-1-1-flash"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "The card lists safety filters and security evaluations but no prompt-injection test for instructions embedded in files, tool outputs, or web content.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "Microsoft says generated outputs can be wrong and should be reviewed, tested, and validated before consequential use.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-1-flash"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use it for repository-aware coding and agentic edits, but verify outputs with tests and code review."
+      "text": "Use the model's low, medium, or high Copilot app efforts based on task difficulty; the card does not map benchmark rows to those effort settings."
     },
     {
-      "text": "Image input can help with UI and screenshot-driven tasks, yet the vision results show that success is not uniform."
+      "text": "Treat the MAI-Code-1.1 gains over MAI-Code-1-Flash as strongest evidence for terminal-agent and image-to-code work, not for every reasoning benchmark."
     },
     {
-      "text": "Keep tool permissions constrained and avoid trusting instructions found in untrusted repository content."
+      "text": "Keep tests and code review in the loop because the card does not evaluate test tampering, reward hacking, or false claims of completion."
     },
     {
-      "text": "Compare against MAI-Code-1-Flash mainly on the reported coding and vision-task deltas, then validate on local workloads."
+      "text": "Use image input for UI context, but verify carefully: Vision2Web Level3 trails Claude Haiku 4.5 in the card's own table."
     },
     {
-      "text": "Consult current Copilot docs for client availability because the card's wording is mixed."
+      "text": "GitHub notes that MAI models are continuously improved, so a served checkpoint may differ from the card's August 2026 results."
     }
-  ],
-  "coverage_notes": "This digest covers the complete six-page MAI-Code-1.1-Flash card, focusing on technical summary, training, safety notes, and evaluation tables. It avoids administrative contact details and uses MAI-Code-1-Flash only as a comparison baseline."
+  ]
 }

@@ -1,242 +1,1001 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "kimi-k3",
   "model": "Kimi K3",
   "publisher": "Moonshot AI",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "moonshot-kimi-k3",
     "title": "Kimi K3: Open Frontier Intelligence — Technical Report of Kimi K3",
+    "publisher": "Moonshot AI",
+    "date": "2026-07-23",
+    "format": "pdf",
     "pages": 47
   },
-  "summary": "Moonshot AI's Kimi K3 technical report presents a 2.8T-parameter open-weight MoE model with native vision and a 1M-token context. The report is rich on architecture, training, infrastructure, and capability evaluations, but safety analysis is mostly limited to cyber capability and does not amount to a full system card.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["Kimi K3"],
+    "model_pages": [],
+    "note": "The 47-page Moonshot AI technical report is about Kimi K3 only. It is not a system card: architecture, training, infrastructure, capability evaluations, third-party results, and cyber capability are covered, but standard behavioral-safety categories are mostly absent. Comparator rows name other models only as baselines."
+  },
+  "summary": "Kimi K3 is Moonshot AI's open-weight, native multimodal 2.8T-parameter MoE model with 104B active parameters and a one-million-token context window. The report emphasizes agentic coding, tool use, long-context RL, and open weights, with strong coding and agentic benchmark results. Safety coverage is narrow and mainly cyber capability; no named safety framework is stated.",
+  "at_a_glance": {
+    "choose_it_for": "Large-context, agentic coding and multimodal workflows where open weights and tool-heavy evaluation results matter.",
+    "watch_out_for": "No formal safety framework is named, and prompt-injection, harmful-content, jailbreak, honesty, and sycophancy evaluations are absent.",
+    "points": [
+      {
+        "text": "The report states 2.8T total parameters, 104B active parameters, native vision, full weight release, and up to a one-million-token context window.",
+        "pages": [1, 2],
+        "document": "moonshot-kimi-k3"
+      },
+      {
+        "text": "Coding and agentic scores are the decision hook: 67.5 on DeepSWE, 88.3 on Terminal-Bench 2.1, 81.2 on FrontierSWE, 42.0 on SWE-Marathon, 91.2 on BrowseComp, and 94.5 on MCPMark-Verified.",
+        "pages": [27, 28],
+        "document": "moonshot-kimi-k3"
+      },
+      {
+        "text": "Post-training spans general, agentic, and coding domains across multiple effort levels, then distills domain- and effort-specialized policies into one model.",
+        "pages": [2, 12, 13],
+        "document": "moonshot-kimi-k3"
+      },
+      {
+        "text": "Cyber evaluation shows meaningful dual-use capability: about 70% of reviewed vulnerability findings were confirmed, and the model solved 14 of 36 exploit-development tasks.",
+        "pages": [30, 31],
+        "document": "moonshot-kimi-k3"
+      },
+      {
+        "text": "The report gives no named safety framework and does not report harmful-content, jailbreak, prompt-injection, honesty, or sycophancy evaluations.",
+        "pages": [25, 30],
+        "document": "moonshot-kimi-k3"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The report is dated 2026-07-23 in catalog metadata and says weights are released, but the body does not state a model release date.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "The report does not state a knowledge cutoff.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    "context_window_tokens": {
+      "value": 1000000,
+      "as_stated": "1-million-token context window",
+      "note": null,
+      "pages": [1, 2],
+      "document": "moonshot-kimi-k3"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The report discusses output and tool-call tokens during training but does not state a serving output limit.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    "input_modalities": {
+      "value": ["text", "image", "video"],
+      "as_stated": "text, images, and videos",
+      "note": null,
+      "pages": [9],
+      "document": "moonshot-kimi-k3"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": null,
+      "note": "The report describes text, code, and tool-call generation; visual artifacts are produced through code and screenshots rather than a named image-output mode.",
+      "pages": [9, 16],
+      "document": "moonshot-kimi-k3"
+    },
+    "reasoning_controls": {
+      "value": ["effort-levels"],
+      "as_stated": null,
+      "note": "The report describes multiple reasoning-effort levels and a chat-template option for thinking effort.",
+      "pages": [2, 13, 46],
+      "document": "moonshot-kimi-k3"
+    },
+    "effort_levels": {
+      "value": ["low", "high", "max"],
+      "as_stated": "low, high, and max expert models",
+      "note": "The report's evaluations use max for Kimi K3; low and high are named during effort-level RL.",
+      "pages": [13, 26],
+      "document": "moonshot-kimi-k3"
+    },
+    "tool_use": {
+      "value": ["function-calling", "web-search", "code-execution", "mcp"],
+      "as_stated": null,
+      "note": "Training and evaluation include tool calls, agent web searches, Python execution, and MCP benchmarks.",
+      "pages": [2, 15, 26, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    "open_weights": {
+      "value": true,
+      "as_stated": "release the full Kimi K3 model weights",
+      "note": null,
+      "pages": [1, 2],
+      "document": "moonshot-kimi-k3"
+    },
+    "architecture": {
+      "value": "mixture-of-experts",
+      "as_stated": "Mixture-of-Experts",
+      "note": null,
+      "pages": [1, 2],
+      "document": "moonshot-kimi-k3"
+    },
+    "parameters_total": {
+      "value": 2800000000000,
+      "as_stated": "2.8T total parameters",
+      "note": null,
+      "pages": [1, 2],
+      "document": "moonshot-kimi-k3"
+    },
+    "parameters_active": {
+      "value": 104000000000,
+      "as_stated": "104 billion activated parameters",
+      "note": null,
+      "pages": [1, 2],
+      "document": "moonshot-kimi-k3"
+    }
+  },
   "capabilities": [
     {
-      "text": "2.8T total parameters, 104B active parameters, native vision, and up to a 1M-token context window.",
-      "pages": [
-        1,
-        2
-      ]
+      "text": "The architecture combines Kimi Delta Attention, periodic Gated MLA, Attention Residuals, and Stable LatentMoE to scale long-context and depth information flow.",
+      "pages": [2, 3, 4, 5, 6],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Hybrid attention combines repeated KDA layers with periodic Gated MLA and a final global-attention layer.",
-      "pages": [
-        3,
-        4,
-        5
-      ]
+      "text": "Stable LatentMoE uses 896 routed experts with 16 selected per token, two shared experts, normalized routing output, SiTU-GLU, and Quantile Balancing.",
+      "pages": [6, 7, 8],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Stable LatentMoE uses 896 routed experts, 16 active experts, two shared experts, SiTU-GLU, RMSNorm, and Quantile Balancing.",
-      "pages": [
-        6,
-        7,
-        8,
-        9
-      ]
+      "text": "MoonViT-V2 processes images and videos into the shared backbone, enabling iterative workflows where code, screenshots, and rendered results stay in one context.",
+      "pages": [9],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "MoonViT-V2 provides a native image/video path trained with the language backbone.",
-      "pages": [
-        9,
-        10
-      ]
+      "text": "Pretraining covers text, code, mathematics, knowledge, and vision data, then extends the context length with long-context cleaning and synthetic long-range tasks.",
+      "pages": [10, 11, 12],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Pretraining covers web text, code, mathematics, knowledge, and vision data, plus long-context cleaning and synthesis for 1M-token use.",
-      "pages": [
-        10,
-        11,
-        12
-      ]
+      "text": "Post-training starts with SFT, then trains specialized RL experts across domains and effort levels, and finally consolidates them through multi-teacher on-policy distillation.",
+      "pages": [12, 13],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Post-training uses supervised tuning, reinforcement learning across general/agentic/coding domains, and multi-teacher on-policy distillation.",
-      "pages": [
-        12,
-        13,
-        14
-      ]
+      "text": "Agentic RL environments include search and professional work, software engineering, kernel optimization, vision-in-the-loop reasoning, persistent assistants, web development, and autonomous execution.",
+      "pages": [14, 15, 16],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "text": "Infrastructure supports long trajectories with resumable microVM sandboxes, external KV-cache retention, and KDA-aware prefix caching for million-token workloads.",
+      "pages": [21, 22, 23],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "text": "Quantization-aware post-training uses MXFP4 expert weights and MXFP8 expert activations while keeping non-expert modules at higher precision.",
+      "pages": [14],
+      "document": "moonshot-kimi-k3"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "GPQA Diamond",
-      "result": "93.5%",
-      "context": "Reasoning and knowledge benchmark at max effort",
-      "pages": [
-        26,
-        27
-      ]
+      "benchmark_id": "deepswe-v1.1",
+      "benchmark": "DeepSWE v1.1",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 67.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Kimi Code CLI",
+      "setting": "v1.1 tasks; mini-SWE-agent reference score 67.3",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 73.0,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 70.0,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 67.0,
+          "setting": "xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 59.0,
+          "setting": "max"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 46.2,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [26, 27],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "benchmark": "HLE-Full",
-      "result": "43.5% / 56.0%",
-      "context": "Without tools / with tools; report notes frontier gaps",
-      "pages": [
-        26,
-        27
-      ]
-    },
-    {
-      "benchmark": "ProgramBench",
-      "result": "77.8%",
-      "context": "Coding benchmark; best value in the table",
-      "pages": [
-        27,
-        28
-      ]
-    },
-    {
+      "benchmark_id": "terminal-bench-2.1",
       "benchmark": "Terminal-Bench 2.1",
-      "result": "88.3%",
-      "context": "Agentic terminal coding benchmark",
-      "pages": [
-        27,
-        28
-      ]
+      "variant": null,
+      "metric": "success-rate",
+      "value": 88.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "best score across harnesses",
+      "setting": "all non-GPT-5.5 baselines at max",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 88.8,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 88.0,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 84.6,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 83.4,
+          "setting": "xhigh"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 82.7,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [26, 27, 28],
+      "document": "moonshot-kimi-k3"
     },
     {
+      "benchmark_id": "frontierswe",
       "benchmark": "FrontierSWE",
-      "result": "81.2%",
-      "context": "Long-horizon software engineering comparison",
-      "pages": [
-        27,
-        28
-      ]
+      "variant": null,
+      "metric": "score",
+      "value": 81.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Kimi Code CLI",
+      "setting": "dominance scores recomputed from official script as of July 16, 2026",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Fable 5",
+          "value": 86.6,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 71.3,
+          "setting": "max"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 67.3,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 66.7,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 64.9,
+          "setting": "xhigh"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [26, 27, 28],
+      "document": "moonshot-kimi-k3"
     },
     {
+      "benchmark_id": "swe-marathon",
+      "benchmark": "SWE-Marathon",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 42.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Kimi Code CLI",
+      "setting": "H20-calibrated branch of official tasks as of July 9, 2026",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Opus 4.8",
+          "value": 40.0,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 39.0,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 35.0,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 14.0,
+          "setting": "xhigh"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 13.0,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [26, 27, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "programbench",
+      "benchmark": "ProgramBench",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 77.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Kimi Code CLI",
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 77.6,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 76.8,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 71.9,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 70.8,
+          "setting": "xhigh"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 63.7,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [27, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "kimi-code-bench-v2",
+      "benchmark": "Kimi Code Bench v2",
+      "variant": "2.0 internal",
+      "metric": "score",
+      "value": 72.9,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Kimi Code CLI",
+      "setting": "realistic end-to-end coding-agent tasks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Fable 5",
+          "value": 76.9,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 71.7,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 69.0,
+          "setting": "xhigh"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 64.8,
+          "setting": "max"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 64.2,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [27, 29],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "browsecomp",
       "benchmark": "BrowseComp",
-      "result": "91.2%",
-      "context": "Agentic browsing/search benchmark",
-      "pages": [
-        27,
-        28
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 91.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "context compaction at 300K tokens; 90.4% without context management",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 90.4,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 88.0,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 84.4,
+          "setting": "xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 84.3,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [26, 27, 28],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "benchmark": "MCPMark-Verified",
-      "result": "94.5%",
-      "context": "Verified MCP tool-use benchmark",
-      "pages": [
-        27,
-        28
-      ]
+      "benchmark_id": "mcpmark-verified",
+      "benchmark": "MCPMark Verified",
+      "variant": null,
+      "metric": "score",
+      "value": 94.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "verified MCP tasks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 92.9,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 87.4,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 92.9,
+          "setting": "xhigh"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 76.4,
+          "setting": "max"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [26, 27, 28],
+      "document": "moonshot-kimi-k3"
     },
     {
+      "benchmark_id": "mcp-atlas",
+      "benchmark": "MCP Atlas",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 84.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "500-task public subset; 100-turn limit; Gemini 3.1 Pro judge",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Fable 5",
+          "value": 84.7,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 83.6,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 83.6,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 82.8,
+          "setting": "xhigh"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 82.6,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26, 27],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "automationbench",
+      "benchmark": "AutomationBench",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 30.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "600-task public subset",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 29.7,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Fable 5",
+          "value": 29.1,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 27.2,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 22.7,
+          "setting": "xhigh"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 12.9,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26, 27, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "gdpval-aa-v2",
+      "benchmark": "GDPval-AA v2",
+      "variant": null,
+      "metric": "elo",
+      "value": 1686,
+      "unit": "elo",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "Artificial Analysis score as of July 23, 2026",
+      "run_by": "third-party",
+      "comparators": [
+        {
+          "model": "Claude Fable 5",
+          "value": 1747,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 1736,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 1593,
+          "setting": "max"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 1510,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 1491,
+          "setting": "xhigh"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26, 27, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "gpqa-diamond",
+      "benchmark": "GPQA Diamond",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 93.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "single-step reasoning; top-p 0.95",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Fable 5",
+          "value": 92.6,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 94.1,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 91.0,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 93.5,
+          "setting": "xhigh"
+        },
+        {
+          "model": "GLM-5.2",
+          "value": 91.2,
+          "setting": "max"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26, 27],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "humanitys-last-exam",
+      "benchmark": "Humanity's Last Exam",
+      "variant": "With tools",
+      "metric": "accuracy",
+      "value": 56.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "HLE-Full; general tools",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Fable 5",
+          "value": 63.0,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 58.0,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 57.9,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 52.2,
+          "setting": "xhigh"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [26, 27],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "benchmark_id": "math-vision",
       "benchmark": "Math-Vision",
-      "result": "94.3% / 97.8%",
-      "context": "Without Python / with Python",
-      "pages": [
-        27,
-        28
-      ]
+      "variant": "With Python",
+      "metric": "accuracy",
+      "value": 97.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": null,
+      "setting": "vision benchmark with Python tool augmentation",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Fable 5",
+          "value": 98.6,
+          "setting": "max, with fallback"
+        },
+        {
+          "model": "GPT-5.6 Sol",
+          "value": 97.8,
+          "setting": "max"
+        },
+        {
+          "model": "Claude Opus 4.8",
+          "value": 97.1,
+          "setting": "max"
+        },
+        {
+          "model": "GPT-5.5",
+          "value": 96.8,
+          "setting": "xhigh"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [27, 28],
+      "document": "moonshot-kimi-k3"
     },
     {
+      "benchmark_id": "kimi-webdev-bench",
       "benchmark": "Kimi Webdev Bench",
-      "result": "+31.0 win-minus-lose",
-      "context": "Blind expert comparison with Claude Opus 4.8",
-      "pages": [
-        29,
-        30
-      ]
+      "variant": "Overall win-minus-lose",
+      "metric": "score",
+      "value": 31.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": "max",
+      "harness": "Claude Code",
+      "setting": "blind expert comparison against Claude Opus 4.8",
+      "run_by": "publisher",
+      "comparators": [],
+      "headline": false,
+      "note": null,
+      "pages": [29, 30],
+      "document": "moonshot-kimi-k3"
+    }
+  ],
+  "safety_classification": {
+    "framework": "none-stated",
+    "framework_name": null,
+    "overall": null,
+    "summary": "The Kimi K3 report does not state a named safety framework or formal safety-level determination. It includes a cyber capability evaluation with operational-risk framing, but no overarching framework, threshold level, or broad deployment classification is stated.",
+    "domains": [],
+    "pages": [],
+    "document": "moonshot-kimi-k3"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "reported",
+      "text": "Training environments include safeguards against reward hacking in kernel optimization, autonomous execution, and web-development rewards, but the report does not publish a behavioral eval rate for Kimi K3.",
+      "pages": [16],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "benchmark": "Cyber exploit suite",
-      "result": "14/36 tasks solved",
-      "context": "In-house Tier 2 exploit-development evaluation",
-      "pages": [
-        30,
-        31
-      ]
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The report mentions correctness and anti-cheat validators for SWE-Marathon but does not report a test-tampering evaluation.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The report trains and evaluates long-horizon agents but does not report destructive-action or over-eager action measurements.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "The report does not include sabotage or oversight-evasion evaluations.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The report lists agentic and MCP benchmarks but does not test injected instructions from tools, files, web pages, or messages.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "The in-house Faithfulness benchmark reports 1 minus hallucination rate; Kimi K3 scores 85.5, but the report gives no detailed honesty or false-success analysis.",
+      "pages": [29, 30],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The report does not mention or evaluate sycophancy.",
+      "pages": [],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Cyber testing shows dual-use capability: 14 of 36 in-house exploit-development tasks solved and 0 of 41 arbitrary-code-execution tasks in the joint UK AISI/NIST CAISI assessment.",
+      "pages": [31],
+      "document": "moonshot-kimi-k3"
     }
   ],
   "safety_findings": [
     {
-      "text": "Cyber evaluation is organized into vulnerability discovery and exploit development tiers with operational-risk framing.",
-      "pages": [
-        30
-      ]
+      "text": "Cyber evaluation is organized by operational risk into vulnerability discovery and exploit development, and excludes Anthropic and OpenAI frontier models because they refuse cyber-related tasks.",
+      "pages": [30],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "About 70% of human-reviewed vulnerability candidates were confirmed, including 16 previously unknown issues across six projects.",
-      "pages": [
-        30
-      ]
+      "text": "In vulnerability discovery, about 70% of human-reviewed candidate findings were confirmed as real, including 16 previously unknown vulnerabilities across six projects.",
+      "pages": [30],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Kimi K3 solved 14 of 36 exploit-development tasks, outperforming GLM-5.2 but leaving many human-solvable tasks unsolved.",
-      "pages": [
-        30,
-        31
-      ]
+      "text": "In exploit development, Kimi K3 solves 14 of 36 tasks, compared with 8 of 36 for GLM-5.2; 10 of Kimi K3's successes are user-space tasks.",
+      "pages": [31],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "The report states an independent UK AISI and NIST CAISI assessment found 0 of 41 arbitrary-code-execution tasks completed.",
-      "pages": [
-        31
-      ]
+      "text": "Failure analysis attributes unsolved exploit tasks to incomplete exploit-chain finishing, poor mitigation-aware strategy selection, debugging loops, and weak final verification.",
+      "pages": [31],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Safety coverage is thin outside cyber capability; categories such as harmful content, jailbreaks, and CBRN are not reported.",
-      "pages": [
-        25,
-        26,
-        30,
-        31
-      ]
+      "text": "A joint UK AISI and NIST CAISI assessment finds Kimi K3 ahead of GLM-5.2 on ExploitBench and an enterprise-network task, but at 0 of 41 arbitrary-code-execution tasks.",
+      "pages": [31],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "text": "Outside cyber capability, the report does not provide CBRN, harmful-content, jailbreak, prompt-injection, or formal safety-threshold findings.",
+      "pages": [25, 30],
+      "document": "moonshot-kimi-k3"
     }
   ],
   "limitations": [
     {
-      "text": "The model trails the strongest proprietary baselines overall, with explicit gaps on research-level reasoning tasks.",
-      "pages": [
-        26
-      ]
+      "text": "Moonshot says Kimi K3 still trails Claude Fable 5 and GPT-5.6 Sol overall, with remaining gaps on research-level reasoning such as HLE-Full and CritPt.",
+      "pages": [2, 26],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Reported ranks depend on maximum-effort settings, distinct harnesses, third-party sources, and fallback behavior for some baselines.",
-      "pages": [
-        26
-      ]
+      "text": "Capability comparisons mix harnesses, fallbacks, leaderboard sources, dates, and max-versus-xhigh effort settings, so exact rank should be read with those conditions.",
+      "pages": [26, 27],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Internal tests show weaker areas in enterprise routing, always-on assistant work, agent-behavior scoring, visual agent tasks, and KWV Bench.",
-      "pages": [
-        30
-      ]
+      "text": "Internal benchmarks show weaker spots in 24/7 ClawBench, MIRA Bench, Agentic Vision Bench, Knowledge Work Vision Bench, and Agent Behavior Bench.",
+      "pages": [30],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "Cyber exploit failures include incomplete final chaining, poor mitigation-aware strategy selection, debugging loops, and weak final verification.",
-      "pages": [
-        31
-      ]
+      "text": "Cyber results show a gap to human security experts on hard kernel targets and end-to-end exploit chains, despite strong Tier 1 results.",
+      "pages": [31],
+      "document": "moonshot-kimi-k3"
     },
     {
-      "text": "The report is not a system card and omits many non-cyber safety categories.",
-      "pages": [
-        25,
-        26,
-        30,
-        31
-      ]
+      "text": "The report is a technical report rather than a safety card, and it omits many behavioral-safety categories that model administrators may expect.",
+      "pages": [25, 30],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "text": "Case studies are illustrative and should not be treated as standardized benchmark guarantees.",
+      "pages": [33, 34],
+      "document": "moonshot-kimi-k3"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "agentic-coding",
+      "rationale": "Kimi K3 reports strong coding-agent scores, including 67.5 on DeepSWE, 88.3 on Terminal-Bench 2.1, 81.2 on FrontierSWE, and 42.0 on SWE-Marathon.",
+      "pages": [27, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "use": "long-context",
+      "rationale": "The report states a one-million-token context window and describes million-token agentic RL infrastructure for long trajectories.",
+      "pages": [1, 2, 21],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "use": "vision",
+      "rationale": "Native image and video input shares the backbone with text, supporting code-and-screenshot feedback loops and tool-augmented visual reasoning.",
+      "pages": [9, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "use": "web-development",
+      "rationale": "Kimi Webdev Bench shows a +31.0 win-minus-lose margin over Claude Opus 4.8 under blind expert judging.",
+      "pages": [29, 30],
+      "document": "moonshot-kimi-k3"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "The report does not test prompt injection from tools, web pages, files, or MCP results, despite heavy tool-use positioning.",
+      "pages": [25, 28],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "No broad behavioral-safety framework or harmful-content evaluation is stated, and cyber results show meaningful dual-use capability.",
+      "pages": [30, 31],
+      "document": "moonshot-kimi-k3"
+    },
+    {
+      "use": "security-work",
+      "rationale": "For unsupervised offensive or production-adjacent security work, the cyber section shows exploit capability and explicit gaps in final verification.",
+      "pages": [30, 31],
+      "document": "moonshot-kimi-k3"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use it for large-context coding and agent workflows, while validating changes with tests and review."
+      "text": "Use Kimi K3 for repository-scale context and agentic coding when local policy permits open-weight models; keep tests and code review in the loop."
     },
     {
-      "text": "Treat repository content and web pages as untrusted input when the model has tool access."
+      "text": "Because the report lacks prompt-injection evidence, sandbox tool calls and treat repository files, MCP outputs, and web content as untrusted."
     },
     {
-      "text": "Restrict permissions for security-sensitive tasks because the report demonstrates meaningful cyber capability."
+      "text": "Limit permissions for security-sensitive work; the report demonstrates real vulnerability discovery and exploit-development capability."
     },
     {
-      "text": "Do not rely on the report as a comprehensive safety assessment."
+      "text": "Copilot CLI lists the model, but the app picker did not show it on the catalog check date, so do not plan app workflows around it."
     },
     {
-      "text": "For multimodal coding, pair image/video understanding with visual and automated verification."
+      "text": "The report's max-effort benchmark setup may not match every Copilot run; compare outcomes with project-specific tests rather than table rank alone."
     }
-  ],
-  "coverage_notes": "This digest covers the Kimi K3 technical report's architecture, training, main evaluations, internal evaluations, cyber analysis, and selected case studies. It omits most mathematical derivations and infrastructure appendices. The report applies to Kimi K3 only and is not a dedicated system card."
+  ]
 }

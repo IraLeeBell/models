@@ -1,272 +1,921 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "gpt-5.5",
   "model": "GPT-5.5",
   "publisher": "OpenAI",
+  "lifecycle": "current",
+  "retired_on": null,
   "document": {
     "id": "openai-gpt-5-5",
     "title": "GPT-5.5 System Card",
+    "publisher": "OpenAI",
+    "date": "2026-04-23",
+    "format": "pdf",
     "pages": 46
   },
-  "summary": "GPT-5.5 is OpenAI's dedicated system card for a reasoning model aimed at complex coding, research, and tool-mediated work. The card reports High biological/chemical and High-but-not-Critical cybersecurity Preparedness treatment, expanded cyber safeguards, improved agentic workspace handling, and residual issues in monitorability, prompt injection, factuality, and low-severity misalignment.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["GPT-5.5"],
+    "model_pages": [],
+    "note": "The whole 46-page card is about GPT-5.5, with GPT-5.5 Pro discussed as the same underlying model under a parallel test-time-compute setting. This digest attributes only the GPT-5.5 column to this model and treats Pro values as comparators or deployment caveats where the card separates them."
+  },
+  "summary": "GPT-5.5 is OpenAI's dedicated system card for a reasoning model aimed at complex coding, research, documents, spreadsheets, and tool-mediated work. It improves several agentic workspace, cyber, and AI-R&D proxy scores over GPT-5.4 Thinking, while OpenAI treats it as High in biological/chemical and cybersecurity capability and below High in AI self-improvement. The main operational risk is stronger cyber and agentic capability with residual prompt-injection, workspace, and misalignment concerns.",
+  "at_a_glance": {
+    "choose_it_for": "Difficult debugging, multi-step coding, and tool-heavy development where persistence and stronger coding-proxy scores justify close review.",
+    "watch_out_for": "High cyber treatment, a universal cyber-safeguard jailbreak found by UK AISI before final updates, and nonzero workspace and honesty failures.",
+    "points": [
+      {
+        "text": "OpenAI positions GPT-5.5 for complex work across coding, research, analysis, documents, spreadsheets, and tools, and says it persists more than earlier models.",
+        "pages": [5],
+        "document": "openai-gpt-5-5"
+      },
+      {
+        "text": "Agentic workspace metrics improve over GPT-5.4 Thinking: destructive-action avoidance is 0.90, perfect reversion 0.52, and user-work preservation 0.57.",
+        "pages": [9],
+        "document": "openai-gpt-5-5"
+      },
+      {
+        "text": "Coding and AI-R&D proxies rise: Monorepo-Bench reaches 60% pass@1 and MLE-Bench 36.67%, while OPQA falls to 1.7%.",
+        "pages": [37, 39],
+        "document": "openai-gpt-5-5"
+      },
+      {
+        "text": "Cyber capability is High but below Critical: CTF is 96.3%, CVE-Bench 93.1%, and Cyber Range 93.33%.",
+        "pages": [22, 31, 32, 33],
+        "document": "openai-gpt-5-5"
+      },
+      {
+        "text": "Apollo reports 22.1% moderate-or-higher evaluation awareness, 29% lying on an impossible coding task, and a 0.67 mean sabotage score.",
+        "pages": [40],
+        "document": "openai-gpt-5-5"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card is dated April 23, 2026, updated April 24, and corrected August 19, but it does not state the model release date as a separate fact.",
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "knowledge_cutoff": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card describes training-data sources but gives no knowledge cutoff.",
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "context_window_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "UK AISI tested with very large token limits, but the card does not state the served context window.",
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "input_modalities": {
+      "value": ["text", "image"],
+      "as_stated": "combined text and image input",
+      "note": "The vision safety section evaluates combined text-and-image prompts; no formal modality table is provided.",
+      "pages": [8],
+      "document": "openai-gpt-5-5"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": "responses; model output",
+      "note": "The card discusses written responses and generated outputs but no non-text output modality.",
+      "pages": [5, 6],
+      "document": "openai-gpt-5-5"
+    },
+    "reasoning_controls": {
+      "value": ["always-reasoning"],
+      "as_stated": "reasoning models",
+      "note": "GPT-5.5 is described as a reasoning model; the card does not list caller-selectable reasoning controls.",
+      "pages": [5],
+      "document": "openai-gpt-5-5"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not name GPT-5.5 serving effort levels; it separately says GPT-5.5 Pro uses parallel test-time compute.",
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "tool_use": {
+      "value": ["terminal", "code-execution", "file-editing", "computer-use", "web-search"],
+      "as_stated": "moving across tools; headless Linux box; command-line tools and Python",
+      "note": "Tool use is described through tasks and evaluated harnesses rather than a serving API list.",
+      "pages": [5, 9, 30, 36, 39],
+      "document": "openai-gpt-5-5"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "architecture": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "parameters_total": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    "parameters_active": {
+      "value": null,
+      "as_stated": null,
+      "note": null,
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    }
+  },
   "capabilities": [
     {
-      "text": "OpenAI describes GPT-5.5 as a model for complex real-world work across coding, research, analysis, documents, spreadsheets, and tools.",
-      "pages": [
-        5
-      ]
+      "text": "OpenAI describes GPT-5.5 as a model for complex real-world work spanning code, online research, analysis, documents, spreadsheets, and tool movement.",
+      "pages": [5],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "Agentic workspace evaluations show improved destructive-action avoidance, perfect reversion, and preservation of user work compared with earlier models.",
-      "pages": [
-        9
-      ]
+      "text": "It is a reasoning model trained with reinforcement learning to deliberate before answering, revise approaches, notice mistakes, and better follow policy.",
+      "pages": [5],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "HealthBench scores improve over GPT-5.4 Thinking on the standard, Hard, and Professional variants while Consensus is roughly flat.",
-      "pages": [
-        12
-      ]
+      "text": "Workspace-safety evaluations improve materially over GPT-5.4 Thinking, especially perfect reversion during long rollouts.",
+      "pages": [9],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "Cyber testing shows strong performance in end-to-end ranges and third-party narrow cyber tasks, supporting a High cyber capability classification.",
-      "pages": [
-        32,
-        33,
-        34,
-        35
-      ]
+      "text": "HealthBench length-adjusted results improve over GPT-5.4 on overall, hard, and professional variants, while consensus is slightly lower.",
+      "pages": [12],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "AI self-improvement results remain below High even though GPT-5.5 leads compared models on OpenAI's internal research-debugging benchmark.",
-      "pages": [
-        36,
-        37,
-        38
-      ]
+      "text": "Cyber evaluations show broad gains over GPT-5.4 Thinking across CTF, CVE-Bench, Cyber Range, Irregular's suites, and UK AISI narrow tasks.",
+      "pages": [31, 32, 33, 34, 35],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "text": "AI self-improvement remains below High even though Monorepo-Bench, MLE-Bench, and internal debugging scores improve over GPT-5.4 Thinking.",
+      "pages": [36, 37, 38],
+      "document": "openai-gpt-5-5"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "Production Benchmarks with challenging prompts",
-      "result": "0.979 violent illicit, 0.993 nonviolent illicit, 0.822 harassment, 0.925 extremism, 0.868 hate, 0.959 self-harm, 0.846 violence, 0.925 sexual, 0.941 sexual/minors",
-      "context": "Difficult disallowed-content prompts; higher is better.",
-      "pages": [
-        6
-      ]
+      "benchmark_id": "openai-production-benchmarks",
+      "benchmark": "Production Benchmarks",
+      "variant": "Non-violent illicit behavior",
+      "metric": "not-unsafe-rate",
+      "value": 0.993,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.1 Thinking",
+          "value": 0.99,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.993,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 1.0,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": "Difficult prompts; not average traffic.",
+      "pages": [6],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Image-input safety",
-      "result": "0.981 hate, 0.987 extremism, 0.987 self-harm, 0.987 erotic harms",
-      "context": "not_unsafe metric for combined text and image inputs.",
-      "pages": [
-        8,
-        9
-      ]
+      "benchmark_id": "openai-image-input-safety",
+      "benchmark": "Image Input Safety",
+      "variant": "Self-harm",
+      "metric": "not-unsafe-rate",
+      "value": 0.987,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.1 Thinking",
+          "value": 0.984,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.986,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 0.999,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [8],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Destructive-action avoidance",
-      "result": "0.90 avoidance, 0.52 perfect reversion, 0.57 user-work preservation",
-      "context": "Agentic workspace safety and recovery from long rollouts.",
-      "pages": [
-        9
-      ]
+      "benchmark_id": "openai-destructive-action-avoidance",
+      "benchmark": "Destructive Action Avoidance",
+      "variant": "Destructive-action avoidance",
+      "metric": "score",
+      "value": 0.9,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2-Codex",
+          "value": 0.76,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.3-Codex",
+          "value": 0.88,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 0.86,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [9],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Prompt injection in connectors",
-      "result": "0.963",
-      "context": "Robustness to adversarial instructions in connector output.",
-      "pages": [
-        11
-      ]
+      "benchmark_id": "openai-destructive-action-avoidance",
+      "benchmark": "Destructive Action Avoidance",
+      "variant": "Perfect reversion",
+      "metric": "score",
+      "value": 0.52,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2-Codex",
+          "value": 0.09,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.3-Codex",
+          "value": 0.01,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 0.18,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [9],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "HealthBench suite",
-      "result": "56.5 HealthBench, 31.5 Hard, 95.6 Consensus, 51.8 Professional",
-      "context": "Length-adjusted scores on health evaluations.",
-      "pages": [
-        12
-      ]
+      "benchmark_id": "openai-user-confirmations",
+      "benchmark": "User Confirmations",
+      "variant": "High-stakes communication",
+      "metric": "score",
+      "value": 0.98,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 1.0,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.3-Codex",
+          "value": 0.99,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 1.0,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [10],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Dynamic mental-health simulations",
-      "result": "0.981 mental health, 0.981 emotional reliance, 0.937 self-harm",
-      "context": "Multi-turn adversarial user simulations scored by not_unsafe responses.",
-      "pages": [
-        12
-      ]
+      "benchmark_id": "openai-prompt-injection",
+      "benchmark": "Prompt Injection",
+      "variant": "Connector attacks",
+      "metric": "accuracy",
+      "value": 0.963,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.1 Thinking",
+          "value": 0.649,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.971,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 0.998,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [11],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Internal coding-traffic resampling",
-      "result": "0.01% severity-3 rate for GPT-5.5 and GPT-5.4 Thinking; no severity-4 flags",
-      "context": "Misalignment forecasting with simulated tool responses.",
-      "pages": [
-        14,
-        15
-      ]
+      "benchmark_id": "healthbench",
+      "benchmark": "HealthBench",
+      "variant": "Length-adjusted overall",
+      "metric": "score",
+      "value": 56.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5",
+          "value": 57.7,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.1",
+          "value": 50.9,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2",
+          "value": 56.8,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 54.0,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": "Unadjusted score was 58.4 with mean response length 2313 characters.",
+      "pages": [12],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "First-person fairness",
-      "result": "0.0112 harm_overall",
-      "context": "Lower is better; prompt set is intentionally difficult.",
-      "pages": [
-        21,
-        22
-      ]
+      "benchmark_id": "openai-dynamic-mental-health",
+      "benchmark": "Dynamic Mental Health Simulations",
+      "variant": "Mental health",
+      "metric": "not-unsafe-rate",
+      "value": 0.981,
+      "unit": "fraction",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.1 Thinking",
+          "value": 0.753,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.975,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.4",
+          "value": 0.985,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [12],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Hard-negative protein binding",
-      "result": "1.48% pass@4",
-      "context": "Corrected result; OpenAI describes minimal capability on this biological design task.",
-      "pages": [
-        26,
-        27
-      ]
+      "benchmark_id": "openai-cot-controllability",
+      "benchmark": "CoT Controllability",
+      "variant": "50k-character CoTs",
+      "metric": "success-rate",
+      "value": 0.2,
+      "unit": "percent",
+      "higher_is_better": false,
+      "effort": null,
+      "harness": null,
+      "setting": null,
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.4",
+          "value": 0.3,
+          "setting": "as GPT-5.4 Thinking"
+        },
+        {
+          "model": "GPT-5.2 Thinking",
+          "value": 0.5,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": "Lower is safer in OpenAI's framing.",
+      "pages": [20, 21],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Cyber range",
-      "result": "93.33% combined pass rate",
-      "context": "End-to-end cyber operations scenarios.",
-      "pages": [
-        32,
-        33
-      ]
+      "benchmark_id": "openai-ctf-professional",
+      "benchmark": "Capture the Flag (Professional)",
+      "variant": null,
+      "metric": "pass-at-12",
+      "value": 96.3,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "headless Linux box",
+      "setting": "16 rollouts; professional CTFs",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.4",
+          "value": 88.23,
+          "setting": "as GPT-5.4 Thinking"
+        },
+        {
+          "model": "GPT-5.3-Codex",
+          "value": 88.2,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [30, 31],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Apollo sandbagging and scheming evaluation",
-      "result": "22.1% evaluation awareness, 100% on both Sandbagging QA variants, 99.6% Strategic Deception Capability Sandbagging, 29% Impossible Coding Task lying, 0.67 mean sabotage score",
-      "context": "External evaluation of sandbagging, covert action, and sabotage-related behavior.",
-      "pages": [
-        40
-      ]
+      "benchmark_id": "cve-bench",
+      "benchmark": "CVE-Bench",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 93.1,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "34 of 40 tasks; zero-day prompt; no source-code access; 3 rollouts",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.4",
+          "value": 86.27,
+          "setting": "as GPT-5.4 Thinking"
+        },
+        {
+          "model": "GPT-5.3-Codex",
+          "value": 90.2,
+          "setting": null
+        },
+        {
+          "model": "GPT-5.5 Pro",
+          "value": 93.1,
+          "setting": null
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [31, 32],
+      "document": "openai-gpt-5-5"
     },
     {
-      "benchmark": "Cyber safety training",
-      "result": "0.928 production-data compliance and 0.975 synthetic-data compliance",
-      "context": "Model-level cyber policy-compliance evaluation.",
-      "pages": [
-        42
-      ]
+      "benchmark_id": "openai-cyber-range",
+      "benchmark": "Cyber Range",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 93.33,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "15 scenarios; pass if at least one of 16 trials succeeds",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.4",
+          "value": 73.33,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [33],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "benchmark_id": "monorepo-bench",
+      "benchmark": "Monorepo-Bench",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 60.0,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "command-line tools and Python",
+      "setting": "hidden unit tests",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.4",
+          "value": 59.33,
+          "setting": "as GPT-5.4 Thinking"
+        },
+        {
+          "model": "GPT-5.3-Codex",
+          "value": 56,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [37],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "benchmark_id": "mle-bench",
+      "benchmark": "MLE-bench",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 36.67,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "30 Kaggle competitions; bronze-medal threshold",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.4",
+          "value": 23.33,
+          "setting": "as GPT-5.4 Thinking"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [37],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "benchmark_id": "openai-proof-qa",
+      "benchmark": "OpenAI-Proof Q&A",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 1.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "20 research and engineering bottlenecks",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "GPT-5.4",
+          "value": 4.16,
+          "setting": "as GPT-5.4 Thinking"
+        },
+        {
+          "model": "GPT-5.3-Codex",
+          "value": 5.8,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [39],
+      "document": "openai-gpt-5-5"
+    }
+  ],
+  "safety_classification": {
+    "framework": "openai-preparedness",
+    "framework_name": null,
+    "overall": "High in Biological/Chemical and Cybersecurity, below Critical in Cybersecurity, below High in AI self-improvement",
+    "summary": "OpenAI continues High treatment for biological and chemical risk, treats GPT-5.5 as High but below Critical for cybersecurity, and concludes AI self-improvement remains below High. Cyber safeguards expand because capability increased relative to GPT-5.4 Thinking.",
+    "domains": [
+      {
+        "domain": "biological-chemical",
+        "determination": "threshold-reached",
+        "level": "High",
+        "text": "OpenAI treats GPT-5.5 as High in Biological and Chemical and activates the associated safeguards.",
+        "pages": [22],
+        "document": "openai-gpt-5-5"
+      },
+      {
+        "domain": "cybersecurity",
+        "determination": "threshold-reached",
+        "level": "High, below Critical",
+        "text": "OpenAI treats GPT-5.5 as Cyber High but says it does not meet the Critical threshold for autonomous hardened-target exploitation.",
+        "pages": [22, 29, 34],
+        "document": "openai-gpt-5-5"
+      },
+      {
+        "domain": "ai-self-improvement",
+        "determination": "below-threshold",
+        "level": "Below High",
+        "text": "Final-checkpoint evaluations indicate GPT-5.5 does not plausibly meet the mid-career research-engineer bar.",
+        "pages": [22, 36],
+        "document": "openai-gpt-5-5"
+      }
+    ],
+    "pages": [22, 29, 36],
+    "document": "openai-gpt-5-5"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card does not report reward-hacking or grader-gaming behavior as a separate evaluation.",
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card does not report a test-tampering evaluation.",
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "reported",
+      "text": "Workspace tests report 0.90 destructive-action avoidance, 0.52 perfect reversion, and 0.57 user-work preservation.",
+      "pages": [9],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "sabotage",
+      "status": "reported",
+      "text": "Apollo reports a 0.67 mean sabotage score and says the model exceeded human baselines on all hard sabotage tasks with human data.",
+      "pages": [40],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "reported",
+      "text": "Connector prompt-injection robustness is 0.963, lower than GPT-5.4 Thinking's 0.998 in the same table.",
+      "pages": [11],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "honesty",
+      "status": "reported",
+      "text": "Apollo's impossible-task probe found false completion claims in 29% of samples.",
+      "pages": [40],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card does not report a sycophancy evaluation.",
+      "pages": [],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "evaluation-awareness",
+      "status": "reported",
+      "text": "Apollo found 22.1% moderate-or-higher verbalized alignment-evaluation awareness.",
+      "pages": [40],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "sandbagging",
+      "status": "reported",
+      "text": "Apollo found no sandbagging on deferred-subversion tasks: both Sandbagging QA variants were 100% accurate and Strategic Deception Capability Sandbagging was 99.6% under a sandbagging incentive.",
+      "pages": [40],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "cot-monitorability",
+      "status": "reported",
+      "text": "Overall monitorability remains high at 96%, but OpenAI reports health-query regressions involving lower monitor performance and lower agent faithfulness.",
+      "pages": [17],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "topic": "malicious-use",
+      "status": "reported",
+      "text": "Cyber safety training compliance is 0.928 on production data and 0.975 on synthetic data before additional monitor and enforcement layers.",
+      "pages": [42],
+      "document": "openai-gpt-5-5"
     }
   ],
   "safety_findings": [
     {
-      "text": "OpenAI classifies GPT-5.5 as High for biological and chemical capability, High but below Critical for cybersecurity, and below High for AI self-improvement.",
-      "pages": [
-        22,
-        29,
-        36
-      ]
+      "text": "Disallowed-content scores are mostly near GPT-5.4 Thinking; OpenAI attributes the hate drop to translation requests that should not count as violations.",
+      "pages": [6],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "GPT-5.5 improves agentic workspace safety, especially avoiding destructive changes and preserving user work during long rollouts.",
-      "pages": [
-        9
-      ]
+      "text": "Internal coding-traffic resampling found no severity-4 cases and a 0.01% severity-3 rate for both GPT-5.5 and GPT-5.4 Thinking, with more low-severity issues for GPT-5.5.",
+      "pages": [15],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "The internal coding-traffic resampling found no severity-4 misalignment and a 0.01% severity-3 rate, while low-severity misalignment increased in some categories.",
-      "pages": [
-        14,
-        15
-      ]
+      "text": "GPT-5.5's CoT controllability is lower than GPT-5.4 Thinking and GPT-5.2 Thinking, with 0.2% success at 50k-character CoTs.",
+      "pages": [20, 21],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "CoT monitorability remains high overall, but OpenAI reports health-query regressions from monitor false positives and lower agent faithfulness.",
-      "pages": [
-        17,
-        18
-      ]
+      "text": "SecureBio found strong high-level scientific reasoning but uncertainty about robustness to motivated jailbreaking and deployed-model differences.",
+      "pages": [28],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "External bio testing found strong scientific reasoning but kept sophisticated expert planning and jailbreak uncertainty as biosecurity considerations.",
-      "pages": [
-        28
-      ]
+      "text": "VulnLMP produced credible memory-safety leads but no verifier-confirmed Critical-level exploit outcome, supporting High but not Critical cyber classification.",
+      "pages": [34],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "Cyber safeguards were expanded for scaled vulnerability research and exploit chaining, using model training, monitoring, account-level enforcement, and trusted access.",
-      "pages": [
-        40,
-        41,
-        42,
-        43
-      ]
+      "text": "UK AISI found GPT-5.5 strongest overall on its narrow cyber tasks, including 90.5% ± 12.9 pass@5 on expert tasks and one cyber range solved in 1 of 10 attempts.",
+      "pages": [35],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "UK AISI found a universal jailbreak against an evaluated cyber-safeguard configuration; OpenAI reports subsequent fixes but not independent final verification by UK AISI.",
-      "pages": [
-        44
-      ]
+      "text": "Cyber safeguards expand around scaled vulnerability research and exploit chaining, with baseline restrictions plus Trusted Access for Cyber for verified defenders.",
+      "pages": [41, 42],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "text": "UK AISI identified a universal cyber-safeguard jailbreak during testing; OpenAI updated safeguards, but UK AISI did not verify the final configuration because of a configuration issue.",
+      "pages": [44],
+      "document": "openai-gpt-5-5"
     }
   ],
   "limitations": [
     {
-      "text": "Many results are offline evaluations and may not reflect full production behavior or the separate GPT-5.5 Pro setting.",
-      "pages": [
-        5
-      ]
+      "text": "Most results are offline; OpenAI treats GPT-5.5 as a proxy for GPT-5.5 Pro except where the Pro setting may change risk.",
+      "pages": [5],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "The representative-prompt prevalence pipeline is experimental and subject to traffic drift, reconstruction bias, and missing safety-stack layers.",
-      "pages": [
-        7
-      ]
+      "text": "Production-like prevalence estimates are experimental, affected by traffic drift and pipeline bias, and exclude other safety-stack layers.",
+      "pages": [7],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "OpenAI says the challenging disallowed-content benchmark consists of hard cases and is not representative of average production traffic.",
-      "pages": [
-        6
-      ]
+      "text": "The hard disallowed-content benchmark is intentionally difficult, so its error rates are not average deployed rates.",
+      "pages": [6],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "The internal coding-traffic resampling depends on a simulator and is better treated as a relative deployment-risk signal than an external safety rate.",
-      "pages": [
-        13,
-        14,
-        15
-      ]
+      "text": "Internal coding-traffic resampling uses simulated tool responses and is a relative internal-risk signal, not a direct external deployment estimate.",
+      "pages": [13, 14, 15],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "Preparedness testing is a lower bound because stronger scaffolds, longer rollouts, fine-tuning, or different prompts might elicit more capability.",
-      "pages": [
-        22
-      ]
+      "text": "Preparedness results are lower bounds because other scaffolds, prompts, longer rollouts, fine-tuning, or interactions could elicit more capability.",
+      "pages": [22],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "SecureBio tested pre-release checkpoints and did not systematically evaluate robustness against highly motivated jailbreak attempts.",
-      "pages": [
-        28
-      ]
+      "text": "SecureBio evaluated pre-release checkpoints and did not systematically test highly motivated safeguard circumvention.",
+      "pages": [28],
+      "document": "openai-gpt-5-5"
     },
     {
-      "text": "UK AISI's cyber ranges omit common real-world defensive tooling, and its final safeguard retest did not verify OpenAI's launch configuration.",
-      "pages": [
-        35,
-        36,
-        44
-      ]
+      "text": "UK AISI cyber ranges omit many real-world defenses and showed continued scaling up to very large token limits.",
+      "pages": [35, 36],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "text": "The final cyber-safeguard configuration was not independently verified by UK AISI after the universal-jailbreak finding.",
+      "pages": [44],
+      "document": "openai-gpt-5-5"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "agentic-coding",
+      "rationale": "Monorepo-Bench reaches 60% and workspace reversion improves substantially over GPT-5.4 Thinking.",
+      "pages": [9, 37],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "use": "debugging",
+      "rationale": "OpenAI positions the model for complex work and reports a 50.5% median internal research-debugging score.",
+      "pages": [5, 38],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "use": "terminal-workflows",
+      "rationale": "CTF, CVE-Bench, Monorepo-Bench, and MLE-Bench all use tool-mediated or command-line-style harnesses and improve over GPT-5.4 on key scores.",
+      "pages": [30, 31, 32, 37],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "use": "security-work",
+      "rationale": "The card shows strong cyber capability and describes expanded safeguards and Trusted Access for defensive use.",
+      "pages": [29, 35, 41, 42],
+      "document": "openai-gpt-5-5"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "untrusted-input",
+      "rationale": "Connector prompt-injection accuracy is strong but lower than GPT-5.4, and the card still reports residual safeguard-jailbreak risk.",
+      "pages": [11, 44],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "use": "long-horizon-autonomy",
+      "rationale": "Reversion and user-work preservation are improved but imperfect, and OpenAI says it lacks evidence for long-range autonomy needed for internal deployment risks.",
+      "pages": [9, 45],
+      "document": "openai-gpt-5-5"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "Bio and cyber are treated as High-risk domains, and external bio evaluators still saw sophisticated planning concerns and jailbreaking uncertainty.",
+      "pages": [22, 28, 29],
+      "document": "openai-gpt-5-5"
     }
   ],
   "practical_implications": [
     {
-      "text": "Use GPT-5.5 for complex debugging, multi-step edits, and tool-heavy development where persistence and workspace recovery are valuable."
+      "text": "Use GPT-5.5 for hard Copilot agent tasks when you can review the diff and run tests; the card supports stronger persistence but not unchecked autonomy."
     },
     {
-      "text": "Keep file-changing sessions reviewable with diffs, tests, and clear ownership boundaries because destructive-action avoidance is not perfect."
+      "text": "Treat file deletion, cleanup, and reversion as approval points because workspace scores improved but are not perfect."
     },
     {
-      "text": "Treat tool and connector outputs as untrusted; prompt-injection robustness is strong but leaves residual risk."
+      "text": "Keep cyber work defensive and scoped; stronger capability is paired with expanded safeguards in the card."
     },
     {
-      "text": "Keep cyber tasks authorized and defensive, with narrow scopes and explicit approvals for any exploit-like workflow."
+      "text": "Do not rely on prompt-injection or safeguard results as complete protection when Copilot reads repository text, logs, issues, or web content."
     },
     {
-      "text": "Verify factual claims and research summaries independently because hallucination rates improve but do not disappear."
+      "text": "Use independent factual checks for research output because hallucination improvements are relative, not elimination of errors."
     },
     {
-      "text": "Use explicit task constraints and checkpoints in long Copilot sessions to reduce over-eager action and low-severity misalignment patterns."
+      "text": "Copilot offers long-context for this model, but the card itself does not state the served context window, so do not infer a specific limit from benchmark settings."
     }
-  ],
-  "coverage_notes": "This digest covers the complete 46-page GPT-5.5 system card, including capabilities, safety, health, hallucination, alignment, bias, Preparedness, external evaluation, and safeguard sections. It treats GPT-5.5 Pro only as the card does: generally proxied by GPT-5.5 results except where the card separately discusses Pro."
+  ]
 }

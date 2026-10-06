@@ -1,181 +1,562 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "slug": "mai-code-1-flash",
   "model": "MAI-Code-1-Flash",
   "publisher": "Microsoft",
+  "lifecycle": "retired",
+  "retired_on": "2026-09-10",
   "document": {
     "id": "microsoft-mai-code-1-flash",
     "title": "MAI-Code-1-Flash model card",
+    "publisher": "Microsoft",
+    "date": "2026-06-02",
+    "format": "pdf",
     "pages": 6
   },
-  "summary": "Microsoft's MAI-Code-1-Flash card describes a text-only sparse-MoE coding model for Copilot developer workflows. It reports production-harness coding, reasoning, instruction-following, and tool-use benchmarks, while safety discussion stays qualitative and the model is now retired in the GitHub catalog.",
+  "supplements": [],
+  "sources": [],
+  "coverage": {
+    "card_type": "dedicated",
+    "document_model_names": ["MAI-Code-1-Flash"],
+    "model_pages": [],
+    "note": "The six-page Microsoft card is dedicated to MAI-Code-1-Flash. Claude Haiku 4.5 is included only as the comparison model in the evaluation tables. The digest treats this model as a retired historical baseline for the MAI-Code Flash line and does not apply later MAI-Code-1.1-Flash image-input results to it."
+  },
+  "summary": "MAI-Code-1-Flash is Microsoft's retired first MAI-Code Flash coding model for GitHub Copilot, using a sparse-MoE transformer with 137B total parameters, 5B active parameters, and a 256K-token context. Its card reports strong production-harness coding, math, science, instruction-following, and tool-use results against Claude Haiku 4.5, but it documents text input only. Safety coverage is qualitative and does not measure the required agentic-coding risks.",
+  "at_a_glance": {
+    "choose_it_for": "Historical comparison with MAI-Code-1.1-Flash and old Copilot routing decisions, not as a current model choice.",
+    "watch_out_for": "Text-only card, retired catalog status, no numeric safety outcomes, and no prompt-injection or test-tampering evaluation.",
+    "points": [
+      {
+        "text": "In the coding table, MAI-Code-1-Flash reports 71.6% on SWE-Bench Verified, 51.2% on SWE-Bench Pro, 65.5% on SWE-Bench Multilingual, and 54.8% on Terminal Bench 2.",
+        "pages": [5],
+        "document": "microsoft-mai-code-1-flash"
+      },
+      {
+        "text": "The same card reports 92.5% on AIME 2026, 84.6% on GPQA Diamond, 75.0 average on IF Bench, and 71.7 on the telecom split of tau2-Bench.",
+        "pages": [5, 6],
+        "document": "microsoft-mai-code-1-flash"
+      },
+      {
+        "text": "It is a text-to-text sparse mixture-of-experts coding model with 137B total parameters, 5B active parameters, text input, text output, and a 256K-token context.",
+        "pages": [1],
+        "document": "microsoft-mai-code-1-flash"
+      },
+      {
+        "text": "The production-harness coding methodology includes repository context, tool calls, and verification, and compares models under the same settings.",
+        "pages": [6],
+        "document": "microsoft-mai-code-1-flash"
+      },
+      {
+        "text": "Safety reporting names cyber and secure-coding assessments plus classifiers and filters, but publishes no safety benchmark numbers or agentic-risk tests.",
+        "pages": [4],
+        "document": "microsoft-mai-code-1-flash"
+      }
+    ]
+  },
+  "facts": {
+    "release_date": {
+      "value": "2026-06-02",
+      "as_stated": "June 2, 2026",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "knowledge_cutoff": {
+      "value": "2025-12",
+      "as_stated": "December 2025",
+      "note": null,
+      "pages": [3],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "context_window_tokens": {
+      "value": 256000,
+      "as_stated": "256K tokens",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "max_output_tokens": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state a maximum generated-output length.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "input_modalities": {
+      "value": ["text"],
+      "as_stated": "Text",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "output_modalities": {
+      "value": ["text"],
+      "as_stated": "Text",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "reasoning_controls": {
+      "value": ["adaptive-thinking"],
+      "as_stated": null,
+      "note": "The card describes adaptive solution length rather than a user-set control.",
+      "pages": [2, 3],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "effort_levels": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card names no user-selectable effort levels.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "tool_use": {
+      "value": ["function-calling"],
+      "as_stated": null,
+      "note": "The benchmark method includes tool calls in the production Copilot harness but does not enumerate tool types.",
+      "pages": [6],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "open_weights": {
+      "value": null,
+      "as_stated": null,
+      "note": "The card does not state whether weights are open.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "architecture": {
+      "value": "mixture-of-experts",
+      "as_stated": "sparse Mixture-of-Experts layers",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "parameters_total": {
+      "value": 137000000000,
+      "as_stated": "137B total",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    "parameters_active": {
+      "value": 5000000000,
+      "as_stated": "5B active",
+      "note": null,
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    }
+  },
   "capabilities": [
     {
-      "text": "Text-to-text coding model with a 256K-token context and sparse-MoE transformer architecture.",
-      "pages": [
-        1
-      ]
+      "text": "The model is a text-only coding assistant with a 256K-token context and sparse mixture-of-experts layers.",
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "Targets agentic coding, repository Q&A, refactoring, completion, and tool-using Copilot workflows.",
-      "pages": [
-        2
-      ]
+      "text": "Microsoft positions it for agentic coding in repositories, repository question answering, refactoring, code generation and completion, telemetry-grounded tasks, and tool use inside Copilot.",
+      "pages": [2],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "Training includes supervised tuning, a synthetic agentic phase with about 2 million tasks, and reinforcement learning over more than 150,000 environments.",
-      "pages": [
-        3
-      ]
+      "text": "Training starts from MAI-Thinking-1's mid-training checkpoint, then adds supervised tuning, about 2 million synthetic agentic tasks, and reinforcement learning over more than 150,000 environments.",
+      "pages": [3],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "Validated in the GitHub Copilot production harness on software-engineering, repository Q&A, refactoring, and usage-derived tasks.",
-      "pages": [
-        3
-      ]
+      "text": "The card says all evaluation runs used the production GitHub Copilot harness for software engineering, repository question answering, refactoring, and telemetry-grounded tasks.",
+      "pages": [3],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "text": "Against Claude Haiku 4.5 in the card's coding table, MAI-Code-1-Flash leads on each listed pass rate, including SWE-Bench Pro at 51.2% versus 35.2%.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "text": "The card also reports noncoding strengths, including 92.5% AIME 2026, 84.6% GPQA Diamond, and a 75.0 average on IF Bench.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     }
   ],
   "evaluations": [
     {
-      "benchmark": "SWE-Bench Verified",
-      "result": "71.6% pass rate; 10.8K average tokens",
-      "context": "VS Code-based production harness",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "swe-bench-verified",
+      "benchmark": "SWE-bench Verified",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 71.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "repository context, tool calls, and verification included; 10.8K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 66.6,
+          "setting": "27.3K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "benchmark": "SWE-Bench Pro",
-      "result": "51.2% pass rate; 28.0K average tokens",
-      "context": "Diverse agentic coding evaluation",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "swe-bench-pro",
+      "benchmark": "SWE-bench Pro",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 51.2,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "28.0K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 35.2,
+          "setting": "29.8K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "benchmark": "SWE-Bench Multilingual",
-      "result": "65.5% pass rate; 15.3K average tokens",
-      "context": "Multilingual coding benchmark",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "swe-bench-multilingual",
+      "benchmark": "SWE-bench Multilingual",
+      "variant": null,
+      "metric": "pass-at-1",
+      "value": 65.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "15.3K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 62.7,
+          "setting": "17.2K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "benchmark": "Terminal Bench 2",
-      "result": "54.8% pass rate; 21.6K average tokens",
-      "context": "Agentic terminal coding",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "terminal-bench-2.0",
+      "benchmark": "Terminal-Bench 2.0",
+      "variant": null,
+      "metric": "success-rate",
+      "value": 54.8,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": "VS Code-based Copilot production harness",
+      "setting": "Terminal Bench 2; 21.6K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 41.6,
+          "setting": "25K average token usage"
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
+      "benchmark_id": "aime-2026",
       "benchmark": "AIME 2026",
-      "result": "92.5% accuracy",
-      "context": "Competitive math",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 92.5,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "23.6K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 83.3,
+          "setting": "30.3K average token usage"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
+      "benchmark_id": "humanitys-last-exam",
+      "benchmark": "Humanity's Last Exam",
+      "variant": null,
+      "metric": "accuracy",
+      "value": 18,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "academic reasoning, text; 26.3K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 9.5,
+          "setting": "22.2K average token usage"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "benchmark_id": "gpqa-diamond",
       "benchmark": "GPQA Diamond",
-      "result": "84.6% accuracy",
-      "context": "Science reasoning",
-      "pages": [
-        5
-      ]
+      "variant": null,
+      "metric": "accuracy",
+      "value": 84.6,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "biology, chemistry, and physics; 9.6K average token usage",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 73.2,
+          "setting": "14.6K average token usage"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "benchmark": "IF Bench",
-      "result": "75.0 average",
-      "context": "Precise instruction following",
-      "pages": [
-        5
-      ]
+      "benchmark_id": "ifbench",
+      "benchmark": "IFBench",
+      "variant": null,
+      "metric": "score",
+      "value": 75.0,
+      "unit": "score",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "average; precise instruction following",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 46.1,
+          "setting": "average"
+        }
+      ],
+      "headline": false,
+      "note": null,
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "benchmark": "τ²-Bench",
-      "result": "71.7 on telecom",
-      "context": "Agentic tool use",
-      "pages": [
-        6
-      ]
+      "benchmark_id": "tau2-bench",
+      "benchmark": "τ²-bench",
+      "variant": "Telecom",
+      "metric": "success-rate",
+      "value": 71.7,
+      "unit": "percent",
+      "higher_is_better": true,
+      "effort": null,
+      "harness": null,
+      "setting": "agentic tool use",
+      "run_by": "publisher",
+      "comparators": [
+        {
+          "model": "Claude Haiku 4.5",
+          "value": 54.7,
+          "setting": null
+        }
+      ],
+      "headline": true,
+      "note": null,
+      "pages": [6],
+      "document": "microsoft-mai-code-1-flash"
+    }
+  ],
+  "safety_classification": {
+    "framework": "none-stated",
+    "framework_name": null,
+    "overall": null,
+    "summary": "The card does not name a Microsoft safety framework or assign an overall safety level. It describes filtering, alignment training, cyber and secure-coding evaluations, and release checks with safety classifiers and filters.",
+    "domains": [],
+    "pages": [],
+    "document": "microsoft-mai-code-1-flash"
+  },
+  "agentic_risks": [
+    {
+      "topic": "reward-hacking",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of reward hacking, grader gaming, or exploiting benchmark rubrics.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "topic": "test-tampering",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of modifying, deleting, or weakening tests during coding tasks.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "topic": "destructive-actions",
+      "status": "not-reported",
+      "text": "The card reports no evaluation of irreversible or unrequested tool actions by the model.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "topic": "sabotage",
+      "status": "not-reported",
+      "text": "The card reports no sabotage, oversight-evasion, or deliberate underperformance evaluation.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "topic": "prompt-injection",
+      "status": "not-reported",
+      "text": "The card describes tool-using workflows and safety filters but reports no prompt-injection or instruction-hierarchy test.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "topic": "honesty",
+      "status": "not-reported",
+      "text": "The card reports no honesty, deception, or false-claim-of-completion evaluation.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "topic": "sycophancy",
+      "status": "not-reported",
+      "text": "The card reports no sycophancy or user-pressure evaluation.",
+      "pages": [],
+      "document": "microsoft-mai-code-1-flash"
     }
   ],
   "safety_findings": [
     {
-      "text": "Harmful content is filtered or down-ranked during pretraining.",
-      "pages": [
-        4
-      ]
+      "text": "Pretraining filters out or down-ranks harmful material to limit exposure during base-model learning.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "Alignment work during supervised tuning and reinforcement learning is used to discourage unsafe outputs.",
-      "pages": [
-        4
-      ]
+      "text": "Later supervised and reinforcement-learning stages are described as alignment steps for safer and more helpful behavior.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "CyberBench, CyberSecEval, and SecRepo are named as cybersecurity and secure-coding evaluations.",
-      "pages": [
-        4
-      ]
+      "text": "Microsoft names CyberBench, CyberSecEval, and SecRepo as security and secure-coding checks for threats, vulnerabilities, and secure-coding alignment.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "The release process used safety classifiers and filters around production APIs.",
-      "pages": [
-        4
-      ]
+      "text": "Release review used production model APIs with safety classifiers and filters, but the card does not publish numeric outcomes for those checks.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-flash"
     }
   ],
   "limitations": [
     {
-      "text": "The GitHub catalog marks the model retired as of 2026-09-10.",
-      "pages": [
-        1
-      ]
+      "text": "The card documents text input only, so it provides no image-grounded behavior like the later MAI-Code-1.1-Flash card.",
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "The card lists text input only, so it does not document image-grounded behavior.",
-      "pages": [
-        1
-      ]
+      "text": "Microsoft warns that generated text and code may be inaccurate, incomplete, or otherwise wrong, and calls for review, testing, and validation before consequential use.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "The initial distribution section was limited to Visual Studio Code with CLI planned later.",
-      "pages": [
-        2,
-        4
-      ]
+      "text": "Safety reporting is qualitative: it names evaluation families and release controls but does not provide pass rates or thresholds.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "Safety results are described qualitatively without benchmark pass rates.",
-      "pages": [
-        4
-      ]
+      "text": "The launch distribution was VS Code only with CLI planned later, so the card's availability statements are historical rather than current-selection guidance.",
+      "pages": [2, 4],
+      "document": "microsoft-mai-code-1-flash"
     },
     {
-      "text": "Generated output can be faulty and requires review and validation.",
-      "pages": [
-        4
-      ]
+      "text": "No maximum output length, open-weight status, prompt-injection result, honesty result, or sycophancy result is stated.",
+      "pages": [1, 4],
+      "document": "microsoft-mai-code-1-flash"
+    }
+  ],
+  "choose_for": [
+    {
+      "use": "historical-comparison",
+      "rationale": "Use the card as the baseline for the MAI-Code Flash line: MAI-Code-1.1-Flash directly compares itself against these SWE-Bench Verified and Terminal Bench 2.1 rows.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "use": "agentic-coding",
+      "rationale": "For historical analysis of old outputs, the card reports 71.6% on SWE-Bench Verified, 51.2% on SWE-Bench Pro, and 54.8% on Terminal Bench 2 in a production Copilot harness.",
+      "pages": [5, 6],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "use": "terminal-workflows",
+      "rationale": "Terminal Bench 2 is the terminal-specific result in the card, with 54.8% for MAI-Code-1-Flash versus 41.6% for Claude Haiku 4.5.",
+      "pages": [5],
+      "document": "microsoft-mai-code-1-flash"
+    }
+  ],
+  "avoid_for": [
+    {
+      "use": "vision",
+      "rationale": "The model summary lists text input only and gives no image benchmark results.",
+      "pages": [1],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "use": "untrusted-input",
+      "rationale": "The card reports no prompt-injection test despite describing tool-using workflows and safety filters.",
+      "pages": [2, 4],
+      "document": "microsoft-mai-code-1-flash"
+    },
+    {
+      "use": "high-stakes-domains",
+      "rationale": "Microsoft says outputs can be wrong and should be reviewed, tested, and validated before consequential use.",
+      "pages": [4],
+      "document": "microsoft-mai-code-1-flash"
     }
   ],
   "practical_implications": [
     {
-      "text": "GitHub retired the model on 2026-09-10; remaining guidance is historical and useful for successor comparison."
+      "text": "Do not carry MAI-Code-1.1-Flash image results backward to this model; the older card documents text input only."
     },
     {
-      "text": "Use MAI-Code-1-Flash as the baseline when interpreting MAI-Code-1.1-Flash improvements."
+      "text": "When comparing with MAI-Code-1.1-Flash, focus on shared rows such as SWE-Bench Verified and Terminal Bench 2.1 rather than unrelated benchmarks."
     },
     {
-      "text": "Rely on tests and code review rather than benchmark scores when judging old generated changes."
+      "text": "Keep old generated changes under test and review because the card reports no reward-hacking, test-tampering, or prompt-injection checks."
     },
     {
-      "text": "Do not infer image-input behavior from this card."
-    },
-    {
-      "text": "Treat historical availability notes as stale unless confirmed in current Copilot docs."
+      "text": "Treat launch availability statements as historical; the renderer's catalog status is the current source for retirement and Copilot availability."
     }
-  ],
-  "coverage_notes": "This digest summarizes the complete six-page MAI-Code-1-Flash card and avoids administrative contact details. It treats the model as retired in the catalog and does not apply later MAI-Code-1.1-Flash capabilities retroactively."
+  ]
 }
