@@ -1,0 +1,436 @@
+{
+  "checked_at": "2026-10-06",
+  "docs_revision": "45a0f053ac67e8d1f56fc8f7ee38f0b2a58925c3",
+  "expected_model_count": 29,
+  "models": [
+    {
+      "slug": "gpt-5-mini",
+      "name": "GPT-5 mini",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "A quick option for routine coding questions, edits, and explanations.",
+      "card": null,
+      "card_note": "OpenAI's [GPT-5 mini model page](https://developers.openai.com/api/docs/models/gpt-5-mini) describes the model, but is not a system card. GitHub's comparison links the 2025 GPT-5 system card, whose PDF does not name GPT-5 mini; it is not a verified mini-specific card."
+    },
+    {
+      "slug": "gpt-5.3-codex",
+      "name": "GPT-5.3-Codex",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "A coding-focused model for multi-step software-development agents.",
+      "card": {
+        "title": "GPT-5.3-Codex System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-3-codex",
+        "scope": "OpenAI's GPT-5.3-Codex deployment-safety page; HTML, not a PDF extraction."
+      }
+    },
+    {
+      "slug": "gpt-5.4",
+      "name": "GPT-5.4",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "For layered debugging and architecture questions requiring sustained reasoning.",
+      "card": {
+        "title": "GPT-5.4 Thinking System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+        "scope": "GPT-5.4 Thinking; GitHub's comparison identifies this card with GPT-5.4.",
+        "sha256": "e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50"
+      }
+    },
+    {
+      "slug": "gpt-5.4-mini",
+      "name": "GPT-5.4 mini",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "For quick codebase navigation and agentic exploration using search tools.",
+      "card": {
+        "title": "GPT-5.4 Thinking System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+        "scope": "The PDF includes an explicit appendix titled GPT-5.4 mini; the main report concerns GPT-5.4 Thinking.",
+        "sha256": "e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50"
+      }
+    },
+    {
+      "slug": "gpt-5.5",
+      "name": "GPT-5.5",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "For difficult debugging and multi-step design or code analysis.",
+      "card": {
+        "title": "GPT-5.5 System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+        "scope": "Dedicated GPT-5.5 system card.",
+        "sha256": "31133a3f53b520713b87ff9b92ddf90d3e699ac8b47f87c3e739b4365e8bfecf"
+      }
+    },
+    {
+      "slug": "gpt-5.6-luna",
+      "name": "GPT-5.6 Luna",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "The fast GPT-5.6 option for small, time-sensitive coding tasks.",
+      "card": {
+        "title": "GPT-5.6 System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "scope": "The introduction explicitly names Luna, Sol, and Terra as the three GPT-5.6 models.",
+        "sha256": "aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b"
+      }
+    },
+    {
+      "slug": "gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For long-running agentic coding and reasoning across large repositories.",
+      "card": {
+        "title": "GPT-5.6 System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "scope": "The introduction explicitly names Luna, Sol, and Terra as the three GPT-5.6 models.",
+        "sha256": "aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b"
+      }
+    },
+    {
+      "slug": "gpt-5.6-terra",
+      "name": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "A middle-ground choice for everyday interactive and agentic coding.",
+      "card": {
+        "title": "GPT-5.6 System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+        "scope": "The introduction explicitly names Luna, Sol, and Terra as the three GPT-5.6 models.",
+        "sha256": "aa8073bcfa15449167c64aab7c520c2d0c71e33220f64dff62baa0f2118e7e8b"
+      }
+    },
+    {
+      "slug": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For autonomous, long-horizon software changes with planning and verification.",
+      "card": {
+        "title": "GPT-6 Astra System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
+        "scope": "Main body covers Astra; an explicitly titled September 22 appendix covers GPT-6 Sol and GPT-6 Luna.",
+        "sha256": "77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895"
+      }
+    },
+    {
+      "slug": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For fast responses on smaller repetitive development tasks.",
+      "card": {
+        "title": "GPT-6 Astra System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
+        "scope": "The September 22 appendix explicitly covers GPT-6 Luna; do not treat Astra-only evaluations as Luna results.",
+        "sha256": "77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895"
+      }
+    },
+    {
+      "slug": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "provider": "OpenAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For interactive coding agents requiring careful multi-step checks.",
+      "card": {
+        "title": "GPT-6 Astra System Card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
+        "scope": "The September 22 appendix explicitly covers GPT-6 Sol; do not treat Astra-only evaluations as Sol results.",
+        "sha256": "77ff1e8aaf7018c7d7bbe347c374cd74188387ceca91f1ef637ccc59ea930895"
+      }
+    },
+    {
+      "slug": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "cli_source": "auto-only",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "A publicly listed option for complex coding and efficient multi-step reasoning.",
+      "card": null,
+      "card_note": "GitHub's model comparison says 'Coming soon' for its publisher card. It appears in GitHub's CLI and app Auto table and release-status table, but not yet in the per-client table."
+    },
+    {
+      "slug": "claude-fable-5",
+      "name": "Claude Fable 5",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": false,
+      "app_auto": false,
+      "summary": "For longer autonomous coding tasks that benefit from initial planning and verification.",
+      "note": "GitHub documents special data-handling requirements and administrator approval for Fable 5; see the Fable footnote in the supported-models table.",
+      "card": {
+        "title": "Claude Fable 5 & Claude Mythos 5 System Card",
+        "url": "https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf",
+        "scope": "Anthropic explicitly names Fable 5 and Mythos 5 in this shared system card; it does not cover Fable 5.1.",
+        "sha256": "f95d413845ad8624f384ba026963f2bad2158f10f2626575bb45e823e3c2e0ca"
+      }
+    },
+    {
+      "slug": "claude-fable-5.1",
+      "name": "Claude Fable 5.1",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": false,
+      "app_auto": false,
+      "summary": "For sustained codebase research, feature work, and multi-stage agent workflows.",
+      "note": "GitHub documents special data-handling requirements and administrator approval for Fable 5.1; see the Fable footnote in the supported-models table.",
+      "card": {
+        "title": "Claude Fable 5.1 & Claude Mythos 5.1 System Card",
+        "url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf",
+        "scope": "Dedicated shared report for Fable 5.1 and Mythos 5.1, not the earlier 5.0 report.",
+        "sha256": "b0d59edc7a60eef32a879c13d713cce60c3fefd7e6b5183afdc8b835af3c8c39"
+      }
+    },
+    {
+      "slug": "claude-haiku-4.5",
+      "name": "Claude Haiku 4.5",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For lightweight programming questions and quick explanations.",
+      "card": {
+        "title": "Claude Haiku 4.5 System Card",
+        "url": "https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf",
+        "scope": "Dedicated Claude Haiku 4.5 system card.",
+        "sha256": "1b9ae5f4f66a65c1b37a031179af3dba35959471a3a5d195e4fe700b87558141"
+      }
+    },
+    {
+      "slug": "claude-opus-4.8",
+      "name": "Claude Opus 4.8",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For complex debugging and high-effort reasoning over software changes.",
+      "card": {
+        "title": "Claude Opus 4.8 System Card",
+        "url": "https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf",
+        "scope": "Dedicated Claude Opus 4.8 system card.",
+        "sha256": "97f11ae3fb305c7105c958599bcf90f216669543393220f674610ddb83ee611a"
+      }
+    },
+    {
+      "slug": "claude-opus-4.8-fast-mode",
+      "name": "Claude Opus 4.8 (fast mode) (preview)",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": false,
+      "app_auto": false,
+      "summary": "A preview fast-service mode of Opus 4.8 for the same kinds of demanding tasks.",
+      "note": "Fast mode is a Copilot option, not evidence of a separate model or a separately evaluated system card.",
+      "card": {
+        "title": "Claude Opus 4.8 System Card",
+        "url": "https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf",
+        "scope": "Covers base Opus 4.8 only. GitHub links it for fast mode; no separate fast-mode evaluations are claimed.",
+        "sha256": "97f11ae3fb305c7105c958599bcf90f216669543393220f674610ddb83ee611a"
+      }
+    },
+    {
+      "slug": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For difficult reasoning-intensive software problems and analysis.",
+      "card": {
+        "title": "Claude Opus 5 System Card",
+        "url": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+        "scope": "Dedicated Claude Opus 5 system card, not a card for Opus 5.5.",
+        "sha256": "fed3c0e6d150a6ba855f0f117a632d2b27dbb5886fd42815caa92e3e20db1d25"
+      }
+    },
+    {
+      "slug": "claude-opus-5.5",
+      "name": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For prolonged agentic work involving recovery from errors and collaboration.",
+      "card": {
+        "title": "Claude Opus 5.5 System Card",
+        "url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+        "scope": "Dedicated Claude Opus 5.5 system card.",
+        "sha256": "7311c9c6bbb16d012f1c12c7418b05949fcf7ae3e30d2c40f22050074b2a7378"
+      }
+    },
+    {
+      "slug": "claude-sonnet-4.6",
+      "name": "Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": false,
+      "app_auto": false,
+      "status": "Retired 2026-09-01; annual individual-plan exception",
+      "summary": "A general-purpose coding option retained for eligible annual subscribers.",
+      "note": "GitHub still lists it as GA and CLI-supported, but its retirement-history footnote says the retirement does not apply to individual Copilot subscribers on annual plans. Do not assume general access.",
+      "card": {
+        "title": "Claude Sonnet 4.6 System Card",
+        "url": "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
+        "scope": "Dedicated Claude Sonnet 4.6 system card; this is a limited legacy availability case.",
+        "sha256": "8eb002f168d59851fa7dabbb6538df13bbf6a0dc652ce91411fa13572c46a4ba"
+      }
+    },
+    {
+      "slug": "claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For broad coding, investigation, and multi-step agent tasks.",
+      "card": {
+        "title": "Claude Sonnet 5 System Card",
+        "url": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+        "scope": "Dedicated Claude Sonnet 5 system card; not evidence for Sonnet 5.5.",
+        "sha256": "0ce49aa473c3037455b45579980fd0b55708c1066df3f5f99f92bb3169d9b9b7"
+      }
+    },
+    {
+      "slug": "claude-sonnet-5.5",
+      "name": "Claude Sonnet 5.5",
+      "provider": "Anthropic",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "A general coding and agent option focused on completing tasks efficiently.",
+      "card": null,
+      "card_note": "GitHub's comparison marks the publisher card 'Coming soon'. The Sonnet 5 system card is not a Sonnet 5.5 card."
+    },
+    {
+      "slug": "gemini-3.7-flash",
+      "name": "Gemini 3.7 Flash",
+      "provider": "Google",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "For short, responsive coding questions and lightweight assistance.",
+      "card": {
+        "title": "Gemini 3.7 Flash Model Card",
+        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-7-Flash-Model-Card.pdf",
+        "scope": "Google DeepMind model card explicitly titled Gemini 3.7 Flash.",
+        "sha256": "6d7f1347e7f55d44a634bef40bd96fd3e70d331826382c75733b633af3be9aef"
+      }
+    },
+    {
+      "slug": "gemini-3.8-flash",
+      "name": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For fast turnaround on smaller programming questions.",
+      "card": {
+        "title": "Gemini 3.8 Flash Model Card",
+        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-8-Flash-Model-Card.pdf",
+        "scope": "Google DeepMind model card explicitly titled Gemini 3.8 Flash.",
+        "sha256": "fd9b9494c8cb0da6dc16777c3df70d9f9226708e08ba7c9337222207c5d482af"
+      }
+    },
+    {
+      "slug": "mai-code-1.1-flash",
+      "name": "MAI-Code-1.1-Flash",
+      "provider": "Microsoft",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": true,
+      "summary": "For responsive coding help, instruction following, tool use, and image input.",
+      "note": "GitHub notes that MAI models may change behavior as checkpoints are updated.",
+      "card": {
+        "title": "MAI-Code-1.1-Flash Model Card",
+        "url": "https://microsoft.ai/pdf/MAI-Code-1.1-Flash-Model-Card.PDF",
+        "scope": "Dedicated MAI-Code-1.1-Flash model card, not MAI-Code-1-Flash.",
+        "sha256": "9caf4abe4c8eb6c3b5e1dfd5c61238e42139510bf4c5690d6115d9277f59e22f"
+      }
+    },
+    {
+      "slug": "kimi-k3",
+      "name": "Kimi K3",
+      "provider": "Moonshot AI",
+      "cli_source": "per-client",
+      "app_picker_observed": false,
+      "app_auto": false,
+      "summary": "An open-weight option for agentic coding across large contexts.",
+      "card": {
+        "title": "Kimi K3 Technical Report",
+        "url": "https://raw.githubusercontent.com/MoonshotAI/Kimi-K3/main/k3_tech_report.pdf",
+        "scope": "The publisher's Kimi K3 repository contains an explicitly titled K3 technical report, not the K2 report. GitHub Raw serves the verified PDF bytes as application/octet-stream.",
+        "sha256": "86fb82a63ced501f0c3f4f404c0c6fa88a7a6cfac17aae81fd1a8f455998067c"
+      }
+    },
+    {
+      "slug": "grok-4.5",
+      "name": "Grok 4.5",
+      "provider": "xAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "For broad software tasks involving several reasoning steps.",
+      "note": "The PDF linked from GitHub's comparison was a one-page blank file on the checked date; the owner URL below is a separate, nonblank Grok 4.5 card.",
+      "card": {
+        "title": "Model Card: Grok 4.5",
+        "url": "https://media.x.ai/v1/website/4p5-5184fdf9.pdf",
+        "scope": "Owner's nonblank, 29-page Grok 4.5 model card (revised July 20, 2026).",
+        "sha256": "068d432a70abc12787453c7424cd54452d38fcaebb498fa1c7f6d4b41658659f"
+      }
+    },
+    {
+      "slug": "grok-4.6",
+      "name": "Grok 4.6",
+      "provider": "xAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "For multi-stage coding and general reasoning-intensive software work.",
+      "card": {
+        "title": "Model Card: Grok 4.6",
+        "url": "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
+        "scope": "Dedicated Grok 4.6 model card (revision August 17, 2026).",
+        "sha256": "1fbb3ab6d7c572720e05d501eab8f11052b32db8d5936e66802c5c49b2261f4f"
+      }
+    },
+    {
+      "slug": "grok-4.7",
+      "name": "Grok 4.7",
+      "provider": "xAI",
+      "cli_source": "per-client",
+      "app_picker_observed": true,
+      "app_auto": false,
+      "summary": "For coding agents and complex, multi-step workflows.",
+      "card": {
+        "title": "Model Card: Grok 4.7",
+        "url": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+        "scope": "Dedicated Grok 4.7 model card dated September 21, 2026.",
+        "sha256": "9e4269af5fb9685d27b2fa73619fb1a6b278027f52d5438ceafd6994c9f2b486"
+      }
+    }
+  ]
+}
