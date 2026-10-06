@@ -1,0 +1,1741 @@
+{
+  "vocabulary_version": 1,
+  "description": "Controlled vocabulary for digest.json schema_version 2. Identifiers are stable; display names and labels may be refined. See DIGESTS.md.",
+  "benchmark_categories": {
+    "coding": {
+      "label": "Coding",
+      "description": "Writing, fixing, or reviewing code in repositories or programming tasks"
+    },
+    "terminal": {
+      "label": "Terminal",
+      "description": "Agentic tasks executed in a terminal or shell environment"
+    },
+    "agentic": {
+      "label": "Agentic tasks",
+      "description": "Multi-step autonomous tasks that combine planning and tool calls"
+    },
+    "tool-use": {
+      "label": "Tool use",
+      "description": "Calling external tools, APIs, or MCP servers correctly"
+    },
+    "computer-use": {
+      "label": "Computer use",
+      "description": "Operating graphical interfaces or browsers from screenshots"
+    },
+    "search": {
+      "label": "Agentic search",
+      "description": "Agentic web search and browsing for hard-to-find information"
+    },
+    "knowledge-work": {
+      "label": "Knowledge work",
+      "description": "Professional tasks such as finance, legal, office documents, and economically valuable work"
+    },
+    "ai-rnd": {
+      "label": "AI research and engineering",
+      "description": "Machine-learning research and engineering tasks"
+    },
+    "engineering": {
+      "label": "Engineering",
+      "description": "Non-software engineering tasks such as electrical or CAD design"
+    },
+    "reasoning": {
+      "label": "Reasoning",
+      "description": "Broad hard reasoning and expert-level question answering"
+    },
+    "math": {
+      "label": "Math",
+      "description": "Mathematics competitions and math reasoning"
+    },
+    "science": {
+      "label": "Science",
+      "description": "Scientific knowledge and analysis"
+    },
+    "multimodal": {
+      "label": "Multimodal",
+      "description": "Image, chart, document, or video understanding"
+    },
+    "long-context": {
+      "label": "Long context",
+      "description": "Retrieval and reasoning over very long inputs"
+    },
+    "multilingual": {
+      "label": "Multilingual",
+      "description": "Performance across languages"
+    },
+    "factuality": {
+      "label": "Factuality",
+      "description": "Factual accuracy, grounding, and hallucination"
+    },
+    "instruction-following": {
+      "label": "Instruction following",
+      "description": "Following detailed formatting and content instructions"
+    },
+    "medical": {
+      "label": "Medical",
+      "description": "Health and medical tasks"
+    },
+    "aggregate-index": {
+      "label": "Aggregate indexes",
+      "description": "Composite indexes built from several benchmarks"
+    },
+    "safety-bio-chem": {
+      "label": "Safety: biological and chemical",
+      "description": "Biological and chemical dangerous-capability or safeguard evaluations"
+    },
+    "safety-cyber": {
+      "label": "Safety: cybersecurity",
+      "description": "Cybersecurity dangerous-capability or safeguard evaluations"
+    },
+    "safety-content": {
+      "label": "Safety: disallowed content",
+      "description": "Disallowed-content and harmful-request evaluations"
+    },
+    "safety-jailbreak": {
+      "label": "Safety: jailbreaks",
+      "description": "Robustness to jailbreak attempts"
+    },
+    "safety-prompt-injection": {
+      "label": "Safety: prompt injection",
+      "description": "Robustness to prompt injection and instruction-hierarchy attacks"
+    },
+    "safety-agentic": {
+      "label": "Safety: agentic actions",
+      "description": "Safe behavior during agentic tool use, including destructive or malicious actions"
+    },
+    "safety-alignment": {
+      "label": "Safety: alignment",
+      "description": "Alignment, honesty, deception, sabotage, and monitorability evaluations"
+    },
+    "safety-wellbeing": {
+      "label": "Safety: wellbeing",
+      "description": "User wellbeing and mental-health evaluations"
+    },
+    "safety-bias": {
+      "label": "Safety: bias",
+      "description": "Bias and fairness evaluations"
+    },
+    "safety-other": {
+      "label": "Safety: other",
+      "description": "Other safety evaluations"
+    }
+  },
+  "headline_categories": [
+    "coding",
+    "terminal",
+    "agentic",
+    "tool-use",
+    "computer-use",
+    "search"
+  ],
+  "benchmarks": {
+    "aa-briefcase": {
+      "name": "AA-Briefcase",
+      "category": "knowledge-work",
+      "aliases": []
+    },
+    "aa-briefcase-v1.1": {
+      "name": "AA-Briefcase v1.1",
+      "category": "knowledge-work",
+      "aliases": []
+    },
+    "agents-last-exam": {
+      "name": "Agent's Last Exam",
+      "category": "agentic",
+      "aliases": []
+    },
+    "aider-polyglot": {
+      "name": "Aider Polyglot",
+      "category": "coding",
+      "aliases": []
+    },
+    "aime-2025": {
+      "name": "AIME 2025",
+      "category": "math",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "aime-2026": {
+      "name": "AIME 2026",
+      "category": "math",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "apex-agents": {
+      "name": "APEX-Agents",
+      "category": "agentic",
+      "aliases": []
+    },
+    "apex-swe": {
+      "name": "APEX-SWE",
+      "category": "coding",
+      "aliases": []
+    },
+    "arc-agi-1": {
+      "name": "ARC-AGI-1",
+      "category": "reasoning",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "arc-agi-2": {
+      "name": "ARC-AGI-2",
+      "category": "reasoning",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "arc-agi-3": {
+      "name": "ARC-AGI-3",
+      "category": "reasoning",
+      "aliases": []
+    },
+    "artificial-analysis-intelligence-index": {
+      "name": "Artificial Analysis Intelligence Index",
+      "category": "aggregate-index",
+      "aliases": [],
+      "default_metric": "score"
+    },
+    "arxivmath": {
+      "name": "ArXivMath",
+      "category": "math",
+      "aliases": [
+        "ArxivMath"
+      ],
+      "default_metric": "accuracy"
+    },
+    "automationbench": {
+      "name": "AutomationBench",
+      "category": "agentic",
+      "aliases": []
+    },
+    "bbq": {
+      "name": "BBQ",
+      "category": "safety-bias",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "biomysterybench": {
+      "name": "BioMysteryBench",
+      "category": "science",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "biomysterybench-verified": {
+      "name": "BioMysteryBench Verified",
+      "category": "science",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "biosecbench": {
+      "name": "BioSecBench",
+      "category": "safety-bio-chem",
+      "aliases": []
+    },
+    "bixbench": {
+      "name": "BixBench",
+      "category": "science",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "browsecomp": {
+      "name": "BrowseComp",
+      "category": "search",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "browsecomp-plus": {
+      "name": "BrowseComp-Plus",
+      "category": "search",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "cad-bench": {
+      "name": "CAD-Bench",
+      "category": "engineering",
+      "aliases": [
+        "CADBench"
+      ]
+    },
+    "cadgenbench": {
+      "name": "CADGenBench",
+      "category": "engineering",
+      "aliases": [],
+      "default_metric": "mean-reward"
+    },
+    "cathedralbench": {
+      "name": "CathedralBench",
+      "category": "safety-cyber",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "chartmuseum": {
+      "name": "ChartMuseum",
+      "category": "multimodal",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "chartqapro": {
+      "name": "ChartQAPro",
+      "category": "multimodal",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "charxiv-reasoning": {
+      "name": "CharXiv Reasoning",
+      "category": "multimodal",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "code-arena": {
+      "name": "Code Arena",
+      "category": "coding",
+      "aliases": [],
+      "default_metric": "elo"
+    },
+    "cursorbench": {
+      "name": "CursorBench",
+      "category": "coding",
+      "aliases": []
+    },
+    "cursorbench-3.2": {
+      "name": "CursorBench 3.2",
+      "category": "coding",
+      "aliases": [
+        "CursorBench 3.2.0"
+      ]
+    },
+    "cursorbench-4.0": {
+      "name": "CursorBench 4.0",
+      "category": "coding",
+      "aliases": []
+    },
+    "cve-bench": {
+      "name": "CVE-Bench",
+      "category": "safety-cyber",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "cybench": {
+      "name": "Cybench",
+      "category": "safety-cyber",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "cybergym": {
+      "name": "CyberGym",
+      "category": "safety-cyber",
+      "aliases": []
+    },
+    "cyberseceval": {
+      "name": "CyberSecEval",
+      "category": "safety-cyber",
+      "aliases": []
+    },
+    "cyscenariobench": {
+      "name": "CyScenarioBench",
+      "category": "safety-cyber",
+      "aliases": []
+    },
+    "deepsearchqa": {
+      "name": "DeepSearchQA",
+      "category": "search",
+      "aliases": []
+    },
+    "deepswe-v1.0": {
+      "name": "DeepSWE v1.0",
+      "category": "coding",
+      "aliases": [],
+      "default_metric": "pass-at-1"
+    },
+    "deepswe-v1.1": {
+      "name": "DeepSWE v1.1",
+      "category": "coding",
+      "aliases": [],
+      "default_metric": "pass-at-1"
+    },
+    "eebench": {
+      "name": "EEBench",
+      "category": "engineering",
+      "aliases": [],
+      "default_metric": "mean-reward"
+    },
+    "exploitbench": {
+      "name": "ExploitBench",
+      "category": "safety-cyber",
+      "aliases": []
+    },
+    "facts-benchmark-suite": {
+      "name": "FACTS Benchmark Suite",
+      "category": "factuality",
+      "aliases": [],
+      "default_metric": "score"
+    },
+    "facts-grounding": {
+      "name": "FACTS Grounding",
+      "category": "factuality",
+      "aliases": [],
+      "default_metric": "score"
+    },
+    "falseclaimbench": {
+      "name": "FalseClaimBench",
+      "category": "factuality",
+      "aliases": []
+    },
+    "finance-agent": {
+      "name": "Finance Agent",
+      "category": "knowledge-work",
+      "aliases": [
+        "Vals Finance Agent"
+      ],
+      "default_metric": "accuracy"
+    },
+    "finance-agent-v2": {
+      "name": "Finance Agent v2",
+      "category": "knowledge-work",
+      "aliases": [
+        "Vals Finance Agent v2"
+      ],
+      "default_metric": "accuracy"
+    },
+    "frontierbench-v0.1": {
+      "name": "FrontierBench v0.1",
+      "category": "agentic",
+      "aliases": []
+    },
+    "frontiercode-v1": {
+      "name": "FrontierCode v1",
+      "category": "coding",
+      "aliases": []
+    },
+    "frontiercode-v1.1": {
+      "name": "FrontierCode v1.1",
+      "category": "coding",
+      "aliases": [
+        "FrontierCode 1.1",
+        "FrontierCode 1.1 Main"
+      ]
+    },
+    "frontierswe": {
+      "name": "FrontierSWE",
+      "category": "coding",
+      "aliases": []
+    },
+    "frontierswe-v2": {
+      "name": "FrontierSWE v2",
+      "category": "coding",
+      "aliases": [
+        "FrontierSWE V2"
+      ]
+    },
+    "gdp-pdf": {
+      "name": "GDP.pdf",
+      "category": "knowledge-work",
+      "aliases": [
+        "GDP.PDF"
+      ]
+    },
+    "gdpval": {
+      "name": "GDPval",
+      "category": "knowledge-work",
+      "aliases": [],
+      "default_metric": "win-rate"
+    },
+    "gdpval-aa": {
+      "name": "GDPval-AA",
+      "category": "knowledge-work",
+      "aliases": [
+        "GDPVal-AA"
+      ],
+      "default_metric": "elo"
+    },
+    "gdpval-aa-v2": {
+      "name": "GDPval-AA v2",
+      "category": "knowledge-work",
+      "aliases": [
+        "GDPVal-AA v2"
+      ],
+      "default_metric": "elo"
+    },
+    "gdpval-aa-v2.1": {
+      "name": "GDPval-AA v2.1",
+      "category": "knowledge-work",
+      "aliases": [
+        "GDPVal-AA v2.1"
+      ],
+      "default_metric": "elo"
+    },
+    "global-mmlu-lite": {
+      "name": "Global MMLU (Lite)",
+      "category": "multilingual",
+      "aliases": [
+        "Global-MMLU-Lite"
+      ],
+      "default_metric": "accuracy"
+    },
+    "global-piqa": {
+      "name": "Global PIQA",
+      "category": "multilingual",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "gmmlu": {
+      "name": "GMMLU",
+      "category": "multilingual",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "gpqa-diamond": {
+      "name": "GPQA Diamond",
+      "category": "science",
+      "aliases": [
+        "GPQA diamond"
+      ],
+      "default_metric": "accuracy"
+    },
+    "graphwalks": {
+      "name": "GraphWalks",
+      "category": "long-context",
+      "aliases": []
+    },
+    "gray-swan-ipi-arena": {
+      "name": "Gray Swan IPI Arena",
+      "category": "safety-prompt-injection",
+      "aliases": [],
+      "default_metric": "attack-success-rate"
+    },
+    "hackerbench-v0.3": {
+      "name": "HackerBench v0.3",
+      "category": "safety-cyber",
+      "aliases": [],
+      "default_metric": "compliance-rate"
+    },
+    "harvey-lab-aa": {
+      "name": "Harvey LAB-AA",
+      "category": "knowledge-work",
+      "aliases": []
+    },
+    "healthbench": {
+      "name": "HealthBench",
+      "category": "medical",
+      "aliases": [],
+      "default_metric": "score"
+    },
+    "healthbench-professional": {
+      "name": "HealthBench Professional",
+      "category": "medical",
+      "aliases": [],
+      "default_metric": "score"
+    },
+    "hle-verified": {
+      "name": "HLE-Verified",
+      "category": "reasoning",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "humanitys-last-exam": {
+      "name": "Humanity's Last Exam",
+      "category": "reasoning",
+      "aliases": [
+        "HLE",
+        "HLE-Full"
+      ],
+      "default_metric": "accuracy"
+    },
+    "ifbench": {
+      "name": "IFBench",
+      "category": "instruction-following",
+      "aliases": [
+        "IF Bench"
+      ],
+      "default_metric": "accuracy"
+    },
+    "imo-2026": {
+      "name": "IMO 2026",
+      "category": "math",
+      "aliases": []
+    },
+    "inferenceeval": {
+      "name": "InferenceEval",
+      "category": "ai-rnd",
+      "aliases": []
+    },
+    "kimi-claw-24-7-bench": {
+      "name": "Kimi Claw 24/7 Bench",
+      "category": "agentic",
+      "aliases": []
+    },
+    "kimi-code-bench-v2": {
+      "name": "Kimi Code Bench v2",
+      "category": "coding",
+      "aliases": []
+    },
+    "kimi-webdev-bench": {
+      "name": "Kimi Webdev Bench",
+      "category": "coding",
+      "aliases": []
+    },
+    "lab-bench": {
+      "name": "LAB-Bench",
+      "category": "science",
+      "aliases": [
+        "LAB-Bench FigQA"
+      ],
+      "default_metric": "accuracy"
+    },
+    "labbench2": {
+      "name": "LABBench2",
+      "category": "science",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "latchbio-capabilities-v1.0": {
+      "name": "LatchBio Capabilities v1.0",
+      "category": "science",
+      "aliases": []
+    },
+    "legal-agent-benchmark": {
+      "name": "Legal Agent Benchmark",
+      "category": "knowledge-work",
+      "aliases": [
+        "Harvey's Legal Agent Benchmark",
+        "Harvey LAB",
+        "Legal Agent Benchmark held-out"
+      ]
+    },
+    "livecodebench": {
+      "name": "LiveCodeBench",
+      "category": "coding",
+      "aliases": [],
+      "default_metric": "pass-at-1"
+    },
+    "livecodebench-pro": {
+      "name": "LiveCodeBench Pro",
+      "category": "coding",
+      "aliases": [],
+      "default_metric": "elo"
+    },
+    "lvbench": {
+      "name": "LVBench",
+      "category": "multimodal",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "mask": {
+      "name": "MASK",
+      "category": "safety-alignment",
+      "aliases": []
+    },
+    "math-vision": {
+      "name": "Math-Vision",
+      "category": "multimodal",
+      "aliases": [
+        "MathVision"
+      ],
+      "default_metric": "accuracy"
+    },
+    "mcp-atlas": {
+      "name": "MCP Atlas",
+      "category": "tool-use",
+      "aliases": [
+        "MCP-Atlas"
+      ],
+      "default_metric": "success-rate"
+    },
+    "mcpmark-verified": {
+      "name": "MCPMark Verified",
+      "category": "tool-use",
+      "aliases": [
+        "MCP Mark Verified",
+        "MCPMark-Verified"
+      ]
+    },
+    "medcalc-bench-verified": {
+      "name": "MedCalc-Bench Verified",
+      "category": "medical",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "mentalhealthbench": {
+      "name": "MentalHealthBench",
+      "category": "safety-wellbeing",
+      "aliases": []
+    },
+    "milu": {
+      "name": "MILU",
+      "category": "multilingual",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "mle-bench": {
+      "name": "MLE-bench",
+      "category": "ai-rnd",
+      "aliases": [
+        "MLE-Bench"
+      ]
+    },
+    "mls-bench-lite": {
+      "name": "MLS Bench Lite",
+      "category": "ai-rnd",
+      "aliases": []
+    },
+    "mmmlu": {
+      "name": "MMMLU",
+      "category": "multilingual",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "mmmu": {
+      "name": "MMMU",
+      "category": "multimodal",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "mmmu-pro": {
+      "name": "MMMU-Pro",
+      "category": "multimodal",
+      "aliases": [
+        "MMMU Pro"
+      ],
+      "default_metric": "accuracy"
+    },
+    "monorepo-bench": {
+      "name": "Monorepo-Bench",
+      "category": "coding",
+      "aliases": []
+    },
+    "mrcr-v2": {
+      "name": "MRCR v2",
+      "category": "long-context",
+      "aliases": [
+        "GDM-MRCR v2",
+        "MRCR v2 (8-needle)",
+        "GDM-MRCR v2 (8-needle)",
+        "MRCR"
+      ]
+    },
+    "officeqa": {
+      "name": "OfficeQA",
+      "category": "knowledge-work",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "officeqa-pro": {
+      "name": "OfficeQA Pro",
+      "category": "knowledge-work",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "omnidocbench-1.5": {
+      "name": "OmniDocBench 1.5",
+      "category": "multimodal",
+      "aliases": []
+    },
+    "openai-agentic-safe-completions": {
+      "name": "Agentic Safe Completions",
+      "category": "safety-agentic",
+      "aliases": [
+        "Agentic safe completions"
+      ]
+    },
+    "openai-cot-controllability": {
+      "name": "CoT Controllability",
+      "category": "safety-alignment",
+      "aliases": [
+        "CoT controllability",
+        "CoT-Control"
+      ]
+    },
+    "openai-ctf-professional": {
+      "name": "Capture the Flag (Professional)",
+      "category": "safety-cyber",
+      "aliases": [
+        "Capture the Flag",
+        "Professional CTF"
+      ],
+      "default_metric": "pass-at-12"
+    },
+    "openai-cyber-range": {
+      "name": "Cyber Range",
+      "category": "safety-cyber",
+      "aliases": [
+        "Cyber range"
+      ],
+      "default_metric": "success-rate"
+    },
+    "openai-destructive-action-avoidance": {
+      "name": "Destructive Action Avoidance",
+      "category": "safety-agentic",
+      "aliases": [
+        "Destructive-action avoidance"
+      ]
+    },
+    "openai-dynamic-mental-health": {
+      "name": "Dynamic Mental Health Simulations",
+      "category": "safety-wellbeing",
+      "aliases": [
+        "Dynamic mental-health simulations"
+      ]
+    },
+    "openai-image-input-safety": {
+      "name": "Image Input Safety",
+      "category": "safety-content",
+      "aliases": [
+        "Image-input safety",
+        "Image input"
+      ],
+      "default_metric": "not-unsafe-rate"
+    },
+    "openai-instruction-hierarchy": {
+      "name": "Instruction Hierarchy",
+      "category": "safety-prompt-injection",
+      "aliases": [
+        "Instruction hierarchy"
+      ],
+      "default_metric": "accuracy"
+    },
+    "openai-multimodal-troubleshooting-virology": {
+      "name": "Multimodal Troubleshooting Virology",
+      "category": "safety-bio-chem",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "openai-production-benchmarks": {
+      "name": "Production Benchmarks",
+      "category": "safety-content",
+      "aliases": [
+        "Production Benchmarks with Challenging Prompts",
+        "Production Benchmarks with challenging prompts"
+      ],
+      "default_metric": "not-unsafe-rate"
+    },
+    "openai-prompt-injection": {
+      "name": "Prompt Injection",
+      "category": "safety-prompt-injection",
+      "aliases": [
+        "Prompt injection",
+        "Prompt injection in connectors"
+      ],
+      "default_metric": "accuracy"
+    },
+    "openai-proof-qa": {
+      "name": "OpenAI-Proof Q&A",
+      "category": "ai-rnd",
+      "aliases": [
+        "OpenAI-Proof Q&A v0"
+      ]
+    },
+    "openai-prs": {
+      "name": "OpenAI PRs",
+      "category": "ai-rnd",
+      "aliases": []
+    },
+    "openai-standard-disallowed-content": {
+      "name": "Standard Disallowed Content",
+      "category": "safety-content",
+      "aliases": [
+        "Standard disallowed content"
+      ],
+      "default_metric": "not-unsafe-rate"
+    },
+    "openai-tacit-knowledge-troubleshooting": {
+      "name": "Tacit Knowledge and Troubleshooting",
+      "category": "safety-bio-chem",
+      "aliases": [
+        "Tacit knowledge and troubleshooting"
+      ],
+      "default_metric": "accuracy"
+    },
+    "openai-u18-safety": {
+      "name": "Under-18 Safety",
+      "category": "safety-content",
+      "aliases": [
+        "U18 safety suite",
+        "U18 safety"
+      ],
+      "default_metric": "not-unsafe-rate"
+    },
+    "openai-user-confirmations": {
+      "name": "User Confirmations",
+      "category": "safety-agentic",
+      "aliases": [
+        "User confirmations"
+      ]
+    },
+    "openrca": {
+      "name": "OpenRCA",
+      "category": "agentic",
+      "aliases": []
+    },
+    "osworld": {
+      "name": "OSWorld",
+      "category": "computer-use",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "osworld-2.0": {
+      "name": "OSWorld 2.0",
+      "category": "computer-use",
+      "aliases": [
+        "OSWorld-2.0"
+      ],
+      "default_metric": "success-rate"
+    },
+    "osworld-2.1": {
+      "name": "OSWorld 2.1",
+      "category": "computer-use",
+      "aliases": [
+        "OSWorld-2.1"
+      ],
+      "default_metric": "success-rate"
+    },
+    "osworld-verified": {
+      "name": "OSWorld-Verified",
+      "category": "computer-use",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "paperbench": {
+      "name": "PaperBench",
+      "category": "ai-rnd",
+      "aliases": []
+    },
+    "programbench": {
+      "name": "ProgramBench",
+      "category": "coding",
+      "aliases": [
+        "Program Bench"
+      ]
+    },
+    "protocolqa-open-ended": {
+      "name": "ProtocolQA Open-Ended",
+      "category": "safety-bio-chem",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "real-world-finance-v2": {
+      "name": "Real-World Finance v2",
+      "category": "knowledge-work",
+      "aliases": []
+    },
+    "scicode": {
+      "name": "SciCode",
+      "category": "coding",
+      "aliases": []
+    },
+    "screenshot2webapp": {
+      "name": "ScreenShot2WebApp",
+      "category": "coding",
+      "aliases": []
+    },
+    "screenspot-pro": {
+      "name": "ScreenSpot-Pro",
+      "category": "computer-use",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "securecodereview": {
+      "name": "SecureCodeReview",
+      "category": "coding",
+      "aliases": []
+    },
+    "simpleqa": {
+      "name": "SimpleQA",
+      "category": "factuality",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "simpleqa-verified": {
+      "name": "SimpleQA Verified",
+      "category": "factuality",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "strongreject": {
+      "name": "StrongReject",
+      "category": "safety-jailbreak",
+      "aliases": [
+        "StrongREJECT"
+      ]
+    },
+    "swe-bench-multilingual": {
+      "name": "SWE-bench Multilingual",
+      "category": "coding",
+      "aliases": [
+        "SWE-Bench Multilingual"
+      ],
+      "default_metric": "pass-at-1"
+    },
+    "swe-bench-multimodal": {
+      "name": "SWE-bench Multimodal",
+      "category": "coding",
+      "aliases": [
+        "SWE-Bench Multimodal"
+      ],
+      "default_metric": "pass-at-1"
+    },
+    "swe-bench-pro": {
+      "name": "SWE-bench Pro",
+      "category": "coding",
+      "aliases": [
+        "SWE-Bench Pro",
+        "SWE-Bench Pro (Public)"
+      ],
+      "default_metric": "pass-at-1"
+    },
+    "swe-bench-verified": {
+      "name": "SWE-bench Verified",
+      "category": "coding",
+      "aliases": [
+        "SWE-Bench Verified"
+      ],
+      "default_metric": "pass-at-1"
+    },
+    "swe-lancer": {
+      "name": "SWE-Lancer",
+      "category": "coding",
+      "aliases": []
+    },
+    "swe-marathon": {
+      "name": "SWE-Marathon",
+      "category": "coding",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "swe-marathon-v1.1": {
+      "name": "SWE-Marathon v1.1",
+      "category": "coding",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "tau2-bench": {
+      "name": "τ²-bench",
+      "category": "tool-use",
+      "aliases": [
+        "t2-bench",
+        "τ²-Bench",
+        "Tau2-bench",
+        "tau2-bench"
+      ],
+      "default_metric": "success-rate"
+    },
+    "terminal-bench-2.0": {
+      "name": "Terminal-Bench 2.0",
+      "category": "terminal",
+      "aliases": [
+        "Terminal-bench 2.0",
+        "Terminal Bench 2.0",
+        "Terminal Bench 2"
+      ],
+      "default_metric": "success-rate"
+    },
+    "terminal-bench-2.1": {
+      "name": "Terminal-Bench 2.1",
+      "category": "terminal",
+      "aliases": [
+        "Terminal-bench 2.1",
+        "Terminal Bench 2.1"
+      ],
+      "default_metric": "success-rate"
+    },
+    "terminal-bench-3.0": {
+      "name": "Terminal-Bench 3.0",
+      "category": "terminal",
+      "aliases": [
+        "Terminal-bench 3.0"
+      ],
+      "default_metric": "success-rate"
+    },
+    "terminal-bench-4.0": {
+      "name": "Terminal-Bench 4.0",
+      "category": "terminal",
+      "aliases": [
+        "Terminal-bench 4.0"
+      ],
+      "default_metric": "success-rate"
+    },
+    "terminal-bench-science-0.1": {
+      "name": "Terminal-Bench-Science 0.1",
+      "category": "terminal",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "text2webapp": {
+      "name": "Text2WebApp",
+      "category": "coding",
+      "aliases": []
+    },
+    "toolathlon": {
+      "name": "Toolathlon",
+      "category": "tool-use",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "toolathlon-verified": {
+      "name": "Toolathlon Verified",
+      "category": "tool-use",
+      "aliases": [
+        "Toolathlon-Verified"
+      ],
+      "default_metric": "success-rate"
+    },
+    "troubleshootingbench": {
+      "name": "TroubleshootingBench",
+      "category": "safety-bio-chem",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "usamo-2026": {
+      "name": "USAMO 2026",
+      "category": "math",
+      "aliases": []
+    },
+    "vending-bench-2": {
+      "name": "Vending-Bench 2",
+      "category": "agentic",
+      "aliases": [],
+      "default_metric": "balance"
+    },
+    "vibe-eval": {
+      "name": "Vibe-Eval",
+      "category": "multimodal",
+      "aliases": [
+        "Vibe-Eval (Reka)"
+      ]
+    },
+    "video-mmmu": {
+      "name": "Video-MMMU",
+      "category": "multimodal",
+      "aliases": [
+        "VideoMMMU"
+      ],
+      "default_metric": "accuracy"
+    },
+    "videomme": {
+      "name": "VideoMME",
+      "category": "multimodal",
+      "aliases": [
+        "Video-MME"
+      ],
+      "default_metric": "accuracy"
+    },
+    "virology-capabilities-test": {
+      "name": "Virology Capabilities Test",
+      "category": "safety-bio-chem",
+      "aliases": [
+        "VCT",
+        "Multimodal virology (VCT)"
+      ],
+      "default_metric": "accuracy"
+    },
+    "vision2web": {
+      "name": "Vision2Web",
+      "category": "coding",
+      "aliases": [
+        "Vision2Web Level3"
+      ]
+    },
+    "webarena": {
+      "name": "WebArena",
+      "category": "computer-use",
+      "aliases": [],
+      "default_metric": "success-rate"
+    },
+    "wmdp": {
+      "name": "WMDP",
+      "category": "safety-bio-chem",
+      "aliases": [],
+      "default_metric": "accuracy"
+    },
+    "xai-jailbreaks": {
+      "name": "xAI jailbreak suites",
+      "category": "safety-jailbreak",
+      "aliases": [],
+      "default_metric": "compliance-rate"
+    },
+    "xai-kernelbench-v1.1": {
+      "name": "KernelBenchInternal v1.1",
+      "category": "coding",
+      "aliases": []
+    },
+    "xai-mts-eval": {
+      "name": "SpaceXAI MTS Eval",
+      "category": "ai-rnd",
+      "aliases": []
+    },
+    "xai-sycophancy": {
+      "name": "xAI sycophancy evaluation",
+      "category": "safety-alignment",
+      "aliases": [],
+      "default_metric": "sycophancy-rate"
+    }
+  },
+  "metrics": {
+    "accuracy": {
+      "label": "accuracy",
+      "description": "Share of questions or items answered correctly"
+    },
+    "pass-at-1": {
+      "label": "pass@1",
+      "description": "Share of tasks solved with one attempt, averaged over trials when the document does so"
+    },
+    "success-rate": {
+      "label": "success rate",
+      "description": "Share of agentic tasks completed successfully (including '% resolved' or '% solved' when not called pass@1)"
+    },
+    "score": {
+      "label": "score",
+      "description": "A benchmark-native score whose scale is defined by the benchmark"
+    },
+    "normalized-score": {
+      "label": "normalized score",
+      "description": "A score normalized against a reference, such as a human or baseline"
+    },
+    "mean-reward": {
+      "label": "mean reward",
+      "description": "Average reward or partial credit across tasks"
+    },
+    "elo": {
+      "label": "Elo",
+      "description": "Elo or similar pairwise rating"
+    },
+    "win-rate": {
+      "label": "win rate",
+      "description": "Share of comparisons won or tied against a reference"
+    },
+    "f1": {
+      "label": "F1",
+      "description": "Harmonic mean of precision and recall"
+    },
+    "recall": {
+      "label": "recall",
+      "description": "Share of positive cases identified"
+    },
+    "precision": {
+      "label": "precision",
+      "description": "Share of flagged cases that are correct"
+    },
+    "refusal-rate": {
+      "label": "refusal rate",
+      "description": "Share of requests the model refuses; direction depends on whether requests should be refused"
+    },
+    "compliance-rate": {
+      "label": "harmful compliance rate",
+      "description": "Share of should-refuse requests the model complies with"
+    },
+    "not-unsafe-rate": {
+      "label": "not-unsafe rate",
+      "description": "Share of responses graded as not unsafe (OpenAI not_unsafe)"
+    },
+    "not-overrefuse-rate": {
+      "label": "not-overrefuse rate",
+      "description": "Share of benign requests the model does not over-refuse (OpenAI not_overrefuse)"
+    },
+    "safe-response-rate": {
+      "label": "safe response rate",
+      "description": "Share of responses graded safe or appropriate"
+    },
+    "attack-success-rate": {
+      "label": "attack success rate",
+      "description": "Share of adversarial attempts that succeed"
+    },
+    "error-rate": {
+      "label": "error rate",
+      "description": "Share of responses with errors"
+    },
+    "hallucination-rate": {
+      "label": "hallucination rate",
+      "description": "Share of responses containing fabricated content"
+    },
+    "sycophancy-rate": {
+      "label": "sycophancy rate",
+      "description": "Share of responses judged sycophantic"
+    },
+    "dishonesty-rate": {
+      "label": "dishonesty rate",
+      "description": "Share of responses judged dishonest or deceptive"
+    },
+    "misbehavior-rate": {
+      "label": "misbehavior rate",
+      "description": "Share of episodes or transcripts with flagged misaligned behavior"
+    },
+    "balance": {
+      "label": "final balance",
+      "description": "Simulated money at the end of a benchmark episode"
+    },
+    "speedup": {
+      "label": "speedup",
+      "description": "Ratio of baseline time to optimized time"
+    },
+    "rank": {
+      "label": "rank",
+      "description": "Leaderboard position"
+    },
+    "count": {
+      "label": "count",
+      "description": "Number of items, tasks, or events"
+    }
+  },
+  "metric_patterns": [
+    {
+      "pattern": "^(pass|mean|best|maj|cons)-at-[1-9][0-9]*$",
+      "label": "{kind}@{k}",
+      "description": "pass@k, mean@k, best@k, maj@k, or cons@k with an explicit k"
+    }
+  ],
+  "units": {
+    "percent": {
+      "label": "%",
+      "description": "Percentage on a 0-100 scale"
+    },
+    "fraction": {
+      "label": "fraction",
+      "description": "Proportion on a 0-1 scale"
+    },
+    "score": {
+      "label": "points",
+      "description": "Benchmark-native points"
+    },
+    "elo": {
+      "label": "Elo",
+      "description": "Elo rating points"
+    },
+    "count": {
+      "label": "count",
+      "description": "A count"
+    },
+    "usd": {
+      "label": "US dollars",
+      "description": "Simulated or task-defined US dollars inside a benchmark"
+    },
+    "ratio": {
+      "label": "ratio",
+      "description": "A dimensionless ratio, such as a speedup"
+    },
+    "hours": {
+      "label": "hours",
+      "description": "Hours"
+    },
+    "minutes": {
+      "label": "minutes",
+      "description": "Minutes"
+    },
+    "tokens": {
+      "label": "tokens",
+      "description": "Tokens"
+    },
+    "rank": {
+      "label": "rank",
+      "description": "Ordinal position"
+    }
+  },
+  "modalities": {
+    "text": {
+      "label": "Text"
+    },
+    "image": {
+      "label": "Image"
+    },
+    "audio": {
+      "label": "Audio"
+    },
+    "video": {
+      "label": "Video"
+    },
+    "pdf": {
+      "label": "PDF",
+      "description": "PDF documents"
+    }
+  },
+  "reasoning_controls": {
+    "effort-levels": {
+      "label": "Effort levels",
+      "description": "Discrete reasoning-effort settings"
+    },
+    "extended-thinking": {
+      "label": "Extended thinking",
+      "description": "Optional extended thinking mode"
+    },
+    "adaptive-thinking": {
+      "label": "Adaptive thinking",
+      "description": "Model decides how much to think"
+    },
+    "thinking-budget": {
+      "label": "Thinking budget",
+      "description": "Caller-set thinking token budget"
+    },
+    "reasoning-toggle": {
+      "label": "Reasoning on or off",
+      "description": "Reasoning can be turned on or off"
+    },
+    "parallel-thinking": {
+      "label": "Parallel thinking",
+      "description": "Parallel or multi-path thinking mode"
+    },
+    "always-reasoning": {
+      "label": "Always reasons",
+      "description": "Always reasons; no caller control stated"
+    }
+  },
+  "tools": {
+    "function-calling": {
+      "label": "Function calling",
+      "description": "Function calling or custom tools"
+    },
+    "web-search": {
+      "label": "Web search"
+    },
+    "browser": {
+      "label": "Browser",
+      "description": "Web browsing"
+    },
+    "code-execution": {
+      "label": "Code execution"
+    },
+    "terminal": {
+      "label": "Terminal",
+      "description": "Terminal or shell"
+    },
+    "file-editing": {
+      "label": "File editing",
+      "description": "File reading and editing"
+    },
+    "computer-use": {
+      "label": "Computer use"
+    },
+    "mcp": {
+      "label": "MCP",
+      "description": "Model Context Protocol servers"
+    },
+    "file-search": {
+      "label": "File search",
+      "description": "File or retrieval search"
+    }
+  },
+  "architectures": {
+    "mixture-of-experts": {
+      "label": "Mixture of experts"
+    },
+    "dense": {
+      "label": "Dense transformer"
+    }
+  },
+  "use_cases": {
+    "agentic-coding": {
+      "label": "Agentic coding",
+      "description": "Multi-step coding-agent work across files, tools, and tests"
+    },
+    "large-refactors": {
+      "label": "Large refactors",
+      "description": "Broad multi-file changes and migrations"
+    },
+    "quick-edits": {
+      "label": "Quick edits",
+      "description": "Small, well-scoped edits and fast interactive help"
+    },
+    "code-review": {
+      "label": "Code review",
+      "description": "Reviewing diffs and finding defects"
+    },
+    "debugging": {
+      "label": "Debugging",
+      "description": "Diagnosing failures and root causes"
+    },
+    "terminal-workflows": {
+      "label": "Terminal workflows",
+      "description": "Shell-heavy tasks such as builds, environments, and CLI tools"
+    },
+    "long-horizon-autonomy": {
+      "label": "Long-horizon autonomy",
+      "description": "Long, lightly supervised agent runs"
+    },
+    "long-context": {
+      "label": "Long context",
+      "description": "Very large inputs such as big repositories, logs, or documents"
+    },
+    "deep-reasoning": {
+      "label": "Deep reasoning",
+      "description": "Hard algorithmic, math, or science reasoning"
+    },
+    "vision": {
+      "label": "Vision",
+      "description": "Screenshots, diagrams, and other image inputs"
+    },
+    "computer-use": {
+      "label": "Computer use",
+      "description": "Operating graphical interfaces or browsers"
+    },
+    "web-development": {
+      "label": "Web development",
+      "description": "Building web front ends and apps"
+    },
+    "web-research": {
+      "label": "Web research",
+      "description": "Search- and browsing-based research"
+    },
+    "knowledge-work": {
+      "label": "Knowledge work",
+      "description": "Documents, spreadsheets, and professional writing"
+    },
+    "security-work": {
+      "label": "Security work",
+      "description": "Authorized security review and defensive cyber tasks"
+    },
+    "untrusted-input": {
+      "label": "Untrusted input",
+      "description": "Workflows that ingest untrusted content and are exposed to prompt injection"
+    },
+    "high-stakes-domains": {
+      "label": "High-stakes domains",
+      "description": "Medical, legal, financial, or safety-critical decisions"
+    },
+    "low-latency": {
+      "label": "Low latency",
+      "description": "Fast, responsive interaction"
+    },
+    "historical-comparison": {
+      "label": "Historical comparison",
+      "description": "Comparing against or tracing the lineage of later models"
+    }
+  },
+  "safety_frameworks": {
+    "anthropic-rsp": {
+      "label": "Anthropic Responsible Scaling Policy",
+      "publisher": "Anthropic"
+    },
+    "openai-preparedness": {
+      "label": "OpenAI Preparedness Framework",
+      "publisher": "OpenAI"
+    },
+    "google-fsf": {
+      "label": "Google DeepMind Frontier Safety Framework",
+      "publisher": "Google"
+    },
+    "xai-faif": {
+      "label": "xAI Frontier Artificial Intelligence Framework",
+      "publisher": "xAI"
+    },
+    "other": {
+      "label": "Other framework named in the document",
+      "publisher": null
+    },
+    "none-stated": {
+      "label": "No safety framework stated",
+      "publisher": null
+    }
+  },
+  "safety_domains": {
+    "cbrn": {
+      "label": "CBRN",
+      "group": "cbrn"
+    },
+    "biological-chemical": {
+      "label": "Biological and chemical",
+      "group": "cbrn"
+    },
+    "biological": {
+      "label": "Biological",
+      "group": "cbrn"
+    },
+    "chemical": {
+      "label": "Chemical",
+      "group": "cbrn"
+    },
+    "radiological-nuclear": {
+      "label": "Radiological and nuclear",
+      "group": "cbrn"
+    },
+    "cybersecurity": {
+      "label": "Cybersecurity",
+      "group": "cybersecurity"
+    },
+    "ai-self-improvement": {
+      "label": "AI self-improvement",
+      "group": "autonomy-and-ai-rnd"
+    },
+    "ai-rnd": {
+      "label": "AI research and development",
+      "group": "autonomy-and-ai-rnd"
+    },
+    "ml-rnd": {
+      "label": "Machine-learning R&D",
+      "group": "autonomy-and-ai-rnd"
+    },
+    "autonomy": {
+      "label": "Autonomy",
+      "group": "autonomy-and-ai-rnd"
+    },
+    "harmful-manipulation": {
+      "label": "Harmful manipulation",
+      "group": "manipulation"
+    },
+    "misalignment": {
+      "label": "Misalignment",
+      "group": "alignment"
+    },
+    "sabotage": {
+      "label": "Sabotage",
+      "group": "alignment"
+    },
+    "deceptive-alignment": {
+      "label": "Deceptive alignment",
+      "group": "alignment"
+    },
+    "overall": {
+      "label": "Overall deployment standard",
+      "group": "overall"
+    }
+  },
+  "safety_determinations": {
+    "below-threshold": {
+      "label": "Below threshold",
+      "description": "The publisher concludes the capability threshold is not reached"
+    },
+    "threshold-reached": {
+      "label": "Threshold reached",
+      "description": "The publisher concludes the threshold is reached"
+    },
+    "precautionary": {
+      "label": "Precautionary",
+      "description": "Treated as reached, or protections applied, as a precaution without concluding it is reached"
+    },
+    "alert-threshold": {
+      "label": "Alert threshold reached",
+      "description": "An early-warning or alert threshold is reached, but not the critical level"
+    },
+    "risk-assessed": {
+      "label": "Risk assessed",
+      "description": "A qualitative risk judgment (for example, low) without a threshold determination"
+    },
+    "standard-applied": {
+      "label": "Standard applied",
+      "description": "A deployment or safety standard is applied (for example, an ASL level)"
+    },
+    "not-evaluated": {
+      "label": "Not evaluated",
+      "description": "The document says this domain was not evaluated for this model"
+    },
+    "not-stated": {
+      "label": "Not stated",
+      "description": "The document does not state a determination for this domain"
+    }
+  },
+  "risk_topics": {
+    "reward-hacking": {
+      "label": "Reward hacking",
+      "required": true,
+      "description": "Gaming graders, special-casing tests, or otherwise exploiting the evaluation instead of solving the task"
+    },
+    "test-tampering": {
+      "label": "Test tampering",
+      "required": true,
+      "description": "Editing, deleting, or weakening tests or checks to make them pass"
+    },
+    "destructive-actions": {
+      "label": "Destructive or overeager actions",
+      "required": true,
+      "description": "Irreversible, destructive, or unrequested actions during agentic work"
+    },
+    "sabotage": {
+      "label": "Sabotage",
+      "required": true,
+      "description": "Deliberately undermining tasks, research, or oversight"
+    },
+    "prompt-injection": {
+      "label": "Prompt injection",
+      "required": true,
+      "description": "Following instructions embedded in tool results, files, or web content"
+    },
+    "honesty": {
+      "label": "Honesty",
+      "required": true,
+      "description": "Truthfulness, deception, hallucinated claims of success, and calibrated reporting"
+    },
+    "sycophancy": {
+      "label": "Sycophancy",
+      "required": true,
+      "description": "Telling users what they want to hear instead of what is accurate"
+    },
+    "evaluation-awareness": {
+      "label": "Evaluation awareness",
+      "required": false,
+      "description": "Recognizing tests and behaving differently when evaluated"
+    },
+    "sandbagging": {
+      "label": "Sandbagging",
+      "required": false,
+      "description": "Deliberately underperforming on capability evaluations"
+    },
+    "cot-monitorability": {
+      "label": "Reasoning monitorability",
+      "required": false,
+      "description": "Whether reasoning traces faithfully reflect behavior and can be monitored"
+    },
+    "self-preservation": {
+      "label": "Self-preservation",
+      "required": false,
+      "description": "Acting to avoid shutdown, modification, or replacement"
+    },
+    "malicious-use": {
+      "label": "Malicious agentic use",
+      "required": false,
+      "description": "Complying with requests to use agentic tools for harm"
+    },
+    "over-refusal": {
+      "label": "Over-refusal",
+      "required": false,
+      "description": "Refusing benign requests"
+    }
+  },
+  "risk_statuses": {
+    "reported": {
+      "label": "Reported",
+      "description": "The document reports evidence for this model"
+    },
+    "family-level": {
+      "label": "Family-level",
+      "description": "The document reports it for the shared card or family without separating this model"
+    },
+    "sibling-only": {
+      "label": "Sibling only",
+      "description": "The document reports it only for a sibling model, so it does not apply here"
+    },
+    "not-reported": {
+      "label": "Not reported",
+      "description": "The document does not report it"
+    }
+  },
+  "run_by": {
+    "publisher": {
+      "label": "Publisher",
+      "description": "Run by the model's publisher"
+    },
+    "third-party": {
+      "label": "Third party",
+      "description": "Run by an independent evaluator or benchmark owner the document names"
+    },
+    "not-stated": {
+      "label": "Not stated",
+      "description": "The document does not say who ran it"
+    }
+  },
+  "card_types": {
+    "dedicated": {
+      "label": "Dedicated",
+      "description": "The document is about this model; it may include short sibling sections"
+    },
+    "family": {
+      "label": "Family",
+      "description": "The document covers several models in its main body and attributes results per model"
+    },
+    "appendix": {
+      "label": "Appendix",
+      "description": "This model is covered in an appendix or section of a sibling model's document"
+    },
+    "same-weights": {
+      "label": "Same weights",
+      "description": "The document covers the same model weights, served in a different mode"
+    },
+    "none": {
+      "label": "None",
+      "description": "No publisher system card or model card exists"
+    }
+  }
+}

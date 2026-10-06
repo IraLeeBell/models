@@ -1,78 +1,162 @@
 # Grok 4.7
 
+<!-- Generated from digest.json by models/digest_check.py. Edit digest.json, then run `python3 digest_check.py --write grok-4.7`. -->
+
 > Original digest of *Model Card: Grok 4.7* (xAI, September 21, 2026; 30 pages). Page references are PDF page numbers. This summary paraphrases the publisher's document and is not a substitute for it; see [source.md](source.md) for provenance and for the local workflow that produces the full text, `system-card.md`.
+
+**Copilot status** (catalog checked 2026-10-06): Current; GitHub release status GA. CLI: Yes. App model picker: listed. App reasoning efforts: low, medium, high, xhigh. App Auto: no. App long-context option: yes.
 
 ## At a glance
 
-- Grok 4.7 has a dedicated 30-page xAI card dated and revised September 21, 2026; the card describes it as SpaceXAI's latest model and successor to Grok 4.6 (pp. 1, 4).
-- The documented modality is text output from text and image inputs, with listed availability through the SpaceXAI API, Grok Build, Cursor, Office add-ins, and model gateways; consumer surfaces are described as planned later (p. 5).
-- Training continues the Grok 4.6 recipe with longer supplemental training, curated model-generated data, engineering corpora, and agentic RL; pretraining cuts off in June 2026 and supplemental data extends to August 2026 (p. 5).
-- Coding evidence emphasizes harder, longer tasks: CursorBench 4.0 scores are 46.3% at xhigh and 43.9% at high, DeepSWE v1.1 is 71.0% at high, Terminal-Bench 4.0 is 38.0% at xhigh, FrontierSWE V2 is 29.0% at xhigh, and SWE-Marathon v1.1 is 46.0% at high (pp. 6-11).
-- The card adds medical and biological analysis benchmarks: HealthBench Professional is 56.7% at xhigh, and the LatchBio capability-suite mean is 44.5% at xhigh (pp. 15-16).
-- Safety sections state that Grok 4.7 remains below FAIF thresholds and shows no dual-use biology increase versus Grok 4.6; reported safeguard figures include 0.01% standard-jailbreak compliance, 0.0% child-safety compliance, 100.0% bio refusal recall, 99.9% chem refusal recall, and 97.9% radiological/nuclear refusal accuracy (pp. 20, 23-25).
-- Version-to-version comparisons are mixed: Grok 4.7 improves many long-horizon coding and engineering results, but CVE-Bench is below Grok 4.6, several dual-use bio knowledge scores decline, and self-harm compliance rises to 1.05% (pp. 18, 20-22, 26).
+Grok 4.7 is xAI's successor to Grok 4.6, aimed at long-running coding agents, engineering, and office work. Its card is mostly capability results, many run by third parties, with the largest gains on terminal and multi-hour coding tasks. Safety coverage centers on cyber, biological and chemical risk, jailbreaks, and refusals; it reports no evaluations of reward hacking, test tampering, destructive actions, or prompt injection.
+
+- **Choose it for:** Hard, long-running coding-agent and terminal tasks that you will review, where its gains over Grok 4.6 are largest.
+- **Watch out for:** No reward-hacking, test-tampering, destructive-action, or prompt-injection results, and no stated context window or output limit.
+- Long-horizon agentic coding improves most: Terminal-Bench 4.0 rises to 38.0% at xhigh from 20.3% for Grok 4.6, and SWE-Marathon v1.1 to 46.0% from 31.9%, both in third-party runs. (pp. 9, 11)
+- Against other frontier models in the same charts it is competitive rather than dominant: 71.0% on DeepSWE v1.1 versus 72.7% for GPT-5.6 Sol (max), and 29.0% on FrontierSWE V2 versus 56.3% for Fable 5.1 (max). (pp. 8, 10)
+- xAI places it below its Frontier Artificial Intelligence Framework thresholds for dual-use biology and chemistry, with no gain in dual-use biology capability over Grok 4.6 and small cyber gains. (pp. 17, 20)
+- It takes text and image input and returns text; pretraining data ends in June 2026, and the card gives no context window or output limit. (p. 5)
+- On xAI's behavior tests, MASK-Rectified dishonesty is 0.00% and sycophancy is 0.03%, but the card does not test agentic misbehavior such as gaming tests. (pp. 26-27)
 
 ## Capabilities
 
-- **Modalities and training.** The card positions Grok 4.7 as a text-output model with text and image inputs, trained with a later cutoff than Grok 4.6 plus supplemental data through August 2026 (p. 5).
-- **Long-horizon coding.** Coding coverage shifts to harder updated suites, including CursorBench 4.0, DeepSWE v1.1, Terminal-Bench 4.0, FrontierSWE V2, and SWE-Marathon v1.1; the card warns that CursorBench 4.0 should not be compared directly with CursorBench 3.2 (pp. 6-11).
-- **Knowledge work.** The card's professional-work section narrows to the Legal Agent Benchmark, where Grok 4.7 is evaluated on a held-out 120-task legal-agent run without internet access (p. 12).
-- **Engineering acceleration.** Grok 4.7 is tested on electrical/chip-design tasks and CAD geometry generation, with reported gains over Grok 4.6 in EEBench and CADGenBench (pp. 13-14).
-- **Medical and biological analysis.** HealthBench Professional and LatchBio capability tasks measure clinical communication and agentic biological data analysis; xAI frames these as capability signals, not a license for unsupervised medical or lab decisions (pp. 15-16).
-- **Cybersecurity.** CyberGym, CVE-Bench, HackerBench v0.3, and CathedralBench assess cyber ability and cyber-safeguard calibration, including unrestricted or egress-controlled settings where appropriate (pp. 17-19).
+### Key facts
+
+| Fact | Value | Source |
+| --- | --- | --- |
+| Release date | Not stated. The card is dated September 21, 2026 but gives no release date. | — |
+| Knowledge cutoff | June 2026 (stated as pretraining data cutoff of June 2026). Supplemental training used data generated as late as August 2026. | p. 5 |
+| Context window | Not stated | — |
+| Maximum output | Not stated | — |
+| Input modalities | Text, Image | p. 5 |
+| Output modalities | Text | p. 5 |
+| Reasoning controls | Effort levels. Results are reported per reasoning effort; the card does not describe the control itself. | p. 6 |
+| Effort levels | high, xhigh. Levels used in the card's evaluations; the card does not list every available level. | pp. 6, 8 |
+| Tool use | Terminal, File editing. Evaluated as an agent in xAI's terminal-based Grok Build harness and with file and terminal tools; no API tool features are listed. | pp. 5, 12 |
+| Open weights | Not stated | — |
+| Architecture | Not stated | — |
+| Total parameters | Not stated | — |
+| Active parameters | Not stated | — |
+
+### Capability notes
+
+- Training extends the Grok 4.6 recipe: longer supplemental training on curated reasoning and engineering data with an improved optimizer, supervised trajectories generated by Grok 4.6, and agentic reinforcement learning on knowledge work, coding, kernel optimization, web development, and CAD. (p. 5)
+- A footnote says supplemental training included anonymized Cursor workflow data to improve coding and agentic performance. (p. 4)
+- It is the default model in xAI's terminal coding agent, Grok Build, which is also the harness for most of the card's own coding, cyber, and engineering runs. (pp. 5, 9, 13)
+- xAI claims it finishes longer tasks than earlier Grok models with fewer steps and output tokens than other frontier models; on CursorBench 4.0 it scores 46.3% at xhigh and 43.9% at high. (pp. 4, 6)
+- Beyond software, it leads the card's Legal Agent Benchmark chart at 19.6% and scores 66.0% on EEBench and 44.4% on CADGenBench, ahead of Grok 4.6 on each. (pp. 12-14)
+- On health and biology analysis it trails the strongest comparators: 56.7% on HealthBench Professional versus 63.4% for GPT-6 Astra (max), and 44.5% on the LatchBio suite versus 47.4%. (pp. 15-16)
 
 ## Evaluations
 
-| Benchmark | Result | Context | Pages |
-| --- | --- | --- | --- |
-| CursorBench 4.0 | 46.3% at xhigh; 43.9% at high | Long-horizon Cursor-session coding; not directly comparable to CursorBench 3.2 | p. 6 |
-| DeepSWE v1.1 | 71.0% Pass@1 at high | 113 original coding tasks across 91 repositories and five languages | p. 8 |
-| Terminal-Bench 4.0 | 38.0% task success at xhigh | 66 difficult terminal workflows with programmatic verifiers | p. 9 |
-| FrontierSWE V2 | 29.0% mean@5 at xhigh | Ultra-long tasks scored with partial credit | p. 10 |
-| SWE-Marathon v1.1 | 46.0% resolution at high | 20 multi-hour software-engineering tasks with hidden checks | p. 11 |
-| Legal Agent Benchmark | 19.6% Harvey final score at xhigh | Held-out 120-task legal-agent evaluation in Valkyrie | p. 12 |
-| EEBench | 66.0% reward at xhigh | Electrical engineering and chip-design tasks | p. 13 |
-| CADGenBench | 44.4% reward at high | CAD geometry generation | p. 14 |
-| HealthBench Professional | 56.7% at xhigh | Healthcare conversation benchmark, with rejected tasks scored zero | p. 15 |
-| LatchBio Capabilities v1.0 | 44.5% overall at xhigh | Agentic analysis across 11 biological data benchmarks | p. 16 |
-| CyberGym | 80.3% mean reproduced at high | Unrestricted cyber capability probe | p. 17 |
-| CVE-Bench | 36.6% at xhigh; 37.7% at high | Web-application CVE exploitation in hardened sandboxes | p. 18 |
-| HackerBench v0.3 | 3.31%-4.02% harmful/dual-use compliance across Grok 4.7 efforts; 0.00%-0.31% benign refusal | Safeguarded cyber/red-team requests; lower is better | p. 18 |
-| CathedralBench | 29% on hard subset at xhigh | Independent multi-exploit-chain cyber evaluation | p. 19 |
-| BioSecBench | 62.4% Refusal; 48.0% Surveillance; 43.3% Function | LatchBio biosecurity refusal and analysis tasks | p. 20 |
-| WMDP | 88.1% Bio; 84.9% Chem; 88.1% Cyber | Dual-use multiple-choice knowledge | p. 22 |
-| Jailbreaks | 0.01% standard; 2.0% StrongReject; 0.65% long-horizon compliance | Should-refuse adversarial prompts; lower is better | p. 23 |
-| CBRN/weapons refusals | 100.0% bio recall; 99.9% chem recall; 97.9% R/N accuracy | Dangerous CBRN and weapons prompts under safeguards | p. 25 |
+Results are as the document reports them. Scores from different publishers, harnesses, effort levels, or tool settings are often not directly comparable; the Setting column records those conditions.
+
+### Headline coding and agentic results
+
+| Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| CursorBench 4.0 | — | score | 46.3% | xhigh effort. Not comparable with CursorBench 3.2, which lacks the longer tasks. | — | p. 6 |
+| DeepSWE v1.1 | — | pass@1 | 71.0% | high effort; mini-SWE-agent; 113 tasks; patches graded in a clean verifier container; third-party run | GPT-5.6 Sol 72.7% (max); Fable 5 69.7% (max, with fallback); Grok 4.6 65.2% (high); Sonnet 5 54% (max) | p. 8 |
+| Terminal-Bench 4.0 | — | success rate | 38.0% | xhigh effort; Grok Build; 66 tasks; up to 8 hours per task; third-party run | Fable 5.1 57.9% (max); GPT-5.6 Sol 37.3% (max); GPT-5.6 Terra 21.5% (max); Grok 4.6 20.3% (high); Grok 4.5 12.4% (high); Sonnet 5 12.4% (max) | p. 9 |
+| FrontierSWE v2 | — | mean@5 | 29.0% | xhigh effort; 34 tasks; up to 20 hours each; partial-credit reward; third-party run | Fable 5.1 56.3% (max); GPT-5.6 Sol 32.2% (max); Kimi K3 25.9% (max); Grok 4.6 25.3% (xhigh) | p. 10 |
+| SWE-Marathon v1.1 | — | success rate | 46.0% | high effort; each model's native agent harness; 20 multi-hour tasks; 8 trials; resolved only if every verifier passes; third-party run | Opus 5 50.0% (max); Fable 5 45.0% (max, with fallback); GPT-5.6 Sol 42.5% (max); GPT-5.6 Terra 32.5% (max); Grok 4.6 31.9% (high); Sonnet 5 30.0% (max) | p. 11 |
+
+### Other reported results
+
+| Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| CursorBench 4.0 | — | score | 43.9% | high effort. Not comparable with CursorBench 3.2, which lacks the longer tasks. | — | p. 6 |
+| Legal Agent Benchmark | Harvey final score | score | 19.6% | xhigh effort; Valkyrie; held-out 120 tasks; internet disabled; third-party run | Grok 4.6 15.8% (high); Fable 5 11.3% (max, with fallback); Fable 5.1 6.7% (max, with fallback); Sonnet 5 5.0% (max); GPT-5.6 Sol 2.5% (max); GPT-5.6 Terra 0.8% (max) | p. 12 |
+| EEBench | V1 core corpus | mean reward | 66.0% | xhigh effort; Grok Build; peers use their providers' harnesses; third-party run | GPT-6 Astra 69.3% (max); Opus 5 61.6% (max); Grok 4.6 60.0% (xhigh); Fable 5 54.2% (max, with fallback); GPT-5.6 Sol 39.4% (max) | p. 13 |
+| CADGenBench | Generation split | mean reward | 44.4% | high effort; Grok Build; peers use their providers' harnesses; third-party run | Grok 4.6 40.9% (high); GPT-5.6 Sol 37.1% (xhigh); Opus 5 36.6% (max) | p. 14 |
+| HealthBench Professional | — | score | 56.7% | xhigh effort; graded by Grok 4.6 (high); safety-filtered tasks scored zero. Fable and Astra results come from their providers' cards. | GPT-6 Astra 63.4% (max); Fable 5.1 62.1% (max); GPT-5.6 Sol 60.5% (max); Grok 4.6 48.5% (xhigh) | p. 15 |
+| LatchBio Capabilities v1.0 | Overall | score | 44.5% | xhigh effort; equal-weighted mean of 11 capability benchmarks | GPT-6 Astra 47.4% (max); Grok 4.6 43.3% (high); GPT-5.6 Terra 43.1% (max); Sonnet 5 40.2% (max) | p. 16 |
+| CyberGym | Mean reproduced | success rate | 80.3% | high effort; Grok Build; without production safeguards | GPT-5.6 Sol 83.6% (max); Grok 4.6 79.7% (high); Grok 4.5 79.0% (high) | p. 17 |
+| CVE-Bench | — | mean reward | 37.7% | high effort; Grok Build; without safeguards; hardened, egress-controlled sandbox | Grok 4.6 39.8% (high); Grok 4.5 35.2% (high) | p. 18 |
+| CVE-Bench | — | mean reward | 36.6% | xhigh effort; Grok Build; without safeguards; hardened, egress-controlled sandbox | — | p. 18 |
+| HackerBench v0.3 | Harmful and dual-use requests | harmful compliance rate (lower is better) | 3.31% | high effort; with production safeguards | Grok 4.6 5.93% (high); Grok 4.5 7.8% (high); GPT-5.6 Sol 35.7% (max, provider safeguards) | p. 18 |
+| HackerBench v0.3 | Harmful and dual-use requests | harmful compliance rate (lower is better) | 4.02% | xhigh effort; with production safeguards | — | p. 18 |
+| HackerBench v0.3 | Benign tasks | refusal rate (lower is better) | 0.31% | high effort; with production safeguards | Grok 4.6 0.0% (high); Grok 4.5 0.0% (high); GPT-5.6 Sol 0.0% (max, provider safeguards) | p. 18 |
+| CathedralBench | Hard subset | accuracy | 29% | xhigh effort; unrestricted model; egress-secure sandbox; third-party run | Grok 4.6 25% (high) | p. 19 |
+| BioSecBench | Refusal | score | 62.4% | xhigh effort; Grok Build | Grok 4.6 45.6% (high); Opus 5 31.8% (max); GPT-6 Astra 25.5% (max) | p. 20 |
+| Virology Capabilities Test | — | accuracy | 63.0% | high effort; without production safeguards | Grok 4.6 67.4% (high); Grok 4.5 65.5% (high) | p. 21 |
+| WMDP | WMDP-Bio | accuracy | 88.1% | high effort; without production safeguards | Grok 4.6 90.0% (high); Grok 4.5 90.9% (high) | p. 22 |
+| xAI jailbreak suites | Standard jailbreaks | harmful compliance rate (lower is better) | 0.01% | high effort | Grok 4.6 0.04% (high); Grok 4.5 0.73% (high) | p. 23 |
+| xAI jailbreak suites | Long-horizon jailbreaks | harmful compliance rate (lower is better) | 0.65% | high effort | Grok 4.6 1.0% (high) | p. 23 |
+| StrongReject | — | harmful compliance rate (lower is better) | 2.0% | high effort | Grok 4.6 3.9% (high); Grok 4.5 1.5% (high) | p. 23 |
+| MASK | MASK-Rectified | dishonesty rate (lower is better) | 0.0% | high effort | Grok 4.6 1.9% (high); Grok 4.5 0.67% (high) | p. 26 |
+| xAI sycophancy evaluation | — | sycophancy rate (lower is better) | 0.03% | high effort | Grok 4.6 0.04% (high); Grok 4.5 0.01% (high) | p. 27 |
 
 ## Safety findings
 
-- The cyber section states that capability probes run without production safeguards where needed to measure ability, while refusal behavior is evaluated separately; CyberGym is 80.3%, CVE-Bench is 36.6%-37.7%, and CathedralBench hard-subset accuracy is 29% (pp. 17-19).
-- HackerBench v0.3 shows lower harmful/dual-use compliance for Grok 4.7 than for the Grok 4.6 and Grok 4.5 comparison points in the chart, with Grok 4.7 efforts in the 3.31%-4.02% range and benign refusal no higher than 0.31% (p. 18).
-- The FAIF-framed bio/chem section says Grok 4.7 remains below dual-use thresholds and does not increase dangerous biological capability over Grok 4.6; the card attributes lower risky-task performance to safer RL environments and more selective training data rather than merely stronger refusal filters (p. 20).
-- BioSecBench, VCT, Biosecurity VCT, BioUseBench, WMDP, LAB-Bench, ProtocolQA, and BixBench show calibrated refusal plus useful biological analysis, but several raw capability scores are lower than Grok 4.6's reported values (pp. 20-23).
-- Jailbreak compliance improves versus Grok 4.6 on all three reported jailbreak suites: 0.01% standard, 2.0% StrongReject, and 0.65% long-horizon (p. 23).
-- General output safety is mixed: broad harmful-request compliance is 1.10%, child-safety compliance is 0.0%, bio refusal recall is 100.0%, chem refusal recall is 99.9%, and radiological/nuclear refusal accuracy is 97.9% (pp. 24-25).
-- Mental-health and behavior results include 1.05% self-harm compliance, 0.00% MASK-Rectified dishonesty, and 0.03% sycophancy (pp. 26-27).
+### Safety classification
+
+- **Framework:** xAI Frontier Artificial Intelligence Framework
+- **Overall determination:** Below FAIF dual-use thresholds for biology and chemistry
+
+xAI treats its biology and chemistry suites as FAIF threshold evaluations and says Grok 4.7 stays below them, with no increase in dual-use biology capability over Grok 4.6. For cyber it reports small capability gains, corroborated by third-party evaluators, but states no threshold determination. (pp. 17, 20)
+
+| Domain | Determination | Level | Finding | Source |
+| --- | --- | --- | --- | --- |
+| Biological and chemical | Below threshold | — | Below FAIF thresholds on dual-use knowledge; no dual-use biology capability gain over Grok 4.6, which xAI attributes to safer RL environments and data selection rather than refusals. | p. 20 |
+| Cybersecurity | Not stated | — | Small capability gains over Grok 4.6 on unrestricted probes, which third parties corroborated; xAI frames the gains as most useful to defenders but states no threshold result. | pp. 17, 19 |
+
+### Agentic-coding risks
+
+- **Reward hacking** (not reported): The card reports no evaluation or observation of reward hacking or grader gaming.
+- **Test tampering** (not reported): The card reports no evaluation of editing, deleting, or weakening tests.
+- **Destructive or overeager actions** (not reported): The card reports no evaluation of destructive, irreversible, or unrequested agent actions.
+- **Sabotage** (not reported): The card reports no sabotage or oversight-evasion evaluation.
+- **Prompt injection** (not reported): The card tests user jailbreaks but reports no evaluation of instructions injected through tool results, files, or web content.
+- **Honesty** (reported): On MASK-Rectified, which checks whether the model states its real beliefs when pressured to lie, dishonesty is 0.00%, down from 1.90% for Grok 4.6. False claims of task success are not measured. (p. 26)
+- **Sycophancy** (reported): On xAI's test of abandoning a correct answer when a user confidently asserts a wrong one, the rate is 0.03%, versus 0.04% for Grok 4.6. (p. 27)
+- **Malicious agentic use** (reported): With production safeguards, HackerBench harmful or dual-use compliance is 3.31% at high and 4.02% at xhigh, versus 5.93% for Grok 4.6 (high) and 35.7% for GPT-5.6 Sol (max). (p. 18)
+- **Over-refusal** (reported): On HackerBench's benign security tasks, refusal is 0.31% at high and 0.00% at xhigh. (p. 18)
+
+### Other safety findings
+
+- Cyber capability rises slightly: CyberGym 80.3% versus 79.7% for Grok 4.6 and CathedralBench 29% versus 25%, while CVE-Bench falls to 37.7% (high) from 39.8%. These probes run without production safeguards. (pp. 17-19)
+- Several biology capability scores drop from Grok 4.6, including VCT (63.0% versus 67.4%) and ProtocolQA Open-Ended (70.4% versus 79.6%), while BioSecBench hazard-refusal rises to 62.4% from 45.6%. (pp. 20-22)
+- Jailbreak compliance is low: 0.01% on standard jailbreaks, 2.0% on StrongReject (3.9% for Grok 4.6), and 0.65% on long-horizon attacks. (p. 23)
+- Refusal results are flat to slightly worse than Grok 4.6: general harmful-request compliance is 1.10% (0.93% before), child-safety compliance 0.0%, bio refusal recall 100.0%, chem 99.9%, and radiological or nuclear refusal accuracy 97.9%. (pp. 24-25)
+- Self-harm compliance rises to 1.05%, from 0.84% for Grok 4.6 and 0.50% for Grok 4.5. (p. 26)
+- Safeguards are layered: safety post-training, system prompts, and, on some deployment surfaces, runtime input and topic filters. The card does not say which surfaces carry the filters, but says the refusal results also apply to Grok Build. (p. 24)
 
 ## Limitations and caveats
 
-- The card repeats the warning that Grok 4.7 should not make autonomous high-stakes medical, legal, financial, or safety-critical decisions without human oversight and expert validation (p. 4).
-- CursorBench 4.0 adds longer-horizon tasks and is explicitly not comparable to CursorBench 3.2, limiting simple version-to-version score comparisons for that benchmark (p. 6).
-- Some cyber metrics are not monotonic: CVE-Bench is below Grok 4.6, even though CyberGym and CathedralBench show small gains (pp. 17-19).
-- The 4.7 card does not include the search/factuality section that appears in the 4.5 and 4.6 cards, so this card gives no direct updated hallucination or DeepSearchQA number (pp. 2-3).
-- xAI states that dual-use biological capability does not increase versus Grok 4.6 and that several risky or hazardous-task scores are lower, which is a safety-positive caveat but also means capability gains are not uniform across domains (pp. 20-23).
-- Self-harm compliance rises to 1.05%, worse than the Grok 4.6 comparison value of 0.84% and the Grok 4.5 value of 0.50% (p. 26).
-- Several cyber and biological evaluations use unrestricted, hardened, or benchmark-specific environments; they should not be read as ordinary deployed behavior or as Copilot-specific outcomes (pp. 17-20).
+- xAI says Grok 4.7 is not meant for autonomous high-stakes decisions in medicine, law, finance, or safety-critical systems without human oversight and expert validation. (p. 4)
+- Benchmark versions changed: CursorBench 4.0 is not comparable with 3.2, and Terminal-Bench 4.0 recalibrates resources and drops saturated tasks, so compare only within one version. (pp. 6, 9)
+- Grok 4.7 runs in xAI's Grok Build harness while peers use their own harnesses or published results, and the card notes terminal scores stay sensitive to the harness. (pp. 9, 13, 15)
+- HealthBench Professional is graded by Grok 4.6, a model from the same family, and tasks blocked by safety filters count as zero. (p. 15)
+- The card has no factuality or search section and reports no context window, output limit, or agentic-misalignment evaluations. (pp. 2-3)
+- The LatchBio suite is live, and two of its components overlap with BioSecBench, so they are not independent evidence. (p. 16)
 
 ## Practical implications for Copilot users
 
-- Grok 4.7 is best considered for difficult, multi-step coding-agent work where persistence, self-verification, and long tool traces matter; still require tests, review, and clear acceptance criteria.
-- Because benchmark versions changed, especially CursorBench and Terminal-Bench, compare Grok 4.7 to older models only when the card reports a same-suite comparison.
-- For security tasks, use least-privilege tool access and defensive, authorized targets; the card's cyber capability evidence is strong enough to justify sandboxing and careful prompt hygiene.
-- For biology, health, or medical-adjacent work, use the model for summarization, data exploration, or draft reasoning only, then route conclusions to qualified review.
-- For factual research, do not assume improvement over Grok 4.6 because this card omits updated factuality/search benchmarks.
-- For agentic Copilot workflows, keep repository permissions scoped, avoid exposing secrets, and inspect generated patches for over-broad changes.
+### Choose it for
+
+- **Agentic coding:** Its best results are on agentic software benchmarks: 71.0% on DeepSWE v1.1 and 46.0% on SWE-Marathon v1.1, close to the strongest models in the same charts. (pp. 8, 11)
+- **Terminal workflows:** Terminal-Bench 4.0 nearly doubles from Grok 4.6 to 38.0% at xhigh, just above GPT-5.6 Sol (max) at 37.3%. (p. 9)
+- **Long-horizon autonomy:** xAI positions it for longer autonomous tasks, and it gains most on multi-hour suites such as SWE-Marathon v1.1. (pp. 4, 11)
+
+### Avoid it for
+
+- **Untrusted input:** The card reports no prompt-injection testing, so workflows that read untrusted files, issues, or web pages lack evidence of robustness. (p. 23)
+- **High-stakes domains:** xAI rules out autonomous high-stakes decisions without human oversight, and its health results trail several peers. (pp. 4, 15)
+
+### Guidance
+
+- For hard agent tasks, choose high or xhigh effort; the card's strongest coding results use those levels, and the Copilot app offers low through xhigh for this model.
+- The card does not test reward hacking, test tampering, or destructive actions, so protect tests and review diffs before merging agent work.
+- Copilot runs the model in its own harness, not Grok Build, so expect results to differ from the card's benchmark numbers.
+- Copilot Auto does not select Grok 4.7; pick it explicitly in the model picker or CLI.
+- The Copilot app offers a long-context option for this model, but the card states no context window, so confirm limits in GitHub's documentation.
 
 ## Document coverage
 
-This digest covers the full 30-page Grok 4.7 card, including the contents, introduction, coding, legal-agent, engineering, medical/biological, cyber, bio/chem safety, jailbreak, output-safety, mental-health, behavior, acknowledgements, and references sections. It applies only to Grok 4.7; sibling-model scores are used solely as comparisons where xAI provided them. It omits most reference-list details and highlights version-to-version changes because the card frequently compares Grok 4.7 against Grok 4.6 and Grok 4.5.
+The whole 30-page card is about Grok 4.7. Earlier Grok versions and other publishers' models appear only as comparison points in charts and tables; this digest attributes those numbers to the models named, never to Grok 4.7. The card uses SpaceXAI and xAI interchangeably.
+
+- **Card type:** Dedicated. The document is about this model; it may include short sibling sections.
+- **Pages specific to this model:** the whole document
+- **Names the document uses for this model:** Grok 4.7
+- **Catalog scope:** Dedicated publisher card for this model.

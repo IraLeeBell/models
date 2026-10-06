@@ -1,6 +1,7 @@
-"""Validate catalog.json and render the catalog's generated Markdown (Python standard library only).
+"""Validate catalog.json and render the catalog's generated files (Python standard library only).
 
-    python3 generate.py --write    # regenerate source.md, variants.md, README.md, RIGHTS.md, ../README.md
+    python3 generate.py --write    # regenerate source.md, variants.md, digest.md, README.md, RIGHTS.md,
+                                   # BENCHMARKS.md, digests.json, digest.schema.json, and ../README.md
     python3 generate.py --check    # verify generated files, folders, digests, licensed copies, and ignores
 """
 
@@ -207,8 +208,8 @@ def doc_label(doc):
 
 def files_for(model, catalog):
     """Return (committed, local_only) file descriptions for a model folder."""
-    committed = [("digest.md", "original digest (this repository's MIT license)"),
-                 ("digest.json", "structured version of the digest"),
+    committed = [("digest.json", "original digest as structured data, the authored source (MIT license)"),
+                 ("digest.md", "the same digest rendered for reading (generated from digest.json)"),
                  ("source.md", "this provenance record (generated)"),
                  ("variants.md", "Copilot identifiers and related entries (generated)")]
     local = []
@@ -477,8 +478,13 @@ def render_index(catalog):
              f"- **Full text in this repository:** {c['granted']} documents whose publisher license permits "
              f"redistribution. The other {c['not_granted']} are linked with SHA-256 provenance and can be "
              "downloaded and extracted locally; see [RIGHTS.md](RIGHTS.md).",
-             f"- **Digests:** every folder has an original `digest.md` and `digest.json`, citing PDF pages "
-             "(section headings for the Markdown card; owner pages for folders without a card).",
+             f"- **Digests:** every folder has an original `digest.json` (schema_version 2) and a `digest.md` "
+             "rendered from it, citing PDF pages (section headings for the Markdown card; owner pages for folders "
+             "without a card). [DIGESTS.md](DIGESTS.md) defines the format.",
+             "- **Machine-readable data:** [digests.json](digests.json) joins every digest with its catalog entry; "
+             "[digest.schema.json](digest.schema.json) validates each `digest.json`; "
+             "[vocabulary.json](vocabulary.json) defines benchmark, metric, unit, modality, safety, and use-case "
+             "identifiers. [BENCHMARKS.md](BENCHMARKS.md) lines up benchmarks that two or more digests report.",
              "",
              "## How the roster was established", "",
              f"- **Copilot CLI:** the `cli` column of GitHub's [per-client table]({SUPPORTED}#supported-ai-models-per-client) "
@@ -567,8 +573,8 @@ def render_index(catalog):
     lines.append("")
 
     lines += ["## Folder layout", "", "```text", "<model>/",
-              "  digest.md        original digest with page (or section) citations",
-              "  digest.json      the same digest as structured data (schema_version 1; see DIGESTS.md)",
+              "  digest.json      original digest as structured data, the authored source (schema_version 2)",
+              "  digest.md        the digest rendered for reading, with citations (generated from digest.json)",
               "  source.md        roster evidence, document provenance, SHA-256, rights decision (generated)",
               "  variants.md      Copilot identifiers, app settings, shared documents, series (generated)",
               "  system-card.pdf  publisher PDF          (committed only when licensed; otherwise local)",
@@ -576,6 +582,8 @@ def render_index(catalog):
               "  model-card.md    owner Markdown card, when the owner publishes no PDF",
               "  LICENSE-*.txt    publisher license text, beside licensed copies",
               "  supplements/     local-only supplement PDFs and extractions", "```", "",
+              "At the top level, `vocabulary.json` (authored) holds the controlled vocabulary; `digest.schema.json`, "
+              "`digests.json`, and `BENCHMARKS.md` are generated from it, the catalog, and the digests.", "",
               "Each `system-card.md` starts with a provenance header and has one `<!-- page N of M -->` marker per "
               "PDF page. Pages where layout conversion missed text also carry the page's complete selectable text, "
               "so no selectable text is dropped. Large TeX delimiters that have no Unicode mapping in the PDF are "
@@ -605,8 +613,9 @@ def render_index(catalog):
               "3. **Rights.** Keep `rights: not-granted` unless the publisher grants redistribution in writing or by "
               "license. A granted document needs `rights_basis` and license fields, `.gitignore` negations, and the "
               "license file committed beside it.",
-              "4. **Digests.** Write `digest.md` and `digest.json` following [DIGESTS.md](DIGESTS.md), then run "
-              "`python3 digest_check.py <slug>` with the local extraction present.",
+              "4. **Digests.** Edit `digest.json` following [DIGESTS.md](DIGESTS.md), then run "
+              "`python3 digest_check.py --write <slug>` with the local extraction present. It normalizes the "
+              "JSON, renders `digest.md`, and validates both.",
               "5. **Generate and verify.** `python3 generate.py --write`, then `python3 generate.py --check` and "
               "`python3 -m unittest discover -s . -p 'test_*.py'`.", ""]
     return "\n".join(lines).rstrip() + "\n"
@@ -703,6 +712,10 @@ def render_root(catalog):
         "- Each folder has an original **digest** of capabilities, evaluations, safety findings, limitations, "
         "and practical implications, with page citations, plus **provenance** (owner URL, retrieval date, "
         "size, SHA-256) and **variants**.",
+        "- [**Machine-readable digests**](models/digests.json): every digest joined with its catalog entry, "
+        "with typed values, controlled identifiers from [vocabulary.json](models/vocabulary.json), and a "
+        "[JSON Schema](models/digest.schema.json). [BENCHMARKS.md](models/BENCHMARKS.md) compares results "
+        "that several digests report.",
         f"- [**Rights review**](models/RIGHTS.md): {c['granted']} documents are published under a license that "
         f"permits redistribution, stored beside each copy. The other {c['not_granted']} carry no such license and "
         "remain subject to their publishers' terms; a verified local workflow downloads them from the owner URLs "
@@ -743,12 +756,82 @@ def render_root(catalog):
     ])
 
 
+AGGREGATE_CATALOG_KEYS = ["name", "provider", "lifecycle", "release_status", "cli", "app_picker_observed",
+                          "app_auto", "app_reasoning_efforts", "app_long_context", "retired_on", "series",
+                          "document", "supplements", "copilot_id"]
+
+
+def render_aggregate(catalog, vocab, digests):
+    """digests.json: each catalog model's Copilot facts joined with its normalized digest (null if invalid)."""
+    data = {
+        "description": "Generated by models/generate.py from catalog.json and each folder's digest.json. Each "
+                       "digest follows digest.schema.json; identifiers come from vocabulary.json. See DIGESTS.md.",
+        "schema_version": digest_check.SCHEMA_VERSION,
+        "vocabulary_version": vocab["vocabulary_version"],
+        "checked_at": catalog["checked_at"],
+        "models": [{"slug": m["slug"], "catalog": {k: m.get(k) for k in AGGREGATE_CATALOG_KEYS},
+                    "digest": digests.get(m["slug"])} for m in catalog["models"]],
+    }
+    return digest_check.canonical(data)
+
+
+def render_benchmarks(catalog, vocab, digests):
+    """BENCHMARKS.md: every benchmark that two or more digests report for their own model."""
+    rows = {}
+    for model in catalog["models"]:
+        data = digests.get(model["slug"])
+        for e in (data or {}).get("evaluations", []):
+            rows.setdefault(e["benchmark_id"], []).append((model, data, e))
+    shared = {b: r for b, r in rows.items() if len({m["slug"] for m, _, _ in r}) >= 2}
+    lines = ["# Benchmark comparison", "", ("<!-- Generated by models/generate.py from models/catalog.json and each digest.json. Edit those, then run "
+                                     "`python3 generate.py --write`. -->"), "",
+             "Each row is a result that a digest attributes to its own model, with the citation into that model's "
+             "publisher document. Only benchmarks that two or more digests report are listed.", "",
+             "> **Read before comparing.** Publishers run these evaluations themselves, with different harnesses, "
+             "effort levels, tool access, sample counts, and benchmark subsets, and some results come from third "
+             "parties. A higher number from one publisher is not necessarily a better result than a lower number "
+             "from another. The Setting column records the conditions each document states; compare like with like, "
+             "and prefer comparisons the same document makes.", ""]
+    if not shared:
+        lines.append("No benchmark is reported by two or more digests yet.")
+    for category, entry in vocab["benchmark_categories"].items():
+        ids = [b for b in vocab["benchmarks"] if b in shared and vocab["benchmarks"][b]["category"] == category]
+        if not ids:
+            continue
+        lines += [f"## {entry['label']}", ""]
+        for b in ids:
+            lines += [f"### {vocab['benchmarks'][b]['name']}", "",
+                      "| Model | Lifecycle | Variant | Metric | Result | Setting | Source |",
+                      "| --- | --- | --- | --- | --- | --- | --- |"]
+            for model, data, e in shared[b]:
+                metric = digest_check.metric_label(e["metric"], vocab) + ("" if e["higher_is_better"] else
+                                                                          " (lower is better)")
+                setting = [f"{e['effort']} effort" if e.get("effort") else None, e.get("harness"), e.get("setting"),
+                           "third-party run" if e.get("run_by") == "third-party" else None]
+                lines.append("| " + " | ".join(digest_check.cell(x) for x in [
+                    f"[{model['name']}]({model['slug']}/digest.md)", LIFECYCLE[model["lifecycle"]],
+                    e.get("variant") or "—", metric, digest_check.result(e["value"], e["unit"], vocab),
+                    "; ".join(s for s in setting if s) or "—",
+                    digest_check.cite(e, data, bare=True) or "—"]) + " |")
+            lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def outputs(catalog):
+    vocab = digest_check.load_vocab()
     rendered = {ROOT / "README.md": render_index(catalog), ROOT / "RIGHTS.md": render_rights(catalog),
-                REPO / "README.md": render_root(catalog)}
+                REPO / "README.md": render_root(catalog),
+                ROOT / "digest.schema.json": digest_check.canonical(digest_check.json_schema(vocab))}
+    digests = {}
     for model in catalog["models"]:
         rendered[ROOT / model["slug"] / "source.md"] = render_source(model, catalog)
         rendered[ROOT / model["slug"] / "variants.md"] = render_variants(model, catalog)
+        data, errors = digest_check.load_normalized(model, catalog, vocab)
+        if data is not None and not errors:
+            rendered[ROOT / model["slug"] / "digest.md"] = digest_check.render_markdown(data, model, catalog, vocab)
+            digests[model["slug"]] = data
+    rendered[ROOT / "digests.json"] = render_aggregate(catalog, vocab, digests)
+    rendered[ROOT / "BENCHMARKS.md"] = render_benchmarks(catalog, vocab, digests)
     return rendered
 
 
@@ -801,12 +884,14 @@ def check(catalog, extraction_dir=None):
     folders = {p.name for p in ROOT.iterdir() if p.is_dir() and not p.name.startswith((".", "_"))}
     if folders != slugs:
         problems.append(f"folders differ from catalog: extra {sorted(folders - slugs)}, missing {sorted(slugs - folders)}")
+    vocab = digest_check.load_vocab()
+    problems += digest_check.vocab_problems(vocab)
     skipped = []
     for model in catalog["models"]:
         source = local_sources(model, catalog, extraction_dir)
         if source is None and model.get("document"):
             skipped.append(model["slug"])
-        problems += digest_check.check(model, documents, ROOT, extraction=source)
+        problems += digest_check.check(model, catalog, ROOT, extraction=source, vocab=vocab)
 
     gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()
     for doc_id, doc in documents.items():

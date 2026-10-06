@@ -44,8 +44,8 @@ GitHub listed it for VS Code and other IDEs but not for the CLI.
 
 Committed in this folder:
 
-- [`digest.md`](digest.md): original digest (this repository's MIT license)
-- [`digest.json`](digest.json): structured version of the digest
+- [`digest.json`](digest.json): original digest as structured data, the authored source (MIT license)
+- [`digest.md`](digest.md): the same digest rendered for reading (generated from digest.json)
 - [`source.md`](source.md): this provenance record (generated)
 - [`variants.md`](variants.md): Copilot identifiers and related entries (generated)
 
