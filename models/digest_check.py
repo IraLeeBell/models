@@ -855,6 +855,8 @@ def semantic_problems(data, model, catalog, vocab, root=ROOT):
             p(f"evaluations[{i}] percent value {e['value']} is outside -100..100")
         if e["unit"] == "fraction" and not -1 <= e["value"] <= 1:
             p(f"evaluations[{i}] fraction value {e['value']} is outside -1..1")
+        if any(c["model"] in (model["name"], *data["coverage"]["document_model_names"]) for c in e["comparators"]):
+            p(f"evaluations[{i}] lists this model as its own comparator; use a separate row")
     if len(headline) > MAX_HEADLINE:
         p(f"evaluations: at most {MAX_HEADLINE} headline rows (has {len(headline)})")
     if len(headline) < min(MIN_HEADLINE, len(eligible)):

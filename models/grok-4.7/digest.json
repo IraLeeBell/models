@@ -32,7 +32,7 @@
         "document": "xai-grok-4-7"
       },
       {
-        "text": "Against other frontier models in the same charts it is competitive rather than dominant: 71.0% on DeepSWE v1.1 versus 72.7% for GPT-5.6 Sol (max), and 29.0% on FrontierSWE V2 versus 56.3% for Fable 5.1 (max).",
+        "text": "Against other frontier models in the same charts it is competitive rather than dominant: 71.0% on DeepSWE v1.1 versus 72.7% for GPT-5.6 Sol (max), and 29.0% on FrontierSWE V2 versus 56.3% for Claude Fable 5.1 (max).",
         "pages": [8, 10],
         "document": "xai-grok-4-7"
       },
@@ -234,7 +234,7 @@
           "setting": "max"
         },
         {
-          "model": "Fable 5",
+          "model": "Claude Fable 5",
           "value": 69.7,
           "setting": "max, with fallback"
         },
@@ -244,7 +244,7 @@
           "setting": "high"
         },
         {
-          "model": "Sonnet 5",
+          "model": "Claude Sonnet 5",
           "value": 54,
           "setting": "max"
         }
@@ -268,7 +268,7 @@
       "run_by": "third-party",
       "comparators": [
         {
-          "model": "Fable 5.1",
+          "model": "Claude Fable 5.1",
           "value": 57.9,
           "setting": "max"
         },
@@ -293,7 +293,7 @@
           "setting": "high"
         },
         {
-          "model": "Sonnet 5",
+          "model": "Claude Sonnet 5",
           "value": 12.4,
           "setting": "max"
         }
@@ -317,7 +317,7 @@
       "run_by": "third-party",
       "comparators": [
         {
-          "model": "Fable 5.1",
+          "model": "Claude Fable 5.1",
           "value": 56.3,
           "setting": "max"
         },
@@ -356,12 +356,12 @@
       "run_by": "third-party",
       "comparators": [
         {
-          "model": "Opus 5",
+          "model": "Claude Opus 5",
           "value": 50.0,
           "setting": "max"
         },
         {
-          "model": "Fable 5",
+          "model": "Claude Fable 5",
           "value": 45.0,
           "setting": "max, with fallback"
         },
@@ -381,7 +381,7 @@
           "setting": "high"
         },
         {
-          "model": "Sonnet 5",
+          "model": "Claude Sonnet 5",
           "value": 30.0,
           "setting": "max"
         }
@@ -410,17 +410,17 @@
           "setting": "high"
         },
         {
-          "model": "Fable 5",
+          "model": "Claude Fable 5",
           "value": 11.3,
           "setting": "max, with fallback"
         },
         {
-          "model": "Fable 5.1",
+          "model": "Claude Fable 5.1",
           "value": 6.7,
           "setting": "max, with fallback"
         },
         {
-          "model": "Sonnet 5",
+          "model": "Claude Sonnet 5",
           "value": 5.0,
           "setting": "max"
         },
@@ -459,7 +459,7 @@
           "setting": "max"
         },
         {
-          "model": "Opus 5",
+          "model": "Claude Opus 5",
           "value": 61.6,
           "setting": "max"
         },
@@ -469,7 +469,7 @@
           "setting": "xhigh"
         },
         {
-          "model": "Fable 5",
+          "model": "Claude Fable 5",
           "value": 54.2,
           "setting": "max, with fallback"
         },
@@ -508,7 +508,7 @@
           "setting": "xhigh"
         },
         {
-          "model": "Opus 5",
+          "model": "Claude Opus 5",
           "value": 36.6,
           "setting": "max"
         }
@@ -537,7 +537,7 @@
           "setting": "max"
         },
         {
-          "model": "Fable 5.1",
+          "model": "Claude Fable 5.1",
           "value": 62.1,
           "setting": "max"
         },
@@ -553,7 +553,7 @@
         }
       ],
       "headline": false,
-      "note": "Fable and Astra results come from their providers' cards.",
+      "note": "Claude Fable 5.1 and GPT-6 Astra results come from their publishers' cards.",
       "pages": [15],
       "document": "xai-grok-4-7"
     },
@@ -586,7 +586,7 @@
           "setting": "max"
         },
         {
-          "model": "Sonnet 5",
+          "model": "Claude Sonnet 5",
           "value": 40.2,
           "setting": "max"
         }
@@ -806,7 +806,7 @@
           "setting": "high"
         },
         {
-          "model": "Opus 5",
+          "model": "Claude Opus 5",
           "value": 31.8,
           "setting": "max"
         },

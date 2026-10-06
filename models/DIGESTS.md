@@ -90,7 +90,7 @@ A *cited text item* is `{"text": "...", "pages": [12, 13]}` with 10–600 charac
 | `harness` | string or `null` | Agent scaffold or tool harness, such as `"mini-SWE-agent"` or `"Terminus 2"`. |
 | `setting` | string or `null` | Other conditions that affect comparability: number of tasks, trials, tools, safeguards, or time limits. |
 | `run_by` | `publisher`, `third-party`, or `not-stated` | Who ran it. |
-| `comparators` | up to 6 | `{"model": "...", "value": 0, "setting": "..."}` for models **the same chart or table reports**, in the same unit. Never import numbers from another document. |
+| `comparators` | up to 6 | `{"model": "...", "value": 0, "setting": "..."}` for other models **the same chart or table reports**, in the same unit. Never import numbers from another document. Name a comparator by its `catalog.json` name when it is a catalog model (`"Claude Opus 5"`, not `"Opus 5"`), and otherwise as the document names it. Put its effort or other conditions in `setting`. |
 | `headline` | boolean | Mark 3–6 rows that best show coding and agentic strength (benchmarks in the `coding`, `terminal`, `agentic`, `tool-use`, `computer-use`, or `search` categories). When fewer eligible rows exist, mark them all. |
 | `note` | string or `null` | Up to 240 characters for anything else a reader needs, such as non-comparability with an earlier version. |
 

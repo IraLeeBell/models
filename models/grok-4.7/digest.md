@@ -13,7 +13,7 @@ Grok 4.7 is xAI's successor to Grok 4.6, aimed at long-running coding agents, en
 - **Choose it for:** Hard, long-running coding-agent and terminal tasks that you will review, where its gains over Grok 4.6 are largest.
 - **Watch out for:** No reward-hacking, test-tampering, destructive-action, or prompt-injection results, and no stated context window or output limit.
 - Long-horizon agentic coding improves most: Terminal-Bench 4.0 rises to 38.0% at xhigh from 20.3% for Grok 4.6, and SWE-Marathon v1.1 to 46.0% from 31.9%, both in third-party runs. (pp. 9, 11)
-- Against other frontier models in the same charts it is competitive rather than dominant: 71.0% on DeepSWE v1.1 versus 72.7% for GPT-5.6 Sol (max), and 29.0% on FrontierSWE V2 versus 56.3% for Fable 5.1 (max). (pp. 8, 10)
+- Against other frontier models in the same charts it is competitive rather than dominant: 71.0% on DeepSWE v1.1 versus 72.7% for GPT-5.6 Sol (max), and 29.0% on FrontierSWE V2 versus 56.3% for Claude Fable 5.1 (max). (pp. 8, 10)
 - xAI places it below its Frontier Artificial Intelligence Framework thresholds for dual-use biology and chemistry, with no gain in dual-use biology capability over Grok 4.6 and small cyber gains. (pp. 17, 20)
 - It takes text and image input and returns text; pretraining data ends in June 2026, and the card gives no context window or output limit. (p. 5)
 - On xAI's behavior tests, MASK-Rectified dishonesty is 0.00% and sycophancy is 0.03%, but the card does not test agentic misbehavior such as gaming tests. (pp. 26-27)
@@ -56,21 +56,21 @@ Results are as the document reports them. Scores from different publishers, harn
 | Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
 | --- | --- | --- | --- | --- | --- | --- |
 | CursorBench 4.0 | — | score | 46.3% | xhigh effort. Not comparable with CursorBench 3.2, which lacks the longer tasks. | — | p. 6 |
-| DeepSWE v1.1 | — | pass@1 | 71.0% | high effort; mini-SWE-agent; 113 tasks; patches graded in a clean verifier container; third-party run | GPT-5.6 Sol 72.7% (max); Fable 5 69.7% (max, with fallback); Grok 4.6 65.2% (high); Sonnet 5 54% (max) | p. 8 |
-| Terminal-Bench 4.0 | — | success rate | 38.0% | xhigh effort; Grok Build; 66 tasks; up to 8 hours per task; third-party run | Fable 5.1 57.9% (max); GPT-5.6 Sol 37.3% (max); GPT-5.6 Terra 21.5% (max); Grok 4.6 20.3% (high); Grok 4.5 12.4% (high); Sonnet 5 12.4% (max) | p. 9 |
-| FrontierSWE v2 | — | mean@5 | 29.0% | xhigh effort; 34 tasks; up to 20 hours each; partial-credit reward; third-party run | Fable 5.1 56.3% (max); GPT-5.6 Sol 32.2% (max); Kimi K3 25.9% (max); Grok 4.6 25.3% (xhigh) | p. 10 |
-| SWE-Marathon v1.1 | — | success rate | 46.0% | high effort; each model's native agent harness; 20 multi-hour tasks; 8 trials; resolved only if every verifier passes; third-party run | Opus 5 50.0% (max); Fable 5 45.0% (max, with fallback); GPT-5.6 Sol 42.5% (max); GPT-5.6 Terra 32.5% (max); Grok 4.6 31.9% (high); Sonnet 5 30.0% (max) | p. 11 |
+| DeepSWE v1.1 | — | pass@1 | 71.0% | high effort; mini-SWE-agent; 113 tasks; patches graded in a clean verifier container; third-party run | GPT-5.6 Sol 72.7% (max); Claude Fable 5 69.7% (max, with fallback); Grok 4.6 65.2% (high); Claude Sonnet 5 54% (max) | p. 8 |
+| Terminal-Bench 4.0 | — | success rate | 38.0% | xhigh effort; Grok Build; 66 tasks; up to 8 hours per task; third-party run | Claude Fable 5.1 57.9% (max); GPT-5.6 Sol 37.3% (max); GPT-5.6 Terra 21.5% (max); Grok 4.6 20.3% (high); Grok 4.5 12.4% (high); Claude Sonnet 5 12.4% (max) | p. 9 |
+| FrontierSWE v2 | — | mean@5 | 29.0% | xhigh effort; 34 tasks; up to 20 hours each; partial-credit reward; third-party run | Claude Fable 5.1 56.3% (max); GPT-5.6 Sol 32.2% (max); Kimi K3 25.9% (max); Grok 4.6 25.3% (xhigh) | p. 10 |
+| SWE-Marathon v1.1 | — | success rate | 46.0% | high effort; each model's native agent harness; 20 multi-hour tasks; 8 trials; resolved only if every verifier passes; third-party run | Claude Opus 5 50.0% (max); Claude Fable 5 45.0% (max, with fallback); GPT-5.6 Sol 42.5% (max); GPT-5.6 Terra 32.5% (max); Grok 4.6 31.9% (high); Claude Sonnet 5 30.0% (max) | p. 11 |
 
 ### Other reported results
 
 | Benchmark | Variant | Metric | Result | Setting | Comparators | Source |
 | --- | --- | --- | --- | --- | --- | --- |
 | CursorBench 4.0 | — | score | 43.9% | high effort. Not comparable with CursorBench 3.2, which lacks the longer tasks. | — | p. 6 |
-| Legal Agent Benchmark | Harvey final score | score | 19.6% | xhigh effort; Valkyrie; held-out 120 tasks; internet disabled; third-party run | Grok 4.6 15.8% (high); Fable 5 11.3% (max, with fallback); Fable 5.1 6.7% (max, with fallback); Sonnet 5 5.0% (max); GPT-5.6 Sol 2.5% (max); GPT-5.6 Terra 0.8% (max) | p. 12 |
-| EEBench | V1 core corpus | mean reward | 66.0% | xhigh effort; Grok Build; peers use their providers' harnesses; third-party run | GPT-6 Astra 69.3% (max); Opus 5 61.6% (max); Grok 4.6 60.0% (xhigh); Fable 5 54.2% (max, with fallback); GPT-5.6 Sol 39.4% (max) | p. 13 |
-| CADGenBench | Generation split | mean reward | 44.4% | high effort; Grok Build; peers use their providers' harnesses; third-party run | Grok 4.6 40.9% (high); GPT-5.6 Sol 37.1% (xhigh); Opus 5 36.6% (max) | p. 14 |
-| HealthBench Professional | — | score | 56.7% | xhigh effort; graded by Grok 4.6 (high); safety-filtered tasks scored zero. Fable and Astra results come from their providers' cards. | GPT-6 Astra 63.4% (max); Fable 5.1 62.1% (max); GPT-5.6 Sol 60.5% (max); Grok 4.6 48.5% (xhigh) | p. 15 |
-| LatchBio Capabilities v1.0 | Overall | score | 44.5% | xhigh effort; equal-weighted mean of 11 capability benchmarks | GPT-6 Astra 47.4% (max); Grok 4.6 43.3% (high); GPT-5.6 Terra 43.1% (max); Sonnet 5 40.2% (max) | p. 16 |
+| Legal Agent Benchmark | Harvey final score | score | 19.6% | xhigh effort; Valkyrie; held-out 120 tasks; internet disabled; third-party run | Grok 4.6 15.8% (high); Claude Fable 5 11.3% (max, with fallback); Claude Fable 5.1 6.7% (max, with fallback); Claude Sonnet 5 5.0% (max); GPT-5.6 Sol 2.5% (max); GPT-5.6 Terra 0.8% (max) | p. 12 |
+| EEBench | V1 core corpus | mean reward | 66.0% | xhigh effort; Grok Build; peers use their providers' harnesses; third-party run | GPT-6 Astra 69.3% (max); Claude Opus 5 61.6% (max); Grok 4.6 60.0% (xhigh); Claude Fable 5 54.2% (max, with fallback); GPT-5.6 Sol 39.4% (max) | p. 13 |
+| CADGenBench | Generation split | mean reward | 44.4% | high effort; Grok Build; peers use their providers' harnesses; third-party run | Grok 4.6 40.9% (high); GPT-5.6 Sol 37.1% (xhigh); Claude Opus 5 36.6% (max) | p. 14 |
+| HealthBench Professional | — | score | 56.7% | xhigh effort; graded by Grok 4.6 (high); safety-filtered tasks scored zero. Claude Fable 5.1 and GPT-6 Astra results come from their publishers' cards. | GPT-6 Astra 63.4% (max); Claude Fable 5.1 62.1% (max); GPT-5.6 Sol 60.5% (max); Grok 4.6 48.5% (xhigh) | p. 15 |
+| LatchBio Capabilities v1.0 | Overall | score | 44.5% | xhigh effort; equal-weighted mean of 11 capability benchmarks | GPT-6 Astra 47.4% (max); Grok 4.6 43.3% (high); GPT-5.6 Terra 43.1% (max); Claude Sonnet 5 40.2% (max) | p. 16 |
 | CyberGym | Mean reproduced | success rate | 80.3% | high effort; Grok Build; without production safeguards | GPT-5.6 Sol 83.6% (max); Grok 4.6 79.7% (high); Grok 4.5 79.0% (high) | p. 17 |
 | CVE-Bench | — | mean reward | 37.7% | high effort; Grok Build; without safeguards; hardened, egress-controlled sandbox | Grok 4.6 39.8% (high); Grok 4.5 35.2% (high) | p. 18 |
 | CVE-Bench | — | mean reward | 36.6% | xhigh effort; Grok Build; without safeguards; hardened, egress-controlled sandbox | — | p. 18 |
@@ -78,7 +78,7 @@ Results are as the document reports them. Scores from different publishers, harn
 | HackerBench v0.3 | Harmful and dual-use requests | harmful compliance rate (lower is better) | 4.02% | xhigh effort; with production safeguards | — | p. 18 |
 | HackerBench v0.3 | Benign tasks | refusal rate (lower is better) | 0.31% | high effort; with production safeguards | Grok 4.6 0.0% (high); Grok 4.5 0.0% (high); GPT-5.6 Sol 0.0% (max, provider safeguards) | p. 18 |
 | CathedralBench | Hard subset | accuracy | 29% | xhigh effort; unrestricted model; egress-secure sandbox; third-party run | Grok 4.6 25% (high) | p. 19 |
-| BioSecBench | Refusal | score | 62.4% | xhigh effort; Grok Build | Grok 4.6 45.6% (high); Opus 5 31.8% (max); GPT-6 Astra 25.5% (max) | p. 20 |
+| BioSecBench | Refusal | score | 62.4% | xhigh effort; Grok Build | Grok 4.6 45.6% (high); Claude Opus 5 31.8% (max); GPT-6 Astra 25.5% (max) | p. 20 |
 | Virology Capabilities Test | — | accuracy | 63.0% | high effort; without production safeguards | Grok 4.6 67.4% (high); Grok 4.5 65.5% (high) | p. 21 |
 | WMDP | WMDP-Bio | accuracy | 88.1% | high effort; without production safeguards | Grok 4.6 90.0% (high); Grok 4.5 90.9% (high) | p. 22 |
 | xAI jailbreak suites | Standard jailbreaks | harmful compliance rate (lower is better) | 0.01% | high effort | Grok 4.6 0.04% (high); Grok 4.5 0.73% (high) | p. 23 |
